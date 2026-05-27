@@ -1,0 +1,135 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 31
+punkty: 4
+typ: otwarte-rozszerzone
+topic: optymalizacja, funkcja kwadratowa
+difficulty: 5
+tresc: |
+  W schronisku dla zwierząt buduje się trzy identyczne prostokątne wybiegi o wspólnych ścianach wewnętrznych. Szerokość każdego wybiegu to y, długość (wspólny wymiar pionowy) to x. Łącznie zużyto 36 metrów siatki. Oblicz wymiary x oraz y jednego wybiegu, dla których suma pól podstaw trzech wybiegów będzie największa.
+odpowiedz: |
+  x = 4,5 m oraz y = 3 m (suma pól = 40,5 m²)
+pulapka: |
+  Najgorszy błąd to złe policzenie łącznej długości siatki — z rysunku widać, że potrzeba: dwóch ścian długości 3y (góra i dół) PLUS czterech ścian długości x (dwie zewnętrzne pionowe + dwie wewnętrzne między wybiegami). Czyli 2·(3y) + 4·x = 36, nie 2·(3y) + 2·x = 36.
+wymaganie: |
+  XIII — zadania optymalizacyjne dające się opisać funkcją kwadratową.
+podobne:
+  - matematyka-2024-maj-pp-24
+---
+
+## Rozumienie problemu
+
+Trzy identyczne prostokątne wybiegi stoją obok siebie, dzieląc ściany wewnętrzne. Patrząc na rysunek:
+
+- **góra i dół** całej konstrukcji — dwa odcinki długości $3y$ (cała szerokość)
+- **boki zewnętrzne** (lewa i prawa) — dwa odcinki długości $x$
+- **ściany wewnętrzne** (między wybiegami) — dwa odcinki długości $x$ każdy
+
+Łącznie siatki: $2 \cdot 3y + 2x + 2x = 6y + 4x$.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zapisz równanie wiążące $x$ i $y$.**
+
+$$6y + 4x = 36$$
+
+Podziel obie strony przez $2$:
+
+$$3y + 2x = 18 \quad\Rightarrow\quad y = \frac{18 - 2x}{3} = 6 - \frac{2x}{3}$$
+
+**Dziedzina**: $x > 0$ oraz $y > 0$. Z $y > 0$: $6 - \tfrac{2x}{3} > 0 \Rightarrow x < 9$. Zatem $x \in (0, 9)$.
+
+</div>
+
+<div class="krok">
+
+**Wyraź sumę pól trzech wybiegów jako funkcję $x$.**
+
+Każdy wybieg ma wymiar $x \times y$, więc pole jednego to $x \cdot y$. Suma pól trzech:
+
+$$S(x) = 3 \cdot x \cdot y = 3x \cdot \left(6 - \frac{2x}{3}\right) = 18x - 2x^2$$
+
+</div>
+
+<div class="krok">
+
+**To jest funkcja kwadratowa $S(x) = -2x^2 + 18x$** z ujemnym współczynnikiem przy $x^2$ — parabola otwierająca się **w dół**, więc maksimum jest w wierzchołku.
+
+Współrzędna $x$ wierzchołka: $x_w = -\dfrac{b}{2a}$, gdzie $a = -2$, $b = 18$:
+
+$$x_w = -\frac{18}{2 \cdot (-2)} = -\frac{18}{-4} = \frac{18}{4} = 4{,}5$$
+
+</div>
+
+<div class="krok">
+
+**Sprawdź, czy $x_w$ jest w dziedzinie.** $x_w = 4{,}5 \in (0, 9)$ ✓.
+
+</div>
+
+<div class="krok">
+
+**Oblicz odpowiadające $y$.**
+
+$$y = 6 - \frac{2 \cdot 4{,}5}{3} = 6 - 3 = 3$$
+
+</div>
+
+<div class="krok">
+
+**(Opcjonalnie) — oblicz maksymalną sumę pól.**
+
+$$S(4{,}5) = 18 \cdot 4{,}5 - 2 \cdot (4{,}5)^2 = 81 - 40{,}5 = 40{,}5 \text{ m}^2$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> $x = 4{,}5$ m oraz $y = 3$ m. Maksymalna suma pól: $40{,}5$ m².
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Najgorszy błąd — zła geometria</div>
+
+Jeśli policzysz siatkę jako $2 \cdot 3y + 2 \cdot x = 36$ (czyli tylko obwód zewnętrznego prostokąta, bez ścian wewnętrznych) — dostaniesz **inny** wynik i niepełne punkty. Schronisko wymaga **odgrodzenia każdego wybiegu osobno** — ściany wewnętrzne też kosztują siatkę.
+
+Sprawdź na rysunku: ile **odcinków pionowych** (długości $x$) widzisz? Cztery: dwie zewnętrzne (lewa, prawa) i dwie wewnętrzne (między wybiegami). Suma $4x$, nie $2x$.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka za 2 pkt zamiast 4</div>
+
+Wyznaczenie tylko $x = 4{,}5$ bez podania $y$ → CKE daje **maksymalnie 3 pkt**. Zadanie pyta o **wymiary**, czyli oba $x$ i $y$.
+
+Wyznaczenie tylko wzoru $S(x)$ bez znalezienia wierzchołka → **2 pkt**.
+
+Brak sprawdzenia, że $x_w$ leży w dziedzinie → CKE nie obniża punktów, ale to dobry nawyk dla trudniejszych zadań na rozszerzonym.
+</div>
+
+## Klucz — typ zadania optymalizacyjnego
+
+To klasyczny schemat: **„coś" jest ograniczone (suma materiału, obwód) → wyraź jedną zmienną przez drugą → zapisz wielkość do maksymalizacji jako funkcję jednej zmiennej → znajdź wierzchołek paraboli**.
+
+Procedura:
+
+1. **Wyłap wiązanie** (constraint) — jakie równanie zachodzi między zmiennymi?
+2. **Wyraź jedną zmienną** ($y$ przez $x$ albo odwrotnie).
+3. **Zapisz funkcję celu** (sumę pól, objętość, długość itp.) używając tylko jednej zmiennej.
+4. **Wyznacz dziedzinę** — kiedy obie zmienne są dodatnie?
+5. **Znajdź wierzchołek paraboli** ($x_w = -\tfrac{b}{2a}$) i sprawdź, czy jest w dziedzinie.
+6. **Oblicz drugą zmienną** i (opcjonalnie) wartość maksymalną.
+
+Punktacja CKE: **4 pkt** to zwykle pełne rozwiązanie z wymiarami **plus** maksimum. **3 pkt** — funkcja + argument maksimum. **2 pkt** — sama funkcja $S(x)$ bez maksimum. **1 pkt** — tylko wiązanie $3y + 2x = 18$ bez funkcji celu.
+
+## Punktacja CKE
+
+- **1 pkt** — zapisanie równania $3y + 2x = 18$ (albo $6y + 4x = 36$).
+- **2 pkt** — dodatkowo zapisanie funkcji $S(x) = -2x^2 + 18x$ (albo równoważnej).
+- **3 pkt** — dodatkowo obliczenie $x = 4{,}5$.
+- **4 pkt** — pełne rozwiązanie z $x = 4{,}5$ i $y = 3$.

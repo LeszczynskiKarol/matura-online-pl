@@ -1,0 +1,84 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 25
+punkty: 1
+typ: zamkniete-abcd
+topic: stereometria, graniastosłup prawidłowy sześciokątny
+difficulty: 3
+tresc: |
+  Wysokość graniastosłupa prawidłowego sześciokątnego jest równa 6. Pole podstawy tego graniastosłupa jest równe 15√3. Oblicz pole jednej ściany bocznej. A. 36√10, B. 60, C. 6√10, D. 360.
+odpowiedz: |
+  C — 6√10
+pulapka: |
+  Najczęstszy błąd to liczenie boku z pola sześciokąta jako P = 6a² zamiast P = 6 · (a²√3/4). Drugi błąd: pomyłka — pole ściany BOCZNEJ to a · h, gdzie a to bok sześciokąta (nie przekątna).
+wymaganie: |
+  X.4 — obliczanie pól powierzchni graniastosłupów.
+podobne:
+  - matematyka-2024-maj-pp-26
+  - matematyka-2024-maj-pp-21
+---
+
+## Klucz — co to znaczy „prawidłowy sześciokątny"?
+
+**Graniastosłup prawidłowy sześciokątny** ma w podstawie **sześciokąt foremny** (regularny — wszystkie boki i kąty równe).
+
+Pole sześciokąta foremnego o boku $a$:
+
+$$P_{\text{podst}} = 6 \cdot \frac{a^2 \sqrt{3}}{4} = \frac{3a^2 \sqrt{3}}{2}$$
+
+(bo sześciokąt foremny składa się z 6 trójkątów równobocznych o boku $a$).
+
+Ściana boczna graniastosłupa prawidłowego to **prostokąt** o wymiarach $a \times h$, więc jej pole to $a \cdot h$.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wyznacz bok $a$ z pola podstawy.**
+
+$$\frac{3a^2 \sqrt{3}}{2} = 15\sqrt{3}$$
+
+Pomnóż obie strony przez $2$:
+
+$$3a^2 \sqrt{3} = 30\sqrt{3}$$
+
+Podziel przez $3\sqrt{3}$:
+
+$$a^2 = 10 \quad\Rightarrow\quad a = \sqrt{10}$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz pole ściany bocznej.**
+
+$$P_{\text{boczna}} = a \cdot h = \sqrt{10} \cdot 6 = 6\sqrt{10}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: C</strong> — $6\sqrt{10}$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowe błędy</div>
+
+**Odpowiedź A ($36\sqrt{10}$)** — pomylenie pola **wszystkich sześciu** ścian bocznych z polem **jednej** ściany: $6 \cdot 6\sqrt{10} = 36\sqrt{10}$. Pytanie dotyczy **jednej** ściany — przeczytaj treść uważnie.
+
+**Odpowiedź B ($60$)** — błąd w obliczaniu $a$: ktoś potraktował podstawę jak kwadrat o polu $15\sqrt{3}$, dostał $a = \sqrt{15\sqrt{3}}$ czy coś podobnie nieintuicyjnego.
+
+**Odpowiedź D ($360$)** — pole pełnej powierzchni bocznej $6 \cdot a \cdot h = 6 \cdot \sqrt{10} \cdot 6 \neq 360$. Wartość $360$ wynika z innego błędu (np. $6 \cdot 10 \cdot 6$).
+</div>
+
+## Klucz — wzór na sześciokąt foremny
+
+Najprościej zapamiętać: **sześciokąt foremny = 6 trójkątów równobocznych**.
+
+Trójkąt równoboczny o boku $a$ ma pole $\dfrac{a^2 \sqrt{3}}{4}$. Sześciokąt: $6 \cdot \dfrac{a^2 \sqrt{3}}{4} = \dfrac{3 a^2 \sqrt{3}}{2}$.
+
+Ten wzór jest też w „Wybranych wzorach matematycznych" CKE, ale na sześciokącie foremnym pojawia się **co drugą sesję** matury — warto go mieć w głowie.

@@ -1,0 +1,76 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 20
+punkty: 1
+typ: zamkniete-abcd
+topic: planimetria, twierdzenie o dwusiecznej kąta
+difficulty: 3
+tresc: |
+  Dany jest trójkąt KLM, w którym |KM| = a, |LM| = b oraz a ≠ b. Dwusieczna kąta KML przecina bok KL w punkcie N takim, że |KN| = c, |NL| = d oraz |MN| = e. W trójkącie KLM prawdziwa jest równość: A. a · b = c · d, B. a · d = b · c, C. a · c = b · d, D. a · b = e · e.
+odpowiedz: |
+  B
+pulapka: |
+  Mylenie kolejności w twierdzeniu o dwusiecznej. Bezpiecznie: „bok przy wierzchołku K (a) ma się do odcinka po stronie K (c) tak, jak bok przy wierzchołku L (b) ma się do odcinka po stronie L (d)" — czyli a/c = b/d, równoważnie a · d = b · c.
+wymaganie: |
+  VIII.7 — twierdzenie o dwusiecznej kąta.
+podobne:
+  - matematyka-2024-maj-pp-21
+  - matematyka-2024-maj-pp-22
+---
+
+## Twierdzenie o dwusiecznej kąta wewnętrznego trójkąta
+
+Jeśli dwusieczna kąta w wierzchołku $M$ trójkąta $KLM$ przecina przeciwległy bok $KL$ w punkcie $N$, to:
+
+$$\frac{|KN|}{|NL|} = \frac{|KM|}{|LM|}$$
+
+— odcinki, na które dwusieczna dzieli bok przeciwległy, **są proporcjonalne do boków przyległych** do dzielonego kąta.
+
+## Podstaw oznaczenia z zadania
+
+Mamy: $|KM| = a$, $|LM| = b$, $|KN| = c$, $|NL| = d$, $|MN| = e$.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zapisz proporcję twierdzenia.**
+
+$$\frac{|KN|}{|NL|} = \frac{|KM|}{|LM|} \quad\Longleftrightarrow\quad \frac{c}{d} = \frac{a}{b}$$
+
+</div>
+
+<div class="krok">
+
+**Pomnóż na krzyż** (właściwość proporcji $\frac{x}{y} = \frac{u}{v} \iff x \cdot v = y \cdot u$):
+
+$$c \cdot b = d \cdot a$$
+
+czyli
+
+$$a \cdot d = b \cdot c$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: B</strong> — $a \cdot d = b \cdot c$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+
+**Odpowiedź C** ($a \cdot c = b \cdot d$) wybiera ten, kto pomylił, **który** odcinek leży po stronie którego boku. Twierdzenie mówi: po stronie boku $a$ (czyli przy wierzchołku $K$, do którego $a$ idzie) jest odcinek $c = |KN|$, a po stronie $b$ — odcinek $d = |NL|$. Stąd $\dfrac{a}{c} = \dfrac{b}{d}$, czyli $a \cdot d = b \cdot c$.
+
+**Odpowiedź D** ($a \cdot b = e^2$) — to twierdzenie o **wysokości** opuszczonej z wierzchołka kąta prostego w trójkącie prostokątnym, nie o dwusiecznej. Nieaktualne tutaj.
+
+**Odpowiedź A** ($a \cdot b = c \cdot d$) wygląda jak skojarzenie z **twierdzeniem o cięciwie** w okręgu, ale tu nie ma okręgu — nie pasuje.
+</div>
+
+## Skrót pamięciowy
+
+Dwusieczna **dzieli bok w stosunku boków przyległych** — przy każdym wierzchołku „swój" odcinek odpowiada „swojemu" bokowi. Jeśli w wątpliwości — narysuj sobie szybki szkic i podpisz, który bok wychodzi z którego wierzchołka. Pomyłka w 5 sekundach widoczna.

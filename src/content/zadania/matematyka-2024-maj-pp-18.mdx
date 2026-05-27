@@ -1,0 +1,99 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 18
+punkty: 2
+typ: zamkniete-dobierz
+topic: trygonometria, znaki funkcji w II ćwiartce
+difficulty: 3
+tresc: |
+  W kartezjańskim układzie współrzędnych zaznaczono kąt α taki, że tg α = −3 oraz 90° < α < 180°. Wybierz DWIE prawdziwe zależności spośród: A. sin α < 0, B. sin α · cos α < 0, C. sin α · cos α > 0, D. cos α > 0, E. sin α = −1/3 · cos α, F. sin α = −3 cos α.
+odpowiedz: |
+  B F — sin α · cos α < 0 (II ćwiartka, różne znaki) oraz sin α = −3 cos α (z definicji tangensa).
+pulapka: |
+  Najczęstszy błąd to wybór E (sin α = −1/3 · cos α) — pomylenie definicji tangensa. tg α = sin α / cos α, więc z tg α = −3 wynika sin α = −3 · cos α (nie −1/3).
+wymaganie: |
+  VII.1 — definicje funkcji trygonometrycznych dla kątów od 0° do 180°; VII.2 — tożsamość tg α = sin α / cos α.
+podobne:
+  - matematyka-2024-maj-pp-19
+---
+
+## Co wiemy o kącie?
+
+- $\tan \alpha = -3$
+- $90° < \alpha < 180°$ → kąt leży w **drugiej ćwiartce**
+
+W drugiej ćwiartce mają miejsce konkretne znaki funkcji trygonometrycznych:
+
+- $\sin \alpha > 0$ (oś $y$ dodatnia)
+- $\cos \alpha < 0$ (oś $x$ ujemna)
+- $\tan \alpha < 0$ (iloraz $+/-$)
+
+## Sprawdźmy każdą odpowiedź
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**A: $\sin \alpha < 0$ — FAŁSZ.** W II ćwiartce $\sin \alpha > 0$ (rzędna punktu na okręgu jednostkowym jest dodatnia).
+
+</div>
+
+<div class="krok">
+
+**B: $\sin \alpha \cdot \cos \alpha < 0$ — PRAWDA.** Iloczyn liczby dodatniej ($\sin \alpha$) i ujemnej ($\cos \alpha$) jest ujemny.
+
+</div>
+
+<div class="krok">
+
+**C: $\sin \alpha \cdot \cos \alpha > 0$ — FAŁSZ.** Sprzeczne z B (i z analizą znaków).
+
+</div>
+
+<div class="krok">
+
+**D: $\cos \alpha > 0$ — FAŁSZ.** W II ćwiartce $\cos \alpha < 0$.
+
+</div>
+
+<div class="krok">
+
+**E: $\sin \alpha = -\tfrac{1}{3} \cos \alpha$ — FAŁSZ.** To pułapka z mylonej definicji tangensa.
+
+</div>
+
+<div class="krok">
+
+**F: $\sin \alpha = -3 \cos \alpha$ — PRAWDA.** Z definicji $\tan \alpha = \dfrac{\sin \alpha}{\cos \alpha}$ i $\tan \alpha = -3$:
+
+$$\frac{\sin \alpha}{\cos \alpha} = -3 \quad\Rightarrow\quad \sin \alpha = -3 \cos \alpha$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: B i F</strong>
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka odpowiedzi E</div>
+
+**Najczęstszy błąd**: przeczytanie $\tan \alpha = -3$ jako „stosunek $\sin$ do $\cos$ wynosi $-3$, więc $\sin = -1/3 \cdot \cos$". To **pomylenie kierunku** — tangens to $\sin / \cos$, nie $\cos / \sin$. Więc $\sin = \tan \cdot \cos = -3 \cdot \cos$, **nie** $-1/3 \cdot \cos$.
+
+Bezpieczna sprawdzenie: gdyby $\sin \alpha = -\tfrac{1}{3} \cos \alpha$, to $\tan \alpha = \dfrac{\sin}{\cos} = -\tfrac{1}{3}$, a nie $-3$. Wzór z **odwrotnym** współczynnikiem.
+</div>
+
+## Klucz uniwersalny — znaki funkcji w II ćwiartce
+
+Pamiętaj „**A-S-T-C**" (Acute-Sine-Tangent-Cosine) — w której ćwiartce dana funkcja jest dodatnia:
+
+- I ćwiartka (0°-90°): **wszystkie** dodatnie
+- II ćwiartka (90°-180°): tylko **sin** dodatni
+- III ćwiartka (180°-270°): tylko **tan** dodatni
+- IV ćwiartka (270°-360°): tylko **cos** dodatni
+
+Każde zadanie maturalne pytające „w II/III/IV ćwiartce" sprowadza się do tych dwóch faktów: znaki funkcji + tożsamość $\tan = \sin / \cos$.

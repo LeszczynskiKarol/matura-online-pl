@@ -1,0 +1,97 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 27
+punkty: 1
+typ: zamkniete-abcd
+topic: kombinatoryka, permutacje
+difficulty: 2
+tresc: |
+  Rozważamy wszystkie kody czterocyfrowe utworzone tylko z cyfr 1, 3, 6, 8, przy czym w każdym kodzie każda z tych cyfr występuje dokładnie jeden raz. Liczba wszystkich takich kodów jest równa A. 4, B. 10, C. 24, D. 16.
+odpowiedz: |
+  C — 24 kody
+pulapka: |
+  Najczęstszy błąd to mylenie permutacji (4! = 24) z liczbą wariacji z powtórzeniami (4⁴ = 256) lub innym wzorem. Tu KAŻDA cyfra występuje DOKŁADNIE RAZ — to klasyczna permutacja.
+wymaganie: |
+  XI.2 — zliczanie obiektów przy zastosowaniu reguły mnożenia.
+podobne:
+  - matematyka-2024-maj-pp-28
+  - matematyka-2024-maj-pp-30
+---
+
+## Co liczymy?
+
+Mamy 4 różne cyfry: $\{1, 3, 6, 8\}$. Ustawiamy je w **czterech pozycjach** kodu — każda cyfra pojawia się **dokładnie raz**. To klasyczna **permutacja** zbioru 4-elementowego.
+
+## Sposób I — reguła mnożenia (intuicyjnie)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wybierz cyfrę na pierwszej pozycji.** Mamy do dyspozycji wszystkie 4 cyfry. → **4 możliwości**.
+
+</div>
+
+<div class="krok">
+
+**Wybierz cyfrę na drugiej pozycji.** Jedna cyfra już użyta (nie może się powtórzyć). → **3 możliwości**.
+
+</div>
+
+<div class="krok">
+
+**Wybierz cyfrę na trzeciej pozycji.** Dwie już użyte. → **2 możliwości**.
+
+</div>
+
+<div class="krok">
+
+**Wybierz cyfrę na czwartej pozycji.** Trzy już użyte, pozostała jedna. → **1 możliwość**.
+
+</div>
+
+<div class="krok">
+
+**Wymnóż wszystkie wybory** (reguła mnożenia):
+
+$$4 \cdot 3 \cdot 2 \cdot 1 = 24$$
+
+</div>
+
+</div>
+
+## Sposób II — wzór na permutacje
+
+Liczba permutacji zbioru $n$-elementowego to $n!$ (silnia $n$). Dla $n = 4$:
+
+$$P_4 = 4! = 4 \cdot 3 \cdot 2 \cdot 1 = 24$$
+
+Ten sam wynik — wzór to po prostu skrócona wersja reguły mnożenia.
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: C</strong> — $24$ kody.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowe błędy</div>
+
+**Odpowiedź D ($16$)** — wybiera ten, kto liczy $4 \cdot 4 = 16$, ale to ma sens tylko gdy cyfry mogą się powtarzać i mamy 2 pozycje. Tutaj cyfry są **różne** i pozycji jest **cztery**.
+
+**Odpowiedź B ($10$)** — wybór dwóch elementów ze zbioru 4-elementowego, $\binom{4}{2} \cdot \text{coś}$. Brak związku z zadaniem.
+
+**Odpowiedź A ($4$)** — sama liczba cyfr w zbiorze. Pełne pomylenie pytania.
+</div>
+
+## Klucz na maturze — trzy typy zliczania
+
+| Sytuacja | Liczba sposobów |
+|---|---|
+| Permutacja $n$ różnych obiektów | $n!$ |
+| Wariacje z powtórzeniami ($k$ z $n$) | $n^k$ |
+| Wariacje bez powtórzeń ($k$ z $n$) | $\dfrac{n!}{(n-k)!}$ |
+| Kombinacje ($k$ z $n$, bez kolejności) | $\binom{n}{k} = \dfrac{n!}{k!(n-k)!}$ |
+
+Sprawdź: **czy kolejność ma znaczenie?** Tutaj tak — kod "1368" to inny kod niż "3168". **Czy elementy się powtarzają?** Tutaj nie — każda cyfra dokładnie raz. Stąd permutacja, $4! = 24$.

@@ -1,0 +1,105 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 24
+punkty: 2
+typ: otwarte-krotkie
+topic: geometria analityczna, równoległobok
+difficulty: 3
+tresc: |
+  W kartezjańskim układzie współrzędnych dany jest równoległobok ABCD, w którym A = (−2, 6) oraz B = (10, 2). Przekątne AC oraz BD tego równoległoboku przecinają się w punkcie P = (6, 7). Oblicz długość boku BC tego równoległoboku.
+odpowiedz: |
+  |BC| = √52 = 2√13
+pulapka: |
+  CKE wprost: jeśli przy korzystaniu z punktów kratowych BŁĘDNIE zaznaczysz w układzie A, B, C, P i na tej podstawie obliczysz |BC| — dostajesz 0 punktów. Lepiej liczyć ze wzorów (środek odcinka), nie z odczytu z kratki.
+wymaganie: |
+  IX.3 — obliczanie odległości dwóch punktów w układzie współrzędnych; własności równoległoboku.
+podobne:
+  - matematyka-2024-maj-pp-23
+  - matematyka-2024-maj-pp-31
+---
+
+## Co wiemy o równoległoboku?
+
+W równoległoboku $ABCD$ **przekątne przecinają się w połowie** — punkt $P$ jest jednocześnie środkiem $AC$ i środkiem $BD$.
+
+Z tego natychmiast wynika: znając $A$ i $P$, znajdziemy $C$. Znając $B$ i $P$, znajdziemy $D$.
+
+A skoro w równoległoboku $|BC| = |AD|$ (przeciwległe boki) — możemy obliczyć $|BC|$ na **kilka równoważnych sposobów**.
+
+## Sposób I — przez wyznaczenie punktu $C$
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wyznacz $C$ ze wzoru na środek odcinka.** Jeśli $P = \left(\dfrac{x_A + x_C}{2},\ \dfrac{y_A + y_C}{2}\right)$, to:
+
+$$\frac{-2 + x_C}{2} = 6 \quad\Rightarrow\quad x_C = 14$$
+
+$$\frac{6 + y_C}{2} = 7 \quad\Rightarrow\quad y_C = 8$$
+
+Zatem $C = (14, 8)$.
+
+</div>
+
+<div class="krok">
+
+**Oblicz długość $BC$.** $B = (10, 2)$, $C = (14, 8)$.
+
+$$|BC| = \sqrt{(14 - 10)^2 + (8 - 2)^2} = \sqrt{16 + 36} = \sqrt{52} = 2\sqrt{13}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> $|BC| = \sqrt{52} = 2\sqrt{13}$.
+  </div>
+</div>
+
+## Sposób II — przez wyznaczenie punktu $D$ i równość $|BC| = |AD|$
+
+W równoległoboku $|BC| = |AD|$. Wyznacz $D$ jako symetryczny do $B$ względem $P$:
+
+$$\frac{10 + x_D}{2} = 6 \Rightarrow x_D = 2, \qquad \frac{2 + y_D}{2} = 7 \Rightarrow y_D = 12$$
+
+Czyli $D = (2, 12)$. Wtedy:
+
+$$|AD| = \sqrt{(2 - (-2))^2 + (12 - 6)^2} = \sqrt{16 + 36} = \sqrt{52} = 2\sqrt{13}$$
+
+Ten sam wynik — bo $|BC| = |AD|$.
+
+## Sposób III — przez środek $S$ boku $AB$ (najsprytniejszy)
+
+W trójkącie $ABC$ punkt $P$ leży na środkowej z $C$ — ale dla naszych celów wystarczy obserwacja, że odcinek $PS$ (gdzie $S$ to środek $AB$) jest **równoległy** do $BC$ i ma **połowę** jego długości (linia środkowa w trójkącie):
+
+Środek $AB$: $S = \left(\dfrac{-2 + 10}{2}, \dfrac{6 + 2}{2}\right) = (4, 4)$.
+
+$$|PS| = \sqrt{(4 - 6)^2 + (4 - 7)^2} = \sqrt{4 + 9} = \sqrt{13}$$
+
+$$|BC| = 2 \cdot |PS| = 2\sqrt{13}$$
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka za 0 punktów (uwaga 1 z CKE)</div>
+
+Jeśli skorzystasz z **punktów kratowych** (rysując równoległobok na kratkowanym papierze) i **błędnie zaznaczysz** którykolwiek z punktów $A$, $B$, $C$, $P$ — CKE daje **0 punktów na całe zadanie**, nawet jeśli obliczenia z błędnych współrzędnych są poprawne.
+
+Bezpieczna ścieżka: licz **ze wzorów** (środek odcinka + odległość punktów), nie z odczytu z kratki. Wzory nie pomylą się przy obrocie głowy.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka za 1 punkt (uwaga 3 z CKE)</div>
+
+Jeśli obliczysz $|BC|$ używając **przybliżeń trygonometrycznych** (np. próbujesz „odczytać kąty" i potem $\cos$/$\sin$) — CKE daje co najwyżej **1 punkt**. Ta droga jest niepotrzebna i ryzykowna.
+
+Zostań przy: **środek odcinka** → współrzędne $C$ → **odległość punktów** $|BC|$. Trzy proste wzory, dwa punkty.
+</div>
+
+## Punktacja
+
+- **1 pkt** — wyznaczenie $C = (14, 8)$ (albo $D = (2, 12)$, albo środka $S = (4, 4)$, albo wektorów $\vec{CB}$).
+- **2 pkt** — dodatkowo poprawne obliczenie $|BC| = \sqrt{52} = 2\sqrt{13}$.
+
+Trzy równoważne ścieżki — wybierz dowolną. Sprytniejsza (sposób III) wymaga mniej rachunku, ale wymaga zauważenia linii środkowej.

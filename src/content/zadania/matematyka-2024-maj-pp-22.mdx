@@ -1,0 +1,98 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 22
+punkty: 1
+typ: zamkniete-abcd
+topic: planimetria, kąty wpisane i środkowe w okręgu
+difficulty: 3
+tresc: |
+  W trójkącie ABC wpisanym w okrąg o środku S kąt ACB ma miarę 42°. Wybierz miarę kąta ostrego BAS. A. 42°, B. 45°, C. 48°, D. 69°.
+odpowiedz: |
+  C — 48°.
+pulapka: |
+  Najczęstszy błąd to wybór A (42°) — pomylenie kąta BAS z kątem ACB. To DWA RÓŻNE kąty: ACB to kąt wpisany trójkąta, a BAS to kąt w trójkącie ASB (gdzie S to środek okręgu).
+wymaganie: |
+  VIII.5 — własności kątów wpisanych i środkowych w okręgu.
+podobne:
+  - matematyka-2024-maj-pp-20
+  - matematyka-2024-maj-pp-21
+---
+
+## Dwa kluczowe fakty o okręgach
+
+1. **Twierdzenie o kącie środkowym i wpisanym**: kąt środkowy oparty na tym samym łuku co kąt wpisany jest **dwa razy większy**.
+2. Trójkąt utworzony przez **dwa promienie** (i cięciwę) jest **równoramienny** — jego oba kąty przy podstawie są równe.
+
+To wszystko, czego potrzebujemy.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zidentyfikuj relacje.** $S$ jest środkiem okręgu, więc $|SA| = |SB|$ (oba to promienie). Trójkąt $ASB$ jest **równoramienny** z wierzchołkiem $S$.
+
+Kąt $ACB = 42°$ to kąt **wpisany** oparty na łuku $AB$.
+
+Kąt $ASB$ to kąt **środkowy** oparty na tym samym łuku $AB$.
+
+</div>
+
+<div class="krok">
+
+**Oblicz kąt środkowy.** Z twierdzenia o kącie środkowym i wpisanym:
+
+$$\angle ASB = 2 \cdot \angle ACB = 2 \cdot 42° = 84°$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz kąty przy podstawie trójkąta równoramiennego $ASB$.** Suma kątów w trójkącie to $180°$, więc:
+
+$$\angle SAB + \angle SBA + \angle ASB = 180°$$
+
+$$\angle SAB + \angle SBA = 180° - 84° = 96°$$
+
+Ponieważ trójkąt $ASB$ jest równoramienny, jego kąty przy podstawie $AB$ są **równe**:
+
+$$\angle SAB = \angle SBA = \frac{96°}{2} = 48°$$
+
+</div>
+
+<div class="krok">
+
+**Kąt $BAS$ to to samo co $\angle SAB$** (te same dwa ramiona, ten sam wierzchołek $A$). Czyli:
+
+$$\angle BAS = 48°$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: C</strong> — kąt $BAS$ ma miarę $48°$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowe błędy</div>
+
+**Odpowiedź A ($42°$)** — wybiera ten, kto myli kąt $BAS$ (kąt w trójkącie $ASB$) z kątem $ACB$ (kąt wpisany trójkąta $ABC$). To są dwa **różne** kąty, w dwóch różnych trójkątach.
+
+**Odpowiedź D ($69°$)** — błąd z trójkąta równobocznego: ktoś zapomniał, że $A$, $S$, $B$ tworzą trójkąt równoramienny (nie równoboczny), i policzył $180°/2 - \text{coś}$.
+
+**Odpowiedź B ($45°$)** — typowy „strzał" wartości znanej; brak prawdziwych obliczeń.
+</div>
+
+## Klucz — kąty w okręgu na maturze
+
+Najczęściej testowane fakty:
+
+1. Kąt środkowy = 2 × kąt wpisany (oparte na tym samym łuku)
+2. Kąt wpisany oparty na **średnicy** to zawsze $90°$ (twierdzenie Talesa)
+3. Trójkąt zbudowany z dwóch promieni jest równoramienny
+4. Czworokąt wpisany w okrąg ma sumy przeciwległych kątów równe $180°$
+
+90% zadań z okręgów na maturze podstawowej da się rozwiązać kombinacją tych czterech faktów.

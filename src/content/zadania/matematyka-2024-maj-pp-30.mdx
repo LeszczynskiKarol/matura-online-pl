@@ -1,0 +1,115 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 30
+punkty: 2
+typ: otwarte-krotkie
+topic: prawdopodobieństwo, model klasyczny
+difficulty: 3
+tresc: |
+  Dany jest pięcioelementowy zbiór K = {5, 6, 7, 8, 9}. Wylosowanie każdej liczby ze zbioru K jest jednakowo prawdopodobne. Ze zbioru K losujemy ze zwracaniem kolejno dwa razy po jednej liczbie i zapisujemy je w kolejności losowania. Oblicz prawdopodobieństwo zdarzenia A polegającego na tym, że suma wylosowanych liczb jest liczbą parzystą.
+odpowiedz: |
+  P(A) = 13/25
+pulapka: |
+  CKE wprost: jeśli rozważasz losowanie BEZ ZWRACANIA — dostajesz 0 punktów (zmieniasz problem). Drugi błąd: zapisanie tylko liczby 13 lub 25 bez wskazania znaczenia (też 0 punktów).
+wymaganie: |
+  XII.1 — obliczanie prawdopodobieństwa w modelu klasycznym.
+podobne:
+  - matematyka-2024-maj-pp-27
+---
+
+## Co losujemy?
+
+Losujemy **dwa razy ze zwracaniem** ze zbioru pięcioelementowego $K = \{5, 6, 7, 8, 9\}$. Każde losowanie jest **niezależne** — wynik pierwszego nie wpływa na drugie.
+
+Każda para $(x, y)$, gdzie $x, y \in K$, jest **zdarzeniem elementarnym**. Wszystkie pary są równo prawdopodobne.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wyznacz $|\Omega|$ — moc zbioru zdarzeń elementarnych.**
+
+Z reguły mnożenia: $5$ możliwości w pierwszym losowaniu × $5$ w drugim:
+
+$$|\Omega| = 5 \cdot 5 = 25$$
+
+</div>
+
+<div class="krok">
+
+**Określ, kiedy suma dwóch liczb jest parzysta.**
+
+Suma $x + y$ jest parzysta **wtedy i tylko wtedy**, gdy:
+
+- obie liczby są **parzyste**, ALBO
+- obie liczby są **nieparzyste**
+
+(parzysta + parzysta = parzysta; nieparzysta + nieparzysta = parzysta; parzysta + nieparzysta = nieparzysta)
+
+</div>
+
+<div class="krok">
+
+**Zlicz parzyste i nieparzyste elementy w zbiorze $K$.**
+
+- Parzyste: $\{6, 8\}$ → **2 elementy**
+- Nieparzyste: $\{5, 7, 9\}$ → **3 elementy**
+
+</div>
+
+<div class="krok">
+
+**Zlicz pary sprzyjające zdarzeniu $A$** (z reguły mnożenia + reguły dodawania):
+
+- Obie parzyste: $2 \cdot 2 = 4$ par
+- Obie nieparzyste: $3 \cdot 3 = 9$ par
+
+$$|A| = 4 + 9 = 13$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz prawdopodobieństwo.**
+
+$$P(A) = \frac{|A|}{|\Omega|} = \frac{13}{25}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> $P(A) = \dfrac{13}{25} = 0{,}52$.
+  </div>
+</div>
+
+## Sposób alternatywny — drzewo stochastyczne
+
+Z $K$ mamy: $P(\text{parzysta}) = \tfrac{2}{5}$, $P(\text{nieparzysta}) = \tfrac{3}{5}$.
+
+Suma parzysta = (parzysta, parzysta) **lub** (nieparzysta, nieparzysta):
+
+$$P(A) = \tfrac{2}{5} \cdot \tfrac{2}{5} + \tfrac{3}{5} \cdot \tfrac{3}{5} = \tfrac{4}{25} + \tfrac{9}{25} = \tfrac{13}{25}$$
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka za 0 punktów (uwaga 2 z CKE)</div>
+
+Jeśli rozważasz **losowanie bez zwracania** — CKE daje **0 punktów na całe zadanie**. Treść mówi wprost „ze zwracaniem", co oznacza, że po pierwszym losowaniu liczba wraca do zbioru i można ją wylosować ponownie. Czytaj treść uważnie.
+
+Różnica jest istotna: bez zwracania $|\Omega| = 5 \cdot 4 = 20$ (a nie 25), a pary $(x, x)$ w ogóle by nie istniały.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka za 0 punktów (uwaga 1 z CKE)</div>
+
+Jeśli zapiszesz **tylko liczbę** 13 lub 25 (bez kontekstu — bez wskazania, że to mocy zbiorów $A$ i $\Omega$) — CKE daje **0 punktów**. Liczba w izolacji nie pokazuje, że rozumiesz problem.
+
+Zapisz: **„$|\Omega| = 25$, $|A| = 13$, zatem $P(A) = \tfrac{13}{25}$"** — i dopiero to jest pełna odpowiedź na 2 punkty.
+</div>
+
+## Punktacja
+
+- **1 pkt** — wypisanie $|\Omega| = 5 \cdot 5 = 25$ ALBO podanie $|A| = 13$ ALBO sporządzenie tabelki 5×5 ze zdarzeniami sprzyjającymi, ALBO zapisanie samego końcowego $P(A) = \tfrac{13}{25}$ bez metody.
+- **2 pkt** — pełna metoda + poprawny wynik $\tfrac{13}{25}$.

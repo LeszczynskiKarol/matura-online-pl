@@ -1,0 +1,74 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 26
+punkty: 1
+typ: zamkniete-abcd
+topic: stereometria, podobieństwo brył
+difficulty: 3
+tresc: |
+  Ostrosłup F1 jest podobny do ostrosłupa F2. Objętość ostrosłupa F1 jest równa 64. Objętość ostrosłupa F2 jest równa 512. Stosunek pola powierzchni całkowitej F2 do pola powierzchni F1 jest równy ……
+odpowiedz: |
+  4
+pulapka: |
+  Najczęstszy błąd to przeniesienie stosunku objętości na pola wprost (512/64 = 8 → odpowiedź 8) bez uwzględnienia, że objętości skalują się jak k³, a pola jak k².
+wymaganie: |
+  X.5 — zależność między objętościami brył podobnych a polami powierzchni.
+podobne:
+  - matematyka-2024-maj-pp-25
+  - matematyka-2024-maj-pp-21
+---
+
+## Klucz — skale dla brył podobnych
+
+Jeśli dwie bryły są **podobne** w skali $k$ (każdy odpowiadający wymiar jest $k$ razy większy), to:
+
+- **Długości** (krawędzie, wysokości, …) skalują się jak $k$
+- **Pola** (powierzchnie, podstawy, …) skalują się jak $k^2$
+- **Objętości** skalują się jak $k^3$
+
+Ta hierarchia $k$, $k^2$, $k^3$ to fundament wszystkich zadań o bryłach podobnych. Reszta to arytmetyka.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wyznacz skalę podobieństwa $k$ ze stosunku objętości.**
+
+$$\frac{V_2}{V_1} = k^3 \quad\Rightarrow\quad \frac{512}{64} = k^3 \quad\Rightarrow\quad k^3 = 8 \quad\Rightarrow\quad k = 2$$
+
+</div>
+
+<div class="krok">
+
+**Wyznacz stosunek pól powierzchni.**
+
+$$\frac{P_2}{P_1} = k^2 = 2^2 = 4$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: $\dfrac{P_2}{P_1} = 4$</strong>
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd — odpowiedź 8</div>
+
+Najwięcej osób wpisuje **8** — bo $512 \div 64 = 8$, więc „chyba pole też tak". To pułapka pomijająca różnicę wymiarów: objętość to **wymiar trzeci** (centymetry sześcienne), pole to **wymiar drugi** (centymetry kwadratowe). Skalują się różnie.
+
+Bezpieczna ścieżka: **najpierw wyznacz $k$** ze stosunku objętości (czyli pierwiastek sześcienny), **potem podnieś do kwadratu** dla stosunku pól.
+</div>
+
+## Kalkulator pamięciowy
+
+Gdy widzisz „bryły podobne, stosunek objętości $X$, znajdź stosunek pól" — to zawsze:
+
+$$\frac{P_2}{P_1} = \left(\frac{V_2}{V_1}\right)^{2/3}$$
+
+Tutaj $\left(\dfrac{512}{64}\right)^{2/3} = 8^{2/3} = (8^{1/3})^2 = 2^2 = 4$. Ten sam wynik, jedna linijka.
+
+Podobnie w drugą stronę: jeśli znasz stosunek pól, to stosunek objętości to $\left(\dfrac{P_2}{P_1}\right)^{3/2}$. A jeśli znasz stosunek długości — wszystko leży na ekspozycjach: $k$, $k^2$, $k^3$.

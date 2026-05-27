@@ -1,0 +1,98 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 23
+punkty: 1
+typ: zamkniete-abcd
+topic: geometria analityczna, prostopadłość prostych
+difficulty: 2
+tresc: |
+  Proste k: y = (m + 1)x + 7 oraz l: y = −2x + 7 są prostopadłe. Wartość m jest równa A. −1/2, B. 1/2, C. −3, D. 1.
+odpowiedz: |
+  A
+pulapka: |
+  Najczęstszy błąd to mylenie warunku prostopadłości (iloczyn współczynników = −1) z warunkiem równoległości (współczynniki są EQUAL). Drugi błąd: pomyłka znaku przy rozwiązaniu równania (m + 1) · (−2) = −1.
+wymaganie: |
+  IX.2 — równanie prostej w postaci kierunkowej; prostopadłość prostych w układzie współrzędnych.
+podobne:
+  - matematyka-2024-maj-pp-11
+  - matematyka-2024-maj-pp-12
+---
+
+## Warunek prostopadłości prostych
+
+Dwie proste w postaci kierunkowej $y = a_1 x + b_1$ oraz $y = a_2 x + b_2$ są **prostopadłe** wtedy i tylko wtedy, gdy:
+
+$$a_1 \cdot a_2 = -1$$
+
+(iloczyn ich współczynników kierunkowych jest równy $-1$).
+
+Warto pamiętać dla porównania: są **równoległe**, gdy $a_1 = a_2$ (równe współczynniki, a nie iloczyn).
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zidentyfikuj współczynniki kierunkowe.**
+
+- Prosta $k$: $a_1 = m + 1$
+- Prosta $l$: $a_2 = -2$
+
+</div>
+
+<div class="krok">
+
+**Zastosuj warunek prostopadłości.**
+
+$$(m + 1) \cdot (-2) = -1$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiąż równanie.**
+
+$$-2(m + 1) = -1$$
+
+$$-2m - 2 = -1$$
+
+$$-2m = 1$$
+
+$$m = -\frac{1}{2}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: A</strong> — $m = -\dfrac{1}{2}$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowe błędy</div>
+
+**Odpowiedź C ($-3$)** wybiera ten, kto użył warunku **równoległości** zamiast prostopadłości: $m + 1 = -2 \Rightarrow m = -3$. Pamiętaj — równoległość = równe współczynniki, prostopadłość = iloczyn $-1$.
+
+**Odpowiedź B ($\tfrac{1}{2}$)** — błąd znaku przy rozwiązywaniu: ktoś podzielił $-1$ przez $-2$ jako $\tfrac{1}{2}$, ale wcześniej pomylił znak przy $m + 1$.
+
+**Odpowiedź D ($1$)** — błąd metody: traktowanie warunku jak $(m+1) + (-2) = -1$ (suma zamiast iloczynu).
+</div>
+
+## Sprawdzenie
+
+Dla $m = -\tfrac{1}{2}$: prosta $k$ ma współczynnik $a_1 = -\tfrac{1}{2} + 1 = \tfrac{1}{2}$. Iloczyn: $\tfrac{1}{2} \cdot (-2) = -1$ ✓. Prostopadłość spełniona.
+
+## Klucz uniwersalny
+
+Cztery typowe warunki dla par prostych $y = a_1 x + b_1$ oraz $y = a_2 x + b_2$:
+
+| Relacja | Warunek |
+|---|---|
+| Równoległe | $a_1 = a_2$ i $b_1 \neq b_2$ |
+| Pokrywają się | $a_1 = a_2$ i $b_1 = b_2$ |
+| Prostopadłe | $a_1 \cdot a_2 = -1$ |
+| Przecinają się | $a_1 \neq a_2$ |
+
+Każde zadanie z parą prostych w postaci kierunkowej sprowadza się do tej tabelki + arytmetyki na $a$ i $b$.

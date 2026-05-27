@@ -1,0 +1,83 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 28
+punkty: 1
+typ: zamkniete-abcd
+topic: statystyka, średnia arytmetyczna
+difficulty: 2
+tresc: |
+  Średnia arytmetyczna trzech liczb a, b, c jest równa 9. Średnia arytmetyczna sześciu liczb a, a, b, b, c, c jest równa A. 9, B. 6, C. 4,5, D. 18.
+odpowiedz: |
+  A — 9
+pulapka: |
+  Najczęstszy błąd to mnożenie średniej przez 2 (bo „mamy dwa razy więcej liczb") — odpowiedź D (18). Tymczasem dwukrotne powtórzenie KAŻDEJ liczby NIE ZMIENIA średniej — proporcja sumy do liczby elementów pozostaje ta sama.
+wymaganie: |
+  XII.2 — obliczanie średniej arytmetycznej.
+podobne:
+  - matematyka-2024-maj-pp-29
+---
+
+## Trik — średnia nie zmienia się przy proporcjonalnym powieleniu
+
+Średnia arytmetyczna to **suma podzielona przez liczbę elementów**. Jeśli każdy element zostanie powtórzony tę samą liczbę razy, to:
+
+- suma rośnie tę samą liczbę razy
+- liczba elementów rośnie tę samą liczbę razy
+- iloraz (czyli średnia) **się nie zmienia**
+
+To intuicja. Sprawdzimy formalnie.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zapisz średnią z $a, b, c$.**
+
+$$\frac{a + b + c}{3} = 9$$
+
+Stąd:
+
+$$a + b + c = 27$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz średnią z $a, a, b, b, c, c$.**
+
+$$\frac{a + a + b + b + c + c}{6} = \frac{2(a + b + c)}{6} = \frac{a + b + c}{3}$$
+
+Czyli ta sama formuła co przed chwilą! Wynik:
+
+$$\frac{a + b + c}{3} = \frac{27}{3} = 9$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: A</strong> — średnia jest nadal równa $9$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowe błędy</div>
+
+**Odpowiedź D ($18$)** — wybiera ten, kto myśli „dwa razy więcej liczb = dwa razy większa średnia". **Niepoprawne**. Suma rzeczywiście rośnie dwukrotnie, ale **mianownik (liczba elementów) też rośnie dwukrotnie** — efekty się znoszą.
+
+**Odpowiedź C ($4{,}5$)** — odwrotny błąd: „dwa razy więcej liczb = dwa razy mniejsza średnia". Też nieprawda — tylko gdy dorzucalibyśmy **zera** lub liczby równe średniej, ale tu dodajemy **te same** liczby co już są.
+
+**Odpowiedź B ($6$)** — strzał arytmetyczny, brak rzeczywistego rozwiązania.
+</div>
+
+## Klucz pamięciowy
+
+Powielenie **każdego** elementu tą samą liczbą razy → średnia bez zmian.
+
+Dodawanie/odejmowanie **stałej** do każdego elementu → średnia zmienia się o tę stałą.
+
+Pomnożenie **każdego** elementu przez stałą → średnia mnoży się przez tę stałą.
+
+Te trzy reguły pokrywają 80% pytań o średnią na maturze. Sprawdź zawsze, czy operacja jest **jednostajna na wszystkich elementach** — wtedy zachodzą.

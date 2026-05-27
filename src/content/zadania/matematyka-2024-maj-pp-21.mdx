@@ -1,0 +1,84 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 21
+punkty: 1
+typ: zamkniete-abcd
+topic: planimetria, pole równoległoboku
+difficulty: 2
+tresc: |
+  Dany jest równoległobok o bokach długości 3 i 4 oraz o kącie między nimi o mierze 120°. Pole tego równoległoboku jest równe A. 12, B. 12√3, C. 6, D. 6√3.
+odpowiedz: |
+  D
+pulapka: |
+  Najczęstszy błąd to liczenie pola jako iloczynu boków (3 · 4 = 12 → A) — to działa tylko dla prostokąta. Drugi błąd: użycie sin 120° i zapomnienie, że sin 120° = sin 60° = √3/2 (a nie √3).
+wymaganie: |
+  VIII.11 — stosowanie funkcji trygonometrycznych do obliczania pól figur.
+podobne:
+  - matematyka-2024-maj-pp-20
+---
+
+## Wzór na pole równoległoboku z kątem
+
+Dla równoległoboku o bokach $a$, $b$ i kącie $\gamma$ między nimi:
+
+$$P = a \cdot b \cdot \sin \gamma$$
+
+To wzór analogiczny do trójkąta, ale **bez dzielenia przez 2** (równoległobok = dwa trójkąty).
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Podstaw dane**: $a = 3$, $b = 4$, $\gamma = 120°$.
+
+$$P = 3 \cdot 4 \cdot \sin 120°$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz $\sin 120°$.** Kąt $120°$ leży w II ćwiartce. Używamy redukcji: $\sin 120° = \sin(180° - 60°) = \sin 60°$.
+
+$$\sin 60° = \frac{\sqrt{3}}{2}$$
+
+Stąd $\sin 120° = \dfrac{\sqrt{3}}{2}$.
+
+</div>
+
+<div class="krok">
+
+**Wymnóż:**
+
+$$P = 12 \cdot \frac{\sqrt{3}}{2} = 6\sqrt{3}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: D</strong> — $6\sqrt{3}$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowe błędy</div>
+
+**Odpowiedź A ($12$)** — wybiera ten, kto liczy „pole = bok × bok = 3 · 4 = 12", ignorując kąt. To wzór dla **prostokąta** ($\gamma = 90°$, $\sin 90° = 1$). Tutaj kąt to $120°$, więc trzeba pomnożyć przez $\sin 120°$.
+
+**Odpowiedź B ($12\sqrt{3}$)** — błąd: $\sin 120° = \sqrt{3}$ (zamiast $\sqrt{3}/2$). Wartość $\sqrt{3}$ ma **tangens** $60°$, nie sinus.
+
+**Odpowiedź C ($6$)** — pomylenie z polem **trójkąta** ($\tfrac{1}{2} \cdot 3 \cdot 4 = 6$ — to dwa razy mniej niż trzeba). Brak czynnika $\sin \gamma$.
+</div>
+
+## Klucz pamięciowy — pole figur
+
+| Figura | Wzór | Uwaga |
+|---|---|---|
+| Prostokąt | $a \cdot b$ | $\sin 90° = 1$ |
+| Równoległobok | $a \cdot b \cdot \sin \gamma$ | dwa boki + kąt |
+| Trójkąt | $\tfrac{1}{2} \cdot a \cdot b \cdot \sin \gamma$ | dwa boki + kąt między nimi |
+| Romb | $\tfrac{1}{2} \cdot d_1 \cdot d_2$ | iloczyn przekątnych / 2 |
+
+Wszystkie cztery wzory są w „Wybranych wzorach matematycznych" CKE, ale szybsza droga to mieć je w pamięci.
