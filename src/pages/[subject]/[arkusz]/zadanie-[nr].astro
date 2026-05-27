@@ -5,6 +5,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import SiteFooter from "../../../components/SiteFooter.astro";
 import { siteConfig } from "../../../config/site";
+import { renderInlineMath } from "../../../lib/render-math";
 
 export async function getStaticPaths() {
   const zadania = await getCollection("zadania");
@@ -30,6 +31,8 @@ const { zadanie, arkusz, subject } = Astro.props;
 const { Content } = await render(zadanie);
 
 const allZadania = await getCollection("zadania");
+const allArkusze = await getCollection("arkusze");
+const allSubjects = await getCollection("subjects");
 const podobne = (zadanie.data.podobne || [])
   .map((slug) => allZadania.find((z) => z.id === slug))
   .filter((z): z is NonNullable<typeof z> => Boolean(z));
@@ -38,8 +41,9 @@ const poziomLabel = arkusz.data.poziom === "pp" ? "podstawowy" : "rozszerzony";
 const arkuszSlug = arkusz.id.replace(`${subject.data.slug}-`, "");
 const url = `${siteConfig.url}/${subject.data.slug}/${arkuszSlug}/zadanie-${zadanie.data.nr}/`;
 
-const title = `Zadanie ${zadanie.data.nr} — matura ${subject.data.nameDopelniacz} ${arkusz.data.sesja} ${arkusz.data.rok} (poziom ${poziomLabel})`;
+const title = `Zadanie ${zadanie.data.nr} — rozwiązanie, matura ${subject.data.nameDopelniacz} ${arkusz.data.sesja} ${arkusz.data.rok}, ${arkusz.data.poziom.toUpperCase()}`;
 const description = `Rozwiązanie krok po kroku zadania ${zadanie.data.nr} z arkusza CKE matury z ${subject.data.nameDopelniacz}, ${arkusz.data.sesja} ${arkusz.data.rok}, poziom ${poziomLabel}. ${zadanie.data.tresc}`;
+const trescHtml = renderInlineMath(zadanie.data.tresc);
 
 // Sąsiednie zadania (poprzednie/następne w arkuszu)
 const arkuszZadania = allZadania
@@ -109,7 +113,7 @@ const typLabels: Record<string, string> = {
 ---
 
 <BaseLayout
-  title={`Zadanie ${zadanie.data.nr}, matura ${subject.data.nameDopelniacz} ${arkusz.data.sesja} ${arkusz.data.rok}`}
+  title={title}
   description={description}
   canonicalUrl={url}
   jsonLd={jsonLd}
@@ -188,9 +192,10 @@ const typLabels: Record<string, string> = {
           <h2 class="font-mono text-xs font-semibold uppercase tracking-[0.1em] text-[var(--color-text-muted)]">
             Treść zadania
           </h2>
-          <div class="tresc-zadania mt-3 text-[1.0625rem] leading-relaxed">
-            {zadanie.data.tresc}
-          </div>
+          <div
+            class="tresc-zadania mt-3 text-[1.0625rem] leading-relaxed"
+            set:html={trescHtml}
+          />
           {arkusz.data.pdfArkuszUrl && (
             <p class="mt-3 text-xs text-[var(--color-text-faint)]">
               Źródło: arkusz CKE {arkusz.data.symbol}.
@@ -279,12 +284,15 @@ const typLabels: Record<string, string> = {
             </h2>
             <div class="mt-4 grid gap-3 sm:grid-cols-2">
               {podobne.map((p) => {
-                const pArkusz = arkusz.id === p.data.arkusz.id ? arkusz : null;
-                if (!pArkusz) return null;
-                const pSlug = pArkusz.id.replace(`${subject.data.slug}-`, "");
+                const pArkusz = allArkusze.find((a) => a.id === p.data.arkusz.id);
+                const pSubject = allSubjects.find((s) => s.id === p.data.subject.id);
+                if (!pArkusz || !pSubject) return null;
+                const pSlug = pArkusz.id.replace(`${pSubject.data.slug}-`, "");
+                const pPoziom = pArkusz.data.poziom.toUpperCase();
+                const sameArkusz = pArkusz.id === arkusz.id;
                 return (
                   <a
-                    href={`/${subject.data.slug}/${pSlug}/zadanie-${p.data.nr}/`}
+                    href={`/${pSubject.data.slug}/${pSlug}/zadanie-${p.data.nr}/`}
                     class="card no-underline"
                   >
                     <p class="text-xs font-mono uppercase tracking-wide text-[var(--color-accent)]">
@@ -293,6 +301,11 @@ const typLabels: Record<string, string> = {
                     <p class="mt-2 font-medium text-[var(--color-text)]">
                       Zadanie {p.data.nr} ({p.data.punkty} pkt)
                     </p>
+                    {!sameArkusz && (
+                      <p class="mt-1 text-xs font-mono uppercase tracking-wide text-[var(--color-text-faint)]">
+                        {pArkusz.data.sesja} {pArkusz.data.rok} • {pPoziom}
+                      </p>
+                    )}
                     <p class="mt-1 line-clamp-2 text-sm text-[var(--color-text-muted)]">
                       {p.data.tresc}
                     </p>

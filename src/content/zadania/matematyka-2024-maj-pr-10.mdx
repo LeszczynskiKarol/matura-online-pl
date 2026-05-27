@@ -1,0 +1,158 @@
+---
+arkusz: matematyka-2024-maj-pr
+subject: matematyka
+nr: 10
+punkty: 5
+typ: otwarte-rozszerzone
+topic: trygonometria, równania trygonometryczne, wzory
+difficulty: 5
+tresc: |
+  Rozwiąż równanie $\sin(4x) - \sin(2x) = 4\cos^2 x - 3$ w zbiorze $[0, 2\pi]$.
+odpowiedz: |
+  x ∈ {π/6, π/4, 5π/6, 7π/6, 5π/4, 11π/6}
+pulapka: |
+  Najczęstszy błąd to próba rozwijania sin(4x) wzorem podwojonym dwa razy zamiast zauważenia, że sin(4x) = 2 sin(2x) cos(2x) (czyli sin podwojonego dla argumentu 2x). Drugi błąd: niezauważenie, że 4cos²x − 3 = 2cos(2x) − 1 (mocna redukcja).
+wymaganie: |
+  VII.R6 — rozwiązywanie równań trygonometrycznych o stopniu trudności porównywalnym do 4cos(2x)cos(5x) = 2cos(7x) + 1.
+podobne:
+  - matematyka-2024-maj-pr-8
+---
+
+## Strategia
+
+Lewa strona zawiera $\sin(4x)$ i $\sin(2x)$ — wszystko z argumentem $2x$. Prawa strona ma $\cos^2 x$ — trzeba sprowadzić do tego samego argumentu.
+
+Cel: doprowadzić do **iloczynu** typu $A(x) \cdot B(x) = 0$, gdzie każdy czynnik jest „prostym" równaniem.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Przekształć lewą stronę.** Zastosuj wzór $\sin 2\alpha = 2 \sin \alpha \cos \alpha$ dla $\alpha = 2x$:
+
+$$\sin(4x) = 2 \sin(2x) \cos(2x)$$
+
+Stąd:
+
+$$\sin(4x) - \sin(2x) = 2 \sin(2x) \cos(2x) - \sin(2x) = \sin(2x) \cdot \left[ 2 \cos(2x) - 1 \right]$$
+
+</div>
+
+<div class="krok">
+
+**Przekształć prawą stronę.** Pamiętaj wzór $\cos 2\alpha = 2 \cos^2 \alpha - 1$, czyli $2 \cos^2 \alpha = 1 + \cos 2\alpha$. Stąd:
+
+$$4 \cos^2 x = 2(2 \cos^2 x) = 2(1 + \cos 2x) = 2 + 2\cos(2x)$$
+
+$$4 \cos^2 x - 3 = 2 + 2\cos(2x) - 3 = 2\cos(2x) - 1$$
+
+</div>
+
+<div class="krok">
+
+**Zapisz całe równanie:**
+
+$$\sin(2x) \cdot \left[ 2\cos(2x) - 1 \right] = 2\cos(2x) - 1$$
+
+</div>
+
+<div class="krok">
+
+**Przenieś wszystko na jedną stronę i wyłącz wspólny czynnik:**
+
+$$\sin(2x) \cdot \left[ 2\cos(2x) - 1 \right] - \left[ 2\cos(2x) - 1 \right] = 0$$
+
+$$\left[ 2\cos(2x) - 1 \right] \cdot \left[ \sin(2x) - 1 \right] = 0$$
+
+</div>
+
+<div class="krok">
+
+**Iloczyn jest zerem, gdy któryś z czynników jest zerem.**
+
+- Albo $2\cos(2x) - 1 = 0 \;\Leftrightarrow\; \cos(2x) = \dfrac{1}{2}$
+- Albo $\sin(2x) - 1 = 0 \;\Leftrightarrow\; \sin(2x) = 1$
+
+</div>
+
+</div>
+
+## Rozwiązanie pierwszego równania: $\cos(2x) = \tfrac{1}{2}$
+
+$\cos \theta = \tfrac{1}{2}$ ma rozwiązania $\theta = \pm \tfrac{\pi}{3} + 2k\pi$. Stąd $2x = \pm \tfrac{\pi}{3} + 2k\pi$, czyli:
+
+$$x = \pm \frac{\pi}{6} + k\pi, \quad k \in \mathbb{Z}$$
+
+W przedziale $[0, 2\pi]$ wpisz kolejne $k$:
+
+- $k = 0$, $+$: $x = \tfrac{\pi}{6}$ ✓
+- $k = 1$, $-$: $x = -\tfrac{\pi}{6} + \pi = \tfrac{5\pi}{6}$ ✓
+- $k = 1$, $+$: $x = \tfrac{\pi}{6} + \pi = \tfrac{7\pi}{6}$ ✓
+- $k = 2$, $-$: $x = -\tfrac{\pi}{6} + 2\pi = \tfrac{11\pi}{6}$ ✓
+
+Łącznie z tego równania: $\dfrac{\pi}{6},\ \dfrac{5\pi}{6},\ \dfrac{7\pi}{6},\ \dfrac{11\pi}{6}$.
+
+## Rozwiązanie drugiego równania: $\sin(2x) = 1$
+
+$\sin \theta = 1$ ma rozwiązania $\theta = \tfrac{\pi}{2} + 2k\pi$. Stąd $2x = \tfrac{\pi}{2} + 2k\pi$, czyli:
+
+$$x = \frac{\pi}{4} + k\pi, \quad k \in \mathbb{Z}$$
+
+W przedziale $[0, 2\pi]$:
+
+- $k = 0$: $x = \tfrac{\pi}{4}$ ✓
+- $k = 1$: $x = \tfrac{5\pi}{4}$ ✓
+
+Łącznie z tego równania: $\dfrac{\pi}{4},\ \dfrac{5\pi}{4}$.
+
+## Wszystkie rozwiązania razem
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong>
+    $$x \in \left\{ \frac{\pi}{6},\ \frac{\pi}{4},\ \frac{5\pi}{6},\ \frac{7\pi}{6},\ \frac{5\pi}{4},\ \frac{11\pi}{6} \right\}$$
+  </div>
+</div>
+
+Sześć rozwiązań — uporządkowane rosnąco.
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka rozkładu sin(4x)</div>
+
+Najczęstszy błąd to **dwukrotne** użycie wzoru $\sin 2\alpha = 2 \sin \alpha \cos \alpha$, rozwijając $\sin(4x)$ aż do $\sin x \cos x \cos(2x) \cdot 4$. Owszem, to też prawda, ale zwiększa stopień trudności i nie pasuje do redukcji prawej strony.
+
+Klucz: zachowaj **argument $2x$** wszędzie jak długo się da — równanie ma piękną symetrię, w której sprowadza się do iloczynu z czynnikiem $2\cos(2x) - 1$.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka dzielenia przez czynnik z niewiadomą</div>
+
+Z równania $\sin(2x) \cdot [2\cos(2x) - 1] = 2\cos(2x) - 1$ kuszące jest **podzielić obie strony przez $2\cos(2x) - 1$** i otrzymać $\sin(2x) = 1$.
+
+**Niewłaściwe!** Tracisz rozwiązania, dla których $2\cos(2x) - 1 = 0$. Bezpieczne: przenieś wszystko na jedną stronę i **wyłącz wspólny czynnik** — wtedy oba przypadki ujawniają się jako składniki iloczynu.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — pomylenie znaku przy "minus pi/6"</div>
+
+Pisząc $x = \pm \tfrac{\pi}{6} + k\pi$, łatwo zgubić rozwiązanie. Bezpieczna ścieżka: rozpisać **osobno** dwa szeregi $\tfrac{\pi}{6} + k\pi$ i $-\tfrac{\pi}{6} + k\pi$, podstawiać $k = 0, 1, 2, \ldots$, sprawdzać czy wynik mieści się w $[0, 2\pi]$. Powtarzaj aż wyjdzie poza zakres.
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** — zastosowanie wzoru $\sin(4x) = 2 \sin(2x) \cos(2x)$ ALBO wzoru $\cos 2\alpha = 2 \cos^2 \alpha - 1$ (czyli redukcja jednej ze stron równania).
+- **2 pkt** — sprowadzenie obu stron do tego samego argumentu $2x$ i przekształcenie do postaci równoważnej z czynnikiem $2\cos(2x) - 1$.
+- **3 pkt** — przekształcenie do iloczynu $[\sin(2x) - 1][2\cos(2x) - 1] = 0$.
+- **4 pkt** — rozwiązanie jednego z dwóch równań w $[0, 2\pi]$ (4 rozwiązania z $\cos$, lub 2 z $\sin$).
+- **5 pkt** — pełne rozwiązanie + wszystkie 6 punktów.
+
+## Klucz — równania trygonometryczne z mieszanymi argumentami
+
+Procedura uniwersalna:
+
+1. **Zidentyfikuj argumenty** ($x$, $2x$, $4x$, ...).
+2. **Sprowadź wszystkie do jednego argumentu** używając wzorów na sin/cos podwojonego/potrojonego/itd.
+3. **Rozłóż na iloczyn** zerujący się jako alternatywa prostszych równań.
+4. **Rozwiąż każdy czynnik osobno** i połącz wyniki w zbiorze.
+
+Nigdy nie dziel przez wyrażenie z niewiadomą — zawsze przenoś na jedną stronę i wyłączaj wspólny czynnik.

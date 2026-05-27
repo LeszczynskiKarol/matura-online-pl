@@ -1,0 +1,149 @@
+---
+arkusz: matematyka-2024-maj-pr
+subject: matematyka
+nr: 9
+punkty: 4
+typ: otwarte-rozszerzone
+topic: planimetria, środek ciężkości trójkąta, pola
+difficulty: 5
+tresc: |
+  Dany jest kwadrat $ABCD$ o boku długości $a$. Punkt $E$ jest środkiem boku $CD$. Przekątna $BD$ przecina się z odcinkiem $AE$ w punkcie $F$ oraz z przekątną $AC$ w punkcie $G$. Trójkąt $ACE$ jest dzielony przez te dwa przecięcia na dwie figury: trójkąt $AGF$ oraz czworokąt $CEFG$. Oblicz pola figur $AGF$ oraz $CEFG$.
+odpowiedz: |
+  P(AGF) = a²/12   |   P(CEFG) = a²/6
+pulapka: |
+  CKE wprost: jeśli przyjmiesz, że F dzieli AE w stosunku 1:1 lub 2:1 (np. "F to środek AE") — 0 punktów. F jest środkiem ciężkości trójkąta ACD, więc dzieli mediany w stosunku 2:1, ale od WIERZCHOŁKA, nie od środka boku.
+wymaganie: |
+  VIII.7 — twierdzenia: Talesa, o dwusiecznej, o środku ciężkości trójkąta.
+podobne:
+  - matematyka-2024-maj-pr-8
+---
+
+## Geometryczna obserwacja — F to środek ciężkości trójkąta ACD
+
+To **najważniejszy fakt** tego zadania. Spójrz:
+
+- $E$ — środek boku $CD$
+- $G$ — przecięcie przekątnych kwadratu = środek kwadratu = **środek odcinka $AC$**
+
+W trójkącie $ACD$ mamy zatem:
+
+- $AE$ — środkowa z wierzchołka $A$ do środka $E$ przeciwległego boku $CD$
+- $DG$ — środkowa z wierzchołka $D$ do środka $G$ przeciwległego boku $AC$ (a $DG$ leży na przekątnej $BD$, bo $D \to G$ to fragment $BD$)
+
+**Mediany przecinają się w środku ciężkości**, więc punkt $F = AE \cap BD = AE \cap DG$ to **środek ciężkości trójkąta $ACD$**.
+
+Z własności środka ciężkości: dzieli każdą medianę w stosunku **2 : 1**, licząc od wierzchołka. Czyli $|DF| : |FG| = 2 : 1$, a $|AF| : |FE| = 2 : 1$.
+
+## Pole trójkąta AGF — przez stosunki
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Oblicz pole trójkąta $AGD$.** $G$ to środek przekątnej $AC$, więc $G$ jest środkiem kwadratu. Trójkąt $AGD$ ma wierzchołki: $A$, środek kwadratu, $D$ — to **ćwiartka** kwadratu (jedno z czterech przystających trójkątów wyznaczonych przez obie przekątne):
+
+$$P_{AGD} = \frac{1}{4} a^2$$
+
+</div>
+
+<div class="krok">
+
+**Wykorzystaj fakt, że $F$ leży na $DG$ i dzieli ją w stosunku $|DF|:|FG| = 2:1$.**
+
+Trójkąty $AGF$ i $AGD$ mają **wspólny wierzchołek $A$**, a ich „podstawy" $GF$ i $GD$ leżą na tej samej prostej. Stosunek pól = stosunek podstaw:
+
+$$\frac{P_{AGF}}{P_{AGD}} = \frac{|GF|}{|GD|} = \frac{1}{3}$$
+
+(bo $|GF| = \tfrac{1}{3} |GD|$ — $F$ jest jedną trzecią drogi od $G$ do $D$ — albo równoważnie $\tfrac{1}{3}$ całej mediany od strony środka boku).
+
+</div>
+
+<div class="krok">
+
+**Stąd:**
+
+$$P_{AGF} = \frac{1}{3} \cdot \frac{1}{4} a^2 = \frac{a^2}{12}$$
+
+</div>
+
+</div>
+
+## Pole czworokąta CEFG — przez różnicę
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Oblicz pole trójkąta $ACE$.** Trójkąt $ACE$ ma podstawę $EC = \tfrac{1}{2}a$ i wysokość $a$ (od $A$ do prostej $CD$):
+
+$$P_{ACE} = \frac{1}{2} \cdot \frac{1}{2} a \cdot a = \frac{a^2}{4}$$
+
+</div>
+
+<div class="krok">
+
+**Trójkąt $AGF$ + czworokąt $CEFG$ pokrywa trójkąt $ACE$** (dwie figury rozdzielone przez przekątną $BD$):
+
+$$P_{CEFG} = P_{ACE} - P_{AGF} = \frac{a^2}{4} - \frac{a^2}{12} = \frac{3 a^2 - a^2}{12} = \frac{2 a^2}{12} = \frac{a^2}{6}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> $P_{AGF} = \dfrac{a^2}{12}$, $P_{CEFG} = \dfrac{a^2}{6}$.
+  </div>
+</div>
+
+## Sposób alternatywny — w układzie współrzędnych (mechanicznie)
+
+Umieść kwadrat w układzie: $A = (0, 0)$, $B = (a, 0)$, $C = (a, a)$, $D = (0, a)$. Wtedy:
+
+- $E$ = środek $CD$ = $\left(\tfrac{a}{2}, a\right)$
+- $G$ = środek $AC$ = $\left(\tfrac{a}{2}, \tfrac{a}{2}\right)$
+- prosta $AE$: $y = 2x$
+- prosta $BD$: $y = -x + a$
+- $F$ = przecięcie: $2x = -x + a \Rightarrow x = \tfrac{a}{3}$, $y = \tfrac{2a}{3}$. Czyli $F = \left(\tfrac{a}{3}, \tfrac{2a}{3}\right)$.
+
+Pola obliczamy ze wzoru wyznacznikowego (½|det|):
+
+$$P_{AGF} = \frac{1}{2} \left| \frac{a}{2} \cdot \frac{2a}{3} - \frac{a}{2} \cdot \frac{a}{3} \right| = \frac{1}{2} \cdot \frac{a^2}{6} = \frac{a^2}{12}$$
+
+$$P_{ACE} = \frac{1}{2} \left| a \cdot a - a \cdot \frac{a}{2} \right| = \frac{a^2}{4}$$
+
+$$P_{CEFG} = \frac{a^2}{4} - \frac{a^2}{12} = \frac{a^2}{6}$$
+
+Mniej geometryczne myślenie, więcej arytmetyki — ale **żadnego ryzyka pomyłki o środku ciężkości**.
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — F nie jest środkiem AE</div>
+
+Najgorszy błąd to założenie „skoro F leży na AE, to jest jej środkiem" lub „F dzieli AE w stosunku 1:1". To **nieprawda**. F dzieli AE w stosunku **2:1 od strony A**: $|AF| = \tfrac{2}{3} |AE|$ i $|FE| = \tfrac{1}{3} |AE|$.
+
+CKE wprost (uwaga 1 z klucza): **jeśli przyjmiesz, że F dzieli AE/DG/BD w stosunku innym niż 2:1 — 0 punktów na całe zadanie**.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka „stosunek 2:1 bez uzasadnienia"</div>
+
+CKE (uwaga 2): jeśli **piszesz prawidłowy stosunek 2:1, ale bez uzasadnienia** dlaczego — maksimum **3 pkt** zamiast 4. Trzeba wyraźnie napisać: „F jest środkiem ciężkości trójkąta ACD (przecięcie median AE i DG), więc dzieli każdą medianę w stosunku 2:1 licząc od wierzchołka".
+
+Albo użyć układu współrzędnych — tam nie ma stosunków „na czuja", wszystko z wzorów.
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** — pokazanie z uzasadnieniem, że $|DF| : |FG| = 2 : 1$ (lub równoważne stwierdzenie o podobieństwie trójkątów $ABF$ i $EDF$ w skali 2:1).
+- **2 pkt** — obliczenie jednej z długości $|FG|, |DF|, |AF|, |FE|, |BF|$ lub powiązanie pól $\triangle AGF$ i $\triangle FDE$.
+- **3 pkt** — obliczenie pola jednej z figur ($P_{AGF} = \tfrac{a^2}{12}$ **albo** $P_{CEFG} = \tfrac{a^2}{6}$).
+- **4 pkt** — pełne rozwiązanie z obiema polami.
+
+## Klucz — środek ciężkości na maturze
+
+Dwa fakty, które warto mieć zawsze pod ręką:
+
+1. **Środek ciężkości trójkąta** to przecięcie median. Dzieli każdą medianę w stosunku **2 : 1** od wierzchołka.
+2. **Pola trójkątów o wspólnym wierzchołku i podstawach na tej samej prostej** są w stosunku długości tych podstaw (twierdzenie o polach trójkątów o wspólnej wysokości).
+
+Te dwie reguły rozwiązują 80% zadań o polach figur w kwadracie/prostokącie podzielonym przekątnymi i odcinkami od środków boków.
