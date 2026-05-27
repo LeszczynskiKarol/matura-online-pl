@@ -1,0 +1,30 @@
+# Astro / Node
+node_modules/
+dist/
+.astro/
+.output/
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Local deploy state
+.env.deploy
+.tmp/
+_tmp-*.json
+_tmp-*.mjs
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

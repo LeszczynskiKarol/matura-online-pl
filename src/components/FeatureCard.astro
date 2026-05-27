@@ -1,0 +1,71 @@
+---
+// FeatureCard — karta z ikoną, tytułem i treścią. Używaj w gridach 2-4 kolumn.
+// Każda karta MUSI mieć ikonę (lucide / heroicons) — nie sam tekst.
+//
+// Użycie:
+//   <FeatureCard
+//     icon="lucide:zap"
+//     title="Szybka reakcja"
+//     text="Diagnoza w 24h, naprawa w 3-5 dni roboczych."
+//     accent="accent"
+//   />
+//
+// Akcenty wyróżniające karty od bloku tekstu:
+// - hover:lift (translate-y -1px + cień)
+// - top-border accent w wybranych kartach (props highlight)
+// - subtle gradient w tle ikony
+
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  icon: string;
+  title: string;
+  text: string;
+  accent?: "default" | "accent" | "highlight";
+  href?: string;
+}
+
+const { icon, title, text, accent = "default", href } = Astro.props;
+
+const Tag = href ? "a" : "div";
+
+const accentClasses = {
+  default: "",
+  accent: "border-[var(--color-accent)]/30",
+  highlight:
+    "border-[var(--color-accent)] shadow-[0_8px_24px_-12px_var(--color-accent)]",
+};
+---
+
+<Tag
+  href={href}
+  class:list={[
+    "group relative flex flex-col gap-3 rounded-xl border bg-[var(--color-bg-elevated)] p-6 transition-all duration-200",
+    "border-[var(--color-border)]",
+    accentClasses[accent],
+    href && "no-underline hover:-translate-y-0.5 hover:border-[var(--color-accent)]/40 hover:shadow-md",
+  ]}
+>
+  {/* Ikona z subtelnym gradientem tła */}
+  <span
+    class="inline-flex h-11 w-11 items-center justify-center rounded-lg bg-gradient-to-br from-[var(--color-accent)]/15 to-[var(--color-accent)]/5 text-[var(--color-accent)] ring-1 ring-inset ring-[var(--color-accent)]/20"
+    aria-hidden="true"
+  >
+    <Icon name={icon} class="h-5 w-5" />
+  </span>
+
+  <h3 class="font-sans text-lg font-semibold leading-snug text-[var(--color-text)]">
+    {title}
+  </h3>
+
+  <p class="text-[0.9375rem] leading-relaxed text-[var(--color-text-muted)]">
+    {text}
+  </p>
+
+  {href && (
+    <span class="mt-auto inline-flex items-center gap-1 pt-2 text-sm font-medium text-[var(--color-accent)] opacity-0 transition-opacity group-hover:opacity-100">
+      Więcej
+      <Icon name="lucide:arrow-right" class="h-4 w-4" />
+    </span>
+  )}
+</Tag>

@@ -1,0 +1,119 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 3
+punkty: 2
+typ: dowod
+topic: dowody w teorii liczb, podzielność
+difficulty: 4
+tresc: Wykaż, że dla każdej liczby naturalnej n ≥ 1 liczba n² + (n+1)² + (n+2)² przy dzieleniu przez 3 daje resztę 2.
+odpowiedz: |
+  Dowód — patrz Sposób I lub Sposób II w rozwiązaniu.
+pulapka: |
+  Sprawdzanie tezy dla kilku konkretnych n (np. n=1, n=2, n=3) to NIE jest dowód — CKE da za to 0 punktów. Trzeba pokazać warunek dla każdej liczby naturalnej.
+wymaganie: |
+  IV.1 — przeprowadzanie rozumowań kilkuetapowych; I.2 — proste dowody dotyczące podzielności liczb całkowitych
+podobne:
+  - matematyka-2024-maj-pp-9
+---
+
+## Co trzeba pokazać?
+
+Trzeba **udowodnić**, że dla **każdej** liczby naturalnej $n \geq 1$ wyrażenie
+
+$$n^2 + (n+1)^2 + (n+2)^2$$
+
+daje resztę $2$ przy dzieleniu przez $3$. Czyli: liczba ta jest postaci $3k + 2$ dla pewnej liczby całkowitej $k$.
+
+Pokażę to dwoma sposobami — wybierz ten, który łatwiej zapamiętasz.
+
+## Sposób I — przekształcenie algebraiczne
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Rozwiń kwadraty wzorami skróconego mnożenia.**
+
+$$
+\begin{aligned}
+n^2 + (n+1)^2 + (n+2)^2 &= n^2 + (n^2 + 2n + 1) + (n^2 + 4n + 4) \\
+&= 3n^2 + 6n + 5
+\end{aligned}
+$$
+
+</div>
+
+<div class="krok">
+
+**Wydziel z wyrażenia jak największą wielokrotność liczby 3.** Zauważ, że $3n^2$ i $6n$ są podzielne przez $3$, a $5 = 3 + 2$:
+
+$$3n^2 + 6n + 5 = 3(n^2 + 2n + 1) + 2 = 3(n+1)^2 + 2$$
+
+</div>
+
+<div class="krok">
+
+**Wyciągnij wniosek.** Skoro $n$ jest liczbą naturalną, to $(n+1)^2$ jest również liczbą naturalną — oznaczmy ją $k = (n+1)^2$. Wtedy:
+
+$$n^2 + (n+1)^2 + (n+2)^2 = 3k + 2$$
+
+To znaczy, że liczba $n^2 + (n+1)^2 + (n+2)^2$ przy dzieleniu przez $3$ daje resztę $2$ — co należało udowodnić. $\blacksquare$
+
+</div>
+
+</div>
+
+## Sposób II — analiza reszt z dzielenia przez 3
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zauważ, że wśród trzech kolejnych liczb naturalnych $n$, $n+1$, $n+2$ dokładnie jedna jest podzielna przez 3**, a dwie pozostałe — przy dzieleniu przez 3 — dają reszty $1$ oraz $2$ (w pewnej kolejności).
+
+</div>
+
+<div class="krok">
+
+**Sprawdź, jaką resztę z dzielenia przez 3 daje kwadrat liczby w zależności od jej reszty.** Niech $a$ będzie liczbą całkowitą:
+
+- jeśli $a \equiv 0 \pmod 3$, to $a^2 \equiv 0 \pmod 3$
+- jeśli $a \equiv 1 \pmod 3$, to $a^2 \equiv 1 \pmod 3$
+- jeśli $a \equiv 2 \pmod 3$, to $a^2 \equiv 4 \equiv 1 \pmod 3$
+
+**Wniosek:** kwadrat liczby podzielnej przez 3 daje resztę 0, a kwadrat liczby niepodzielnej przez 3 daje zawsze resztę 1.
+
+</div>
+
+<div class="krok">
+
+**Zsumuj reszty trzech kwadratów.** Wśród $n$, $n+1$, $n+2$ jest dokładnie jedna liczba podzielna przez 3 i dwie niepodzielne. Zatem suma reszt z dzielenia przez 3 ich kwadratów wynosi:
+
+$$0 + 1 + 1 = 2$$
+
+To znaczy, że $n^2 + (n+1)^2 + (n+2)^2$ daje resztę $2$ przy dzieleniu przez $3$. $\blacksquare$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Dowód zakończony.</strong> Oba sposoby są równoważne i CKE akceptuje każdy z nich (komisja dopuszcza również inne poprawne rozumowania).
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd — 0 punktów</div>
+
+Jeśli sprawdzisz tezę tylko dla kilku konkretnych wartości $n$ (np. policzysz dla $n=1$: $1 + 4 + 9 = 14 = 3\cdot4 + 2$, dla $n=2$: $4 + 9 + 16 = 29 = 3\cdot9 + 2$, itd.) — **to NIE jest dowód**. To są jedynie przykłady. CKE da za to **0 punktów na całe zadanie**.
+
+Dowód musi pokazać tezę dla **każdej** liczby naturalnej — czyli ogólnie, ze zmienną $n$. Przykłady mogą służyć do *sprawdzenia* hipotezy w brudnopisie, ale w czystopisie muszą zostać przekształcenia algebraiczne lub rozumowanie o resztach.
+</div>
+
+## Jak zdobyć 2 punkty
+
+CKE rozdziela punktację na dwie połowy:
+- **1 pkt** — za samo prawidłowe rozwinięcie $n^2 + (n+1)^2 + (n+2)^2 = 3n^2 + 6n + 5$, **albo** za pokazanie, że jedna z trzech kolejnych liczb jest podzielna przez 3.
+- **2 pkt** — za doprowadzenie rozumowania do końca, czyli pokazanie, że wynik to $3k + 2$ dla pewnego $k$ (Sposób I) lub że suma reszt wynosi $2$ (Sposób II).

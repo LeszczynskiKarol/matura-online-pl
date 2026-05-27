@@ -1,0 +1,81 @@
+---
+// GA4 + Consent Mode v2 — full implementation.
+// Renders ONLY if siteConfig.features.ga4 is set.
+// Wzór: D:\mekra.pl\src\layouts\BaseLayout.astro lines 96-131.
+//
+// Behavior:
+// 1. Consent defaults declared BEFORE gtag.js loads (denied globally + PL/EU specifically).
+// 2. gtag.js loads async — Google won't fire any tracking event until consent is updated.
+// 3. CookieConsent.astro calls gtag('consent', 'update', ...) on accept.
+// 4. anonymize_ip + cookie_flags SameSite=Lax;Secure baked in.
+//
+// To DISABLE analytics entirely: set ga4: null in src/config/site.ts.
+
+import { siteConfig } from "../config/site";
+
+const gaId = siteConfig.features.ga4;
+---
+
+{
+  gaId && (
+    <>
+      {/*
+        CRITICAL: body skryptu poniżej to **raw JS**, NIE owijaj go w `{` `` ` `` … `` ` `` `}`.
+        Astro `is:inline` nie preprocessuje zawartości — jeśli zapakujesz w template literal,
+        literały `{` i `` ` `` wylądują DOSŁOWNIE w wyrenderowanym HTML, JS się sparsuje jako
+        no-op (block-statement + template-literal-as-expression — wartość wyrzucona) i ŻADNE
+        `gtag('consent','default',...)` nie odpalą. Skutek: GDPR-violation (PL/EU users tracked
+        without consent) + brak danych w GA4. Bug znaleziony 2026-05-27 podczas SEO audytu
+        maturalnie.pl — patrz [[gtm-consent-gating-pattern]] + audyt
+        `D:\seo-panel\audits\maturalnie.pl-2026-05-27.md`. Wzorzec working: `D:\mekra.pl\src\layouts\BaseLayout.astro:96-131`.
+      */}
+      <script is:inline define:vars={{ gaId }}>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+
+        gtag('consent', 'default', {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          analytics_storage: 'denied',
+          functionality_storage: 'granted',
+          personalization_storage: 'denied',
+          security_storage: 'granted',
+          wait_for_update: 500,
+        });
+
+        gtag('consent', 'default', {
+          ad_storage: 'denied',
+          ad_user_data: 'denied',
+          ad_personalization: 'denied',
+          analytics_storage: 'denied',
+          region: ['PL', 'EU'],
+        });
+
+        try {
+          var stored = localStorage.getItem('cookie-consent');
+          if (stored) {
+            var parsed = JSON.parse(stored);
+            gtag('consent', 'update', {
+              ad_storage: parsed.ad_storage || 'denied',
+              ad_user_data: parsed.ad_user_data || 'denied',
+              ad_personalization: parsed.ad_personalization || 'denied',
+              analytics_storage: parsed.analytics_storage || 'denied',
+            });
+          }
+        } catch (e) {}
+      </script>
+
+      <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
+
+      <script is:inline define:vars={{ gaId }}>
+        gtag('js', new Date());
+        gtag('config', gaId, {
+          anonymize_ip: true,
+          cookie_flags: 'SameSite=Lax;Secure',
+        });
+      </script>
+    </>
+  )
+}

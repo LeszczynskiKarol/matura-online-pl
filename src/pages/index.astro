@@ -1,0 +1,223 @@
+---
+import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import IconBadge from "../components/IconBadge.astro";
+import StatBlock from "../components/StatBlock.astro";
+import BackgroundDecor from "../components/BackgroundDecor.astro";
+import { siteConfig } from "../config/site";
+
+const subjects = (await getCollection("subjects")).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const arkusze = await getCollection("arkusze");
+const zadania = await getCollection("zadania");
+
+const liczbaArkuszy = arkusze.length;
+const liczbaZadanZRozwiazaniem = zadania.length;
+const liczbaPrzedmiotow = subjects.length;
+const liczbaLatCKE = 4; // 2023-2026
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: siteConfig.name,
+  url: siteConfig.url,
+  description: siteConfig.description,
+  inLanguage: "pl-PL",
+  potentialAction: {
+    "@type": "SearchAction",
+    target: `${siteConfig.url}/?q={search_term_string}`,
+    "query-input": "required name=search_term_string",
+  },
+};
+---
+
+<BaseLayout
+  title={siteConfig.name}
+  description={siteConfig.description}
+  jsonLd={jsonLd}
+>
+  <SiteHeader />
+
+  <main id="main">
+    {/* ════════ HERO ════════ */}
+    <section class="relative overflow-hidden border-b border-[var(--color-border)]">
+      <BackgroundDecor variant="mesh" intensity="subtle" />
+
+      <div class="relative mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 md:py-28 lg:px-8">
+        <span class="inline-flex items-center gap-2 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-3 py-1 text-xs font-medium uppercase tracking-[0.08em] text-[var(--color-text-muted)]">
+          <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)]"></span>
+          Arkusze CKE • Formuła 2023
+        </span>
+
+        <h1 class="mt-6 font-serif text-[length:var(--text-fs-display)] font-medium leading-[1.05] tracking-tight text-[var(--color-text)]">
+          Rozwiązania zadań maturalnych <span class="text-gradient-accent">krok po kroku</span>
+        </h1>
+
+        <p class="mx-auto mt-6 max-w-[55ch] text-lg leading-relaxed text-[var(--color-text-muted)]">
+          Pełne, dokładne rozwiązania zadań z arkuszy CKE — z omówieniem typowych pułapek i wskazówkami, jak zdobyć każdy punkt. Bez ściąg, bez generowania odpowiedzi, bez „kup dostęp".
+        </p>
+
+        <div class="mt-10 flex flex-wrap justify-center gap-3">
+          <a
+            href="/matematyka/"
+            class="inline-flex items-center gap-2 rounded-md bg-[var(--color-accent)] px-6 py-3 text-base font-medium text-[var(--color-accent-fg)] no-underline transition-colors hover:bg-[var(--color-accent-hover)]"
+          >
+            Zacznij od matematyki
+            <Icon name="lucide:arrow-right" class="h-4 w-4" />
+          </a>
+          <a
+            href="#jak-czytac"
+            class="inline-flex items-center gap-2 rounded-md border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-6 py-3 text-base font-medium text-[var(--color-text)] no-underline transition-colors hover:bg-[var(--color-bg-subtle)]"
+          >
+            Jak czytać rozwiązanie
+          </a>
+        </div>
+      </div>
+    </section>
+
+    {/* ════════ STAT ROW ════════ */}
+    <section class="border-b border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
+      <div class="mx-auto grid max-w-6xl grid-cols-2 gap-x-6 gap-y-8 px-4 py-12 sm:grid-cols-4 sm:px-6 lg:px-8">
+        <StatBlock value={liczbaPrzedmiotow.toString()} label="przedmiotów maturalnych" accent />
+        <StatBlock value={liczbaLatCKE.toString()} label="lat arkuszy CKE (2023–2026)" />
+        <StatBlock value={liczbaArkuszy.toString()} label="arkuszy w bazie" />
+        <StatBlock value={liczbaZadanZRozwiazaniem.toString()} label="zadań z pełnym rozwiązaniem" />
+      </div>
+    </section>
+
+    {/* ════════ PRZEDMIOTY ════════ */}
+    <section id="przedmioty" class="border-b border-[var(--color-border)]">
+      <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+        <div class="max-w-2xl">
+          <IconBadge icon="lucide:layers" label="Przedmioty" tone="accent" />
+          <h2 class="mt-4 font-serif text-[length:var(--text-fs-h2)] font-medium leading-tight tracking-tight">
+            Wybierz przedmiot
+          </h2>
+          <p class="mt-4 text-lg text-[var(--color-text-muted)]">
+            Każdy przedmiot zawiera arkusze CKE z lat 2023–2026, podzielone na poziomy podstawowy i rozszerzony. Najpierw — matematyka.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {subjects.map((s) => (
+            <a
+              href={`/${s.data.slug}/`}
+              class:list={[
+                "card group flex flex-col gap-3 no-underline",
+                !s.data.hasContent && "opacity-60",
+              ]}
+            >
+              <div class="flex items-start justify-between">
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
+                  <Icon name={s.data.icon} class="h-5 w-5" />
+                </span>
+                {s.data.hasContent ? (
+                  <span class="text-xs font-mono uppercase tracking-wide text-[var(--color-correct)]">
+                    Dostępne
+                  </span>
+                ) : (
+                  <span class="text-xs font-mono uppercase tracking-wide text-[var(--color-text-faint)]">
+                    Wkrótce
+                  </span>
+                )}
+              </div>
+              <h3 class="font-serif text-xl font-medium leading-tight text-[var(--color-text)]">
+                {s.data.name}
+              </h3>
+              <p class="text-sm leading-relaxed text-[var(--color-text-muted)]">
+                {s.data.description}
+              </p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ════════ JAK CZYTAĆ ROZWIĄZANIE ════════ */}
+    <section id="jak-czytac" class="relative overflow-hidden border-b border-[var(--color-border)] bg-[var(--color-bg-subtle)]">
+      <div class="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+        <div class="max-w-2xl">
+          <IconBadge icon="lucide:book-open-check" label="Jak czytać rozwiązanie" tone="muted" />
+          <h2 class="mt-4 font-serif text-[length:var(--text-fs-h2)] font-medium leading-tight tracking-tight">
+            Cztery sekcje w każdym zadaniu
+          </h2>
+          <p class="mt-4 text-lg text-[var(--color-text-muted)]">
+            Każda strona z zadaniem CKE ma tę samą strukturę — żebyś mógł szybko znaleźć to, co ci potrzebne.
+          </p>
+        </div>
+
+        <ol class="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {[
+            {
+              n: "01",
+              title: "Treść zadania",
+              text: "Pełna treść z oryginalnego arkusza CKE — wzory w KaTeX, wszystkie warianty odpowiedzi.",
+              icon: "lucide:file-text",
+            },
+            {
+              n: "02",
+              title: "Rozwiązanie krok po kroku",
+              text: "Każdy krok osobno ponumerowany. Pokazujemy metodę, nie tylko wynik. Czasem dwa sposoby do wyboru.",
+              icon: "lucide:list-checks",
+            },
+            {
+              n: "03",
+              title: "Pułapka i typowy błąd",
+              text: "Co najczęściej zawalają — i ile punktów to kosztuje. Wiesz, na co uważać, zanim zdarzy ci się to na egzaminie.",
+              icon: "lucide:alert-triangle",
+            },
+            {
+              n: "04",
+              title: "Punktacja CKE",
+              text: "Za co dokładnie dostajesz każdy punkt — żebyś wiedział, na czym skupić wysiłek przy ograniczonym czasie.",
+              icon: "lucide:target",
+            },
+          ].map((s) => (
+            <li class="relative flex flex-col gap-3 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg-elevated)] p-6">
+              <div class="flex items-center justify-between">
+                <span class="font-mono text-3xl font-bold text-[var(--color-accent)]/30">
+                  {s.n}
+                </span>
+                <Icon name={s.icon} class="h-5 w-5 text-[var(--color-text-muted)]" />
+              </div>
+              <h3 class="font-sans text-lg font-semibold leading-snug">
+                {s.title}
+              </h3>
+              <p class="text-[0.9375rem] leading-relaxed text-[var(--color-text-muted)]">
+                {s.text}
+              </p>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+
+    {/* ════════ CTA do apki ════════ */}
+    <section class="border-b border-[var(--color-border)]">
+      <div class="mx-auto max-w-4xl px-4 py-20 text-center sm:px-6 lg:px-8 lg:py-24">
+        <IconBadge icon="lucide:smartphone" label="Po przeczytaniu" tone="accent" />
+        <h2 class="mt-4 font-serif text-[length:var(--text-fs-h2)] font-medium leading-tight tracking-tight">
+          Przećwicz w aplikacji <span class="text-gradient-accent">{siteConfig.apka.name}</span>
+        </h2>
+        <p class="mx-auto mt-4 max-w-[55ch] text-lg text-[var(--color-text-muted)]">
+          Rozumiesz, jak rozwiązać dane zadanie? Sprawdź, czy podobny typ zrobisz samodzielnie. {siteConfig.apka.name} to tysiące zadań do ćwiczeń — pogrupowanych po dziedzinach i typach, ze śledzeniem postępów.
+        </p>
+        <a
+          href={siteConfig.apka.url}
+          target="_blank"
+          rel="noopener"
+          class="mt-10 inline-flex items-center gap-2 rounded-md bg-[var(--color-accent-2)] px-6 py-3 text-base font-medium text-white no-underline transition-opacity hover:opacity-90"
+        >
+          Otwórz {siteConfig.apka.name}
+          <Icon name="lucide:external-link" class="h-4 w-4" />
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>

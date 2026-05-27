@@ -1,0 +1,84 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 1
+punkty: 1
+typ: zamkniete-abcd
+topic: wartość bezwzględna
+difficulty: 2
+tresc: Dana jest nierówność |x − 1| ≥ 3. Na którym rysunku poprawnie zaznaczono na osi liczbowej zbiór wszystkich liczb rzeczywistych spełniających powyższą nierówność?
+odpowiedz: B
+pulapka: |
+  Najczęstszy błąd to zaznaczenie przedziału między -2 a 4 zamiast jego dopełnienia — moduł ≥ 3 oznacza „odległość od 1 co najmniej 3", a nie „odległość mniejsza".
+wymaganie: |
+  I.7 — stosowanie interpretacji geometrycznej i algebraicznej wartości bezwzględnej, rozwiązywanie równań i nierówności typu |x + 3| ≥ 4
+podobne:
+  - matematyka-2024-maj-pp-3
+---
+
+## Co zrobić?
+
+Mamy nierówność z wartością bezwzględną:
+
+$$|x - 1| \geq 3$$
+
+Trzeba znaleźć zbiór wszystkich $x \in \mathbb{R}$, które ją spełniają, i wskazać odpowiadający mu rysunek na osi liczbowej.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zrozum, co znaczy moduł.** Wyrażenie $|x - 1|$ to **odległość liczby $x$ od liczby $1$** na osi liczbowej. Nierówność $|x - 1| \geq 3$ czytamy więc: „odległość $x$ od $1$ jest co najmniej $3$".
+
+</div>
+
+<div class="krok">
+
+**Zamień moduł na alternatywę.** Dla każdej liczby $a \geq 0$ zachodzi równoważność:
+
+$$|x - 1| \geq a \iff x - 1 \geq a \quad \text{lub} \quad x - 1 \leq -a$$
+
+W naszym przypadku $a = 3$, więc:
+
+$$x - 1 \geq 3 \quad \text{lub} \quad x - 1 \leq -3$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiąż każdą z nierówności osobno:**
+
+$$x - 1 \geq 3 \iff x \geq 4$$
+
+$$x - 1 \leq -3 \iff x \leq -2$$
+
+</div>
+
+<div class="krok">
+
+**Zapisz zbiór rozwiązań.** Łączymy oba warunki spójnikiem „lub":
+
+$$x \in (-\infty,\, -2\rangle \cup \langle 4,\, +\infty)$$
+
+To są **dwie półproste domknięte** — wszystkie liczby na lewo od $-2$ (z $-2$ włącznie) oraz wszystkie liczby na prawo od $4$ (z $4$ włącznie).
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: B</strong> — rysunek przedstawiający dwie domknięte półproste z końcami w $-2$ i $4$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  Najwięcej osób zaznacza odpowiedź A albo C — czyli przedział **między** $-2$ a $4$. To dokładne przeciwieństwo. Moduł $\geq 3$ to liczby **daleko** od jedynki, nie **blisko** niej. Jeśli zamienisz znak nierówności na $|x-1| \leq 3$, dopiero wtedy odpowiedzią będzie przedział $\langle -2, 4 \rangle$.
+
+Drugi błąd — wybór D zamiast B — to pominięcie znaku równości. Skoro mamy $\geq$, to liczby $-2$ i $4$ **spełniają** nierówność (bo $|{-2} - 1| = 3$ i $|4 - 1| = 3$), więc kółka na rysunku muszą być **wypełnione**, a nie puste.
+</div>
+
+## Po co to umieć
+
+Wartość bezwzględna pojawia się na maturze średnio raz na każdej sesji. Zadanie sprawdza, czy rozumiesz geometryczne znaczenie modułu — i czy nie pomylisz kierunku nierówności. To podstawa do trudniejszych zadań z modułów na poziomie rozszerzonym.

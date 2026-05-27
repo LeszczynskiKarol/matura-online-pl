@@ -1,0 +1,93 @@
+---
+// BackgroundDecor — dekoracyjne tło sekcji (gradient mesh / dot pattern / grain).
+// Używaj w hero i wybranych sekcjach żeby rozbić wizualną monotonię.
+// NIE używaj na każdej sekcji — to wtedy szum, nie dekoracja.
+//
+// Pozycjonowanie: komponent rozkłada się fixed/absolute w rodzicu z `relative`.
+//
+// Użycie:
+//   <section class="relative ...">
+//     <BackgroundDecor variant="mesh" />
+//     <div class="relative">...content...</div>
+//   </section>
+
+interface Props {
+  variant?: "mesh" | "dots" | "grid" | "grain" | "spotlight";
+  intensity?: "subtle" | "normal" | "bold";
+}
+
+const { variant = "mesh", intensity = "subtle" } = Astro.props;
+
+const opacityMap = {
+  subtle: "opacity-40 dark:opacity-30",
+  normal: "opacity-60 dark:opacity-40",
+  bold: "opacity-80 dark:opacity-50",
+};
+---
+
+{variant === "mesh" && (
+  <div
+    aria-hidden="true"
+    class:list={[
+      "pointer-events-none absolute inset-0 overflow-hidden",
+      opacityMap[intensity],
+    ]}
+  >
+    <div
+      class="absolute -left-32 -top-32 h-[420px] w-[420px] rounded-full blur-3xl"
+      style="background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);"
+    ></div>
+    <div
+      class="absolute -bottom-32 -right-32 h-[460px] w-[460px] rounded-full blur-3xl"
+      style="background: radial-gradient(circle, var(--color-accent-hover) 0%, transparent 70%);"
+    ></div>
+  </div>
+)}
+
+{variant === "dots" && (
+  <div
+    aria-hidden="true"
+    class:list={[
+      "pointer-events-none absolute inset-0",
+      opacityMap[intensity],
+    ]}
+    style="background-image: radial-gradient(circle at 1px 1px, var(--color-text-faint) 1px, transparent 0); background-size: 24px 24px;"
+  ></div>
+)}
+
+{variant === "grid" && (
+  <div
+    aria-hidden="true"
+    class:list={[
+      "pointer-events-none absolute inset-0",
+      opacityMap[intensity],
+    ]}
+    style="background-image: linear-gradient(to right, var(--color-border) 1px, transparent 1px), linear-gradient(to bottom, var(--color-border) 1px, transparent 1px); background-size: 48px 48px;"
+  ></div>
+)}
+
+{variant === "grain" && (
+  <div
+    aria-hidden="true"
+    class:list={[
+      "pointer-events-none absolute inset-0 mix-blend-overlay",
+      opacityMap[intensity],
+    ]}
+    style="background-image: url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22200%22 height=%22200%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22/></filter><rect width=%22200%22 height=%22200%22 filter=%22url(%23n)%22 opacity=%220.5%22/></svg>');"
+  ></div>
+)}
+
+{variant === "spotlight" && (
+  <div
+    aria-hidden="true"
+    class:list={[
+      "pointer-events-none absolute inset-0",
+      opacityMap[intensity],
+    ]}
+  >
+    <div
+      class="absolute left-1/2 top-0 h-[600px] w-[800px] -translate-x-1/2 rounded-full blur-[120px]"
+      style="background: radial-gradient(ellipse, var(--color-accent) 0%, transparent 60%);"
+    ></div>
+  </div>
+)}

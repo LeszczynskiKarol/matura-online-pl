@@ -1,0 +1,84 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import { siteConfig } from "../../config/site";
+
+const ADMIN = siteConfig.legal.adminName;
+const ADMIN_ADDRESS = siteConfig.legal.adminAddress;
+const ADMIN_NIP = siteConfig.legal.adminNip;
+const ADMIN_EMAIL = siteConfig.legal.adminEmail;
+const DOMAIN = new URL(siteConfig.url).hostname;
+const HAS_ANALYTICS = !!siteConfig.features.ga4;
+---
+
+<BaseLayout
+  title="Polityka prywatności"
+  description={`Polityka prywatności serwisu ${DOMAIN}.`}
+  noindex
+>
+  <SiteHeader />
+  <main id="main" class="mx-auto max-w-3xl px-4 py-20 sm:px-6">
+    <h1 class="font-serif text-[length:var(--text-fs-h1)] leading-tight">
+      Polityka prywatności
+    </h1>
+
+    <p class="mt-4 text-sm text-[var(--color-text-faint)]">
+      Ostatnia aktualizacja: {new Date().toISOString().slice(0, 10)}
+    </p>
+
+    <div class="prose mt-10 max-w-none" data-prose>
+      <h2>1. Administrator danych</h2>
+      <p>
+        Administratorem danych osobowych zbieranych w serwisie <strong>{DOMAIN}</strong> jest {ADMIN}, {ADMIN_ADDRESS}, NIP: {ADMIN_NIP}.
+        Kontakt w sprawach związanych z ochroną danych: <a href={`mailto:${ADMIN_EMAIL}`}>{ADMIN_EMAIL}</a>.
+      </p>
+
+      <h2>2. Jakie dane zbieramy</h2>
+      <p>
+        Serwis nie zawiera formularzy kontaktowych, kont użytkowników, sklepu ani innych narzędzi gromadzących dane osobowe wprost od użytkownika. Nie zbieramy imienia, adresu e-mail, telefonu ani innych podobnych danych.
+      </p>
+      {HAS_ANALYTICS ? (
+        <p>
+          Po wyrażeniu zgody w banerze cookies zbieramy <strong>anonimowe dane analityczne</strong> za pośrednictwem Google Analytics 4: typ urządzenia, kraj, długość wizyty, źródło ruchu. Adres IP jest maskowany.
+        </p>
+      ) : (
+        <p>
+          Obecnie serwis <strong>nie korzysta</strong> z żadnych narzędzi analitycznych ani śledzących użytkowników. Jeśli to się zmieni, niniejsza polityka zostanie zaktualizowana, a użytkownik zostanie poinformowany za pośrednictwem banera zgody.
+        </p>
+      )}
+
+      <h2>3. Pliki cookies</h2>
+      <p>
+        Strona zapisuje w przeglądarce wyłącznie pliki funkcjonalne — zapamiętanie wyboru motywu jasny/ciemny w localStorage. Te dane nie opuszczają urządzenia użytkownika i nie są przesyłane na serwer.
+      </p>
+      {HAS_ANALYTICS && (
+        <p>
+          Po wyrażeniu zgody dodawane są również cookies analityczne Google Analytics 4 (Consent Mode v2, anonymize_ip).
+        </p>
+      )}
+
+      <h2>4. Hosting i dostawcy</h2>
+      <p>
+        Serwis hostowany jest na infrastrukturze Amazon Web Services (Amazon S3 + CloudFront, region eu-central-1 / globalna sieć CDN). Logi serwera CloudFront są standardowo retencjonowane przez okres 30 dni i zawierają anonimizowane adresy IP.
+      </p>
+
+      <h2>5. Treści CKE</h2>
+      <p>
+        Serwis prezentuje rozwiązania zadań pochodzących z arkuszy maturalnych Centralnej Komisji Egzaminacyjnej. Treści zadań CKE są dokumentami urzędowymi i znajdują się w domenie publicznej zgodnie z art. 4 pkt 2 ustawy o prawie autorskim i prawach pokrewnych. Rozwiązania krok po kroku, komentarze i omówienia pułapek są opracowaniami autorskimi serwisu.
+      </p>
+
+      <h2>6. Twoje prawa</h2>
+      <p>
+        Z uwagi na brak gromadzenia danych osobowych użytkowników, większość praw wymienionych w RODO (dostęp, sprostowanie, usunięcie, przeniesienie) nie ma w praktyce zastosowania. Jeśli mimo to chcesz skontaktować się w sprawie ochrony danych, napisz na <a href={`mailto:${ADMIN_EMAIL}`}>{ADMIN_EMAIL}</a>.
+        Skargę możesz złożyć do Prezesa Urzędu Ochrony Danych Osobowych.
+      </p>
+
+      <h2>7. Zmiany w polityce</h2>
+      <p>
+        W przypadku istotnych zmian (np. dodanie narzędzi analitycznych) niniejsza polityka zostanie zaktualizowana, a data ostatniej zmiany — zaktualizowana u góry strony.
+      </p>
+    </div>
+  </main>
+  <SiteFooter />
+</BaseLayout>

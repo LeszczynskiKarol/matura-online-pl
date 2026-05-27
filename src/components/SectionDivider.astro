@@ -1,0 +1,29 @@
+---
+// SectionDivider — wizualny break między sekcjami. Subtelny, nie krzykliwy.
+// Używaj między sekcjami o RÓŻNYCH backgroundach (np. bg → bg-subtle → bg-elevated)
+// gdy potrzebny "soft" przejście.
+
+interface Props {
+  variant?: "line" | "gradient" | "dots";
+}
+
+const { variant = "line" } = Astro.props;
+---
+
+<div class="relative my-4" aria-hidden="true">
+  {variant === "line" && (
+    <div class="mx-auto h-px max-w-6xl bg-gradient-to-r from-transparent via-[var(--color-border)] to-transparent"></div>
+  )}
+
+  {variant === "gradient" && (
+    <div class="h-24 bg-gradient-to-b from-[var(--color-bg)] via-[var(--color-bg-subtle)] to-[var(--color-bg)]"></div>
+  )}
+
+  {variant === "dots" && (
+    <div class="flex justify-center gap-2 py-6">
+      <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] opacity-60"></span>
+      <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] opacity-30"></span>
+      <span class="h-1.5 w-1.5 rounded-full bg-[var(--color-accent)] opacity-15"></span>
+    </div>
+  )}
+</div>

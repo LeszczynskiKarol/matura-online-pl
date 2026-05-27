@@ -1,0 +1,47 @@
+---
+// StatBlock — duża liczba + etykieta. Używaj w grupach 2-4 dla "social proof".
+// TYLKO PRAWDZIWE LICZBY. Nie zmyślaj statystyk — patrz playbook 06.
+//
+// Użycie w gridzie:
+//   <div class="grid grid-cols-2 gap-6 sm:grid-cols-4">
+//     <StatBlock value="20+" label="lat doświadczenia" />
+//     <StatBlock value="3000" label="napraw" />
+//     <StatBlock value="12 mies." label="gwarancji" accent />
+//     <StatBlock value="48h" label="ekspres" />
+//   </div>
+
+interface Props {
+  value: string;
+  label: string;
+  hint?: string;
+  accent?: boolean;
+}
+
+const { value, label, hint, accent = false } = Astro.props;
+---
+
+<div
+  class:list={[
+    "flex flex-col gap-1 border-l-2 pl-4 py-1",
+    accent
+      ? "border-[var(--color-accent)]"
+      : "border-[var(--color-border)]",
+  ]}
+>
+  <span
+    class:list={[
+      "font-serif text-[2rem] font-medium leading-none tracking-tight md:text-[2.5rem]",
+      accent
+        ? "text-[var(--color-accent)]"
+        : "text-[var(--color-text)]",
+    ]}
+  >
+    {value}
+  </span>
+  <span class="text-[0.8125rem] font-medium uppercase tracking-[0.08em] text-[var(--color-text-muted)]">
+    {label}
+  </span>
+  {hint && (
+    <span class="text-xs text-[var(--color-text-faint)]">{hint}</span>
+  )}
+</div>

@@ -1,0 +1,116 @@
+---
+// HeroIllustration — wizualna kotwica w hero. NIGDY hero bez tego (ani podobnego).
+//
+// Wzorce do wyboru (Claude dobiera pod branżę):
+//
+// 1. CONCEPTUAL — abstrakcyjna ilustracja SVG z geometrycznymi kształtami
+//    + accent color (jak Stripe, Linear). Najlepsza dla SaaS, B2B, tech.
+//
+// 2. PHOTO — duże zdjęcie (Unsplash, własne) z subtelnym overlay + treść po lewej.
+//    Najlepsze dla rzemiosła, restauracji, lifestyle, premium.
+//
+// 3. PRODUCT MOCKUP — render urządzenia / strony / produktu w kadrze 3/4.
+//    Najlepsze dla produktów fizycznych i software.
+//
+// 4. CHART / DATA VIZ — wykres z prawdziwymi danymi + adnotacje.
+//    Najlepsze dla analytics, finanse, raporty.
+//
+// 5. ICON COLLAGE — siatka 6-9 ikon kluczowych (brands, features, use-cases)
+//    z subtelną animacją hover. Najlepsze dla "what we do" stron.
+//
+// Ten komponent jest PRZYKŁADEM #1 (conceptual SVG) — Claude powinien go
+// PRZEPISAĆ pod konkretny projekt, nie zostawić generic.
+
+interface Props {
+  variant?: "conceptual" | "minimal";
+}
+
+const { variant = "conceptual" } = Astro.props;
+---
+
+<div class="relative" aria-hidden="true">
+  {variant === "conceptual" && (
+    <svg
+      viewBox="0 0 480 360"
+      class="h-auto w-full"
+      role="img"
+      aria-label="Ilustracja"
+    >
+      {/* Tło — gradient mesh */}
+      <defs>
+        <radialGradient id="hero-bg" cx="30%" cy="40%" r="60%">
+          <stop offset="0%" stop-color="var(--color-accent)" stop-opacity="0.18" />
+          <stop offset="100%" stop-color="var(--color-accent)" stop-opacity="0" />
+        </radialGradient>
+        <linearGradient id="hero-card" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="var(--color-bg-elevated)" />
+          <stop offset="100%" stop-color="var(--color-bg-subtle)" />
+        </linearGradient>
+      </defs>
+
+      <rect width="480" height="360" fill="url(#hero-bg)" />
+
+      {/* Główny kafelek */}
+      <g transform="translate(80 70)">
+        <rect
+          width="320"
+          height="220"
+          rx="16"
+          fill="url(#hero-card)"
+          stroke="var(--color-border)"
+          stroke-width="1"
+        />
+
+        {/* "Window dots" — wizualny anchor */}
+        <circle cx="24" cy="24" r="5" fill="var(--color-accent)" opacity="0.9" />
+        <circle cx="44" cy="24" r="5" fill="var(--color-text-faint)" opacity="0.6" />
+        <circle cx="64" cy="24" r="5" fill="var(--color-text-faint)" opacity="0.4" />
+
+        {/* Pasek "tytułu" */}
+        <rect x="20" y="56" width="140" height="14" rx="3" fill="var(--color-text)" opacity="0.85" />
+
+        {/* Linijki content */}
+        <rect x="20" y="88" width="260" height="6" rx="2" fill="var(--color-text-muted)" opacity="0.4" />
+        <rect x="20" y="104" width="220" height="6" rx="2" fill="var(--color-text-muted)" opacity="0.4" />
+        <rect x="20" y="120" width="180" height="6" rx="2" fill="var(--color-text-muted)" opacity="0.4" />
+
+        {/* "Accent card" wewnątrz */}
+        <rect
+          x="20"
+          y="148"
+          width="280"
+          height="54"
+          rx="8"
+          fill="var(--color-accent)"
+          opacity="0.1"
+        />
+        <rect x="32" y="166" width="80" height="8" rx="2" fill="var(--color-accent)" />
+        <rect x="32" y="182" width="160" height="6" rx="2" fill="var(--color-accent)" opacity="0.6" />
+      </g>
+
+      {/* "Pływające" elementy dla głębi */}
+      <g opacity="0.9">
+        <circle cx="60" cy="60" r="18" fill="var(--color-accent)" opacity="0.15" />
+        <circle cx="60" cy="60" r="8" fill="var(--color-accent)" />
+      </g>
+      <g opacity="0.85">
+        <rect x="400" y="280" width="40" height="40" rx="8" fill="var(--color-accent-hover)" opacity="0.2" />
+        <rect x="408" y="288" width="24" height="24" rx="4" fill="var(--color-accent-hover)" />
+      </g>
+    </svg>
+  )}
+
+  {variant === "minimal" && (
+    <svg viewBox="0 0 480 360" class="h-auto w-full" role="img" aria-label="Ilustracja">
+      <defs>
+        <radialGradient id="hero-bg-min" cx="50%" cy="50%" r="60%">
+          <stop offset="0%" stop-color="var(--color-accent)" stop-opacity="0.2" />
+          <stop offset="100%" stop-color="var(--color-accent)" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+      <rect width="480" height="360" fill="url(#hero-bg-min)" />
+      <circle cx="240" cy="180" r="80" fill="var(--color-accent)" opacity="0.15" />
+      <circle cx="240" cy="180" r="40" fill="var(--color-accent)" />
+    </svg>
+  )}
+</div>

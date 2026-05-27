@@ -1,0 +1,46 @@
+---
+// IconBadge — okrągła/kwadratowa rama z ikoną. Visual anchor dla sekcji.
+// Używaj jako "etykieta sekcji" zamiast samego nagłówka. Każda sekcja powinna mieć.
+//
+// Użycie:
+//   <IconBadge icon="lucide:wrench" label="Serwis" tone="accent" />
+//   <IconBadge icon="lucide:clock" label="Czas naprawy" tone="muted" size="lg" />
+
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  icon: string;          // np. "lucide:wrench", "heroicons:bolt"
+  label?: string;        // tekst obok ikony — opcjonalny
+  tone?: "accent" | "muted" | "outline";
+  size?: "sm" | "md" | "lg";
+}
+
+const { icon, label, tone = "accent", size = "md" } = Astro.props;
+
+const sizeMap = {
+  sm: { box: "h-8 w-8", icon: "h-4 w-4", text: "text-xs" },
+  md: { box: "h-10 w-10", icon: "h-5 w-5", text: "text-sm" },
+  lg: { box: "h-12 w-12", icon: "h-6 w-6", text: "text-base" },
+};
+
+const toneMap = {
+  accent:
+    "bg-[var(--color-accent)]/10 text-[var(--color-accent)] ring-1 ring-inset ring-[var(--color-accent)]/20",
+  muted:
+    "bg-[var(--color-bg-subtle)] text-[var(--color-text-muted)] ring-1 ring-inset ring-[var(--color-border)]",
+  outline:
+    "bg-transparent text-[var(--color-text)] ring-1 ring-inset ring-[var(--color-border)]",
+};
+
+const s = sizeMap[size];
+const t = toneMap[tone];
+---
+
+<span class="inline-flex items-center gap-2.5">
+  <span class={`inline-flex shrink-0 items-center justify-center rounded-lg ${s.box} ${t}`} aria-hidden="true">
+    <Icon name={icon} class={s.icon} />
+  </span>
+  {label && (
+    <span class={`font-medium ${s.text} text-[var(--color-text)]`}>{label}</span>
+  )}
+</span>

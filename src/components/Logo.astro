@@ -1,0 +1,60 @@
+---
+// Logo komponent — monogram + nazwa.
+// Claude MUSI customizować monogram per-projekt: kolor, kształt, koncept wizualny.
+// NIE zostawiaj generic "rectangle + line" — to wygląda jak placeholder z Commodore 64.
+//
+// Wzorce do wyboru:
+// 1. Monogram inicjałów w kółku / kwadracie z accent color (jak Linear, Stripe)
+// 2. Conceptual mark — symbol związany z branżą (zębatka, falownik, książka, dom)
+// 3. Wordmark only — same nazwa w wyróżniającym fonie (jak Vercel, Anthropic)
+// 4. Stacked icon + name (jak GitHub, Notion)
+//
+// Każdy z tych wzorców musi być DOPRACOWANY — dwa kolory, gradient, charakterystyczny detal.
+// Brak wzorca = używaj #1 z prawdziwymi inicjałami i akcentem.
+
+import { siteConfig } from "../config/site";
+
+interface Props {
+  variant?: "default" | "compact";
+  href?: string;
+}
+
+const { variant = "default", href = "/" } = Astro.props;
+
+// Inicjały z displayName — pierwsze litery pierwszych dwóch słów
+const words = siteConfig.name.split(/\s+/).filter(Boolean);
+const initials = (
+  words.length >= 2
+    ? words[0][0] + words[1][0]
+    : siteConfig.name.slice(0, 2)
+).toUpperCase();
+---
+
+<a
+  href={href}
+  class="group inline-flex items-center gap-2.5 no-underline transition-opacity hover:opacity-90"
+  aria-label={`${siteConfig.name} — strona główna`}
+>
+  {/* Monogram — kwadrat z akcentem + inicjały. Customizuj w projekcie. */}
+  <span
+    class="relative inline-flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-hover)] text-[var(--color-accent-fg)] shadow-sm ring-1 ring-inset ring-white/10"
+    aria-hidden="true"
+  >
+    <span class="text-[0.8125rem] font-bold tracking-tight">{initials}</span>
+    {/* Subtelny glow w prawym dolnym rogu — wyróżnia od "placeholder square" */}
+    <span class="absolute -bottom-2 -right-2 h-5 w-5 rounded-full bg-white/20 blur-sm"></span>
+  </span>
+
+  {variant === "default" && (
+    <span class="flex flex-col leading-tight">
+      <span class="font-sans text-[0.95rem] font-semibold text-[var(--color-text)]">
+        {siteConfig.name}
+      </span>
+      {siteConfig.shortName !== siteConfig.name && (
+        <span class="text-[0.6875rem] font-medium uppercase tracking-[0.12em] text-[var(--color-text-faint)]">
+          {siteConfig.shortName}
+        </span>
+      )}
+    </span>
+  )}
+</a>

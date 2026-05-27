@@ -1,0 +1,223 @@
+---
+import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import SiteHeader from "../../../components/SiteHeader.astro";
+import SiteFooter from "../../../components/SiteFooter.astro";
+import IconBadge from "../../../components/IconBadge.astro";
+import { siteConfig } from "../../../config/site";
+
+export async function getStaticPaths() {
+  const arkusze = await getCollection("arkusze");
+  const subjects = await getCollection("subjects");
+
+  return arkusze.map((a) => {
+    const subject = subjects.find((s) => s.id === a.data.subject.id)!;
+    const arkuszSlug = a.id.replace(`${subject.data.slug}-`, "");
+    return {
+      params: { subject: subject.data.slug, arkusz: arkuszSlug },
+      props: { arkusz: a, subject },
+    };
+  });
+}
+
+const { arkusz, subject } = Astro.props;
+const allZadania = await getCollection("zadania");
+const zadania = allZadania
+  .filter((z) => z.data.arkusz.id === arkusz.id)
+  .sort((a, b) => a.data.nr - b.data.nr);
+
+const poziomLabel = arkusz.data.poziom === "pp" ? "podstawowy" : "rozszerzony";
+const arkuszSlug = arkusz.id.replace(`${subject.data.slug}-`, "");
+
+const title = `Matura ${subject.data.nameDopelniacz} ${arkusz.data.sesja} ${arkusz.data.rok}, poziom ${poziomLabel}`;
+const description = `Rozwiązania wszystkich zadań z arkusza CKE: ${title}. ${arkusz.data.liczbaZadan} zadań, ${arkusz.data.liczbaPunktow} punktów.`;
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Strona główna", item: siteConfig.url },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: subject.data.name,
+        item: `${siteConfig.url}/${subject.data.slug}/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: `${arkusz.data.sesja} ${arkusz.data.rok}, ${poziomLabel}`,
+        item: `${siteConfig.url}/${subject.data.slug}/${arkuszSlug}/`,
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    name: title,
+    description: description,
+    inLanguage: "pl-PL",
+    educationalLevel: poziomLabel,
+    teaches: subject.data.name,
+    learningResourceType: "Exam",
+    dateCreated: `${arkusz.data.rok}-05-08`,
+  },
+];
+
+const zadaniaWithSolutions = new Set(zadania.map((z) => z.data.nr));
+const allNrs = Array.from({ length: arkusz.data.liczbaZadan }, (_, i) => i + 1);
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <SiteHeader />
+
+  <main id="main">
+    <nav aria-label="Breadcrumb" class="border-b border-[var(--color-border)]">
+      <div class="mx-auto max-w-4xl px-4 py-3 text-sm sm:px-6 lg:px-8">
+        <ol class="flex flex-wrap items-center gap-2 text-[var(--color-text-muted)]">
+          <li><a href="/" class="no-underline hover:text-[var(--color-text)]">Strona główna</a></li>
+          <li aria-hidden="true">/</li>
+          <li>
+            <a href={`/${subject.data.slug}/`} class="no-underline hover:text-[var(--color-text)]">
+              {subject.data.name}
+            </a>
+          </li>
+          <li aria-hidden="true">/</li>
+          <li class="text-[var(--color-text)]" aria-current="page">
+            {arkusz.data.sesja} {arkusz.data.rok}, {arkusz.data.poziom.toUpperCase()}
+          </li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="border-b border-[var(--color-border)]">
+      <div class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+        <p class="text-sm font-mono uppercase tracking-wide text-[var(--color-text-muted)]">
+          {arkusz.data.symbol} • {arkusz.data.formula}
+        </p>
+        <h1 class="mt-3 font-serif text-[length:var(--text-fs-h1)] font-medium leading-tight tracking-tight">
+          Matura {subject.data.nameDopelniacz}, {arkusz.data.sesja} {arkusz.data.rok}
+        </h1>
+        <p class="mt-2 text-xl text-[var(--color-text-muted)]">
+          Poziom {poziomLabel}
+        </p>
+
+        <dl class="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-4">
+          <div>
+            <dt class="text-xs font-mono uppercase tracking-wide text-[var(--color-text-faint)]">Data egzaminu</dt>
+            <dd class="mt-1 text-sm text-[var(--color-text)]">{arkusz.data.dataPubl}</dd>
+          </div>
+          <div>
+            <dt class="text-xs font-mono uppercase tracking-wide text-[var(--color-text-faint)]">Liczba zadań</dt>
+            <dd class="mt-1 text-sm text-[var(--color-text)]">{arkusz.data.liczbaZadan}</dd>
+          </div>
+          <div>
+            <dt class="text-xs font-mono uppercase tracking-wide text-[var(--color-text-faint)]">Łącznie punktów</dt>
+            <dd class="mt-1 text-sm text-[var(--color-text)]">{arkusz.data.liczbaPunktow}</dd>
+          </div>
+          <div>
+            <dt class="text-xs font-mono uppercase tracking-wide text-[var(--color-text-faint)]">Czas</dt>
+            <dd class="mt-1 text-sm text-[var(--color-text)]">{arkusz.data.czasMinut} min</dd>
+          </div>
+        </dl>
+
+        {(arkusz.data.pdfArkuszUrl || arkusz.data.pdfKluczUrl) && (
+          <div class="mt-8 flex flex-wrap gap-3">
+            {arkusz.data.pdfArkuszUrl && (
+              <a
+                href={arkusz.data.pdfArkuszUrl}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 rounded-md border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-4 py-2 text-sm font-medium text-[var(--color-text)] no-underline transition-colors hover:border-[var(--color-accent)]"
+              >
+                <Icon name="lucide:file-down" class="h-4 w-4" />
+                Pobierz arkusz PDF (CKE)
+              </a>
+            )}
+            {arkusz.data.pdfKluczUrl && (
+              <a
+                href={arkusz.data.pdfKluczUrl}
+                target="_blank"
+                rel="noopener"
+                class="inline-flex items-center gap-2 rounded-md border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-4 py-2 text-sm font-medium text-[var(--color-text)] no-underline transition-colors hover:border-[var(--color-accent)]"
+              >
+                <Icon name="lucide:key-round" class="h-4 w-4" />
+                Klucz odpowiedzi CKE
+              </a>
+            )}
+          </div>
+        )}
+      </div>
+    </section>
+
+    <section>
+      <div class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+        <IconBadge icon="lucide:list-checks" label="Zadania" tone="accent" />
+        <h2 class="mt-4 font-serif text-[length:var(--text-fs-h2)] font-medium leading-tight tracking-tight">
+          Lista zadań
+        </h2>
+        <p class="mt-3 text-[var(--color-text-muted)]">
+          Aktualnie z rozwiązaniem: <strong>{zadania.length} z {arkusz.data.liczbaZadan}</strong>. Pozostałe dodajemy w kolejności priorytetu.
+        </p>
+
+        <ol class="mt-10 space-y-3">
+          {allNrs.map((nr) => {
+            const zadanie = zadania.find((z) => z.data.nr === nr);
+            if (zadanie) {
+              return (
+                <li>
+                  <a
+                    href={`/${subject.data.slug}/${arkuszSlug}/zadanie-${nr}/`}
+                    class="card group flex items-start gap-4 no-underline"
+                  >
+                    <span class="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-[var(--color-accent-soft)] font-mono text-base font-semibold text-[var(--color-accent)]">
+                      {nr}
+                    </span>
+                    <div class="min-w-0 flex-1">
+                      <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                        <h3 class="font-sans text-base font-semibold leading-snug text-[var(--color-text)]">
+                          Zadanie {nr}
+                        </h3>
+                        <span class="text-xs font-mono uppercase tracking-wide text-[var(--color-text-muted)]">
+                          {zadanie.data.topic} • {zadanie.data.punkty} pkt
+                        </span>
+                      </div>
+                      <p class="mt-1 text-sm text-[var(--color-text-muted)] line-clamp-2">
+                        {zadanie.data.tresc}
+                      </p>
+                    </div>
+                    <Icon
+                      name="lucide:arrow-right"
+                      class="mt-3 h-4 w-4 flex-shrink-0 text-[var(--color-text-faint)] transition-transform group-hover:translate-x-0.5 group-hover:text-[var(--color-accent)]"
+                    />
+                  </a>
+                </li>
+              );
+            }
+            return (
+              <li class="flex items-start gap-4 rounded-xl border border-dashed border-[var(--color-border)] bg-[var(--color-bg-subtle)] p-4 opacity-60">
+                <span class="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-[var(--color-bg-elevated)] font-mono text-base font-semibold text-[var(--color-text-faint)]">
+                  {nr}
+                </span>
+                <div class="min-w-0 flex-1">
+                  <div class="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                    <h3 class="font-sans text-base font-medium leading-snug text-[var(--color-text-muted)]">
+                      Zadanie {nr}
+                    </h3>
+                    <span class="text-xs font-mono uppercase tracking-wide text-[var(--color-text-faint)]">
+                      Wkrótce
+                    </span>
+                  </div>
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>

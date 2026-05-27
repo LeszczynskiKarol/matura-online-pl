@@ -1,0 +1,51 @@
+---
+import { Icon } from "astro-icon/components";
+import { siteConfig } from "../config/site";
+import ThemeToggle from "./ThemeToggle.astro";
+---
+
+<header class="sticky top-0 z-40 border-b border-[var(--color-border)] bg-[var(--color-bg)]/85 backdrop-blur">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+    <a
+      href="/"
+      class="inline-flex items-center gap-2 no-underline"
+      aria-label={siteConfig.name + " — strona główna"}
+    >
+      <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-[var(--color-accent)] font-serif text-base font-semibold text-[var(--color-accent-fg)]">
+        m
+      </span>
+      <span class="font-serif text-lg font-medium tracking-tight text-[var(--color-text)]">
+        matura<span class="text-[var(--color-text-muted)]">-online.pl</span>
+      </span>
+    </a>
+
+    <nav aria-label="Główne" class="hidden items-center gap-6 md:flex">
+      <a
+        href="/matematyka/"
+        class="text-[0.9375rem] text-[var(--color-text-muted)] no-underline hover:text-[var(--color-text)]"
+      >
+        Przedmioty
+      </a>
+      <a
+        href="/#jak-czytac"
+        class="text-[0.9375rem] text-[var(--color-text-muted)] no-underline hover:text-[var(--color-text)]"
+      >
+        Jak czytać rozwiązanie
+      </a>
+      <a
+        href={siteConfig.apka.url}
+        class="text-[0.9375rem] text-[var(--color-text-muted)] no-underline hover:text-[var(--color-text)]"
+        target="_blank"
+        rel="noopener"
+      >
+        Aplikacja
+        <Icon name="lucide:external-link" class="ml-1 inline h-3.5 w-3.5" />
+      </a>
+      <ThemeToggle />
+    </nav>
+
+    <div class="flex items-center gap-2 md:hidden">
+      <ThemeToggle />
+    </div>
+  </div>
+</header>

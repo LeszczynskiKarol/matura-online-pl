@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Nie znaleziono strony"
+  description="Pod tym adresem nic nie znaleźliśmy."
+  noindex
+>
+  <main id="main" class="mx-auto flex min-h-[70vh] max-w-3xl flex-col items-start justify-center px-4 py-20 sm:px-6">
+    <p class="font-mono text-sm text-[var(--color-text-faint)]">404</p>
+    <h1 class="mt-4 font-serif text-[length:var(--text-fs-h1)] leading-tight">
+      Nie znaleźliśmy tej strony.
+    </h1>
+    <p class="mt-6 max-w-[60ch] text-lg text-[var(--color-text-muted)]">
+      Adres może być nieaktualny albo masz literówkę. Wróć na stronę główną — tam wszystko działa.
+    </p>
+    <a
+      href="/"
+      class="mt-10 inline-block rounded-md bg-[var(--color-accent)] px-6 py-3 text-base font-medium text-[var(--color-accent-fg)] no-underline hover:bg-[var(--color-accent-hover)]"
+    >
+      ← Strona główna
+    </a>
+  </main>
+</BaseLayout>

@@ -1,0 +1,85 @@
+---
+import { Icon } from "astro-icon/components";
+import { siteConfig } from "../config/site";
+import { getCollection } from "astro:content";
+
+const subjects = (await getCollection("subjects")).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<footer class="mt-24 border-t border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
+    <div class="lg:col-span-2">
+      <div class="inline-flex items-center gap-2">
+        <span class="inline-flex h-8 w-8 items-center justify-center rounded-md bg-[var(--color-accent)] font-serif text-sm font-semibold text-[var(--color-accent-fg)]">
+          m
+        </span>
+        <span class="font-serif text-base font-medium tracking-tight">
+          {siteConfig.name}
+        </span>
+      </div>
+      <p class="mt-3 max-w-md text-sm leading-relaxed text-[var(--color-text-muted)]">
+        Rozwiązania zadań CKE krok po kroku — z omówieniem pułapek i podpowiedziami punktacji. Nie zastępujemy nauki: pomagamy zrozumieć, dlaczego coś działa.
+      </p>
+      <a
+        href={siteConfig.apka.url}
+        target="_blank"
+        rel="noopener"
+        class="mt-5 inline-flex items-center gap-2 rounded-md border border-[var(--color-border)] bg-[var(--color-bg)] px-4 py-2 text-sm font-medium text-[var(--color-text)] no-underline transition-colors hover:border-[var(--color-accent)]"
+      >
+        <Icon name="lucide:smartphone" class="h-4 w-4" />
+        Ćwicz w aplikacji {siteConfig.apka.name}
+      </a>
+    </div>
+
+    <div>
+      <p class="text-xs font-medium uppercase tracking-[0.1em] text-[var(--color-text-faint)]">
+        Przedmioty
+      </p>
+      <ul class="mt-3 space-y-2 text-sm">
+        {subjects.slice(0, 5).map((s) => (
+          <li>
+            <a
+              href={`/${s.data.slug}/`}
+              class="text-[var(--color-text-muted)] no-underline hover:text-[var(--color-text)]"
+            >
+              {s.data.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <p class="text-xs font-medium uppercase tracking-[0.1em] text-[var(--color-text-faint)]">
+        Informacje
+      </p>
+      <ul class="mt-3 space-y-2 text-sm">
+        <li>
+          <a
+            href="/polityka-prywatnosci/"
+            class="text-[var(--color-text-muted)] no-underline hover:text-[var(--color-text)]"
+          >
+            Polityka prywatności
+          </a>
+        </li>
+        <li>
+          <a
+            href={`mailto:${siteConfig.contact.email}`}
+            class="text-[var(--color-text-muted)] no-underline hover:text-[var(--color-text)]"
+          >
+            {siteConfig.contact.email}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="border-t border-[var(--color-border)]">
+    <div class="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 text-xs text-[var(--color-text-faint)] sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
+      <div>© {new Date().getFullYear()} {siteConfig.name}. Wszystkie prawa zastrzeżone.</div>
+      <div>Treści zadań pochodzą z arkuszy CKE — dokumentów urzędowych w domenie publicznej.</div>
+    </div>
+  </div>
+</footer>

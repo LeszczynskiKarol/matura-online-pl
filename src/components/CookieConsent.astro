@@ -1,0 +1,86 @@
+---
+// RODO-compliant cookie banner. Drives Google Consent Mode v2.
+// Renders ONLY if siteConfig.features.ga4 is set (no analytics → no banner needed,
+// since only functional/security cookies remain, which don't require consent).
+//
+// Storage shape in localStorage['cookie-consent'] (JSON):
+//   {
+//     analytics_storage: 'granted'|'denied',
+//     ad_storage: 'granted'|'denied',
+//     ad_user_data: 'granted'|'denied',
+//     ad_personalization: 'granted'|'denied',
+//     ts: <epoch ms>
+//   }
+//
+// Analytics.astro restores this on page load (gtag consent update) BEFORE banner appears.
+
+import { siteConfig } from "../config/site";
+
+const needsBanner = !!siteConfig.features.ga4;
+---
+
+{needsBanner && (
+  <div
+    id="cookie-banner"
+    class="needs-js fixed inset-x-0 bottom-0 z-50 hidden border-t border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-4 py-4 shadow-lg sm:px-6"
+    role="dialog"
+    aria-label="Zgoda na pliki cookie"
+    aria-live="polite"
+  >
+    <div class="mx-auto flex max-w-6xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <p class="text-sm text-[var(--color-text-muted)]">
+        Używamy plików cookie do analityki ruchu (anonimowo). Nie zbieramy danych osobowych
+        bez Twojej zgody.{" "}
+        <a href="/polityka-prywatnosci" class="underline">Więcej w polityce prywatności</a>.
+      </p>
+      <div class="flex flex-wrap gap-2">
+        <button
+          type="button"
+          id="cookie-decline"
+          class="rounded-md border border-[var(--color-border)] px-3 py-1.5 text-sm text-[var(--color-text)] hover:bg-[var(--color-bg-subtle)]"
+        >
+          Tylko niezbędne
+        </button>
+        <button
+          type="button"
+          id="cookie-accept"
+          class="rounded-md bg-[var(--color-accent)] px-3 py-1.5 text-sm font-medium text-[var(--color-accent-fg)] hover:bg-[var(--color-accent-hover)]"
+        >
+          Akceptuję wszystkie
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline>
+    (function () {
+      var KEY = "cookie-consent";
+      var banner = document.getElementById("cookie-banner");
+      if (!banner) return;
+
+      // Show banner only if no prior decision
+      var prior = null;
+      try { prior = JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) {}
+      if (!prior) banner.classList.remove("hidden");
+
+      function applyConsent(granted) {
+        var payload = {
+          analytics_storage: granted ? "granted" : "denied",
+          ad_storage: "denied",          // we don't run ads — never granted
+          ad_user_data: "denied",
+          ad_personalization: "denied",
+          ts: Date.now(),
+        };
+        localStorage.setItem(KEY, JSON.stringify(payload));
+        banner.classList.add("hidden");
+
+        if (typeof window.gtag === "function") {
+          window.gtag("consent", "update", payload);
+        }
+      }
+
+      document.getElementById("cookie-accept").addEventListener("click", function () { applyConsent(true); });
+      document.getElementById("cookie-decline").addEventListener("click", function () { applyConsent(false); });
+    })();
+  </script>
+)}

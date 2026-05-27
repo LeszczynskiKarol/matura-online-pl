@@ -1,0 +1,111 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 9
+punkty: 3
+typ: otwarte-krotkie
+topic: równania wielomianowe, metoda grupowania
+difficulty: 4
+tresc: Rozwiąż równanie x³ − 2x² − 3x + 6 = 0.
+odpowiedz: |
+  x = 2  lub  x = √3  lub  x = -√3
+pulapka: |
+  Najczęstszy błąd to dzielenie obu stron równania x²(x−2) = 3(x−2) przez (x−2) bez zastrzeżenia, że x ≠ 2. Gubisz wtedy rozwiązanie x = 2 i tracisz punkty.
+wymaganie: |
+  III.5 — rozwiązywanie równań wielomianowych W(x) = 0 metodą wyłączania wspólnego czynnika lub metodą grupowania.
+podobne:
+  - matematyka-2024-maj-pp-3
+---
+
+## Co trzeba zrobić?
+
+Trzeba rozwiązać równanie wielomianowe trzeciego stopnia:
+
+$$x^3 - 2x^2 - 3x + 6 = 0$$
+
+Wielomian trzeciego stopnia ma maksymalnie trzy pierwiastki rzeczywiste. Trzeba je wszystkie znaleźć.
+
+Najprostsza metoda to **grupowanie wyrazów** — pogrupowanie wyrazów po dwa i wyciągnięcie wspólnego czynnika tak, aby pojawił się ten sam dwumian w nawiasie.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zgrupuj wyrazy w pary.** Zauważ, że pierwsze dwa wyrazy ($x^3$ i $-2x^2$) mają wspólne $x^2$, a ostatnie dwa ($-3x$ i $+6$) mają wspólny czynnik $-3$.
+
+$$x^3 - 2x^2 - 3x + 6 = (x^3 - 2x^2) + (-3x + 6)$$
+
+</div>
+
+<div class="krok">
+
+**Wyciągnij wspólny czynnik z każdej pary.**
+
+$$x^2(x - 2) - 3(x - 2) = 0$$
+
+Teraz w obu składnikach pojawił się **ten sam** dwumian $(x - 2)$ — to znak, że grupowanie zadziałało.
+
+</div>
+
+<div class="krok">
+
+**Wyłącz $(x-2)$ jako wspólny czynnik.**
+
+$$(x - 2)(x^2 - 3) = 0$$
+
+Wielomian został rozłożony na iloczyn dwóch czynników — dwumianu liniowego i dwumianu kwadratowego. Tu już zarobiłeś **2 z 3 punktów**.
+
+</div>
+
+<div class="krok">
+
+**Zastosuj zasadę: iloczyn jest zerem, gdy któryś z czynników jest zerem.**
+
+$$x - 2 = 0 \quad \text{lub} \quad x^2 - 3 = 0$$
+
+Z pierwszego: $x = 2$.
+
+Z drugiego: $x^2 = 3$, czyli $x = \sqrt{3}$ lub $x = -\sqrt{3}$.
+
+</div>
+
+<div class="krok">
+
+**Zapisz wszystkie rozwiązania.**
+
+$$x \in \left\{ -\sqrt{3},\ \sqrt{3},\ 2 \right\}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Rozwiązaniami równania są trzy liczby:</strong> $x = -\sqrt{3}$, $x = \sqrt{3}$ oraz $x = 2$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka za 1 punkt — utrata rozwiązania</div>
+
+Kuszące jest, żeby z równania $x^2(x - 2) = 3(x - 2)$ podzielić obie strony przez $(x-2)$ i otrzymać $x^2 = 3$, czyli tylko $x = \pm\sqrt{3}$. **Tak nie wolno** — gubisz rozwiązanie $x = 2$.
+
+Dlaczego? Dzielenie przez wyrażenie zawierające niewiadomą wymaga założenia, że to wyrażenie jest różne od zera. Jeśli zapomnisz dopisać „pod warunkiem, że $x \neq 2$" i osobno sprawdzić, czy $x = 2$ spełnia oryginalne równanie — CKE daje **co najwyżej 2 punkty z 3**.
+
+Bezpieczna droga to **przeniesienie wszystkiego na jedną stronę** ($x^2(x-2) - 3(x-2) = 0$) i wyłączenie nawiasu — wtedy żadnego rozwiązania nie zgubisz.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka za 0 punktów — sprawdzanie tezy</div>
+
+Jeśli „znajdziesz" rozwiązanie metodą prób (np. policzysz wartość wielomianu dla $x = 2$ i stwierdzisz, że wynosi $0$), ale **nie pokażesz pełnej metody rozkładu na czynniki** — dostajesz najwyżej 1 pkt (za znalezienie jednego pierwiastka). Trzeba pokazać, jak rozłożyć wielomian, żeby uzasadnić, że innych rozwiązań **nie ma**.
+</div>
+
+## Jak zarobić wszystkie 3 punkty
+
+Punktacja CKE:
+- **1 pkt** — zapisanie wielomianu w postaci iloczynu, w którym jeden z czynników to wielomian stopnia co najwyżej drugiego, np. $W(x) = (x-2)(x^2-3)$.
+- **2 pkt** — to samo + rozwiązanie jednego z równań wynikających z rozkładu (np. $x = 2$).
+- **3 pkt** — pełna metoda + obliczenie **wszystkich trzech** rozwiązań: $-\sqrt{3}$, $\sqrt{3}$, $2$.
+
+Najczęstsze straty: zapomnienie o jednym rozwiązaniu lub błąd przy wyłączaniu wspólnego czynnika (myli się znak).
