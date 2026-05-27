@@ -31,7 +31,12 @@ const {
 } = Astro.props;
 
 const siteName = siteConfig.name;
-const fullTitle = title === siteName ? title : `${title} | ${siteName}`;
+// Dla strony głównej: doklej tagline (krótkie "matura-online.pl" to za mało SEO-wo).
+// Dla podstron: `{title} | {siteName}`.
+const fullTitle =
+  title === siteName
+    ? `${siteName} — ${siteConfig.tagline}`
+    : `${title} | ${siteName}`;
 const absoluteOgImage = ogImage.startsWith("http")
   ? ogImage
   : new URL(ogImage, Astro.site).href;

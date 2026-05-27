@@ -1,0 +1,88 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 16
+punkty: 1
+typ: zamkniete-dobierz
+topic: ciąg geometryczny
+difficulty: 3
+tresc: |
+  Trzywyrazowy ciąg (12, 6, 2m − 1) jest geometryczny. Określ ten ciąg: A. rosnący, B. malejący, oraz wybierz wartość m: 1. m = 1/2, 2. m = 2, 3. m = 3.
+odpowiedz: |
+  B 2 — ciąg jest malejący, m = 2.
+pulapka: |
+  Najczęstszy błąd to pomijanie własności ciągu geometrycznego: b² = a · c (środkowy wyraz do kwadratu = iloczyn sąsiednich). Drugi błąd: zapomnienie, że iloraz q ciągu (12, 6, ...) wynosi 1/2, więc trzeci wyraz to 6 · 1/2 = 3.
+wymaganie: |
+  VI.2 + VI.6 — sprawdzanie monotoniczności ciągu; własności ciągu geometrycznego.
+podobne:
+  - matematyka-2024-maj-pp-15
+  - matematyka-2024-maj-pp-17
+---
+
+## Klucz do zadań z ciągiem geometrycznym (3 wyrazy)
+
+Dla ciągu geometrycznego $(a, b, c)$ zachodzi tożsamość:
+
+$$b^2 = a \cdot c$$
+
+(środkowy wyraz do kwadratu równa się iloczynowi sąsiednich). To najszybszy sposób.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zastosuj wzór $b^2 = a \cdot c$** dla $(12, 6, 2m - 1)$:
+
+$$6^2 = 12 \cdot (2m - 1)$$
+
+$$36 = 24m - 12$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiąż na $m$.**
+
+$$48 = 24m$$
+
+$$m = 2$$
+
+</div>
+
+<div class="krok">
+
+**Sprawdź ciąg dla $m = 2$.**
+
+Trzeci wyraz: $2 \cdot 2 - 1 = 3$. Ciąg to $(12, 6, 3)$.
+
+Iloraz: $q = \dfrac{6}{12} = \dfrac{1}{2}$ (i sprawdzenie: $\dfrac{3}{6} = \dfrac{1}{2}$ ✓ — ten sam iloraz potwierdza, że ciąg rzeczywiście jest geometryczny).
+
+</div>
+
+<div class="krok">
+
+**Ustal monotoniczność.**
+
+Wyrazy: $12 > 6 > 3$ — każdy kolejny jest mniejszy od poprzedniego. Ciąg jest **malejący**.
+
+Można też zauważyć: dla ciągu geometrycznego o wszystkich wyrazach dodatnich, ciąg jest **malejący wtedy i tylko wtedy, gdy $0 < q < 1$**. Tutaj $q = \tfrac{1}{2} \in (0, 1)$ → malejący ✓.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: B 2</strong> — ciąg jest malejący, $m = 2$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+
+**Wybór m = 3** (czyli odpowiedź 3.) wybiera ten, kto liczy „trzeci wyraz musi być $\tfrac{1}{2}$ poprzedniego, czyli $3$" — i podstawia $2m - 1 = 3$ → $m = 2$ ✓ — ale potem przez nieuwagę zapisuje $m = 3$. Klasyczna pułapka **„rozwiąż na m, a nie na wartość wyrazu"**.
+
+**Wybór A (rosnący)** wybiera ten, kto nie wyliczył trzeciego wyrazu i wybrał odpowiedź losowo, albo pomylił kierunek monotoniczności mimo wyliczenia.
+
+Bezpieczna procedura: zawsze **sprawdź na końcu**, czy iloraz $q = \tfrac{b}{a} = \tfrac{c}{b}$ jest spójny. Jeśli tak — ciąg jest geometryczny i monotoniczność wynika ze znaku/wartości $q$.
+</div>

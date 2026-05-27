@@ -1,0 +1,67 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 15
+punkty: 1
+typ: zamkniete-pf
+topic: ciągi, wzór ogólny
+difficulty: 3
+tresc: |
+  Ciąg (a_n) jest określony wzorem a_n = (−1)^n · (n − 5) dla każdej liczby naturalnej n ≥ 1. Oceń prawdziwość poniższych stwierdzeń (P/F):
+  (1) Pierwszy wyraz ciągu (a_n) jest dwa razy większy od trzeciego wyrazu tego ciągu.
+  (2) Wszystkie wyrazy ciągu (a_n) są dodatnie.
+odpowiedz: |
+  PF — pierwsze stwierdzenie PRAWDA, drugie FAŁSZ.
+pulapka: |
+  Najczęstszy błąd to interpretacja „dwa razy większy" niejednoznacznie: czy to a_1 = 2 · a_3, czy a_1 = a_3 + 2 · a_3 = 3 · a_3? CKE używa wersji „dwa razy większy = 2× tyle". Drugi błąd: pominięcie znaku (−1)^n dla dużych n.
+wymaganie: |
+  VI.1 — obliczanie wyrazów ciągu określonego wzorem ogólnym.
+podobne:
+  - matematyka-2024-maj-pp-16
+  - matematyka-2024-maj-pp-17
+---
+
+## Najpierw policz kilka wyrazów ciągu
+
+Wzór: $a_n = (-1)^n \cdot (n - 5)$.
+
+| $n$ | $(-1)^n$ | $n - 5$ | $a_n$ |
+|---|---|---|---|
+| $1$ | $-1$ | $-4$ | $\mathbf{+4}$ |
+| $2$ | $+1$ | $-3$ | $-3$ |
+| $3$ | $-1$ | $-2$ | $\mathbf{+2}$ |
+| $4$ | $+1$ | $-1$ | $-1$ |
+| $5$ | $-1$ | $0$ | $0$ |
+| $6$ | $+1$ | $1$ | $1$ |
+
+Pierwszy wyraz: $a_1 = 4$. Trzeci wyraz: $a_3 = 2$.
+
+## Stwierdzenie (1) — czy $a_1$ jest dwa razy większy od $a_3$?
+
+$$a_1 = 4, \qquad 2 \cdot a_3 = 2 \cdot 2 = 4$$
+
+$a_1 = 2 \cdot a_3$. Stwierdzenie **PRAWDA**.
+
+## Stwierdzenie (2) — czy wszystkie wyrazy są dodatnie?
+
+Wyliczona tabelka pokazuje: $a_2 = -3$, $a_4 = -1$, $a_5 = 0$ — **nie są wszystkie dodatnie**. Wystarczy jeden kontrprzykład, żeby zdyskwalifikować zdanie ogólne.
+
+Stwierdzenie **FAŁSZ**.
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: P F</strong>
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+
+Na (1): niektórzy interpretują „dwa razy większy" jako „o dwa razy więcej", czyli $a_1 = a_3 + 2 a_3 = 3 a_3$. **CKE konsekwentnie używa konwencji** „dwa razy większy = 2 ×". To samo dotyczy „o połowę mniejszy = $\tfrac{1}{2}$ ×".
+
+Na (2): klasyczna pułapka logiczna. Stwierdzenie „**wszystkie** wyrazy są dodatnie" jest fałszywe, gdy choć jeden nie jest. Wystarczy znaleźć **jeden** wyraz nie-dodatni (tu mamy nawet kilka: $a_2 = -3$, $a_4 = -1$, $a_5 = 0$). Nie trzeba dowodzić, że „wszystkie są niedodatnie" — to byłoby silniejsze stwierdzenie.
+</div>
+
+## Strategia dla wzorów ze znakiem $(-1)^n$
+
+Jeśli we wzorze pojawia się $(-1)^n$ — wynik **na pewno** zmienia znaki naprzemiennie. Dla nieparzystych $n$ czynnik daje $-1$, dla parzystych $+1$. To natychmiast wyklucza stwierdzenia w stylu „wszystkie wyrazy są tego samego znaku".

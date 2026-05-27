@@ -1,0 +1,84 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 10
+punkty: 1
+typ: zamkniete-abcd
+topic: układy równań, zadanie tekstowe
+difficulty: 3
+tresc: |
+  W październiku 2022 roku założono dwa sady, w których posadzono łącznie 1960 drzew. Po roku stwierdzono, że uschło 5% drzew w pierwszym sadzie i 10% drzew w drugim sadzie. Uschnięte drzewa usunięto, a nowych nie dosadzano. Liczba drzew, które pozostały w drugim sadzie, stanowiła 60% liczby drzew, które pozostały w pierwszym sadzie. Niech x i y oznaczają liczby drzew posadzonych w pierwszym i drugim sadzie. Wybierz układ równań prowadzący do x i y.
+odpowiedz: |
+  A
+pulapka: |
+  Najczęstszy błąd to napisanie "drzew w drugim sadzie to 60% drzew w pierwszym" jako 0,6x = y (zamiast 0,6 · 0,95x = 0,9y). Trzeba pamiętać że 60% dotyczy liczby POZOSTAŁYCH (po uschnięciu), nie posadzonych.
+wymaganie: |
+  IV.2 — stosowanie układów równań do rozwiązywania zadań tekstowych.
+podobne:
+  - matematyka-2024-maj-pp-13
+---
+
+## Co dane, co szukane?
+
+- $x$ — drzew posadzonych w sadzie 1
+- $y$ — drzew posadzonych w sadzie 2
+- łącznie posadzono $1960$
+- w sadzie 1 uschło $5\%$ — zostało $95\%$, czyli $0{,}95x$
+- w sadzie 2 uschło $10\%$ — zostało $90\%$, czyli $0{,}9y$
+- liczba pozostałych w sadzie 2 to $60\%$ liczby pozostałych w sadzie 1: $0{,}9y = 0{,}6 \cdot 0{,}95x$
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Pierwsze równanie — bilans posadzonych drzew.**
+
+$$x + y = 1960$$
+
+</div>
+
+<div class="krok">
+
+**Drugie równanie — relacja między pozostałymi po roku.**
+
+Drzewa pozostałe w sadzie 2 to $0{,}9y$. Drzewa pozostałe w sadzie 1 to $0{,}95x$. Pierwsza wielkość to $60\%$ drugiej:
+
+$$0{,}9y = 0{,}6 \cdot 0{,}95x$$
+
+Równoważnie (po zamianie stron):
+
+$$0{,}6 \cdot 0{,}95x = 0{,}9y$$
+
+</div>
+
+<div class="krok">
+
+**Złóż w układ.**
+
+$$\begin{cases} x + y = 1960 \\ 0{,}6 \cdot 0{,}95x = 0{,}9y \end{cases}$$
+
+To **dokładnie** odpowiedź A.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: A</strong>
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+
+**Odpowiedź B** ($0{,}95x = 0{,}6 \cdot 0{,}9y$) wybiera ten, kto pomylił kierunek relacji — w treści jest „pozostałe w drugim stanowiły $60\%$ pozostałych w pierwszym", a nie odwrotnie.
+
+**Odpowiedź C** ($0{,}05x = 0{,}6 \cdot 0{,}1y$) wybiera ten, kto liczy $60\%$ relacji **dla uschniętych** drzew zamiast dla pozostałych. Pułapka: $60\%$ dotyczy **pozostałych**, nie wszystkich i nie uschniętych.
+
+**Odpowiedź D** — błąd arytmetyczny: $0{,}4 \cdot 0{,}95x$ zamiast $0{,}6 \cdot 0{,}95x$ (pomylenie „$60\%$" z „dopełnieniem do $100\%$").
+</div>
+
+## Wynik liczbowy (dla ciekawskich)
+
+Z układu A: $x = 1200$, $y = 760$. To nie jest częścią zadania (tylko trzeba wskazać układ), ale warto sprawdzić, że taki układ ma sensowne rozwiązanie — kalibruje pewność wyboru.

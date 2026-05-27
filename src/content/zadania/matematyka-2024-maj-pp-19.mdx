@@ -1,0 +1,72 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 19
+punkty: 1
+typ: zamkniete-abcd
+topic: trygonometria, tożsamości
+difficulty: 3
+tresc: |
+  Liczba sin³20° + cos²20° · sin20° jest równa A. cos20°, B. sin20°, C. tg20°, D. sin20° · cos20°.
+odpowiedz: |
+  B
+pulapka: |
+  Najczęstszy błąd to liczenie tego kalkulatorem (na maturze podstawowej masz tylko prosty kalkulator) zamiast wyciągnięcia wspólnego czynnika sin20°. Drugi błąd: pomylenie sin³x z sin(3x).
+wymaganie: |
+  VII.2 — stosowanie tożsamości sin²α + cos²α = 1.
+podobne:
+  - matematyka-2024-maj-pp-5
+---
+
+## Cały trik — wyciąganie wspólnego czynnika
+
+Zauważ, że **oba składniki** zawierają $\sin 20°$:
+
+- $\sin^3 20° = \sin 20° \cdot \sin^2 20°$
+- $\cos^2 20° \cdot \sin 20° = \sin 20° \cdot \cos^2 20°$
+
+Wyciągnij $\sin 20°$ przed nawias:
+
+$$\sin^3 20° + \cos^2 20° \cdot \sin 20° = \sin 20° \cdot \left( \sin^2 20° + \cos^2 20° \right)$$
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zastosuj jedynkę trygonometryczną:**
+
+$$\sin^2 \alpha + \cos^2 \alpha = 1$$
+
+dla dowolnego kąta $\alpha$, w szczególności dla $\alpha = 20°$.
+
+</div>
+
+<div class="krok">
+
+**Podstaw $1$ w miejsce nawiasu:**
+
+$$\sin 20° \cdot \underbrace{\left( \sin^2 20° + \cos^2 20° \right)}_{= 1} = \sin 20° \cdot 1 = \sin 20°$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: B</strong> — $\sin 20°$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+
+**Odpowiedź D** ($\sin 20° \cdot \cos 20°$) wybiera ten, kto wyciągnął tylko jedno wystąpienie $\sin 20°$ albo $\cos 20°$, ale nie zauważył jedynki trygonometrycznej.
+
+**Próba kalkulatora** — na maturze podstawowej masz tylko **kalkulator prosty** (bez funkcji trygonometrycznych). Nie da się tego policzyć liczbowo. Zadanie wymaga **rozpoznania struktury**: dwa składniki z $\sin 20°$ → wspólny czynnik → jedynka trygonometryczna.
+
+**Pomylenie zapisu** — $\sin^3 20°$ to $(\sin 20°)^3$, czyli $\sin 20° \cdot \sin 20° \cdot \sin 20°$. **Nie** $\sin(3 \cdot 20°) = \sin 60°$. To dwie różne rzeczy.
+</div>
+
+## Klucz uniwersalny
+
+Wzór $\sin^2 \alpha + \cos^2 \alpha = 1$ to **najczęściej testowana** tożsamość trygonometryczna na maturze podstawowej. Gdy widzisz w wyrażeniu zarówno $\sin^2$ jak i $\cos^2$ tego samego kąta — w 95% przypadków zadanie sprowadza się do zauważenia tej jedynki i schludnego przekształcenia algebraicznego (wspólny czynnik, podstawienie). Bez kalkulatora.
