@@ -1,0 +1,149 @@
+---
+arkusz: matematyka-2024-maj-pr
+subject: matematyka
+nr: 6
+punkty: 3
+typ: otwarte-krotkie
+topic: kombinatoryka, zliczanie z ograniczeniami
+difficulty: 5
+tresc: |
+  Rozważamy wszystkie liczby naturalne, w których zapisie dziesiętnym nie powtarza się jakakolwiek cyfra oraz dokładnie trzy cyfry są nieparzyste i dokładnie dwie cyfry są parzyste. Oblicz, ile jest takich liczb.
+odpowiedz: |
+  11 040
+pulapka: |
+  Najgorszy błąd to pominięcie ograniczenia "liczba naturalna" — pierwsza cyfra ≠ 0. Zliczyć trzeba WSZYSTKIE permutacje 5 wybranych cyfr i ODJĄĆ te, które zaczynają się od zera. CKE wprost: jeśli rozpatrujesz liczby inne niż pięciocyfrowe — 0 punktów.
+wymaganie: |
+  XI.R1 — zliczanie obiektów z wykorzystaniem reguł mnożenia i dodawania oraz wzorów na permutacje, kombinacje, wariacje.
+podobne:
+  - matematyka-2024-maj-pr-3
+  - matematyka-2024-maj-pr-7
+---
+
+## Co dokładnie liczymy?
+
+- Liczba **naturalna** (więc bez zer na początku)
+- Cyfry **parami różne** (każda max raz)
+- **Dokładnie 3 cyfry nieparzyste** i **dokładnie 2 cyfry parzyste**
+- Łącznie więc liczba ma **5 cyfr** (3 + 2)
+
+Dlatego liczba musi być **pięciocyfrowa**.
+
+**Cyfry nieparzyste** dostępne: $\{1, 3, 5, 7, 9\}$ — pięć sztuk.
+**Cyfry parzyste** dostępne: $\{0, 2, 4, 6, 8\}$ — pięć sztuk.
+
+## Strategia — wszystkie minus zero-na-początku
+
+Najprościej:
+
+1. Zliczyć **wszystkie** 5-cyfrowe ciągi (z 3 nieparzystymi i 2 parzystymi, parami różne) — w tym te zaczynające się od zera (czyli formalnie nie-naturalne).
+2. **Odjąć** te zaczynające się od zera.
+
+## Krok 1 — wszystkie 5-cyfrowe ciągi $L_1$
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wybierz 3 cyfry nieparzyste z 5 dostępnych.** Kombinacja (bez kolejności, bo dopiero ustawiamy je w cyfrach później):
+
+$$\binom{5}{3} = 10$$
+
+</div>
+
+<div class="krok">
+
+**Wybierz 2 cyfry parzyste z 5 dostępnych.**
+
+$$\binom{5}{2} = 10$$
+
+</div>
+
+<div class="krok">
+
+**Ustaw wybrane 5 cyfr w 5 pozycjach.** Permutacja 5-elementowa:
+
+$$5! = 120$$
+
+</div>
+
+<div class="krok">
+
+**Wymnóż** (reguła mnożenia):
+
+$$L_1 = \binom{5}{3} \cdot \binom{5}{2} \cdot 5! = 10 \cdot 10 \cdot 120 = 12\,000$$
+
+</div>
+
+</div>
+
+## Krok 2 — odejmij ciągi zaczynające się od zera $L_2$
+
+Jeśli pierwsza cyfra to $0$, to:
+
+- $0$ jest jedną z dwóch wybranych cyfr parzystych — pozostaje wybrać **jedną** spośród pozostałych 4 parzystych ($\{2, 4, 6, 8\}$): $\binom{4}{1} = 4$
+- nieparzyste: jak wcześniej, $\binom{5}{3} = 10$
+- Mamy ustaloną pierwszą cyfrę ($0$) i 4 inne cyfry na pozostałych 4 pozycjach: permutacja $4!$:
+
+$$L_2 = \binom{5}{3} \cdot \binom{4}{1} \cdot 4! = 10 \cdot 4 \cdot 24 = 960$$
+
+## Krok 3 — wynik
+
+$$L_1 - L_2 = 12\,000 - 960 = 11\,040$$
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> jest $11\,040$ takich liczb.
+  </div>
+</div>
+
+## Sposób alternatywny — bez odejmowania
+
+Można od razu zliczać przypadki, w których pierwsza cyfra **nie jest zerem**. Dwa rozłączne podprzypadki:
+
+**Przypadek A**: pierwsza cyfra **parzysta różna od 0** (czyli z $\{2,4,6,8\}$):
+
+$$P = 4 \cdot \binom{4}{1} \cdot \binom{5}{3} \cdot 4!$$
+
+(4 wybory pierwszej cyfry; potem 1 z pozostałych 4 parzystych; potem 3 z 5 nieparzystych; permutacja na 4 pozostałych pozycjach.)
+
+$$P = 4 \cdot 4 \cdot 10 \cdot 24 = 3\,840$$
+
+**Przypadek B**: pierwsza cyfra **nieparzysta**:
+
+$$N = 5 \cdot \binom{4}{2} \cdot \binom{5}{2} \cdot 4!$$
+
+(5 wyborów pierwszej cyfry nieparzystej; 2 z pozostałych 4 nieparzystych; 2 z 5 parzystych; permutacja na 4 pozostałych pozycjach.)
+
+$$N = 5 \cdot 6 \cdot 10 \cdot 24 = 7\,200$$
+
+$$P + N = 3\,840 + 7\,200 = 11\,040$$ ✓
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — uwaga 1 z klucza CKE (0 punktów)</div>
+
+Jeśli rozpatrujesz **liczby inne niż pięciocyfrowe** (np. liczby 4-cyfrowe lub 6-cyfrowe) — CKE daje **0 punktów na całe zadanie**. Treść mówi „dokładnie 3 nieparzyste + dokładnie 2 parzyste" — to **dokładnie 5 cyfr**.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka zera na początku</div>
+
+Klasyczny błąd to obliczenie tylko $L_1 = 12\,000$ i wpisanie tej liczby jako wynik. To **zawyża** odpowiedź — zawiera ciągi z zerem na początku, które **nie są liczbami naturalnymi**.
+
+Bezpieczna ścieżka: zawsze, gdy w zadaniu o liczbach jest możliwa „cyfra 0" wśród wybranych, sprawdź czy nie zaczyna ona liczby. Jeśli tak — albo odejmij (jak Sposób I), albo zlicz przypadki rozłącznie według pierwszej cyfry (jak Sposób II).
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** — obliczenie $L_1 = \binom{5}{3} \cdot \binom{5}{2} \cdot 5! = 12\,000$ ALBO $L_2 = \binom{5}{3} \cdot \binom{4}{1} \cdot 4! = 960$ ALBO jednego z przypadków P, N w sposobie alternatywnym.
+- **2 pkt** — dodatkowo obliczenie obu $L_1$ i $L_2$ (lub obu P i N).
+- **3 pkt** — pełna metoda + wynik $11\,040$.
+
+## Klucz uniwersalny — schemat zliczania ciągów z ograniczeniami
+
+Pamiętaj o trzech fazach każdego takiego zadania:
+
+1. **Wybierz** odpowiednią liczbę elementów z każdej puli (kombinacje $\binom{n}{k}$, bo kolejność wyboru nie ma znaczenia).
+2. **Ustaw** wybrane elementy (permutacja $k!$ albo wariacja, jeśli rozróżniamy pozycje).
+3. **Odejmij** przypadki łamiące dodatkowe warunki (np. „zaczynające się od zera").
+
+Albo zamiennie — od razu **rozbij na rozłączne klasy** według trudnego warunku (jak w Sposobie II), żeby nie odejmować nic na końcu.

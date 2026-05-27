@@ -1,0 +1,124 @@
+---
+arkusz: matematyka-2024-maj-pr
+subject: matematyka
+nr: 4
+punkty: 3
+typ: otwarte-krotkie
+topic: pochodna, styczna do wykresu funkcji
+difficulty: 4
+tresc: |
+  Funkcja f jest określona wzorem f(x) = (x³ − 3x + 2) / x dla każdego x ≠ 0. Punkt P, o pierwszej współrzędnej równej 2, należy do wykresu funkcji f. Prosta o równaniu y = ax + b jest styczna do wykresu f w punkcie P. Oblicz współczynniki a oraz b.
+odpowiedz: |
+  a = 7/2, b = −5
+pulapka: |
+  Najczęstszy błąd to pominięcie uproszczenia f(x) = x² − 3 + 2/x i liczenie pochodnej ilorazu w pierwotnej formie (działa, ale prowadzi do błędów rachunkowych). Drugi błąd: zapomnienie, że styczna przechodzi przez P — i b liczone bez warunku f(P_x) = a · P_x + b.
+wymaganie: |
+  XIII.R2 — pochodna funkcji + interpretacja geometryczna; XIII.R3 — pochodne wzorów potęgowych.
+podobne:
+  - matematyka-2024-maj-pr-2
+---
+
+## Geometryczna interpretacja pochodnej
+
+Jeśli prosta $y = ax + b$ jest **styczna** do wykresu funkcji $f$ w punkcie $P = (x_0, f(x_0))$, to:
+
+- **$a = f'(x_0)$** — współczynnik kierunkowy stycznej to wartość pochodnej w punkcie styczności
+- **styczna przechodzi przez $P$** — czyli $f(x_0) = a \cdot x_0 + b$
+
+Dwa warunki, dwie niewiadome ($a$ i $b$).
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Oblicz $f(2)$** — drugą współrzędną punktu $P$.
+
+$$f(2) = \frac{2^3 - 3 \cdot 2 + 2}{2} = \frac{8 - 6 + 2}{2} = \frac{4}{2} = 2$$
+
+Czyli $P = (2, 2)$.
+
+</div>
+
+<div class="krok">
+
+**Uprość wzór funkcji** — dla $x \neq 0$:
+
+$$f(x) = \frac{x^3 - 3x + 2}{x} = \frac{x^3}{x} - \frac{3x}{x} + \frac{2}{x} = x^2 - 3 + \frac{2}{x}$$
+
+Tak jest **znacznie łatwiej** różniczkować (dwa składniki potęgowe + jeden ilorazowy z prostym wzorem) niż brać pochodną pierwotnego ułamka.
+
+</div>
+
+<div class="krok">
+
+**Oblicz pochodną.** Pamiętaj: $\tfrac{2}{x} = 2x^{-1}$, więc $\left(\tfrac{2}{x}\right)' = -2x^{-2} = -\tfrac{2}{x^2}$.
+
+$$f'(x) = 2x - 0 - \frac{2}{x^2} = 2x - \frac{2}{x^2}$$
+
+</div>
+
+<div class="krok">
+
+**Wstaw $x = 2$** żeby znaleźć współczynnik kierunkowy stycznej:
+
+$$a = f'(2) = 2 \cdot 2 - \frac{2}{4} = 4 - \frac{1}{2} = \frac{7}{2}$$
+
+</div>
+
+<div class="krok">
+
+**Wyznacz $b$ z warunku przejścia stycznej przez $P = (2, 2)$:**
+
+$$2 = \frac{7}{2} \cdot 2 + b$$
+
+$$2 = 7 + b \quad\Rightarrow\quad b = -5$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> $a = \dfrac{7}{2}$, $b = -5$. Styczna: $y = \dfrac{7}{2} x - 5$.
+  </div>
+</div>
+
+## Sposób alternatywny — pochodna ilorazu
+
+Można policzyć $f'(x)$ od razu ze wzoru na pochodną ilorazu $\left(\tfrac{u}{v}\right)' = \tfrac{u'v - uv'}{v^2}$:
+
+$$f'(x) = \frac{(3x^2 - 3) \cdot x - (x^3 - 3x + 2) \cdot 1}{x^2} = \frac{3x^3 - 3x - x^3 + 3x - 2}{x^2} = \frac{2x^3 - 2}{x^2}$$
+
+Dla $x = 2$: $f'(2) = \tfrac{16 - 2}{4} = \tfrac{14}{4} = \tfrac{7}{2}$ ✓
+
+Ta sama odpowiedź, ale o wiele więcej rachunku — i więcej okazji do pomyłki znaku. **Uproszczenie wzoru na początku** to lepsza droga.
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka pochodnej ilorazu</div>
+
+Jeśli błędnie zastosujesz wzór na pochodną ilorazu (np. zapiszesz $\tfrac{u'v + uv'}{v^2}$ z plusem zamiast minusem) — CKE daje **co najwyżej 1 punkt** za całe zadanie. Wzór na pochodną ilorazu jest w „Wybranych wzorach matematycznych", warto go sprawdzić zanim zaczniesz liczyć.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka zapomnienia o warunku przez P</div>
+
+Jeśli policzysz tylko $a = f'(2) = \tfrac{7}{2}$ i napiszesz „styczna: $y = \tfrac{7}{2}x + b$" bez wyznaczenia $b$ — dostajesz **2 z 3 punktów**. Trzeba dodatkowo wykorzystać, że styczna **przechodzi przez punkt styczności** ($f(2) = 2$), żeby znaleźć $b$.
+
+Pamiętaj: styczna jest jednoznacznie wyznaczona przez punkt styczności + nachylenie. Nachylenie daje pochodna, punkt — wartość funkcji.
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** — wyznaczenie pochodnej $f'(x)$ w jakiejkolwiek postaci.
+- **2 pkt** — obliczenie $a = f'(2) = \tfrac{7}{2}$.
+- **3 pkt** — dodatkowo obliczenie $b = -5$.
+
+## Klucz — równanie stycznej
+
+Procedura uniwersalna dla zadań „styczna w punkcie $P$":
+
+1. Oblicz $f(x_0)$ — drugą współrzędną punktu styczności.
+2. Oblicz $f'(x_0)$ — to twój $a$.
+3. Podstaw do $f(x_0) = a \cdot x_0 + b$ i znajdź $b$.
+
+Ewentualna postać alternatywna: $y - f(x_0) = f'(x_0)(x - x_0)$ — to równanie stycznej „w postaci punkt-kierunek", można rozwinąć do postaci kierunkowej.

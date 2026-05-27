@@ -1,0 +1,108 @@
+---
+arkusz: matematyka-2024-maj-pr
+subject: matematyka
+nr: 1
+punkty: 2
+typ: otwarte-krotkie
+topic: funkcja wykładnicza, model praktyczny
+difficulty: 3
+tresc: |
+  W chwili początkowej (t = 0) filiżanka z gorącą kawą znajduje się w pokoju, a temperatura kawy jest równa 80 °C. Temperatura w pokoju jest stała i równa 20 °C. Temperatura T tej kawy zmienia się zgodnie z zależnością T(t) = (T_p − T_z) · k^(−t) + T_z, gdzie T_p = 80, T_z = 20, k — stała. Po 10 minutach kawa ostygła do 65 °C. Oblicz temperaturę po kolejnych 5 minutach (czyli T(15)).
+odpowiedz: |
+  T(15) ≈ 59 °C
+pulapka: |
+  Najczęstszy błąd to liczenie T(5) zamiast T(15) — bo treść mówi "po kolejnych 5 minutach". To T(10 + 5) = T(15), nie T(5). Drugi błąd: zostawienie wyniku z √3 zamiast zaokrąglić do jedności.
+wymaganie: |
+  V.13 — posługiwanie się funkcjami wykładniczą i logarytmiczną do opisu i interpretacji zagadnień praktycznych.
+podobne:
+  - matematyka-2024-maj-pr-5
+---
+
+## Co wiemy?
+
+Wzór modelu stygnięcia (prawo Newtona):
+
+$$T(t) = (T_p - T_z) \cdot k^{-t} + T_z = 60 \cdot k^{-t} + 20$$
+
+Z warunku $T(10) = 65$:
+
+$$65 = 60 \cdot k^{-10} + 20 \quad\Rightarrow\quad k^{-10} = \frac{45}{60} = \frac{3}{4}$$
+
+To **jedyna informacja**, jakiej potrzebujemy o $k$. Nie obliczamy samego $k$ — pracujemy bezpośrednio z $k^{-10}$.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zapisz $T(15)$ używając wykładnika $-15$.**
+
+$$T(15) = 60 \cdot k^{-15} + 20$$
+
+</div>
+
+<div class="krok">
+
+**Zauważ, że $k^{-15} = k^{-10} \cdot k^{-5}$, oraz $k^{-5} = \sqrt{k^{-10}}$** (bo $(k^{-5})^2 = k^{-10}$, a $k^{-5} > 0$).
+
+$$k^{-15} = k^{-10} \cdot \sqrt{k^{-10}} = (k^{-10})^{1{,}5}$$
+
+</div>
+
+<div class="krok">
+
+**Podstaw $k^{-10} = \tfrac{3}{4}$:**
+
+$$T(15) = 60 \cdot \left(\frac{3}{4}\right)^{1{,}5} + 20$$
+
+Rozłóż $\left(\tfrac{3}{4}\right)^{1{,}5} = \tfrac{3}{4} \cdot \sqrt{\tfrac{3}{4}} = \tfrac{3}{4} \cdot \tfrac{\sqrt{3}}{2}$:
+
+$$T(15) = 60 \cdot \frac{3}{4} \cdot \frac{\sqrt{3}}{2} + 20 = \frac{45\sqrt{3}}{2} + 20$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz przybliżenie.** $\sqrt{3} \approx 1{,}732$:
+
+$$\frac{45 \cdot 1{,}732}{2} + 20 \approx \frac{77{,}94}{2} + 20 \approx 38{,}97 + 20 \approx 58{,}97$$
+
+Po zaokrągleniu do jedności: $T(15) \approx 59$ °C.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> $T(15) \approx 59$ °C.
+  </div>
+</div>
+
+## Sposób alternatywny — start z $t = 10$
+
+Można potraktować chwilę $t = 10$ jako „nowy start" z $T_p' = 65$ i policzyć $T(5)$ od tego momentu:
+
+$$T(10 + 5) = (65 - 20) \cdot k^{-5} + 20 = 45 \cdot \sqrt{\tfrac{3}{4}} + 20 = 45 \cdot \frac{\sqrt{3}}{2} + 20 \approx 59 \text{ °C}$$
+
+Ten sam wynik, mniej algebry.
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka czasowa</div>
+
+„Po kolejnych pięciu minutach" znaczy **po następnych 5 minutach licząc od t = 10**, czyli $t = 15$ (nie $t = 5$). Czytaj treść uważnie — to klasyczna pułapka językowa w zadaniach o stygnięciu/wzroście.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka punktacji — uwaga z klucza</div>
+
+Wynik **bez zaokrąglenia** (np. „$T(15) = \tfrac{45\sqrt{3}}{2} + 20$") nie jest pełną odpowiedzią — CKE wymaga **liczby w stopniach Celsjusza zaokrąglonej do jedności**. Bez tego ostatniego kroku tracisz 1 punkt (dostajesz tylko za metodę, $k^{-10} = \tfrac{3}{4}$).
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** — obliczenie $k^{-10} = \tfrac{45}{60} = \tfrac{3}{4}$.
+- **2 pkt** — pełna metoda + wynik zaokrąglony: $T(15) \approx 59$ °C.
+
+## Klucz — kiedy używać prawa Newtona
+
+Każde zadanie typu „stygnięcie / nagrzewanie / spadek aktywności radioaktywnej / zanikanie leku w krwi" sprowadza się do tego samego schematu wykładniczego $T(t) = A \cdot k^{-t} + B$. Trik to wyciągnięcie $k^{-T}$ (gdzie $T$ to znany moment) i wyrażenie szukanej wartości jako jego potęgi. Nigdy nie musisz wyciągać samego $k$ — pracuj z $k^{-T}$ jako blokiem.

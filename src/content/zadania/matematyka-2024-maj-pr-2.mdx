@@ -1,0 +1,108 @@
+---
+arkusz: matematyka-2024-maj-pr
+subject: matematyka
+nr: 2
+punkty: 2
+typ: otwarte-krotkie
+topic: granice funkcji, granice jednostronne
+difficulty: 3
+tresc: |
+  Oblicz granicę lim (x → 2⁻) (x³ − 8) / (x − 2)².
+odpowiedz: |
+  Granica jest równa −∞.
+pulapka: |
+  Najczęstszy błąd to próba obliczenia granicy w punkcie x = 2 (czyli policzenie 0/0 i napisanie "nieoznaczoność"). To granica JEDNOSTRONNA — z lewej strony, więc x < 2. Druga pułapka: zapomnienie znaku — (x − 2)² jest zawsze ≥ 0, ale ze znakiem 0⁺, nie 0⁻ (kwadrat dowolnej liczby ≠ 0 jest dodatni).
+wymaganie: |
+  XIII.R1 — obliczanie granic funkcji, w tym jednostronnych.
+podobne:
+  - matematyka-2024-maj-pr-4
+---
+
+## Pierwsza obserwacja — co się dzieje gdy $x \to 2$?
+
+Licznik: $x^3 - 8 \to 8 - 8 = 0$.
+
+Mianownik: $(x - 2)^2 \to 0$.
+
+Symbolicznie: $\tfrac{0}{0}$ — **nieoznaczoność**. Musimy uprościć wyrażenie albo użyć reguły de l'Hospitala.
+
+## Trik — różnica sześcianów
+
+Zauważ, że $x^3 - 8 = x^3 - 2^3$ — to **różnica sześcianów**. Wzór skróconego mnożenia:
+
+$$a^3 - b^3 = (a - b)(a^2 + ab + b^2)$$
+
+Dla $a = x$, $b = 2$:
+
+$$x^3 - 8 = (x - 2)(x^2 + 2x + 4)$$
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Podstaw rozkład do ułamka i skróć $(x - 2)$.**
+
+$$\frac{x^3 - 8}{(x - 2)^2} = \frac{(x - 2)(x^2 + 2x + 4)}{(x - 2)^2} = \frac{x^2 + 2x + 4}{x - 2}$$
+
+(skracanie jest dozwolone, bo $x \neq 2$ — granica nie sprawdza wartości w punkcie, tylko zachowanie blisko niego).
+
+</div>
+
+<div class="krok">
+
+**Zbadaj zachowanie licznika i mianownika osobno, gdy $x \to 2^-$** (czyli $x \to 2$ z lewej strony, więc $x < 2$).
+
+Licznik: $x^2 + 2x + 4 \to 4 + 4 + 4 = 12$ (skończona, dodatnia).
+
+Mianownik: $x - 2 \to 0$, ale od strony **ujemnej** (bo $x < 2$ → $x - 2 < 0$). Symbolicznie: $0^-$.
+
+</div>
+
+<div class="krok">
+
+**Wyciągnij wniosek.** Liczba dodatnia (12) podzielona przez „zero od strony ujemnej" daje **minus nieskończoność**:
+
+$$\lim_{x \to 2^-} \frac{x^2 + 2x + 4}{x - 2} = \frac{12}{0^-} = -\infty$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> $\displaystyle \lim_{x \to 2^-} \frac{x^3 - 8}{(x - 2)^2} = -\infty$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd — pominięcie znaku przy $x \to 2^-$</div>
+
+Częsty błąd to pisanie „$\dfrac{12}{0} = +\infty$" bez analizy znaku mianownika. **Granica zwykła w punkcie, gdzie mianownik = 0 i licznik ≠ 0, nie istnieje** — trzeba osobno sprawdzić granice z lewej i prawej strony.
+
+Dla $x \to 2^-$: $x < 2$ → $x - 2 < 0$ → mianownik **ujemny** → wynik **minus** nieskończoność.
+
+Dla $x \to 2^+$: $x > 2$ → $x - 2 > 0$ → mianownik **dodatni** → granica jednostronna z prawej to $+\infty$.
+
+Ponieważ obie granice jednostronne są różne, granica $\lim_{x \to 2}$ (bez znaku) **nie istnieje**. Ale tutaj pytamy tylko o lewostronną — i jest $-\infty$.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — $(x - 2)^2$ jest zawsze $\geq 0$</div>
+
+Niektórzy zauważają $(x - 2)^2 \geq 0$ i piszą „mianownik $\to 0^+$, więc granica = $+\infty$". To by działało, gdyby po skróceniu nadal był w mianowniku **kwadrat**. Ale **po skróceniu** z licznika usuwamy jeden czynnik $(x-2)$, zostaje **jeden** $(x-2)$ — bez kwadratu. I ten jeden $(x-2)$ ma już znak.
+
+To dlatego klucz CKE wymaga w pierwszej kolejności **uproszczenia** $\tfrac{x^3-8}{(x-2)^2}$ do $\tfrac{x^2+2x+4}{x-2}$ — żeby nie zgubić znaku.
+</div>
+
+## Sposób alternatywny — reguła de l'Hospitala (R3)
+
+Skoro mamy $\tfrac{0}{0}$, możemy zastosować regułę de l'Hospitala:
+
+$$\lim_{x \to 2^-} \frac{x^3 - 8}{(x - 2)^2} = \lim_{x \to 2^-} \frac{3x^2}{2(x - 2)} = \frac{12}{0^-} = -\infty$$
+
+Działa, ale wymaga znajomości pochodnych. Sposób przez różnicę sześcianów jest bardziej elementarny i też pełny za 2 punkty.
+
+## Punktacja CKE
+
+- **1 pkt** — zapisanie wyrażenia w postaci $\dfrac{x^2 + 2x + 4}{x - 2}$ (lub równoważnej, np. $x + 4 + \dfrac{12}{x-2}$).
+- **2 pkt** — pełna metoda + wynik $-\infty$.

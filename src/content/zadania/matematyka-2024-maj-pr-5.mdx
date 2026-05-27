@@ -1,0 +1,146 @@
+---
+arkusz: matematyka-2024-maj-pr
+subject: matematyka
+nr: 5
+punkty: 3
+typ: dowod
+topic: logarytmy, zmiana podstawy
+difficulty: 4
+tresc: |
+  Wykaż, że jeżeli log_5 4 = a oraz log_4 3 = b, to log_12 80 = (2a + 1) / (a · (1 + b)).
+odpowiedz: |
+  Dowód — patrz Sposób I (najprostszy, przez zamianę podstawy na 4).
+pulapka: |
+  Najczęstszy błąd to pomieszanie wzoru na zamianę podstawy (log_a b = log_c b / log_c a — uważaj który jest licznikiem, który mianownikiem). Drugi błąd: pomylenie log_5 4 z log_4 5 (są wzajemnie odwrotne, ale to NIE TO SAMO).
+wymaganie: |
+  I.9 — związek logarytmowania z potęgowaniem; I.R1 — wzór na zamianę podstawy logarytmu.
+podobne:
+  - matematyka-2024-maj-pr-1
+---
+
+## Strategia
+
+Trzeba pokazać równość $\log_{12} 80 = \dfrac{2a + 1}{a(1 + b)}$, gdzie $a = \log_5 4$, $b = \log_4 3$.
+
+**Idea**: sprowadzić $\log_{12} 80$ do podstawy $4$ (bo wyrażenia $a$ i $b$ łatwo dają się wyrazić w bazie $4$), potem przekształcać dopóki nie wyjdzie żądana postać.
+
+Trzy fakty, na których stoi cały dowód:
+
+- **Zamiana podstawy**: $\log_c d = \dfrac{\log_e d}{\log_e c}$ dla dowolnej dozwolonej podstawy $e$
+- **Logarytm iloczynu**: $\log_c (de) = \log_c d + \log_c e$
+- **Logarytm odwrotności**: $\log_c d = \dfrac{1}{\log_d c}$ (specjalny przypadek zamiany podstawy)
+
+## Sposób I — przez bazę 4
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Sprowadź $\log_{12} 80$ do bazy 4** (zamiana podstawy):
+
+$$\log_{12} 80 = \frac{\log_4 80}{\log_4 12}$$
+
+</div>
+
+<div class="krok">
+
+**Rozłóż licznik:** $80 = 16 \cdot 5 = 4^2 \cdot 5$.
+
+$$\log_4 80 = \log_4 (4^2 \cdot 5) = \log_4 4^2 + \log_4 5 = 2 + \log_4 5$$
+
+</div>
+
+<div class="krok">
+
+**Rozłóż mianownik:** $12 = 4 \cdot 3$.
+
+$$\log_4 12 = \log_4 (4 \cdot 3) = \log_4 4 + \log_4 3 = 1 + b$$
+
+(bo $\log_4 3 = b$ z założenia).
+
+</div>
+
+<div class="krok">
+
+**Wyraź $\log_4 5$ przez $a$.** Z definicji odwrotności logarytmu:
+
+$$\log_4 5 = \frac{1}{\log_5 4} = \frac{1}{a}$$
+
+</div>
+
+<div class="krok">
+
+**Złóż wszystko.**
+
+$$\log_{12} 80 = \frac{2 + \log_4 5}{1 + b} = \frac{2 + \frac{1}{a}}{1 + b}$$
+
+Sprowadź licznik do wspólnego mianownika $a$:
+
+$$2 + \frac{1}{a} = \frac{2a + 1}{a}$$
+
+Zatem:
+
+$$\log_{12} 80 = \frac{\frac{2a + 1}{a}}{1 + b} = \frac{2a + 1}{a \cdot (1 + b)}$$
+
+**To należało udowodnić.** $\blacksquare$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Dowód zakończony.</strong> CKE akceptuje również inne ścieżki (sposób II–IV poniżej).
+  </div>
+</div>
+
+## Sposób II — przekształcenie odwrotne (od prawej do lewej)
+
+Czasem łatwiej zacząć od **wyrażenia docelowego** i pokazać, że redukuje się do $\log_{12} 80$.
+
+$$\frac{2a + 1}{a(1 + b)} = \frac{2 \log_5 4 + 1}{\log_5 4 \cdot (1 + \log_4 3)}$$
+
+Z wzoru $\log_c (xy) = \log_c x + \log_c y$: $2 \log_5 4 + 1 = \log_5 16 + \log_5 5 = \log_5(16 \cdot 5) = \log_5 80$.
+
+A $\log_5 4 \cdot (1 + \log_4 3) = \log_5 4 \cdot (\log_4 4 + \log_4 3) = \log_5 4 \cdot \log_4 12$.
+
+Z zamiany podstawy: $\log_5 4 \cdot \log_4 12 = \log_5 12$.
+
+Stąd:
+
+$$\frac{2a + 1}{a(1+b)} = \frac{\log_5 80}{\log_5 12} = \log_{12} 80$$
+
+(ostatnia równość znów ze wzoru na zamianę podstawy, w drugą stronę).
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka wzoru na zamianę podstawy</div>
+
+Wzór $\log_c d = \dfrac{\log_e d}{\log_e c}$ łatwo pomylić (który element idzie na górę, który na dół). Sprawdzenie: $\log_{10} 100 = 2$ (oczywiste). Sprowadzając do bazy $e = \ln$: $\dfrac{\ln 100}{\ln 10} = \dfrac{2 \ln 10}{\ln 10} = 2$ ✓. Liczba, której **szukasz logarytm** ($d$), idzie do **licznika**.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka odwrotności: $\log_5 4 \neq \log_4 5$</div>
+
+$\log_5 4 = a \approx 0{,}86$ (bo $5^{0{,}86} \approx 4$).
+$\log_4 5 = \tfrac{1}{a} \approx 1{,}16$ (bo $4^{1{,}16} \approx 5$).
+
+Są **wzajemnie odwrotne**, ale różne. Wzór: $\log_p q = \dfrac{1}{\log_q p}$.
+
+To kluczowy krok dowodu — wyrażenie $\log_4 5$ jako $\tfrac{1}{a}$ wymaga tej tożsamości.
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** — zastosowanie wzoru na zamianę podstawy LUB wzoru na logarytm iloczynu (np. $1 + \log_4 3 = \log_4(4 \cdot 3) = \log_4 12$).
+- **2 pkt** — przekształcenie $\log_{12} 80$ do postaci $\dfrac{2 + \log_4 5}{1 + \log_4 3}$ ALBO wyrażenia $\dfrac{2a+1}{a(1+b)}$ do postaci, z której prowadzi już bezpośrednio do tezy.
+- **3 pkt** — pełne rozumowanie, oba kierunki zamknięte.
+
+## Klucz — logarytmy z parametrami
+
+W zadaniach z parametrami $a, b, \ldots$ jako logarytmami, najszybsza droga to zwykle:
+
+1. **Wybierz bazę docelową** — tę, w której parametry mają najprostszą formę (tu: baza $4$, bo $a$ wprost staje się $\tfrac{1}{a}$, a $b$ pojawia się literalnie).
+2. **Rozłóż argumenty na czynniki** — `12 = 4 · 3`, `80 = 16 · 5`. Tak żeby pojawiły się znane wartości i potęgi bazy.
+3. **Skleciaj wszystko z poznanych elementów** — $\log_4 4 = 1$, $\log_4 4^2 = 2$, $\log_4 3 = b$, $\log_4 5 = \tfrac{1}{a}$.
+
+Powyższy schemat działa praktycznie zawsze, gdy widzisz „wykaż, że $\log_x y = \text{coś z } a, b$".

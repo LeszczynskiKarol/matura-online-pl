@@ -1,0 +1,114 @@
+---
+arkusz: matematyka-2024-maj-pr
+subject: matematyka
+nr: 3
+punkty: 3
+typ: otwarte-krotkie
+topic: prawdopodobieństwo, schemat Bernoulliego
+difficulty: 4
+tresc: |
+  W zakładzie mleczarskim śmietana jest produkowana w 200-gramowych opakowaniach. Prawdopodobieństwo, że losowo wybrane opakowanie zawiera mniej niż 36% tłuszczu, wynosi 0,01. Kontroli poddajemy 10 losowo wybranych opakowań. Oblicz prawdopodobieństwo, że wśród nich będzie co najwyżej jedno opakowanie ze śmietaną zawierającą mniej niż 36% tłuszczu. Wynik zaokrąglij do części tysięcznych.
+odpowiedz: |
+  P ≈ 0,996
+pulapka: |
+  CKE wprost: jeśli określisz sukces jako p = 0,99 zamiast p = 0,01 (czyli "udane opakowanie z ≥ 36% tłuszczu") i potem błędnie zinterpretujesz końcowy wynik — dostajesz 1 pkt zamiast 3. Druga pułapka: pomylenie "co najwyżej 1" z "dokładnie 1" lub "co najmniej 1".
+wymaganie: |
+  XII.R2 — stosowanie schematu Bernoulliego.
+podobne:
+  - matematyka-2024-maj-pr-6
+---
+
+## Identyfikacja modelu
+
+Mamy 10 niezależnych prób (opakowań). W każdej:
+
+- **sukces** = trafiamy na opakowanie z mniej niż 36% tłuszczu (zdarzenie z treści), $p = 0{,}01$
+- **porażka** = opakowanie ma $\geq 36\%$ tłuszczu, $q = 1 - p = 0{,}99$
+
+To **schemat Bernoulliego** z $n = 10$, $p = 0{,}01$.
+
+Pytamy o $P(\text{co najwyżej 1 sukces})$ — czyli $P(S = 0) + P(S = 1)$, gdzie $S$ to liczba sukcesów w 10 próbach.
+
+## Wzór Bernoulliego
+
+Liczba sukcesów $k$ w $n$ próbach ma prawdopodobieństwo:
+
+$$P(S = k) = \binom{n}{k} \cdot p^k \cdot q^{n-k}$$
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Oblicz $P(S = 0)$** (zero opakowań „złych"):
+
+$$P(S = 0) = \binom{10}{0} \cdot (0{,}01)^0 \cdot (0{,}99)^{10} = 1 \cdot 1 \cdot (0{,}99)^{10} = (0{,}99)^{10}$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz $P(S = 1)$** (dokładnie jedno „złe"):
+
+$$P(S = 1) = \binom{10}{1} \cdot (0{,}01)^1 \cdot (0{,}99)^9 = 10 \cdot 0{,}01 \cdot (0{,}99)^9 = 0{,}1 \cdot (0{,}99)^9$$
+
+</div>
+
+<div class="krok">
+
+**Zsumuj — z faktoryzacji $(0{,}99)^9$.**
+
+$$P = (0{,}99)^{10} + 0{,}1 \cdot (0{,}99)^9 = (0{,}99)^9 \cdot \left[ 0{,}99 + 0{,}1 \right] = (0{,}99)^9 \cdot 1{,}09$$
+
+</div>
+
+<div class="krok">
+
+**Oszacuj.** $(0{,}99)^9 \approx 0{,}9135$.
+
+$$P \approx 0{,}9135 \cdot 1{,}09 \approx 0{,}9957$$
+
+Zaokrąglone do tysięcznych: $P \approx 0{,}996$.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> $P \approx 0{,}996$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka definicji sukcesu (uwaga 3 z klucza CKE)</div>
+
+Jeśli zdefiniujesz „sukces" odwrotnie ($p = 0{,}99$, czyli „opakowanie spełniające normę"), to musisz pytać o **„co najmniej 9 sukcesów"** zamiast „co najwyżej 1 porażki". Matematycznie wynik jest ten sam, ale jest tu pułapka: pisanie $P = q^{10} + 10 \cdot q \cdot p^9$ jako wynik bez świadomości — CKE traktuje to jako **błędną interpretację** i obniża do 1 pkt.
+
+Bezpieczne: zdefiniuj sukces zgodnie z treścią (zdarzeniem, którego prawdopodobieństwo $0{,}01$ jest podane), i pytaj o **„co najwyżej 1 sukces"** wprost.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka „co najwyżej" vs „dokładnie"</div>
+
+- „co najwyżej 1" → $P(S \leq 1) = P(0) + P(1)$
+- „dokładnie 1" → $P(S = 1)$
+- „co najmniej 1" → $P(S \geq 1) = 1 - P(0)$
+
+Trzy zupełnie różne pytania, trzy różne wyniki. Tutaj treść mówi **„będzie co najwyżej jedno opakowanie"** — czyli zero albo jedno.
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** — zapisanie $p = 0{,}01$ i $q = 0{,}99$ (albo prawdopodobieństwa w postaci $q^{10} + 10 \cdot p \cdot q^9$).
+- **2 pkt** — pełne wyrażenie $\binom{10}{0} \cdot (0{,}99)^{10} + \binom{10}{1} \cdot (0{,}01) \cdot (0{,}99)^9$.
+- **3 pkt** — dodatkowo poprawne obliczenie wartości i zaokrąglenie do $0{,}996$.
+
+## Klucz — kiedy schemat Bernoulliego
+
+Trzy warunki muszą być spełnione:
+
+1. **Stała liczba prób** $n$ (10 opakowań)
+2. **Niezależne próby** (jedno opakowanie nie wpływa na inne)
+3. **Dwa wyniki w każdej próbie** (sukces albo porażka, stałe $p$ i $q$)
+
+Wtedy: $P(S = k) = \binom{n}{k} p^k q^{n-k}$. Każde zadanie maturalne o „kontrolach", „strzelaniu do tarczy", „rzutach monetą" sprowadza się do tego wzoru — tylko trzeba poprawnie zdefiniować sukces i zliczyć przypadki.
