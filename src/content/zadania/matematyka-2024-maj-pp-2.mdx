@@ -1,0 +1,77 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 2
+punkty: 1
+typ: zamkniete-abcd
+topic: potęgi, prawa działań
+difficulty: 2
+tresc: Liczba (1/16)^8 · 8^16 jest równa A. 2^24, B. 2^16, C. 2^12, D. 2^8.
+odpowiedz: |
+  B
+pulapka: |
+  Typowy błąd to liczenie (1/16)^8 = 1/(16^8) bez sprowadzania do potęgi dwójki — wynik wychodzi jak gigantyczna liczba i traci się sens zadania. Albo druga pułapka: pomylenie wykładnika ujemnego ze znakiem podstawy.
+wymaganie: |
+  I.4 — stosowanie praw działań na potęgach (zarówno o wykładnikach całkowitych, jak i wymiernych).
+podobne:
+  - matematyka-2024-maj-pp-4
+  - matematyka-2024-maj-pp-5
+---
+
+## Co trzeba zrobić?
+
+Obliczyć wartość iloczynu i wskazać, do której potęgi dwójki jest równa:
+
+$$\left(\frac{1}{16}\right)^{8} \cdot 8^{16}$$
+
+Cały trik to **sprowadzić obie liczby do potęg tej samej podstawy** — w tym wypadku $2$ — i potem już tylko zsumować wykładniki.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zamień obie podstawy na potęgi dwójki.**
+
+$$\frac{1}{16} = \frac{1}{2^4} = 2^{-4}$$
+
+$$8 = 2^3$$
+
+</div>
+
+<div class="krok">
+
+**Podstaw i zastosuj wzór $(a^m)^n = a^{m \cdot n}$.**
+
+$$\left(\frac{1}{16}\right)^{8} = \left(2^{-4}\right)^{8} = 2^{-32}$$
+
+$$8^{16} = \left(2^3\right)^{16} = 2^{48}$$
+
+</div>
+
+<div class="krok">
+
+**Pomnoż potęgi o tej samej podstawie — wykładniki się dodają.**
+
+$$2^{-32} \cdot 2^{48} = 2^{-32 + 48} = 2^{16}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: B</strong> — $2^{16}$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+
+Najczęstszy błąd to **niedrowanie podstaw**. Niektórzy widzą $\frac{1}{16}$ i $8$ i próbują obliczać arytmetycznie — $\frac{1}{16^8}$ to liczba z 9 zerami po przecinku, a $8^{16}$ to liczba 15-cyfrowa. W tym kierunku nie da się dojść do prostej odpowiedzi w 2 minuty.
+
+Drugi typowy błąd to znak wykładnika: zapis $\frac{1}{16} = 2^{-4}$ (a nie $-2^4$). Minus dotyczy **wykładnika**, nie podstawy.
+</div>
+
+## Klucz do tego typu zadań
+
+Gdy widzisz potęgi z różnymi podstawami — zatrzymaj się i zapytaj: **„czy obie te podstawy są potęgami tej samej liczby?"**. Na maturze prawie zawsze są (najczęściej dwójki, trójki albo dziesiątki). Sprowadzenie do wspólnej podstawy zamienia trudne mnożenie liczb w łatwe dodawanie wykładników.

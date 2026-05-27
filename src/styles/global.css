@@ -51,11 +51,11 @@ html.dark {
   --color-text-muted: #94a3b8;
   --color-text-faint: #64748b;
   --color-border: #1e2a44;
-  --color-accent: #2dd4bf;
-  --color-accent-hover: #5eead4;
+  --color-accent: #14b8a6;
+  --color-accent-hover: #2dd4bf;
   --color-accent-soft: #134e4a;
-  --color-accent-fg: #042f2e;
-  --color-accent-2: #818cf8;
+  --color-accent-fg: #0a1220;
+  --color-accent-2: #6366f1;
   --color-accent-2-soft: #1e1b4b;
 
   --color-correct: #4ade80;
@@ -113,11 +113,16 @@ a {
 }
 a:hover { color: var(--color-accent-hover); }
 
-/* Underline TYLKO w treści prose / artykułach */
-.prose a, article a, [data-prose] a {
+/* Underline TYLKO w treści prose (markdown body). NIE w `article` ogólnie —
+   strony zadań są w <article>, ale linki nawigacji/prev-next/podobne nie mogą
+   dziedziczyć podkreślenia. Tylko explicit `data-prose` lub `.prose` container. */
+.prose a, [data-prose] a {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
+}
+.prose a.no-underline, [data-prose] a.no-underline {
+  text-decoration: none;
 }
 
 :focus-visible {

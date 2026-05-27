@@ -1,0 +1,92 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 4
+punkty: 1
+typ: zamkniete-abcd
+topic: logarytmy
+difficulty: 2
+tresc: Liczba log_√3 9 jest równa A. 2, B. 3, C. 4, D. 9.
+odpowiedz: |
+  C
+pulapka: |
+  Najczęstszy błąd to czytanie log_√3 9 jako log 9 / √3 (zwykły iloraz) zamiast jako „logarytm o podstawie √3 z liczby 9". Drugi błąd: zapomnienie, że √3 = 3^(1/2), przez co nie da się dobrać wykładnika.
+wymaganie: |
+  I.1 — wykonywanie działań w zbiorze liczb rzeczywistych, w tym logarytmowanie.
+podobne:
+  - matematyka-2024-maj-pp-2
+---
+
+## Co znaczy ten zapis?
+
+Wyrażenie
+
+$$\log_{\sqrt{3}} 9$$
+
+czytamy: „**do której potęgi trzeba podnieść $\sqrt{3}$, żeby otrzymać $9$**". Innymi słowy — szukamy takiej liczby $x$, że:
+
+$$(\sqrt{3})^x = 9$$
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Sprowadź obie strony do potęg trójki.**
+
+Pierwiastek kwadratowy z trzech to po prostu $3$ podniesione do potęgi $\tfrac{1}{2}$:
+
+$$\sqrt{3} = 3^{1/2}$$
+
+A dziewiątka to $3^2$:
+
+$$9 = 3^2$$
+
+</div>
+
+<div class="krok">
+
+**Zastąp w równaniu i zastosuj wzór $(a^m)^n = a^{m \cdot n}$.**
+
+$$\left(3^{1/2}\right)^{x} = 3^{2}$$
+
+$$3^{x/2} = 3^{2}$$
+
+</div>
+
+<div class="krok">
+
+**Porównaj wykładniki.** Jeśli potęgi o tej samej podstawie są równe, to ich wykładniki też muszą być równe:
+
+$$\frac{x}{2} = 2 \quad\Rightarrow\quad x = 4$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: C</strong> — $\log_{\sqrt{3}} 9 = 4$.
+  </div>
+</div>
+
+## Sposób alternatywny (jeszcze szybszy)
+
+Wzór na zmianę podstawy logarytmu mówi, że dla dowolnego $k > 0$:
+
+$$\log_{a^k} (b) = \frac{1}{k} \cdot \log_a b$$
+
+Tutaj $\sqrt{3} = 3^{1/2}$, więc $k = 1/2$, $a = 3$, $b = 9$:
+
+$$\log_{\sqrt{3}} 9 = \frac{1}{1/2} \cdot \log_3 9 = 2 \cdot 2 = 4$$
+
+Jeśli zapamiętałeś ten wzór — robisz całe zadanie w głowie w 5 sekund.
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+
+Dwóch rzeczy nie wolno przegapić:
+
+- $\sqrt{3}$ to **nie 1.73…** — to dokładnie $3^{1/2}$. Próba liczenia kalkulatorem zwróci $\log_{1.73} 9 \approx 4$, ale na egzaminie kalkulator jest tylko prosty (bez logarytmów dowolnych podstaw), więc i tak musisz to umieć zapisem algebraicznym.
+
+- Odpowiedź A (czyli $2$) wybiera ten, kto liczy $\log_3 9 = 2$ i zapomina o pierwiastku w podstawie. Pierwiastek **zwiększa** wynik dwukrotnie, nie zmniejsza.
+</div>

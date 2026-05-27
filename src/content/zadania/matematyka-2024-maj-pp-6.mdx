@@ -1,0 +1,105 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 6
+punkty: 1
+typ: zamkniete-abcd
+topic: nierówności liniowe
+difficulty: 2
+tresc: Zbiorem wszystkich rozwiązań nierówności 1 − (3/2)x < (2/3) − x jest przedział A. (−∞, −2/3), B. (−∞, 2/3), C. (−2/3, +∞), D. (2/3, +∞).
+odpowiedz: |
+  D
+pulapka: |
+  Najczęstszy błąd to przeoczenie zmiany kierunku znaku przy dzieleniu obu stron przez liczbę ujemną. Tu tego unikamy — przenosimy x na jedną stronę, liczby na drugą — ale i tak łatwo pomylić znak przy przeniesieniu wyrazu z drugiej strony.
+wymaganie: |
+  III.3 — rozwiązywanie nierówności liniowych z jedną niewiadomą.
+podobne:
+  - matematyka-2024-maj-pp-7
+  - matematyka-2024-maj-pp-1
+---
+
+## Co trzeba zrobić?
+
+Rozwiązać nierówność:
+
+$$1 - \frac{3}{2}x < \frac{2}{3} - x$$
+
+— czyli znaleźć zbiór wszystkich $x$, dla których ta nierówność jest prawdziwa, i wskazać odpowiadający mu przedział.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Przenieś wszystkie wyrazy z $x$ na jedną stronę, a liczby na drugą.** Najwygodniej: $x$-y zostawiamy po prawej, liczby po lewej. Dodajemy $x$ do obu stron i odejmujemy $\tfrac{2}{3}$ z obu stron:
+
+$$1 - \frac{2}{3} < -x + \frac{3}{2}x$$
+
+</div>
+
+<div class="krok">
+
+**Uprość każdą stronę.**
+
+Lewa: $1 - \dfrac{2}{3} = \dfrac{3}{3} - \dfrac{2}{3} = \dfrac{1}{3}$.
+
+Prawa: $-x + \dfrac{3}{2}x = \dfrac{-2x + 3x}{2} = \dfrac{x}{2}$.
+
+Otrzymujemy:
+
+$$\frac{1}{3} < \frac{x}{2}$$
+
+</div>
+
+<div class="krok">
+
+**Pomnoż obie strony przez $2$** (dodatnia liczba — kierunek nierówności **bez zmian**):
+
+$$\frac{2}{3} < x$$
+
+To jest dokładnie warunek, że $x$ jest **większe** od $\dfrac{2}{3}$.
+
+</div>
+
+<div class="krok">
+
+**Zapisz zbiór rozwiązań w postaci przedziału.**
+
+$$x \in \left(\frac{2}{3},\ +\infty\right)$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: D</strong> — $\left(\dfrac{2}{3},\, +\infty\right)$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowe błędy</div>
+
+**B ($-\infty, \tfrac{2}{3}$)** wybiera ten, kto zostawił $x$ po lewej stronie i pomylił znak. Po przeniesieniu $-x$ na lewą stronę zmieniasz znak na $+x$ — to często umyka.
+
+**Pułapka kierunku nierówności**: gdyby ktoś chciał zacząć od podzielenia obu stron przez $-1$ (np. aby pozbyć się minusa po prawej), **musi odwrócić znak** $<$ na $>$. To nie ten przypadek, ale ogólna zasada — najczęstsza wpadka przy nierównościach.
+
+**A** i **C** ($\pm 2/3$ z minusem) — błąd arytmetyczny przy upraszczaniu prawej strony lub mylenie $-x$ z $+x$.
+</div>
+
+## Sposób alternatywny — mnożenie na samym początku
+
+Czasem łatwiej pozbyć się ułamków od razu. Pomnóż obie strony przez $6$ (NWW mianowników 2 i 3):
+
+$$6 - 9x < 4 - 6x$$
+
+Przenieś $-6x$ na lewą, $6$ na prawą:
+
+$$-9x + 6x < 4 - 6$$
+
+$$-3x < -2$$
+
+Podziel obie strony przez $-3$ — **uwaga, dzielenie przez liczbę ujemną odwraca znak**:
+
+$$x > \frac{2}{3}$$
+
+Ten sam wynik. Ta wersja jest szybsza, ale ma w sobie pułapkę zmiany znaku — w stresie egzaminacyjnym łatwo o niej zapomnieć i wybrać błędną odpowiedź **B**.

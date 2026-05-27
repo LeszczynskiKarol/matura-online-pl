@@ -1,0 +1,93 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 5
+punkty: 1
+typ: zamkniete-abcd
+topic: wzory skróconego mnożenia
+difficulty: 2
+tresc: Dla każdej liczby rzeczywistej a i dla każdej liczby rzeczywistej b wartość wyrażenia (2a + b)² − (2a − b)² jest równa wartości wyrażenia A. 8a², B. 8ab, C. −8ab, D. 2b².
+odpowiedz: |
+  B
+pulapka: |
+  Najszybsza droga to wzór (X+Y)² − (X−Y)² = 4XY. Kto rozwija pełne kwadraty, łatwo pomyli znaki przy podwójnym iloczynie 2·(2a)·b — wtedy traci czas i często gubi minus.
+wymaganie: |
+  II.1 — stosowanie wzorów skróconego mnożenia: (a + b)², (a − b)², a² − b².
+podobne:
+  - matematyka-2024-maj-pp-2
+  - matematyka-2024-maj-pp-9
+---
+
+## Trik na 10 sekund
+
+Tu działa **uniwersalny wzór**:
+
+$$(X + Y)^2 - (X - Y)^2 = 4XY$$
+
+To po prostu wzór $a^2 - b^2 = (a-b)(a+b)$ zastosowany do $(X+Y)$ i $(X-Y)$ — odejmowanie daje $2Y$, dodawanie daje $2X$, iloczyn to $4XY$.
+
+W naszym zadaniu $X = 2a$ oraz $Y = b$, więc:
+
+$$(2a + b)^2 - (2a - b)^2 = 4 \cdot (2a) \cdot b = 8ab$$
+
+Koniec. Odpowiedź B.
+
+## Pełne rozwinięcie (gdy nie pamiętasz wzoru)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Rozwiń pierwszy kwadrat:**
+
+$$(2a + b)^2 = (2a)^2 + 2 \cdot (2a) \cdot b + b^2 = 4a^2 + 4ab + b^2$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiń drugi kwadrat:**
+
+$$(2a - b)^2 = (2a)^2 - 2 \cdot (2a) \cdot b + b^2 = 4a^2 - 4ab + b^2$$
+
+</div>
+
+<div class="krok">
+
+**Odejmij stronami:**
+
+$$(2a + b)^2 - (2a - b)^2 = (4a^2 + 4ab + b^2) - (4a^2 - 4ab + b^2)$$
+
+Rozwiń odejmowanie nawiasu (każdy znak w drugim nawiasie zmienia się na przeciwny):
+
+$$= 4a^2 + 4ab + b^2 - 4a^2 + 4ab - b^2 = 8ab$$
+
+Wyrazy $4a^2$ i $b^2$ znoszą się parami, zostają dwa razy $+4ab$.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: B</strong> — $8ab$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+
+Najwięcej osób wybiera **C ($-8ab$)** — to klasyczna pułapka znaku przy odejmowaniu nawiasu. Pamiętaj: $-(2a-b)^2 \neq (b-2a)^2$ z minusem; to jest **odjęcie całego nawiasu**, więc każdy znak wewnątrz nawiasu zmienia się na przeciwny. Pisanie tego jako $-(4a^2 - 4ab + b^2) = -4a^2 + 4ab - b^2$ ratuje przed błędem.
+
+Drugi typowy błąd: **A ($8a^2$)** wybiera ten, kto liczy $(2a)^2 + (2a)^2 = 8a^2$ jakby kwadraty się dodawały (zamiast odejmowały).
+</div>
+
+## Co warto zapamiętać
+
+Trzy najczęściej testowane wzory na maturze:
+
+- $(a+b)^2 = a^2 + 2ab + b^2$
+- $(a-b)^2 = a^2 - 2ab + b^2$
+- $a^2 - b^2 = (a-b)(a+b)$
+
+Wszystkie trzy są w "Wybranych wzorach matematycznych" CKE, którą dostajesz na egzaminie. Ale jeśli musisz je przerzucać pod presją czasu — tracisz ~30 sekund. Warto je mieć w pamięci.

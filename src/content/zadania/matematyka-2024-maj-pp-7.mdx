@@ -1,0 +1,110 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 7
+punkty: 1
+typ: zamkniete-abcd
+topic: równania wymierne, dziedzina
+difficulty: 3
+tresc: |
+  Równanie (x + 1) / ((x + 2)(x − 3)) = 0 w zbiorze liczb rzeczywistych
+  A. nie ma rozwiązania.
+  B. ma dokładnie jedno rozwiązanie: (−1).
+  C. ma dokładnie dwa rozwiązania: (−2) oraz 3.
+  D. ma dokładnie trzy rozwiązania: (−1), (−2) oraz 3.
+odpowiedz: |
+  B
+pulapka: |
+  Najgorszy błąd to wybór D — uznanie miejsc zerowych mianownika za rozwiązania równania. (−2) i 3 nie należą nawet do dziedziny — przy nich równanie nie ma sensu (dzielenie przez zero).
+wymaganie: |
+  III.6 — rozwiązywanie równań wymiernych postaci V(x)/W(x) = 0, gdzie V(x) i W(x) są zapisane w postaci iloczynowej.
+podobne:
+  - matematyka-2024-maj-pp-9
+  - matematyka-2024-maj-pp-1
+---
+
+## Co trzeba zrobić?
+
+Rozwiązać równanie wymierne:
+
+$$\frac{x + 1}{(x + 2)(x - 3)} = 0$$
+
+Czyli ustalić, dla których $x \in \mathbb{R}$ ułamek po lewej stronie jest równy zero — oraz **policzyć**, ile takich rozwiązań jest.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wyznacz dziedzinę.** Ułamek ma sens tylko wtedy, gdy **mianownik jest różny od zera**. Mianownikiem jest iloczyn $(x+2)(x-3)$. Iloczyn jest zerem, gdy któryś z czynników jest zerem:
+
+$$x + 2 = 0 \quad\text{lub}\quad x - 3 = 0$$
+
+$$x = -2 \quad\text{lub}\quad x = 3$$
+
+Te dwie liczby **nie należą do dziedziny** równania. Dziedzina to:
+
+$$D = \mathbb{R} \setminus \{-2,\ 3\}$$
+
+</div>
+
+<div class="krok">
+
+**Zastosuj zasadę: ułamek jest zerem, gdy licznik jest zerem (a mianownik różny od zera).**
+
+Mianownik mamy już ograniczony przez dziedzinę. Wystarczy więc rozwiązać:
+
+$$x + 1 = 0 \quad\Rightarrow\quad x = -1$$
+
+</div>
+
+<div class="krok">
+
+**Sprawdź, czy znalezione rozwiązanie należy do dziedziny.**
+
+Czy $-1$ należy do $\mathbb{R} \setminus \{-2, 3\}$? Tak — $-1$ nie jest ani $-2$, ani $3$, więc jest w dziedzinie.
+
+</div>
+
+<div class="krok">
+
+**Zlicz rozwiązania.** Jedno: $x = -1$.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: B</strong> — równanie ma **dokładnie jedno** rozwiązanie: $x = -1$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Krytyczna pułapka — odpowiedź D</div>
+
+Najgorszy możliwy błąd to wybór **D**: „trzy rozwiązania: $-1$, $-2$, $3$". Tak myśli osoba, która zinterpretowała zadanie jako „znajdź wszystkie $x$, dla których któraś część wyrażenia jest zerem". To **całkowicie pomija** sens równania wymiernego.
+
+Liczby $-2$ i $3$ są **miejscami zerowymi mianownika** — to znaczy, że **dzielimy przez zero**, co jest niedozwolone. Dla tych $x$ wyrażenie po lewej stronie w ogóle **nie ma sensu**, więc nie może być równe zeru (ani niczemu innemu).
+
+Zasada na egzaminie: w równaniach wymiernych **zawsze najpierw wyznacz dziedzinę**, dopiero potem szukaj miejsc zerowych licznika.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Inne błędne odpowiedzi</div>
+
+**A („nie ma rozwiązania")** — wybiera ktoś, kto myśli, że obecność mianownika z $x$ automatycznie blokuje wszystkie rozwiązania.
+
+**C („dwa: $-2$ i $3$")** — wybiera ktoś, kto pomylił mianownik z licznikiem i przyrównał do zera mianownik zamiast licznika.
+
+W obu przypadkach problem jest ten sam: brak rozróżnienia między **licznikiem** a **mianownikiem** ułamka.
+</div>
+
+## Algorytm na każde równanie wymierne
+
+Dla równania postaci $\dfrac{V(x)}{W(x)} = 0$:
+
+1. Wyznacz dziedzinę: $W(x) \neq 0$.
+2. Rozwiąż $V(x) = 0$.
+3. Odrzuć te rozwiązania, które nie należą do dziedziny.
+
+Jeśli pominiesz krok 3, możesz przyjąć rozwiązanie z dziedziną zera w mianowniku i stracić punkt na otwartym zadaniu albo wybrać D zamiast B na zamkniętym.
