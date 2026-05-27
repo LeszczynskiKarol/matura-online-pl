@@ -1,0 +1,192 @@
+---
+arkusz: matematyka-2024-maj-pr
+subject: matematyka
+nr: 8
+punkty: 4
+typ: dowod
+topic: planimetria, twierdzenia o trójkątach, trygonometria
+difficulty: 5
+tresc: |
+  Dany jest trójkąt ABC, który nie jest równoramienny. W tym trójkącie miara kąta ABC jest dwa razy większa od miary kąta BAC. Wykaż, że długości boków tego trójkąta spełniają warunek |AC|² = |BC|² + |AB| · |BC|.
+odpowiedz: |
+  Dowód — patrz Sposób I (trygonometryczny) lub Sposób II (geometria, przez dwusieczną).
+pulapka: |
+  CKE w uwadze: jeśli rozumowanie geometryczne przeprowadzasz w JEDNYM przypadku (np. tylko gdy spodek wysokości leży wewnątrz boku AB), bez stwierdzenia, że drugi przypadek jest analogiczny — maksimum 3 pkt zamiast 4. W sposobie trygonometrycznym takiego problemu nie ma.
+wymaganie: |
+  VIII.R3 — przeprowadzanie dowodów geometrycznych z wykorzystaniem twierdzenia sinusów, cosinusów, podobieństwa.
+podobne:
+  - matematyka-2024-maj-pr-7
+---
+
+## Strategia — oznaczenia
+
+Ustal oznaczenia stałe w całym dowodzie:
+
+- $a = |BC|$, $b = |CA|$, $c = |AB|$
+- $\alpha = \angle BAC$ (kąt przy wierzchołku $A$)
+- $\angle ABC = 2\alpha$ (kąt przy $B$, dwa razy większy z założenia)
+- $\angle BCA = 180° - 3\alpha$ (suma kątów trójkąta = 180°)
+
+Trzeba pokazać: $b^2 = a^2 + c \cdot a$.
+
+**Założenie „nie równoramienny"** wyklucza przypadki, w których $\alpha = 0°$, $\alpha = 60°$ albo gdzie trójkąt staje się zdegenerowany. W szczególności $\sin \alpha \neq 0$ i $\sin 3\alpha \neq 0$ — będziemy mogli dzielić.
+
+## Sposób I — trygonometria (przez twierdzenie sinusów + suma sinusów)
+
+To ścieżka bez rysunku, czysto algebraiczna. Najmniej ryzykowna.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Z twierdzenia sinusów** dla trójkąta $ABC$:
+
+$$\frac{a}{\sin \alpha} = \frac{b}{\sin 2\alpha} = \frac{c}{\sin(180° - 3\alpha)} = \frac{c}{\sin 3\alpha}$$
+
+(skorzystaliśmy z $\sin(180° - x) = \sin x$).
+
+</div>
+
+<div class="krok">
+
+**Wyraź $b$ przez $a$ i $\alpha$.** Z proporcji $\tfrac{a}{\sin \alpha} = \tfrac{b}{\sin 2\alpha}$:
+
+$$b = a \cdot \frac{\sin 2\alpha}{\sin \alpha} = a \cdot \frac{2 \sin \alpha \cos \alpha}{\sin \alpha} = 2a \cos \alpha$$
+
+(zastosowaliśmy wzór $\sin 2\alpha = 2 \sin \alpha \cos \alpha$).
+
+</div>
+
+<div class="krok">
+
+**Wyraź $c$ przez $a$ i $\alpha$.** Z proporcji $\tfrac{a}{\sin \alpha} = \tfrac{c}{\sin 3\alpha}$:
+
+$$c = a \cdot \frac{\sin 3\alpha}{\sin \alpha}$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz lewą stronę tezy** $b^2$:
+
+$$b^2 = (2a \cos \alpha)^2 = 4 a^2 \cos^2 \alpha$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz prawą stronę** $a^2 + c \cdot a$:
+
+$$a^2 + c \cdot a = a^2 + a \cdot \frac{a \sin 3\alpha}{\sin \alpha} = a^2 \cdot \left(1 + \frac{\sin 3\alpha}{\sin \alpha}\right) = a^2 \cdot \frac{\sin \alpha + \sin 3\alpha}{\sin \alpha}$$
+
+</div>
+
+<div class="krok">
+
+**Zastosuj wzór na sumę sinusów:**
+
+$$\sin \alpha + \sin 3\alpha = 2 \sin \left(\frac{\alpha + 3\alpha}{2}\right) \cos \left(\frac{3\alpha - \alpha}{2}\right) = 2 \sin 2\alpha \cdot \cos \alpha$$
+
+Z $\sin 2\alpha = 2 \sin \alpha \cos \alpha$:
+
+$$\sin \alpha + \sin 3\alpha = 2 \cdot 2 \sin \alpha \cos \alpha \cdot \cos \alpha = 4 \sin \alpha \cos^2 \alpha$$
+
+</div>
+
+<div class="krok">
+
+**Podstaw z powrotem:**
+
+$$a^2 + c \cdot a = a^2 \cdot \frac{4 \sin \alpha \cos^2 \alpha}{\sin \alpha} = 4 a^2 \cos^2 \alpha$$
+
+</div>
+
+<div class="krok">
+
+**Porównaj:**
+
+$$b^2 = 4 a^2 \cos^2 \alpha = a^2 + c \cdot a$$
+
+czyli:
+
+$$|AC|^2 = |BC|^2 + |AB| \cdot |BC| \quad\blacksquare$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Dowód zakończony.</strong> Powyższa ścieżka działa, bo z założenia trójkąt nie jest zdegenerowany — $\sin \alpha \neq 0$, więc dzielenie i mnożenie ułamkami jest dozwolone.
+  </div>
+</div>
+
+## Sposób II — geometria (przez dwusieczną kąta ABC i podobieństwo trójkątów)
+
+Krócej, ale wymaga rysunku i znajomości twierdzenia o dwusiecznej.
+
+**Konstrukcja**: poprowadź dwusieczną kąta $\angle ABC$ — przecina ona bok $AC$ w punkcie $D$.
+
+- $\angle DBC = \alpha$ (dwusieczna dzieli $2\alpha$ na dwa $\alpha$)
+- $\angle DCB = 180° - 3\alpha$ (kąt $C$ pełen)
+- $\angle BDC = 180° - \alpha - (180° - 3\alpha) = 2\alpha$
+
+Zatem trójkąt $CDB$ ma kąty $(\alpha, 2\alpha, 180° - 3\alpha)$, czyli **te same kąty** co trójkąt $CAB$ (ten też ma $(\alpha, 2\alpha, 180° - 3\alpha)$). Trójkąty są **podobne**.
+
+Niech $x = |DC|$. Z podobieństwa $\triangle CDB \sim \triangle CAB$:
+
+$$\frac{x}{a} = \frac{a}{b} \quad\Rightarrow\quad x = \frac{a^2}{b}$$
+
+Z **twierdzenia o dwusiecznej** w $\triangle ABC$: $\dfrac{|AD|}{|DC|} = \dfrac{|AB|}{|BC|} = \dfrac{c}{a}$, czyli:
+
+$$\frac{b - x}{x} = \frac{c}{a} \quad\Rightarrow\quad b - x = \frac{cx}{a} \quad\Rightarrow\quad b = x \cdot \frac{c + a}{a} \quad\Rightarrow\quad x = \frac{ab}{c + a}$$
+
+Z obu wzorów na $x$:
+
+$$\frac{a^2}{b} = \frac{ab}{c + a}$$
+
+$$a^2(c + a) = ab^2$$
+
+$$a(c + a) = b^2$$
+
+$$b^2 = a^2 + ac \quad\Leftrightarrow\quad |AC|^2 = |BC|^2 + |AB| \cdot |BC| \quad\blacksquare$$
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka „nie równoramienny"</div>
+
+Założenie, że trójkąt **nie jest równoramienny**, jest istotne — wyklucza sytuacje degeneracji:
+
+- $\alpha = 60°$ → $2\alpha = 120°$, $180° - 3\alpha = 0°$ (zdegenerowany)
+- $\alpha = 45°$ → $2\alpha = 90°$, $180° - 3\alpha = 45° = \alpha$ → trójkąt równoramienny
+
+Dla $\alpha = 45°$ teza nadal jest spełniona, ale CKE wymaga, by zdający świadomie wykluczył zdegenerowane przypadki — zwykle przez założenie $\sin \alpha \neq 0$ i $\cos \alpha \neq 0$ albo przez wzmiankę o nieosobliwości trójkąta.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka punktacji (uwaga z klucza CKE)</div>
+
+W sposobie geometrycznym przez **wysokość** ($CK$) trzeba rozpatrzyć **dwa przypadki**: czy spodek $K$ leży na boku $AB$, czy poza nim. CKE wprost: rozumowanie tylko w jednym przypadku **bez stwierdzenia analogii dla drugiego** → maksimum **3 pkt z 4**.
+
+W sposobie I (trygonometrycznym) i II (przez dwusieczną) tego problemu nie ma — działają jednolicie dla wszystkich konfiguracji.
+</div>
+
+## Punktacja CKE
+
+Klucz CKE wymienia **10 (!) różnych sposobów** dowodu (przez podobieństwo, przez sieczną i styczną, przez trapez wpisany w okrąg z twierdzenia Ptolemeusza, przez twierdzenie cosinusów, przez Pitagorasa, przez sumę sinusów...).
+
+Strukturę punktową dla typowego sposobu:
+
+- **1 pkt** — zapisanie kluczowego związku startowego (np. podobieństwo $\triangle CAB \sim \triangle CDB$, lub $\cos \alpha = \tfrac{b}{2a}$ z twierdzenia cosinusów).
+- **2 pkt** — zapisanie wzoru łączącego dwie wielkości z tezy (np. $\tfrac{|AD|}{x} = \tfrac{c}{a}$, lub $\cos \alpha = \tfrac{b}{2a}$ z tw. cosinusów).
+- **3 pkt** — sprowadzenie do równania z jedną niewiadomą / dwóch równań.
+- **4 pkt** — pełne rozumowanie.
+
+## Klucz uniwersalny
+
+Trzy najczęstsze ścieżki dowodów geometrycznych w trójkątach z kątem $2\alpha$:
+
+1. **Twierdzenie sinusów + wzory na sin podwojonego/potrojonego** — bezpieczna ścieżka algebraiczna, działa zawsze.
+2. **Dwusieczna kąta podwojonego → trójkąty podobne** — krócej, wymaga rysunku.
+3. **Twierdzenie cosinusów** — najszybsza dla zależności metrycznych, jeśli umiesz manipulować wzorem $\cos 2\alpha = 2\cos^2 \alpha - 1$.
+
+Wybierz tę, której wzory pamiętasz najpewniej. Tu polecam **sposób I (trygonometryczny)** — najmniej miejsc do popełnienia błędu.

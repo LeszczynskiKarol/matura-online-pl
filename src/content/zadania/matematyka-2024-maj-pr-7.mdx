@@ -1,0 +1,144 @@
+---
+arkusz: matematyka-2024-maj-pr
+subject: matematyka
+nr: 7
+punkty: 4
+typ: otwarte-rozszerzone
+topic: ciągi arytmetyczne i geometryczne, układ równań
+difficulty: 5
+tresc: |
+  Trzywyrazowy ciąg (x, y, z) jest geometryczny i rosnący. Suma wyrazów tego ciągu jest równa 105. Liczby x, y oraz z są — odpowiednio — pierwszym, drugim oraz szóstym wyrazem ciągu arytmetycznego (a_n). Oblicz x, y oraz z.
+odpowiedz: |
+  x = 5, y = 20, z = 80 (iloraz q = 4, różnica r = 15)
+pulapka: |
+  CKE wprost: jeśli dzielisz obie strony równania przez wyrażenie z niewiadomą (np. (x+r)² = x(x+5r) sprowadzone do r² = 3rx i podzielone przez r BEZ założenia r ≠ 0) — maksimum 3 pkt. Trzeba osobno rozpatrzyć przypadek r = 0 (i odrzucić go, bo ciąg ma być ROSNĄCY).
+wymaganie: |
+  VI.6 — wykorzystanie własności ciągów arytmetycznych i geometrycznych do rozwiązywania zadań.
+podobne:
+  - matematyka-2024-maj-pr-6
+---
+
+## Co dane?
+
+- $(x, y, z)$ — trzywyrazowy **geometryczny i rosnący**
+- $x + y + z = 105$
+- $(x, y, z) = (a_1, a_2, a_6)$ — pierwszy, drugi i szósty wyraz arytmetycznego $(a_n)$ o różnicy $r$
+
+Mamy dwie nieznane wielkości: $x$ i $r$ (z nich już wynikają $y$ i $z$). Potrzebujemy dwóch równań.
+
+## Sposób I — przez różnicę $r$ ciągu arytmetycznego
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wyraź $y$ i $z$ przez $x$ i $r$.**
+
+$$y = a_2 = a_1 + r = x + r$$
+
+$$z = a_6 = a_1 + 5r = x + 5r$$
+
+</div>
+
+<div class="krok">
+
+**Pierwsze równanie — z sumy $x + y + z = 105$:**
+
+$$x + (x + r) + (x + 5r) = 105$$
+
+$$3x + 6r = 105$$
+
+$$x + 2r = 35 \quad\Rightarrow\quad x = 35 - 2r$$
+
+</div>
+
+<div class="krok">
+
+**Drugie równanie — z własności ciągu geometrycznego** ($y^2 = x \cdot z$):
+
+$$(x + r)^2 = x \cdot (x + 5r)$$
+
+Rozwiń:
+
+$$x^2 + 2xr + r^2 = x^2 + 5xr$$
+
+$$r^2 = 3xr$$
+
+$$r^2 - 3xr = 0 \quad\Rightarrow\quad r(r - 3x) = 0$$
+
+</div>
+
+<div class="krok">
+
+**Rozważ oba przypadki.**
+
+- **$r = 0$**: wtedy $x = y = z$, więc ciąg jest **stały**, a nie rosnący. **Odrzucamy.**
+- **$r = 3x$**: pasuje. Podstawiamy do $x + 2r = 35$:
+
+$$x + 2 \cdot 3x = 35 \quad\Rightarrow\quad 7x = 35 \quad\Rightarrow\quad x = 5$$
+
+Wtedy $r = 15$, $y = 5 + 15 = 20$, $z = 5 + 75 = 80$.
+
+</div>
+
+<div class="krok">
+
+**Sprawdzenie.** Suma: $5 + 20 + 80 = 105$ ✓. Iloraz geometryczny: $\tfrac{20}{5} = 4$, $\tfrac{80}{20} = 4$ ✓. Ciąg rosnący: $5 < 20 < 80$ ✓.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> $x = 5$, $y = 20$, $z = 80$.
+  </div>
+</div>
+
+## Sposób II — przez iloraz $q$ ciągu geometrycznego
+
+Niech $q$ — iloraz $(x, y, z)$. Wtedy $y = xq$, $z = xq^2$.
+
+Z różnicy arytmetycznej między 1. a 2. wyrazem oraz między 2. a 6.: $r = y - x$, $z - y = (6-2) \cdot r = 4r$. Stąd:
+
+$$z - y = 4(y - x) \quad\Rightarrow\quad xq^2 - xq = 4(xq - x) \quad\Rightarrow\quad xq(q - 1) = 4x(q - 1)$$
+
+Ponieważ ciąg jest rosnący, $x \neq 0$ i $q \neq 1$ (gdyby $q = 1$, mielibyśmy ciąg stały). Możemy podzielić przez $x(q-1)$:
+
+$$q = 4$$
+
+Z $x + y + z = 105$: $x + 4x + 16x = 105 \Rightarrow 21x = 105 \Rightarrow x = 5$. Wtedy $y = 20$, $z = 80$. Ten sam wynik, ale o połowę krótsze rachunki.
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka dzielenia bez założenia (uwaga 1 z klucza CKE)</div>
+
+Klasyczny błąd: ze wzoru $r^2 = 3xr$ od razu napisać $r = 3x$ (dzielenie obu stron przez $r$), **pomijając przypadek $r = 0$**. CKE traktuje to jako dzielenie przez wyrażenie z niewiadomą bez zastrzeżenia — **maksimum 3 pkt zamiast 4**.
+
+Bezpieczna procedura: przenieść wszystko na jedną stronę ($r^2 - 3xr = 0$) i **wyłączyć przed nawias** ($r(r - 3x) = 0$). Wtedy dwa przypadki są widoczne, i odrzucenie $r = 0$ jako sprzecznego z „rosnący" jest jawne.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka "rosnący" vs "ściśle monotoniczny"</div>
+
+Słowo „rosnący" w treści **eliminuje** przypadek ciągu stałego. Gdyby treść mówiła „niemalejący", to $r = 0$ byłby dopuszczalny i mielibyśmy dwa rozwiązania: $(35, 35, 35)$ oraz $(5, 20, 80)$.
+
+W matematycznym zapisie: „rosnący" = $a_n < a_{n+1}$ (ścisła nierówność).
+</div>
+
+## Punktacja CKE
+
+Klucz daje 4 ścieżki o tej samej strukturze punktów:
+
+- **1 pkt** — zapisanie jednego z równań ($x + 2r = 35$ lub $(x+r)^2 = x(x+5r)$, lub w wariancie II — $q^2 - 5q + 4 = 0$, itd.)
+- **2 pkt** — zapisanie układu obu równań / wyrażenie wyrazów w zależności od jednej zmiennej
+- **3 pkt** — sprowadzenie do równania z jedną niewiadomą i rozwiązanie ($r = 15$ lub $q = 4$)
+- **4 pkt** — pełna metoda + wynik $x = 5$, $y = 20$, $z = 80$ z odrzuceniem przypadku trywialnego.
+
+## Klucz uniwersalny
+
+Zadania typu „ciąg geometryczny i arytmetyczny jednocześnie" mają zwykle dwie ścieżki:
+
+1. **Przez różnicę $r$** — wyrazy = $x, x+r, x+5r$ (lub inne pozycje); warunek geometryczny $y^2 = xz$ daje równanie kwadratowe.
+2. **Przez iloraz $q$** — wyrazy = $x, xq, xq^2$; różnica między pozycjami arytmetycznymi daje równanie liniowe (po podziale przez $x$).
+
+Sposób II często jest **szybszy**, jeśli pozycje arytmetyczne są blisko siebie. Wybierz tę, gdzie pierwszy warunek redukuje się do prostszego równania.
