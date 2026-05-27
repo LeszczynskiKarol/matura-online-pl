@@ -1,0 +1,247 @@
+---
+arkusz: matematyka-2024-maj-pp
+subject: matematyka
+nr: 14
+punkty: 5
+typ: otwarte-krotkie
+topic: funkcja kwadratowa, odczyt z wykresu, przekształcenia
+difficulty: 4
+tresc: |
+  Na wykresie przedstawiono parabolę funkcji kwadratowej f. Wierzchołek paraboli oraz punkty przecięcia z osiami mają współrzędne całkowite. Z wykresu odczytaj: wierzchołek (1, 9), miejsca zerowe (−2, 0) i (4, 0), punkt przecięcia z osią OY (0, 8). Zadanie składa się z czterech podpunktów (14.1 — 14.4).
+odpowiedz: |
+  14.1: x ∈ [−2, 4]   |   14.2: B (f(x) = −(x−1)² + 9)   |   14.3: A (f(−4) = f(6))   |   14.4: g↔A, h↔E
+pulapka: |
+  Najczęstszy błąd to mylenie postaci kanonicznej i ogólnej funkcji kwadratowej, a w 14.4 — kierunek przesunięcia g(x) = f(x+3) (przesunięcie o 3 w LEWO, nie w prawo).
+wymaganie: |
+  V.4 — odczytywanie z wykresu funkcji; V.9 — wyznaczanie wzoru funkcji kwadratowej; V.12 — szkicowanie wykresów typu f(x−a) i f(−x).
+podobne:
+  - matematyka-2024-maj-pp-11
+  - matematyka-2024-maj-pp-12
+---
+
+## Wykres funkcji $f$
+
+<div class="not-prose" style="background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: 0.5rem; padding: 1rem; margin: 1.5rem 0;">
+
+<svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; max-width: 500px; display: block; margin: 0 auto;" aria-label="Wykres paraboli y = f(x)">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <g stroke="var(--color-border)" stroke-width="1" opacity="0.4">
+    <line x1="60" y1="320" x2="460" y2="320" />
+    <line x1="60" y1="95" x2="460" y2="95" />
+    <line x1="60" y1="195" x2="460" y2="195" />
+    <line x1="60" y1="120" x2="460" y2="120" />
+  </g>
+  <g stroke="currentColor" stroke-width="1.5" fill="none">
+    <line x1="60" y1="320" x2="460" y2="320" marker-end="url(#arrow)" />
+    <line x1="200" y1="370" x2="200" y2="60" marker-end="url(#arrow)" />
+  </g>
+  <g fill="currentColor" font-family="var(--font-mono)" font-size="11">
+    <text x="465" y="324">x</text>
+    <text x="205" y="65">y</text>
+    <text x="195" y="335" text-anchor="end">0</text>
+    <text x="130" y="335" text-anchor="middle">−2</text>
+    <text x="340" y="335" text-anchor="middle">4</text>
+    <text x="195" y="200" text-anchor="end">5</text>
+    <text x="195" y="125" text-anchor="end">8</text>
+    <text x="195" y="100" text-anchor="end">9</text>
+  </g>
+  <polyline
+    points="60,495 95,495 130,320 165,195 200,120 217.5,101 235,95 252.5,101 270,120 305,195 340,320 375,495 410,495"
+    stroke="var(--color-accent)"
+    stroke-width="2.5"
+    fill="none"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+    clip-path="inset(0 0 80px 0)"
+  />
+  <g fill="var(--color-accent)">
+    <circle cx="235" cy="95" r="4" />
+    <circle cx="130" cy="320" r="4" />
+    <circle cx="340" cy="320" r="4" />
+    <circle cx="200" cy="120" r="4" />
+  </g>
+  <g fill="currentColor" font-family="var(--font-sans)" font-size="11">
+    <text x="245" y="90">(1, 9)</text>
+    <text x="210" y="113">(0, 8)</text>
+    <text x="105" y="345">(−2, 0)</text>
+    <text x="315" y="345">(4, 0)</text>
+  </g>
+  <text x="380" y="200" fill="var(--color-accent)" font-family="var(--font-serif)" font-style="italic" font-size="14">y = f(x)</text>
+</svg>
+
+</div>
+
+Z wykresu odczytujemy:
+
+- **wierzchołek**: $W = (1,\, 9)$
+- **miejsca zerowe**: $x_1 = -2$, $x_2 = 4$
+- **punkt przecięcia z osią $OY$**: $(0, 8)$
+- parabola **otwiera się w dół** (ujemny współczynnik przy $x^2$)
+
+---
+
+## 14.1 — zbiór rozwiązań $f(x) \geq 0$  *(1 pkt)*
+
+Nierówność $f(x) \geq 0$ oznacza: dla których $x$ wykres jest **nad osią OX lub na niej**?
+
+Z wykresu widać: parabola jest **nad osią OX** między miejscami zerowymi $-2$ i $4$. W samych miejscach zerowych $f(x) = 0$, więc warunek $\geq 0$ je obejmuje.
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź 14.1:</strong> $x \in \langle -2,\ 4 \rangle$ (przedział domknięty).
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka kolejności (uwaga z klucza CKE)</div>
+
+Jeśli zapiszesz zbiór odwrotnie — np. $\langle 4,\, -2 \rangle$ — CKE daje **1 punkt** zamiast pełnych za 14.1 (specjalna uwaga dla uczniów z dyskalkulią). Bezpieczna zasada: w przedziale **mniejsza liczba zawsze po lewej**.
+
+Drugi błąd: nawiasy okrągłe $(-2, 4)$ zamiast trójkątnych $\langle -2, 4 \rangle$ — okrągłe oznaczają przedział **otwarty** (bez końców), a tu końce $-2$ i $4$ należą (bo nierówność jest $\geq 0$, a w tych punktach $f = 0$).
+</div>
+
+---
+
+## 14.2 — wzór funkcji $f$  *(1 pkt)*
+
+Wybierz spośród: A. $f(x) = -(x+1)^2 - 9$, B. $f(x) = -(x-1)^2 + 9$, C. $f(x) = -(x-1)^2 - 9$, D. $f(x) = -(x+1)^2 + 9$.
+
+**Postać kanoniczna** funkcji kwadratowej:
+
+$$f(x) = a(x - p)^2 + q$$
+
+gdzie $(p, q)$ to **wierzchołek paraboli**, a $a$ to współczynnik kierunkowy.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Z wierzchołka $W = (1, 9)$:** $p = 1$, $q = 9$. Więc $f(x) = a(x - 1)^2 + 9$.
+
+</div>
+
+<div class="krok">
+
+**Z faktu, że parabola otwiera się w dół:** $a < 0$. Wszystkie odpowiedzi mają $a = -1$, więc to OK — weryfikujemy.
+
+</div>
+
+<div class="krok">
+
+**Sprawdzenie** $f(0) = 8$: $f(0) = -1 \cdot (0-1)^2 + 9 = -1 + 9 = 8$ ✓
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź 14.2: B</strong> — $f(x) = -(x-1)^2 + 9$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka znaku w postaci kanonicznej</div>
+
+W postaci $f(x) = a(x-p)^2 + q$ uwaga na znak: **wierzchołek to $(p, q)$, ale w nawiasie odejmujemy $p$**. Dla wierzchołka $(1, 9)$: $f(x) = a(x - 1)^2 + 9$ — minus w nawiasie i plus przy $q$.
+
+**Odpowiedź D** ($-(x+1)^2 + 9$) wybiera ten, kto czyta $(x+1)$ jako „wierzchołek w $x = +1$". Niepoprawnie — $(x+1)^2$ to $(x - (-1))^2$, więc wierzchołek byłby w $x = -1$. Przeciwny znak.
+</div>
+
+---
+
+## 14.3 — który $x$ spełnia $f(-4) = f(?)$  *(1 pkt)*
+
+Wybierz spośród: A. $f(-4) = f(6)$, B. $f(-4) = f(5)$, C. $f(-4) = f(4)$, D. $f(-4) = f(7)$.
+
+**Klucz**: parabola jest symetryczna względem osi pionowej przechodzącej przez wierzchołek. Tutaj wierzchołek ma $x = 1$, więc oś symetrii to **prosta $x = 1$**.
+
+Dla każdego punktu $x_0$ istnieje punkt $x_1$ symetryczny do niego (i $f(x_0) = f(x_1)$) taki, że $x_0$ i $x_1$ są **równo oddalone od $x = 1$**:
+
+$$\frac{x_0 + x_1}{2} = 1 \quad\Longleftrightarrow\quad x_1 = 2 - x_0$$
+
+Dla $x_0 = -4$: $x_1 = 2 - (-4) = 6$.
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź 14.3: A</strong> — $f(-4) = f(6)$.
+  </div>
+</div>
+
+---
+
+## 14.4 — wykresy $g(x) = f(x+3)$ oraz $h(x) = f(-x)$  *(2 pkt)*
+
+Każdej z funkcji $g, h$ przyporządkuj fragment wykresu (A–F).
+
+### $g(x) = f(x + 3)$ — przesunięcie poziome
+
+Zastąpienie $x$ przez $x + 3$ powoduje **przesunięcie wykresu o 3 w lewo** (tak — w **lewo**, nie w prawo, mimo plusa).
+
+Intuicja: chcemy w $g$ uzyskać wartość, jaką $f$ ma w punkcie „3 dalej w prawo". Żeby to zrobić, musimy „cofnąć" wykres o 3 jednostki — przesunąć go w lewo.
+
+Pozycja po przesunięciu:
+
+- wierzchołek: $(1, 9) \to (-2, 9)$
+- miejsca zerowe: $-2$ i $4$ → $-5$ i $1$
+- kształt i orientacja (otwiera się w dół) — **bez zmian**
+
+Wśród rysunków A–F szukamy paraboli opadającej z wierzchołkiem $(-2, 9)$ i miejscami zerowymi $-5, 1$. **To rysunek A.**
+
+### $h(x) = f(-x)$ — odbicie symetryczne względem osi $OY$
+
+Zastąpienie $x$ przez $-x$ powoduje **odbicie wykresu względem osi $OY$**.
+
+Pozycja po odbiciu:
+
+- wierzchołek: $(1, 9) \to (-1, 9)$
+- miejsca zerowe: $-2, 4$ → $2, -4$ (czyli $-4$ i $2$)
+- kształt i orientacja — **bez zmian**
+
+Szukamy paraboli opadającej z wierzchołkiem $(-1, 9)$ i miejscami zerowymi $-4, 2$. **To rysunek E.**
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź 14.4:</strong> $g \leftrightarrow$ **A**, $h \leftrightarrow$ **E**.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka kierunku przesunięcia</div>
+
+Najczęstszy błąd na całym zadaniu: ktoś dostaje $g(x) = f(x + 3)$ i myśli „plus 3 = w prawo". To **odwrotnie** — plus 3 w argumencie = w **lewo**. Reguła pamięciowa:
+
+- $f(x - 3)$ → wykres w **prawo** o 3 (znak minus → przesunięcie w + kierunku)
+- $f(x + 3)$ → wykres w **lewo** o 3 (znak plus → przesunięcie w − kierunku)
+
+Sprawdź zawsze podstawiając $x = 0$: dla $g(x) = f(x+3)$ mamy $g(0) = f(3)$, więc wartość $g$ w zerze to wartość $f$ w trójce. Czyli wykres $f$ „przesunął się" — to, co było w $x = 3$, jest teraz w $x = 0$. To **przesunięcie w lewo**.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Punktacja 14.4</div>
+
+- **2 pkt** — dwie poprawne odpowiedzi (A i E).
+- **1 pkt** — jedna poprawna.
+- **0 pkt** — żadnej poprawnej.
+
+Warto zacząć od tej, której jesteś pewien — przynajmniej masz 1 pkt jeśli druga nie wyjdzie.
+</div>
+
+## Klucz uniwersalny — przekształcenia wykresów
+
+| Operacja | Co robi z wykresem |
+|---|---|
+| $f(x) + c$ | przesunięcie **w górę** o $c$ |
+| $f(x) - c$ | przesunięcie w **dół** o $c$ |
+| $f(x + c)$ | przesunięcie w **lewo** o $c$ |
+| $f(x - c)$ | przesunięcie w **prawo** o $c$ |
+| $f(-x)$ | odbicie względem osi $OY$ |
+| $-f(x)$ | odbicie względem osi $OX$ |
+| $\|f(x)\|$ | część pod osią $OX$ odbija się do góry |
+| $f(\|x\|)$ | część dla $x \geq 0$ kopiuje się symetrycznie na $x < 0$ |
+
+Te osiem reguł pokrywa wszystkie zadania o przekształceniach wykresów na maturze podstawowej. Warto je rozpoznawać natychmiast.

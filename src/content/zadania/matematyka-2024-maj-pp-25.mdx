@@ -2,18 +2,18 @@
 arkusz: matematyka-2024-maj-pp
 subject: matematyka
 nr: 25
-punkty: 1
+punkty: 2
 typ: zamkniete-abcd
 topic: stereometria, graniastosłup prawidłowy sześciokątny
 difficulty: 3
 tresc: |
-  Wysokość graniastosłupa prawidłowego sześciokątnego jest równa 6. Pole podstawy tego graniastosłupa jest równe 15√3. Oblicz pole jednej ściany bocznej. A. 36√10, B. 60, C. 6√10, D. 360.
+  Wysokość graniastosłupa prawidłowego sześciokątnego jest równa 6, pole podstawy 15√3. Zadanie składa się z dwóch podpunktów. 25.1 — pole jednej ściany bocznej. 25.2 — wskaż rysunek, na którym poprawnie zaznaczono kąt nachylenia najdłuższej przekątnej graniastosłupa do płaszczyzny podstawy.
 odpowiedz: |
-  C — 6√10
+  25.1: C — 6√10   |   25.2: D — kąt między najdłuższą przekątną podstawy a przekątną 3D do przeciwległego górnego wierzchołka
 pulapka: |
-  Najczęstszy błąd to liczenie boku z pola sześciokąta jako P = 6a² zamiast P = 6 · (a²√3/4). Drugi błąd: pomyłka — pole ściany BOCZNEJ to a · h, gdzie a to bok sześciokąta (nie przekątna).
+  W 25.1: liczenie boku z pola sześciokąta jako P = 6a² zamiast P = 6 · (a²√3/4). W 25.2: pomyłka — która przekątna jest "najdłuższa" w graniastosłupie sześciokątnym (musi łączyć WIERZCHOŁKI PRZECIWLEGŁE przez środek bryły).
 wymaganie: |
-  X.4 — obliczanie pól powierzchni graniastosłupów.
+  X.4 — obliczanie pól powierzchni graniastosłupów. X.2 — kąt między prostą a płaszczyzną.
 podobne:
   - matematyka-2024-maj-pp-26
   - matematyka-2024-maj-pp-21
@@ -82,3 +82,69 @@ Najprościej zapamiętać: **sześciokąt foremny = 6 trójkątów równobocznyc
 Trójkąt równoboczny o boku $a$ ma pole $\dfrac{a^2 \sqrt{3}}{4}$. Sześciokąt: $6 \cdot \dfrac{a^2 \sqrt{3}}{4} = \dfrac{3 a^2 \sqrt{3}}{2}$.
 
 Ten wzór jest też w „Wybranych wzorach matematycznych" CKE, ale na sześciokącie foremnym pojawia się **co drugą sesję** matury — warto go mieć w głowie.
+
+---
+
+## 25.2 — kąt nachylenia najdłuższej przekątnej  *(1 pkt)*
+
+Pytanie: który z rysunków A–D pokazuje poprawnie zaznaczony **kąt nachylenia najdłuższej przekątnej** graniastosłupa do płaszczyzny **podstawy**?
+
+### Krok 1 — która przekątna jest najdłuższa?
+
+W graniastosłupie prawidłowym sześciokątnym mamy trzy rodzaje przekątnych przestrzennych (łączących wierzchołek dolnej i górnej podstawy, **niesąsiednich**):
+
+| Rodzaj | Rzut na podstawę | Długość rzutu | Długość przekątnej 3D |
+|---|---|---|---|
+| krótka | bok | $a$ | $\sqrt{a^2 + h^2}$ |
+| średnia | przekątna „przez 1 wierzchołek" | $a\sqrt{3}$ | $\sqrt{3a^2 + h^2}$ |
+| **długa** | **najdłuższa przekątna sześciokąta (przez środek)** | $2a$ | $\sqrt{4a^2 + h^2}$ |
+
+**Najdłuższa** to ta, której rzut na podstawę to **najdłuższa przekątna sześciokąta foremnego** — czyli odcinek między dwoma **przeciwległymi** wierzchołkami sześciokąta (przechodzący przez środek). Ma długość $2a$.
+
+W naszym graniastosłupie: $a = \sqrt{10}$, $h = 6$, więc najdłuższa przekątna 3D ma długość $\sqrt{4 \cdot 10 + 36} = \sqrt{76}$.
+
+### Krok 2 — kąt nachylenia do płaszczyzny
+
+Kąt nachylenia odcinka do płaszczyzny to **kąt między odcinkiem a jego rzutem prostopadłym na tę płaszczyznę**.
+
+Rzut najdłuższej przekątnej 3D na podstawę = **najdłuższa przekątna sześciokąta** (odcinek długości $2a$ łączący dwa przeciwległe wierzchołki dolnej podstawy).
+
+Zatem szukany kąt znajduje się **w dolnej podstawie**, między:
+
+- **najdłuższą przekątną podstawy** (idącą od jednego wierzchołka do przeciwległego), oraz
+- **przekątną 3D** (idącą od tego samego wierzchołka **w górę i ukośnie** do **przeciwległego** wierzchołka **górnej** podstawy).
+
+### Krok 3 — który rysunek to pokazuje?
+
+Spośród czterech rysunków szukamy tego, na którym:
+
+1. Przekątna 3D startuje z **wierzchołka** dolnej podstawy i kończy się w **wierzchołku przeciwległym** górnej podstawy (przechodzi przez „środek" bryły).
+2. Kąt zaznaczony przy wierzchołku dolnym jest między tą przekątną a **przekątną dolnej podstawy** (najdłuższą — idącą od tego wierzchołka do wierzchołka przeciwległego dolnej podstawy).
+
+To rysunek **D**.
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź 25.2: D</strong>
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowe błędy</div>
+
+**Odpowiedź A** — przekątna prowadzi do wierzchołka górnej podstawy **leżącego bezpośrednio nad sąsiednim** dolnym, a nie nad przeciwległym. Taka przekątna jest **krótsza** niż „najdłuższa".
+
+**Odpowiedź B** — kąt zaznaczony między przekątną 3D a krawędzią boczną (czyli wysokością) — to **kąt nachylenia do osi pionowej**, a nie do podstawy. Dopełniający do tego, którego szukamy.
+
+**Odpowiedź C** — kąt zaznaczony między przekątną 3D a **bokiem podstawy** zamiast najdłuższej przekątnej podstawy. Inny kąt.
+</div>
+
+## Klucz — kąt nachylenia prostej do płaszczyzny
+
+Procedura uniwersalna:
+
+1. **Wybierz prostą** (tu: najdłuższą przekątną 3D).
+2. **Wyznacz jej rzut prostopadły** na płaszczyznę (tu: rzutem jest najdłuższa przekątna podstawy).
+3. **Kąt nachylenia to kąt między prostą a jej rzutem** — leży **w płaszczyźnie**, jeden z jego ramion to rzut, drugi to sama prosta.
+
+Te trzy kroki są właściwe dla każdego zadania o kącie nachylenia — w graniastosłupach, ostrosłupach, czy stożku.
