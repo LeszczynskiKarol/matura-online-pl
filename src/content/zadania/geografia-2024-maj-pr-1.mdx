@@ -4,29 +4,71 @@ subject: geografia
 nr: 1
 punkty: 3
 typ: otwarte-krotkie
-topic: kartografia, mapa topograficzna Sudetów, obliczanie czasu wycieczki
+topic: mapa topograficzna Sudetów, obliczanie czasu wycieczki, szlaki PTTK
 difficulty: 4
 tresc: |
-  **1.1.** Oceń prawdziwość zdań o mapie topograficznej rejonu Bystrzycy Kłodzkiej (P/F).
-  **1.2.** Oblicz czas wycieczki pieszej po trasie o długości w terenie 4,375 km, jeśli na odcinku płaskim pieszy idzie z prędkością 3,5 km/h, a różnica wysokości wynosi 370 m (każde 100 m różnicy wysokości wydłuża czas o 10 minut).
+  Trasa wycieczki pieszej po Sudetach (Wałbrzych Główny → góra Borowa → Przełęcz Kozia → powrót). Identyfikacja szczytów X, Y, Z na fotografii i obliczenie czasu trasy.
 odpowiedz: |
-  **1.1.** — **FP**
+  **1.1.** — **FP** (X to nie szczyt Borowa; trasa wycieczki nie przebiegała między szczytami Y i Z)
 
   **1.2.** — **1 h 52 min**
-
-  Obliczenia:
-  - czas na odcinku płaskim: $t_1 = \frac{4{,}375}{3{,}5} = 1{,}25\,\text{h} = 1\,\text{h}\,15\,\text{min}$
-  - wydłużenie dla 370 m: $\frac{370}{100} \cdot 10 = 37\,\text{min}$
-  - razem: $1\,\text{h}\,15\,\text{min} + 37\,\text{min} = 1\,\text{h}\,52\,\text{min}$
+  $$t = \frac{4{,}375\,\text{km}}{3{,}5\,\text{km/h}} + \frac{370\,\text{m}}{100\,\text{m}} \cdot 10\,\text{min} = 75 + 37 = 112\,\text{min}$$
 pulapka: |
-  Najczęstszy błąd: pomięcie 10 minut na każde **100 m**, a nie 1000 m. Trzecia pułapka: zaokrąglanie 1,25 h do 1 h zamiast 1 h 15 min.
+  Pomięcie 10 min na każde **100 m** różnicy wysokości (nie 1000 m). 1,25 h to **1 h 15 min**, nie "1 h".
 wymaganie: |
-  I.3 — czytanie i interpretacja treści map ogólnogeograficznych i topograficznych.
-  I.7 — wykonywanie obliczeń geograficznych na podstawie danych liczbowych z mapy.
+  I.3 — czytanie i interpretacja treści map topograficznych.
+  I.7 — wykonywanie obliczeń geograficznych z mapy.
 podobne:
+  - geografia-2024-maj-pr-2
   - geografia-2024-maj-pr-6
-  - geografia-2025-maj-pr-1
 ---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+**Zadania od 1. do 8. odnoszą się do obszaru przedstawionego na mapie szczegółowej fragmentu Sudetów w okolicach Wałbrzycha.**
+
+> **Zadanie 1.** Turysta rozpoczął pieszą wycieczkę obok stacji kolejowej Wałbrzych Główny (pole A2). Trasa wycieczki prowadziła szlakami turystycznymi PTTK. Szlakiem czerwonym doszedł na szczyt góry Borowej (pole B3). Kontynuował wycieczkę szlakiem czerwonym, a następnie do Przełęczy Koziej (pole B3) — szlakiem żółtym, którym wrócił do stacji kolejowej Wałbrzych Główny.
+
+<MaterialZrodlowy
+  src="/arkusze/geografia/2024/mapa-sudetow.webp"
+  alt="Mapa topograficzna fragmentu Sudetów (rejon Wałbrzycha), skala 1:50 000"
+  caption="Mapa szczegółowa fragmentu Sudetów — Wałbrzych, Jedlina-Zdrój, Głuszyca. Skala 1:50 000."
+  zrodlo="CKE 2024, mapa do arkusza MGEP-R0-100-2405"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/geografia/MGEP-R0-100-2405-mapa.pdf"
+/>
+
+### Zadanie 1.1. (0–1)
+
+Na fotografii literami X, Y, Z oznaczono szczyty wybranych gór, wśród których są Borowa i Wołowiec (pole B2/3). Fotografię wykonano w kierunku południowo-wschodnim.
+
+**Oceń, czy poniższe informacje o trasie opisanej wycieczki są prawdziwe.** Zaznacz P, jeśli informacja jest prawdziwa, albo F — jeśli jest fałszywa.
+
+| Nr | Zdanie | Ocena |
+|---|---|---|
+| 1. | Turysta podczas wycieczki wszedł na szczyt oznaczony literą X. | P / **F** |
+| 2. | Fragment trasy wycieczki przebiegał między górami, których szczyty oznaczono literami Y i Z. | P / **F** |
+
+<MaterialZrodlowy
+  src="/arkusze/geografia/2024/arkusz-04.webp"
+  alt="Fotografia trzech szczytów oznaczonych X, Y, Z (Wałbrzych, Sudety)"
+  caption="Fotografia szczytów X, Y, Z — pole B2/3 mapy szczegółowej. Kierunek fotografii: SE."
+  zrodlo="www.polska-org.pl"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/geografia/MGEP-R0-100-2405-arkusz.pdf"
+  pdfPage={4}
+/>
+
+### Zadanie 1.2. (0–2)
+
+Przyjmij, że:
+- długość trasy ze stacji kolejowej Wałbrzych Główny na szczyt góry Borowej wynosi 4,375 km;
+- stacja kolejowa Wałbrzych Główny jest położona na wysokości 483 m n.p.m.;
+- trasa ze stacji kolejowej Wałbrzych Główny na szczyt góry Borowej przebiega wyłącznie w górę;
+- pieszy turysta na płaskim terenie idzie z prędkością 3,5 km/h;
+- każde 100 m różnicy wysokości podejścia wydłuża czas trwania wycieczki o 10 minut.
+
+**Oblicz, ile czasu zajęło turyście przejście ze stacji kolejowej Wałbrzych Główny na szczyt góry Borowej. Wynik podaj w godzinach i minutach. Zapisz obliczenia.**
 
 ## Klucz odpowiedzi (CKE)
 
@@ -37,12 +79,12 @@ podobne:
 
 ### 1.2. — **1 h 52 min**
 
-$$t = \frac{4{,}375\,\text{km}}{3{,}5\,\text{km/h}} + \frac{370\,\text{m}}{100\,\text{m}} \cdot 10\,\text{min} = 75\,\text{min} + 37\,\text{min} = 112\,\text{min}$$
+$$t = \frac{4{,}375\,\text{km}}{3{,}5\,\text{km/h}} + \frac{370\,\text{m}}{100\,\text{m}} \cdot 10\,\text{min} = 75\,\text{min} + 37\,\text{min} = 112\,\text{min} = 1\,\text{h}\,52\,\text{min}$$
 
 </div>
 </div>
 
 ## Punktacja CKE
 
-- 1.1: **1 pkt** — dwie poprawne oceny zdań.
-- 1.2: **2 pkt** — poprawne obliczenie czasu z uwzględnieniem różnicy wysokości; **1 pkt** — poprawne obliczenie tylko jednego składnika; **0 pkt** — odpowiedź niespełniająca wymagań.
+- **1.1:** 1 pkt — dwie poprawne oceny zdań.
+- **1.2:** 2 pkt — poprawne obliczenie czasu z uwzględnieniem różnicy wysokości; 1 pkt — poprawne obliczenie tylko jednego składnika; 0 pkt — odpowiedź niespełniająca wymagań.
