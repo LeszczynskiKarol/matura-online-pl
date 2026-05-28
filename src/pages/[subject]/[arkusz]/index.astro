@@ -6,6 +6,7 @@ import SiteHeader from "../../../components/SiteHeader.astro";
 import SiteFooter from "../../../components/SiteFooter.astro";
 import IconBadge from "../../../components/IconBadge.astro";
 import { siteConfig } from "../../../config/site";
+import { renderInlineMath } from "../../../lib/render-math";
 
 export async function getStaticPaths() {
   const arkusze = await getCollection("arkusze");
@@ -184,9 +185,10 @@ const allNrs = Array.from({ length: arkusz.data.liczbaZadan }, (_, i) => i + 1);
                           {zadanie.data.topic} • {zadanie.data.punkty} pkt
                         </span>
                       </div>
-                      <p class="mt-1 text-sm text-[var(--color-text-muted)] line-clamp-2">
-                        {zadanie.data.tresc}
-                      </p>
+                      <p
+                        class="mt-1 text-sm text-[var(--color-text-muted)] line-clamp-2"
+                        set:html={renderInlineMath(zadanie.data.tresc)}
+                      />
                     </div>
                     <Icon
                       name="lucide:arrow-right"
