@@ -1,0 +1,93 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 7
+punkty: 1
+typ: zamkniete-abcd
+topic: równania wielomianowe, postać iloczynowa
+difficulty: 2
+tresc: |
+  Równanie $2x(x + 3)(x^2 + 25) = 0$ w zbiorze liczb rzeczywistych ma dokładnie: A. dwa rozwiązania $-3$ oraz $0$, B. dwa rozwiązania $-3$ oraz $2$, C. trzy rozwiązania $-5, -3$ oraz $0$, D. cztery rozwiązania $-5, -3, 0$ oraz $5$.
+odpowiedz: |
+  A — dwa rozwiązania: $-3$ oraz $0$
+pulapka: |
+  Najgorszy błąd to potraktowanie $x^2 + 25$ jako różnicy kwadratów i wpisanie pierwiastków $\pm 5$ — odpowiedzi C lub D. To NIE jest różnica! $x^2 + 25 > 0$ dla każdej liczby rzeczywistej $x$ (suma kwadratu i liczby dodatniej), więc to równanie **nie ma pierwiastków rzeczywistych**.
+wymaganie: |
+  III.5 — rozwiązywanie równań wielomianowych w postaci iloczynowej.
+podobne:
+  - matematyka-2024-maj-pp-9
+  - matematyka-2025-maj-pp-6
+---
+
+## Strategia
+
+Iloczyn jest zerem **wtedy i tylko wtedy, gdy któryś z czynników jest zerem**. Mamy trzy czynniki: $2x$, $(x + 3)$, $(x^2 + 25)$. Sprawdź każdy osobno.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Pierwszy czynnik:** $2x = 0$.
+
+$$x = 0$$
+
+</div>
+
+<div class="krok">
+
+**Drugi czynnik:** $x + 3 = 0$.
+
+$$x = -3$$
+
+</div>
+
+<div class="krok">
+
+**Trzeci czynnik:** $x^2 + 25 = 0$, czyli $x^2 = -25$.
+
+**Brak rozwiązań rzeczywistych** — kwadrat liczby rzeczywistej jest zawsze $\geq 0$, więc $x^2 = -25$ nie ma rozwiązań w $\mathbb{R}$.
+
+(Dla porównania: $x^2 - 25 = 0$ miałoby rozwiązania $\pm 5$. Plus zamiast minus zmienia wszystko.)
+
+</div>
+
+<div class="krok">
+
+**Łącznie: dwa rozwiązania:** $x = 0$ i $x = -3$.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: A</strong> — dwa rozwiązania: $-3$ oraz $0$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Krytyczna pułapka — $x^2 + 25$ vs $x^2 - 25$</div>
+
+**Odpowiedź D** (cztery rozwiązania: $-5, -3, 0, 5$) wybiera ten, kto przeczyta $x^2 + 25$ jako różnicę kwadratów. To **różnica** $x^2 - 25 = (x-5)(x+5)$ ma pierwiastki $\pm 5$, ale tu mamy **sumę**, a:
+
+$$x^2 + 25 \geq 0 + 25 = 25 > 0$$
+
+dla każdego $x \in \mathbb{R}$. Suma kwadratu (nieujemna) i liczby dodatniej jest zawsze **dodatnia** — nigdy nie wyzeruje się w $\mathbb{R}$.
+
+**Odpowiedź C** (trzy rozwiązania: $-5, -3, 0$) to pół-błąd: ktoś zauważył, że $-5$ albo $5$ jest „podejrzane", ale uznał tylko jedno z nich (zamiast obu albo żadnego).
+
+**Odpowiedź B** ($-3, 2$) — strzał kompletnie nie powiązany z zadaniem.
+</div>
+
+## Klucz pamięciowy
+
+Sprawdź typ wyrażenia drugiego stopnia zanim szukasz pierwiastków:
+
+| Postać | Pierwiastki rzeczywiste |
+|---|---|
+| $x^2 - c$ (gdzie $c > 0$) | $\pm \sqrt{c}$ (dwa) |
+| $x^2 + c$ (gdzie $c > 0$) | **brak** |
+| $x^2$ | $0$ (jeden, podwójny) |
+| $ax^2 + bx + c$ | zależy od $\Delta$ |
+
+To pierwsze sprawdzenie zajmuje 5 sekund i ratuje przed klasycznymi błędami.

@@ -1,0 +1,96 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 4
+punkty: 1
+typ: zamkniete-abcd
+topic: wzory skróconego mnożenia
+difficulty: 2
+tresc: |
+  Dla każdej liczby rzeczywistej $x$ wartość wyrażenia $(3x + 2)^2 - (2x - 3)^2$ jest równa wartości wyrażenia: A. $5x^2 - 5$, B. $5x^2 + 13$, C. $5x^2 + 24x - 5$, D. $5x^2 + 24x - 13$.
+odpowiedz: |
+  C — $5x^2 + 24x - 5$
+pulapka: |
+  Najczęstszy błąd to pomyłka znaku przy odejmowaniu drugiego nawiasu. $-(2x - 3)^2$ = "minus cały kwadrat", więc rozwiniesz $(2x-3)^2 = 4x^2 - 12x + 9$ i ODEJMIESZ to całkowicie: $-4x^2 + 12x - 9$. Łatwo zgubić znak przy `-12x` lub `+9`.
+wymaganie: |
+  II.1 — wzory skróconego mnożenia; II.2 — mnożenie wielomianów.
+podobne:
+  - matematyka-2025-maj-pp-1
+  - matematyka-2025-maj-pp-2
+---
+
+## Strategia
+
+Można rozwinąć oba kwadraty oddzielnie albo użyć wzoru różnicy kwadratów $a^2 - b^2 = (a-b)(a+b)$. Pokażę oba sposoby.
+
+## Sposób I — rozwinięcie kwadratów (mechaniczne)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Rozwiń pierwszy kwadrat:** $(3x + 2)^2$ ze wzoru $(a+b)^2 = a^2 + 2ab + b^2$:
+
+$$(3x + 2)^2 = 9x^2 + 12x + 4$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiń drugi kwadrat:** $(2x - 3)^2$ ze wzoru $(a-b)^2 = a^2 - 2ab + b^2$:
+
+$$(2x - 3)^2 = 4x^2 - 12x + 9$$
+
+</div>
+
+<div class="krok">
+
+**Odejmij** — uwaga na znak całego drugiego nawiasu:
+
+$$(3x+2)^2 - (2x-3)^2 = (9x^2 + 12x + 4) - (4x^2 - 12x + 9)$$
+
+Rozwiń odejmowanie nawiasu (każdy znak w drugim nawiasie zmienia się na przeciwny):
+
+$$= 9x^2 + 12x + 4 - 4x^2 + 12x - 9 = 5x^2 + 24x - 5$$
+
+</div>
+
+</div>
+
+## Sposób II — wzór różnicy kwadratów
+
+$a^2 - b^2 = (a - b)(a + b)$, gdzie $a = 3x + 2$, $b = 2x - 3$.
+
+$$a - b = (3x + 2) - (2x - 3) = x + 5$$
+
+$$a + b = (3x + 2) + (2x - 3) = 5x - 1$$
+
+$$(3x + 2)^2 - (2x - 3)^2 = (x + 5)(5x - 1) = 5x^2 - x + 25x - 5 = 5x^2 + 24x - 5$$
+
+Ten sam wynik, w 3 linijkach zamiast 5.
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: C</strong> — $5x^2 + 24x - 5$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd — znak przy odejmowaniu nawiasu</div>
+
+**Odpowiedź A ($5x^2 - 5$)** wybiera ten, kto pomylił znaki przy odejmowaniu: liczył jakby $-(- 12x) = -12x$ (zamiast $+12x$). Wtedy człony liniowe $12x$ i $-12x$ znoszą się — i zostaje tylko $5x^2 - 5$. Klasyczny błąd zaznaczonej trójki.
+
+**Odpowiedź D ($5x^2 + 24x - 13$)** — błąd w wyrazach wolnych: $4 - (-9) = 13$ albo $4 + 9 = 13$ (zamiast $4 - 9 = -5$).
+
+Bezpieczna procedura: po rozwinięciu drugiego kwadratu **pisz wynik w nawiasie** $(4x^2 - 12x + 9)$ i **dopiero potem** rozwijaj odejmowanie, zmieniając każdy znak. Łatwiej kontrolować.
+</div>
+
+## Sprawdzenie liczbowe
+
+Dla $x = 1$:
+
+- Lewa: $(3 + 2)^2 - (2 - 3)^2 = 25 - 1 = 24$
+- C: $5 + 24 - 5 = 24$ ✓
+- D: $5 + 24 - 13 = 16$ ✗
+
+Jednoznaczne — C pasuje, D nie. Sprawdzenie liczbowe to **darmowa weryfikacja** odpowiedzi w 5 sekund.

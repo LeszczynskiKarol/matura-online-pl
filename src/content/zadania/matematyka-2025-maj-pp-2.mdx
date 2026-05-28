@@ -1,0 +1,71 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 2
+punkty: 1
+typ: zamkniete-abcd
+topic: potęgi, prawa działań
+difficulty: 2
+tresc: |
+  Liczba $\dfrac{5^{12} + 5^{13} + 5^{14}}{5^{12}}$ jest równa: A. $30$, B. $31$, C. $5^{12}$, D. $5^{27}$.
+odpowiedz: |
+  B — 31
+pulapka: |
+  Najczęstszy błąd to zsumowanie wykładników w mianowniku osobno z każdym wyrazem licznika — $5^{12 - 12} + 5^{13 - 12} + 5^{14 - 12} = 5^0 + 5^1 + 5^2$, ale potem zsumowanie wykładników zamiast liczb (`0 + 1 + 2 = 3`) i wybór A lub błędnego wariantu.
+wymaganie: |
+  I.4 — stosowanie praw działań na potęgach.
+podobne:
+  - matematyka-2025-maj-pp-1
+  - matematyka-2025-maj-pp-3
+---
+
+## Strategia
+
+Wyciągnij **wspólny czynnik $5^{12}$** z licznika — wtedy skróci się z mianownikiem.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wyciągnij $5^{12}$ z licznika.** Zauważ:
+
+- $5^{13} = 5^{12} \cdot 5$
+- $5^{14} = 5^{12} \cdot 5^2 = 5^{12} \cdot 25$
+
+Stąd:
+
+$$5^{12} + 5^{13} + 5^{14} = 5^{12} \cdot (1 + 5 + 25) = 5^{12} \cdot 31$$
+
+</div>
+
+<div class="krok">
+
+**Podstaw do ułamka i skróć:**
+
+$$\frac{5^{12} + 5^{13} + 5^{14}}{5^{12}} = \frac{5^{12} \cdot 31}{5^{12}} = 31$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: B</strong> — $31$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+
+**Odpowiedź A ($30$)** to błąd arytmetyczny: $1 + 5 + 25 = 31$, nie $30$.
+
+**Odpowiedź C ($5^{12}$)** — błąd interpretacji: dzielenie pisane jak „licznik − mianownik" zamiast iloraz. Trzy składniki $5^{12} / 5^{12} = 1$, więc każdy daje 1, ale to suma jest 3 (nie 30) — błąd w obu kierunkach.
+
+Bezpieczna procedura: **wspólny czynnik** = najmniejsza potęga w sumie. Wyciągnij ją przed nawias, w nawiasie zostaje suma „1 + reszta".
+</div>
+
+## Klucz uniwersalny
+
+Gdy widzisz **sumę potęg tej samej podstawy podzieloną przez potęgę** — wyciąganie wspólnego czynnika daje liczbę całkowitą.
+
+Wzór ogólny: $\dfrac{a^n + a^{n+1} + a^{n+2} + \ldots + a^{n+k}}{a^n} = 1 + a + a^2 + \ldots + a^k$. Suma w nawiasie to zwykła suma geometryczna — łatwa do policzenia.

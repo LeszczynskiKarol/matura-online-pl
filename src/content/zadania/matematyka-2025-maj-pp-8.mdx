@@ -1,0 +1,98 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 8
+punkty: 1
+typ: zamkniete-abcd
+topic: wyrażenia wymierne, upraszczanie
+difficulty: 3
+tresc: |
+  Dla każdej liczby rzeczywistej $x$ różnej od $-2$ oraz różnej od $0$ wartość wyrażenia $\dfrac{x^2 + x}{x^2 + 4x + 4} \cdot \dfrac{x + 2}{x}$ jest równa wartości wyrażenia: A. $\dfrac{x + 2}{4x + 4}$, B. $\dfrac{x + 1}{4x + 5}$, C. $\dfrac{x + 1}{x + 2}$, D. $\dfrac{2x}{x + 2}$.
+odpowiedz: |
+  C — $\dfrac{x + 1}{x + 2}$
+pulapka: |
+  Najczęstszy błąd to pominięcie rozkładu mianownika $x^2 + 4x + 4 = (x+2)^2$. Kto nie rozłoży, nie zauważy że $(x+2)^2$ skraca się z licznikiem $(x+2)$ z drugiego ułamka.
+wymaganie: |
+  II.4 — mnożenie wyrażeń wymiernych.
+podobne:
+  - matematyka-2024-maj-pp-7
+  - matematyka-2025-maj-pp-4
+---
+
+## Strategia
+
+Każdy z trzech wielomianów rozłóż na czynniki, potem **skracaj wspólne czynniki** licznika i mianownika.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Rozłóż licznik pierwszego ułamka:** $x^2 + x = x(x + 1)$.
+
+</div>
+
+<div class="krok">
+
+**Rozłóż mianownik pierwszego ułamka:** $x^2 + 4x + 4 = (x + 2)^2$ (kwadrat sumy, wzór skróconego mnożenia z $a = x$, $b = 2$).
+
+</div>
+
+<div class="krok">
+
+**Zapisz iloczyn z rozkładami:**
+
+$$\frac{x(x + 1)}{(x + 2)^2} \cdot \frac{x + 2}{x}$$
+
+</div>
+
+<div class="krok">
+
+**Połącz w jeden ułamek i skróć wspólne czynniki.**
+
+$$\frac{x(x + 1) \cdot (x + 2)}{(x + 2)^2 \cdot x} = \frac{x \cdot (x + 1) \cdot (x + 2)}{x \cdot (x + 2) \cdot (x + 2)}$$
+
+Skróć $x$ (licznik z mianownikiem — wolno, bo $x \neq 0$ z założenia) i jedno $(x + 2)$ (wolno, bo $x \neq -2$):
+
+$$= \frac{x + 1}{x + 2}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: C</strong> — $\dfrac{x + 1}{x + 2}$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — niezauważony kwadrat sumy</div>
+
+Bez rozkładu $x^2 + 4x + 4 = (x+2)^2$ wyrażenie wygląda na nieskracalne. Wiele osób próbuje wtedy wymnażać liczniki i mianowniki i otrzymują ułamki z wyrazami pierwszego stopnia w mianowniku (odpowiedzi A, B, D).
+
+**Sygnał ostrzegawczy**: gdy mianownik to **trójmian kwadratowy z liczbami dodatnimi** ($x^2 + bx + c$, $b > 0$, $c > 0$), sprawdź czy to nie jest **kwadrat sumy**. Warunek: $b^2 = 4c$. Tutaj $4^2 = 16 = 4 \cdot 4$ ✓ — TAK.
+
+Trzy najczęstsze kwadraty sumy w zadaniach maturalnych: $(x+1)^2 = x^2+2x+1$, $(x+2)^2 = x^2+4x+4$, $(x+3)^2 = x^2+6x+9$. Warto je rozpoznawać natychmiast.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka założeń dziedziny</div>
+
+Treść mówi „dla $x$ różnej od $-2$ oraz różnej od $0$" — to **dziedzina** wyrażenia. Nie pomijaj jej. Skracanie $x$ z licznikiem i mianownikiem jest dozwolone **tylko gdy $x \neq 0$**, a $(x+2)$ — tylko gdy $x \neq -2$. Treść daje nam obie te gwarancje.
+
+Bez nich np. dla $x = 0$ pierwszy ułamek to $\tfrac{0}{4}$, ale drugi to $\tfrac{2}{0}$ — niezdefiniowane. Stąd zadanie wprost wyklucza $0$ i $-2$.
+</div>
+
+## Sprawdzenie liczbowe
+
+Dla $x = 1$:
+
+- Lewa: $\tfrac{1+1}{1+4+4} \cdot \tfrac{1+2}{1} = \tfrac{2}{9} \cdot 3 = \tfrac{6}{9} = \tfrac{2}{3}$
+- C: $\tfrac{1+1}{1+2} = \tfrac{2}{3}$ ✓
+
+Dla $x = 2$:
+
+- Lewa: $\tfrac{4+2}{4+8+4} \cdot \tfrac{4}{2} = \tfrac{6}{16} \cdot 2 = \tfrac{12}{16} = \tfrac{3}{4}$
+- C: $\tfrac{3}{4}$ ✓
+
+Dwa różne $x$, oba pasują → wybór C potwierdzony.

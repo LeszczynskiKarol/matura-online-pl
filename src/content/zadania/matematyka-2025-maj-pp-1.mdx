@@ -1,0 +1,78 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 1
+punkty: 1
+typ: zamkniete-abcd
+topic: pierwiastki, wzory skróconego mnożenia
+difficulty: 2
+tresc: |
+  Liczba $\left(\sqrt{32} - \sqrt{2}\right)^2$ jest równa: A. $16$, B. $18$, C. $30$, D. $34$.
+odpowiedz: |
+  B — 18
+pulapka: |
+  Najczęstszy błąd to obliczenie $(\sqrt{32})^2 - (\sqrt{2})^2 = 32 - 2 = 30$ i wybór C. To nie jest wzór na kwadrat różnicy! $(a - b)^2 = a^2 - 2ab + b^2$, **nie** $a^2 - b^2$.
+wymaganie: |
+  I.3 — własności pierwiastków; I.4 — prawa działań na potęgach i pierwiastkach.
+podobne:
+  - matematyka-2025-maj-pp-2
+  - matematyka-2025-maj-pp-4
+---
+
+## Strategia
+
+Zastosuj wzór skróconego mnożenia $(a - b)^2 = a^2 - 2ab + b^2$ dla $a = \sqrt{32}$, $b = \sqrt{2}$.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Rozwiń kwadrat różnicy:**
+
+$$\left(\sqrt{32} - \sqrt{2}\right)^2 = \left(\sqrt{32}\right)^2 - 2 \cdot \sqrt{32} \cdot \sqrt{2} + \left(\sqrt{2}\right)^2$$
+
+</div>
+
+<div class="krok">
+
+**Uprość każdy składnik:**
+
+- $\left(\sqrt{32}\right)^2 = 32$
+- $\left(\sqrt{2}\right)^2 = 2$
+- $\sqrt{32} \cdot \sqrt{2} = \sqrt{32 \cdot 2} = \sqrt{64} = 8$ (z własności $\sqrt{a} \cdot \sqrt{b} = \sqrt{ab}$)
+
+</div>
+
+<div class="krok">
+
+**Zsumuj:**
+
+$$32 - 2 \cdot 8 + 2 = 32 - 16 + 2 = 18$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: B</strong> — $18$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+
+**Odpowiedź C ($30$)** to klasyczna pułapka pomylenia $(a-b)^2$ z $a^2 - b^2$ (różnica kwadratów). Ten drugi rozkłada się jako $(a-b)(a+b)$, ale $(a-b)^2 = (a-b)(a-b)$ to coś zupełnie innego.
+
+Sprawdzenie liczbowe: $\sqrt{32} \approx 5{,}66$, $\sqrt{2} \approx 1{,}41$, więc $\sqrt{32} - \sqrt{2} \approx 4{,}24$, a $(4{,}24)^2 \approx 18$ ✓ (potwierdza B).
+</div>
+
+## Klucz pamięciowy
+
+Trzy najczęstsze wzory skróconego mnożenia (są w „Wybranych wzorach"):
+
+- $(a + b)^2 = a^2 + 2ab + b^2$
+- $(a - b)^2 = a^2 - 2ab + b^2$ ← **TEN**
+- $a^2 - b^2 = (a - b)(a + b)$
+
+Pierwsze dwa rozwijają **kwadrat**, trzeci — **różnicę** kwadratów. To różne rzeczy.

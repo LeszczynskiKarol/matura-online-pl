@@ -1,0 +1,125 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 9
+punkty: 2
+typ: otwarte-krotkie
+topic: układy równań, zadanie tekstowe, procenty
+difficulty: 3
+tresc: |
+  Zarząd firmy wydzielił z budżetu kwotę $1\,200\,000$ zł łącznie na projekty badawcze dla dwóch zespołów: A i B. W pierwszym półroczu oba zespoły wykorzystały łącznie $146\,700$ zł — zespół A wykorzystał $13\%$ przyznanych mu środków, a zespół B wykorzystał $11\%$ przyznanych mu środków. Oblicz kwotę przyznaną zespołowi A na realizację projektu badawczego.
+odpowiedz: |
+  $735\,000$ zł
+pulapka: |
+  CKE wprost: jeśli używasz wartości przybliżonych zamiast dokładnych — maksimum 1 pkt zamiast 2. Drugi błąd: 13% i 11% to procent „przyznanych ZESPOŁOWI" środków, nie procent całego budżetu. Nie pomyl tych dwóch interpretacji.
+wymaganie: |
+  IV.2 — stosowanie układów równań do rozwiązywania zadań tekstowych.
+podobne:
+  - matematyka-2024-maj-pp-10
+  - matematyka-2025-maj-pp-10
+---
+
+## Co mamy?
+
+- Łączny budżet: $1\,200\,000$ zł
+- Zespół A wykorzystał: $13\%$ swoich środków
+- Zespół B wykorzystał: $11\%$ swoich środków
+- Razem wykorzystali: $146\,700$ zł
+
+Szukamy: **kwoty przyznanej zespołowi A** (oznaczę $x$).
+
+## Sposób I — układ dwóch równań
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Oznaczenia.**
+
+- $x$ — kwota przyznana zespołowi A
+- $y$ — kwota przyznana zespołowi B
+
+</div>
+
+<div class="krok">
+
+**Pierwsze równanie** — suma budżetów obu zespołów:
+
+$$x + y = 1\,200\,000$$
+
+</div>
+
+<div class="krok">
+
+**Drugie równanie** — suma kwot wykorzystanych w pierwszym półroczu:
+
+$$0{,}13 \cdot x + 0{,}11 \cdot y = 146\,700$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiąż układ** metodą podstawienia. Z pierwszego: $y = 1\,200\,000 - x$. Podstaw do drugiego:
+
+$$0{,}13 x + 0{,}11 \cdot (1\,200\,000 - x) = 146\,700$$
+
+$$0{,}13 x + 132\,000 - 0{,}11 x = 146\,700$$
+
+$$0{,}02 x = 146\,700 - 132\,000 = 14\,700$$
+
+$$x = \frac{14\,700}{0{,}02} = 735\,000$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> Zespół A otrzymał $735\,000$ zł.
+  </div>
+</div>
+
+## Sposób II — jedno równanie z jedną niewiadomą
+
+Można od razu pominąć drugą zmienną. Niech $x$ = kwota zespołu A. Wtedy zespół B dostał $1\,200\,000 - x$.
+
+$$0{,}13 x + 0{,}11 (1\,200\,000 - x) = 146\,700$$
+
+Reszta tak samo. Wynik: $x = 735\,000$. To samo, ale o jedno podstawienie krótsze.
+
+## Sprawdzenie
+
+Jeśli $x = 735\,000$, to $y = 1\,200\,000 - 735\,000 = 465\,000$.
+
+- Zespół A wykorzystał: $0{,}13 \cdot 735\,000 = 95\,550$ zł
+- Zespół B wykorzystał: $0{,}11 \cdot 465\,000 = 51\,150$ zł
+- Suma: $95\,550 + 51\,150 = 146\,700$ ✓
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — interpretacja "13%"</div>
+
+Treść mówi: zespół A wykorzystał **13% przyznanych MU środków**, nie 13% całego budżetu. Czyli $0{,}13 \cdot x$ (gdzie $x$ — kwota A), nie $0{,}13 \cdot 1\,200\,000$.
+
+Gdyby było to drugie — zespół A wykorzystałby $156\,000$ zł, co już przekracza łączne $146\,700$. To by się nie zgadzało, więc interpretacja musi być pierwsza.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka wartości przybliżonych (uwaga 2 z klucza CKE)</div>
+
+Jeśli zamiast wartości dokładnych użyjesz przybliżeń (np. $0{,}13 \approx 0{,}1$) — wynik wyjdzie różny od $735\,000$, a CKE daje **maksimum 1 pkt** zamiast 2.
+
+Pracuj z **ułamkami dziesiętnymi** lub **ułamkami zwykłymi** ($\tfrac{13}{100}$, $\tfrac{11}{100}$), nigdy nie zaokrąglaj w środku obliczeń.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka „sprawdzenie zamiast metody" (uwaga 1)</div>
+
+Jeśli **odgadniesz** $x$ i $y$ i sprawdzisz, że pasują, ale nie pokażesz metody (układu równań) — CKE daje **1 pkt zamiast 2**. Każde zadanie otwarte wymaga **udokumentowanej metody**, nie tylko wyniku.
+
+W zadaniach tekstowych zawsze: definicja zmiennych → układ równań → rozwiązanie układu → odpowiedź.
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** — zapisanie układu równań ($x + y = 1\,200\,000$ oraz $0{,}13 x + 0{,}11 y = 146\,700$) ALBO zapisanie równania z jedną niewiadomą.
+- **2 pkt** — pełna metoda + wynik $735\,000$ zł.

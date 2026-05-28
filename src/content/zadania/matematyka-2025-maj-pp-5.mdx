@@ -1,0 +1,149 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 5
+punkty: 2
+typ: dowod
+topic: dowody, podzielność, liczby nieparzyste
+difficulty: 3
+tresc: |
+  Wykaż, że dla każdej nieparzystej liczby naturalnej $n$ liczba $3n^2 + 2n + 7$ jest podzielna przez $4$.
+odpowiedz: |
+  Dowód — patrz Sposób I (przez parametryzację $n = 2l + 1$).
+pulapka: |
+  CKE wprost: sprawdzenie tezy tylko dla kilku konkretnych $n$ (np. $n = 1, 3, 5$) — **0 punktów na całe zadanie**. Trzeba pokazać tezę dla KAŻDEJ nieparzystej $n$, czyli używając zapisu ogólnego.
+wymaganie: |
+  I.2 — proste dowody dotyczące podzielności liczb całkowitych.
+podobne:
+  - matematyka-2024-maj-pp-3
+  - matematyka-2025-maj-pp-7
+---
+
+## Strategia — parametryzacja liczby nieparzystej
+
+**Każda liczba naturalna nieparzysta** ma postać $n = 2l + 1$, gdzie $l \in \mathbb{Z}$ i $l \geq 0$. To kluczowa parametryzacja: jeden parametr $l$ przebiega liczby całkowite nieujemne, a $n$ przebiega wszystkie nieparzyste naturalne ($1, 3, 5, 7, \ldots$).
+
+Cel: pokazać, że po podstawieniu $n = 2l + 1$ wyrażenie $3n^2 + 2n + 7$ jest wielokrotnością $4$ dla **każdego** $l$.
+
+## Sposób I — bezpośrednia parametryzacja
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Podstaw $n = 2l + 1$:**
+
+$$3n^2 + 2n + 7 = 3(2l + 1)^2 + 2(2l + 1) + 7$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiń $(2l + 1)^2 = 4l^2 + 4l + 1$:**
+
+$$3(4l^2 + 4l + 1) + 2(2l + 1) + 7 = 12l^2 + 12l + 3 + 4l + 2 + 7$$
+
+</div>
+
+<div class="krok">
+
+**Zsumuj wyrazy podobne:**
+
+$$12l^2 + 12l + 3 + 4l + 2 + 7 = 12l^2 + 16l + 12$$
+
+</div>
+
+<div class="krok">
+
+**Wyłącz przed nawias $4$:**
+
+$$12l^2 + 16l + 12 = 4(3l^2 + 4l + 3)$$
+
+</div>
+
+<div class="krok">
+
+**Wyciągnij wniosek.** Ponieważ $l$ jest liczbą całkowitą, to $3l^2 + 4l + 3$ też jest liczbą całkowitą. Oznaczmy ją $k = 3l^2 + 4l + 3$. Wtedy:
+
+$$3n^2 + 2n + 7 = 4k$$
+
+co oznacza, że $3n^2 + 2n + 7$ jest **podzielne przez 4**. **To należało udowodnić.** $\blacksquare$
+
+</div>
+
+</div>
+
+## Sposób II — analiza reszt z dzielenia
+
+Inne podejście: pokazać, że **suma reszt** trzech składników $3n^2$, $2n$, $7$ przy dzieleniu przez $4$ jest wielokrotnością $4$.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Dla nieparzystej $n$ — co dzieje się z $n^2$?**
+
+Jeśli $n = 2l + 1$, to $n^2 = 4l^2 + 4l + 1 = 4(l^2 + l) + 1$. Czyli **$n^2$ daje resztę $1$ przy dzieleniu przez $4$**.
+
+Stąd $3n^2$ daje resztę $3 \cdot 1 = 3$ przy dzieleniu przez $4$.
+
+</div>
+
+<div class="krok">
+
+**Reszta z $2n$ przy dzieleniu przez 4.**
+
+$2n = 2(2l + 1) = 4l + 2$ — daje resztę **$2$** przy dzieleniu przez $4$.
+
+</div>
+
+<div class="krok">
+
+**Reszta z $7$ przy dzieleniu przez 4** to $3$ (bo $7 = 4 + 3$).
+
+</div>
+
+<div class="krok">
+
+**Zsumuj reszty:** $3 + 2 + 3 = 8 = 4 \cdot 2$. Suma reszt jest **podzielna przez 4**, więc cała suma $3n^2 + 2n + 7$ jest podzielna przez $4$. $\blacksquare$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Dowód zakończony.</strong> CKE akceptuje oba sposoby (i kilka innych).
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka 0 punktów (uwaga 1 z klucza CKE)</div>
+
+Jeśli sprawdzisz tezę dla **kilku konkretnych $n$** (np. $n = 1$: $3 + 2 + 7 = 12 = 4 \cdot 3$; $n = 3$: $27 + 6 + 7 = 40 = 4 \cdot 10$) — CKE daje **0 punktów na całe zadanie**.
+
+Przykłady to **nie dowód**. Trzeba pokazać, że dla *każdej* nieparzystej $n$ — czyli używając zmiennej $l$ lub argumentacji o resztach.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka znaku (uwaga 2 z klucza CKE)</div>
+
+CKE z klucza: „jeżeli zdający wykazuje, że dla każdej liczby naturalnej nieparzystej $n$ wyrażenie $3n^2 - 2n + 7$ (zamiast $3n^2 + 2n + 7$) jest podzielne przez $4$, otrzymuje **1 punkt**". Czyli błędne przepisanie treści zadania → częściowy punkt, ale nie pełny.
+
+Czytaj treść uważnie. Bezpieczna procedura: **przepisz całe wyrażenie** zanim zaczniesz przekształcać.
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** — zapisanie $n = 2l + 1$ ALBO rozłożenie wyrażenia na sumę składników podzielnych przez 4 z brakiem uzasadnienia ALBO analiza reszt z poprawnym wynikiem $3$ dla $3n^2$.
+- **2 pkt** — pełne rozumowanie z wnioskiem, że wynik to $4 \cdot k$ dla pewnej $k \in \mathbb{Z}$.
+
+## Klucz — dowody podzielności
+
+Trzy typowe ścieżki:
+
+1. **Parametryzacja** ($n = 2l$, $n = 2l + 1$, $n = 3l + r$, ...) i rozwinięcie z wyciąganiem dzielnika przed nawias.
+2. **Analiza reszt** modulo dzielnik — wystarczy pokazać, że suma reszt jest wielokrotnością dzielnika.
+3. **Rozkład na sumę składników** jawnie podzielnych przez dzielnik (np. $3n^2 + 2n + 7 = 4(n^2 + n + 2) - (n+1)^2$).
+
+Pierwszy jest najbezpieczniejszy. Wybierz parametryzację dopasowaną do zbioru ($n$ nieparzyste → $n = 2l+1$).

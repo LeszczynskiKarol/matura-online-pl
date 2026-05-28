@@ -1,0 +1,83 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 3
+punkty: 1
+typ: zamkniete-abcd
+topic: logarytmy, prawa działań
+difficulty: 2
+tresc: |
+  Liczba $\log_3 108 - 2 \log_3 2$ jest równa: A. $3$, B. $9$, C. $\log_3 104$, D. $2 \log_3 54$.
+odpowiedz: |
+  A — 3
+pulapka: |
+  Najczęstszy błąd to liczenie $\log_3 108 - 2 \log_3 2$ jako $\log_3(108 - 2 \cdot 2) = \log_3 104$ (odpowiedź C). To NIE jest poprawne — odejmowanie logarytmów daje **iloraz**, nie różnicę argumentów. A pomnożenie logarytmu przez $2$ daje **kwadrat** argumentu, nie podwojenie.
+wymaganie: |
+  I.9 — wzory na logarytm ilorazu i logarytm potęgi.
+podobne:
+  - matematyka-2025-maj-pp-2
+  - matematyka-2025-maj-pp-4
+---
+
+## Strategia
+
+Dwa wzory na logarytmy:
+
+- $\log_a (b^n) = n \cdot \log_a b$ — logarytm potęgi
+- $\log_a b - \log_a c = \log_a \dfrac{b}{c}$ — logarytm ilorazu
+
+Cel: sprowadzić $\log_3 108 - 2\log_3 2$ do postaci $\log_3 \text{coś}$.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zamień $2 \log_3 2$ na $\log_3 (2^2) = \log_3 4$** (wzór na logarytm potęgi, w drugą stronę).
+
+$$\log_3 108 - 2 \log_3 2 = \log_3 108 - \log_3 4$$
+
+</div>
+
+<div class="krok">
+
+**Zastosuj wzór na logarytm ilorazu:**
+
+$$\log_3 108 - \log_3 4 = \log_3 \frac{108}{4} = \log_3 27$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz $\log_3 27$**. Pytanie: do której potęgi trzeba podnieść $3$, żeby dostać $27$? Skoro $27 = 3^3$, to:
+
+$$\log_3 27 = 3$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: A</strong> — $3$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+
+**Odpowiedź C ($\log_3 104$)** to klasyczny błąd „odejmowanie wewnątrz logarytmów". $\log_a b - \log_a c$ to **NIE** $\log_a (b - c)$, tylko $\log_a \tfrac{b}{c}$. Tutaj $108 - 4 = 104$, ale to nie pasuje — trzeba **dzielić**.
+
+**Odpowiedź D ($2 \log_3 54$)** — błąd „dzielenie wykładnika": ktoś pomyślał „skoro mamy $-2 \log$, to wyciągnijmy $2$ przed nawias i będzie $2(\log_3 108 - \log_3 2)/1$" lub coś podobnie błędnego.
+
+**Odpowiedź B ($9$)** — wynik byłby $9$ tylko gdyby ostateczny logarytm to $\log_3 \text{(coś)} = 9$, czyli „coś" = $3^9 = 19683$. Brak związku z zadaniem.
+</div>
+
+## Klucz — trzy wzory logarytmiczne
+
+| Reguła | Wzór |
+|---|---|
+| Logarytm iloczynu | $\log_a (bc) = \log_a b + \log_a c$ |
+| Logarytm ilorazu | $\log_a \dfrac{b}{c} = \log_a b - \log_a c$ |
+| Logarytm potęgi | $\log_a (b^n) = n \cdot \log_a b$ |
+
+Te trzy wzory rozwiązują 95% zadań logarytmicznych na maturze podstawowej. Wszystkie są w „Wybranych wzorach matematycznych" CKE.

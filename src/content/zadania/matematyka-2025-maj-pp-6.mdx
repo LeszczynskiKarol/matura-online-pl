@@ -1,0 +1,102 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 6
+punkty: 1
+typ: zamkniete-abcd
+topic: nierówności liniowe, przedział liczbowy
+difficulty: 2
+tresc: |
+  Dana jest nierówność $3 - 2(1 - 2x) \geq 2x - 17$. Na którym rysunku poprawnie zaznaczono zbiór wszystkich liczb rzeczywistych spełniających tę nierówność? (A — zbiór $(-\infty, 3\rangle$; B — zbiór $\langle 3, +\infty)$; C — zbiór $(-\infty, -9\rangle$; D — zbiór $\langle -9, +\infty)$.)
+odpowiedz: |
+  D — $x \in \langle -9, +\infty)$
+pulapka: |
+  Najczęstszy błąd to pominięcie minusa przy rozwijaniu $-2(1 - 2x)$. Wynik powinien być $-2 + 4x$, a nie $-2 - 4x$ lub $2 - 4x$. Drugi błąd: pomylenie zwrotu nierówności przy przenoszeniu wyrazów.
+wymaganie: |
+  III.3 — rozwiązywanie nierówności liniowych z jedną niewiadomą.
+podobne:
+  - matematyka-2024-maj-pp-6
+  - matematyka-2025-maj-pp-10
+---
+
+## Strategia
+
+Rozwiń nawias, przenieś $x$-y na jedną stronę, liczby na drugą, rozwiąż.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Rozwiń nawias.** Pamiętaj: $-2(1 - 2x) = -2 \cdot 1 + (-2) \cdot (-2x) = -2 + 4x$.
+
+$$3 + (-2 + 4x) \geq 2x - 17$$
+
+$$1 + 4x \geq 2x - 17$$
+
+</div>
+
+<div class="krok">
+
+**Przenieś $2x$ na lewo, liczby na prawo.** Odejmij $2x$ i $1$ z obu stron:
+
+$$1 + 4x - 2x \geq -17$$
+
+$$2x \geq -18$$
+
+</div>
+
+<div class="krok">
+
+**Podziel przez $2$** (dodatnia liczba — kierunek nierówności bez zmian):
+
+$$x \geq -9$$
+
+</div>
+
+<div class="krok">
+
+**Zapisz zbiór rozwiązań:**
+
+$$x \in \langle -9,\ +\infty)$$
+
+(przedział domknięty z lewej, bo zachodzi równość, otwarty z prawej — nieskończoność).
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: D</strong> — $\langle -9, +\infty)$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd — znak przy rozwijaniu</div>
+
+**Odpowiedź C ($(-\infty, -9\rangle$)** to typowy błąd „zapomniany znak". Ktoś rozwija $-2(1 - 2x)$ jako $-2 - 4x$ (zamiast $-2 + 4x$) — wtedy nierówność prowadzi do $x \leq -9$.
+
+Reguła: minus przed nawiasem **zmienia znaki obu wyrazów** w nawiasie:
+
+$$-2(1 - 2x) = -2 \cdot 1 - 2 \cdot (-2x) = -2 + 4x$$
+
+Zwróć uwagę, że $-2 \cdot (-2x) = +4x$ (minus razy minus = plus).
+
+**Odpowiedzi A i B ($\pm 3$)** to błędy arytmetyczne dalej w obliczeniach — np. po prawidłowym rozwinięciu, ale błędnym przeniesieniu wyrazów.
+</div>
+
+## Sprawdzenie
+
+Podstaw $x = 0$ (musi spełniać $0 \geq -9$):
+
+- Lewa: $3 - 2(1 - 0) = 3 - 2 = 1$
+- Prawa: $0 - 17 = -17$
+- Sprawdzenie: $1 \geq -17$ ✓
+
+Podstaw $x = -10$ (NIE powinien spełniać, bo $-10 < -9$):
+
+- Lewa: $3 - 2(1 + 20) = 3 - 42 = -39$
+- Prawa: $-20 - 17 = -37$
+- Sprawdzenie: $-39 \geq -37$? **NIE** (bo $-39 < -37$) ✓
+
+Granica $x = -9$ działa zgodnie z oczekiwaniem — rozwiązanie potwierdzone.
