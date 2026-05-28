@@ -1,0 +1,166 @@
+---
+arkusz: matematyka-2025-maj-pr
+subject: matematyka
+nr: 6
+punkty: 4
+typ: otwarte-rozszerzone
+topic: szereg geometryczny, sumowanie nieskończone
+difficulty: 5
+tresc: |
+  Ciąg $(a_n)$, określony dla każdej liczby naturalnej $n \geq 1$, jest geometryczny i zbieżny. W tym ciągu $a_1 + a_3 = 20$ oraz $a_1^2 + a_3^2 = 328$. Oblicz sumę wszystkich wyrazów tego ciągu. Rozważ wszystkie przypadki.
+odpowiedz: |
+  $S = 27$ (dla $q = \tfrac{1}{3}$) lub $S = \dfrac{27}{2}$ (dla $q = -\tfrac{1}{3}$).
+pulapka: |
+  Najgorszy błąd: zapomnieć warunku "zbieżny" → $|q| < 1$. Bez tego przyjąłbyś też $q^2 = 9$, czyli $q = \pm 3$, ale taki ciąg jest rozbieżny (suma nieskończona nie istnieje). Drugi błąd: jedna odpowiedź zamiast obu — treść wprost mówi "rozważ wszystkie przypadki".
+wymaganie: |
+  VI.R3 — suma szeregu geometrycznego zbieżnego $S = \dfrac{a_1}{1 - q}$.
+podobne:
+  - matematyka-2024-maj-pr-7
+  - matematyka-2025-maj-pr-7
+---
+
+## Klucz teoretyczny
+
+**Szereg geometryczny zbieżny** istnieje wtedy i tylko wtedy, gdy $|q| < 1$. Suma:
+
+$$S = \frac{a_1}{1 - q}$$
+
+Dla $|q| \geq 1$ szereg jest **rozbieżny** (suma nieskończona).
+
+W ciągu geometrycznym: $a_3 = a_1 \cdot q^2$.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wyraź warunki przez $a_1$ i $q$.**
+
+Z $a_3 = a_1 q^2$:
+
+$$a_1 + a_1 q^2 = 20 \quad\Rightarrow\quad a_1(1 + q^2) = 20$$
+
+$$a_1^2 + a_1^2 q^4 = 328 \quad\Rightarrow\quad a_1^2 (1 + q^4) = 328$$
+
+</div>
+
+<div class="krok">
+
+**Wyeliminuj $a_1$.** Z pierwszego: $a_1 = \dfrac{20}{1 + q^2}$. Podstaw do drugiego:
+
+$$\left( \frac{20}{1 + q^2} \right)^2 \cdot (1 + q^4) = 328$$
+
+$$\frac{400 (1 + q^4)}{(1 + q^2)^2} = 328$$
+
+$$\frac{1 + q^4}{(1 + q^2)^2} = \frac{328}{400} = \frac{41}{50}$$
+
+</div>
+
+<div class="krok">
+
+**Wprowadź podstawienie** $t = q^2$ (gdzie $t \geq 0$):
+
+$$\frac{1 + t^2}{(1 + t)^2} = \frac{41}{50}$$
+
+$$50 (1 + t^2) = 41 (1 + t)^2$$
+
+$$50 + 50 t^2 = 41 + 82 t + 41 t^2$$
+
+$$9 t^2 - 82 t + 9 = 0$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiąż równanie kwadratowe.**
+
+$$\Delta = 82^2 - 4 \cdot 9 \cdot 9 = 6724 - 324 = 6400, \quad \sqrt{\Delta} = 80$$
+
+$$t = \frac{82 \pm 80}{18}$$
+
+$$t_1 = \frac{162}{18} = 9, \quad t_2 = \frac{2}{18} = \frac{1}{9}$$
+
+</div>
+
+<div class="krok">
+
+**Wybierz $t$ spełniające warunek zbieżności** $|q| < 1$, czyli $t = q^2 < 1$:
+
+- $t = 9$ → $q^2 = 9$, $|q| = 3$ — **rozbieżny**, **odrzucamy**.
+- $t = \tfrac{1}{9}$ → $q^2 = \tfrac{1}{9}$, $|q| = \tfrac{1}{3}$ — **zbieżny** ✓
+
+Czyli $q = \tfrac{1}{3}$ albo $q = -\tfrac{1}{3}$.
+
+</div>
+
+<div class="krok">
+
+**Wyznacz $a_1$** dla obu przypadków. Dla $q^2 = \tfrac{1}{9}$:
+
+$$a_1 = \frac{20}{1 + \tfrac{1}{9}} = \frac{20}{\tfrac{10}{9}} = \frac{20 \cdot 9}{10} = 18$$
+
+Dla obu znaków $q$ to samo $a_1 = 18$ (bo zależy od $q^2$).
+
+</div>
+
+<div class="krok">
+
+**Oblicz sumę dla każdego przypadku.**
+
+**Przypadek 1**: $q = \tfrac{1}{3}$
+
+$$S_1 = \frac{a_1}{1 - q} = \frac{18}{1 - \tfrac{1}{3}} = \frac{18}{\tfrac{2}{3}} = 27$$
+
+**Przypadek 2**: $q = -\tfrac{1}{3}$
+
+$$S_2 = \frac{a_1}{1 - q} = \frac{18}{1 + \tfrac{1}{3}} = \frac{18}{\tfrac{4}{3}} = \frac{54}{4} = \frac{27}{2}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> $S = 27$ lub $S = \dfrac{27}{2}$ (zależnie od znaku ilorazu).
+  </div>
+</div>
+
+## Sprawdzenie
+
+**Dla $q = \tfrac{1}{3}$**: $a_1 = 18$, $a_2 = 6$, $a_3 = 2$. Suma $a_1 + a_3 = 20$ ✓, $a_1^2 + a_3^2 = 324 + 4 = 328$ ✓.
+
+**Dla $q = -\tfrac{1}{3}$**: $a_1 = 18$, $a_2 = -6$, $a_3 = 2$. Suma $a_1 + a_3 = 20$ ✓, $a_1^2 + a_3^2 = 324 + 4 = 328$ ✓.
+
+Oba przypadki spełniają warunki — oba muszą być w odpowiedzi.
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — pomijanie warunku zbieżności</div>
+
+Bez warunku „zbieżny" otrzymalibyśmy też $q^2 = 9$, czyli ciągi typu $(a_1, 3a_1, 9a_1, \ldots)$ — rozbieżne. **Nie mają sumy** w sensie szeregu nieskończonego.
+
+CKE wprost: pominięcie warunku $|q| < 1$ przy wyborze rozwiązań → utrata punktów (najczęściej 1 z 4).
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — jedna odpowiedź zamiast obu</div>
+
+Treść mówi „**rozważ wszystkie przypadki**". Skoro $q^2 = \tfrac{1}{9}$ daje $q = \tfrac{1}{3}$ ALBO $q = -\tfrac{1}{3}$, to oba są dopuszczalne. Pomijanie jednego = niepełne rozwiązanie.
+
+Sprawdź **każde** rozwiązanie: czy spełnia oryginalne warunki (zbieżność + suma + suma kwadratów)? Tutaj oba pasują, więc oba w odpowiedzi.
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** — zapisanie układu równań $a_1(1 + q^2) = 20$ oraz $a_1^2(1 + q^4) = 328$.
+- **2 pkt** — sprowadzenie do równania kwadratowego $9t^2 - 82t + 9 = 0$ (lub równoważnego).
+- **3 pkt** — rozwiązanie $q^2 = \tfrac{1}{9}$ z odrzuceniem $q^2 = 9$ (warunek zbieżności).
+- **4 pkt** — pełne rozwiązanie + obie sumy.
+
+## Klucz uniwersalny
+
+Schemat dla zadań „szereg geometryczny zbieżny + dwa warunki":
+
+1. **Wyraź wszystkie wyrazy przez $a_1$ i $q$** (zwykle $a_n = a_1 q^{n-1}$).
+2. **Wyeliminuj $a_1$** dzieląc/podstawiając, dostajesz równanie tylko z $q$ (zwykle kwadratowe po podstawieniu $t = q^2$).
+3. **Rozwiąż na $q$**, odrzuć te, dla których $|q| \geq 1$.
+4. **Rozważ obie wartości $\pm q$** jeśli dotyczy.
+5. **Suma** $S = \tfrac{a_1}{1 - q}$ — osobno dla każdego $q$.

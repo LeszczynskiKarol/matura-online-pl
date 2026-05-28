@@ -1,0 +1,225 @@
+---
+arkusz: matematyka-2025-maj-pr
+subject: matematyka
+nr: 8
+punkty: 5
+typ: otwarte-rozszerzone
+topic: geometria analityczna, okręgi, wektor
+difficulty: 5
+tresc: |
+  W kartezjańskim układzie współrzędnych $(x, y)$ dane są okręgi $\mathcal{O}_1: (x - 1)^2 + (y + 3)^2 = 5$ oraz $\mathcal{O}_2: (x - 2)^2 + (y - 4)^2 = 45$. Te okręgi przecinają się w punktach $A$ oraz $B$. Punkt $A$ ma pierwszą współrzędną dodatnią. Punkt $M$ spełnia warunek $\overrightarrow{AM} = -2 \cdot \overrightarrow{BM}$. Oblicz współrzędne punktów $A$, $B$ oraz $M$.
+odpowiedz: |
+  $A = \left(\dfrac{16}{5},\ -\dfrac{13}{5}\right)$, $B = (-1, -2)$, $M = \left(\dfrac{2}{5},\ -\dfrac{11}{5}\right)$.
+pulapka: |
+  Najczęstszy błąd to pomylenie wektora $\overrightarrow{AM}$ z $\overrightarrow{MA}$ (zwrot przeciwny). $\overrightarrow{AM} = M - A$, NIE $A - M$. Drugi błąd: nie sprawdzić "która pierwsza współrzędna dodatnia" — jest A albo B w zależności od interpretacji.
+wymaganie: |
+  IX.6 — równanie okręgu; IX.7 — wektory w układzie współrzędnych.
+podobne:
+  - matematyka-2025-maj-pr-7
+  - matematyka-2024-maj-pr-11
+---
+
+## Strategia
+
+Punkty przecięcia okręgów spełniają **oba** równania jednocześnie. Najszybsza droga:
+
+1. Odejmij oba równania okręgów → otrzymasz **równanie prostej** zawierającej cięciwę $AB$ (oś radykalna).
+2. Z tej prostej wyznacz jedną zmienną przez drugą, podstaw do **jednego** z okręgów — równanie kwadratowe na drugą zmienną.
+3. Z punktów wybierz ten z dodatnią pierwszą współrzędną jako $A$.
+4. Z warunku wektorowego wyznacz $M$.
+
+## Krok 1 — znajdź $A$ i $B$
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Rozwiń oba równania.**
+
+$\mathcal{O}_1$: $(x-1)^2 + (y+3)^2 = 5$
+$x^2 - 2x + 1 + y^2 + 6y + 9 = 5$
+$x^2 + y^2 - 2x + 6y + 5 = 0 \quad$ **(I)**
+
+$\mathcal{O}_2$: $(x-2)^2 + (y-4)^2 = 45$
+$x^2 - 4x + 4 + y^2 - 8y + 16 = 45$
+$x^2 + y^2 - 4x - 8y - 25 = 0 \quad$ **(II)**
+
+</div>
+
+<div class="krok">
+
+**Odejmij (II) od (I)** — wyrazy $x^2$ i $y^2$ znikają:
+
+$$(-2x + 6y + 5) - (-4x - 8y - 25) = 0$$
+
+$$2x + 14y + 30 = 0$$
+
+$$x + 7y + 15 = 0 \quad\Rightarrow\quad x = -7y - 15$$
+
+(to prosta zawierająca oba punkty przecięcia $A$ i $B$).
+
+</div>
+
+<div class="krok">
+
+**Podstaw do równania (I).**
+
+$$x^2 + y^2 - 2x + 6y + 5 = 0$$
+
+Z $x = -7y - 15$: $x^2 = (7y + 15)^2 = 49y^2 + 210y + 225$ oraz $-2x = 14y + 30$.
+
+$$49y^2 + 210y + 225 + y^2 + 14y + 30 + 6y + 5 = 0$$
+
+$$50y^2 + 230y + 260 = 0$$
+
+Podziel przez $10$:
+
+$$5 y^2 + 23 y + 26 = 0$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiąż równanie kwadratowe.**
+
+$$\Delta = 23^2 - 4 \cdot 5 \cdot 26 = 529 - 520 = 9, \quad \sqrt{\Delta} = 3$$
+
+$$y_1 = \frac{-23 - 3}{10} = -\frac{26}{10} = -\frac{13}{5}$$
+
+$$y_2 = \frac{-23 + 3}{10} = -\frac{20}{10} = -2$$
+
+</div>
+
+<div class="krok">
+
+**Wyznacz odpowiadające $x$.**
+
+Dla $y_1 = -\tfrac{13}{5}$: $x_1 = -7 \cdot (-\tfrac{13}{5}) - 15 = \tfrac{91}{5} - \tfrac{75}{5} = \tfrac{16}{5}$.
+
+Dla $y_2 = -2$: $x_2 = -7 \cdot (-2) - 15 = 14 - 15 = -1$.
+
+Mamy dwa punkty: $\left(\tfrac{16}{5},\, -\tfrac{13}{5}\right)$ oraz $(-1, -2)$.
+
+</div>
+
+<div class="krok">
+
+**Wybierz $A$ z dodatnią pierwszą współrzędną.**
+
+$\tfrac{16}{5} = 3{,}2 > 0$ ✓ — to **$A$**.
+
+$-1 < 0$ — to **$B$**.
+
+$$A = \left(\frac{16}{5},\ -\frac{13}{5}\right), \qquad B = (-1, -2)$$
+
+</div>
+
+</div>
+
+## Krok 2 — wyznacz $M$ z warunku wektorowego
+
+Warunek: $\overrightarrow{AM} = -2 \cdot \overrightarrow{BM}$.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zapisz wektory.**
+
+$\overrightarrow{AM} = M - A$ — wektor od $A$ do $M$.
+$\overrightarrow{BM} = M - B$ — wektor od $B$ do $M$.
+
+Warunek: $M - A = -2 (M - B)$.
+
+</div>
+
+<div class="krok">
+
+**Rozwiąż na $M$.**
+
+$$M - A = -2M + 2B$$
+
+$$M + 2M = A + 2B$$
+
+$$3M = A + 2B \quad\Rightarrow\quad M = \frac{A + 2B}{3}$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz $A + 2B$:**
+
+$$A + 2B = \left(\tfrac{16}{5},\, -\tfrac{13}{5}\right) + 2 \cdot (-1, -2) = \left(\tfrac{16}{5} - 2,\, -\tfrac{13}{5} - 4\right)$$
+
+$$= \left(\tfrac{16}{5} - \tfrac{10}{5},\, -\tfrac{13}{5} - \tfrac{20}{5}\right) = \left(\tfrac{6}{5},\, -\tfrac{33}{5}\right)$$
+
+</div>
+
+<div class="krok">
+
+**Podziel przez 3:**
+
+$$M = \frac{1}{3} \cdot \left(\tfrac{6}{5},\, -\tfrac{33}{5}\right) = \left(\tfrac{6}{15},\, -\tfrac{33}{15}\right) = \left(\tfrac{2}{5},\, -\tfrac{11}{5}\right)$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong>
+    $$A = \left(\tfrac{16}{5},\, -\tfrac{13}{5}\right), \quad B = (-1, -2), \quad M = \left(\tfrac{2}{5},\, -\tfrac{11}{5}\right)$$
+  </div>
+</div>
+
+## Sprawdzenie warunku wektorowego
+
+$\overrightarrow{AM} = M - A = \left(\tfrac{2}{5} - \tfrac{16}{5},\, -\tfrac{11}{5} + \tfrac{13}{5}\right) = \left(-\tfrac{14}{5},\, \tfrac{2}{5}\right)$
+
+$\overrightarrow{BM} = M - B = \left(\tfrac{2}{5} + 1,\, -\tfrac{11}{5} + 2\right) = \left(\tfrac{7}{5},\, -\tfrac{1}{5}\right)$
+
+$-2 \cdot \overrightarrow{BM} = -2 \cdot \left(\tfrac{7}{5},\, -\tfrac{1}{5}\right) = \left(-\tfrac{14}{5},\, \tfrac{2}{5}\right) = \overrightarrow{AM}$ ✓
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — kierunek wektora</div>
+
+$\overrightarrow{AM}$ to wektor **od $A$ do $M$**, czyli $M - A$ (nie $A - M$). Klasyczna pułapka — pomylenie zwrotu.
+
+Reguła: $\overrightarrow{XY} = $ „końcowy minus początkowy" $= Y - X$.
+
+Jeśli pomylisz znaki, dostaniesz $M = (A + 2B) \cdot (-1/3) = \ldots$ — punkt w innym miejscu, niepasujący do oryginalnego warunku.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — oś radykalna</div>
+
+Po odjęciu dwóch równań okręgów otrzymujemy **liniowe** równanie — to **oś radykalna** dwóch okręgów. Punkty przecięcia okręgów leżą **na** tej prostej.
+
+To kluczowy trik: zamiast dwóch równań kwadratowych mamy **jedno liniowe + jedno kwadratowe**, znacznie łatwiejsze do rozwiązania.
+
+Działanie polega na tym, że $x^2 + y^2$ skraca się przy odejmowaniu — zostają tylko wyrazy pierwszego stopnia i stałe.
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** — odjęcie równań i zapisanie równania prostej zawierającej $AB$: $x + 7y + 15 = 0$.
+- **2 pkt** — zapisanie równania kwadratowego z jedną niewiadomą (np. $5y^2 + 23y + 26 = 0$).
+- **3 pkt** — obliczenie współrzędnych $A$ ALBO $B$.
+- **4 pkt** — obliczenie obu punktów $A$ i $B$ z prawidłowym rozróżnieniem (dodatnia pierwsza dla $A$).
+- **5 pkt** — pełne rozwiązanie + obliczenie $M$.
+
+## Klucz uniwersalny
+
+Schemat dla „punkty przecięcia dwóch okręgów":
+
+1. **Rozwiń oba równania** do postaci ogólnej $x^2 + y^2 + \ldots = 0$.
+2. **Odejmij stronami** — wyrazy kwadratowe się skrócą, zostanie liniowe równanie (oś radykalna).
+3. **Wyznacz jedną zmienną** przez drugą z tej prostej.
+4. **Podstaw do jednego** z okręgów → równanie kwadratowe.
+5. **Wyznacz oba punkty** przecięcia.
+
+Schemat dla „wektor $\overrightarrow{PQ} = k \cdot \overrightarrow{RS}$":
+
+1. **Zapisz wektory** jako różnice współrzędnych ($Q - P$, $S - R$).
+2. **Otrzymaj równanie wektorowe** $Q - P = k(S - R)$.
+3. **Rozwiąż na nieznany punkt** — wynik to kombinacja liniowa znanych punktów.

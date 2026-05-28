@@ -1,0 +1,161 @@
+---
+arkusz: matematyka-2025-maj-pr
+subject: matematyka
+nr: 7
+punkty: 4
+typ: dowod
+topic: planimetria, trapez, linia środkowa
+difficulty: 4
+tresc: |
+  W trapezie $ABCD$ o podstawach $AB$ i $CD$ punkt $E$ jest środkiem ramienia $AD$, a punkt $F$ jest środkiem ramienia $BC$ trapezu. Stosunek pola trapezu $EFCD$ do pola trapezu $ABFE$ jest równy $\dfrac{1}{2}$. Wykaż, że $\dfrac{|CD|}{|AB|} = \dfrac{1}{5}$.
+odpowiedz: |
+  Dowód: $\dfrac{|CD|}{|AB|} = \dfrac{1}{5}$ ✓ — patrz pełny wywód poniżej.
+pulapka: |
+  Najgorszy błąd to pomijanie LINII ŚRODKOWEJ trapezu — odcinka EF, który ma długość średniej arytmetycznej obu podstaw: |EF| = (|AB| + |CD|)/2. To kluczowe twierdzenie dla tego dowodu.
+wymaganie: |
+  VIII.6 — twierdzenie o linii środkowej trapezu; VIII.11 — pole trapezu.
+podobne:
+  - matematyka-2025-maj-pr-3
+  - matematyka-2024-maj-pr-9
+---
+
+## Klucz teoretyczny — linia środkowa trapezu
+
+**Twierdzenie**: w trapezie $ABCD$ o podstawach $AB$ i $CD$ odcinek łączący środki ramion $AD$ i $BC$ jest:
+
+- **równoległy** do podstaw $AB$ i $CD$
+- ma długość **średniej arytmetycznej** podstaw
+
+$$|EF| = \frac{|AB| + |CD|}{2}$$
+
+Linia $EF$ dzieli trapez na dwa **mniejsze trapezy** — $ABFE$ i $EFCD$ — które oba mają **tę samą wysokość** (równą połowie wysokości całego trapezu).
+
+## Oznaczenia
+
+Niech:
+
+- $|AB| = a$ (większa podstawa)
+- $|CD| = b$ (mniejsza podstawa, $b < a$)
+- $h$ — wysokość trapezu $ABCD$
+
+Z linii środkowej: $|EF| = \dfrac{a + b}{2}$.
+
+Każdy z mniejszych trapezów ($EFCD$ i $ABFE$) ma wysokość $\dfrac{h}{2}$.
+
+## Pola obu mniejszych trapezów
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Pole trapezu $EFCD$** (podstawy $CD$ i $EF$, wysokość $\tfrac{h}{2}$):
+
+$$P_{EFCD} = \frac{|CD| + |EF|}{2} \cdot \frac{h}{2} = \frac{b + \tfrac{a+b}{2}}{2} \cdot \frac{h}{2}$$
+
+Uprość licznik średniej:
+
+$$b + \frac{a + b}{2} = \frac{2b + a + b}{2} = \frac{a + 3b}{2}$$
+
+Stąd:
+
+$$P_{EFCD} = \frac{(a + 3b)/2}{2} \cdot \frac{h}{2} = \frac{(a + 3b) h}{8}$$
+
+</div>
+
+<div class="krok">
+
+**Pole trapezu $ABFE$** (podstawy $AB$ i $EF$, wysokość $\tfrac{h}{2}$):
+
+$$P_{ABFE} = \frac{|AB| + |EF|}{2} \cdot \frac{h}{2} = \frac{a + \tfrac{a+b}{2}}{2} \cdot \frac{h}{2}$$
+
+Uprość:
+
+$$a + \frac{a + b}{2} = \frac{2a + a + b}{2} = \frac{3a + b}{2}$$
+
+$$P_{ABFE} = \frac{(3a + b) h}{8}$$
+
+</div>
+
+<div class="krok">
+
+**Zapisz stosunek pól** (czynniki $\tfrac{h}{8}$ skracają się):
+
+$$\frac{P_{EFCD}}{P_{ABFE}} = \frac{a + 3b}{3a + b}$$
+
+</div>
+
+<div class="krok">
+
+**Z warunku zadania** $\dfrac{P_{EFCD}}{P_{ABFE}} = \dfrac{1}{2}$:
+
+$$\frac{a + 3b}{3a + b} = \frac{1}{2}$$
+
+$$2(a + 3b) = 3a + b$$
+
+$$2a + 6b = 3a + b$$
+
+$$5b = a$$
+
+</div>
+
+<div class="krok">
+
+**Wyciągnij wniosek:**
+
+$$\frac{b}{a} = \frac{1}{5}, \quad \text{czyli} \quad \frac{|CD|}{|AB|} = \frac{1}{5} \quad \blacksquare$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Dowód zakończony.</strong> Kluczem była linia środkowa trapezu i podział na dwa mniejsze trapezy o tej samej wysokości.
+  </div>
+</div>
+
+## Sprawdzenie liczbowe
+
+Jeśli $a = 5$ i $b = 1$, to:
+
+- $|EF| = \dfrac{5 + 1}{2} = 3$
+- $P_{EFCD} = \dfrac{(5 + 3) \cdot h}{8} = h$ (przy $h = 1$ to 1)
+- $P_{ABFE} = \dfrac{(15 + 1) \cdot h}{8} = 2h$ (przy $h = 1$ to 2)
+- Stosunek: $\dfrac{h}{2h} = \dfrac{1}{2}$ ✓
+
+Wzór się sprawdza.
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — pominięta linia środkowa</div>
+
+Bez znajomości wzoru $|EF| = \tfrac{a + b}{2}$ dowód jest **niemożliwy** w sposób elementarny — musisz znać tę własność. Jest ona w „Wybranych wzorach matematycznych" CKE jako jedno z **twierdzeń geometrycznych**.
+
+Pamiętaj: linia środkowa trapezu nie ma długości żadnej z podstaw ($a$ albo $b$), tylko ich średnią.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — błędne pole „mniejszego" trapezu</div>
+
+Pole trapezu = średnia podstaw × wysokość. Klasyczny błąd: użyć wzoru z jedną podstawą zamiast średniej.
+
+$P_{EFCD} = \dfrac{|CD| + |EF|}{2} \cdot \dfrac{h}{2}$ — w trapezie $EFCD$ **obie** „podstawy" to $|CD|$ i $|EF|$ (nie tylko jedna z nich).
+
+Każdy z mniejszych trapezów ma swój własny zestaw podstaw — uważnie sprawdź, które boki to są.
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** — zapisanie $|EF| = \tfrac{|AB| + |CD|}{2}$ (linia środkowa).
+- **2 pkt** — wyprowadzenie wzoru na pole obu mniejszych trapezów.
+- **3 pkt** — sprowadzenie do równania $2(a + 3b) = 3a + b$ (lub równoważnego).
+- **4 pkt** — pełne rozumowanie + wniosek $b/a = 1/5$.
+
+## Klucz pamięciowy
+
+| Element | Wzór |
+|---|---|
+| Pole trapezu | $P = \dfrac{a + b}{2} \cdot h$ |
+| Linia środkowa | $\dfrac{a + b}{2}$ (równa średniej podstaw) |
+| Linia środkowa w 1/3 odległości | $\dfrac{2a + b}{3}$ (od podstawy $a$) |
+
+Pamiętaj: nazwa „linia środkowa" odnosi się do tej **konkretnej** linii w połowie wysokości. Inne linie równoległe do podstaw mają inne wzory.
