@@ -1,0 +1,242 @@
+---
+arkusz: matematyka-2025-maj-pr
+subject: matematyka
+nr: 10
+punkty: 5
+typ: otwarte-rozszerzone
+topic: stereometria, kąt dwuścienny, ostrosłup
+difficulty: 5
+tresc: |
+  Podstawą ostrosłupa $ABCDS$ jest kwadrat $ABCD$. Krawędź boczna $SA$ jest wysokością ostrosłupa, natomiast krawędź podstawy ma długość $3\sqrt{34}$. Cosinus kąta $\beta$ między ścianami bocznymi $CDS$ i $BCS$ tego ostrosłupa jest równy $-\dfrac{9}{25}$. Oblicz pole powierzchni bocznej tego ostrosłupa.
+odpowiedz: |
+  Pole powierzchni bocznej $P_b = 918$.
+pulapka: |
+  Klucz: kąt MIĘDZY ŚCIANAMI (dwuścienny) to kąt między wektorami normalnymi do tych ścian, albo równoważnie kąt między dwoma odcinkami prostopadłymi do wspólnej krawędzi CS (jeden w każdej ścianie). Mylenie z kątem między KRAWĘDZIAMI ścian (sąsiadującymi krawędziami) → zła odpowiedź.
+wymaganie: |
+  X.2 — kąt dwuścienny; X.4 — pole powierzchni ostrosłupa.
+podobne:
+  - matematyka-2024-maj-pr-13
+  - matematyka-2025-maj-pr-12
+---
+
+## Konfiguracja w układzie współrzędnych
+
+Ustaw kwadrat $ABCD$ w płaszczyźnie $z = 0$, z wierzchołkiem $A$ w początku układu:
+
+- $A = (0, 0, 0)$
+- $B = (a, 0, 0)$
+- $C = (a, a, 0)$
+- $D = (0, a, 0)$
+- $S = (0, 0, h)$ — bo $SA$ jest wysokością ostrosłupa (prostopadłą do podstawy w wierzchołku $A$)
+
+Tu $a = 3\sqrt{34}$, a $h$ — niewiadoma.
+
+## Krok 1 — wyznacz $h$ z warunku $\cos \beta = -\tfrac{9}{25}$
+
+Kąt $\beta$ to **kąt dwuścienny** między ścianami $CDS$ i $BCS$, o wspólnej krawędzi $CS$. Najszybsza droga: cosinus kąta między **wektorami normalnymi** do tych ścian.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wektory rozpinające ściany.**
+
+Ściana $CDS$: $\vec{CD} = D - C = (-a, 0, 0)$ oraz $\vec{CS} = S - C = (-a, -a, h)$.
+
+Ściana $BCS$: $\vec{CB} = B - C = (0, -a, 0)$ oraz $\vec{CS} = (-a, -a, h)$.
+
+</div>
+
+<div class="krok">
+
+**Wektor normalny do ściany $CDS$** = $\vec{CD} \times \vec{CS}$:
+
+$$\vec{n_1} = (-a, 0, 0) \times (-a, -a, h) = (0 \cdot h - 0 \cdot (-a),\ 0 \cdot (-a) - (-a) \cdot h,\ (-a)(-a) - 0 \cdot (-a))$$
+
+$$\vec{n_1} = (0,\ ah,\ a^2)$$
+
+</div>
+
+<div class="krok">
+
+**Wektor normalny do ściany $BCS$** = $\vec{CB} \times \vec{CS}$:
+
+$$\vec{n_2} = (0, -a, 0) \times (-a, -a, h)$$
+
+$$\vec{n_2} = ((-a) h - 0 \cdot (-a),\ 0 \cdot (-a) - 0 \cdot h,\ 0 \cdot (-a) - (-a)(-a))$$
+
+$$\vec{n_2} = (-ah,\ 0,\ -a^2)$$
+
+</div>
+
+<div class="krok">
+
+**Cosinus kąta** między wektorami:
+
+$$\vec{n_1} \cdot \vec{n_2} = 0 \cdot (-ah) + ah \cdot 0 + a^2 \cdot (-a^2) = -a^4$$
+
+$$|\vec{n_1}| = \sqrt{0 + a^2 h^2 + a^4} = a \sqrt{h^2 + a^2}$$
+
+$$|\vec{n_2}| = \sqrt{a^2 h^2 + 0 + a^4} = a \sqrt{h^2 + a^2}$$
+
+$$\cos \beta = \frac{\vec{n_1} \cdot \vec{n_2}}{|\vec{n_1}| \cdot |\vec{n_2}|} = \frac{-a^4}{a^2 (h^2 + a^2)} = \frac{-a^2}{h^2 + a^2}$$
+
+</div>
+
+<div class="krok">
+
+**Z warunku** $\cos \beta = -\tfrac{9}{25}$:
+
+$$\frac{-a^2}{h^2 + a^2} = -\frac{9}{25}$$
+
+$$\frac{a^2}{h^2 + a^2} = \frac{9}{25}$$
+
+$$25 a^2 = 9 (h^2 + a^2) = 9 h^2 + 9 a^2$$
+
+$$16 a^2 = 9 h^2$$
+
+$$h^2 = \frac{16 a^2}{9} \quad\Rightarrow\quad h = \frac{4 a}{3}$$
+
+</div>
+
+</div>
+
+Dla $a = 3\sqrt{34}$: $h = \dfrac{4 \cdot 3\sqrt{34}}{3} = 4\sqrt{34}$.
+
+## Krok 2 — pole powierzchni bocznej
+
+Ostrosłup ma **cztery ściany boczne**: $\triangle ABS$, $\triangle ADS$, $\triangle BCS$, $\triangle CDS$.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Pole $\triangle ABS$.** Wierzchołki $A = (0,0,0)$, $B = (a,0,0)$, $S = (0,0,h)$ — wszystkie w płaszczyźnie $y = 0$. Trójkąt jest prostokątny przy $A$ (boki $AB = a$ i $AS = h$).
+
+$$P_{ABS} = \frac{1}{2} \cdot a \cdot h$$
+
+</div>
+
+<div class="krok">
+
+**Pole $\triangle ADS$.** Analogicznie — w płaszczyźnie $x = 0$, prostokątny przy $A$ z bokami $AD = a$ i $AS = h$.
+
+$$P_{ADS} = \frac{1}{2} \cdot a \cdot h$$
+
+</div>
+
+<div class="krok">
+
+**Pole $\triangle BCS$.** Bok $BC = a$ leży w płaszczyźnie $z = 0$ (na prostej $x = a$). Wysokość trójkąta opuszczona z $S$ na $BC$ — szukamy odległości od $S = (0, 0, h)$ do prostej $\{(a, y, 0) : y \in [0, a]\}$:
+
+$$\text{odległość} = \sqrt{a^2 + h^2}$$
+
+(Pythagoras: $a$ w poziomie + $h$ w pionie, prostopadłe do prostej).
+
+$$P_{BCS} = \frac{1}{2} \cdot a \cdot \sqrt{a^2 + h^2}$$
+
+</div>
+
+<div class="krok">
+
+**Pole $\triangle CDS$** — analogicznie przez symetrię (zamiana rólek $B$ i $D$):
+
+$$P_{CDS} = \frac{1}{2} \cdot a \cdot \sqrt{a^2 + h^2}$$
+
+</div>
+
+<div class="krok">
+
+**Suma pól bocznych:**
+
+$$P_b = 2 \cdot \frac{1}{2} \cdot a \cdot h + 2 \cdot \frac{1}{2} \cdot a \cdot \sqrt{a^2 + h^2} = a h + a \sqrt{a^2 + h^2}$$
+
+</div>
+
+<div class="krok">
+
+**Podstaw $h = \tfrac{4a}{3}$.**
+
+$$h^2 + a^2 = \frac{16 a^2}{9} + a^2 = \frac{16 a^2 + 9 a^2}{9} = \frac{25 a^2}{9}$$
+
+$$\sqrt{a^2 + h^2} = \frac{5 a}{3}$$
+
+Stąd:
+
+$$P_b = a \cdot \frac{4 a}{3} + a \cdot \frac{5 a}{3} = \frac{4 a^2 + 5 a^2}{3} = \frac{9 a^2}{3} = 3 a^2$$
+
+</div>
+
+<div class="krok">
+
+**Podstaw $a = 3 \sqrt{34}$** — czyli $a^2 = 9 \cdot 34 = 306$.
+
+$$P_b = 3 \cdot 306 = 918$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> Pole powierzchni bocznej $P_b = 918$.
+  </div>
+</div>
+
+## Sprawdzenie warunku $\cos \beta$
+
+Dla $a^2 = 306$, $h^2 = \tfrac{16 \cdot 306}{9} = 544$, $h^2 + a^2 = 544 + 306 = 850$.
+
+$$\cos \beta = \frac{-a^2}{h^2 + a^2} = \frac{-306}{850} = \frac{-9}{25}$$
+
+(bo $\tfrac{306}{850} = \tfrac{9}{25}$, bo $850 = \tfrac{306 \cdot 25}{9}$, sprawdź: $\tfrac{850 \cdot 9}{25} = \tfrac{7650}{25} = 306$ ✓).
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — kąt dwuścienny vs kąt między krawędziami</div>
+
+**Kąt dwuścienny** to kąt między dwoma **półpłaszczyznami** o wspólnej krawędzi. Mierzysz go biorąc dwa wektory prostopadłe do tej krawędzi, jeden w każdej z płaszczyzn, i licząc cosinus między nimi (albo równoważnie — przez wektory normalne).
+
+**Nie jest** to kąt między dwoma krawędziami bocznymi sąsiadującymi (np. $SC$ i $SB$ wychodzącymi z $S$). To zupełnie inny kąt.
+
+W tym zadaniu wspólną krawędzią ścian $CDS$ i $BCS$ jest **$CS$**. Kąt dwuścienny obraca się dookoła $CS$.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — znak cosinusa kąta dwuściennego</div>
+
+Wartość $\cos \beta = -\tfrac{9}{25}$ jest **ujemna**, co oznacza $\beta > 90°$ — kąt **rozwarty**. Geometrycznie: dwie ściany boczne „rozchylają się" pod kątem ostrym od pionowego ułożenia.
+
+Gdy używasz wzoru z wektorami normalnymi, znak zależy od orientacji normalnych (w którą stronę „wystają"). Tu otrzymaliśmy $-\tfrac{a^2}{h^2 + a^2}$ — automatycznie ujemny, co potwierdza, że $\beta$ jest rozwarty.
+
+Gdyby orientacje były dobrane inaczej, dostalibyśmy wartość dodatnią dla kąta dopełniającego do $180°$. Wzór $|\cos \beta| = \tfrac{a^2}{h^2 + a^2}$ jest bezpieczniejszy, ale wymaga z drugiej strony interpretacji znaku.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — które ściany boczne są prostokątne</div>
+
+Ściany $\triangle ABS$ i $\triangle ADS$ są prostokątne przy $A$ (bo $SA \perp$ podstawa, więc $SA \perp AB$ i $SA \perp AD$).
+
+Ściany $\triangle BCS$ i $\triangle CDS$ są **NIE** prostokątne w sposób oczywisty. Ich pola liczymy z wzoru $P = \tfrac{1}{2} \cdot \text{podstawa} \cdot \text{wysokość}$, gdzie podstawa to bok kwadratu ($BC$ lub $CD$), a wysokość — odległość od wierzchołka $S$ do tego boku.
+
+Dla tej geometrii (ostrosłup z wysokością nad jednym narożnikiem) ściany dzielą się: dwie „bliskie" do $A$ są prostokątne, dwie „dalekie" — nie.
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** — wyznaczenie wzoru na $\cos \beta$ w zależności od $a$ i $h$ (np. $\cos \beta = -\tfrac{a^2}{h^2 + a^2}$).
+- **2 pkt** — wyznaczenie zależności $h$ od $a$ ($h = \tfrac{4a}{3}$).
+- **3 pkt** — obliczenie pól dwóch typów ścian bocznych.
+- **4 pkt** — zapisanie wzoru na pole boczne $P_b = a h + a \sqrt{a^2 + h^2}$ i jego uproszczenie do $3 a^2$.
+- **5 pkt** — pełne rozwiązanie + wynik $P_b = 918$.
+
+## Klucz uniwersalny — ostrosłup z wysokością w wierzchołku podstawy
+
+Specjalna konfiguracja: ostrosłup, w którym jedna z krawędzi bocznych ($SA$) jest jednocześnie wysokością.
+
+Geometryczne właściwości:
+
+1. **Dwie ściany boczne** ($\triangle ABS$ i $\triangle ADS$) są **prostokątne** przy $A$.
+2. **Dwie ściany boczne** ($\triangle BCS$ i $\triangle CDS$) są **inne** — z kątem rozwartym w niektórych przypadkach.
+3. Idealne dla układu współrzędnych z $A$ w początku — dużo zer w obliczeniach.
+
+Klucz: ustaw układ tak, by jak najwięcej wierzchołków miało zerowe współrzędne. Wtedy iloczyny wektorowe są łatwe.

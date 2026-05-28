@@ -1,0 +1,201 @@
+---
+arkusz: matematyka-2025-maj-pr
+subject: matematyka
+nr: 12
+punkty: 6
+typ: otwarte-rozszerzone
+topic: stereometria, stożek, optymalizacja z pochodną
+difficulty: 5
+tresc: |
+  Rozważamy wszystkie stożki, których wysokość jest większa od $5$, a odległość środka podstawy od tworzącej jest równa $5$. Zadanie ma dwie części. **12.1** (2 pkt): wykaż, że objętość $V$ stożka, jako funkcja wysokości $h$, wyraża się wzorem $V(h) = \dfrac{\pi}{3} \cdot \dfrac{25 h^3}{h^2 - 25}$. **12.2** (4 pkt): wyznacz wysokość stożka o najmniejszej objętości i oblicz tę najmniejszą objętość.
+odpowiedz: |
+  12.2: $h = 5\sqrt{3}$, $V_{\min} = \dfrac{125\sqrt{3}}{2} \pi$
+pulapka: |
+  Klucz dla 12.1: "odległość środka podstawy od tworzącej" to wysokość opuszczona z wierzchołka kąta prostego (środek O) na przeciwprostokątną (tworzącą SP) w trójkącie OSP. Wzór: $d = rh/\sqrt{r^2+h^2} = 5$. W 12.2: nie zapominaj o dziedzinie $h > 5$ — bez tego $h = 5$ daje dzielenie przez zero.
+wymaganie: |
+  X.4 — pole i objętość stożka; XIII.R3-R5 — pochodna, optymalizacja.
+podobne:
+  - matematyka-2024-maj-pr-13
+  - matematyka-2025-maj-pp-25
+---
+
+## Konfiguracja
+
+Stożek z podstawą o promieniu $r$, wysokością $h$, tworzącą $l$. Z Pitagorasa:
+
+$$l = \sqrt{r^2 + h^2}$$
+
+**Odległość środka podstawy $O$ od tworzącej**: rozpatrujemy trójkąt prostokątny utworzony przez wierzchołek stożka $S$ (góra), środek podstawy $O$ (dół) i dowolny punkt $P$ na obwodzie podstawy. Trójkąt $SOP$ jest prostokątny przy $O$ (wysokość prostopadła do promienia).
+
+Odległość $O$ od **przeciwprostokątnej** $SP$ (czyli tworzącej) to klasyczna **wysokość opuszczona z wierzchołka kąta prostego na przeciwprostokątną**. Wzór:
+
+$$d = \frac{r \cdot h}{l} = \frac{r h}{\sqrt{r^2 + h^2}}$$
+
+Z warunku zadania: $d = 5$.
+
+---
+
+## 12.1 — wykaż wzór $V(h)$  *(2 pkt)*
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zapisz warunek** $d = 5$:
+
+$$\frac{r h}{\sqrt{r^2 + h^2}} = 5$$
+
+Podnieś obie strony do kwadratu:
+
+$$\frac{r^2 h^2}{r^2 + h^2} = 25$$
+
+$$r^2 h^2 = 25 (r^2 + h^2) = 25 r^2 + 25 h^2$$
+
+</div>
+
+<div class="krok">
+
+**Wyznacz $r^2$.**
+
+$$r^2 h^2 - 25 r^2 = 25 h^2$$
+
+$$r^2 (h^2 - 25) = 25 h^2$$
+
+$$r^2 = \frac{25 h^2}{h^2 - 25}$$
+
+(dla $h^2 > 25$, czyli $h > 5$ — zgodnie z treścią).
+
+</div>
+
+<div class="krok">
+
+**Wstaw do wzoru na objętość stożka** $V = \tfrac{1}{3} \pi r^2 h$:
+
+$$V(h) = \frac{1}{3} \pi \cdot \frac{25 h^2}{h^2 - 25} \cdot h = \frac{\pi}{3} \cdot \frac{25 h^3}{h^2 - 25}$$
+
+**To należało wykazać.** $\blacksquare$
+
+</div>
+
+</div>
+
+---
+
+## 12.2 — minimum $V(h)$ dla $h \in (5, +\infty)$  *(4 pkt)*
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Oblicz pochodną $V'(h)$.** Wygodne uproszczenie: niech $C = \tfrac{25 \pi}{3}$ (stała). Wtedy:
+
+$$V(h) = C \cdot \frac{h^3}{h^2 - 25}$$
+
+Pochodna ilorazu $\left(\tfrac{u}{v}\right)' = \tfrac{u'v - uv'}{v^2}$:
+
+$$V'(h) = C \cdot \frac{3 h^2 (h^2 - 25) - h^3 \cdot 2h}{(h^2 - 25)^2}$$
+
+</div>
+
+<div class="krok">
+
+**Uprość licznik.**
+
+$$3 h^2 (h^2 - 25) - 2 h^4 = 3 h^4 - 75 h^2 - 2 h^4 = h^4 - 75 h^2 = h^2 (h^2 - 75)$$
+
+Stąd:
+
+$$V'(h) = C \cdot \frac{h^2 (h^2 - 75)}{(h^2 - 25)^2}$$
+
+</div>
+
+<div class="krok">
+
+**Wyznacz miejsca zerowe pochodnej.** Licznik = 0:
+
+$$h^2 (h^2 - 75) = 0$$
+
+- $h = 0$: **poza dziedziną** ($h > 5$)
+- $h^2 = 75$: $h = \sqrt{75} = 5\sqrt{3} \approx 8{,}66$ — w dziedzinie ✓
+
+</div>
+
+<div class="krok">
+
+**Zbadaj znak $V'(h)$ w dziedzinie $(5, +\infty)$.**
+
+W mianowniku $(h^2 - 25)^2 > 0$ zawsze. Licznik $h^2 (h^2 - 75)$:
+
+- dla $h \in (5, 5\sqrt{3})$: $h^2 < 75$ → $h^2 - 75 < 0$, czyli $V'(h) < 0$ — funkcja **malejąca**
+- dla $h = 5\sqrt{3}$: $V'(h) = 0$ — punkt ekstremalny
+- dla $h > 5\sqrt{3}$: $h^2 > 75$ → $V'(h) > 0$ — funkcja **rosnąca**
+
+Zatem $h = 5\sqrt{3}$ to **minimum globalne** $V$ w dziedzinie $(5, +\infty)$.
+
+</div>
+
+<div class="krok">
+
+**Oblicz $V(5\sqrt{3})$.**
+
+$(5\sqrt{3})^2 = 25 \cdot 3 = 75$, $(5\sqrt{3})^3 = 125 \cdot 3\sqrt{3} = 375\sqrt{3}$.
+
+$$V(5\sqrt{3}) = \frac{\pi}{3} \cdot \frac{25 \cdot 375 \sqrt{3}}{75 - 25} = \frac{\pi}{3} \cdot \frac{9375 \sqrt{3}}{50}$$
+
+Uprość: $\dfrac{9375}{150} = \dfrac{9375}{150} = 62{,}5 = \dfrac{125}{2}$:
+
+$$V(5\sqrt{3}) = \frac{125 \sqrt{3}}{2} \pi$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź 12.2:</strong> wysokość $h = 5\sqrt{3}$, minimalna objętość $V_{\min} = \dfrac{125\sqrt{3}}{2} \pi$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — dziedzina $h > 5$, nie $h \geq 5$</div>
+
+Wzór $V(h) = \tfrac{\pi}{3} \cdot \tfrac{25 h^3}{h^2 - 25}$ ma w mianowniku $h^2 - 25$, które dla $h = 5$ wynosi $0$. Czyli $h = 5$ **nie należy** do dziedziny — dlatego treść mówi „wysokość **większa** od 5" (ostry warunek).
+
+Geometrycznie: gdy $h = 5$ tworząca staje się równoległa do podstawy → stożek się degeneruje, $r \to \infty$.
+
+Sprawdzenie: dla $h$ bardzo bliskiej $5$ (np. $5{,}1$), $V$ jest bardzo duże. Dla $h \to \infty$ też duże. Minimum gdzieś **w środku** — i to ekstremum znajduje pochodna.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — uzasadnienie minimum</div>
+
+Z klucza CKE 12.2: za samo znalezienie $h = 5\sqrt{3}$ dostajesz **2 pkt**. **Uzasadnienie, że to MINIMUM** (np. badanie znaku pochodnej, lub argumentacja przez monotoniczność) jest dodatkowe — bez tego maksimum 3 pkt zamiast 4.
+
+Argumentacja: pochodna $V'(h) = C \cdot h^2(h^2 - 75)/(h^2 - 25)^2$. Znaki: $V' < 0$ na $(5, 5\sqrt{3})$, $V' > 0$ na $(5\sqrt{3}, \infty)$ → $V$ przechodzi z malejącej na rosnącą → minimum w $h = 5\sqrt{3}$.
+</div>
+
+## Punktacja CKE
+
+**12.1 (2 pkt)**:
+- 1 pkt — wyznaczenie $r^2 = \dfrac{25 h^2}{h^2 - 25}$ (lub równoważne).
+- 2 pkt — pełne wyprowadzenie wzoru $V(h) = \tfrac{\pi}{3} \cdot \tfrac{25 h^3}{h^2 - 25}$.
+
+**12.2 (4 pkt)**:
+- 1 pkt — obliczenie pochodnej $V'(h)$.
+- 2 pkt — znalezienie miejsca zerowego $h = 5\sqrt{3}$ w dziedzinie.
+- 3 pkt — uzasadnienie, że to minimum (badanie znaku pochodnej).
+- 4 pkt — obliczenie $V_{\min} = \tfrac{125\sqrt{3}}{2} \pi$.
+
+## Klucz uniwersalny — optymalizacja brył obrotowych
+
+Schemat dla zadań „wśród stożków/walców/ostrosłupów o ustalonym warunku znajdź ten o ekstremalnej V/P":
+
+1. **Wyraź jeden wymiar przez drugi** używając warunku z treści (najczęściej Pitagoras lub trygonometria).
+2. **Zapisz funkcję celu** (V albo P) jako funkcję **jednej** zmiennej.
+3. **Wyznacz dziedzinę** — gdy występują ograniczenia (np. $h > 5$ żeby $r$ było rzeczywiste).
+4. **Pochodna i miejsca zerowe** — kandydaci na ekstremum.
+5. **Zbadaj znak pochodnej** — minimum/maksimum lokalne.
+6. **Sprawdź zachowanie na końcach dziedziny** — czy ekstremum globalne jest tam, czy nie.
+7. **Oblicz wartość** w punkcie ekstremum.
+
+Ten schemat działa dla każdej bryły, której parametry są związane jednym warunkiem geometrycznym.

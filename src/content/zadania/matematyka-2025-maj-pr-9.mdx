@@ -1,0 +1,148 @@
+---
+arkusz: matematyka-2025-maj-pr
+subject: matematyka
+nr: 9
+punkty: 5
+typ: otwarte-rozszerzone
+topic: równanie trygonometryczne, wzór na cosinus podwojonego kąta
+difficulty: 5
+tresc: |
+  Rozwiąż równanie $3 \cos^2 x + \sqrt{3} \sin(2x) - 3 \sin^2 x = 0$ w przedziale $[-\pi, \pi]$.
+odpowiedz: |
+  $x \in \left\{ -\dfrac{2\pi}{3},\ -\dfrac{\pi}{6},\ \dfrac{\pi}{3},\ \dfrac{5\pi}{6} \right\}$
+pulapka: |
+  Najszybsza droga to dostrzeżenie, że $3\cos^2 x - 3\sin^2 x = 3(\cos^2 x - \sin^2 x) = 3\cos(2x)$. Bez tego dostajesz dłuższe rozwiązanie. Druga pułapka: pomylenie znaków przy szukaniu rozwiązań $\tan(2x) = -\sqrt{3}$.
+wymaganie: |
+  VII.R6 — rozwiązywanie równań trygonometrycznych z wzorami na podwojony kąt.
+podobne:
+  - matematyka-2024-maj-pr-10
+  - matematyka-2025-maj-pr-3
+---
+
+## Strategia
+
+Cel: doprowadzić równanie do **jednego argumentu** (tu: $2x$). Wzory pomocnicze:
+
+- $\cos^2 x - \sin^2 x = \cos(2x)$ (cosinus podwojonego kąta)
+- $\sin(2x) = 2 \sin x \cos x$ (sinus podwojonego)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zgrupuj wyrazy z $\sin^2$ i $\cos^2$.**
+
+$$3 \cos^2 x - 3 \sin^2 x + \sqrt{3} \sin(2x) = 0$$
+
+$$3 (\cos^2 x - \sin^2 x) + \sqrt{3} \sin(2x) = 0$$
+
+</div>
+
+<div class="krok">
+
+**Zastosuj wzór $\cos^2 x - \sin^2 x = \cos(2x)$.**
+
+$$3 \cos(2x) + \sqrt{3} \sin(2x) = 0$$
+
+Teraz wszystko jest w argumencie $2x$ — dużo łatwiej.
+
+</div>
+
+<div class="krok">
+
+**Podziel obie strony przez $\cos(2x)$** (z założeniem $\cos(2x) \neq 0$):
+
+$$3 + \sqrt{3} \tan(2x) = 0$$
+
+$$\tan(2x) = -\frac{3}{\sqrt{3}} = -\sqrt{3}$$
+
+</div>
+
+<div class="krok">
+
+**Sprawdź założenie** $\cos(2x) \neq 0$. Gdyby $\cos(2x) = 0$, to z oryginalnego równania $\sqrt{3} \sin(2x) = 0$, czyli $\sin(2x) = 0$. Ale $\cos^2(2x) + \sin^2(2x) = 1$ — nie mogą być oba zerowe jednocześnie. Sprzeczność, więc $\cos(2x) \neq 0$ ✓ (dzielenie dozwolone).
+
+</div>
+
+<div class="krok">
+
+**Rozwiąż $\tan(2x) = -\sqrt{3}$.** Wartość $\tan \theta = -\sqrt{3}$ ma rozwiązania $\theta = -\dfrac{\pi}{3} + k\pi$, $k \in \mathbb{Z}$.
+
+$$2x = -\frac{\pi}{3} + k\pi \quad\Rightarrow\quad x = -\frac{\pi}{6} + \frac{k \pi}{2}$$
+
+</div>
+
+<div class="krok">
+
+**Wybierz $x$ z przedziału $[-\pi, \pi]$.** Sprawdzam kolejne $k$:
+
+- $k = -1$: $x = -\tfrac{\pi}{6} - \tfrac{\pi}{2} = -\tfrac{4\pi}{6} = -\tfrac{2\pi}{3}$ ✓
+- $k = 0$: $x = -\tfrac{\pi}{6}$ ✓
+- $k = 1$: $x = -\tfrac{\pi}{6} + \tfrac{\pi}{2} = \tfrac{2\pi}{6} = \tfrac{\pi}{3}$ ✓
+- $k = 2$: $x = -\tfrac{\pi}{6} + \pi = \tfrac{5\pi}{6}$ ✓
+- $k = -2$: $x = -\tfrac{\pi}{6} - \pi = -\tfrac{7\pi}{6} < -\pi$ — **poza** przedziałem ✗
+- $k = 3$: $x = -\tfrac{\pi}{6} + \tfrac{3\pi}{2} = \tfrac{8\pi}{6} = \tfrac{4\pi}{3} > \pi$ — **poza** ✗
+
+Cztery rozwiązania.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong>
+    $$x \in \left\{ -\frac{2\pi}{3},\ -\frac{\pi}{6},\ \frac{\pi}{3},\ \frac{5\pi}{6} \right\}$$
+  </div>
+</div>
+
+## Sprawdzenie liczbowe
+
+Dla $x = \tfrac{\pi}{3}$: $2x = \tfrac{2\pi}{3}$, $\cos(2x) = -\tfrac{1}{2}$, $\sin(2x) = \tfrac{\sqrt{3}}{2}$.
+
+$$3 \cos(2x) + \sqrt{3} \sin(2x) = 3 \cdot (-\tfrac{1}{2}) + \sqrt{3} \cdot \tfrac{\sqrt{3}}{2} = -\tfrac{3}{2} + \tfrac{3}{2} = 0 \quad✓$$
+
+Dla $x = -\tfrac{\pi}{6}$: $2x = -\tfrac{\pi}{3}$, $\cos(2x) = \tfrac{1}{2}$, $\sin(2x) = -\tfrac{\sqrt{3}}{2}$.
+
+$$3 \cdot \tfrac{1}{2} + \sqrt{3} \cdot (-\tfrac{\sqrt{3}}{2}) = \tfrac{3}{2} - \tfrac{3}{2} = 0 \quad✓$$
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — dzielenie przez wyrażenie z niewiadomą</div>
+
+W kroku 3 podzieliliśmy przez $\cos(2x)$ — potencjalnie niebezpieczne. CKE zaakceptuje, gdy:
+
+- **explicit** napiszesz założenie $\cos(2x) \neq 0$
+- **sprawdzisz**, że ten przypadek wykluczony przez oryginalne równanie (jak zrobiliśmy w kroku 4).
+
+Pomijanie tego sprawdzenia → utrata 1 pkt (CKE wprost).
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Sposób alternatywny — bez dzielenia</div>
+
+Można uniknąć dzielenia, używając przekształcenia $A \sin \theta + B \cos \theta = R \sin(\theta + \varphi)$, gdzie $R = \sqrt{A^2 + B^2}$.
+
+Tu: $\sqrt{3} \sin(2x) + 3 \cos(2x) = 2\sqrt{3} \sin(2x + \tfrac{\pi}{3})$.
+
+Stąd $\sin(2x + \tfrac{\pi}{3}) = 0$, czyli $2x + \tfrac{\pi}{3} = k\pi$, $x = -\tfrac{\pi}{6} + \tfrac{k\pi}{2}$. Identyczny wynik.
+
+Ten sposób bardziej elegancki, ale wymaga znajomości wzoru z $R$.
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** — przekształcenie do postaci $3\cos(2x) + \sqrt{3} \sin(2x) = 0$.
+- **2 pkt** — sprowadzenie do równania trygonometrycznego elementarnego (np. $\tan(2x) = -\sqrt{3}$).
+- **3 pkt** — zapisanie ogólnego wzoru rozwiązań w $\mathbb{R}$ ($x = -\tfrac{\pi}{6} + \tfrac{k\pi}{2}$).
+- **4 pkt** — wybranie co najmniej trzech rozwiązań z $[-\pi, \pi]$.
+- **5 pkt** — wszystkie cztery rozwiązania.
+
+## Klucz uniwersalny
+
+Schemat dla „równanie trygonometryczne z $\sin^2$, $\cos^2$, $\sin(2x)$, $\cos(2x)$":
+
+1. **Rozpoznaj wzory podwojonego kąta:** $\cos^2 x - \sin^2 x = \cos(2x)$, $2\sin x \cos x = \sin(2x)$.
+2. **Sprowadź wszystkie wyrazy do argumentu $2x$**.
+3. **Otrzymujesz równanie liniowe w $\sin(2x), \cos(2x)$** — podziel przez jedno z nich (z założeniem) lub użyj wzoru z $R$.
+4. **Otrzymujesz $\tan(2x) = c$** — rozwiąż na $2x$, potem na $x$.
+5. **Wybierz** rozwiązania z przedziału.

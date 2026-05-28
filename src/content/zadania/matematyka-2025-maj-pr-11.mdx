@@ -1,0 +1,285 @@
+---
+arkusz: matematyka-2025-maj-pr
+subject: matematyka
+nr: 11
+punkty: 6
+typ: otwarte-rozszerzone
+topic: funkcja kwadratowa z parametrem, wzory Viète'a
+difficulty: 5
+tresc: |
+  Funkcja $f$ jest określona wzorem $f(x) = (2 - m) x^2 - 2(2m + 1) x + m + 8$ dla każdej liczby rzeczywistej $x$, gdzie $m$ jest liczbą rzeczywistą różną od $2$. Wyznacz wszystkie wartości parametru $m$, dla których funkcja $f$ ma **dokładnie dwa miejsca zerowe** $x_1$ oraz $x_2$ **tego samego znaku**, które spełniają warunek $(x_1 - x_2)^2 \leq 180$.
+odpowiedz: |
+  $m \in (-8, -3) \cup (1, \tfrac{3}{2}\rangle$
+pulapka: |
+  Trzy warunki, każdy daje przedział. Klucz: precyzyjnie POŁĄCZ wszystkie trzy. Pułapka 1: pominięcie $\Delta > 0$ (dwa różne miejsca zerowe → ostry znak). Pułapka 2: pomyłka znaku przy $(x_1 - x_2)^2 \leq 180$ — to po przekształceniu daje $8m^2 - 38m + 39 \geq 0$, NIE $\leq 0$.
+wymaganie: |
+  III.R3 — wzory Viète'a; III.R5 — równania i nierówności z parametrami.
+podobne:
+  - matematyka-2024-maj-pr-12
+  - matematyka-2025-maj-pr-6
+---
+
+## Strategia — trzy warunki
+
+Zadanie wymaga **trzech etapów**:
+
+1. **Δ > 0** — funkcja ma dokładnie dwa różne miejsca zerowe.
+2. **$x_1 \cdot x_2 > 0$** — miejsca tego samego znaku (Viète).
+3. **$(x_1 - x_2)^2 \leq 180$** — dodatkowy warunek na różnicę miejsc.
+
+Na końcu — **część wspólna** wszystkich trzech zbiorów wartości $m$.
+
+Klucz: funkcja jest kwadratowa (warunek $a = 2 - m \neq 0$, czyli $m \neq 2$ — z treści).
+
+## Wzory Viète'a
+
+Dla równania $(2 - m) x^2 - 2(2m + 1) x + (m + 8) = 0$:
+
+$$x_1 + x_2 = \frac{2(2m + 1)}{2 - m}, \qquad x_1 \cdot x_2 = \frac{m + 8}{2 - m}$$
+
+---
+
+## Etap 1 — Δ > 0
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Oblicz wyróżnik.**
+
+$$\Delta = [2(2m+1)]^2 - 4 \cdot (2-m) \cdot (m+8)$$
+
+$$\Delta = 4 \left[ (2m+1)^2 - (2-m)(m+8) \right]$$
+
+Rozwiń kolejno:
+
+$(2m+1)^2 = 4m^2 + 4m + 1$
+
+$(2-m)(m+8) = 2m + 16 - m^2 - 8m = -m^2 - 6m + 16$
+
+Różnica:
+
+$$4m^2 + 4m + 1 - (-m^2 - 6m + 16) = 5m^2 + 10m - 15 = 5(m^2 + 2m - 3)$$
+
+</div>
+
+<div class="krok">
+
+**Rozłóż na czynniki:** $m^2 + 2m - 3 = (m + 3)(m - 1)$.
+
+$$\Delta = 20 (m + 3)(m - 1)$$
+
+</div>
+
+<div class="krok">
+
+**Warunek $\Delta > 0$:**
+
+$$(m + 3)(m - 1) > 0$$
+
+$$m \in (-\infty,\ -3) \cup (1,\ +\infty)$$
+
+</div>
+
+</div>
+
+---
+
+## Etap 2 — $x_1 \cdot x_2 > 0$
+
+$$x_1 \cdot x_2 = \frac{m + 8}{2 - m} > 0$$
+
+Iloraz dodatni gdy licznik i mianownik mają **ten sam znak**:
+
+- **Oba dodatnie**: $m + 8 > 0$ i $2 - m > 0$, czyli $m > -8$ i $m < 2$ → $m \in (-8, 2)$.
+- **Oba ujemne**: $m < -8$ i $m > 2$ — sprzeczne, brak rozwiązań.
+
+Stąd: $m \in (-8, 2)$.
+
+---
+
+## Etap 3 — $(x_1 - x_2)^2 \leq 180$
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Tożsamość**: $(x_1 - x_2)^2 = (x_1 + x_2)^2 - 4 x_1 x_2$.
+
+Podstaw Viète'a:
+
+$$(x_1 - x_2)^2 = \left[ \frac{2(2m+1)}{2-m} \right]^2 - 4 \cdot \frac{m+8}{2-m}$$
+
+</div>
+
+<div class="krok">
+
+**Sprowadź do wspólnego mianownika** $(2 - m)^2$:
+
+$$(x_1 - x_2)^2 = \frac{4(2m+1)^2 - 4(m+8)(2-m)}{(2-m)^2}$$
+
+</div>
+
+<div class="krok">
+
+**Licznik upraszcza się jak w Etapie 1**:
+
+$$4 (2m+1)^2 - 4(m+8)(2-m) = 4 \cdot 5(m^2 + 2m - 3) = 20(m^2 + 2m - 3)$$
+
+Stąd:
+
+$$(x_1 - x_2)^2 = \frac{20(m^2 + 2m - 3)}{(2-m)^2}$$
+
+</div>
+
+<div class="krok">
+
+**Warunek $(x_1 - x_2)^2 \leq 180$:**
+
+$$\frac{20(m^2 + 2m - 3)}{(2-m)^2} \leq 180$$
+
+Pomnóż obie strony przez $(2-m)^2 > 0$ (mnożnik dodatni, nierówność bez zmian):
+
+$$20(m^2 + 2m - 3) \leq 180 (2-m)^2$$
+
+$$m^2 + 2m - 3 \leq 9 (2-m)^2$$
+
+Rozwiń prawą stronę: $(2-m)^2 = 4 - 4m + m^2$, więc $9(2-m)^2 = 9m^2 - 36m + 36$.
+
+$$m^2 + 2m - 3 \leq 9m^2 - 36m + 36$$
+
+$$0 \leq 8m^2 - 38m + 39$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiąż nierówność $8m^2 - 38m + 39 \geq 0$.**
+
+$$\Delta' = 38^2 - 4 \cdot 8 \cdot 39 = 1444 - 1248 = 196$$
+
+$$\sqrt{\Delta'} = 14$$
+
+$$m_{1,2} = \frac{38 \pm 14}{16}$$
+
+$$m_1 = \frac{24}{16} = \frac{3}{2}, \quad m_2 = \frac{52}{16} = \frac{13}{4}$$
+
+Parabola $8m^2 - 38m + 39$ otwiera się w górę ($a = 8 > 0$), więc $\geq 0$ **poza** pierwiastkami:
+
+$$m \in \left( -\infty,\ \tfrac{3}{2} \right\rangle \cup \left\langle \tfrac{13}{4},\ +\infty \right)$$
+
+</div>
+
+</div>
+
+---
+
+## Etap 4 — część wspólna wszystkich trzech warunków
+
+**Z etapów 1, 2, 3**:
+
+- (1) $m \in (-\infty, -3) \cup (1, +\infty)$
+- (2) $m \in (-8, 2)$
+- (3) $m \in (-\infty, \tfrac{3}{2}\rangle \cup \langle\tfrac{13}{4}, +\infty)$
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Najpierw (1) ∩ (2):**
+
+$$\left[ (-\infty, -3) \cup (1, +\infty) \right] \cap (-8, 2) = (-8, -3) \cup (1, 2)$$
+
+</div>
+
+<div class="krok">
+
+**Teraz [(1) ∩ (2)] ∩ (3):**
+
+- $(-8, -3) \cap (-\infty, \tfrac{3}{2}\rangle = (-8, -3)$ ✓ (cały lewy fragment się mieści, bo $-3 < \tfrac{3}{2}$)
+- $(-8, -3) \cap \langle\tfrac{13}{4}, +\infty) = \emptyset$ (bo $-3 < \tfrac{13}{4}$)
+- $(1, 2) \cap (-\infty, \tfrac{3}{2}\rangle = (1, \tfrac{3}{2}\rangle$
+- $(1, 2) \cap \langle\tfrac{13}{4}, +\infty) = \emptyset$ (bo $2 < \tfrac{13}{4} = 3{,}25$)
+
+Suma:
+
+$$m \in (-8, -3) \cup \left( 1, \tfrac{3}{2} \right\rangle$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> $m \in (-8,\ -3) \cup \left(1,\ \tfrac{3}{2}\right\rangle$.
+  </div>
+</div>
+
+## Sprawdzenie
+
+**Dla $m = -5$** (w $(-8, -3)$):
+
+- $a = 7$, $b = 18$, $c = 3$
+- $\Delta = 324 - 84 = 240 > 0$ ✓
+- $x_1 x_2 = 3/7 > 0$ ✓
+- $(x_1 - x_2)^2 = (18/7)^2 - 12/7 = 324/49 - 84/49 = 240/49 \approx 4{,}9 \leq 180$ ✓
+
+**Dla $m = \tfrac{3}{2}$** (graniczne):
+
+- $a = 1/2$, $b = -8$, $c = 19/2$
+- $\Delta = 64 - 19 = 45 > 0$ ✓
+- $x_1 x_2 = (19/2)/(1/2) = 19 > 0$ ✓
+- $(x_1 - x_2)^2 = 16^2 - 4 \cdot 19 = 256 - 76 = 180$ ✓ (dokładnie równa)
+
+Wszystko pasuje.
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — Δ ≥ 0 zamiast Δ > 0</div>
+
+Treść mówi „dokładnie **dwa** miejsca zerowe" — słowo „dwa" wymusza **różne** miejsca, czyli $\Delta > 0$ (ostry znak).
+
+Gdyby było $\Delta \geq 0$, dopuszczalibyśmy też przypadek **jednego** miejsca zerowego (podwójnego) — co nie spełnia treści.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — znak przekształcenia $(x_1 - x_2)^2$</div>
+
+Po przekształceniu warunku $(x_1 - x_2)^2 \leq 180$ otrzymujemy $8m^2 - 38m + 39 \geq 0$ — **przeniesienie wszystkiego na prawą stronę** zamienia $\leq$ na $\geq$. Mylenie znaków → szukanie rozwiązań „wewnątrz" parabolskiego $\leq 0$ zamiast „na zewnątrz" $\geq 0$ → zupełnie inny wynik.
+
+Bezpieczna procedura: zawsze pisz pełny ciąg przekształceń, sprawdzaj zwroty.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — granice przedziałów</div>
+
+Końce $-3$, $-8$, $1$, $\tfrac{3}{2}$, $\tfrac{13}{4}$ pojawiają się w różnych warunkach.
+
+- $m = -3$ i $m = 1$ → $\Delta = 0$, czyli **podwójny** pierwiastek (jedno miejsce, nie dwa) → wykluczyć. Otwarte końce $(-3)$ i $(1)$.
+- $m = -8$ → $x_1 x_2 = 0$, czyli jedno z miejsc to 0 (nie „tego samego znaku" — bo 0 nie jest ani dodatnie, ani ujemne) → wykluczyć. Otwarty koniec $(-8)$.
+- $m = \tfrac{3}{2}$ → $(x_1 - x_2)^2 = 180$ — **dokładnie** spełnia warunek $\leq 180$ → **dołączyć**. Domknięty koniec $\rangle$.
+
+Stąd przedział $(-8, -3) \cup (1, \tfrac{3}{2}\rangle$ — z konkretnymi typami nawiasów.
+</div>
+
+## Punktacja CKE (zwykle 3 etapy)
+
+**Etap 1 ($\Delta > 0$)**: 1 pkt.
+
+**Etap 2 ($x_1 x_2 > 0$)**: 1 pkt (lub kontekst dodatkowy w innych klasyfikacjach).
+
+**Etap 3 (nierówność z $(x_1 - x_2)^2$)**: 3-4 pkt zależnie od dokładności.
+
+**Etap 4 (część wspólna)**: 1 pkt za końcowy zbiór.
+
+Razem 6 pkt.
+
+## Klucz uniwersalny
+
+Standardowy schemat dla zadań „parametr $m$ + warunki na miejsca zerowe":
+
+1. **Wyznacz dziedzinę istnienia** dwóch miejsc zerowych ($\Delta > 0$ lub $\geq 0$).
+2. **Zapisz Viète'a** dla $x_1 + x_2$ i $x_1 x_2$.
+3. **Każdy dodatkowy warunek** (znak, suma, różnica, kwadrat) → przekształć przez Viète'a do nierówności tylko w $m$.
+4. **Część wspólna** wszystkich zbiorów rozwiązań.
+
+Często najtrudniejszy element to **algebra** przekształcania $(x_1 - x_2)^2$ przez Viète'a — pamiętaj tożsamość $(x_1 - x_2)^2 = (x_1 + x_2)^2 - 4 x_1 x_2$.
