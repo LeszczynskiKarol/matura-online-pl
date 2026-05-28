@@ -1,0 +1,80 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 28
+punkty: 1
+typ: zamkniete-abcd
+topic: prawdopodobieństwo, kostka do gry
+difficulty: 2
+tresc: |
+  Doświadczenie losowe polega na dwukrotnym rzucie symetryczną sześcienną kostką do gry, która na każdej ścianie ma inną liczbę oczek — od jednego oczka do sześciu oczek. Zdarzenie $A$ polega na tym, że suma liczb wyrzuconych oczek będzie równa $11$. Prawdopodobieństwo zdarzenia $A$ jest równe: A. $\dfrac{1}{36}$, B. $\dfrac{6}{36}$, C. $\dfrac{11}{36}$, D. $\dfrac{2}{36}$.
+odpowiedz: |
+  D — $\dfrac{2}{36} = \dfrac{1}{18}$
+pulapka: |
+  Najczęstszy błąd to liczenie "ile par daje sumę 11" jako wszystkie pary z jakimkolwiek 11 (np. C — 11/36). Trzeba wypisać pary, gdzie suma DOKŁADNIE = 11.
+wymaganie: |
+  XII.1 — obliczanie prawdopodobieństwa w modelu klasycznym.
+podobne:
+  - matematyka-2024-maj-pp-30
+  - matematyka-2025-maj-pp-29
+---
+
+## Klucz — model klasyczny
+
+Dwie rzucone kostki → para wyników $(a, b)$, gdzie $a, b \in \{1, 2, \ldots, 6\}$. Wszystkich par jest $6 \times 6 = 36$ (każda jednakowo prawdopodobna).
+
+Pytamy o **liczbę par sprzyjających zdarzeniu $A$**: suma = 11.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wypisz wszystkie pary $(a, b)$ z $a + b = 11$.**
+
+Sprawdzam dla każdego $a$ od 1 do 6, czy $b = 11 - a$ należy do $\{1, \ldots, 6\}$:
+
+- $a = 5$, $b = 6$ ✓
+- $a = 6$, $b = 5$ ✓
+- $a = 1$ do $4$: $b = 10, 9, 8, 7$ — wszystkie powyżej 6, nie pasują
+
+Pary sprzyjające: $(5, 6)$, $(6, 5)$. **Razem: 2 pary.**
+
+</div>
+
+<div class="krok">
+
+**Oblicz prawdopodobieństwo.**
+
+$$P(A) = \frac{|A|}{|\Omega|} = \frac{2}{36} = \frac{1}{18}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: D</strong> — $P(A) = \dfrac{2}{36}$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd — rozróżnianie par</div>
+
+**Odpowiedź A ($\tfrac{1}{36}$)** wybiera ten, kto uznał, że pary $(5, 6)$ i $(6, 5)$ to **to samo zdarzenie**. Niepoprawnie — gdy rzucamy **dwoma kostkami** (albo jedną dwa razy), kolejność ma znaczenie. Pierwszy rzut $5$ i drugi $6$ to inne zdarzenie niż pierwszy $6$ i drugi $5$.
+
+Bezpieczna procedura: traktuj kostki jako rozróżnialne (np. „pierwsza" i „druga"), nawet jeśli są identyczne wizualnie. Wtedy zliczasz **uporządkowane pary**.
+
+**Odpowiedzi B i C** — błędne strzały arytmetyczne (np. C: ktoś wziął cyfrę 11 do licznika, ale to ma sens dla sumy = 11 tylko gdy zliczyłbyś **wszystkie kombinacje sum**, co nie jest sensowne).
+</div>
+
+## Klucz — tabela sum dla dwóch kostek
+
+Dla dwóch kostek symetrycznych liczba par sprzyjających sumie $s$:
+
+| $s$ | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| par | 1 | 2 | 3 | 4 | 5 | 6 | 5 | 4 | 3 | **2** | 1 |
+
+Sumy są **symetryczne** względem 7 (najbardziej prawdopodobnej). Liczba par dla sumy $s$ = liczba par dla sumy $14 - s$.
+
+Tu suma $11 = 14 - 3$, więc liczba par dla $11$ = liczba par dla $3$ = $2$. Mamy odpowiedź w 5 sekund.

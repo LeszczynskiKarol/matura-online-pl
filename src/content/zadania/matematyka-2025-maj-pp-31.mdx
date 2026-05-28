@@ -1,0 +1,184 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 31
+punkty: 4
+typ: otwarte-rozszerzone
+topic: optymalizacja, funkcja kwadratowa, prostopadłościan
+difficulty: 5
+tresc: |
+  Rozważamy wszystkie prostopadłościany $ABCDEFGH$, w których krawędź $BC$ ma długość $4$, a suma długości wszystkich krawędzi wychodzących z wierzchołka $B$ jest równa $15$. Niech $P(x)$ oznacza funkcję pola powierzchni całkowitej takiego prostopadłościanu w zależności od długości $x$ krawędzi $AB$. Wyznacz wzór i dziedzinę funkcji $P$. Oblicz długość $x$ krawędzi $AB$ tego prostopadłościanu, którego pole powierzchni całkowitej jest największe.
+odpowiedz: |
+  $P(x) = -2x^2 + 22x + 88$, dziedzina $x \in (0, 11)$, max dla $x = 5{,}5$ (gdzie $P_{\max} = 148{,}5$).
+pulapka: |
+  CKE wprost: jeśli pominiesz wyznaczenie dziedziny — maksimum 3 pkt zamiast 4. Drugi błąd: niedoczytanie, że krawędzie wychodzące z B to AB, BC, BF (trzy różne kierunki) — niektórzy biorą tylko dwie krawędzie.
+wymaganie: |
+  XIII — zadania optymalizacyjne z wykorzystaniem funkcji kwadratowej.
+podobne:
+  - matematyka-2024-maj-pp-31
+  - matematyka-2025-maj-pp-25
+---
+
+## Klucz — wierzchołek prostopadłościanu
+
+Z każdego wierzchołka prostopadłościanu **wychodzą trzy krawędzie**, prostopadłe parami. Z wierzchołka $B$ wychodzą:
+
+- $AB$ (długość $x$ — szukamy)
+- $BC$ (długość $4$ — dana)
+- $BF$ (wysokość prostopadłościanu — oznaczę $y$)
+
+## Wyznacz $y$ z warunku sumy
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Suma krawędzi z $B$:** $x + 4 + y = 15$, więc:
+
+$$y = 11 - x$$
+
+</div>
+
+<div class="krok">
+
+**Dziedzina**: oba wymiary $x$ i $y$ muszą być dodatnie (długości boków).
+
+$$x > 0 \quad\text{oraz}\quad y > 0$$
+
+$x > 0$ trywialnie. $y = 11 - x > 0$ daje $x < 11$.
+
+$$\text{Dziedzina}: x \in (0, 11)$$
+
+</div>
+
+</div>
+
+## Wyznacz wzór $P(x)$
+
+Pole całkowite prostopadłościanu o wymiarach $a \times b \times c$ to:
+
+$$P = 2(ab + bc + ca)$$
+
+(sześć ścian, parami równe: dwie o polu $ab$, dwie $bc$, dwie $ca$).
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Podstaw $a = x$, $b = 4$, $c = y = 11 - x$:**
+
+$$P = 2 \cdot \left[ x \cdot 4 + 4 \cdot (11 - x) + (11 - x) \cdot x \right]$$
+
+</div>
+
+<div class="krok">
+
+**Uprość każdy człon:**
+
+- $x \cdot 4 = 4x$
+- $4 \cdot (11 - x) = 44 - 4x$
+- $(11 - x) \cdot x = 11x - x^2$
+
+Suma: $4x + 44 - 4x + 11x - x^2 = -x^2 + 11x + 44$.
+
+</div>
+
+<div class="krok">
+
+**Pomnóż przez 2:**
+
+$$P(x) = 2 \cdot (-x^2 + 11x + 44) = -2x^2 + 22x + 88$$
+
+</div>
+
+</div>
+
+## Wyznacz $x$ dla maksimum pola
+
+Funkcja $P(x) = -2x^2 + 22x + 88$ to **funkcja kwadratowa** z ujemnym współczynnikiem przy $x^2$ → parabola **otwiera się w dół** → maksimum w **wierzchołku**.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Współrzędna $x$ wierzchołka:**
+
+$$x_w = -\frac{b}{2a} = -\frac{22}{2 \cdot (-2)} = -\frac{22}{-4} = \frac{22}{4} = 5{,}5$$
+
+</div>
+
+<div class="krok">
+
+**Sprawdź, że $x_w = 5{,}5$ leży w dziedzinie** $(0, 11)$. Tak ✓.
+
+</div>
+
+<div class="krok">
+
+**Oblicz wartość maksymalną** (opcjonalnie):
+
+$$P(5{,}5) = -2 \cdot (5{,}5)^2 + 22 \cdot 5{,}5 + 88$$
+
+$(5{,}5)^2 = 30{,}25$, więc:
+
+$$P_{\max} = -60{,}5 + 121 + 88 = 148{,}5$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong>
+    <ul>
+      <li>Wzór: $P(x) = -2x^2 + 22x + 88$</li>
+      <li>Dziedzina: $x \in (0, 11)$</li>
+      <li>$x = 5{,}5$ (krawędź $|AB| = 5{,}5$) — daje maksimum, $P_{\max} = 148{,}5$</li>
+    </ul>
+  </div>
+</div>
+
+## Sprawdzenie geometryczne
+
+Dla $x = 5{,}5$: $y = 11 - 5{,}5 = 5{,}5$. Wymiary prostopadłościanu: $5{,}5 \times 4 \times 5{,}5$.
+
+Czyli $x = y$ — co intuicyjnie ma sens: przy ustalonej sumie boków pole jest **maksymalizowane**, gdy wymiary są wyrównane (analog do „kwadrat ma największe pole spośród prostokątów o ustalonym obwodzie").
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — pomijanie dziedziny</div>
+
+CKE z punktacji: za **wyznaczenie wzoru bez dziedziny** dostajesz **2 pkt** zamiast 3 (tylko za wzór). Dziedzina to integralna część funkcji — bez niej nie wiadomo, dla jakich $x$ wzór ma sens.
+
+Pisz **explicite**: „$P(x) = -2x^2 + 22x + 88$ **dla $x \in (0, 11)$**".
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — która krawędź to $y$?</div>
+
+Trzy krawędzie z $B$: $BA$, $BC$, $BF$ (cztery wierzchołki sąsiadujące z $B$, ale jeden z nich to $B$ sam — pozostają trzy). $A$ i $C$ leżą w dolnej podstawie, $F$ leży nad $B$ (wysokość).
+
+Niektórzy biorą tylko dwie krawędzie (myląc się, że „krawędzie z wierzchołka" to tylko dwie w jednej płaszczyźnie). To daje błędną sumę: $x + 4 = 15 \Rightarrow x = 11$ (bez sensu, bo wtedy $y = ?$).
+
+Pamiętaj: w 3D z każdego wierzchołka prostopadłościanu wychodzą **trzy** krawędzie (w trzech prostopadłych kierunkach).
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** — zapisanie zależności $y = 11 - x$ (lub $x + y = 11$).
+- **2 pkt** — zapisanie wzoru funkcji $P(x) = -2x^2 + 22x + 88$ (lub równoważnej).
+- **3 pkt** — dodatkowo wyznaczenie dziedziny $(0, 11)$.
+- **4 pkt** — pełne rozwiązanie + obliczenie $x = 5{,}5$ z uzasadnieniem (np. współrzędna wierzchołka paraboli).
+
+## Klucz uniwersalny
+
+Każde zadanie „optymalizacja z prostopadłościanu / prostokąta" sprowadza się do:
+
+1. **Zidentyfikuj zmienne** (zwykle dwie, np. $x$ i $y$).
+2. **Wyłap warunek wiążący** ($x + y = c$ lub $xy = c$ — z treści).
+3. **Wyraź jedną zmienną** przez drugą.
+4. **Wyraź funkcję celu** (pole / objętość / koszty) jako funkcję jednej zmiennej.
+5. **Wyznacz dziedzinę** — kiedy obie zmienne mają sens?
+6. **Znajdź ekstremum** — wierzchołek paraboli (dla kwadratowej) lub pochodna (dla wyższych stopni).
+7. **Sprawdź, czy ekstremum jest w dziedzinie**.
+
+Schemat sprawdzony na maturze podstawowej i rozszerzonej.

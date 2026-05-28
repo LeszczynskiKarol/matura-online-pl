@@ -1,0 +1,87 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 27
+punkty: 1
+typ: zamkniete-abcd
+topic: kombinatoryka, zliczanie liczb
+difficulty: 3
+tresc: |
+  Wszystkich liczb naturalnych trzycyfrowych nieparzystych, w których zapisie dziesiętnym występuje dokładnie jeden raz cyfra $0$, jest: A. $45$, B. $50$, C. $54$, D. $81$.
+odpowiedz: |
+  A — $45$
+pulapka: |
+  Najczęstszy błąd to niezauważenie, że jednoczesne warunki "trzycyfrowa", "nieparzysta", "dokładnie jedna cyfra 0" całkowicie WYZNACZAJĄ, gdzie 0 musi być (na dziesiątkach). Setki ≠ 0 (treść "trzycyfrowa"), jedności ≠ 0 (treść "nieparzysta") → 0 musi być na dziesiątkach.
+wymaganie: |
+  XI.2 — zliczanie obiektów przy zastosowaniu reguły mnożenia.
+podobne:
+  - matematyka-2024-maj-pp-27
+  - matematyka-2024-maj-pr-6
+---
+
+## Klucz — analiza warunków
+
+Trzy warunki na liczbę:
+
+1. **Trzycyfrowa** → setki ∈ $\{1, 2, \ldots, 9\}$ (nie 0)
+2. **Nieparzysta** → jedności ∈ $\{1, 3, 5, 7, 9\}$ (nie 0, bo 0 jest parzyste)
+3. **Dokładnie jedna cyfra 0** → 0 musi być **gdzieś**, ale **tylko raz**
+
+Z (1) i (2) wynika, że setki i jedności **nie mogą być zerem**. Skoro dokładnie jedno zero ma być — musi być na **dziesiątkach**.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Ustalamy pozycję cyfry 0**: na dziesiątkach. To **jeden** sposób (bez wyboru).
+
+</div>
+
+<div class="krok">
+
+**Setki**: dowolna cyfra z $\{1, 2, 3, 4, 5, 6, 7, 8, 9\}$ — **9 możliwości**.
+
+</div>
+
+<div class="krok">
+
+**Jedności**: dowolna cyfra nieparzysta z $\{1, 3, 5, 7, 9\}$ — **5 możliwości**.
+
+</div>
+
+<div class="krok">
+
+**Wymnóż** (reguła mnożenia):
+
+$$9 \cdot 1 \cdot 5 = 45$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: A</strong> — $45$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd — niesprecyzowane warunki</div>
+
+**Odpowiedź D ($81$)** wybiera ten, kto liczy „setki × jedności" jako $9 \cdot 9 = 81$, ignorując warunek nieparzystości (że jedności muszą być z $\{1,3,5,7,9\}$, czyli 5 możliwości, nie 9).
+
+**Odpowiedź C ($54$)** — błąd: ktoś rozważył sytuację, gdzie zero może być **też na jedności** (ale wtedy nie jest nieparzysta!). Lub błędnie wziął 6 jednościowych zamiast 5.
+
+**Odpowiedź B ($50$)** — strzał typu „okrągła liczba", brak związku.
+</div>
+
+## Klucz — schemat zliczania liczb naturalnych
+
+Procedura dla zadań „liczby naturalne z warunkami":
+
+1. **Wypisz wszystkie warunki** (długość, parzystość, brak/obecność konkretnych cyfr, itd.).
+2. **Wywnioskuj ograniczenia każdej pozycji** (która cyfra może być gdzie).
+3. **Dla każdej pozycji oblicz liczbę możliwości**, sprawdzając czy wybory są niezależne.
+4. **Wymnóż** (reguła mnożenia) — jeśli któreś pozycje są zależne, rozbij na przypadki.
+
+Tu wszystko zdziało się jasno: jedna pozycja zerowa (z warunku), dwie pozycje z możliwościami (9 i 5). Mnożenie $9 \cdot 5 = 45$.

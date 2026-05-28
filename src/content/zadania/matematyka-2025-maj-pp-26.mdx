@@ -1,0 +1,76 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 26
+punkty: 1
+typ: zamkniete-abcd
+topic: stereometria, sześcian, przekątna
+difficulty: 2
+tresc: |
+  Objętość sześcianu jest równa $729$. Długość przekątnej tego sześcianu jest równa: A. $9\sqrt{3}$, B. $9\sqrt{2}$, C. $3\sqrt{3}$, D. $3\sqrt{2}$.
+odpowiedz: |
+  A — $9\sqrt{3}$
+pulapka: |
+  Najczęstszy błąd to pomylenie przekątnej sześcianu z przekątną ściany. Przekątna sześcianu (3D, łączy przeciwległe wierzchołki przez wnętrze) = $a\sqrt{3}$. Przekątna ściany (2D, na jednej ścianie) = $a\sqrt{2}$. Pytanie zwykle o tę 3D.
+wymaganie: |
+  X.6 — wykorzystanie własności sześcianu.
+podobne:
+  - matematyka-2025-maj-pp-25
+  - matematyka-2024-maj-pp-25
+---
+
+## Klucz — sześcian i jego przekątne
+
+Sześcian o boku $a$ ma:
+
+- **Objętość**: $V = a^3$
+- **Przekątna ściany** (na jednej ścianie, łączy przeciwległe wierzchołki kwadratu): $d_{\text{ściana}} = a\sqrt{2}$
+- **Przekątna sześcianu** (przez wnętrze, łączy przeciwległe wierzchołki bryły): $d_{\text{sześcian}} = a\sqrt{3}$
+
+Wzór $a\sqrt{3}$ pochodzi z dwukrotnego zastosowania Pitagorasa: najpierw na ścianie ($d_1 = a\sqrt{2}$), potem do wysokości ($d^2 = d_1^2 + a^2 = 2a^2 + a^2 = 3a^2$).
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Oblicz bok sześcianu z objętości:**
+
+$$a^3 = 729 \quad\Rightarrow\quad a = \sqrt[3]{729} = 9$$
+
+(bo $9^3 = 729$).
+
+</div>
+
+<div class="krok">
+
+**Zastosuj wzór na przekątną sześcianu:**
+
+$$d = a\sqrt{3} = 9\sqrt{3}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: A</strong> — $9\sqrt{3}$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd — przekątna ściany vs sześcianu</div>
+
+**Odpowiedź B ($9\sqrt{2}$)** wybiera ten, kto użył wzoru na przekątną **ściany** zamiast **sześcianu**. Sygnał, że to błąd: $\sqrt{2}$ to wzór dla **kwadratu** (2D), $\sqrt{3}$ to wzór dla **sześcianu** (3D, trzy wymiary).
+
+**Odpowiedzi C i D** ($3\sqrt{3}$, $3\sqrt{2}$) — błąd w obliczeniu boku: $\sqrt[3]{729} = 9$, NIE $3$. ($3^3 = 27$, nie $729$.)
+</div>
+
+## Klucz pamięciowy
+
+| Bryła | Bok | Przekątna ściany | Przekątna bryły |
+|---|---|---|---|
+| Kwadrat (2D) | $a$ | — | $a\sqrt{2}$ |
+| Sześcian (3D) | $a$ | $a\sqrt{2}$ | $a\sqrt{3}$ |
+| Prostopadłościan $a \times b \times c$ | — | — | $\sqrt{a^2 + b^2 + c^2}$ |
+
+Wzór $\sqrt{a^2 + b^2 + c^2}$ to **uogólnienie**, działa zawsze. Dla sześcianu $a = b = c$, więc $\sqrt{3a^2} = a\sqrt{3}$. Wzór znaleziony.

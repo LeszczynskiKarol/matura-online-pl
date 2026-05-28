@@ -1,0 +1,113 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 30
+punkty: 2
+typ: otwarte-krotkie
+topic: statystyka, mediana i dominanta
+difficulty: 2
+tresc: |
+  Na diagramie przedstawiono wyniki sprawdzianu z matematyki w klasie liczącej 24 uczniów. Liczby uczniów z poszczególnymi ocenami: ocena 1 — 1 uczeń, 2 — 3, 3 — 4, 4 — 4, 5 — 5, 6 — 7. Uzupełnij dwa zdania (1) mediana ocen jest równa ……, (2) dominanta ocen jest równa …….
+odpowiedz: |
+  (1) Mediana = $4{,}5$ • (2) Dominanta = $6$
+pulapka: |
+  Najczęstszy błąd to pomylenie mediany z dominantą. Mediana = środkowa wartość po posortowaniu. Dominanta = NAJCZĘSTSZA wartość. To dwie różne rzeczy.
+wymaganie: |
+  XII.2 — obliczanie mediany i dominanty.
+podobne:
+  - matematyka-2024-maj-pp-29
+  - matematyka-2025-maj-pp-29
+---
+
+## Klucz — mediana vs dominanta
+
+**Mediana** to wartość **środkowa** po posortowaniu zbioru danych:
+
+- Dla parzystej liczby elementów ($n$): średnia z pozycji $\tfrac{n}{2}$ i $\tfrac{n}{2}+1$.
+- Dla nieparzystej: pozycja $\tfrac{n+1}{2}$.
+
+**Dominanta** (moda) to wartość **najczęściej występująca** (z największym słupkiem).
+
+## Dane
+
+Liczba uczniów: $1 + 3 + 4 + 4 + 5 + 7 = 24$.
+
+| Ocena | 1 | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|---|
+| Liczba uczniów | 1 | 3 | 4 | 4 | 5 | **7** |
+| Skumulowana | 1 | 4 | 8 | **12** | 17 | 24 |
+
+## Mediana
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Liczba uczniów = 24 (parzysta)** → mediana = średnia z 12. i 13. wartości po posortowaniu.
+
+</div>
+
+<div class="krok">
+
+**Zlokalizuj 12. i 13. pozycję** w tabeli skumulowanej.
+
+- Pozycje 1: ocena 1
+- Pozycje 2–4: ocena 2
+- Pozycje 5–8: ocena 3
+- Pozycje 9–**12**: ocena 4
+- Pozycje **13**–17: ocena 5
+- Pozycje 18–24: ocena 6
+
+12. uczeń ma ocenę **4**, 13. uczeń ma ocenę **5**.
+
+</div>
+
+<div class="krok">
+
+**Oblicz medianę.**
+
+$$\text{Mediana} = \frac{4 + 5}{2} = \frac{9}{2} = 4{,}5$$
+
+</div>
+
+</div>
+
+## Dominanta
+
+Z tabeli najwyższa liczba uczniów to **7**, dla oceny **6**. Stąd:
+
+$$\text{Dominanta} = 6$$
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong>
+    <ol>
+      <li>Mediana = $4{,}5$</li>
+      <li>Dominanta = $6$</li>
+    </ol>
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd — mediana 4 lub 5 zamiast 4,5</div>
+
+Częsty błąd: wziąć **tylko 12.** wartość (=4) jako medianę, albo **tylko 13.** (=5). Dla parzystej liczby elementów trzeba **uśrednić** dwie środkowe.
+
+Reguła pamięciowa: liczba elementów parzysta → mediana to średnia, nieparzysta → jedna konkretna wartość.
+
+W ocenach szkolnych można dostać medianę „pół" (np. $4{,}5$), to OK.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — dominanta wśród słupków</div>
+
+Dominanta to **ocena z najwyższym słupkiem**, nie wartość liczbowa słupka.
+
+Tutaj najwyższy słupek to $7$ uczniów. Te 7 uczniów dostało **ocenę 6**. Więc dominanta = 6 (nie 7).
+
+Sygnał ostrzegawczy: dominanta jest **w skali wartości** (oceny 1–6), nie w skali liczb uczniów.
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** za każde poprawnie wypełnione zdanie → razem **2 pkt**.
