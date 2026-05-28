@@ -5,6 +5,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import SiteFooter from "../../../components/SiteFooter.astro";
 import IconBadge from "../../../components/IconBadge.astro";
+import AudioPlayer from "../../../components/AudioPlayer.astro";
 import { siteConfig } from "../../../config/site";
 import { renderInlineMath } from "../../../lib/render-math";
 
@@ -152,6 +153,31 @@ const allNrs = Array.from({ length: arkusz.data.liczbaZadan }, (_, i) => i + 1);
         )}
       </div>
     </section>
+
+    {arkusz.data.audioUrl && (
+      <section class="border-b border-[var(--color-border)] bg-[var(--color-bg-subtle)]">
+        <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+          <IconBadge icon="lucide:headphones" label="Rozumienie ze słuchu" tone="accent" />
+          <h2 class="mt-4 font-serif text-[length:var(--text-fs-h2)] font-medium leading-tight tracking-tight">
+            Nagranie do zadań ze słuchania
+          </h2>
+          <p class="mt-3 text-[var(--color-text-muted)]">
+            Oryginalne nagranie CKE z egzaminu maturalnego. Obejmuje wszystkie zadania ze słuchania w tym arkuszu. Możesz odsłuchać dowolną liczbę razy, zmienić tempo lub przewinąć.
+          </p>
+          <AudioPlayer
+            src={arkusz.data.audioUrl}
+            title={`Nagranie CKE — ${arkusz.data.symbol}`}
+          />
+          {arkusz.data.audioTranscriptUrl && (
+            <p class="mt-2 text-sm">
+              <a href={arkusz.data.audioTranscriptUrl} target="_blank" rel="noopener" class="text-[var(--color-accent)] underline">
+                Pobierz pełną transkrypcję nagrania (PDF, CKE)
+              </a>
+            </p>
+          )}
+        </div>
+      </section>
+    )}
 
     <section>
       <div class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">

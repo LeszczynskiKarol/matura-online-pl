@@ -4,6 +4,7 @@ import { getCollection, render } from "astro:content";
 import BaseLayout from "../../../layouts/BaseLayout.astro";
 import SiteHeader from "../../../components/SiteHeader.astro";
 import SiteFooter from "../../../components/SiteFooter.astro";
+import AudioPlayer from "../../../components/AudioPlayer.astro";
 import { siteConfig } from "../../../config/site";
 import { renderInlineMath } from "../../../lib/render-math";
 
@@ -196,6 +197,12 @@ const typLabels: Record<string, string> = {
             class="tresc-zadania mt-3 text-[1.0625rem] leading-relaxed"
             set:html={trescHtml}
           />
+          {zadanie.data.hasAudio && arkusz.data.audioUrl && (
+            <AudioPlayer
+              src={arkusz.data.audioUrl}
+              title={`Nagranie do zadania ${zadanie.data.nr} (CKE)`}
+            />
+          )}
           {arkusz.data.pdfArkuszUrl && (
             <p class="mt-3 text-xs text-[var(--color-text-faint)]">
               Źródło: arkusz CKE {arkusz.data.symbol}.

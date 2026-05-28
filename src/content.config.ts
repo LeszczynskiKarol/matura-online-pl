@@ -42,6 +42,8 @@ const arkusze = defineCollection({
     pdfArkuszUrl: z.string().url().optional(), // link na CKE.gov.pl
     pdfKluczUrl: z.string().url().optional(),
     opis: z.string().optional(),
+    audioUrl: z.string().url().optional(),     // MP3 dla zadań słuchania (jezyk angielski)
+    audioTranscriptUrl: z.string().url().optional(), // PDF z transkrypcją na CKE
   }),
 });
 
@@ -72,6 +74,7 @@ const zadania = defineCollection({
     pulapka: z.string().optional(),  // typowy błąd, 1-2 zdania
     wymaganie: z.string().optional(),// "I.7 — interpretacja geometryczna wartości bezwzględnej"
     podobne: z.array(z.string()).default([]), // slugi innych zadań
+    hasAudio: z.boolean().default(false),     // zadanie ze słuchaniem (renderuje player z arkusza)
   }),
 });
 
