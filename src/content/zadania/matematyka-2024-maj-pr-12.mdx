@@ -1,0 +1,218 @@
+---
+arkusz: matematyka-2024-maj-pr
+subject: matematyka
+nr: 12
+punkty: 6
+typ: otwarte-rozszerzone
+topic: równanie kwadratowe z parametrem, wzory Viète'a
+difficulty: 5
+tresc: |
+  Wyznacz wszystkie wartości parametru $m$, dla których równanie $x^2 - (3m + 1) \cdot x + 2m^2 + m + 1 = 0$ ma dwa różne rozwiązania rzeczywiste $x_1, x_2$ spełniające warunek $x_1^3 + x_2^3 + 3 \cdot x_1 \cdot x_2 \cdot (x_1 + x_2 - 3) \leq 3m - 7$.
+odpowiedz: |
+  $m \in (-\infty, -3)$
+pulapka: |
+  Najgorszy błąd: $\Delta \geq 0$ zamiast $\Delta > 0$. Treść mówi „dwa **różne** rozwiązania" → ostry znak. CKE wprost: $\Delta \geq 0$ daje 0 punktów za etap I. Drugi błąd: tożsamość $x_1^3 + x_2^3 = (x_1 + x_2)^3$ (brak członu $-3 x_1 x_2 (x_1 + x_2)$).
+wymaganie: |
+  III.R3 — wzory Viète'a; III.R5 — równania i nierówności z parametrem.
+podobne:
+  - matematyka-2024-maj-pr-7
+  - matematyka-2024-maj-pr-10
+---
+
+## Strategia — zadanie ma TRZY etapy
+
+CKE oczywiście wymaga rozdzielenia rozumowania na trzy fazy:
+
+1. **Etap I (1 pkt)** — warunek „dwa różne rozwiązania rzeczywiste": $\Delta > 0$.
+2. **Etap II (4 pkt)** — przekształcenie warunku $x_1^3 + x_2^3 + 3 x_1 x_2 (x_1 + x_2 - 3) \leq 3m - 7$ do nierówności z jedną niewiadomą $m$, korzystając ze wzorów Viète'a.
+3. **Etap III (1 pkt)** — część wspólna wyników z etapów I i II.
+
+Zacznij od I — to wyznacza dziedzinę dopuszczalnych $m$.
+
+## Etap I — warunek $\Delta > 0$
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wyróżnik trójmianu** $x^2 - (3m+1)x + (2m^2 + m + 1)$:
+
+$$\Delta = \left[-(3m+1)\right]^2 - 4 \cdot 1 \cdot (2m^2 + m + 1)$$
+
+$$\Delta = (3m+1)^2 - 4(2m^2 + m + 1)$$
+
+$$\Delta = 9m^2 + 6m + 1 - 8m^2 - 4m - 4 = m^2 + 2m - 3$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiąż nierówność $m^2 + 2m - 3 > 0$.** Rozkład: $m^2 + 2m - 3 = (m - 1)(m + 3)$.
+
+Iloczyn $(m-1)(m+3) > 0$ gdy oba czynniki są tego samego znaku:
+
+$$m \in (-\infty,\ -3) \cup (1,\ +\infty)$$
+
+</div>
+
+</div>
+
+To pierwszy warunek, jaki $m$ musi spełniać.
+
+## Etap II — przekształcenie nierówności
+
+To **najtrudniejsza część**. Kluczowa tożsamość, którą trzeba zauważyć:
+
+$$x_1^3 + x_2^3 + 3 x_1 x_2 (x_1 + x_2 - 3) = (x_1 + x_2)^3 - 9 x_1 x_2$$
+
+**Dlaczego?** Wzór skróconego mnożenia na sześcian sumy:
+
+$$(x_1 + x_2)^3 = x_1^3 + 3 x_1^2 x_2 + 3 x_1 x_2^2 + x_2^3 = x_1^3 + x_2^3 + 3 x_1 x_2 (x_1 + x_2)$$
+
+Stąd $x_1^3 + x_2^3 = (x_1 + x_2)^3 - 3 x_1 x_2 (x_1 + x_2)$. Podstaw do lewej strony:
+
+$$\underbrace{(x_1 + x_2)^3 - 3 x_1 x_2 (x_1 + x_2)}_{x_1^3 + x_2^3} + 3 x_1 x_2 (x_1 + x_2) - 9 x_1 x_2 = (x_1 + x_2)^3 - 9 x_1 x_2$$
+
+Trzeci wyraz $-3 x_1 x_2 (x_1 + x_2)$ i czwarty $+3 x_1 x_2 (x_1 + x_2)$ znoszą się.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zastosuj wzory Viète'a** dla równania $x^2 - (3m+1)x + (2m^2 + m + 1) = 0$:
+
+$$x_1 + x_2 = 3m + 1, \qquad x_1 \cdot x_2 = 2m^2 + m + 1$$
+
+</div>
+
+<div class="krok">
+
+**Podstaw do nierówności:**
+
+$$(3m + 1)^3 - 9 (2m^2 + m + 1) \leq 3m - 7$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiń $(3m+1)^3$**. Skorzystaj z $(a+b)^3 = a^3 + 3a^2 b + 3a b^2 + b^3$:
+
+$$(3m+1)^3 = 27 m^3 + 27 m^2 + 9m + 1$$
+
+Stąd:
+
+$$27 m^3 + 27 m^2 + 9m + 1 - 18 m^2 - 9 m - 9 \leq 3m - 7$$
+
+$$27 m^3 + 9 m^2 - 8 \leq 3m - 7$$
+
+$$27 m^3 + 9 m^2 - 3m - 1 \leq 0$$
+
+</div>
+
+<div class="krok">
+
+**Rozłóż lewą stronę na czynniki.** Sprawdź, że $(3m + 1)^2$ jest dzielnikiem:
+
+$$27 m^3 + 9 m^2 - 3m - 1 = (3m - 1)(3m + 1)^2$$
+
+**Weryfikacja**: $(3m - 1)(9m^2 + 6m + 1) = 27m^3 + 18m^2 + 3m - 9m^2 - 6m - 1 = 27m^3 + 9m^2 - 3m - 1$ ✓
+
+</div>
+
+<div class="krok">
+
+**Rozwiąż nierówność $(3m - 1)(3m + 1)^2 \leq 0$.**
+
+Czynnik $(3m + 1)^2 \geq 0$ **zawsze** — równość gdy $m = -\tfrac{1}{3}$.
+
+- **Gdy $m = -\tfrac{1}{3}$**: lewa strona = $0 \leq 0$ ✓
+- **Gdy $m \neq -\tfrac{1}{3}$**: $(3m + 1)^2 > 0$, więc znak iloczynu = znak $(3m - 1)$. Nierówność $\leq 0$ daje $3m - 1 \leq 0$, czyli $m \leq \tfrac{1}{3}$.
+
+Łącząc: $m \leq \tfrac{1}{3}$, czyli:
+
+$$m \in \left(-\infty,\ \frac{1}{3}\right]$$
+
+</div>
+
+</div>
+
+## Etap III — część wspólna z etapem I
+
+Mamy dwa warunki:
+
+- Z etapu I: $m \in (-\infty, -3) \cup (1, +\infty)$
+- Z etapu II: $m \in (-\infty, \tfrac{1}{3}]$
+
+Część wspólna:
+
+$$\left[ (-\infty, -3) \cup (1, +\infty) \right] \cap (-\infty, \tfrac{1}{3}]$$
+
+Rozbij na dwie części:
+
+- $(-\infty, -3) \cap (-\infty, \tfrac{1}{3}] = (-\infty, -3)$ (cały lewy fragment mieści się)
+- $(1, +\infty) \cap (-\infty, \tfrac{1}{3}] = \emptyset$ (bo $1 > \tfrac{1}{3}$)
+
+Suma:
+
+$$m \in (-\infty, -3)$$
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> $m \in (-\infty, -3)$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka $\Delta \geq 0$ vs $\Delta > 0$</div>
+
+Treść: „**dwa różne** rozwiązania rzeczywiste". Słowo **różne** wymusza $\Delta > 0$ (ostra nierówność). Gdyby treść mówiła „dwa rozwiązania" bez słowa „różne" — wystarczyłoby $\Delta \geq 0$ (uwzględniając podwójny pierwiastek).
+
+CKE z klucza: **$\Delta \geq 0$ → 0 pkt za etap I**. To kosztuje cały punkt, bo etap I jest binarny: poprawny lub nie.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka tożsamości — $x_1^3 + x_2^3 \neq (x_1 + x_2)^3$</div>
+
+To podstawowy błąd. Prawidłowa tożsamość (kluczowa dla całego zadania):
+
+$$x_1^3 + x_2^3 = (x_1 + x_2)^3 - 3 x_1 x_2 (x_1 + x_2)$$
+
+(można też zapisać jako $x_1^3 + x_2^3 = (x_1 + x_2)(x_1^2 - x_1 x_2 + x_2^2)$, ale wersja z $(x_1 + x_2)^3$ pasuje lepiej, bo pozwala wprost zastosować wzór Viète'a).
+
+CKE z klucza (uwaga 4): jeśli pominiesz człon $-3 x_1 x_2 (x_1 + x_2)$ — maksimum **2 pkt** za etap II (zamiast 4).
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka dodawania założeń (uwaga 6 z CKE)</div>
+
+Jeśli wprowadzisz **dodatkowe założenie**, którego nie wymusza treść (np. „$x_1 > 0$ i $x_2 > 0$", albo „$x_1 \cdot x_2 > 0$") — CKE obniża maks. ocenę do **5 pkt z 6**. Treść mówi tylko „dwa różne rzeczywiste" — nic o znakach.
+
+Nawet jeśli kuszące jest „założyć dodatnie", żeby uprościć analizę przypadków, **NIE rób tego bez powodu**. Pracuj z $\Delta > 0$ i wzorami Viète'a bez dodatkowych założeń.
+</div>
+
+## Punktacja CKE — pełny rozkład
+
+**Etap I (1 pkt)**: poprawne rozwiązanie $\Delta > 0$ → $m \in (-\infty, -3) \cup (1, +\infty)$.
+
+**Etap II (4 pkt)**:
+
+- **1 pkt** — przekształcenie nierówności do postaci $(x_1 + x_2)^3 - 9 x_1 x_2 \leq 3m - 7$ (pozwalające na bezpośrednie zastosowanie wzorów Viète'a).
+- **2 pkt** — zapisanie nierówności z jedną niewiadomą $m$: $(3m+1)^3 - 9(2m^2 + m + 1) \leq 3m - 7$.
+- **3 pkt** — sprowadzenie do postaci iloczynowej $W(m) \leq 0$, np. $(3m-1)(3m+1)^2 \leq 0$.
+- **4 pkt** — rozwiązanie nierówności: $m \in (-\infty, \tfrac{1}{3}]$.
+
+**Etap III (1 pkt)**: część wspólna → $m \in (-\infty, -3)$.
+
+## Klucz — zadania z parametrem na rozszerzonej
+
+Typowy schemat:
+
+1. **Wyróżnik** ($\Delta > 0$ lub $\geq 0$, w zależności od „różne") → pierwszy zakres $m$.
+2. **Symetryczne wyrażenia z $x_1, x_2$** sprowadź do $x_1 + x_2$ i $x_1 x_2$ używając tożsamości:
+   - $x_1^2 + x_2^2 = (x_1 + x_2)^2 - 2 x_1 x_2$
+   - $x_1^3 + x_2^3 = (x_1 + x_2)^3 - 3 x_1 x_2 (x_1 + x_2)$
+   - $\dfrac{1}{x_1} + \dfrac{1}{x_2} = \dfrac{x_1 + x_2}{x_1 x_2}$
+3. **Zastosuj Viète'a** ($x_1 + x_2 = -\tfrac{b}{a}$, $x_1 x_2 = \tfrac{c}{a}$) → drugi zakres.
+4. **Część wspólna** dwóch zakresów.
+
+To **scenariusz** 80% zadań „z parametrem" w PR.

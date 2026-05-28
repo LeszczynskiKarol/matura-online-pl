@@ -1,0 +1,224 @@
+---
+arkusz: matematyka-2024-maj-pr
+subject: matematyka
+nr: 13
+punkty: 6
+typ: otwarte-rozszerzone
+topic: stereometria, optymalizacja, pochodna
+difficulty: 5
+tresc: |
+  Rozważamy wszystkie graniastosłupy prawidłowe trójkątne o objętości $3456$, których krawędź podstawy ma długość nie większą niż $8\sqrt{3}$. Zadanie składa się z dwóch części. **13.1** (2 pkt): wykaż, że pole $P$ powierzchni całkowitej graniastosłupa w zależności od długości $a$ krawędzi podstawy jest określone wzorem $P(a) = \dfrac{a^2 \sqrt{3}}{2} + \dfrac{13824 \sqrt{3}}{a}$. **13.2** (4 pkt): oblicz długość krawędzi podstawy, dla której pole powierzchni jest najmniejsze, oraz tę najmniejszą wartość pola.
+odpowiedz: |
+  $a = 8\sqrt{3}$, $P_{\min} = 96\sqrt{3} + 1728$
+pulapka: |
+  CKE wprost: jeśli rozważasz inną bryłę niż graniastosłup prawidłowy trójkątny (np. czworokątny lub ostrosłup) — 0 punktów za 13.1. W 13.2: jeśli przyjmiesz tylko $a = 8\sqrt{3}$ bez sprawdzenia czy P jest naprawdę najmniejsze (np. nie zbadasz znaku pochodnej) — 0 punktów.
+wymaganie: |
+  X.4 — pole powierzchni graniastosłupów; XIII.R3-R5 — pochodna, monotoniczność, optymalizacja.
+podobne:
+  - matematyka-2024-maj-pr-4
+  - matematyka-2024-maj-pr-7
+---
+
+## Schemat bryły
+
+<div class="not-prose" style="background: var(--color-bg-elevated); border: 1px solid var(--color-border); border-radius: 0.5rem; padding: 1rem; margin: 1.5rem 0;">
+
+<svg viewBox="0 0 380 320" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; max-width: 380px; display: block; margin: 0 auto;" aria-label="Graniastosłup prawidłowy trójkątny o krawędzi podstawy a i wysokości H">
+  <g stroke="var(--color-text)" stroke-width="1.5" fill="none">
+    <polygon points="70,260 270,260 170,210" stroke-linejoin="round" />
+    <polygon points="70,80 270,80 170,30" stroke-linejoin="round" />
+    <line x1="70" y1="260" x2="70" y2="80" />
+    <line x1="270" y1="260" x2="270" y2="80" />
+    <line x1="170" y1="210" x2="170" y2="30" stroke-dasharray="4 3" opacity="0.6" />
+  </g>
+  <g stroke="var(--color-accent)" stroke-width="2" fill="none">
+    <line x1="70" y1="260" x2="270" y2="260" />
+  </g>
+  <text x="170" y="280" fill="var(--color-accent)" font-family="var(--font-serif)" font-style="italic" font-size="16" text-anchor="middle">a</text>
+  <g stroke="var(--color-accent-2)" stroke-width="2" fill="none">
+    <line x1="290" y1="80" x2="290" y2="260" />
+    <line x1="285" y1="80" x2="295" y2="80" />
+    <line x1="285" y1="260" x2="295" y2="260" />
+  </g>
+  <text x="310" y="175" fill="var(--color-accent-2)" font-family="var(--font-serif)" font-style="italic" font-size="16">H</text>
+  <text x="50" y="265" fill="var(--color-text-muted)" font-family="var(--font-mono)" font-size="11">podstawa</text>
+  <text x="280" y="40" fill="var(--color-text-muted)" font-family="var(--font-mono)" font-size="11" text-anchor="end">górna ściana</text>
+</svg>
+
+</div>
+
+**Graniastosłup prawidłowy trójkątny** to bryła, której podstawy są **trójkątami równobocznymi** o boku $a$, a krawędzie boczne (wysokość $H$) są prostopadłe do podstaw. Składa się z:
+
+- **2 trójkątnych podstaw** (każda o polu $\tfrac{a^2 \sqrt{3}}{4}$)
+- **3 prostokątnych ścian bocznych** (każda o wymiarach $a \times H$)
+
+---
+
+## 13.1 — wykaż wzór $P(a)$  *(2 pkt)*
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wyraź wysokość $H$ przez $a$** z warunku objętości.
+
+Objętość graniastosłupa = pole podstawy × wysokość:
+
+$$V = \frac{a^2 \sqrt{3}}{4} \cdot H = 3456$$
+
+Stąd:
+
+$$H = \frac{4 \cdot 3456}{a^2 \sqrt{3}} = \frac{13824}{a^2 \sqrt{3}}$$
+
+Wymnóż licznik i mianownik przez $\sqrt{3}$, żeby pozbyć się pierwiastka z mianownika:
+
+$$H = \frac{13824 \sqrt{3}}{3 a^2} = \frac{4608 \sqrt{3}}{a^2}$$
+
+</div>
+
+<div class="krok">
+
+**Wzór na pole powierzchni całkowitej** graniastosłupa:
+
+$$P = 2 \cdot P_{\text{podstawy}} + 3 \cdot P_{\text{ściany bocznej}} = 2 \cdot \frac{a^2 \sqrt{3}}{4} + 3 \cdot a \cdot H$$
+
+$$P = \frac{a^2 \sqrt{3}}{2} + 3 a H$$
+
+</div>
+
+<div class="krok">
+
+**Podstaw $H$ do wzoru:**
+
+$$P(a) = \frac{a^2 \sqrt{3}}{2} + 3 a \cdot \frac{4608 \sqrt{3}}{a^2} = \frac{a^2 \sqrt{3}}{2} + \frac{13824 \sqrt{3}}{a}$$
+
+**To należało wykazać.** $\blacksquare$
+
+</div>
+
+</div>
+
+---
+
+## 13.2 — znajdź minimum $P(a)$ na $(0, 8\sqrt{3}\,]$  *(4 pkt)*
+
+Treść ogranicza dziedzinę: $0 < a \leq 8\sqrt{3}$.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Oblicz pochodną $P'(a)$.** Wzór $(\tfrac{c}{a})' = -\tfrac{c}{a^2}$ dla stałego $c$, więc:
+
+$$P'(a) = \left(\frac{a^2 \sqrt{3}}{2}\right)' + \left(\frac{13824 \sqrt{3}}{a}\right)' = a \sqrt{3} - \frac{13824 \sqrt{3}}{a^2}$$
+
+</div>
+
+<div class="krok">
+
+**Wyznacz miejsca zerowe pochodnej.** Rozwiąż $P'(a) = 0$ dla $a > 0$:
+
+$$a \sqrt{3} - \frac{13824 \sqrt{3}}{a^2} = 0$$
+
+Pomnóż przez $\dfrac{a^2}{\sqrt{3}}$:
+
+$$a^3 - 13824 = 0 \quad\Rightarrow\quad a^3 = 13824 \quad\Rightarrow\quad a = \sqrt[3]{13824} = 24$$
+
+(bo $24^3 = 13824$).
+
+</div>
+
+<div class="krok">
+
+**Sprawdź, czy $a = 24$ leży w dziedzinie $(0, 8\sqrt{3}\,]$.**
+
+$8\sqrt{3} \approx 8 \cdot 1{,}732 \approx 13{,}86$. Zatem $24 > 8\sqrt{3}$ → **$a = 24$ NIE należy** do dziedziny.
+
+</div>
+
+<div class="krok">
+
+**Zbadaj znak pochodnej w dziedzinie.** Dla $a \in (0, 8\sqrt{3}\,]$ mamy $a < 24$, czyli $a^3 < 13824$, czyli:
+
+$$a^3 - 13824 < 0 \quad\Rightarrow\quad P'(a) < 0$$
+
+(po pomnożeniu przez $\tfrac{\sqrt{3}}{a^2}$, co jest dodatnie). Pochodna jest **ujemna** w całej dziedzinie, więc funkcja $P$ jest **malejąca** na $(0, 8\sqrt{3}\,]$.
+
+</div>
+
+<div class="krok">
+
+**Wniosek**: funkcja malejąca na przedziale domkniętym z prawej strony przyjmuje wartość **najmniejszą w prawej granicy**, czyli dla:
+
+$$a = 8\sqrt{3}$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz $P(8\sqrt{3})$.**
+
+$$P(8\sqrt{3}) = \frac{(8\sqrt{3})^2 \cdot \sqrt{3}}{2} + \frac{13824 \sqrt{3}}{8\sqrt{3}}$$
+
+Pierwszy człon: $(8\sqrt{3})^2 = 64 \cdot 3 = 192$, więc $\dfrac{192 \sqrt{3}}{2} = 96\sqrt{3}$.
+
+Drugi człon: $\dfrac{13824 \sqrt{3}}{8 \sqrt{3}} = \dfrac{13824}{8} = 1728$.
+
+$$P_{\min} = 96\sqrt{3} + 1728$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź 13.2:</strong> $a = 8\sqrt{3}$, najmniejsze pole $P_{\min} = 96\sqrt{3} + 1728 \approx 1894{,}3$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — pochopne $a = 24$ (uwaga z klucza CKE)</div>
+
+Typowy błąd: znaleźć $a = 24$ jako miejsce zerowe pochodnej i **bez sprawdzenia dziedziny** wpisać to jako odpowiedź. Treść mówi $a \leq 8\sqrt{3} \approx 13{,}86$, a $24$ jest **poza** tym zakresem.
+
+CKE z klucza (uwaga 3): „jeżeli zdający otrzyma miejsce zerowe pochodnej, które należy do przedziału $(0, 8\sqrt{3}\,]$, to może otrzymać co najwyżej **1 punkt**" — czyli akceptują tylko jeśli rozumowanie jest poprawne, ale wpisanie $a = 24$ bez analizy dziedziny daje **maksymalnie 1 pkt** zamiast 4.
+
+Klucz: zawsze przy zadaniach optymalizacyjnych z **ograniczeniem dziedziny** sprawdź najpierw, czy ekstremum jest w środku przedziału, czy na jego granicy.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — brak uzasadnienia minimalności (uwaga 5)</div>
+
+Jeśli zapiszesz „$a = 8\sqrt{3}$ daje $P_{\min}$" bez **uzasadnienia** (np. badania znaku pochodnej, wykresu pochodnej, tabeli monotoniczności) — CKE traktuje to jako brakujące rozumowanie. Konkretnie z klucza:
+
+> „Jeżeli zdający błędnie uzasadnia, że dla $a = 8\sqrt{3}$ funkcja $P$ osiąga wartość najmniejszą, to nie otrzymuje punktu za obliczenie $P(8\sqrt{3})$."
+
+Bezpieczna procedura: oblicz $P'(a)$ → sprawdź jej znak w dziedzinie → wykaż, że $P$ jest malejąca → wniosek o ekstremum w prawej granicy.
+</div>
+
+## Punktacja CKE
+
+**13.1 (2 pkt)**:
+
+- **1 pkt** — wyznaczenie $H = \dfrac{13824}{a^2 \sqrt{3}}$ (lub równoważnej postaci).
+- **2 pkt** — pełne wyprowadzenie wzoru $P(a) = \dfrac{a^2 \sqrt{3}}{2} + \dfrac{13824 \sqrt{3}}{a}$.
+
+**13.2 (4 pkt)**:
+
+- **1 pkt** — wyznaczenie pochodnej $P'(a) = a\sqrt{3} - \dfrac{13824 \sqrt{3}}{a^2}$.
+- **2 pkt** — poprawne rozwiązanie $P'(a) = 0$ → $a = 24$ (i stwierdzenie, że to **nie** należy do dziedziny).
+- **3 pkt** — uzasadnienie, że funkcja $P$ jest malejąca na $(0, 8\sqrt{3}\,]$ → najmniejsza wartość w $a = 8\sqrt{3}$, ALBO obliczenie $P(8\sqrt{3}) = 96\sqrt{3} + 1728$.
+- **4 pkt** — pełne rozumowanie: monotoniczność + obliczenie wartości minimum.
+
+## Klucz — optymalizacja na zamkniętym przedziale
+
+Procedura dla zadań „znajdź minimum $P(a)$ na $[a_1, a_2]$" (lub półzamkniętym):
+
+1. **Pochodna** $P'(a)$.
+2. **Miejsca zerowe** $P'(a) = 0$ w $\mathbb{R}$.
+3. **Wybierz miejsca w dziedzinie** — jeśli któreś jest poza, **odrzucasz** je.
+4. **Zbadaj znak pochodnej** w dziedzinie — jeśli stały (jak tutaj), funkcja jest monotoniczna → ekstremum na końcu.
+5. **Jeśli pochodna zmienia znak** w dziedzinie, miejsce zmiany to kandydat na ekstremum lokalne.
+6. **Porównaj wartości** $P$ w kandydatach i na końcach przedziału — wybierz najmniejszą.
+
+Najczęstsze ścieżki: a) ekstremum **w środku** (gdy pochodna ma miejsce zerowe wewnątrz dziedziny), b) ekstremum **na końcu** (gdy pochodna nie zeruje się wewnątrz). To zadanie należy do typu b).
