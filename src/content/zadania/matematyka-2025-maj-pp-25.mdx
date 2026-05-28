@@ -1,0 +1,124 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 25
+punkty: 3
+typ: otwarte-krotkie
+topic: stereometria, stożek, objętość
+difficulty: 4
+tresc: |
+  Tworząca stożka ma długość $8$. Kąt rozwarcia tego stożka ma miarę $120°$. Oblicz objętość tego stożka.
+odpowiedz: |
+  $V = 64\pi$
+pulapka: |
+  Najczęstszy błąd to pomyłka co to jest "kąt rozwarcia". To kąt MIĘDZY DWIEMA TWORZĄCYMI w przekroju osiowym (płaszczyzna przez wierzchołek prostopadła do podstawy). Połowa tego kąta to kąt między tworzącą a osią stożka.
+wymaganie: |
+  X.4 — obliczanie objętości stożka.
+podobne:
+  - matematyka-2024-maj-pp-25
+  - matematyka-2025-maj-pp-26
+---
+
+## Klucz — co to "kąt rozwarcia stożka"?
+
+**Kąt rozwarcia** stożka to kąt przy wierzchołku w **przekroju osiowym** — czyli kąt **między dwiema przeciwległymi tworzącymi** widziany od wierzchołka.
+
+Jeśli kąt rozwarcia to $2\alpha$, to **połowa** tego kąta to kąt między tworzącą a **osią** stożka (czyli wysokością):
+
+$$\alpha = \frac{\text{kąt rozwarcia}}{2} = \frac{120°}{2} = 60°$$
+
+Z trójkąta prostokątnego utworzonego przez:
+
+- **oś stożka** (wysokość $h$) — pionowa
+- **promień podstawy** ($r$) — poziomy
+- **tworzącą** ($l = 8$) — przeciwprostokątna
+
+mamy:
+
+$$\sin \alpha = \frac{r}{l}, \qquad \cos \alpha = \frac{h}{l}$$
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Oblicz promień podstawy.** $\alpha = 60°$, $l = 8$.
+
+$$r = l \sin \alpha = 8 \sin 60° = 8 \cdot \frac{\sqrt{3}}{2} = 4\sqrt{3}$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz wysokość.**
+
+$$h = l \cos \alpha = 8 \cos 60° = 8 \cdot \frac{1}{2} = 4$$
+
+</div>
+
+<div class="krok">
+
+**Sprawdź Pitagorasem.** $r^2 + h^2 = 48 + 16 = 64 = 8^2 = l^2$ ✓
+
+</div>
+
+<div class="krok">
+
+**Zastosuj wzór na objętość stożka:**
+
+$$V = \frac{1}{3} \pi r^2 h = \frac{1}{3} \pi \cdot 48 \cdot 4 = \frac{192 \pi}{3} = 64\pi$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> $V = 64\pi$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — kąt rozwarcia vs kąt między tworzącą a wysokością</div>
+
+Najczęstszy błąd: użycie kąta $120°$ **bezpośrednio** zamiast jego połowy. Wtedy obliczenia wyjdą:
+
+- $r = 8 \sin 120° = 8 \cdot \tfrac{\sqrt{3}}{2} = 4\sqrt{3}$ ✓ (przypadkowo poprawne)
+- $h = 8 \cos 120° = 8 \cdot (-\tfrac{1}{2}) = -4$ ✗ (ujemna wysokość — sygnał błędu)
+
+Jeśli **wysokość wychodzi ujemna**, to znak, że używasz złego kąta. Wysokość jest **zawsze dodatnia**, więc $\cos$ kąta między tworzącą a osią musi być dodatni — czyli kąt jest **ostry** (mniej niż $90°$). Tu $\alpha = 60°$, nie $120°$.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Klucz pamięciowy — przekrój osiowy stożka</div>
+
+Przekrój osiowy stożka (przez oś) to **trójkąt równoramienny**:
+
+- ramiona = dwie tworzące (długość $l$)
+- podstawa = średnica podstawy stożka ($2r$)
+- wysokość trójkąta = wysokość stożka ($h$)
+- kąt przy wierzchołku trójkąta = kąt rozwarcia stożka
+
+Jeśli kąt rozwarcia to $120°$, to przekrój osiowy to trójkąt równoramienny z kątem $120°$ przy wierzchołku. Kąty przy podstawie to $(180° - 120°)/2 = 30°$.
+
+Wtedy w trójkącie prostokątnym (połowa przekroju): kąt $60°$ między tworzącą a osią, kąt $30°$ między tworzącą a podstawą. Sinus i cosinus z tabeli kątów.
+</div>
+
+## Punktacja CKE (typowa dla zadań na 3 pkt z obliczeniami)
+
+- **1 pkt** — wyznaczenie kąta między tworzącą a osią (lub między tworzącą a podstawą) oraz/lub jednego z parametrów ($r$ lub $h$).
+- **2 pkt** — wyznaczenie obu $r$ i $h$.
+- **3 pkt** — pełna metoda + wynik $V = 64\pi$.
+
+## Klucz uniwersalny — stożek
+
+Każde zadanie o stożku ma trzy podstawowe wielkości:
+
+- $l$ — tworząca
+- $r$ — promień podstawy
+- $h$ — wysokość
+
+Związek Pitagorasem: $l^2 = r^2 + h^2$. Wystarczy znać **dwie**, żeby obliczyć trzecią.
+
+Kąt rozwarcia $2\alpha$ daje dodatkową relację: $\sin \alpha = r/l$, $\cos \alpha = h/l$. Jeśli wiesz tylko $l$ i kąt, dostajesz wszystko.
+
+Wzory: $V = \tfrac{1}{3}\pi r^2 h$, pole boczne $P_b = \pi r l$, pole całkowite $P = \pi r (r + l)$.

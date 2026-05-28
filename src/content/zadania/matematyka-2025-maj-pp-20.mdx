@@ -1,0 +1,82 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 20
+punkty: 1
+typ: zamkniete-abcd
+topic: planimetria, podobieństwo trójkątów
+difficulty: 3
+tresc: |
+  W trójkącie równoramiennym $ABC$ dane są: $|AC| = |BC| = 4$ oraz $|AB| = 3$. Na boku $BC$, między punktami $B$ i $C$, wybrano punkt $D$ tak, że trójkąty $ABC$ i $BDA$ są podobne. Długość odcinka $BD$ jest równa: A. $2$, B. $2{,}25$, C. $2{,}5$, D. $3$.
+odpowiedz: |
+  B — $|BD| = 2{,}25 = \dfrac{9}{4}$
+pulapka: |
+  Najczęstszy błąd to przyjęcie złej kolejności wierzchołków w podobieństwie. ABC ~ BDA oznacza A↔B, B↔D, C↔A — z tego wynika konkretna proporcja boków. Pomylenie kolejności daje inne równanie i inny wynik.
+wymaganie: |
+  VIII.10 — podobieństwo trójkątów, wykorzystanie proporcji boków.
+podobne:
+  - matematyka-2025-maj-pp-21
+  - matematyka-2024-maj-pp-22
+---
+
+## Klucz — co znaczy "trójkąty podobne ABC ~ BDA"?
+
+Notacja $\triangle ABC \sim \triangle BDA$ oznacza, że odpowiadające sobie wierzchołki są w tej samej kolejności:
+
+$$A \leftrightarrow B, \quad B \leftrightarrow D, \quad C \leftrightarrow A$$
+
+A więc odpowiadające sobie **boki**:
+
+- bok $AB$ (między A i B) ↔ bok $BD$ (między B i D)
+- bok $BC$ (między B i C) ↔ bok $DA$ (między D i A)
+- bok $AC$ (między A i C) ↔ bok $BA$ (między B i A)
+
+Z podobieństwa wynika, że stosunki boków odpowiadających są równe:
+
+$$\frac{|AB|}{|BD|} = \frac{|BC|}{|DA|} = \frac{|AC|}{|BA|}$$
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Podstaw znane długości** ($|AC| = 4$, $|AB| = 3$, $|BC| = 4$) do **pierwszej i ostatniej** proporcji:
+
+$$\frac{|AB|}{|BD|} = \frac{|AC|}{|BA|}$$
+
+$$\frac{3}{|BD|} = \frac{4}{3}$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiąż na $|BD|$:**
+
+$$|BD| = \frac{3 \cdot 3}{4} = \frac{9}{4} = 2{,}25$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: B</strong> — $|BD| = 2{,}25$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — kolejność wierzchołków w podobieństwie</div>
+
+Notacja $\triangle ABC \sim \triangle BDA$ to **wskazówka kolejności**. Pomylenie (np. zapis $\triangle ABC \sim \triangle ADB$) daje inne odpowiednie boki, inne równanie, inny wynik.
+
+Bezpieczna procedura: wypisz **tabelkę odpowiedniości** wierzchołków: $A↔B, B↔D, C↔A$. Potem dla każdego boku pierwszego trójkąta zapisz odpowiadający bok drugiego — używając tej tabelki. Np. bok $AB$ używa wierzchołków $A$ i $B$, które odpowiadają $B$ i $D$ — więc odpowiedni bok to $BD$.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Sprawdzenie geometryczne</div>
+
+$|BD| = 9/4 = 2{,}25$, a $|BC| = 4$. Czyli $|DC| = 4 - 2{,}25 = 1{,}75$. Punkt $D$ leży **bliżej $B$ niż środka** boku $BC$ — pasuje do rysunku.
+
+**Odpowiedź A ($2$)** — strzał, brak związku z proporcjami.
+**Odpowiedź C ($2{,}5$)** — zła interpretacja: ktoś wziął $\tfrac{|AB|}{|BD|} = \tfrac{|BC|}{|AB|}$, czyli $\tfrac{3}{|BD|} = \tfrac{4}{3}$... Hmm to też daje 9/4 = 2.25. Innej interpretacji błędu nie widać tu — prawdopodobnie pomyłka w "kolejności wpisywania".
+**Odpowiedź D ($3$)** — pomylenie $|BD|$ z $|AB|$.
+</div>

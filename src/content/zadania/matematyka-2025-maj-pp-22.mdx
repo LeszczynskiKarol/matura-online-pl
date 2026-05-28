@@ -1,0 +1,74 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 22
+punkty: 1
+typ: zamkniete-abcd
+topic: geometria analityczna, kwadrat, odległość punktów
+difficulty: 2
+tresc: |
+  W kartezjańskim układzie współrzędnych $(x, y)$ dany jest kwadrat $ABCD$, w którym $A = (4, -1)$. Przekątne tego kwadratu przecinają się w punkcie $S = (1, 3)$. Przekątna kwadratu $ABCD$ ma długość: A. $5$, B. $7$, C. $10$, D. $14$.
+odpowiedz: |
+  C — przekątna ma długość $10$
+pulapka: |
+  Najczęstszy błąd to obliczenie |AS| i wybranie tej wartości jako odpowiedzi. |AS| to POŁOWA przekątnej (bo S to środek przekątnych), więc cała przekątna = 2·|AS|.
+wymaganie: |
+  IX.3 — obliczanie odległości dwóch punktów w układzie współrzędnych; własności kwadratu.
+podobne:
+  - matematyka-2024-maj-pp-24
+  - matematyka-2025-maj-pp-23
+---
+
+## Klucz — własność przekątnych kwadratu
+
+W kwadracie **przekątne przecinają się w punkcie środkowym** — czyli $S$ jest środkiem obu przekątnych. W szczególności $S$ jest **środkiem przekątnej $AC$**, co oznacza:
+
+$$|AS| = |SC| = \frac{1}{2} |AC|$$
+
+Inaczej: cała przekątna $|AC| = 2 \cdot |AS|$.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Oblicz $|AS|$ z wzoru na odległość punktów** $A = (4, -1)$, $S = (1, 3)$:
+
+$$|AS| = \sqrt{(4 - 1)^2 + (-1 - 3)^2} = \sqrt{9 + 16} = \sqrt{25} = 5$$
+
+</div>
+
+<div class="krok">
+
+**Przekątna = 2 × $|AS|$:**
+
+$$|AC| = 2 \cdot 5 = 10$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: C</strong> — przekątna ma długość $10$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd — pomylenie półprzekątnej z przekątną</div>
+
+**Odpowiedź A ($5$)** wybiera ten, kto obliczył $|AS|$ i się zatrzymał. To **połowa** przekątnej. Treść pyta o **całą** przekątną.
+
+Sygnał: każde zadanie z **przekątnymi i ich punktem przecięcia** wymaga pamiętania o tej własności — punkt przecięcia dzieli przekątną na **dwie równe** części.
+
+**Odpowiedzi B i D** — strzały arytmetyczne.
+</div>
+
+## Klucz uniwersalny
+
+Każde zadanie „kwadrat / prostokąt / równoległobok + punkt przecięcia przekątnych" sprowadza się do:
+
+1. **Punkt przecięcia $S$ jest środkiem każdej z przekątnych** (własność równoległoboku).
+2. Jeśli znasz $A$ i $S$, wyznaczasz $C$ ze wzoru na środek odcinka: $C = 2S - A$.
+3. Długość przekątnej = $2 \cdot |AS|$.
+
+Tu nie musimy nawet znajdować pozostałych wierzchołków $B, C, D$ — wystarcza $|AS|$.

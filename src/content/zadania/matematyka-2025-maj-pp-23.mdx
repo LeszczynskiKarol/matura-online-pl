@@ -1,0 +1,90 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 23
+punkty: 1
+typ: zamkniete-abcd
+topic: geometria analityczna, proste równoległe
+difficulty: 2
+tresc: |
+  W kartezjańskim układzie współrzędnych proste $k$ oraz $l$ są określone równaniami $k: y = (m - 2) x + 5$ oraz $l: y = -4 x + (m + 3)$. Proste $k$ oraz $l$ są równoległe, gdy $m$ jest równe: A. $(-4)$, B. $(-2)$, C. $2$, D. $5$.
+odpowiedz: |
+  B — $m = -2$
+pulapka: |
+  Najczęstszy błąd to pomylenie warunku równoległości z warunkiem prostopadłości. Równoległe → współczynniki kierunkowe RÓWNE. Prostopadłe → iloczyn współczynników = -1.
+wymaganie: |
+  IX.2 — równanie prostej w postaci kierunkowej; równoległość prostych.
+podobne:
+  - matematyka-2024-maj-pp-23
+  - matematyka-2024-maj-pp-11
+---
+
+## Klucz teoretyczny
+
+Dwie proste $y = a_1 x + b_1$ i $y = a_2 x + b_2$ są **równoległe** wtedy i tylko wtedy, gdy:
+
+$$a_1 = a_2 \quad\text{oraz}\quad b_1 \neq b_2$$
+
+(równe współczynniki kierunkowe, **różne** wyrazy wolne — gdyby były równe, proste **pokrywałyby się**, nie były „równoległe" w ścisłym sensie).
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zidentyfikuj współczynniki kierunkowe.**
+
+- $k$: $a_1 = m - 2$
+- $l$: $a_2 = -4$
+
+</div>
+
+<div class="krok">
+
+**Zastosuj warunek równoległości** $a_1 = a_2$:
+
+$$m - 2 = -4 \quad\Rightarrow\quad m = -2$$
+
+</div>
+
+<div class="krok">
+
+**Sprawdź, czy wyrazy wolne są różne** dla $m = -2$.
+
+- $k$: $b_1 = 5$
+- $l$: $b_2 = m + 3 = -2 + 3 = 1$
+
+$5 \neq 1$ ✓ — proste są różne, więc rzeczywiście równoległe (a nie pokrywające się).
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: B</strong> — $m = -2$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd — pomylenie z prostopadłością</div>
+
+**Odpowiedź A ($-4$)** wybiera ten, kto pomylił warunki:
+
+- równoległe: $a_1 = a_2$ (suma RÓWNYCH współczynników)
+- prostopadłe: $a_1 \cdot a_2 = -1$ (iloczyn = $-1$)
+
+Gdyby zadanie pytało o prostopadłość, mielibyśmy $(m-2) \cdot (-4) = -1 \Rightarrow m - 2 = \tfrac{1}{4} \Rightarrow m = 2{,}25$. Tu nie ma takiej odpowiedzi, ale gdyby treść mówiła „prostopadłe", to byłaby ścieżka.
+
+**Odpowiedź C ($2$)** — błędna interpretacja: ktoś rozwiązał $m - 2 = 0$ (skoro $-4$ to wyraz wolny, a nie kierunkowy).
+
+**Odpowiedź D ($5$)** — błąd: ktoś podstawił do równania zadania, ale w sposób niezwiązany z równoległością.
+</div>
+
+## Sprawdzenie graficzne
+
+Dla $m = -2$:
+
+- $k$: $y = -4x + 5$ (przecina $OY$ w $(0, 5)$, opadająca)
+- $l$: $y = -4x + 1$ (przecina $OY$ w $(0, 1)$, opadająca)
+
+Obie mają to samo nachylenie ($-4$), różne wysokości startowe — geometrycznie to dwie proste **równoległe**, jedna 4 jednostki nad drugą. Idealnie pasuje.

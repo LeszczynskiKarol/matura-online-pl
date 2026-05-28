@@ -1,0 +1,91 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 24
+punkty: 1
+typ: zamkniete-abcd
+topic: geometria analityczna, równanie okręgu
+difficulty: 2
+tresc: |
+  W kartezjańskim układzie współrzędnych $(x, y)$ punkt $P = (0, 0)$ leży na okręgu $\mathcal{O}$ o środku w punkcie $S = (2, 4)$. Okrąg $\mathcal{O}$ jest określony równaniem: A. $(x-2)^2 + (y-4)^2 = 2\sqrt{5}$, B. $(x-2)^2 + (y-4)^2 = 20$, C. $(x+2)^2 + (y+4)^2 = 2\sqrt{5}$, D. $(x+2)^2 + (y+4)^2 = 20$.
+odpowiedz: |
+  B — $(x-2)^2 + (y-4)^2 = 20$
+pulapka: |
+  Dwa typowe błędy: (1) używanie $2\sqrt{5}$ (czyli promienia) zamiast $20$ (czyli $r^2$) po prawej stronie. (2) Pomylenie znaków: środek $(a, b)$ w równaniu daje $(x-a)^2 + (y-b)^2$, MINUS, nie plus.
+wymaganie: |
+  IX.6 — równanie okręgu w postaci kanonicznej.
+podobne:
+  - matematyka-2025-maj-pp-22
+  - matematyka-2024-maj-pr-11
+---
+
+## Klucz — równanie okręgu
+
+Okrąg o środku $S = (a, b)$ i promieniu $r$ ma równanie:
+
+$$(x - a)^2 + (y - b)^2 = r^2$$
+
+Trzy ważne fakty:
+
+- **MINUS** w nawiasach (znak przeciwny do znaku współrzędnych środka)
+- po prawej stronie **$r^2$** (kwadrat promienia), nie $r$
+- jeśli środek to $(0, 0)$, równanie upraszcza się do $x^2 + y^2 = r^2$
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Oblicz promień $r$** z faktu, że $P = (0, 0)$ leży na okręgu (czyli $|PS| = r$):
+
+$$r = |PS| = \sqrt{(0 - 2)^2 + (0 - 4)^2} = \sqrt{4 + 16} = \sqrt{20}$$
+
+</div>
+
+<div class="krok">
+
+**Zapisz równanie z $S = (2, 4)$ i $r^2 = 20$:**
+
+$$(x - 2)^2 + (y - 4)^2 = 20$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: B</strong> — $(x - 2)^2 + (y - 4)^2 = 20$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — $r$ czy $r^2$ po prawej?</div>
+
+**Odpowiedź A ($\ldots = 2\sqrt{5}$)** to klasyczny błąd „promień zamiast kwadratu promienia". W równaniu okręgu po prawej stronie jest **$r^2$**, nie $r$. Tutaj $r = \sqrt{20} = 2\sqrt{5}$, ale $r^2 = 20$.
+
+Sygnał ostrzegawczy: jeśli w odpowiedziach widzisz **i $r$**, **i $r^2$** (np. $2\sqrt{5}$ i $20$), to test, który zauważa różnicę. Wybierz tę z kwadratem.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — znak w nawiasach</div>
+
+**Odpowiedzi C i D** mają $(x + 2)^2 + (y + 4)^2$ — to byłoby równanie okręgu o środku $(-2, -4)$, NIE $(2, 4)$.
+
+Pamiętaj: w równaniu **odejmujemy** współrzędne środka:
+
+- środek $(2, 4)$ → $(x - 2)^2 + (y - 4)^2$
+- środek $(-2, -4)$ → $(x - (-2))^2 + (y - (-4))^2 = (x + 2)^2 + (y + 4)^2$
+
+Sprawdzenie liczbowe: podstaw $P = (0, 0)$ do każdej odpowiedzi i sprawdź, czy spełnia.
+
+- A: $(0-2)^2 + (0-4)^2 = 4 + 16 = 20$. Czy $20 = 2\sqrt{5}$? **NIE** ($2\sqrt{5} \approx 4{,}47$).
+- B: $20 = 20$. ✓
+- C: $(0+2)^2 + (0+4)^2 = 4 + 16 = 20 \neq 2\sqrt{5}$. **NIE**.
+- D: $20 = 20$. ✓
+
+Tu mamy dwie odpowiedzi pasujące ($P$ leży na obu okręgach z $r^2 = 20$). Różnią się jednak **środkiem**:
+
+- B: środek $(2, 4)$ ✓ (zgodnie z treścią)
+- D: środek $(-2, -4)$ ✗ (nie pasuje do treści)
+
+Więc B.
+</div>
