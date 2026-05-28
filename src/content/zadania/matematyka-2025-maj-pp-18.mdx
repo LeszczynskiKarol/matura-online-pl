@@ -1,0 +1,130 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 18
+punkty: 2
+typ: zamkniete-abcd
+topic: trygonometria w trójkącie prostokątnym, środkowa
+difficulty: 3
+tresc: |
+  Dany jest trójkąt prostokątny $ABC$, w którym $BC$ jest przeciwprostokątną, przyprostokątna $AB$ ma długość $6$, a środkowa $CD$ (z wierzchołka $C$ do środka $AB$) ma długość $5$. Kąt $ADC$ oznaczamy $\alpha$, kąt $ABC$ — $\beta$. Zadanie ma dwie części. **18.1** (1 pkt): $\tan \alpha$ — wybierz A. $\tfrac{2}{3}$, B. $\tfrac{3}{4}$, C. $\tfrac{4}{5}$, D. $\tfrac{4}{3}$. **18.2** (1 pkt): $\sin \beta$ — wybierz A. $\tfrac{2}{\sqrt{13}}$, B. $\tfrac{3}{\sqrt{13}}$, C. $\tfrac{5}{2\sqrt{13}}$, D. $\tfrac{4}{5}$.
+odpowiedz: |
+  18.1: D — $\tan \alpha = \dfrac{4}{3}$ • 18.2: A — $\sin \beta = \dfrac{2}{\sqrt{13}}$
+pulapka: |
+  Klucz 18.1: zrozumieć, że "środkowa CD" idzie z C do środka AB (a nie odwrotnie). D leży na AB, AD = 3. Klucz 18.2: nie pomylić, który bok jest naprzeciwko kąta β — przeciwprostokątna BC zawiera B, więc naprzeciwko β leży kąt prosty, a przyprostokątna naprzeciw β to AC.
+wymaganie: |
+  VII.1 — definicje funkcji trygonometrycznych w trójkącie prostokątnym; VIII.6 — środkowa trójkąta.
+podobne:
+  - matematyka-2025-maj-pp-17
+  - matematyka-2025-maj-pp-19
+---
+
+## Konfiguracja
+
+Trójkąt prostokątny $ABC$:
+
+- kąt prosty przy wierzchołku $A$
+- $BC$ — przeciwprostokątna (naprzeciw kąta prostego)
+- $AB = 6$ — jedna z przyprostokątnych
+- $AC$ — druga przyprostokątna (do obliczenia)
+- $D$ — **środek odcinka $AB$** (bo $CD$ to środkowa z $C$ do $AB$), więc $AD = DB = 3$
+- $CD = 5$ — długość środkowej
+
+---
+
+## 18.1 — $\tan \alpha$, gdzie $\alpha = \angle ADC$  *(1 pkt)*
+
+Patrzymy na trójkąt $ACD$:
+
+- kąt prosty przy $A$ (bo $A$ to wierzchołek kąta prostego $\triangle ABC$)
+- $AD = 3$ (połowa $AB$)
+- $CD = 5$ (przeciwprostokątna trójkąta $ACD$)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Z twierdzenia Pitagorasa** w $\triangle ACD$ znajdź $AC$:
+
+$$AC^2 + AD^2 = CD^2$$
+
+$$AC^2 + 9 = 25 \quad\Rightarrow\quad AC^2 = 16 \quad\Rightarrow\quad AC = 4$$
+
+</div>
+
+<div class="krok">
+
+**Tangens kąta $\alpha$ przy wierzchołku $D$ w $\triangle ACD$.** W trójkącie prostokątnym:
+
+$$\tan \alpha = \frac{\text{przyprostokątna naprzeciw}}{\text{przyprostokątna przyległa}} = \frac{AC}{AD} = \frac{4}{3}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź 18.1: D</strong> — $\tan \alpha = \dfrac{4}{3}$.
+  </div>
+</div>
+
+---
+
+## 18.2 — $\sin \beta$, gdzie $\beta = \angle ABC$  *(1 pkt)*
+
+Teraz patrzymy na cały trójkąt $ABC$:
+
+- kąt prosty przy $A$
+- $AB = 6$, $AC = 4$ (wyznaczone wyżej)
+- $BC$ = przeciwprostokątna do obliczenia
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Oblicz $BC$ z twierdzenia Pitagorasa** w $\triangle ABC$:
+
+$$BC^2 = AB^2 + AC^2 = 36 + 16 = 52$$
+
+$$BC = \sqrt{52} = 2\sqrt{13}$$
+
+</div>
+
+<div class="krok">
+
+**Sinus kąta $\beta$ przy wierzchołku $B$.** Naprzeciw $\beta$ leży bok $AC$ (przyprostokątna „daleka" od wierzchołka $B$):
+
+$$\sin \beta = \frac{\text{naprzeciw}}{\text{przeciwprostokątna}} = \frac{AC}{BC} = \frac{4}{2\sqrt{13}} = \frac{2}{\sqrt{13}}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź 18.2: A</strong> — $\sin \beta = \dfrac{2}{\sqrt{13}}$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — który bok naprzeciw kąta</div>
+
+W trójkącie prostokątnym **przy wierzchołku $B$**:
+
+- naprzeciw $\beta$ leży bok $AC$ (przyprostokątna „daleka")
+- przyległy do $\beta$ jest bok $AB$ (przyprostokątna „bliska") + $BC$ (przeciwprostokątna)
+
+Sinus $= \dfrac{\text{naprzeciw}}{\text{przeciwprostokątna}} = \dfrac{AC}{BC} = \dfrac{4}{2\sqrt{13}}$.
+
+**Odpowiedź B ($\tfrac{3}{\sqrt{13}}$)** — błąd: ktoś wziął $AB = 6$ jako naprzeciw, ale to bok **przy** wierzchołku $B$, nie naprzeciw. Naprzeciw $B$ jest $AC$.
+
+**Odpowiedź D ($\tfrac{4}{5}$)** — myli się: wzór dla **kąta $\alpha$ w trójkącie $ACD$**, gdzie $\sin \alpha = \tfrac{AC}{CD} = \tfrac{4}{5}$. Ale my chcemy $\sin \beta$ w trójkącie $ABC$, nie $\sin \alpha$.
+</div>
+
+## Klucz — środkowa trójkąta prostokątnego
+
+Specjalna własność: w trójkącie prostokątnym **środkowa z wierzchołka kąta prostego** ma długość $\tfrac{1}{2}$ przeciwprostokątnej.
+
+(Bo wierzchołek kąta prostego leży na okręgu o średnicy = przeciwprostokątna, ze środkiem w środku przeciwprostokątnej. Promień to $\tfrac{1}{2}$ przeciwprostokątnej.)
+
+Tutaj jednak środkowa idzie z **innego wierzchołka** (z $C$ do środka $AB$), więc ta własność nie ma zastosowania. Trzeba zwykłego Pitagorasa.

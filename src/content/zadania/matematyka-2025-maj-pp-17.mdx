@@ -1,0 +1,97 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 17
+punkty: 1
+typ: zamkniete-abcd
+topic: trygonometria, równanie z sin/cos
+difficulty: 3
+tresc: |
+  Kąt $\alpha$ jest ostry i spełnia warunek $\sqrt{3} \operatorname{tg} \alpha = 2 \sin \alpha$. Cosinus kąta $\alpha$ jest równy: A. $\dfrac{1}{2}$, B. $\dfrac{\sqrt{2}}{2}$, C. $\dfrac{\sqrt{3}}{2}$, D. $\dfrac{\sqrt{3}}{3}$.
+odpowiedz: |
+  C — $\cos \alpha = \dfrac{\sqrt{3}}{2}$
+pulapka: |
+  Najczęstszy błąd to dzielenie obu stron przez $\sin \alpha$ BEZ założenia, że $\sin \alpha \neq 0$. Owszem, dla kąta ostrego $\sin \alpha \neq 0$ (z definicji $0 < \alpha < 90°$, więc $\sin \alpha > 0$), ale formalnie założenie należy zaznaczyć.
+wymaganie: |
+  VII.2 — tożsamość $\tan \alpha = \dfrac{\sin \alpha}{\cos \alpha}$.
+podobne:
+  - matematyka-2024-maj-pp-19
+  - matematyka-2025-maj-pp-18
+---
+
+## Strategia
+
+Sprowadź wszystko do $\sin$ i $\cos$ (używając $\tan \alpha = \tfrac{\sin \alpha}{\cos \alpha}$), potem skróć $\sin \alpha$ (wolno, bo $\alpha$ ostry → $\sin \alpha > 0$).
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zastosuj tożsamość $\tan \alpha = \dfrac{\sin \alpha}{\cos \alpha}$:**
+
+$$\sqrt{3} \cdot \frac{\sin \alpha}{\cos \alpha} = 2 \sin \alpha$$
+
+</div>
+
+<div class="krok">
+
+**Skróć $\sin \alpha$** (kąt ostry → $\sin \alpha \neq 0$):
+
+$$\frac{\sqrt{3}}{\cos \alpha} = 2$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiąż na $\cos \alpha$.**
+
+$$\cos \alpha = \frac{\sqrt{3}}{2}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: C</strong> — $\cos \alpha = \dfrac{\sqrt{3}}{2}$.
+  </div>
+</div>
+
+## Identyfikacja kąta
+
+$\cos \alpha = \tfrac{\sqrt{3}}{2}$ to kąt **$\alpha = 30°$** (jeden z trzech „znanych" kątów: $30°, 45°, 60°$).
+
+Sprawdzenie warunku oryginalnego dla $\alpha = 30°$:
+
+- $\sqrt{3} \tan 30° = \sqrt{3} \cdot \tfrac{\sqrt{3}}{3} = \tfrac{3}{3} = 1$
+- $2 \sin 30° = 2 \cdot \tfrac{1}{2} = 1$
+
+$1 = 1$ ✓ — warunek spełniony.
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — dzielenie przez $\sin \alpha$ bez założenia</div>
+
+W ogólnym przypadku z równania $A \sin \alpha = B \sin \alpha$ nie wolno dzielić przez $\sin \alpha$ bez zastrzeżenia. Tu treść mówi „kąt $\alpha$ jest ostry", co oznacza $0 < \alpha < 90°$, więc $\sin \alpha \neq 0$ — wolno dzielić.
+
+Bezpieczna procedura ogólna: zawsze, gdy dzielisz przez wyrażenie z niewiadomą, **zaznacz** że jest niezerowe (i sprawdź dlaczego — z dziedziny / założeń treści / itd.).
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowe błędne odpowiedzi</div>
+
+**Odpowiedź A ($\tfrac{1}{2}$)** odpowiada kątowi $60°$ (cos). Sprawdzenie: $\sqrt{3} \tan 60° = \sqrt{3} \cdot \sqrt{3} = 3$, $2 \sin 60° = 2 \cdot \tfrac{\sqrt{3}}{2} = \sqrt{3} \approx 1{,}73$. $3 \neq 1{,}73$, więc nie pasuje.
+
+**Odpowiedź D ($\tfrac{\sqrt{3}}{3}$)** — to $\dfrac{1}{\sqrt{3}}$, czyli „prawie $\cos$ 60° ale w innej formie". Brak związku z poprawną odpowiedzią.
+
+**Odpowiedź B ($\tfrac{\sqrt{2}}{2}$)** — $\cos 45°$, też nie pasuje (sprawdź).
+</div>
+
+## Klucz — trzy znane kąty
+
+| $\alpha$ | $\sin \alpha$ | $\cos \alpha$ | $\tan \alpha$ |
+|---|---|---|---|
+| $30°$ | $\tfrac{1}{2}$ | $\tfrac{\sqrt{3}}{2}$ | $\tfrac{\sqrt{3}}{3} = \tfrac{1}{\sqrt{3}}$ |
+| $45°$ | $\tfrac{\sqrt{2}}{2}$ | $\tfrac{\sqrt{2}}{2}$ | $1$ |
+| $60°$ | $\tfrac{\sqrt{3}}{2}$ | $\tfrac{1}{2}$ | $\sqrt{3}$ |
+
+Wszystkie pojawiają się w „Wybranych wzorach matematycznych" CKE, ale warto je mieć w głowie — pozwala rozpoznać kąt po jednej wartości i sprawdzić w 5 sekund pozostałe.

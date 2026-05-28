@@ -1,0 +1,100 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 19
+punkty: 1
+typ: zamkniete-abcd
+topic: planimetria, kąt środkowy i wpisany
+difficulty: 3
+tresc: |
+  Punkty $A$, $B$ oraz $C$ leżą na okręgu o środku w punkcie $O$. Miara kąta $BCA$ jest równa $50°$. Miara kąta ostrego $\angle ABO$ jest równa: A. $20°$, B. $35°$, C. $40°$, D. $50°$.
+odpowiedz: |
+  C — $40°$
+pulapka: |
+  Najczęstszy błąd to wybór D (50°) — pomylenie kąta ABO z kątem ACB. To DWA RÓŻNE kąty: ACB to kąt wpisany trójkąta ABC, a ABO to kąt w trójkącie AOB (gdzie O to środek okręgu).
+wymaganie: |
+  VIII.5 — własności kątów wpisanych i środkowych w okręgu.
+podobne:
+  - matematyka-2024-maj-pp-22
+  - matematyka-2025-maj-pp-18
+---
+
+## Klucz — dwa fakty
+
+1. **Twierdzenie o kącie środkowym i wpisanym**: kąt środkowy oparty na łuku jest **dwa razy większy** niż kąt wpisany oparty na tym samym łuku.
+2. **Trójkąt utworzony z dwóch promieni** (i cięciwy) jest **równoramienny** — kąty przy podstawie są równe.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Kąt wpisany $\angle BCA = 50°$** jest oparty na łuku $AB$ (tym, który nie zawiera $C$).
+
+**Kąt środkowy $\angle BOA$** oparty na tym samym łuku jest dwa razy większy:
+
+$$\angle AOB = 2 \cdot \angle BCA = 2 \cdot 50° = 100°$$
+
+</div>
+
+<div class="krok">
+
+**Trójkąt $AOB$ jest równoramienny** — bo $OA = OB$ (oba to promienie okręgu). Kąty przy podstawie $AB$ są równe:
+
+$$\angle OAB = \angle OBA$$
+
+</div>
+
+<div class="krok">
+
+**Suma kątów trójkąta $AOB$** = $180°$:
+
+$$\angle AOB + \angle OAB + \angle OBA = 180°$$
+
+$$100° + 2 \cdot \angle OBA = 180°$$
+
+$$2 \cdot \angle OBA = 80° \quad\Rightarrow\quad \angle OBA = 40°$$
+
+</div>
+
+<div class="krok">
+
+**Kąt $\angle ABO$ to to samo co $\angle OBA$** (te same dwa ramiona, ten sam wierzchołek $B$). Więc:
+
+$$\angle ABO = 40°$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: C</strong> — $\angle ABO = 40°$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd — pomylenie kątów</div>
+
+**Odpowiedź D ($50°$)** wybiera ten, kto pomylił $\angle ABO$ (kąt w $\triangle AOB$) z $\angle ACB$ (kąt wpisany w $\triangle ABC$). To dwa różne kąty:
+
+- $\angle ACB$ — kąt wpisany, wierzchołek $C$ na okręgu
+- $\angle ABO$ — kąt w trójkącie $AOB$, gdzie $O$ to **środek** okręgu
+
+Wartość $50°$ dotyczy tego pierwszego, a my szukamy drugiego.
+
+**Odpowiedzi A ($20°$) i B ($35°$)** — strzały arytmetyczne bez rzeczywistego rozumowania o symetrii trójkąta równoramiennego.
+</div>
+
+## Klucz uniwersalny
+
+Każde zadanie „okrąg + kąty + środek" sprowadza się do dwóch reguł:
+
+1. **Kąt środkowy = 2 × kąt wpisany** (oba oparte na tym samym łuku)
+2. **Trójkąt z dwóch promieni jest równoramienny** (kąty przy podstawie równe)
+
+Tu zastosowaliśmy obie:
+
+- Z reguły 1: $\angle AOB = 100°$
+- Z reguły 2: $\angle OAB = \angle OBA = (180° - 100°) / 2 = 40°$
+
+To samo rozwiązanie co dla zad 22 z arkusza 2024 maj PP — identyczny schemat, tylko inne liczby.
