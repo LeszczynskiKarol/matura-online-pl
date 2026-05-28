@@ -4,29 +4,61 @@ subject: geografia
 nr: 7
 punkty: 2
 typ: otwarte-krotkie
-topic: astronomia, fazy Księżyca, współrzędne geograficzne
+topic: astronomia, równonoca, wschód Słońca, fazy Księżyca, szerokość geograficzna
 difficulty: 4
 tresc: |
-  **7.1.** Oceń prawdziwość zdań o fazach Księżyca (P/F).
-  **7.2.** Oblicz szerokość geograficzną miejsca, w którym wysokość górowania Słońca w dniach równonocy wynosi h_{gS} = 80°30′.
+  Rysunek Ziemi i Księżyca w dniu równonocy. Punkt A na półkuli N (na granicy dnia/nocy), punkt B na półkuli S. 7.1 — P/F dwa zdania (wschód Słońca w A, pełnia Księżyca z B). 7.2 — oblicz φ punktu B jeśli h_gS = 80°30'.
 odpowiedz: |
   **7.1.** — **PF**
+  1. **P** — A leży na linii dnia/nocy na półkuli N. Ziemia obraca się z W na E, więc dla obserwatora w A właśnie zachodzi obrót do strony oświetlonej — **wschód Słońca**.
+  2. **F** — Księżyc na rysunku oświetlony tylko częściowo (po stronie Słońca). Z punktu B widziany w **kwadrze**, NIE w pełni. (Pełnia byłaby, gdyby Księżyc był po przeciwnej stronie Ziemi niż Słońce.)
 
-  **7.2.** — **φ = 9°30′ S** (szerokość 9°30′ na południe od równika).
-  Obliczenia (CKE):
-  $$h_{gS} = 90° - \varphi$$
-  $$\varphi = 90° - h_{gS}$$
-  $$\varphi = 90° - 80°30' = 9°30'$$
-  Odpowiedź: **9°30′ S** (półkula południowa — wynika z kontekstu zadania).
+  **7.2.** — **φ = 9°30′ S**
+  $$\varphi = 90° - h_{gS} = 90° - 80°30' = 9°30'$$
+  (Punkt B leży na półkuli południowej — wniosek z rysunku.)
 pulapka: |
-  7.2: Wzór `h_gS = 90° - φ` obowiązuje **w dniach równonocy** (deklinacja Słońca = 0°). Brak wskazania półkuli (S/N) = niepełna odpowiedź.
+  Wzór $h = 90° - φ$ obowiązuje **wyłącznie w dniach równonocy** (deklinacja Słońca = 0°).
 wymaganie: |
-  II.2 — wyznaczanie współrzędnych geograficznych na podstawie wysokości górowania Słońca.
-  II.3 — fazy Księżyca.
+  II.2 — wyznaczanie współrzędnych geograficznych z górowania Słońca.
+  II.3 — fazy Księżyca, następstwa ruchu obiegowego.
 podobne:
   - geografia-2025-maj-pr-1
   - geografia-2025-maj-pr-2
 ---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+**Zadanie 7.**
+
+Na rysunku przedstawiono położenie Księżyca i Ziemi oraz oświetlenie tych ciał niebieskich przez Słońce w wybranym momencie w dniu równonocy. Literami A i B oznaczono wybrane punkty na Ziemi. Nie zachowano właściwych proporcji między odległością Ziemi i Księżyca a ich wymiarami.
+
+<MaterialZrodlowy
+  src="/arkusze/geografia/2025/arkusz-10.webp"
+  alt="Rysunek Ziemi (z punktami A i B) i Księżyca, oświetlonych przez Słońce z prawej strony, w dniu równonocy"
+  caption="Schemat: Ziemia z osią, dwa zwrotniki, dwa koła podbiegunowe + Księżyc + światło słoneczne z prawej. Punkty A i B oznaczone na Ziemi."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Geografia/MGEP-R0-100-2505-arkusz.pdf"
+  pdfPage={10}
+/>
+
+### Zadanie 7.1. (0–1)
+
+**Oceń, czy poniższe informacje są prawdziwe.**
+
+| Nr | Zdanie | Ocena |
+|---|---|---|
+| 1. | W punkcie A, w momencie przedstawionym na rysunku, jest wschód Słońca. | **P** / F |
+| 2. | Względem obserwatora znajdującego się w punkcie B Księżyc jest w pełni. | P / **F** |
+
+### Zadanie 7.2. (0–1)
+
+W sytuacji przedstawionej na rysunku Słońce góruje nad punktem B na wysokości **80°30′**.
+
+**Oblicz szerokość geograficzną punktu oznaczonego literą B, a następnie uzupełnij zdanie. Zapisz obliczenia.**
+
+Szerokość geograficzna wynosi: .......... (wpisz N albo S): ..........
 
 ## Klucz odpowiedzi (CKE)
 
@@ -37,13 +69,14 @@ podobne:
 
 ### 7.2. — **φ = 9°30′ S**
 
-Obliczenia:
 $$\varphi = 90° - h_{gS} = 90° - 80°30' = 9°30'$$
+
+(Punkt B na półkuli **S**.)
 
 </div>
 </div>
 
 ## Punktacja CKE
 
-- 7.1: **1 pkt** — dwie poprawne odpowiedzi.
-- 7.2: **1 pkt** — poprawny sposób obliczenia i poprawne uzupełnienie zdania.
+- **7.1:** 1 pkt — dwie poprawne oceny.
+- **7.2:** 1 pkt — poprawne obliczenie + półkula.
