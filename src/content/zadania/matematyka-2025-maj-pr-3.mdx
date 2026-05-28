@@ -1,0 +1,145 @@
+---
+arkusz: matematyka-2025-maj-pr
+subject: matematyka
+nr: 3
+punkty: 3
+typ: otwarte-krotkie
+topic: planimetria, trójkąt równoboczny, twierdzenie sinusów
+difficulty: 5
+tresc: |
+  W trójkącie równobocznym $ABC$ punkt $D$ leży na boku $BC$. Stosunek pola trójkąta $ABD$ do pola trójkąta $ADC$ jest równy $\dfrac{\sqrt{3} - 1}{2}$. Oblicz miarę kąta $DAC$.
+odpowiedz: |
+  $\angle DAC = 45°$
+pulapka: |
+  Najczęstszy błąd to mylenie sin(α) z cos(α) we wzorze na pole (P = ½ab sin γ — sinus, nie cosinus). Druga pułapka: stosunek pól trójkątów o wspólnej wysokości to stosunek PODSTAW — to klucz pozwalający szybko dojść do równania.
+wymaganie: |
+  VIII.11 — stosowanie funkcji trygonometrycznych do obliczania pól figur.
+podobne:
+  - matematyka-2024-maj-pr-8
+  - matematyka-2025-maj-pr-2
+---
+
+## Strategia
+
+Trójkąt równoboczny ma wszystkie kąty $60°$. Niech $\angle DAC = \alpha$. Wtedy $\angle BAD = 60° - \alpha$ (bo cały $\angle BAC = 60°$).
+
+Trójkąty $ABD$ i $ADC$ mają **wspólny bok $AD$** (długość niech będzie $d$) i wspólny wierzchołek $A$. Możemy więc wyrazić ich pola przez sinusy odpowiednich kątów przy $A$.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wzór na pole z dwóch boków i kąta między nimi:** $P = \dfrac{1}{2} \cdot b_1 \cdot b_2 \cdot \sin \gamma$.
+
+Dla trójkąta $ABD$: boki $AB = a$ (bok trójkąta równobocznego) i $AD = d$, kąt $\angle BAD = 60° - \alpha$.
+
+$$P_{ABD} = \frac{1}{2} \cdot a \cdot d \cdot \sin(60° - \alpha)$$
+
+Dla trójkąta $ADC$: boki $AC = a$ i $AD = d$, kąt $\angle DAC = \alpha$.
+
+$$P_{ADC} = \frac{1}{2} \cdot a \cdot d \cdot \sin \alpha$$
+
+</div>
+
+<div class="krok">
+
+**Stosunek pól = stosunek sinusów** (czynniki $\tfrac{1}{2} \cdot a \cdot d$ skracają się):
+
+$$\frac{P_{ABD}}{P_{ADC}} = \frac{\sin(60° - \alpha)}{\sin \alpha} = \frac{\sqrt{3} - 1}{2}$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiń $\sin(60° - \alpha)$** ze wzoru na sinus różnicy: $\sin(x - y) = \sin x \cos y - \cos x \sin y$.
+
+$$\sin(60° - \alpha) = \sin 60° \cos \alpha - \cos 60° \sin \alpha = \frac{\sqrt{3}}{2} \cos \alpha - \frac{1}{2} \sin \alpha$$
+
+</div>
+
+<div class="krok">
+
+**Podstaw do równania:**
+
+$$\frac{\tfrac{\sqrt{3}}{2} \cos \alpha - \tfrac{1}{2} \sin \alpha}{\sin \alpha} = \frac{\sqrt{3} - 1}{2}$$
+
+Pomnóż licznik i mianownik lewej strony przez 2 — równanie pozostaje równoważne:
+
+$$\frac{\sqrt{3} \cos \alpha - \sin \alpha}{\sin \alpha} = \sqrt{3} - 1$$
+
+</div>
+
+<div class="krok">
+
+**Rozdziel ułamek:**
+
+$$\frac{\sqrt{3} \cos \alpha}{\sin \alpha} - 1 = \sqrt{3} - 1$$
+
+$$\sqrt{3} \cdot \cot \alpha = \sqrt{3}$$
+
+$$\cot \alpha = 1$$
+
+</div>
+
+<div class="krok">
+
+**Wyznacz $\alpha$.** $\cot \alpha = 1$ oznacza $\tan \alpha = 1$. Dla kąta w trójkącie (czyli $0 < \alpha < 60°$, bo $\alpha$ to część kąta $60°$):
+
+$$\alpha = 45°$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> $\angle DAC = 45°$.
+  </div>
+</div>
+
+## Sprawdzenie
+
+Jeśli $\alpha = 45°$, to $\angle BAD = 60° - 45° = 15°$.
+
+$$\frac{P_{ABD}}{P_{ADC}} = \frac{\sin 15°}{\sin 45°}$$
+
+$\sin 15° = \sin(45° - 30°) = \tfrac{\sqrt{2}}{2} \cdot \tfrac{\sqrt{3}}{2} - \tfrac{\sqrt{2}}{2} \cdot \tfrac{1}{2} = \tfrac{\sqrt{6} - \sqrt{2}}{4}$.
+
+$$\frac{P_{ABD}}{P_{ADC}} = \frac{(\sqrt{6} - \sqrt{2})/4}{\sqrt{2}/2} = \frac{\sqrt{6} - \sqrt{2}}{4} \cdot \frac{2}{\sqrt{2}} = \frac{\sqrt{6} - \sqrt{2}}{2 \sqrt{2}} = \frac{\sqrt{3} - 1}{2}$$
+
+(po uproszczeniu: $\sqrt{6}/\sqrt{2} = \sqrt{3}$, $\sqrt{2}/\sqrt{2} = 1$). ✓ Pasuje.
+
+<div class="pulapka">
+  <div class="pulapka-label">Sprytniejsza droga — stosunek podstaw</div>
+
+Trójkąty $ABD$ i $ADC$ mają **wspólną wysokość** opuszczoną z $A$ na prostą $BC$. Stosunek ich pól = stosunek **podstaw** $BD$ i $DC$:
+
+$$\frac{P_{ABD}}{P_{ADC}} = \frac{|BD|}{|DC|}$$
+
+Z tego można alternatywnie wyznaczyć $|BD|/|DC| = \tfrac{\sqrt{3}-1}{2}$, potem użyć twierdzenia sinusów w trójkącie $ADC$ do wyznaczenia $\alpha$.
+
+Wybierz sposób, który mniej myli rachunkami. Ten wyżej (przez kąty przy $A$) jest tu naturalny, bo szukamy kąta.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — sin czy cos</div>
+
+Wzór na pole trójkąta przez dwa boki: $P = \tfrac{1}{2} a b \sin \gamma$, gdzie $\gamma$ to kąt **między** tymi bokami. Sinus, nie cosinus.
+
+Gdybyś użył cosinusa, dostałbyś **twierdzenie cosinusów** — wzór na trzeci bok, nie pole.
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** — zapisanie równania $\sin(60° - \alpha) / \sin \alpha = (\sqrt{3} - 1)/2$ albo równoważne (np. przez stosunek podstaw $BD/DC$).
+- **2 pkt** — sprowadzenie równania do postaci $\sqrt{3} \cot \alpha = \sqrt{3}$ (lub równoważnej z $\tan \alpha = 1$).
+- **3 pkt** — pełna metoda + wynik $\alpha = 45°$.
+
+## Klucz — sinus różnicy
+
+Wzory na sinus i cosinus sumy/różnicy są w „Wybranych wzorach matematycznych" CKE:
+
+- $\sin(x \pm y) = \sin x \cos y \pm \cos x \sin y$
+- $\cos(x \pm y) = \cos x \cos y \mp \sin x \sin y$
+
+Używaj ich, gdy w równaniu pojawia się $\sin/\cos$ z **różnicą lub sumą zmiennej i znanego kąta** (jak tu $60° - \alpha$). Sprowadzasz wtedy równanie do funkcji **samej** $\alpha$, którą można rozwiązać przez $\tan$ / $\cot$.

@@ -1,0 +1,134 @@
+---
+arkusz: matematyka-2025-maj-pr
+subject: matematyka
+nr: 2
+punkty: 3
+typ: dowod
+topic: nierówności, wzory skróconego mnożenia, rozkład na czynniki
+difficulty: 4
+tresc: |
+  Wykaż, że dla każdej dodatniej liczby rzeczywistej $a$ i każdej dodatniej liczby rzeczywistej $b$ takich, że $b \neq \dfrac{1}{2} a$, prawdziwa jest nierówność $(a + 2b)^3 > 8 a^2 b + 16 a b^2$.
+odpowiedz: |
+  Dowód — patrz Sposób I (rozkład $(a-2b)^2 (a+2b) > 0$).
+pulapka: |
+  Najczęstszy błąd: rozwiązać "ostrą" nierówność $\geq$ zamiast $>$, czyli zapomnieć, że warunek $b \neq a/2$ wymusza ostry znak. Drugi błąd: zła ekspansja $(a+2b)^3$ (najczęściej człon $12ab^2$ pomylony z $8ab^2$).
+wymaganie: |
+  II.R1 — przekształcanie wyrażeń algebraicznych; II.1 — wzory skróconego mnożenia.
+podobne:
+  - matematyka-2024-maj-pr-2
+  - matematyka-2025-maj-pr-5
+---
+
+## Strategia
+
+Przenieś wszystko na jedną stronę i pokaż, że różnica jest **dodatnia** dla każdego dopuszczalnego $a, b$. Cel: rozłożyć tę różnicę na **iloczyn czynników o znanych znakach**.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Rozwiń $(a + 2b)^3$ z wzoru** $(x + y)^3 = x^3 + 3x^2 y + 3 x y^2 + y^3$ dla $x = a$, $y = 2b$:
+
+$$(a + 2b)^3 = a^3 + 3 a^2 (2b) + 3 a (2b)^2 + (2b)^3$$
+
+$$= a^3 + 6 a^2 b + 12 a b^2 + 8 b^3$$
+
+</div>
+
+<div class="krok">
+
+**Odejmij prawą stronę nierówności od lewej.** Tworzę różnicę $L - R$, którą trzeba wykazać $> 0$:
+
+$$L - R = (a^3 + 6 a^2 b + 12 a b^2 + 8 b^3) - (8 a^2 b + 16 a b^2)$$
+
+$$L - R = a^3 + 6 a^2 b - 8 a^2 b + 12 a b^2 - 16 a b^2 + 8 b^3$$
+
+$$L - R = a^3 - 2 a^2 b - 4 a b^2 + 8 b^3$$
+
+</div>
+
+<div class="krok">
+
+**Rozłóż na czynniki grupowaniem.** Wyciągnij wspólne czynniki z par:
+
+$$a^3 - 2 a^2 b - 4 a b^2 + 8 b^3 = a^2 (a - 2b) - 4 b^2 (a - 2b)$$
+
+W obu nawiasach pojawia się **ten sam** dwumian $(a - 2b)$. Wyciągnij go:
+
+$$= (a - 2b)(a^2 - 4b^2)$$
+
+</div>
+
+<div class="krok">
+
+**Drugi czynnik to różnica kwadratów** — rozłóż dalej:
+
+$$a^2 - 4b^2 = (a - 2b)(a + 2b)$$
+
+Stąd:
+
+$$L - R = (a - 2b) \cdot (a - 2b) \cdot (a + 2b) = (a - 2b)^2 \cdot (a + 2b)$$
+
+</div>
+
+<div class="krok">
+
+**Zbadaj znak każdego czynnika.**
+
+- $(a - 2b)^2$: kwadrat liczby rzeczywistej jest **zawsze $\geq 0$**, z równością tylko gdy $a = 2b$, czyli $b = \tfrac{a}{2}$. Z założenia $b \neq \tfrac{a}{2}$, więc $(a - 2b)^2 > 0$.
+- $(a + 2b)$: skoro $a > 0$ i $b > 0$, to $a + 2b > 0$.
+
+Iloczyn dwóch wielkości **dodatnich** jest dodatni:
+
+$$L - R = (a - 2b)^2 \cdot (a + 2b) > 0$$
+
+</div>
+
+<div class="krok">
+
+**Wniosek.** $L > R$, czyli:
+
+$$(a + 2b)^3 > 8 a^2 b + 16 a b^2 \quad\blacksquare$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Dowód zakończony.</strong> Kluczem była tożsamość $(a + 2b)^3 - (8 a^2 b + 16 a b^2) = (a - 2b)^2 (a + 2b)$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — pomylony znak nierówności</div>
+
+Treść mówi „$b \neq \dfrac{1}{2} a$" — to wymusza **ostry znak** $>$ w nierówności (a nie $\geq$). Gdyby treść mówiła „dla każdych $a, b > 0$" (bez tego warunku), to dla $b = \tfrac{a}{2}$ mielibyśmy **równość** ($L - R = 0$), więc dowód musiałby być „$\geq$".
+
+Klucz: warunek $b \neq \tfrac{a}{2}$ usuwa pojedynczy punkt równości, zostawiając ostrą nierówność.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — ekspansja $(a+2b)^3$</div>
+
+Wzór $(x + y)^3 = x^3 + 3x^2 y + 3 x y^2 + y^3$ jest w „Wybranych wzorach matematycznych" CKE. Wpadka pojawia się, gdy podstawiamy $y = 2b$ i pomijamy potęgowanie $(2b)^2 = 4b^2$ albo $(2b)^3 = 8b^3$.
+
+Wzór po podstawieniu: $a^3 + 3 a^2 \cdot 2b + 3 a \cdot 4 b^2 + 8 b^3 = a^3 + 6 a^2 b + 12 a b^2 + 8 b^3$. Każdy współczynnik osobno.
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** — przekształcenie $(a+2b)^3 - 8a^2 b - 16 ab^2$ do postaci $a^3 - 2a^2 b - 4 ab^2 + 8b^3$.
+- **2 pkt** — rozkład na iloczyn $(a - 2b)^2 (a + 2b)$.
+- **3 pkt** — pełne rozumowanie + uzasadnienie znaków obu czynników (kluczowe! wymagane przez treść warunki $a, b > 0$ i $b \neq \tfrac{a}{2}$).
+
+## Klucz — schemat dowodów nierówności
+
+Procedura uniwersalna:
+
+1. **Przenieś wszystko na jedną stronę** — różnica $L - R$.
+2. **Rozłóż na iloczyn** czynników, których znaki łatwo określić (typowo: kwadraty, sumy z dodatnimi liczbami, dwumiany ze znanym znakiem).
+3. **Określ znak każdego czynnika** używając założeń.
+4. **Wnioskuj** — iloczyn niezerowych dodatnich liczb jest dodatni.
+
+W tym zadaniu kluczowy moment to **dostrzeżenie wzorca grupowania** $a^2(a - 2b) - 4 b^2 (a - 2b)$. To wymaga wprawy — warto poćwiczyć na podobnych zadaniach.

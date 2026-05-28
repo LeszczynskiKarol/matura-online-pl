@@ -1,0 +1,164 @@
+---
+arkusz: matematyka-2025-maj-pr
+subject: matematyka
+nr: 4
+punkty: 3
+typ: otwarte-krotkie
+topic: prawdopodobieństwo warunkowe
+difficulty: 4
+tresc: |
+  Doświadczenie losowe polega na czterokrotnym rzucie symetryczną sześcienną kostką do gry. Oblicz prawdopodobieństwo zdarzenia polegającego na tym, że otrzymamy **co najmniej jeden raz** sześć oczek, pod warunkiem że otrzymamy **dokładnie dwa razy** pięć oczek.
+odpowiedz: |
+  $P(A | B) = \dfrac{9}{25}$
+pulapka: |
+  Klasyczny błąd to liczenie P(A) zamiast P(A|B). Warunek B (dokładnie dwa razy 5) zawęża przestrzeń próbną — dzielisz |A∩B| przez |B|, nie przez 6⁴. Drugi błąd: pomylenie "co najmniej jeden raz 6" z "dokładnie raz 6".
+wymaganie: |
+  XII.R3 — prawdopodobieństwo warunkowe.
+podobne:
+  - matematyka-2024-maj-pr-3
+  - matematyka-2025-maj-pp-28
+---
+
+## Klucz teoretyczny
+
+Wzór na prawdopodobieństwo warunkowe:
+
+$$P(A | B) = \frac{P(A \cap B)}{P(B)} = \frac{|A \cap B|}{|B|}$$
+
+(w modelu klasycznym — drugie wyrażenie z mocami zbiorów).
+
+Tutaj:
+
+- $A$ = „co najmniej raz 6 oczek w 4 rzutach"
+- $B$ = „dokładnie 2 razy 5 oczek w 4 rzutach" (warunek)
+
+Łatwiej liczyć **moce zbiorów** $|A \cap B|$ i $|B|$ niż prawdopodobieństwa.
+
+## Krok 1 — $|B|$ (dokładnie dwa razy 5)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wybierz pozycje, na których wypadną piątki.** W 4 rzutach wybieramy 2 pozycje z 4:
+
+$$\binom{4}{2} = 6$$
+
+</div>
+
+<div class="krok">
+
+**Pozostałe dwa rzuty** nie mogą być 5 — każdy z nich może przyjąć wartość z $\{1, 2, 3, 4, 6\}$ (5 możliwości):
+
+$$5 \cdot 5 = 25$$
+
+</div>
+
+<div class="krok">
+
+**Wymnóż.**
+
+$$|B| = 6 \cdot 25 = 150$$
+
+</div>
+
+</div>
+
+## Krok 2 — $|A \cap B|$ (dokładnie dwa razy 5 i co najmniej raz 6)
+
+W zdarzeniu $A \cap B$ wciąż mamy dokładnie dwa razy 5, ale dodatkowo **wśród pozostałych dwóch rzutów co najmniej jeden to 6**.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Pozycje piątek** — bez zmian: $\binom{4}{2} = 6$ sposobów.
+
+</div>
+
+<div class="krok">
+
+**Pozostałe dwa rzuty z co najmniej jedną szóstką.** Każdy może być z $\{1, 2, 3, 4, 6\}$ (5 możliwości), a chcemy, by **co najmniej raz** wypadła 6.
+
+Łatwiej **odejmować** dopełnienie:
+
+- wszystkich par $(a, b)$ z $a, b \in \{1, 2, 3, 4, 6\}$: $5 \cdot 5 = 25$
+- par **bez** szóstki ($a, b \in \{1, 2, 3, 4\}$): $4 \cdot 4 = 16$
+- par z co najmniej jedną szóstką: $25 - 16 = 9$
+
+</div>
+
+<div class="krok">
+
+**Wymnóż:**
+
+$$|A \cap B| = 6 \cdot 9 = 54$$
+
+</div>
+
+</div>
+
+## Krok 3 — prawdopodobieństwo warunkowe
+
+$$P(A | B) = \frac{|A \cap B|}{|B|} = \frac{54}{150}$$
+
+Skróć $\frac{54}{150}$: NWD$(54, 150) = 6$, więc:
+
+$$P(A | B) = \frac{9}{25}$$
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> $P(A | B) = \dfrac{9}{25} = 0{,}36$.
+  </div>
+</div>
+
+## Sprawdzenie przez wzór
+
+Można też policzyć inaczej:
+
+$$P(A | B) = \frac{P(A \cap B)}{P(B)} = \frac{54/1296}{150/1296} = \frac{54}{150} = \frac{9}{25}$$
+
+(skala $1296 = 6^4$ skraca się — co potwierdza, że w modelu klasycznym dzielenie mocami jest równoważne dzieleniu prawdopodobieństw).
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — P(A) zamiast P(A|B)</div>
+
+**Bezwarunkowe** prawdopodobieństwo „co najmniej raz 6 w 4 rzutach" liczy się przez dopełnienie:
+
+$$P(A) = 1 - \left(\frac{5}{6}\right)^4 = 1 - \frac{625}{1296} = \frac{671}{1296} \approx 0{,}518$$
+
+To **inna** liczba niż $\tfrac{9}{25} = 0{,}36$. Warunek $B$ **zmienia** prawdopodobieństwo — i to jest sens warunkowej.
+
+Intuicja: gdy wiemy, że dwa rzuty to piątki, mamy tylko dwa „wolne" rzuty na osiągnięcie szóstki — szansa spada.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — co najmniej / dokładnie / co najwyżej</div>
+
+Trzy bliskie warianty:
+
+- „**co najmniej** raz 6" — przynajmniej jedna szóstka (1, 2, 3, lub 4 szóstki)
+- „**dokładnie** raz 6" — jedna i tylko jedna szóstka
+- „**co najwyżej** raz 6" — zero lub jedna
+
+Tutaj treść mówi „**co najmniej**" — uwzględniamy też przypadek dwóch szóstek wśród pozostałych dwóch rzutów.
+
+Sprawdzenie: gdyby treść mówiła „dokładnie raz 6", liczylibyśmy: pozycje piątek $\binom{4}{2} = 6$, pozycja szóstki spośród pozostałych $2 \cdot 1$, ostatnia pozycja z $\{1,2,3,4\}$ czyli $4$ — razem $6 \cdot 2 \cdot 4 = 48$, więc $P = 48/150 = 8/25$. Inna odpowiedź.
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** — zapisanie wzoru $P(A | B) = \tfrac{|A \cap B|}{|B|}$ albo identyfikacja zbiorów $A$ i $B$.
+- **2 pkt** — obliczenie $|B| = 150$ ALBO $|A \cap B| = 54$.
+- **3 pkt** — pełne rozwiązanie + wynik $\tfrac{9}{25}$.
+
+## Klucz — schemat prawdopodobieństwa warunkowego
+
+Dla zadań „P(A pod warunkiem B)":
+
+1. **Zidentyfikuj zdarzenia $A$ i $B$** osobno z treści.
+2. **Policz $|B|$** — często mniej rzutów/elementów do uwzględnienia, bo warunek ogranicza.
+3. **Policz $|A \cap B|$** — zdarzenia spełniające **oba** warunki.
+4. **Iloraz $\tfrac{|A \cap B|}{|B|}$** to odpowiedź.
+
+W modelu klasycznym (równo prawdopodobne zdarzenia) liczenie mocami zbiorów jest najczystsze — unika ułamków z dużymi mianownikami ($6^4 = 1296$).

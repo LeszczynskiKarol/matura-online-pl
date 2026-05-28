@@ -1,0 +1,107 @@
+---
+arkusz: matematyka-2025-maj-pr
+subject: matematyka
+nr: 1
+punkty: 2
+typ: otwarte-krotkie
+topic: funkcja wykładnicza, procent składany
+difficulty: 3
+tresc: |
+  W warunkach laboratoryjnych obserwowano dynamikę wzrostu liczebności populacji bakterii. Liczebność $N$ zmienia się zgodnie z zależnością wykładniczą $N(t) = N_0 \cdot k^t$ dla $t \geq 0$. W chwili rozpoczęcia obserwacji liczebność była równa $10\,000$, a po dwóch godzinach była równa $15\,625$. Oblicz, o ile procent wzrastała liczebność populacji w ciągu każdej godziny.
+odpowiedz: |
+  Wzrost o **25%** w ciągu każdej godziny ($k = 1{,}25$).
+pulapka: |
+  Najczęstszy błąd to obliczenie $k^2 = 1{,}5625$ i wpisanie "wzrost o 56,25%" (czyli $k^2 - 1$ jako procent). To wzrost przez **dwie godziny**, nie przez jedną. Trzeba wziąć $\sqrt{k^2} = k$ i obliczyć $k - 1 = 0{,}25$.
+wymaganie: |
+  V.13 — wykorzystanie funkcji wykładniczej do opisu zjawisk wzrostu.
+podobne:
+  - matematyka-2024-maj-pr-1
+  - matematyka-2025-maj-pr-2
+---
+
+## Strategia
+
+W modelu $N(t) = N_0 \cdot k^t$ stała $k$ to **mnożnik godzinny** — każda godzina mnoży liczebność przez $k$. Wzrost procentowy to $(k - 1) \cdot 100\%$.
+
+Z warunku po dwóch godzinach wyznaczymy $k^2$, potem $k$ (przez pierwiastek).
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zapisz warunek $N(2) = 15\,625$:**
+
+$$10\,000 \cdot k^2 = 15\,625$$
+
+$$k^2 = \frac{15\,625}{10\,000} = \frac{15625}{10000} = 1{,}5625$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz $k$.** Skoro $k$ jest dodatnia (z założeń modelu):
+
+$$k = \sqrt{1{,}5625} = 1{,}25$$
+
+(bo $1{,}25^2 = 1{,}5625$).
+
+</div>
+
+<div class="krok">
+
+**Przelicz na wzrost procentowy.**
+
+$$k - 1 = 1{,}25 - 1 = 0{,}25 = 25\%$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> Liczebność populacji wzrasta o $25\%$ w ciągu każdej godziny.
+  </div>
+</div>
+
+## Sprawdzenie
+
+Start: $10\,000$.
+
+- Po 1 h: $10\,000 \cdot 1{,}25 = 12\,500$
+- Po 2 h: $12\,500 \cdot 1{,}25 = 15\,625$ ✓
+
+Idealne dopasowanie.
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — $k^2$ czy $k$?</div>
+
+Najpopularniejszy błąd: obliczenie $k^2 = 1{,}5625$ i wpisanie wzrostu jako $56{,}25\%$. **To wzrost przez dwie godziny**, nie przez jedną.
+
+Pamiętaj o jednostkach czasu: pytanie jest o godzinę → szukasz $k$ (mnożnik za godzinę), nie $k^2$ (za dwie godziny).
+
+Sprawdzenie: gdyby wzrost był $56{,}25\%$ na godzinę, to po 2 h byłoby $10\,000 \cdot 1{,}5625^2 = 10\,000 \cdot 2{,}44 = 24\,400$ — znacznie więcej niż treść mówi.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — łączenie procentów</div>
+
+Wzrosty procentowe **nie sumują się liniowo**. $25\% + 25\%$ przez 2 godziny to **nie** $50\%$, tylko $1{,}25^2 - 1 = 56{,}25\%$. To dlatego, że drugi wzrost dzieje się od **już zwiększonej** wartości.
+
+Wzór ogólny: wzrost o $p\%$ przez $n$ okresów daje łączny wzrost $\left[(1 + \tfrac{p}{100})^n - 1\right] \cdot 100\%$, nie $n \cdot p\%$.
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** — obliczenie $k^2 = 1{,}5625$ ALBO $k = 1{,}25$.
+- **2 pkt** — pełna metoda + wynik $25\%$.
+
+## Klucz — modele wykładnicze na rozszerzonej
+
+W zadaniach typu „wzrost wykładniczy ze stałym mnożnikiem":
+
+1. **Zapisz model**: $N(t) = N_0 \cdot k^t$.
+2. **Wyznacz $k^T$** z warunku w czasie $T$ (zwykle 2, 5, 10 godzin).
+3. **Pierwiastek $T$-ego stopnia** daje $k$ — mnożnik za jednostkę czasu.
+4. **Procent wzrostu** to $(k - 1) \cdot 100\%$.
+
+Czas trwania, w jakim podany jest warunek, ma znaczenie. Pisz wszystkie podstawienia explicite, żeby nie zgubić indeksu.
