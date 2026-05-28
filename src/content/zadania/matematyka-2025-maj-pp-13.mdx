@@ -1,0 +1,90 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 13
+punkty: 1
+typ: zamkniete-abcd
+topic: funkcja liniowa, miejsce zerowe
+difficulty: 2
+tresc: |
+  Funkcja liniowa $f$ jest określona wzorem $f(x) = (3 - m) x - 4$. Funkcja $f$ **nie ma** miejsca zerowego dla $m$ równego: A. $(-3)$, B. $0$, C. $3$, D. $4$.
+odpowiedz: |
+  C — $m = 3$
+pulapka: |
+  Najczęstszy błąd to nieuwzględnienie wyrazu wolnego. Funkcja liniowa NIE MA miejsca zerowego, gdy współczynnik kierunkowy = 0 i wyraz wolny ≠ 0 (wtedy mamy funkcję stałą o niezerowej wartości). Jeśli oba zero — wszystkie x są miejscami zerowymi (też nie "miejsce zerowe" w sensie pytania).
+wymaganie: |
+  V.5 — interpretacja współczynników w funkcji liniowej; V.6 — wyznaczanie wzoru funkcji liniowej.
+podobne:
+  - matematyka-2025-maj-pp-12
+  - matematyka-2024-maj-pp-12
+---
+
+## Klucz teoretyczny — kiedy funkcja liniowa nie ma miejsca zerowego?
+
+Funkcja liniowa $f(x) = ax + b$ ma miejsce zerowe (rozwiązanie $f(x) = 0$, czyli $x = -\tfrac{b}{a}$) **wtedy i tylko wtedy**, gdy $a \neq 0$.
+
+Gdy $a = 0$:
+
+- jeśli $b = 0$: $f(x) = 0$ dla **każdego** $x$ → funkcja stała = 0, wszystkie $x$ są zerowe
+- jeśli $b \neq 0$: $f(x) = b$ dla każdego $x$, ale $f(x) = 0$ nie ma rozwiązania → **brak miejsca zerowego**
+
+## Zastosowanie do zadania
+
+W naszej funkcji $f(x) = (3 - m) x - 4$:
+
+- współczynnik kierunkowy: $a = 3 - m$
+- wyraz wolny: $b = -4$
+
+**Wyraz wolny** to $-4$ — **nie jest** zerem (niezależnie od $m$). Więc warunek „brak miejsca zerowego" sprowadza się do warunku $a = 0$:
+
+$$3 - m = 0 \quad\Rightarrow\quad m = 3$$
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Sprawdzenie**: dla $m = 3$ mamy $f(x) = 0 \cdot x - 4 = -4$ — funkcja stała o wartości $-4$. Czy ma miejsce zerowe? $-4 = 0$ to fałsz, więc **NIE**. ✓
+
+</div>
+
+<div class="krok">
+
+**Inne odpowiedzi sprawdzamy szybko**:
+
+- $m = -3$: $f(x) = 6x - 4$, miejsce zerowe $x = \tfrac{2}{3}$ — JEST
+- $m = 0$: $f(x) = 3x - 4$, miejsce zerowe $x = \tfrac{4}{3}$ — JEST
+- $m = 4$: $f(x) = -x - 4$, miejsce zerowe $x = -4$ — JEST
+
+Tylko dla $m = 3$ funkcja nie ma miejsca zerowego.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: C</strong> — $m = 3$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd — pomylenie wyrazu wolnego</div>
+
+**Odpowiedź D ($m = 4$)** — wybiera ten, kto pomyślał „skoro $-4$ to wyraz wolny, to dla $m = 4$ wyraz wolny wynosi $-4 + 4 = 0$, więc brak miejsca zerowego". To **dwa błędy**:
+
+1. Wyraz wolny w tym wzorze to ZAWSZE $-4$, niezależnie od $m$. $m$ pojawia się tylko przy $x$.
+2. Gdyby nawet $b = 0$ (co tu nie jest możliwe), to byłoby $f(x) = ax$ → miejsce zerowe $x = 0$, więc IS, nie BRAK.
+
+**Odpowiedź A ($m = -3$)** — strzał typu „liczba ujemna", brak związku z analizą.
+
+**Odpowiedź B ($m = 0$)** — kuszenie, ale $m = 0$ daje $a = 3 \neq 0$, więc miejsce zerowe istnieje.
+</div>
+
+## Klucz uniwersalny
+
+Aby funkcja liniowa **nie miała** miejsca zerowego, muszą być spełnione **dwa warunki jednocześnie**:
+
+1. Współczynnik kierunkowy $a = 0$ (funkcja jest **stała**)
+2. Wyraz wolny $b \neq 0$ (stała wartość jest **niezerowa**)
+
+Wystarczy, że któryś z nich nie zachodzi, i miejsce zerowe istnieje. Tutaj $b = -4 \neq 0$ jest „za darmo" — wystarczy znaleźć $m$, dla którego $a = 0$.

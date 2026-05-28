@@ -1,0 +1,103 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 10
+punkty: 2
+typ: otwarte-krotkie
+topic: nierówności kwadratowe
+difficulty: 3
+tresc: |
+  Rozwiąż nierówność $3(2x^2 + 1) < 11x$.
+odpowiedz: |
+  $x \in \left(\dfrac{1}{3},\ \dfrac{3}{2}\right)$
+pulapka: |
+  CKE wprost: jeśli zapiszesz zbiór rozwiązań w nieprawidłowej kolejności końców przedziału (np. $(\tfrac{3}{2}, \tfrac{1}{3})$) — dostajesz 2 pkt mimo wszystko (uwzględnienie trudności specyficznych). Ale jeśli pomylisz znak nierówności (np. $\geq 0$ zamiast $< 0$) — 0 punktów.
+wymaganie: |
+  III.4 — rozwiązywanie nierówności kwadratowych.
+podobne:
+  - matematyka-2025-maj-pp-6
+  - matematyka-2024-maj-pp-9
+---
+
+## Strategia
+
+Trójmian kwadratowy → przenieś wszystko na lewo, oblicz $\Delta$, znajdź miejsca zerowe, **naszkicuj wykres**, odczytaj przedziały dla danego znaku nierówności.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Doprowadź do postaci $ax^2 + bx + c < 0$.** Rozwiń lewą stronę i przenieś wszystko na lewo:
+
+$$3(2x^2 + 1) < 11x$$
+
+$$6x^2 + 3 < 11x$$
+
+$$6x^2 - 11x + 3 < 0$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz wyróżnik trójmianu** $6x^2 - 11x + 3$:
+
+$$\Delta = (-11)^2 - 4 \cdot 6 \cdot 3 = 121 - 72 = 49$$
+
+$$\sqrt{\Delta} = 7$$
+
+</div>
+
+<div class="krok">
+
+**Znajdź miejsca zerowe.**
+
+$$x_1 = \frac{-(-11) - 7}{2 \cdot 6} = \frac{11 - 7}{12} = \frac{4}{12} = \frac{1}{3}$$
+
+$$x_2 = \frac{-(-11) + 7}{2 \cdot 6} = \frac{11 + 7}{12} = \frac{18}{12} = \frac{3}{2}$$
+
+</div>
+
+<div class="krok">
+
+**Wybierz przedział dla nierówności $< 0$.** Współczynnik przy $x^2$ to **dodatni** ($6 > 0$), więc parabola **otwiera się do góry**. Trójmian jest **ujemny** **między** miejscami zerowymi:
+
+$$x \in \left(\frac{1}{3},\ \frac{3}{2}\right)$$
+
+Końce **otwarte**, bo nierówność jest ostra ($<$, nie $\leq$).
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> $x \in \left(\dfrac{1}{3},\ \dfrac{3}{2}\right)$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka znaku — między czy poza</div>
+
+Reguła dla trójmianu z $a > 0$ (parabola w górę):
+
+- $ax^2 + bx + c > 0$ → **poza** miejscami zerowymi (dwa półproste)
+- $ax^2 + bx + c < 0$ → **między** miejscami zerowymi (jeden przedział)
+
+Dla $a < 0$ (parabola w dół) — odwrotnie. Tutaj $a = 6 > 0$, nierówność $< 0$, więc rozwiązanie to **przedział środkowy**.
+
+Bezpieczne sprawdzenie: weź punkt z proponowanego przedziału (np. $x = 1$) i podstaw do oryginalnej nierówności: $3(2 + 1) = 9 < 11$? Tak ✓. Pasuje.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — końce otwarte czy domknięte</div>
+
+Nierówność **ostra** ($<$ lub $>$) → końce **otwarte** ($($, $)$).
+Nierówność **nieostra** ($\leq$ lub $\geq$) → końce **domknięte** ($\langle$, $\rangle$).
+
+Tutaj jest $<$, więc $\tfrac{1}{3}$ i $\tfrac{3}{2}$ **nie należą** do zbioru rozwiązań (bo w tych punktach trójmian = 0, a 0 nie jest mniejsze od 0).
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** — obliczenie pierwiastków trójmianu $6x^2 - 11x + 3$: $x_1 = \tfrac{1}{3}$, $x_2 = \tfrac{3}{2}$.
+- **2 pkt** — pełne rozwiązanie + zbiór $x \in (\tfrac{1}{3}, \tfrac{3}{2})$.

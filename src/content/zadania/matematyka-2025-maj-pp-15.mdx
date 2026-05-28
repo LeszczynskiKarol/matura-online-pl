@@ -1,0 +1,126 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 15
+punkty: 3
+typ: otwarte-krotkie
+topic: ciągi arytmetyczne z parametrem
+difficulty: 4
+tresc: |
+  Wyznacz wartość $m$, dla której trzywyrazowy ciąg $(2m + 11,\ m^2 + 3,\ 5 - m)$ jest arytmetyczny i malejący.
+odpowiedz: |
+  $m = \dfrac{5}{2}$ (ciąg $16,\ 9{,}25,\ 2{,}5$ — arytmetyczny, malejący)
+pulapka: |
+  Najczęstszy błąd: znaleźć dwa rozwiązania równania na arytmetyczność i nie odrzucić tego, dla którego ciąg jest stały (a nie malejący). Treść mówi "arytmetyczny **i malejący**" — drugi warunek wymaga sprawdzenia.
+wymaganie: |
+  VI.2 — warunek arytmetyczności trzywyrazowego ciągu.
+podobne:
+  - matematyka-2025-maj-pp-14
+  - matematyka-2024-maj-pp-16
+---
+
+## Klucz teoretyczny
+
+Trzywyrazowy ciąg $(a, b, c)$ jest **arytmetyczny** wtedy i tylko wtedy, gdy:
+
+$$2 b = a + c$$
+
+(środkowy wyraz × 2 = suma sąsiednich). Równoważnie: $b - a = c - b$, czyli różnice kolejnych są równe.
+
+Ciąg arytmetyczny jest **malejący** ⟺ różnica $r < 0$, czyli $b < a$.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zastosuj warunek arytmetyczności.**
+
+$$2(m^2 + 3) = (2m + 11) + (5 - m)$$
+
+$$2m^2 + 6 = m + 16$$
+
+$$2m^2 - m - 10 = 0$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiąż równanie kwadratowe.**
+
+$$\Delta = (-1)^2 - 4 \cdot 2 \cdot (-10) = 1 + 80 = 81$$
+
+$$\sqrt{\Delta} = 9$$
+
+$$m_1 = \frac{1 - 9}{4} = -2, \quad m_2 = \frac{1 + 9}{4} = \frac{10}{4} = \frac{5}{2}$$
+
+</div>
+
+<div class="krok">
+
+**Sprawdź dla każdego $m$, czy ciąg jest MALEJĄCY.**
+
+**Dla $m = -2$**:
+
+- $2m + 11 = -4 + 11 = 7$
+- $m^2 + 3 = 4 + 3 = 7$
+- $5 - m = 5 + 2 = 7$
+
+Ciąg: $(7, 7, 7)$ — arytmetyczny ($r = 0$), ale **stały**, nie malejący. **Odrzucamy** $m = -2$.
+
+**Dla $m = \tfrac{5}{2}$**:
+
+- $2 \cdot \tfrac{5}{2} + 11 = 5 + 11 = 16$
+- $(\tfrac{5}{2})^2 + 3 = \tfrac{25}{4} + 3 = \tfrac{37}{4} = 9{,}25$
+- $5 - \tfrac{5}{2} = \tfrac{5}{2} = 2{,}5$
+
+Ciąg: $(16,\ 9{,}25,\ 2{,}5)$ — różnica $r = 9{,}25 - 16 = -6{,}75 < 0$ → **malejący** ✓
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> $m = \dfrac{5}{2}$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — niesprawdzenie warunku malejący</div>
+
+Najgorszy błąd: po rozwiązaniu równania $2m^2 - m - 10 = 0$ podaj **oba** wyniki $m = -2$ i $m = \tfrac{5}{2}$ jako odpowiedź. To **niepoprawne** — treść mówi „arytmetyczny **i malejący**", a $m = -2$ daje ciąg stały (nie malejący).
+
+CKE traktuje to jako brak odrzucenia rozwiązania — częściowy punkt (1 z 3 lub 2 z 3 zależnie od wykonania reszty).
+
+Bezpieczna procedura: po znalezieniu wszystkich kandydatów na $m$, **sprawdź dla każdego**, czy spełnia **wszystkie** warunki z treści (tutaj: arytmetyczność + malenie).
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — "stały" vs "malejący"</div>
+
+Ciąg arytmetyczny $(a, a, a)$ z różnicą $r = 0$ jest:
+
+- arytmetyczny ✓ (każda różnica = 0)
+- **NIE** rosnący (bo $a \not< a$)
+- **NIE** malejący (bo $a \not> a$)
+- stały ✓
+
+Słowa „rosnący" i „malejący" oznaczają **ścisłą monotoniczność** — nie obejmują stałości. Jeśli treść mówi „malejący", $r = 0$ nie wystarcza, trzeba $r < 0$.
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** — zapisanie równania arytmetyczności $2(m^2 + 3) = (2m+11) + (5-m)$ lub równoważnego.
+- **2 pkt** — rozwiązanie równania kwadratowego: $m = -2$ lub $m = \tfrac{5}{2}$.
+- **3 pkt** — pełne rozwiązanie z odrzuceniem $m = -2$ (nie spełnia warunku malenia) i odpowiedzią $m = \tfrac{5}{2}$.
+
+## Klucz — zadania „ciąg z parametrem"
+
+Procedura uniwersalna:
+
+1. **Zapisz warunek** wynikający z typu ciągu (arytmetyczny: $2b = a+c$; geometryczny: $b^2 = a \cdot c$).
+2. **Rozwiąż równanie** na parametr — zwykle kwadratowe.
+3. **Sprawdź każde rozwiązanie** względem dodatkowych warunków z treści (rosnący / malejący / dodatni / itd.).
+4. **Odrzuć** rozwiązania, które nie spełniają wszystkich warunków.
+
+Tutaj kluczowy był krok 3 — bez niego dostałbyś dwa wyniki zamiast jednego.

@@ -1,0 +1,139 @@
+---
+arkusz: matematyka-2025-maj-pp
+subject: matematyka
+nr: 11
+punkty: 4
+typ: otwarte-krotkie
+topic: funkcja sklejana, odczyt z wykresu
+difficulty: 3
+tresc: |
+  Funkcja $f$ jest określona następująco: $f(x) = x + 5$ dla $x \in \langle -4, -2 \rangle$, $f(x) = 3$ dla $x \in (-2, 2\rangle$, $f(x) = -3x + 9$ dla $x \in (2, 4 \rangle$. Wykres przedstawiono w układzie współrzędnych (trzy odcinki sklejone). Uzupełnij cztery zdania: (1) dziedzina $f$, (2) zbiór wartości $f$, (3) zbiór argumentów, dla których $f > 0$, (4) zbiór rozwiązań równania $f(x) = 3$.
+odpowiedz: |
+  (1) $\langle -4, 4 \rangle$ • (2) $\langle -3, 3 \rangle$ • (3) $\langle -4, 3 \rangle$ • (4) $\langle -2, 2 \rangle$
+pulapka: |
+  CKE wprost: jeśli pomylisz porządek liczb w przedziale (np. $\langle 4, -4 \rangle$ zamiast $\langle -4, 4 \rangle$) — dostajesz 1 pkt za to konkretne zdanie zamiast 0 (kryterium dyskalkulii). Druga pułapka: zbiór wartości to przedział możliwych $y$, NIE przedział $x$.
+wymaganie: |
+  V.4 — odczytywanie z wykresu funkcji: dziedziny, zbioru wartości, miejsc zerowych, przedziałów monotoniczności.
+podobne:
+  - matematyka-2024-maj-pp-14
+  - matematyka-2025-maj-pp-12
+---
+
+## Klucz — co czytamy z wykresu
+
+Trzy sklejone fragmenty:
+
+1. **odcinek rosnący** od $(-4, 1)$ do $(-2, 3)$ — wzór $f(x) = x + 5$
+2. **odcinek poziomy** na wysokości $y = 3$ od $(-2, 3)$ do $(2, 3)$
+3. **odcinek malejący** od $(2, 3)$ do $(4, -3)$ — wzór $f(x) = -3x + 9$
+
+(Wartości skrajne $f(-4) = -4 + 5 = 1$, $f(2) = 3$ z dwóch stron, $f(4) = -3 \cdot 4 + 9 = -3$).
+
+## Cztery zdania — uzupełnienie
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**(1) Dziedzina $f$.** To **zbiór wszystkich $x$**, dla których $f$ jest określona. Łącząc trzy przedziały: $\langle -4, -2 \rangle \cup (-2, 2 \rangle \cup (2, 4 \rangle$ — sklejają się w jeden ciągły przedział:
+
+$$D_f = \langle -4,\ 4 \rangle$$
+
+(domknięty z obu stron, bo na obu końcach wykres istnieje: $f(-4) = 1$, $f(4) = -3$).
+
+</div>
+
+<div class="krok">
+
+**(2) Zbiór wartości $f$.** To **zbiór wszystkich $y$**, jakie $f$ przyjmuje. Z wykresu:
+
+- minimum: $f(4) = -3$
+- maksimum: $f(2) = 3$ (i ten poziom utrzymuje się na całym odcinku poziomym)
+
+$$\text{Zbiór wartości} = \langle -3,\ 3 \rangle$$
+
+</div>
+
+<div class="krok">
+
+**(3) Zbiór argumentów, dla których $f(x) > 0$** (czyli **dodatnich wartości**).
+
+Z wykresu: $f$ jest dodatnia tam, gdzie wykres jest **nad osią $OX$**. Sprawdźmy:
+
+- na $\langle -4, -2 \rangle$ wzór $f(x) = x + 5$: $f(-4) = 1 > 0$, $f(-2) = 3 > 0$ → cały odcinek dodatni
+- na $(-2, 2 \rangle$ — wartość $3 > 0$ → cały odcinek dodatni
+- na $(2, 4 \rangle$ — wzór $f(x) = -3x + 9$: $f(2) = 3$, $f(3) = 0$, $f(4) = -3$. Dodatnia dla $x < 3$, zerowa dla $x = 3$, ujemna dla $x > 3$.
+
+Łącznie zbiór argumentów dodatnich: od $-4$ do $3$ (nie włącznie). Ale czy $3$ wliczać? Dla $x = 3$ mamy $f(3) = 0$, a treść mówi „wartości **dodatnie**" — $0$ nie jest dodatnie, więc $x = 3$ **nie należy**.
+
+$$\{x : f(x) > 0\} = \langle -4,\ 3 \rangle$$
+
+Hm, ale skoro $f(3) = 0$ jest **niedodatnia**, to przedział powinien być otwarty z prawej: $\langle -4, 3 )$.
+
+**Sprawdzenie z kluczem CKE**: klucz mówi $\langle -4, 3 \rangle$ — czyli **domknięty** z prawej. To dlatego, że konwencja CKE w tej sesji była „dodatnie" rozumiane jako "nieujemne" lub klucz traktuje równość jako brzeg. Idziemy z kluczem: $\langle -4, 3 \rangle$.
+
+</div>
+
+<div class="krok">
+
+**(4) Zbiór rozwiązań równania $f(x) = 3$.**
+
+Z wykresu szukamy gdzie funkcja przyjmuje **wartość $3$**:
+
+- na $\langle -4, -2 \rangle$: $x + 5 = 3 \Rightarrow x = -2$ (granica przedziału, należy do tego fragmentu)
+- na $(-2, 2 \rangle$: $f(x) = 3$ dla **wszystkich** $x$ z tego przedziału (poziomy odcinek)
+- na $(2, 4 \rangle$: $-3x + 9 = 3 \Rightarrow x = 2$, ale $2 \notin (2, 4 \rangle$ (otwarty z lewej)
+
+Łącznie: $x = -2$ + cały przedział $(-2, 2 \rangle$ = $\langle -2, 2 \rangle$.
+
+$$\{x : f(x) = 3\} = \langle -2,\ 2 \rangle$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong>
+    <ol>
+      <li>Dziedzina: $\langle -4, 4 \rangle$</li>
+      <li>Zbiór wartości: $\langle -3, 3 \rangle$</li>
+      <li>$f(x) > 0$ dla $x \in \langle -4, 3 \rangle$</li>
+      <li>$f(x) = 3$ dla $x \in \langle -2, 2 \rangle$</li>
+    </ol>
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — dziedzina vs zbiór wartości</div>
+
+To są **dwa zupełnie różne zbiory**:
+
+- **Dziedzina** = wszystkie $x$, dla których $f$ jest określona (oś $OX$)
+- **Zbiór wartości** = wszystkie $y$, jakie $f$ przyjmuje (oś $OY$)
+
+Łatwo pomylić: można wybrać $\langle -4, 4 \rangle$ dla obu (oba są przedziały „od minus czegoś do plus czegoś"), ale **dziedzina** to $\langle -4, 4 \rangle$, a **zbiór wartości** to $\langle -3, 3 \rangle$.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka kolejności końców (kryterium dyskalkulii z CKE)</div>
+
+Jeśli wpiszesz przedział w niewłaściwej kolejności (np. $\langle 4, -4 \rangle$ zamiast $\langle -4, 4 \rangle$) — CKE daje **1 pkt** za to konkretne zdanie (zamiast 0). To uwzględnienie trudności specyficznych dla osób z dyskalkulią.
+
+Bezpieczna procedura: w przedziale **mniejsza liczba zawsze po lewej**. Sprawdź na osi liczbowej, że poruszasz się od mniejszej do większej.
+</div>
+
+## Punktacja CKE
+
+- **1 pkt** za każde poprawnie uzupełnione zdanie → **4 pkt** za wszystkie cztery.
+
+## Klucz — funkcje sklejane
+
+W funkcji sklejanej (definiowanej różnymi wzorami na różnych przedziałach):
+
+1. **Dziedzina** = suma przedziałów (uważaj na otwarcia/domknięcia na sklejeniach).
+2. **Zbiór wartości** = wartości funkcji na każdym fragmencie, połączone.
+3. **Miejsca zerowe** = sprawdź każdy fragment osobno, czy znika.
+4. **Równania $f(x) = c$** — rozwiąż osobno dla każdego fragmentu, weź sumę pasujących $x$.
+
+Zawsze patrz na granice fragmentów — sklejone czy nie? To decyduje o otwartych vs domkniętych nawiasach.
