@@ -2,15 +2,19 @@
 arkusz: matematyka-2023-maj-pr
 subject: matematyka
 nr: 4
-punkty: 4
+punkty: 3
 typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom rozszerzony â€” zadanie 4
+topic: dowód, grupowanie wyrazów, nierówność z kwadratem
 difficulty: 4
-tresc: Zadanie 4 z arkusza maturalnego CKE z matematyki, maj 2023, poziom rozszerzony. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+tresc: "Liczby rzeczywiste $x, y$ spełniają $x + y = 4$ i $x^3 - x^2y \\leq xy^2 - y^3$. Wykaż, że $x = 2$ i $y = 2$."
+odpowiedz: |
+  Przekształcamy nierówność: $x^3 - x^2y - xy^2 + y^3 \leq 0$ → $(x-y)^2 (x+y) \leq 0$. Ponieważ $x+y = 4 > 0$, musi być $(x-y)^2 \leq 0$, więc $(x-y)^2 = 0$ czyli $x = y$. Z $x+y=4$ wynika $x = y = 2$.
+pulapka: |
+  Najczęstszy błąd: brak grupowania wyrazów. Drugi błąd: pominięcie wniosku że $x + y > 0$ — bez tego $(x-y)^2(x+y) \leq 0$ nie wymusza równości.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  III.1 — przeprowadzanie nieskomplikowanych dowodów algebraicznych.
+podobne:
+  - matematyka-2023-maj-pp-3
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,17 +23,99 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2023-maj-pr/ark-07.webp"
-  alt="Zadanie 4 - strona 7 arkusza CKE matematyka maj 2023 poziom rozszerzony"
-  caption="Strona 7 arkusza CKE. Pelna tresc zadania 4."
-  zrodlo="CKE 2023"
+  alt="Zadanie 4 - dowód algebraiczny"
+  caption="Strona 7 arkusza CKE PR - zadanie 4."
+  zrodlo="CKE 2023 PR"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-R0-100-2305-arkusz.pdf"
   pdfPage={7}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-R0-100-2305-zasady.pdf)
+Mając dwa warunki — $x + y = 4$ i $x^3 - x^2y \leq xy^2 - y^3$ — pokazać, że jedyne rozwiązanie to $x = y = 2$.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 4 sprawdza umiejetnosci w zakresie matematyki poziomu rozszerzony maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Przekształć nierówność.** Przenieś wszystko na lewo:
+
+$$x^3 - x^2y - xy^2 + y^3 \leq 0$$
+
+</div>
+
+<div class="krok">
+
+**Pogrupuj wyrazy po dwa:**
+
+$$x^2(x - y) - y^2(x - y) \leq 0$$
+
+$$(x - y)(x^2 - y^2) \leq 0$$
+
+</div>
+
+<div class="krok">
+
+**Rozłóż $x^2 - y^2$ na czynniki:**
+
+$$x^2 - y^2 = (x - y)(x + y)$$
+
+Stąd:
+
+$$(x - y)(x - y)(x + y) \leq 0$$
+
+$$(x - y)^2 (x + y) \leq 0$$
+
+</div>
+
+<div class="krok">
+
+**Wykorzystaj warunek $x + y = 4$.** Podstaw:
+
+$$(x - y)^2 \cdot 4 \leq 0$$
+
+$$(x - y)^2 \leq 0$$
+
+</div>
+
+<div class="krok">
+
+**Wnioskuj.** $(x - y)^2 \geq 0$ dla wszystkich liczb rzeczywistych. Jedyną możliwością przy $\leq 0$ jest **równość**:
+
+$$(x - y)^2 = 0 \implies x = y$$
+
+</div>
+
+<div class="krok">
+
+**Z $x = y$ i $x + y = 4$:**
+
+$$2x = 4 \implies x = 2 \implies y = 2$$
+
+**Co należało dowieść.** ∎
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    **Dowód:** $x^3 - x^2y - xy^2 + y^3 = (x-y)^2(x+y) \leq 0$. Z $x+y=4>0$ wynika $(x-y)^2 \leq 0$, więc $x = y$, co z $x+y=4$ daje $x = y = 2$. ∎
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Brak grupowania.** Bez grupowania wyrazów po dwa nie da się rozłożyć wielomianu — i nie da się dojść do $(x-y)^2(x+y)$.
+
+  **Pominięcie warunku $x + y > 0$.** $(x-y)^2(x+y) \leq 0$ nie wymusza $x = y$, jeśli $x + y$ może być ujemne. Dopiero $x+y = 4 > 0$ wymusza $(x-y)^2 \leq 0$.
+
+  **Wyciąganie wniosku „skoro nierówność, to równość".** Trzeba pokazać, że tylko **równość** spełnia warunek (bo $(x-y)^2$ nie może być ujemne). To krok logiczny, łatwy do pominięcia.
+</div>
+
+## Po co to umieć
+
+Schemat dowodów typu „wykaż, że $x = a, y = b$" oparty na grupowaniu + nieujemności kwadratu jest częsty na PR. Klucz:
+1. Przekształć nierówność do postaci „suma kwadratów ≤ 0" lub „kwadrat razy coś > 0 ≤ 0".
+2. Wnioskuj, że każdy kwadrat = 0.
+3. Z dodatkowego warunku wylicz konkretne wartości.

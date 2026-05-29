@@ -2,15 +2,21 @@
 arkusz: matematyka-2023-maj-pr
 subject: matematyka
 nr: 6
-punkty: 4
+punkty: 3
 typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom rozszerzony â€” zadanie 6
+topic: równanie trygonometryczne, wzory na sumę
 difficulty: 4
-tresc: Zadanie 6 z arkusza maturalnego CKE z matematyki, maj 2023, poziom rozszerzony. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+tresc: "Rozwiąż równanie $4\\sin(4x)\\cos(6x) = 2\\sin(10x) + 1$."
+odpowiedz: |
+  $x = -\frac{\pi}{12} + k\pi$ lub $x = \frac{7\pi}{12} + k\pi$ dla $k \in \mathbb{Z}$.
+
+  Krok kluczowy: $2 \sin A \cos B = \sin(A+B) + \sin(A-B)$, więc $4\sin(4x)\cos(6x) = 2\sin(10x) - 2\sin(2x)$. Po skróceniu: $\sin(2x) = -\frac{1}{2}$.
+pulapka: |
+  Najczęstszy błąd: pominięcie wzoru $2\sin A \cos B$ i próba podstawiania bezpośrednia. Klucz: zauważyć że $\sin(10x)$ pojawia się po obu stronach i można je skrócić po zastosowaniu wzoru.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  V.3 — równania trygonometryczne, wzory na sumę i różnicę.
+podobne:
+  - matematyka-2023-maj-pr-3
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,17 +25,81 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2023-maj-pr/ark-10.webp"
-  alt="Zadanie 6 - strona 10 arkusza CKE matematyka maj 2023 poziom rozszerzony"
-  caption="Strona 10 arkusza CKE. Pelna tresc zadania 6."
-  zrodlo="CKE 2023"
+  alt="Zadanie 6 - równanie trygonometryczne"
+  caption="Strona 10 arkusza CKE PR - zadanie 6."
+  zrodlo="CKE 2023 PR"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-R0-100-2305-arkusz.pdf"
   pdfPage={10}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-R0-100-2305-zasady.pdf)
+<div class="kroki-lista">
 
-## Po co to umiec
+<div class="krok">
 
-Zadanie 6 sprawdza umiejetnosci w zakresie matematyki poziomu rozszerzony maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+**Zastosuj wzór $2\sin A \cos B = \sin(A+B) + \sin(A-B)$.** Tutaj $A = 4x$, $B = 6x$:
+
+$$4\sin(4x)\cos(6x) = 2 \cdot [2 \sin(4x) \cos(6x)] = 2[\sin(10x) + \sin(-2x)]$$
+
+$$= 2\sin(10x) - 2\sin(2x)$$
+
+(bo $\sin(-2x) = -\sin(2x)$)
+
+</div>
+
+<div class="krok">
+
+**Wstaw do równania:**
+
+$$2\sin(10x) - 2\sin(2x) = 2\sin(10x) + 1$$
+
+Skróć $2\sin(10x)$ po obu stronach:
+
+$$-2\sin(2x) = 1$$
+
+$$\sin(2x) = -\frac{1}{2}$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiąż $\sin u = -\frac{1}{2}$** (gdzie $u = 2x$). Rozwiązania:
+
+$$u = -\frac{\pi}{6} + 2k\pi \quad \text{lub} \quad u = \pi + \frac{\pi}{6} + 2k\pi = \frac{7\pi}{6} + 2k\pi$$
+
+</div>
+
+<div class="krok">
+
+**Podziel przez $2$:**
+
+$$x = -\frac{\pi}{12} + k\pi \quad \text{lub} \quad x = \frac{7\pi}{12} + k\pi, \quad k \in \mathbb{Z}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    $x = -\frac{\pi}{12} + k\pi \quad \text{lub} \quad x = \frac{7\pi}{12} + k\pi, \quad k \in \mathbb{Z}$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Niezastosowanie wzoru iloczynowego.** Bez przekształcenia $4\sin(4x)\cos(6x) \to 2\sin(10x) - 2\sin(2x)$ nie da się skrócić $\sin(10x)$.
+
+  **Tylko jedno rozwiązanie zamiast dwóch.** Równanie $\sin u = -\frac{1}{2}$ ma **dwa** typy rozwiązań w okresie $2\pi$.
+
+  **Pominięcie podziału przez $2$.** Skoro $u = 2x$, to $x = u/2$ — każde rozwiązanie należy podzielić.
+</div>
+
+## Po co to umieć
+
+**Wzory iloczynowe** trygonometrii:
+- $2\sin A \cos B = \sin(A+B) + \sin(A-B)$
+- $2\cos A \cos B = \cos(A-B) + \cos(A+B)$
+- $2\sin A \sin B = \cos(A-B) - \cos(A+B)$
+
+Wszystkie z karty wzorów CKE. Kiedy zobaczysz **iloczyn $\sin \cos$ z różnymi kątami**, prawie zawsze pomaga przejść do **sumy** za pomocą tych wzorów.

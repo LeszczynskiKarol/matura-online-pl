@@ -2,15 +2,21 @@
 arkusz: matematyka-2023-maj-pr
 subject: matematyka
 nr: 3
-punkty: 4
+punkty: 3
 typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom rozszerzony â€” zadanie 3
+topic: pochodna funkcji wymiernej, styczna do wykresu
 difficulty: 4
-tresc: Zadanie 3 z arkusza maturalnego CKE z matematyki, maj 2023, poziom rozszerzony. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+tresc: "$f(x) = \\frac{3x^2 - 2x}{x^2 + 2x + 8}$. Punkt $P = (x_0, 3)$ leży na wykresie $f$. Oblicz $x_0$ i wyznacz styczną do $f$ w $P$."
+odpowiedz: |
+  $x_0 = -3$, $f'(-3) = -\frac{8}{11}$
+
+  **Styczna:** $y = -\frac{8}{11}x + \frac{9}{11}$
+pulapka: |
+  Najczęstszy błąd: zła pochodna ilorazu — pomyłka w znaku lub kolejności wyrazów. Wzór: $\left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2}$ (różnica, nie suma!). Drugi błąd: brak skrócenia $\frac{-88}{121}$ do $-\frac{8}{11}$.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  IV.3 — pochodne funkcji, styczna do wykresu.
+podobne:
+  - matematyka-2023-maj-pr-1
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,17 +25,94 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2023-maj-pr/ark-06.webp"
-  alt="Zadanie 3 - strona 6 arkusza CKE matematyka maj 2023 poziom rozszerzony"
-  caption="Strona 6 arkusza CKE. Pelna tresc zadania 3."
-  zrodlo="CKE 2023"
+  alt="Zadanie 3 - pochodna i styczna"
+  caption="Strona 6 arkusza CKE PR - zadanie 3."
+  zrodlo="CKE 2023 PR"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-R0-100-2305-arkusz.pdf"
   pdfPage={6}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-R0-100-2305-zasady.pdf)
+(1) Znajdź $x_0$ z warunku $f(x_0) = 3$.
+(2) Wylicz pochodną $f'(x_0)$ — to współczynnik kierunkowy stycznej.
+(3) Napisz równanie stycznej.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 3 sprawdza umiejetnosci w zakresie matematyki poziomu rozszerzony maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Znajdź $x_0$:**
+
+$$3 = \frac{3x_0^2 - 2x_0}{x_0^2 + 2x_0 + 8}$$
+
+Pomnóż obie strony przez mianownik:
+
+$$3(x_0^2 + 2x_0 + 8) = 3x_0^2 - 2x_0$$
+$$3x_0^2 + 6x_0 + 24 = 3x_0^2 - 2x_0$$
+$$8x_0 = -24$$
+$$x_0 = -3$$
+
+</div>
+
+<div class="krok">
+
+**Wylicz pochodną** (wzór na iloraz). Oznacz $u = 3x^2 - 2x$, $v = x^2 + 2x + 8$:
+
+$$u' = 6x - 2 \quad v' = 2x + 2$$
+
+$$f'(x) = \frac{u'v - uv'}{v^2}$$
+
+</div>
+
+<div class="krok">
+
+**Wstaw $x = -3$:**
+
+$$u(-3) = 27 + 6 = 33, \quad v(-3) = 9 - 6 + 8 = 11$$
+$$u'(-3) = -20, \quad v'(-3) = -4$$
+
+$$f'(-3) = \frac{(-20) \cdot 11 - 33 \cdot (-4)}{11^2} = \frac{-220 + 132}{121} = \frac{-88}{121}$$
+
+**Skróć** ($121 = 11^2$, $88 = 8 \cdot 11$):
+
+$$f'(-3) = -\frac{8}{11}$$
+
+</div>
+
+<div class="krok">
+
+**Wyznacz równanie stycznej.** Postać: $y - y_0 = f'(x_0)(x - x_0)$, czyli $y - 3 = -\frac{8}{11}(x + 3)$:
+
+$$y = -\frac{8}{11}x - \frac{24}{11} + 3 = -\frac{8}{11}x - \frac{24}{11} + \frac{33}{11}$$
+
+$$\boxed{y = -\frac{8}{11}x + \frac{9}{11}}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    **$x_0 = -3$**, styczna: **$y = -\frac{8}{11}x + \frac{9}{11}$**
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Pochodna ilorazu — znak.** $\left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2}$ — różnica! Nie $u'v + uv'$.
+
+  **Brak podstawienia $x_0$ do pochodnej.** Współczynnik kierunkowy stycznej to **$f'(x_0)$**, nie sama formuła pochodnej. Bez podstawienia $x = -3$ nie ma liczbowej wartości.
+
+  **Pomyłka w równaniu stycznej.** Postać $y - y_0 = a(x - x_0)$ wymaga **punktu z grafu**, nie samego $x_0$. Tutaj punktem jest $P = (-3, 3)$.
+</div>
+
+## Po co to umieć
+
+**Pochodna ilorazu:** $\left(\frac{u}{v}\right)' = \frac{u'v - uv'}{v^2}$.
+
+**Styczna do wykresu** w punkcie $(x_0, y_0)$:
+- współczynnik kierunkowy = $f'(x_0)$
+- równanie: $y - y_0 = f'(x_0)(x - x_0)$
+
+To podstawowy schemat dla zadań „znajdź styczną" — pojawia się na PR matematyki rok w rok.

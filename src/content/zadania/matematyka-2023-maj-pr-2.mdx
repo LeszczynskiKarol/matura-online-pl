@@ -2,15 +2,21 @@
 arkusz: matematyka-2023-maj-pr
 subject: matematyka
 nr: 2
-punkty: 4
+punkty: 3
 typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom rozszerzony â€” zadanie 2
+topic: schemat Bernoulliego, prawdopodobieństwo
 difficulty: 4
-tresc: Zadanie 2 z arkusza maturalnego CKE z matematyki, maj 2023, poziom rozszerzony. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+tresc: "Tomek i Romek grają 5 partii szachów. $P(\\text{Tomek wygrywa partię}) = \\frac{1}{4}$. Oblicz $P(\\text{Tomek wygra co najmniej 4 z 5})$."
+odpowiedz: |
+  **$P = \frac{1}{64}$**
+
+  Schemat Bernoulliego: $P(\geq 4) = P(4) + P(5) = \binom{5}{4} \left(\frac{1}{4}\right)^4 \left(\frac{3}{4}\right) + \binom{5}{5} \left(\frac{1}{4}\right)^5 = \frac{15}{1024} + \frac{1}{1024} = \frac{16}{1024} = \frac{1}{64}$.
+pulapka: |
+  Najczęstszy błąd: pominięcie przypadku 5 wygranych — „co najmniej 4" obejmuje 4 **i** 5. Drugi błąd: brak współczynnika dwumianowego $\binom{5}{4} = 5$ (zlicza, na które partie wypadają wygrane).
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  IX.3 — prawdopodobieństwo, schemat Bernoulliego.
+podobne:
+  - matematyka-2023-maj-pr-1
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,17 +25,72 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2023-maj-pr/ark-05.webp"
-  alt="Zadanie 2 - strona 5 arkusza CKE matematyka maj 2023 poziom rozszerzony"
-  caption="Strona 5 arkusza CKE. Pelna tresc zadania 2."
-  zrodlo="CKE 2023"
+  alt="Zadanie 2 - prawdopodobieństwo (schemat Bernoulliego)"
+  caption="Strona 5 arkusza CKE PR - zadanie 2."
+  zrodlo="CKE 2023 PR"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-R0-100-2305-arkusz.pdf"
   pdfPage={5}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-R0-100-2305-zasady.pdf)
+Schemat Bernoulliego: $n = 5$ niezależnych prób, $p = \frac{1}{4}$ (sukces = wygrana Tomka), $q = 1-p = \frac{3}{4}$. Szukamy $P(X \geq 4) = P(X = 4) + P(X = 5)$.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 2 sprawdza umiejetnosci w zakresie matematyki poziomu rozszerzony maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Wzór na prawdopodobieństwo $k$ sukcesów w $n$ próbach:**
+
+$$P(X = k) = \binom{n}{k} p^k q^{n-k}$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz $P(X = 4)$:**
+
+$$P(X = 4) = \binom{5}{4} \left(\frac{1}{4}\right)^4 \left(\frac{3}{4}\right)^1 = 5 \cdot \frac{1}{256} \cdot \frac{3}{4} = \frac{15}{1024}$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz $P(X = 5)$:**
+
+$$P(X = 5) = \binom{5}{5} \left(\frac{1}{4}\right)^5 \left(\frac{3}{4}\right)^0 = 1 \cdot \frac{1}{1024} \cdot 1 = \frac{1}{1024}$$
+
+</div>
+
+<div class="krok">
+
+**Suma:**
+
+$$P(X \geq 4) = \frac{15}{1024} + \frac{1}{1024} = \frac{16}{1024} = \frac{1}{64}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>$P = \frac{1}{64}$</strong>
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Pominięcie $P(X = 5)$.** „Co najmniej $4$" = $4$ lub $5$. Trzeba dodać oba przypadki.
+
+  **Brak współczynnika $\binom{5}{4} = 5$.** $4$ wygrane w $5$ partiach można rozmieścić na $5$ sposobów (która partia była przegrana). Sam iloczyn $p^4 q$ to **jeden konkretny układ**, ale jest ich $5$ równoprawnych.
+
+  **Skracanie ułamka.** $\frac{16}{1024} = \frac{1}{64}$ (dziel licznik i mianownik przez $16$). Brak skrócenia = $0$ punktów za odpowiedź (treść wymaga „ułamka nieskracalnego").
+</div>
+
+## Po co to umieć
+
+**Schemat Bernoulliego** dotyczy ciągu niezależnych prób z dwoma wynikami (sukces/porażka) i stałym prawdopodobieństwem $p$. Wzór:
+
+$$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
+
+„Co najmniej $k$" = suma wszystkich $P(X = k), P(X = k+1), \ldots, P(X = n)$.

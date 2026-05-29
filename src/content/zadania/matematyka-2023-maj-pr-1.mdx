@@ -2,15 +2,23 @@
 arkusz: matematyka-2023-maj-pr
 subject: matematyka
 nr: 1
-punkty: 4
+punkty: 2
 typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom rozszerzony â€” zadanie 1
+topic: ciąg geometryczny, rozpad procentowy, logarytmy
 difficulty: 4
-tresc: Zadanie 1 z arkusza maturalnego CKE z matematyki, maj 2023, poziom rozszerzony. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+tresc: "W chwili $t=0$ masa substancji = $4$ g. Każdej doby ubywa $19\\%$ masy z końca poprzedniej doby. Wyznacz wzór $m(t)$ i oblicz, po ilu pełnych dobach masa po raz pierwszy będzie mniejsza od $1{,}5$ g."
+odpowiedz: |
+  **Wzór:** $m(t) = 4 \cdot 0{,}81^t$
+
+  **Po $5$ pełnych dobach** masa po raz pierwszy < $1{,}5$ g.
+
+  Sprawdzenie: $m(4) \approx 1{,}72$, $m(5) \approx 1{,}40$.
+pulapka: |
+  Najczęstszy błąd: $m(t) = 4 \cdot 0{,}19^t$ — ubywa $19\%$, więc **zostaje $81\%$**. Drugi błąd: nierówność $0{,}81^t < 0{,}375$ rozwiązana ze złym znakiem (przy logarytmowaniu liczb < 1 znak nierówności **się odwraca**).
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  IV.7 — ciąg geometryczny; III.1 — równania i nierówności z wartością bezwzględną.
+podobne:
+  - matematyka-2023-maj-pp-19
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,17 +27,92 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2023-maj-pr/ark-04.webp"
-  alt="Zadanie 1 - strona 4 arkusza CKE matematyka maj 2023 poziom rozszerzony"
-  caption="Strona 4 arkusza CKE. Pelna tresc zadania 1."
-  zrodlo="CKE 2023"
+  alt="Zadanie 1 - rozpad substancji"
+  caption="Strona 4 arkusza CKE PR - zadanie 1."
+  zrodlo="CKE 2023 PR"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-R0-100-2305-arkusz.pdf"
   pdfPage={4}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-R0-100-2305-zasady.pdf)
+Wyznacz funkcję $m(t)$ opisującą masę substancji po $t$ dobach. Następnie znajdź najmniejsze $t \in \mathbb{N}$, dla którego $m(t) < 1{,}5$.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 1 sprawdza umiejetnosci w zakresie matematyki poziomu rozszerzony maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Modeluj rozpad jako ciąg geometryczny.** Po każdej dobie zostaje $100\% - 19\% = 81\%$ poprzedniej masy:
+
+$$m_{t+1} = 0{,}81 \cdot m_t$$
+
+Stąd:
+
+$$m(t) = 4 \cdot 0{,}81^t$$
+
+</div>
+
+<div class="krok">
+
+**Ułóż nierówność $m(t) < 1{,}5$:**
+
+$$4 \cdot 0{,}81^t < 1{,}5$$
+
+$$0{,}81^t < 0{,}375$$
+
+</div>
+
+<div class="krok">
+
+**Sprawdź kolejne wartości $t$** (szybszy niż logarytm):
+
+| $t$ | $0{,}81^t$ | $m(t)$ |
+|---|---|---|
+| 1 | $0{,}81$ | $3{,}24$ |
+| 2 | $0{,}656$ | $2{,}625$ |
+| 3 | $0{,}531$ | $2{,}126$ |
+| 4 | $0{,}430$ | $1{,}722$ |
+| 5 | $0{,}349$ | $\mathbf{1{,}395}$ ✓ |
+
+Pierwsze $t$ z $m(t) < 1{,}5$: **$t = 5$**.
+
+</div>
+
+<div class="krok">
+
+**Alternatywnie — logarytmy:**
+
+$$t \cdot \log 0{,}81 < \log 0{,}375$$
+
+$\log 0{,}81 < 0$, więc znak nierówności **odwraca się**:
+
+$$t > \frac{\log 0{,}375}{\log 0{,}81} = \frac{-0{,}4260}{-0{,}0915} \approx 4{,}66$$
+
+Najmniejsze całkowite $t$ to **$5$**.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    **$m(t) = 4 \cdot 0{,}81^t$**
+    
+    Po **$5$ pełnych dobach** masa po raz pierwszy będzie mniejsza od $1{,}5$ g.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wzór $m(t) = 4 \cdot 0{,}19^t$** — ubywa $19\%$, więc **zostaje** $81\%$. To ten sam błąd co przy obliczaniu cen po przecenie: $30\%$ rabat = $\times 0{,}7$, nie $\times 0{,}3$.
+
+  **Wzór $m(t) = 4 - 0{,}19 \cdot t$** — to byłby ubytek **stały** (liniowy), nie procentowy. Procentowy ubytek zawsze daje ciąg geometryczny / funkcję wykładniczą.
+
+  **Odwrócenie nierówności przy log.** Przy logarytmowaniu liczb mniejszych od $1$ (tutaj $0{,}81$) podstawą logarytmu **odwraca się** znak nierówności.
+</div>
+
+## Po co to umieć
+
+Rozpad procentowy o $p\%$ na okres = ciąg geometryczny z $q = 1 - p/100$. Wzór ogólny: $m(t) = m_0 \cdot q^t$.
+
+Dla obliczeń wystarczy próbkować kolejne $t$ — często szybsze niż logarytmy. Logarytmy są pewniejsze dla dużych wartości.

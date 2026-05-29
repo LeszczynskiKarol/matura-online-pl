@@ -4,13 +4,19 @@ subject: matematyka
 nr: 7
 punkty: 4
 typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom rozszerzony â€” zadanie 7
-difficulty: 4
-tresc: Zadanie 7 z arkusza maturalnego CKE z matematyki, maj 2023, poziom rozszerzony. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+topic: stereometria, sześcian, geometria analityczna 3D
+difficulty: 5
+tresc: "Sześcian ABCDEFGH o krawędzi $6$. $S$ to przecięcie przekątnych $AH$ i $DE$ ściany $ADHE$. Oblicz wysokość trójkąta $SBH$ z $S$ na $BH$."
+odpowiedz: |
+  **$h = \sqrt{6}$**
+
+  Współrzędne: $S = (0, 3, 3)$, $B = (6, 0, 0)$, $H = (0, 6, 6)$. Pole $\triangle SBH = 9\sqrt{2}$ (z iloczynu wektorowego). $|BH| = 6\sqrt{3}$. Stąd $h = \frac{2 \cdot 9\sqrt{2}}{6\sqrt{3}} = \sqrt{6}$.
+pulapka: |
+  Najczęstszy błąd: założenie, że trójkąt $SBH$ jest prostokątny lub równoramienny. Sprawdź boki: $|SB| = 3\sqrt{6}$, $|SH| = 3\sqrt{2}$, $|BH| = 6\sqrt{3}$ — to **trójkąt różnoboczny**.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  VIII.2 — stereometria, kąty i odległości w bryłach; VII.3 — wektory w 3D.
+podobne:
+  - matematyka-2023-maj-pr-5
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,17 +25,80 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2023-maj-pr/ark-11.webp"
-  alt="Zadanie 7 - strona 11 arkusza CKE matematyka maj 2023 poziom rozszerzony"
-  caption="Strona 11 arkusza CKE. Pelna tresc zadania 7."
-  zrodlo="CKE 2023"
+  alt="Zadanie 7 - sześcian, wysokość trójkąta SBH"
+  caption="Strona 11 arkusza CKE PR - zadanie 7."
+  zrodlo="CKE 2023 PR"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-R0-100-2305-arkusz.pdf"
   pdfPage={11}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-R0-100-2305-zasady.pdf)
+<div class="kroki-lista">
 
-## Po co to umiec
+<div class="krok">
 
-Zadanie 7 sprawdza umiejetnosci w zakresie matematyki poziomu rozszerzony maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+**Ustaw układ współrzędnych.** Wierzchołki sześcianu:
+- $A = (0, 0, 0)$, $B = (6, 0, 0)$, $C = (6, 6, 0)$, $D = (0, 6, 0)$
+- $E = (0, 0, 6)$, $F = (6, 0, 6)$, $G = (6, 6, 6)$, $H = (0, 6, 6)$
+
+$S$ = przecięcie przekątnych ściany $ADHE$ = **środek ściany**: $S = \left(0, \frac{0+6}{2}, \frac{0+6}{2}\right) = (0, 3, 3)$.
+
+</div>
+
+<div class="krok">
+
+**Oblicz długość $|BH|$** (podstawa trójkąta):
+
+$$|BH| = \sqrt{(6-0)^2 + (0-6)^2 + (0-6)^2} = \sqrt{108} = 6\sqrt{3}$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz pole $\triangle SBH$ z iloczynu wektorowego:**
+
+$$\vec{SB} = B - S = (6, -3, -3)$$
+$$\vec{SH} = H - S = (0, 3, 3)$$
+
+$$\vec{SB} \times \vec{SH} = (0, -18, 18)$$
+
+$$|\vec{SB} \times \vec{SH}| = \sqrt{0 + 324 + 324} = \sqrt{648} = 18\sqrt{2}$$
+
+$$P_{\triangle SBH} = \frac{1}{2} \cdot 18\sqrt{2} = 9\sqrt{2}$$
+
+</div>
+
+<div class="krok">
+
+**Wysokość z $S$ na $BH$:**
+
+$$P = \frac{1}{2} \cdot |BH| \cdot h$$
+
+$$9\sqrt{2} = \frac{1}{2} \cdot 6\sqrt{3} \cdot h \implies h = \frac{18\sqrt{2}}{6\sqrt{3}} = \frac{3\sqrt{2}}{\sqrt{3}} = \sqrt{6}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    **Wysokość trójkąta SBH z S na BH: $h = \sqrt{6}$**
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Założenie prostokątności trójkąta SBH.** Sprawdzenie boków $|SB|^2 = 54$, $|SH|^2 = 18$, $|BH|^2 = 108$. $54 + 18 = 72 \neq 108$, więc nie jest prostokątny.
+
+  **Pomylenie środka ściany.** Przecięcie przekątnych prostokąta to **środek prostokąta** (średnia współrzędnych przeciwnych wierzchołków).
+
+  **Wzór na pole z bokami i sinusami.** Jest dłuższy niż iloczyn wektorowy. Iloczyn wektorowy daje pole bezpośrednio.
+</div>
+
+## Po co to umieć
+
+W 3D do **odległości punktu od prostej** najszybciej jest przez pole trójkąta:
+$$d = \frac{2 \cdot P_{\triangle}}{|\text{bok}|}$$
+
+Pole z iloczynu wektorowego: $P = \frac{1}{2} |\vec{u} \times \vec{v}|$. Iloczyn wektorowy zawsze działa, bez względu na typ trójkąta.

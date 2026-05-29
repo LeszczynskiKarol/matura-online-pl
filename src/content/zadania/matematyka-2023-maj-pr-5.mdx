@@ -2,15 +2,21 @@
 arkusz: matematyka-2023-maj-pr
 subject: matematyka
 nr: 5
-punkty: 4
+punkty: 3
 typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom rozszerzony â€” zadanie 5
-difficulty: 4
-tresc: Zadanie 5 z arkusza maturalnego CKE z matematyki, maj 2023, poziom rozszerzony. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+topic: trójkąt prostokątny 30-60-90, geometria analityczna
+difficulty: 5
+tresc: "Trójkąt prostokątny ABC ($\\angle B = 90°$, $\\angle A = 60°$). K na AB, L na BC, $BK = BL = 1$. Wysokość BD z B na AC. AD = 2. KL przecina BD w N. Wykaż $|ND| = \\sqrt{3} + 1$."
+odpowiedz: |
+  Rozwiązanie w układzie współrzędnych: $B = (0,0)$, $A = (0,4)$, $C = (4\sqrt{3}, 0)$. Wtedy $K = (0,1)$, $L = (1,0)$, $D = (\sqrt{3}, 3)$, $N = \left(\frac{\sqrt{3}-1}{2}, \frac{3-\sqrt{3}}{2}\right)$.
+
+  $|ND|^2 = \left(\frac{\sqrt{3}+1}{2}\right)^2 (1+3) = (\sqrt{3}+1)^2$, więc $|ND| = \sqrt{3}+1$. ∎
+pulapka: |
+  Najczęstszy błąd: pomylenie boków w trójkącie 30-60-90. Stosunki: naprzeciw 30° → naprzeciw 60° → naprzeciw 90° to $1 : \sqrt{3} : 2$.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  VII.2 — geometria analityczna; VI.3 — trygonometria w trójkącie prostokątnym.
+podobne:
+  - matematyka-2023-maj-pr-4
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,17 +25,104 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2023-maj-pr/ark-08.webp"
-  alt="Zadanie 5 - strona 8 arkusza CKE matematyka maj 2023 poziom rozszerzony"
-  caption="Strona 8 arkusza CKE. Pelna tresc zadania 5."
-  zrodlo="CKE 2023"
+  alt="Zadanie 5 - trójkąt 30-60-90, dowód |ND|"
+  caption="Strona 8 arkusza CKE PR - zadanie 5."
+  zrodlo="CKE 2023 PR"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-R0-100-2305-arkusz.pdf"
   pdfPage={8}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-R0-100-2305-zasady.pdf)
+Wykazać, że $|ND| = \sqrt{3} + 1$, gdzie $N$ to przecięcie odcinka $KL$ z wysokością $BD$.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 5 sprawdza umiejetnosci w zakresie matematyki poziomu rozszerzony maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Ustaw układ współrzędnych.** Niech $B = (0,0)$, $A$ na osi $y$, $C$ na osi $x$ (bo $\angle ABC = 90°$).
+
+W trójkącie $ABD$ ($\angle ADB = 90°$, $\angle DAB = 60°$): $AD = 2 = AB \cdot \cos 60° = AB / 2$, czyli $AB = 4$.
+
+Z trójkąta 30-60-90 z $AB = 4$: $BC = AB \cdot \tan 60° = 4\sqrt{3}$, $AC = 2 \cdot AB = 8$.
+
+Stąd: $A = (0, 4)$, $C = (4\sqrt{3}, 0)$.
+
+</div>
+
+<div class="krok">
+
+**Wyznacz $K, L$.** $K$ na $AB$ z $BK = 1$ → $K = (0, 1)$. $L$ na $BC$ z $BL = 1$ → $L = (1, 0)$.
+
+Prosta $KL$: $x + y = 1$.
+
+</div>
+
+<div class="krok">
+
+**Wyznacz prostą $BD$.** Prosta $AC$: $y = 4 - \frac{x}{\sqrt{3}}$ (współczynnik $-\frac{1}{\sqrt{3}}$).
+
+Prostopadła z $B = (0,0)$: współczynnik $\sqrt{3}$, czyli $y = \sqrt{3} x$.
+
+</div>
+
+<div class="krok">
+
+**Wyznacz $D = AC \cap BD$:**
+
+$$\sqrt{3} x = 4 - \frac{x}{\sqrt{3}} \implies 3x = 4\sqrt{3} - x \implies x = \sqrt{3}, \ y = 3$$
+
+$D = (\sqrt{3}, 3)$.
+
+</div>
+
+<div class="krok">
+
+**Wyznacz $N = KL \cap BD$:**
+
+$$x + \sqrt{3}x = 1 \implies x = \frac{1}{1+\sqrt{3}} = \frac{\sqrt{3}-1}{2}$$
+
+$$y = \sqrt{3}x = \frac{3 - \sqrt{3}}{2}$$
+
+$N = \left(\frac{\sqrt{3}-1}{2}, \frac{3-\sqrt{3}}{2}\right)$.
+
+</div>
+
+<div class="krok">
+
+**Oblicz $|ND|$:**
+
+$$D - N = \left(\sqrt{3} - \frac{\sqrt{3}-1}{2},\ 3 - \frac{3-\sqrt{3}}{2}\right) = \left(\frac{\sqrt{3}+1}{2},\ \frac{3+\sqrt{3}}{2}\right)$$
+
+Druga współrzędna: $\frac{3+\sqrt{3}}{2} = \frac{\sqrt{3}(\sqrt{3}+1)}{2}$ — wspólny czynnik $\frac{\sqrt{3}+1}{2}$:
+
+$$|ND|^2 = \left(\frac{\sqrt{3}+1}{2}\right)^2 (1 + 3) = \left(\frac{\sqrt{3}+1}{2}\right)^2 \cdot 4 = (\sqrt{3}+1)^2$$
+
+$$|ND| = \sqrt{3} + 1$$
+
+**Co należało dowieść.** ∎
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    **Dowód:** Współrzędne $D = (\sqrt{3}, 3)$, $N = \left(\frac{\sqrt{3}-1}{2}, \frac{3-\sqrt{3}}{2}\right)$. Wektor $\vec{ND} = \frac{\sqrt{3}+1}{2}(1, \sqrt{3})$, więc $|ND| = \frac{\sqrt{3}+1}{2} \cdot 2 = \sqrt{3} + 1$. ∎
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Trójkąt 30-60-90.** Stosunki boków: **naprzeciw $30°$** : **naprzeciw $60°$** : **naprzeciw $90°$** = $1 : \sqrt{3} : 2$. Naprzeciw kąta największego (prostego) jest najdłuższy bok (przeciwprostokątna).
+
+  **Wyznaczenie $AB$ z $AD$.** $AD = 2$ jest częścią $AC$ (przeciwprostokątnej). W trójkącie $ABD$ kąt przy $A$ to $60°$, a $AD$ to bok **przyległy** do tego kąta. Stąd $\cos 60° = AD/AB$, czyli $AB = AD/\cos 60° = 4$.
+
+  **Stosowanie współrzędnych jest najszybsze.** Próba dowodu czysto geometrycznego (twierdzenie Talesa + trygonometria) wymaga więcej kroków i jest podatna na błędy.
+</div>
+
+## Po co to umieć
+
+Dowody geometryczne na PR często są szybsze w **układzie współrzędnych** niż klasycznie. Klucz: ustaw układ tak, by jeden wierzchołek był w $(0,0)$, a osie pokrywały się z prostopadłymi bokami.
+
+W trójkącie 30-60-90 ze stosunkami $1 : \sqrt{3} : 2$ wszystkie funkcje trygonometryczne są łatwo wyznaczalne: $\sin 30° = 1/2$, $\cos 30° = \sqrt{3}/2$, $\tan 30° = 1/\sqrt{3}$ itp.
