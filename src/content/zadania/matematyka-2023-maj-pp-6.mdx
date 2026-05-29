@@ -4,13 +4,16 @@ subject: matematyka
 nr: 6
 punkty: 1
 typ: zamkniete-abcd
-topic: matematyka maj 2023 poziom podstawowy â€” zadanie 6
-difficulty: 3
-tresc: Zadanie 6 z arkusza maturalnego CKE z matematyki, maj 2023, poziom podstawowy. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+topic: nierówność liniowa
+difficulty: 2
+tresc: Rozwiąż nierówność $-2(x+3) \leq \frac{2-x}{3}$ i wskaż zbiór rozwiązań.
+odpowiedz: C
+pulapka: |
+  Najczęstszy błąd: zapomnienie o zmianie znaku nierówności przy dzieleniu/mnożeniu obu stron przez liczbę ujemną. Tutaj pojawia się ten moment przy końcu rozwiązania.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  III.2 — rozwiązywanie nierówności pierwszego stopnia z jedną niewiadomą.
+podobne:
+  - matematyka-2024-maj-pp-7
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,17 +22,75 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2023-maj-pp/ark-07.webp"
-  alt="Zadanie 6 - strona 7 arkusza CKE matematyka maj 2023 poziom podstawowy"
-  caption="Strona 7 arkusza CKE. Pelna tresc zadania 6."
+  alt="Zadanie 6 - nierówność liniowa"
+  caption="Strona 7 arkusza CKE - zadanie 6 (nierówność)."
   zrodlo="CKE 2023"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
   pdfPage={7}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf)
+Rozwiąż $-2(x+3) \leq \frac{2-x}{3}$.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 6 sprawdza umiejetnosci w zakresie matematyki poziomu podstawowy maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Pozbądź się ułamka.** Pomnóż obie strony przez $3$ (dodatnia liczba — znak nierówności bez zmiany):
+
+$$-6(x+3) \leq 2-x$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiń lewą stronę.**
+
+$$-6x - 18 \leq 2 - x$$
+
+</div>
+
+<div class="krok">
+
+**Przenieś niewiadome na lewo, liczby na prawo.**
+
+$$-6x + x \leq 2 + 18$$
+$$-5x \leq 20$$
+
+</div>
+
+<div class="krok">
+
+**Podziel obie strony przez $-5$ — UWAGA: znak nierówności się zmienia** (bo dzielimy przez liczbę ujemną):
+
+$$x \geq -4$$
+
+</div>
+
+<div class="krok">
+
+**Zapisz jako przedział.** $x \geq -4$ oznacza:
+
+$$x \in \langle -4, +\infty)$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: C</strong> — $\langle -4, +\infty)$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór A ($(-\infty, -4\rangle$)** — zapomnienie o zmianie znaku nierówności przy dzieleniu przez $-5$. To absolutnie najczęstszy błąd w nierównościach. Reguła: dzielisz przez liczbę ujemną → odwracasz nierówność.
+
+  **Wybór D ($\langle 4, \infty)$)** — błąd znaku (zgubione $-$ gdzieś w drodze).
+</div>
+
+## Po co to umieć
+
+Nierówności liniowe to fundament — pojawiają się prawie w każdym arkuszu, czasem jako odrębne zadanie, czasem jako element większego problemu (dziedzina funkcji, granice). Najważniejsza zasada: **mnożenie/dzielenie przez liczbę ujemną odwraca znak nierówności**.

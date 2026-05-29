@@ -4,13 +4,16 @@ subject: matematyka
 nr: 4
 punkty: 1
 typ: zamkniete-abcd
-topic: matematyka maj 2023 poziom podstawowy â€” zadanie 4
-difficulty: 3
-tresc: Zadanie 4 z arkusza maturalnego CKE z matematyki, maj 2023, poziom podstawowy. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+topic: logarytmy, własności logarytmu sumy
+difficulty: 2
+tresc: Oblicz wartość $\log_9 27 + \log_9 3$.
+odpowiedz: D
+pulapka: |
+  Najczęstszy błąd: pomnożenie zamiast dodania logarytmów. $\log a + \log b = \log(ab)$, nie $\log a \cdot \log b$. Drugi błąd: $\log_9 81 = 9$ zamiast $2$ — pamiętaj, że szukamy wykładnika $x$, dla którego $9^x = 81$.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  I.6 — stosowanie własności logarytmów (logarytm iloczynu, ilorazu, potęgi).
+podobne:
+  - matematyka-2024-maj-pp-3
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,17 +22,71 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2023-maj-pp/ark-06.webp"
-  alt="Zadanie 4 - strona 6 arkusza CKE matematyka maj 2023 poziom podstawowy"
-  caption="Strona 6 arkusza CKE. Pelna tresc zadania 4."
+  alt="Zadanie 4 - suma logarytmów"
+  caption="Strona 6 arkusza CKE - zadanie 4 (logarytmy)."
   zrodlo="CKE 2023"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
   pdfPage={6}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf)
+Oblicz $\log_9 27 + \log_9 3$.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 4 sprawdza umiejetnosci w zakresie matematyki poziomu podstawowy maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Użyj wzoru na logarytm iloczynu.** Dla tej samej podstawy:
+
+$$\log_a x + \log_a y = \log_a (x \cdot y)$$
+
+W naszym przypadku:
+
+$$\log_9 27 + \log_9 3 = \log_9 (27 \cdot 3) = \log_9 81$$
+
+</div>
+
+<div class="krok">
+
+**Zauważ, że $81 = 9^2$.**
+
+$$\log_9 81 = \log_9 9^2$$
+
+</div>
+
+<div class="krok">
+
+**Skorzystaj z własności logarytmu potęgi.**
+
+$$\log_a a^k = k$$
+
+Tutaj $a = 9$, $k = 2$:
+
+$$\log_9 9^2 = 2$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: D</strong> — $2$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  Wybór A ($81$) — pomylenie wartości logarytmu z liczbą logarytmowaną. $\log_9 81$ to **wykładnik**, nie sama liczba $81$.
+
+  Wybór B ($9$) — pomylenie wzoru: $\log_9 81 = 9$ jest błędne, bo $9^9 \neq 81$.
+
+  Wybór C ($4$) — może wystąpić przy zamianie podstawy na $\log_3 27 + \log_3 3 = 3 + 1 = 4$, ale to inna podstawa logarytmu.
+</div>
+
+## Po co to umieć
+
+Logarytmy w arkuszu maturalnym pojawiają się 1-2 razy na sesję. Trzy własności do zapamiętania:
+- $\log_a x + \log_a y = \log_a(xy)$
+- $\log_a x - \log_a y = \log_a(x/y)$
+- $\log_a x^k = k \log_a x$, w szczególności $\log_a a^k = k$

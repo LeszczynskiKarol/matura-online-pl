@@ -4,13 +4,17 @@ subject: matematyka
 nr: 1
 punkty: 1
 typ: zamkniete-abcd
-topic: matematyka maj 2023 poziom podstawowy â€” zadanie 1
-difficulty: 3
-tresc: Zadanie 1 z arkusza maturalnego CKE z matematyki, maj 2023, poziom podstawowy. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+topic: wartość bezwzględna, oś liczbowa, suma przedziałów
+difficulty: 2
+tresc: Na osi liczbowej zaznaczono sumę przedziałów $(-\infty, -2\rangle \cup \langle 5, +\infty)$. Wybierz nierówność z wartością bezwzględną, której zbiorem rozwiązań jest ta suma.
+odpowiedz: B
+pulapka: |
+  Najczęstszy błąd: pominięcie środka przedziału. Środek to $(-2+5)/2 = 1{,}5$, a nie $3{,}5$. Inny błąd: zła orientacja nierówności (≤ zamiast ≥ — zaznaczono dopełnienie odcinka, nie sam odcinek).
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  I.7 — interpretacja geometryczna wartości bezwzględnej, rozwiązywanie nierówności z modułem.
+podobne:
+  - matematyka-2023-maj-pp-2
+  - matematyka-2024-maj-pp-1
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,17 +23,67 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2023-maj-pp/ark-04.webp"
-  alt="Zadanie 1 - strona 4 arkusza CKE matematyka maj 2023 poziom podstawowy"
-  caption="Strona 4 arkusza CKE. Pelna tresc zadania 1."
+  alt="Zadanie 1 - oś liczbowa z sumą przedziałów"
+  caption="Strona 4 arkusza CKE - zadanie 1 (wartość bezwzględna, oś liczbowa)."
   zrodlo="CKE 2023"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
   pdfPage={4}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf)
+Trzeba znaleźć nierówność z modułem, której zbiorem rozwiązań jest **suma dwóch domkniętych półprostych**: $x \leq -2$ oraz $x \geq 5$.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 1 sprawdza umiejetnosci w zakresie matematyki poziomu podstawowy maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Znajdź środek odcinka między końcami.** Końce to $-2$ i $5$. Środek:
+
+$$s = \frac{-2 + 5}{2} = \frac{3}{2} = 1{,}5$$
+
+</div>
+
+<div class="krok">
+
+**Wyznacz "promień" — połowę odległości między końcami.**
+
+$$r = \frac{5 - (-2)}{2} = \frac{7}{2} = 3{,}5$$
+
+</div>
+
+<div class="krok">
+
+**Zinterpretuj geometrycznie.** Zaznaczone na osi zbiory $x \leq -2$ oraz $x \geq 5$ to liczby, których **odległość od środka $1{,}5$ jest co najmniej $3{,}5$**:
+
+$$|x - 1{,}5| \geq 3{,}5$$
+
+To odpowiedź **B**.
+
+</div>
+
+<div class="krok">
+
+**Sprawdź pozostałe odpowiedzi:**
+- A. $|x - 3{,}5| \geq 1{,}5$ → środek $3{,}5$, promień $1{,}5$ → $x \leq 2$ lub $x \geq 5$. Zły środek.
+- C. $|x - 3{,}5| \leq 1{,}5$ → przedział $\langle 2, 5 \rangle$. Zła nierówność.
+- D. $|x - 1{,}5| \leq 3{,}5$ → przedział $\langle -2, 5 \rangle$. To **dopełnienie** zaznaczonego zbioru.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: B</strong> — $|x - 1{,}5| \geq 3{,}5$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  Najwięcej osób wybiera D — bo środek $1{,}5$ jest poprawny, ale zła orientacja nierówności. Pamiętaj: $\geq$ daje **dwie półproste** (daleko od środka), $\leq$ daje **odcinek** (blisko środka). Zaznaczone na rysunku są dwie półproste, więc musi być $\geq$.
+</div>
+
+## Po co to umieć
+
+Wartość bezwzględna jako "odległość od liczby" pojawia się w prawie każdym arkuszu maturalnym. Klucz do tego typu zadania: **środek + promień**. Każdy odcinek $\langle a, b \rangle$ można zapisać jako $|x - \frac{a+b}{2}| \leq \frac{b-a}{2}$, a jego dopełnienie z $\geq$.

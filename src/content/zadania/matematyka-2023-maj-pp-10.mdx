@@ -4,13 +4,16 @@ subject: matematyka
 nr: 10
 punkty: 1
 typ: zamkniete-abcd
-topic: matematyka maj 2023 poziom podstawowy â€” zadanie 10
-difficulty: 3
-tresc: Zadanie 10 z arkusza maturalnego CKE z matematyki, maj 2023, poziom podstawowy. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+topic: układ równań liniowych, interpretacja geometryczna
+difficulty: 2
+tresc: Na rysunku przedstawiono interpretację geometryczną układu dwóch równań liniowych. Pierwsza prosta przechodzi przez $(0, 2)$ i $(2, 0)$, druga przez $(0, -1)$ i ma rosnący kierunek. Wskaż układ.
+odpowiedz: D
+pulapka: |
+  Najczęstszy błąd: pomylenie znaku współczynnika kierunkowego. Prosta opadająca ma $a < 0$, rosnąca ma $a > 0$. Drugi błąd: pomylenie wyrazu wolnego (punktu przecięcia z osią $y$) ze współrzędną $x$ punktu przecięcia z osią $x$.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  IV.1 — interpretacja geometryczna funkcji liniowej, czytanie wykresu.
+podobne:
+  - matematyka-2024-maj-pp-10
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,17 +22,78 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2023-maj-pp/ark-10.webp"
-  alt="Zadanie 10 - strona 10 arkusza CKE matematyka maj 2023 poziom podstawowy"
-  caption="Strona 10 arkusza CKE. Pelna tresc zadania 10."
+  alt="Zadanie 10 - układ równań liniowych na wykresie"
+  caption="Strona 10 arkusza CKE - zadanie 10. Dwie proste na układzie współrzędnych."
   zrodlo="CKE 2023"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
   pdfPage={10}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf)
+Trzeba odczytać z wykresu równania obu prostych i znaleźć pasujący układ.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 10 sprawdza umiejetnosci w zakresie matematyki poziomu podstawowy maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Prosta opadająca (z lewej-góry do prawej-dołu).** Przechodzi przez $(0, 2)$ i $(2, 0)$.
+
+- Punkt przecięcia z osią $y$: $b = 2$
+- Współczynnik kierunkowy: $a = \frac{0 - 2}{2 - 0} = -1$
+
+Równanie: $y = -x + 2$
+
+</div>
+
+<div class="krok">
+
+**Prosta rosnąca (z lewej-dołu do prawej-góry).** Przechodzi przez $(0, -1)$ i np. $(1, 1)$.
+
+- Punkt przecięcia z osią $y$: $b = -1$
+- Współczynnik kierunkowy: $a = \frac{1 - (-1)}{1 - 0} = 2$
+
+Równanie: $y = 2x - 1$
+
+</div>
+
+<div class="krok">
+
+**Zbierz układ:**
+
+$$\begin{cases} y = -x + 2 \\ y = 2x - 1 \end{cases}$$
+
+To odpowiedź **D**.
+
+</div>
+
+<div class="krok">
+
+**Sprawdzenie:** Punkt przecięcia prostych: $-x + 2 = 2x - 1 \Rightarrow 3 = 3x \Rightarrow x = 1, y = 1$. Z wykresu też widać punkt przecięcia w $(1, 1)$. ✓
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: D</strong> — $\begin{cases} y = -x + 2 \\ y = 2x - 1 \end{cases}$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór A** — pierwsza prosta ok, ale druga ma współczynnik $-2$ (opadająca), a na rysunku druga jest rosnąca. Błąd znaku.
+
+  **Wybór C** — pierwsza prosta to $y = x - 2$ (rosnąca z przejściem przez $(0, -2)$) — ale na rysunku pierwsza opada i przecina $y$ w $2$.
+
+  Klucz: czytaj **dwa punkty na każdej prostej** i policz współczynnik kierunkowy: $a = \frac{\Delta y}{\Delta x}$.
+</div>
+
+## Po co to umieć
+
+Czytanie wykresów funkcji liniowej to fundament. Z dwóch punktów odczytujesz równanie $y = ax + b$:
+- $b$ — punkt przecięcia z osią $y$ (gdzie $x = 0$)
+- $a$ — przyrost $y$ na jednostkę przyrostu $x$ (kąt nachylenia)
+
+Pamiętaj: $a > 0$ ↗ rosnąca, $a < 0$ ↘ opadająca, $a = 0$ pozioma.

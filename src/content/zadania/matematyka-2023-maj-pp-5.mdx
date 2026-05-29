@@ -4,13 +4,16 @@ subject: matematyka
 nr: 5
 punkty: 1
 typ: zamkniete-abcd
-topic: matematyka maj 2023 poziom podstawowy â€” zadanie 5
-difficulty: 3
-tresc: Zadanie 5 z arkusza maturalnego CKE z matematyki, maj 2023, poziom podstawowy. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+topic: wzory skróconego mnożenia, różnica kwadratów
+difficulty: 2
+tresc: Dla każdej liczby rzeczywistej $a$ wyrażenie $(2a-3)^2 - (2a+3)^2$ jest równe.
+odpowiedz: A
+pulapka: |
+  Najczęstszy błąd: rozwinięcie obu kwadratów osobno i pomyłka rachunkowa. Szybszy sposób: użyj wzoru $A^2 - B^2 = (A-B)(A+B)$, gdzie $A = 2a-3$, $B = 2a+3$.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  I.5 — sprawne wykonywanie działań na wyrażeniach algebraicznych.
+podobne:
+  - matematyka-2023-maj-pp-3
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,17 +22,62 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2023-maj-pp/ark-06.webp"
-  alt="Zadanie 5 - strona 6 arkusza CKE matematyka maj 2023 poziom podstawowy"
-  caption="Strona 6 arkusza CKE. Pelna tresc zadania 5."
+  alt="Zadanie 5 - różnica kwadratów"
+  caption="Strona 6 arkusza CKE - zadanie 5 (wzory skróconego mnożenia)."
   zrodlo="CKE 2023"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
   pdfPage={6}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf)
+Uprość $(2a-3)^2 - (2a+3)^2$.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 5 sprawdza umiejetnosci w zakresie matematyki poziomu podstawowy maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Zauważ, że to jest różnica kwadratów.** Wzór:
+
+$$A^2 - B^2 = (A - B)(A + B)$$
+
+Tutaj $A = 2a - 3$, $B = 2a + 3$.
+
+</div>
+
+<div class="krok">
+
+**Oblicz $A - B$ i $A + B$.**
+
+$$A - B = (2a-3) - (2a+3) = 2a - 3 - 2a - 3 = -6$$
+
+$$A + B = (2a-3) + (2a+3) = 2a - 3 + 2a + 3 = 4a$$
+
+</div>
+
+<div class="krok">
+
+**Pomnóż wyniki.**
+
+$$(A-B)(A+B) = (-6) \cdot 4a = -24a$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: A</strong> — $-24a$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór D ($16a^2 - 24a$)** — wynik niepełnego rozwinięcia. Pokazuje, że ktoś nie dokończył odejmowania. Sprawdź jeszcze raz: po obliczeniu $(2a-3)^2 = 4a^2 - 12a + 9$ i $(2a+3)^2 = 4a^2 + 12a + 9$ odejmujesz i $4a^2$ oraz $9$ się skracają — zostaje $-24a$.
+
+  **Wybór C ($18$)** — błędne odejmowanie znaków. Pamiętaj: odejmując $(2a+3)^2$ odejmujesz **całe wyrażenie**, nie tylko sam $(2a+3)$.
+</div>
+
+## Po co to umieć
+
+Wzór różnicy kwadratów $A^2 - B^2 = (A-B)(A+B)$ pozwala uniknąć rozwijania dwóch kwadratów osobno. Oszczędzasz czas i unikasz błędów rachunkowych. To jeden z najczęściej używanych wzorów na maturze.

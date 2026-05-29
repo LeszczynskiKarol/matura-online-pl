@@ -4,13 +4,16 @@ subject: matematyka
 nr: 2
 punkty: 1
 typ: zamkniete-abcd
-topic: matematyka maj 2023 poziom podstawowy â€” zadanie 2
-difficulty: 3
-tresc: Zadanie 2 z arkusza maturalnego CKE z matematyki, maj 2023, poziom podstawowy. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+topic: pierwiastek sześcienny, działania na pierwiastkach
+difficulty: 2
+tresc: Oblicz wartość wyrażenia $\sqrt[3]{-\frac{27}{16}} \cdot \sqrt[3]{2}$.
+odpowiedz: A
+pulapka: |
+  Najczęstszy błąd: pominięcie znaku minus pod pierwiastkiem trzeciego stopnia. Pierwiastek nieparzysty z liczby ujemnej JEST określony i jest ujemny. $\sqrt[3]{-8} = -2$.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  I.1 — wykonywanie obliczeń w zbiorze liczb rzeczywistych, w tym pierwiastki.
+podobne:
+  - matematyka-2023-maj-pp-1
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,17 +22,70 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2023-maj-pp/ark-04.webp"
-  alt="Zadanie 2 - strona 4 arkusza CKE matematyka maj 2023 poziom podstawowy"
-  caption="Strona 4 arkusza CKE. Pelna tresc zadania 2."
+  alt="Zadanie 2 - pierwiastek sześcienny"
+  caption="Strona 4 arkusza CKE - zadanie 2."
   zrodlo="CKE 2023"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
   pdfPage={4}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf)
+Oblicz $\sqrt[3]{-\frac{27}{16}} \cdot \sqrt[3]{2}$.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 2 sprawdza umiejetnosci w zakresie matematyki poziomu podstawowy maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Połącz pierwiastki o tym samym stopniu w jeden.** Dla pierwiastka $n$-tego stopnia:
+
+$$\sqrt[n]{a} \cdot \sqrt[n]{b} = \sqrt[n]{a \cdot b}$$
+
+W naszym przypadku:
+
+$$\sqrt[3]{-\frac{27}{16}} \cdot \sqrt[3]{2} = \sqrt[3]{-\frac{27}{16} \cdot 2} = \sqrt[3]{-\frac{54}{16}}$$
+
+</div>
+
+<div class="krok">
+
+**Uprość ułamek pod pierwiastkiem.** $\frac{54}{16} = \frac{27}{8}$ (dzielimy przez $2$).
+
+$$\sqrt[3]{-\frac{54}{16}} = \sqrt[3]{-\frac{27}{8}}$$
+
+</div>
+
+<div class="krok">
+
+**Wyciągnij pierwiastek z ułamka.** Znak idzie do licznika, pierwiastek liczymy osobno na liczniku i mianowniku:
+
+$$\sqrt[3]{-\frac{27}{8}} = -\frac{\sqrt[3]{27}}{\sqrt[3]{8}}$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz pierwiastki sześcienne.** $\sqrt[3]{27} = 3$ (bo $3^3 = 27$), $\sqrt[3]{8} = 2$ (bo $2^3 = 8$).
+
+$$-\frac{3}{2}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: A</strong> — $\left(-\frac{3}{2}\right)$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  Wybór B ($\frac{3}{2}$) — zignorowanie minusa. Pamiętaj: $\sqrt[3]{-x} = -\sqrt[3]{x}$ dla pierwiastka **nieparzystego**. To inaczej niż przy pierwiastku kwadratowym, gdzie z liczby ujemnej w ogóle nie można wyciągnąć pierwiastka.
+
+  Wybór C ($\frac{2}{3}$) lub D ($-\frac{2}{3}$) — pomylenie licznika z mianownikiem.
+</div>
+
+## Po co to umieć
+
+Pierwiastki sześcienne i wyższych nieparzystych stopni działają z liczb ujemnych, w odróżnieniu od pierwiastka kwadratowego. To częsta pułapka — wartość bezwzględna nie jest potrzebna, znak idzie pod pierwiastek.

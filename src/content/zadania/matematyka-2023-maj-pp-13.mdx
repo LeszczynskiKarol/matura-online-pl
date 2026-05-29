@@ -4,13 +4,16 @@ subject: matematyka
 nr: 13
 punkty: 1
 typ: zamkniete-abcd
-topic: matematyka maj 2023 poziom podstawowy â€” zadanie 13
-difficulty: 3
-tresc: Zadanie 13 z arkusza maturalnego CKE z matematyki, maj 2023, poziom podstawowy. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+topic: funkcja, największa wartość, czytanie wykresu
+difficulty: 2
+tresc: "Zadanie 12.2: Z wykresu funkcji $f$ (str. 12) odczytaj największą wartość $f$ w przedziale $\\langle -4, 1 \\rangle$."
+odpowiedz: C
+pulapka: |
+  Najczęstszy błąd: pomylenie wartości na osi $y$ z wartością na osi $x$. Najwyższy punkt wykresu nad osią $x = -4$ do $x = 1$ ma $y = 2$ (lewa pozioma część), nie $y = 5$ (która jest poza tym przedziałem $x$).
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  IV.1 — odczytywanie wartości funkcji w danym punkcie.
+podobne:
+  - matematyka-2023-maj-pp-12
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -18,18 +21,62 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pp/ark-13.webp"
-  alt="Zadanie 13 - strona 13 arkusza CKE matematyka maj 2023 poziom podstawowy"
-  caption="Strona 13 arkusza CKE. Pelna tresc zadania 13."
+  src="/arkusze/matematyka/2023-maj-pp/ark-12.webp"
+  alt="Zadanie 13 (12.2) - największa wartość funkcji"
+  caption="Strona 12 arkusza CKE - zadanie 12.2 (czytanie wykresu)."
   zrodlo="CKE 2023"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
-  pdfPage={13}
+  pdfPage={12}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf)
+Wyznacz **największą wartość** funkcji $f$ na przedziale $\langle -4, 1 \rangle$.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 13 sprawdza umiejetnosci w zakresie matematyki poziomu podstawowy maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Wytnij interesujący nas przedział z wykresu.** Patrzymy tylko na $x \in \langle -4, 1 \rangle$.
+
+W tym zakresie mamy:
+- $x \in \langle -4, -3 \rangle$: na lewej poziomej części, $f(x) = 2$
+- $x \in \langle -1, 1 \rangle$: na skośnej części, $f(x)$ rośnie od $-3$ do $1$
+
+</div>
+
+<div class="krok">
+
+**Znajdź największą wartość $y$:**
+
+- Lewa pozioma: $f = 2$ (stała)
+- Skośna: max $f(1) = 1$
+
+Największe $f = 2$.
+
+</div>
+
+<div class="krok">
+
+**Wniosek: max $f$ w $\langle -4, 1 \rangle$ wynosi $2$.**
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: C</strong> — $2$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór D ($5$)** — to wartość $f$ w punkcie $x = 2$ (prawa skośna część), ale $2$ leży **poza** przedziałem $\langle -4, 1 \rangle$. Trzeba patrzeć tylko na **wyznaczony przedział $x$**.
+
+  **Wybór B ($1$)** — to maksimum tylko na skośnej części wykresu. Trzeba porównać ze WSZYSTKIMI częściami wykresu w danym przedziale.
+</div>
+
+## Po co to umieć
+
+Znaleźć największą wartość funkcji na przedziale = znaleźć **najwyższy punkt wykresu** dla danego zakresu $x$. Zawsze: (1) wybierz przedział na osi $x$, (2) zobacz wszystkie wartości $y$ dla tego $x$, (3) wybierz największe $y$.

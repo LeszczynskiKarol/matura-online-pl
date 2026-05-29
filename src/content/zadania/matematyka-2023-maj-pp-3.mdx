@@ -2,15 +2,19 @@
 arkusz: matematyka-2023-maj-pp
 subject: matematyka
 nr: 3
-punkty: 1
-typ: zamkniete-abcd
-topic: matematyka maj 2023 poziom podstawowy â€” zadanie 3
+punkty: 2
+typ: otwarte-rozszerzone
+topic: dowód, podzielność, wzory skróconego mnożenia
 difficulty: 3
-tresc: Zadanie 3 z arkusza maturalnego CKE z matematyki, maj 2023, poziom podstawowy. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+tresc: Wykaż, że dla każdej liczby naturalnej $n \geq 1$ liczba $(2n+1)^2 - 1$ jest podzielna przez $8$.
+odpowiedz: |
+  $(2n+1)^2 - 1 = 4n(n+1)$. Iloczyn $n(n+1)$ dwóch kolejnych liczb naturalnych jest **parzysty** (jedna z nich jest parzysta), więc $n(n+1) = 2k$ dla pewnego $k \in \mathbb{N}$. Stąd $4n(n+1) = 8k$ — liczba podzielna przez $8$.
+pulapka: |
+  Pierwsza pułapka: rozwinięcie kwadratu z błędem, np. $(2n+1)^2 = 4n^2 + 1$ (zapomnienie podwojonego iloczynu). Druga: dowód „przez przykład" zamiast ogólny — sprawdzenie dla $n=1, 2, 3$ to **nie jest dowód**, dostaniesz 0 pkt.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  III.1 — przeprowadzanie nieskomplikowanych dowodów algebraicznych.
+podobne:
+  - matematyka-2024-maj-pp-30
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,17 +23,72 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2023-maj-pp/ark-05.webp"
-  alt="Zadanie 3 - strona 5 arkusza CKE matematyka maj 2023 poziom podstawowy"
-  caption="Strona 5 arkusza CKE. Pelna tresc zadania 3."
+  alt="Zadanie 3 - dowód podzielności przez 8"
+  caption="Strona 5 arkusza CKE - zadanie 3 (dowód algebraiczny)."
   zrodlo="CKE 2023"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
   pdfPage={5}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf)
+Trzeba pokazać, że dla **każdego** $n \in \mathbb{N}_{+}$ wyrażenie $(2n+1)^2 - 1$ jest podzielne przez $8$. Strategia: rozwinąć kwadrat, wyłączyć wspólny czynnik i wykorzystać fakt, że iloczyn dwóch kolejnych liczb naturalnych jest parzysty.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 3 sprawdza umiejetnosci w zakresie matematyki poziomu podstawowy maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Rozwiń wzór skróconego mnożenia.** $(a+b)^2 = a^2 + 2ab + b^2$, więc:
+
+$$(2n+1)^2 = (2n)^2 + 2 \cdot 2n \cdot 1 + 1^2 = 4n^2 + 4n + 1$$
+
+</div>
+
+<div class="krok">
+
+**Odejmij 1 i wyłącz wspólny czynnik.**
+
+$$(2n+1)^2 - 1 = 4n^2 + 4n + 1 - 1 = 4n^2 + 4n = 4n(n+1)$$
+
+</div>
+
+<div class="krok">
+
+**Zauważ kluczowy fakt: iloczyn dwóch kolejnych liczb naturalnych jest parzysty.**
+
+$n(n+1)$ to iloczyn $n$ i jego następnika. Jedna z tych liczb jest parzysta (bo z dwóch kolejnych liczb dokładnie jedna jest parzysta), więc:
+
+$$n(n+1) = 2k \quad \text{dla pewnego } k \in \mathbb{N}$$
+
+</div>
+
+<div class="krok">
+
+**Połącz wyniki.**
+
+$$(2n+1)^2 - 1 = 4n(n+1) = 4 \cdot 2k = 8k$$
+
+To znaczy, że $(2n+1)^2 - 1$ jest podzielne przez $8$ dla każdego $n \in \mathbb{N}_{+}$.
+
+**Co należało dowieść.**
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Dowód:</strong> $(2n+1)^2 - 1 = 4n(n+1) = 4 \cdot 2k = 8k$, gdzie $k = \frac{n(n+1)}{2} \in \mathbb{N}$ (bo $n(n+1)$ jest parzyste). ∎
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Sprawdzenie dla kilku wartości to NIE jest dowód.** Wstawienie $n=1, 2, 3$ i pokazanie, że wychodzi $8, 24, 48$, NIE wystarczy — egzaminator da 0 pkt. Musisz przeprowadzić rozumowanie ogólne.
+
+  Drugi błąd: zapomnienie podwojonego iloczynu w $(2n+1)^2$. Pamiętaj wzór: $(a+b)^2 = a^2 + 2ab + b^2$, nie $a^2 + b^2$.
+</div>
+
+## Po co to umieć
+
+Dowody podzielności pojawiają się na maturze regularnie. Klucz: rozwinąć wzór skróconego mnożenia, wyłączyć wspólny czynnik, wykorzystać fakt o parzystości kolejnych liczb. Iloczyn $n$ kolejnych liczb jest podzielny przez $n!$.

@@ -4,13 +4,16 @@ subject: matematyka
 nr: 8
 punkty: 1
 typ: zamkniete-abcd
-topic: matematyka maj 2023 poziom podstawowy â€” zadanie 8
+topic: równanie wymierne, dziedzina
 difficulty: 3
-tresc: Zadanie 8 z arkusza maturalnego CKE z matematyki, maj 2023, poziom podstawowy. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+tresc: Ile rozwiązań w zbiorze liczb rzeczywistych ma równanie $\frac{(x+1)(x-1)^2}{(x-1)(x+1)^2} = 0$?
+odpowiedz: A
+pulapka: |
+  Najczęstszy błąd: skrócenie ułamka **przed** ustaleniem dziedziny i zapomnienie, że punkty wykluczone z dziedziny nie mogą być rozwiązaniem. Skrócenie do $\frac{x-1}{x+1} = 0$ daje pozornie $x = 1$ — ale $x = 1$ jest poza dziedziną.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  III.2 — rozwiązywanie równań wymiernych z uwzględnieniem dziedziny.
+podobne:
+  - matematyka-2023-maj-pp-7
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,17 +22,72 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2023-maj-pp/ark-08.webp"
-  alt="Zadanie 8 - strona 8 arkusza CKE matematyka maj 2023 poziom podstawowy"
-  caption="Strona 8 arkusza CKE. Pelna tresc zadania 8."
+  alt="Zadanie 8 - równanie wymierne"
+  caption="Strona 8 arkusza CKE - zadanie 8 (równanie wymierne)."
   zrodlo="CKE 2023"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
   pdfPage={8}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf)
+Trzeba znaleźć liczbę rozwiązań równania:
 
-## Po co to umiec
+$$\frac{(x+1)(x-1)^2}{(x-1)(x+1)^2} = 0$$
 
-Zadanie 8 sprawdza umiejetnosci w zakresie matematyki poziomu podstawowy maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wyznacz dziedzinę.** Mianownik **musi być różny od zera**:
+
+$$(x-1)(x+1)^2 \neq 0$$
+
+To znaczy $x \neq 1$ oraz $x \neq -1$.
+
+**Dziedzina:** $D = \mathbb{R} \setminus \{-1, 1\}$.
+
+</div>
+
+<div class="krok">
+
+**Ułamek = 0 ⟺ licznik = 0** (przy zachowaniu dziedziny):
+
+$$(x+1)(x-1)^2 = 0$$
+
+Czyli $x = -1$ lub $x = 1$.
+
+</div>
+
+<div class="krok">
+
+**Sprawdź dziedzinę.** Oba potencjalne rozwiązania ($x = -1$ i $x = 1$) **są wykluczone** z dziedziny.
+
+</div>
+
+<div class="krok">
+
+**Wniosek: równanie nie ma rozwiązań.**
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: A</strong> — nie ma rozwiązania
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór D ($-1$ oraz $1$)** — najczęstsza pomyłka. Ktoś zignorował dziedzinę i podał oba pierwiastki licznika.
+
+  **Wybór B lub C** — wynik nieuważnego skracania ułamka bez sprawdzenia dziedziny. Po skróceniu $\frac{x-1}{x+1} = 0$ otrzymujemy pozornie $x = 1$, ale to wartość zabroniona.
+
+  **Reguła:** zawsze najpierw dziedzina, potem rozwiązywanie.
+</div>
+
+## Po co to umieć
+
+Równania wymierne wymagają dwóch kroków: (1) wyznaczenia dziedziny z mianownika ≠ 0, (2) sprawdzenia, że wyznaczone rozwiązania spełniają tę dziedzinę. Skrócenie ułamka „w głowie" może prowadzić do błędu, jeśli zapomnimy o pkt 1.
