@@ -2,15 +2,18 @@
 arkusz: matematyka-2023-maj-pp
 subject: matematyka
 nr: 27
-punkty: 2
-typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom podstawowy â€” zadanie 27
-difficulty: 4
-tresc: Zadanie 27 z arkusza maturalnego CKE z matematyki, maj 2023, poziom podstawowy. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+punkty: 1
+typ: zamkniete-abcd
+topic: stereometria, graniastosłup, przekątna, kąt nachylenia
+difficulty: 3
+tresc: "Zadanie 25 CKE: Graniastosłup prawidłowy czworokątny, krawędź podstawy $15$, przekątna nachylona pod kątem $\\alpha$ gdzie $\\cos \\alpha = \\frac{\\sqrt{2}}{3}$. Oblicz długość przekątnej."
+odpowiedz: B
+pulapka: |
+  Najczęstszy błąd: pomylenie przekątnej **graniastosłupa** (przestrzennej) z przekątną **podstawy** (płaskiej). Przekątna graniastosłupa to ta która biegnie od jednego wierzchołka dolnej podstawy do **przeciwległego** wierzchołka górnej podstawy.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  VIII.1 — własności graniastosłupów, kąty między prostą a płaszczyzną.
+podobne:
+  - matematyka-2023-maj-pp-22
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -18,18 +21,69 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pp/ark-24.webp"
-  alt="Zadanie 27 - strona 24 arkusza CKE matematyka maj 2023 poziom podstawowy"
-  caption="Strona 24 arkusza CKE. Pelna tresc zadania 27."
+  src="/arkusze/matematyka/2023-maj-pp/ark-21.webp"
+  alt="Zadanie 27 (25 CKE) - przekątna graniastosłupa"
+  caption="Strona 21 arkusza CKE - zadanie 25."
   zrodlo="CKE 2023"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
-  pdfPage={24}
+  pdfPage={21}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf)
+Wyznacz długość $d$ przekątnej graniastosłupa prawidłowego czworokątnego z podstawą boku $15$ i kątem nachylenia $\alpha$ ($\cos \alpha = \frac{\sqrt{2}}{3}$).
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 27 sprawdza umiejetnosci w zakresie matematyki poziomu podstawowy maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Wylicz przekątną podstawy.** Podstawa to **kwadrat** o boku $15$. Przekątna kwadratu = $a\sqrt{2}$:
+
+$$d_p = 15\sqrt{2}$$
+
+</div>
+
+<div class="krok">
+
+**Zauważ trójkąt prostokątny.** Przekątna graniastosłupa, przekątna podstawy i wysokość bryły tworzą trójkąt prostokątny (z kątem prostym przy podstawie).
+
+Przekątna graniastosłupa jest **przeciwprostokątną**, przekątna podstawy = przyprostokątna **przyległa** do kąta $\alpha$. Wówczas:
+
+$$\cos \alpha = \frac{\text{przyległa}}{\text{przeciwprostokątna}} = \frac{d_p}{d}$$
+
+</div>
+
+<div class="krok">
+
+**Podstaw dane i rozwiąż.**
+
+$$\frac{\sqrt{2}}{3} = \frac{15\sqrt{2}}{d}$$
+
+Pomnóż na krzyż:
+
+$$d \cdot \sqrt{2} = 3 \cdot 15\sqrt{2}$$
+
+$$d = \frac{45\sqrt{2}}{\sqrt{2}} = 45$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: B</strong> — $45$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór A ($15\sqrt{2}$)** — zatrzymanie się na **przekątnej podstawy**, nie obliczenie samej **przekątnej graniastosłupa**.
+
+  **Wybór D ($10$)** — błąd przy obliczeniu $\cos \alpha$. Sprawdź formułę: $\cos \alpha$ jest stosunkiem **przyległej do przeciwprostokątnej**, nie odwrotnie.
+</div>
+
+## Po co to umieć
+
+W stereometrii kąt między prostą a płaszczyzną liczymy z **trójkąta prostokątnego**, w którym jedną przyprostokątną jest rzut prostej, drugą — odcinek prostopadły do płaszczyzny.
+
+Klasyczny schemat dla graniastosłupa: przekątna graniastosłupa + przekątna podstawy + wysokość = trójkąt prostokątny.

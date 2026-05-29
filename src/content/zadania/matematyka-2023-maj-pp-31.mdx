@@ -3,14 +3,20 @@ arkusz: matematyka-2023-maj-pp
 subject: matematyka
 nr: 31
 punkty: 2
-typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom podstawowy â€” zadanie 31
-difficulty: 4
-tresc: Zadanie 31 z arkusza maturalnego CKE z matematyki, maj 2023, poziom podstawowy. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+typ: zamkniete-dobierz
+topic: statystyka, mediana, średnia arytmetyczna
+difficulty: 2
+tresc: "Zadanie 29 CKE: Z diagramu odczytaj liczbę sklepów o danej cenie pomidorów: $5{,}05$ zł — $2$ sklepy, $5{,}60$ — $4$, $5{,}70$ — $2$, $6{,}00$ — $5$, $6{,}30$ — $3$. Wyznacz medianę i średnią."
+odpowiedz: |
+  **29.1 (mediana): C — $5{,}85$ zł**
+
+  **29.2 (średnia): A — $5{,}80$ zł**
+pulapka: |
+  Najczęstszy błąd: traktowanie 5 wartości cen jako 5 sklepów i liczenie średniej $\frac{5{,}05+5{,}60+5{,}70+6{,}00+6{,}30}{5} = 5{,}73$ (odpowiedź B). To **błąd** — sklepów jest $16$, każda cena ma **częstość** wskazaną na diagramie.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  IX.2 — średnia, mediana, dominanta zbioru danych.
+podobne:
+  - matematyka-2023-maj-pp-30
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -18,18 +24,71 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pp/ark-27.webp"
-  alt="Zadanie 31 - strona 27 arkusza CKE matematyka maj 2023 poziom podstawowy"
-  caption="Strona 27 arkusza CKE. Pelna tresc zadania 31."
+  src="/arkusze/matematyka/2023-maj-pp/ark-25.webp"
+  alt="Zadanie 31 (29 CKE) - statystyka, mediana, średnia"
+  caption="Strona 25 arkusza CKE - zadanie 29 (diagram cen)."
   zrodlo="CKE 2023"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
-  pdfPage={27}
+  pdfPage={25}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf)
+W $16$ sklepach ceny pomidorów (zł/kg) i liczba sklepów: $5{,}05 \to 2$, $5{,}60 \to 4$, $5{,}70 \to 2$, $6{,}00 \to 5$, $6{,}30 \to 3$. Oblicz **medianę** (29.1) i **średnią** (29.2).
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 31 sprawdza umiejetnosci w zakresie matematyki poziomu podstawowy maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Mediana** — wartość środkowa dla $n = 16$ (parzyste) = średnia arytmetyczna **8.** i **9. elementu** po posortowaniu.
+
+Ustaw ceny rosnąco z częstościami:
+
+| Pozycja | 1-2 | 3-6 | 7-8 | 9-13 | 14-16 |
+|---|---|---|---|---|---|
+| Cena | $5{,}05$ | $5{,}60$ | $5{,}70$ | $6{,}00$ | $6{,}30$ |
+
+Pozycja 8: $5{,}70$. Pozycja 9: $6{,}00$.
+
+$$\text{mediana} = \frac{5{,}70 + 6{,}00}{2} = \frac{11{,}70}{2} = 5{,}85 \text{ zł}$$
+
+</div>
+
+<div class="krok">
+
+**Średnia ważona** (każda cena × liczba sklepów):
+
+$$\bar{x} = \frac{2 \cdot 5{,}05 + 4 \cdot 5{,}60 + 2 \cdot 5{,}70 + 5 \cdot 6{,}00 + 3 \cdot 6{,}30}{16}$$
+
+$$= \frac{10{,}10 + 22{,}40 + 11{,}40 + 30{,}00 + 18{,}90}{16}$$
+
+$$= \frac{92{,}80}{16} = 5{,}80 \text{ zł}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    **29.1 (mediana): C** — $5{,}85$ zł
+    
+    **29.2 (średnia): A** — $5{,}80$ zł
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór B ($5{,}73$ zł) dla średniej** — najczęstszy. Liczba wynika z liczenia $\frac{5{,}05 + 5{,}60 + 5{,}70 + 6{,}00 + 6{,}30}{5}$ — **bez uwzględnienia częstości**. Sklepów jest $16$, nie $5$.
+
+  **Wybór E ($5{,}70$) dla mediany** — błędne policzenie tylko 8. lub 9. elementu, bez uśredniania.
+</div>
+
+## Po co to umieć
+
+**Mediana** dla $n$ uporządkowanych liczb:
+- $n$ nieparzyste: środkowy element ($\frac{n+1}{2}$-ty)
+- $n$ parzyste: średnia z $\frac{n}{2}$-tego i $\frac{n}{2}+1$-tego elementu
+
+**Średnia ważona** (z częstościami $f_i$): $\bar{x} = \frac{\sum x_i f_i}{\sum f_i}$.
+
+Klucz: zawsze sprawdź, czy diagram pokazuje **wartości** czy **częstości**.

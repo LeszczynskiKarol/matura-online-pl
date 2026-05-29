@@ -2,15 +2,18 @@
 arkusz: matematyka-2023-maj-pp
 subject: matematyka
 nr: 25
-punkty: 2
-typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom podstawowy â€” zadanie 25
-difficulty: 4
-tresc: Zadanie 25 z arkusza maturalnego CKE z matematyki, maj 2023, poziom podstawowy. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+punkty: 1
+typ: zamkniete-abcd
+topic: geometria analityczna, prostopadłość prostych, przecięcie
+difficulty: 3
+tresc: "Zadanie 23 CKE: Proste $k: y = \\frac{2}{3}x$ i $l: y = -\\frac{3}{2}x + 13$. Czy są prostopadłe? + punkt przecięcia."
+odpowiedz: A2
+pulapka: |
+  Najczęstszy błąd: warunek prostopadłości $a_1 = -a_2$ zamiast $a_1 \cdot a_2 = -1$. Drugi błąd: liczenie punktu przecięcia bez uproszczenia układu (mnożenie ułamków).
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  VII.1 — równanie prostej, warunki równoległości i prostopadłości.
+podobne:
+  - matematyka-2023-maj-pp-10
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -18,18 +21,82 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pp/ark-21.webp"
-  alt="Zadanie 25 - strona 21 arkusza CKE matematyka maj 2023 poziom podstawowy"
-  caption="Strona 21 arkusza CKE. Pelna tresc zadania 25."
+  src="/arkusze/matematyka/2023-maj-pp/ark-20.webp"
+  alt="Zadanie 25 (23 CKE) - prostopadłość i przecięcie prostych"
+  caption="Strona 20 arkusza CKE - zadanie 23."
   zrodlo="CKE 2023"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
-  pdfPage={21}
+  pdfPage={20}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf)
+Dwa pytania w jednym: (1) czy proste $k, l$ są prostopadłe, (2) jaki jest punkt przecięcia.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 25 sprawdza umiejetnosci w zakresie matematyki poziomu podstawowy maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Sprawdź warunek prostopadłości.** Dla prostych $y = a_1 x + b_1$ i $y = a_2 x + b_2$ proste są prostopadłe ⟺
+
+$$a_1 \cdot a_2 = -1$$
+
+Tutaj $a_1 = \frac{2}{3}$, $a_2 = -\frac{3}{2}$:
+
+$$\frac{2}{3} \cdot \left(-\frac{3}{2}\right) = -\frac{6}{6} = -1 \checkmark$$
+
+**Proste są prostopadłe** → odpowiedź **A**.
+
+</div>
+
+<div class="krok">
+
+**Znajdź punkt przecięcia.** Rozwiąż układ:
+
+$$\frac{2}{3}x = -\frac{3}{2}x + 13$$
+
+Pomnóż obie strony przez $6$, by pozbyć się ułamków:
+
+$$4x = -9x + 78$$
+
+$$13x = 78$$
+
+$$x = 6$$
+
+</div>
+
+<div class="krok">
+
+**Wstaw $x = 6$ do równania $k$:**
+
+$$y = \frac{2}{3} \cdot 6 = 4$$
+
+Punkt przecięcia: $P = (6, 4)$ → odpowiedź **2**.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: A2</strong> — proste są prostopadłe i przecinają się w punkcie $(6, 4)$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Sprawdzenie prostopadłości jako "$a_1 = -a_2$".** To **niepoprawny** warunek. Poprawnie: iloczyn $a_1 \cdot a_2 = -1$.
+
+  **Punkt $(-6, -4)$.** Pomyłka znaku przy mnożeniu przez $6$.
+
+  **Punkt $(-6, 4)$.** Wynik wstawienia $x = -6$ do $l$, ale błędnie obliczone $x$.
+</div>
+
+## Po co to umieć
+
+**Trzy warunki dla prostych $y = ax + b$:**
+- równoległe: $a_1 = a_2$ (i $b_1 \neq b_2$, inaczej to ta sama prosta)
+- prostopadłe: $a_1 \cdot a_2 = -1$
+- przecinające się: $a_1 \neq a_2$
+
+Punkt przecięcia = rozwiązanie układu równań prostych. Najszybciej: porównaj prawe strony obu równań.

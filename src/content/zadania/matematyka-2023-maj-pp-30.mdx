@@ -2,15 +2,18 @@
 arkusz: matematyka-2023-maj-pp
 subject: matematyka
 nr: 30
-punkty: 2
-typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom podstawowy â€” zadanie 30
-difficulty: 4
-tresc: Zadanie 30 z arkusza maturalnego CKE z matematyki, maj 2023, poziom podstawowy. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+punkty: 1
+typ: zamkniete-abcd
+topic: kombinatoryka, reguła mnożenia, liczby cyfrowe
+difficulty: 3
+tresc: "Zadanie 28 CKE: Ile jest liczb pięciocyfrowych zbudowanych tylko z cyfr $0, 5, 7$?"
+odpowiedz: C
+pulapka: |
+  Najczęstszy błąd: $3^5$ — pominięcie warunku, że pierwsza cyfra **nie może być $0$**. Pięciocyfrowa liczba ma pierwszą cyfrę różną od $0$.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  IX.1 — reguła mnożenia w kombinatoryce.
+podobne:
+  - matematyka-2023-maj-pp-29
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -18,18 +21,67 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pp/ark-26.webp"
-  alt="Zadanie 30 - strona 26 arkusza CKE matematyka maj 2023 poziom podstawowy"
-  caption="Strona 26 arkusza CKE. Pelna tresc zadania 30."
+  src="/arkusze/matematyka/2023-maj-pp/ark-24.webp"
+  alt="Zadanie 30 (28 CKE) - kombinatoryka liczb pięciocyfrowych"
+  caption="Strona 24 arkusza CKE - zadanie 28."
   zrodlo="CKE 2023"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
-  pdfPage={26}
+  pdfPage={24}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf)
+Policzyć liczby **pięciocyfrowe**, w których każda cyfra należy do zbioru $\{0, 5, 7\}$.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 30 sprawdza umiejetnosci w zakresie matematyki poziomu podstawowy maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Kluczowa uwaga: pierwsza cyfra nie może być $0$.** Inaczej liczba nie jest pięciocyfrowa (zaczynałaby się od $0$, np. $05750$ to faktycznie $5750$, czterocyfrowa).
+
+</div>
+
+<div class="krok">
+
+**Zlicz możliwości dla każdej pozycji:**
+
+| Pozycja | Możliwe cyfry | Liczba |
+|---|---|---|
+| 1 (dziesiątki tysięcy) | $\{5, 7\}$ — bez $0$ | **2** |
+| 2 (tysiące) | $\{0, 5, 7\}$ | **3** |
+| 3 (setki) | $\{0, 5, 7\}$ | **3** |
+| 4 (dziesiątki) | $\{0, 5, 7\}$ | **3** |
+| 5 (jednostki) | $\{0, 5, 7\}$ | **3** |
+
+</div>
+
+<div class="krok">
+
+**Zastosuj regułę mnożenia:**
+
+$$2 \cdot 3 \cdot 3 \cdot 3 \cdot 3 = 2 \cdot 3^4$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: C</strong> — $2 \cdot 3^4$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór D ($3^5$)** — najczęstszy. Każda z 5 pozycji ma 3 możliwości — ale dla pierwszej **nie** (bo $0$ daje liczbę czterocyfrową).
+
+  **Wybór A ($5^3$)** — pomylenie zbioru z długością liczby (cyfry vs pozycje).
+
+  **Wybór B ($2 \cdot 4^3$)** — pomyłka w liczbie możliwości lub potędze.
+</div>
+
+## Po co to umieć
+
+**Reguła mnożenia:** jeśli wybierasz $n$ rzeczy kolejno, a każda ma $k_1, k_2, \ldots, k_n$ możliwości, to łączna liczba kombinacji to **iloczyn**: $k_1 \cdot k_2 \cdot \ldots \cdot k_n$.
+
+Zawsze sprawdź **ograniczenia** dla pierwszej pozycji (zwłaszcza: cyfra wiodąca ≠ 0 w liczbach wielocyfrowych).

@@ -4,13 +4,19 @@ subject: matematyka
 nr: 24
 punkty: 2
 typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom podstawowy â€” zadanie 24
-difficulty: 4
-tresc: Zadanie 24 z arkusza maturalnego CKE z matematyki, maj 2023, poziom podstawowy. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+topic: trójkąty podobne, twierdzenie Pitagorasa, pole
+difficulty: 3
+tresc: "Zadanie 22 CKE: Trójkąty prostokątne $T_1$ i $T_2$ są podobne. $T_1$ ma przyprostokątne $5$ i $12$, $T_2$ ma przeciwprostokątną $26$. Oblicz pole $T_2$."
+odpowiedz: |
+  **Pole $T_2 = 120$**
+
+  Przeciwprostokątna $T_1 = \sqrt{25 + 144} = 13$. Skala podobieństwa $k = 26/13 = 2$. Pole $T_2 = P_1 \cdot k^2 = 30 \cdot 4 = 120$.
+pulapka: |
+  Najczęstszy błąd: pomnożenie pól razy $k$ zamiast $k^2$. Przy podobieństwie ze skalą $k$ **długości** mnożą się przez $k$, a **pola** przez $k^2$.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  VI.3 — twierdzenie Pitagorasa; VI.5 — podobieństwo i skala.
+podobne:
+  - matematyka-2023-maj-pp-22
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -18,18 +24,78 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pp/ark-21.webp"
-  alt="Zadanie 24 - strona 21 arkusza CKE matematyka maj 2023 poziom podstawowy"
-  caption="Strona 21 arkusza CKE. Pelna tresc zadania 24."
+  src="/arkusze/matematyka/2023-maj-pp/ark-19.webp"
+  alt="Zadanie 24 (22 CKE) - trójkąty podobne"
+  caption="Strona 19 arkusza CKE - zadanie 22."
   zrodlo="CKE 2023"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
-  pdfPage={21}
+  pdfPage={19}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf)
+Wyznacz pole trójkąta $T_2$ podobnego do $T_1$ (o przyprostokątnych $5, 12$), wiedząc, że przeciwprostokątna $T_2$ wynosi $26$.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 24 sprawdza umiejetnosci w zakresie matematyki poziomu podstawowy maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Oblicz przeciwprostokątną $T_1$** z twierdzenia Pitagorasa:
+
+$$c_1 = \sqrt{5^2 + 12^2} = \sqrt{25 + 144} = \sqrt{169} = 13$$
+
+</div>
+
+<div class="krok">
+
+**Wyznacz skalę podobieństwa** $k = $ stosunek odpowiednich boków:
+
+$$k = \frac{c_2}{c_1} = \frac{26}{13} = 2$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz pole $T_1$:**
+
+$$P_1 = \frac{1}{2} \cdot 5 \cdot 12 = 30$$
+
+</div>
+
+<div class="krok">
+
+**Pole $T_2$.** Przy skali $k$ pola figur podobnych są w stosunku $k^2$:
+
+$$P_2 = P_1 \cdot k^2 = 30 \cdot 2^2 = 30 \cdot 4 = 120$$
+
+</div>
+
+<div class="krok">
+
+**Sprawdzenie alternatywne.** Boki $T_2$: $5 \cdot 2 = 10$ i $12 \cdot 2 = 24$. Pole $T_2 = \frac{1}{2} \cdot 10 \cdot 24 = 120$. ✓
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Pole $T_2 = 120$</strong>
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Pole razy $k$ zamiast $k^2$.** Najczęstszy błąd przy podobieństwie. Reguła: w skali $k$:
+  - długości × $k$
+  - pola × $k^2$
+  - objętości × $k^3$
+
+  **Pomyłka przeciwprostokątnej.** Czasem ludzie biorą $\sqrt{5 + 12} = \sqrt{17}$ zamiast $\sqrt{5^2 + 12^2}$. Pitagoras dotyczy **kwadratów** boków.
+</div>
+
+## Po co to umieć
+
+Trójka pitagorejska $(5, 12, 13)$ to klasyk — warto zapamiętać. Pozostałe: $(3, 4, 5)$, $(7, 24, 25)$, $(8, 15, 17)$, $(9, 40, 41)$.
+
+Skala podobieństwa pozwala przeliczać między figurami: dowolny element $T_2$ = odpowiadający element $T_1$ × $k$ (dla długości) lub × $k^2$ (dla pola).

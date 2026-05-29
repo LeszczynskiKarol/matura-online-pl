@@ -2,15 +2,18 @@
 arkusz: matematyka-2023-maj-pp
 subject: matematyka
 nr: 23
-punkty: 2
-typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom podstawowy â€” zadanie 23
-difficulty: 4
-tresc: Zadanie 23 z arkusza maturalnego CKE z matematyki, maj 2023, poziom podstawowy. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+punkty: 1
+typ: zamkniete-abcd
+topic: okrąg, kąt środkowy, kąt wpisany
+difficulty: 3
+tresc: "Zadanie 21 CKE: Punkty $A, B, C$ leżą na okręgu o środku $O$. Kąt $ACO = 70°$. Wyznacz miarę kąta ostrego $ABC$."
+odpowiedz: B
+pulapka: |
+  Najczęstszy błąd: bezpośrednie utożsamienie kąta $ACO$ z kątem wpisanym lub środkowym. Trzeba przejść przez **trójkąt równoramienny $AOC$** (bo $OA = OC = r$ promień okręgu).
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  VI.4 — związki między kątem środkowym i wpisanym opartymi na tym samym łuku.
+podobne:
+  - matematyka-2023-maj-pp-22
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -18,18 +21,67 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pp/ark-20.webp"
-  alt="Zadanie 23 - strona 20 arkusza CKE matematyka maj 2023 poziom podstawowy"
-  caption="Strona 20 arkusza CKE. Pelna tresc zadania 23."
+  src="/arkusze/matematyka/2023-maj-pp/ark-18.webp"
+  alt="Zadanie 23 (21 CKE) - kąt wpisany w okrąg"
+  caption="Strona 18 arkusza CKE - zadanie 21."
   zrodlo="CKE 2023"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
-  pdfPage={20}
+  pdfPage={18}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf)
+Wyznacz $\angle ABC$ (kąt wpisany w okrąg, oparty na łuku $AC$).
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 23 sprawdza umiejetnosci w zakresie matematyki poziomu podstawowy maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Trójkąt $AOC$ jest równoramienny.** $OA = OC = r$ (oba odcinki to promienie okręgu). W trójkącie równoramiennym **kąty przy podstawie są równe**:
+
+$$\angle OAC = \angle OCA = 70°$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz kąt $\angle AOC$ (kąt środkowy).** Suma kątów trójkąta = $180°$:
+
+$$\angle AOC = 180° - 70° - 70° = 40°$$
+
+</div>
+
+<div class="krok">
+
+**Zastosuj twierdzenie o kącie wpisanym.** Kąt wpisany $\angle ABC$ jest **oparty na tym samym łuku** $AC$ co kąt środkowy $\angle AOC$. Twierdzenie:
+
+$$\angle \text{wpisany} = \frac{1}{2} \angle \text{środkowy}$$
+
+$$\angle ABC = \frac{1}{2} \cdot 40° = 20°$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: B</strong> — $20°$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór D ($40°$)** — pomylenie kąta wpisanego z kątem środkowym. $\angle AOC = 40°$ to kąt **środkowy**, a $\angle ABC$ to kąt **wpisany** — twierdzenie mówi, że wpisany to **połowa** środkowego.
+
+  **Wybór C ($35°$)** — wzięcie połowy $70°$ (kąta $ACO$), pominięcie kroku z trójkątem równoramiennym.
+
+  **Wybór A ($10°$)** — pomyłka rachunkowa po drodze.
+</div>
+
+## Po co to umieć
+
+**Twierdzenie o kącie wpisanym:** kąt wpisany w okrąg jest **dwa razy mniejszy** od kąta środkowego opartego na tym samym łuku.
+
+Drugi przydatny fakt: trójkąt utworzony przez **dwa promienie + cięciwę** jest zawsze równoramienny.
+
+Razem dają algorytm: kąt środkowy → trójkąt OAC równoramienny → kąty $OAC, OCA$ równe → suma kątów $180°$ → wpisany = $\frac{1}{2}$ środkowego.

@@ -2,15 +2,18 @@
 arkusz: matematyka-2023-maj-pp
 subject: matematyka
 nr: 29
-punkty: 2
-typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom podstawowy â€” zadanie 29
-difficulty: 4
-tresc: Zadanie 29 z arkusza maturalnego CKE z matematyki, maj 2023, poziom podstawowy. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+punkty: 1
+typ: zamkniete-abcd
+topic: ostrosłup, wierzchołki, krawędzie
+difficulty: 3
+tresc: "Zadanie 27 CKE: W ostrosłupie prawidłowym stosunek liczby wierzchołków do krawędzi wynosi $\\frac{W}{K} = \\frac{3}{5}$. Wskaż podstawę."
+odpowiedz: B
+pulapka: |
+  Najczęstszy błąd: zapomnienie o wierzchołku **na szczycie** ostrosłupa lub o tym, że krawędzie boczne też się liczą. Wzory: $W = n+1$ (podstawa + szczyt), $K = 2n$ (podstawa + boczne).
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  VIII.1 — własności ostrosłupów (wierzchołki, krawędzie, ściany).
+podobne:
+  - matematyka-2023-maj-pp-28
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -18,18 +21,75 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pp/ark-25.webp"
-  alt="Zadanie 29 - strona 25 arkusza CKE matematyka maj 2023 poziom podstawowy"
-  caption="Strona 25 arkusza CKE. Pelna tresc zadania 29."
+  src="/arkusze/matematyka/2023-maj-pp/ark-24.webp"
+  alt="Zadanie 29 (27 CKE) - ostrosłup, wierzchołki i krawędzie"
+  caption="Strona 24 arkusza CKE - zadanie 27."
   zrodlo="CKE 2023"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
-  pdfPage={25}
+  pdfPage={24}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf)
+Wyznacz liczbę boków podstawy $n$, gdy $\frac{W}{K} = \frac{3}{5}$.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 29 sprawdza umiejetnosci w zakresie matematyki poziomu podstawowy maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Zapisz wzory dla ostrosłupa prawidłowego z $n$-kątną podstawą:**
+
+- **Wierzchołki:** $n$ (z podstawy) + $1$ (szczyt) = $n + 1$
+- **Krawędzie:** $n$ (boki podstawy) + $n$ (krawędzie boczne) = $2n$
+
+</div>
+
+<div class="krok">
+
+**Zastosuj warunek:**
+
+$$\frac{W}{K} = \frac{n+1}{2n} = \frac{3}{5}$$
+
+</div>
+
+<div class="krok">
+
+**Pomnóż na krzyż:**
+
+$$5(n+1) = 6n$$
+$$5n + 5 = 6n$$
+$$n = 5$$
+
+</div>
+
+<div class="krok">
+
+**Wniosek: podstawa to pięciokąt foremny.**
+
+Sprawdzenie: $W = 6$, $K = 10$, $\frac{6}{10} = \frac{3}{5}$ ✓
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: B</strong> — pięciokąt foremny
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór A (kwadrat, $n=4$).** Sprawdzenie: $W = 5$, $K = 8$, $\frac{5}{8} \neq \frac{3}{5}$.
+
+  **Pomylenie liczby ścian z wierzchołkami.** Ostrosłup ma $n+1$ ścian (1 podstawa + $n$ bocznych) i $n+1$ wierzchołków. Ale **krawędzi** ma $2n$.
+</div>
+
+## Po co to umieć
+
+Dla ostrosłupa o $n$-kątnej podstawie:
+- Wierzchołki: $W = n+1$
+- Krawędzie: $K = 2n$
+- Ściany: $S = n+1$
+
+Sprawdza się wzorem Eulera dla wielościanów wypukłych: $W - K + S = 2$. Dla ostrosłupa: $(n+1) - 2n + (n+1) = 2$ ✓.
