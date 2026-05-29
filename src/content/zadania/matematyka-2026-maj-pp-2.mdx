@@ -4,13 +4,16 @@ subject: matematyka
 nr: 2
 punkty: 1
 typ: zamkniete-abcd
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 2
-difficulty: 3
-tresc: Zadanie 2 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+topic: procent składany, lokata
+difficulty: 2
+tresc: "Lokata $10\\,000$ zł, $6\\%$ rocznie, procent składany, $2$ lata. Oblicz łączne odsetki."
+odpowiedz: B
+pulapka: |
+  Najczęstszy błąd: $1200$ zł (procent prosty: $2 \cdot 6\% \cdot 10000$). Procent **składany** dolicza odsetki od bieżącego kapitału (z odsetkami z poprzedniego roku), więc po 2 latach to $1236$ zł, nie $1200$.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  IX.4 — zadania kontekstowe z procentami; procent składany.
+podobne:
+  - matematyka-2026-maj-pp-1
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +22,63 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-04.webp"
-  alt="Zadanie 2 - strona 4 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 4 arkusza CKE. Pelna tresc zadania 2."
+  alt="Zadanie 2 - procent składany"
+  caption="Strona 4 arkusza CKE 2026 PP - zadanie 2."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={4}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wzór na kapitał po $n$ latach (procent składany):**
+
+$$K_n = K_0 (1 + r)^n$$
+
+Tutaj: $K_0 = 10\,000$, $r = 0{,}06$, $n = 2$.
+
+</div>
+
+<div class="krok">
+
+**Kapitał po 2 latach:**
+
+$$K_2 = 10\,000 \cdot 1{,}06^2 = 10\,000 \cdot 1{,}1236 = 11\,236 \text{ zł}$$
+
+Alternatywnie: po 1. roku $10\,000 \cdot 1{,}06 = 10\,600$; po 2. roku $10\,600 \cdot 1{,}06 = 11\,236$.
+
+</div>
+
+<div class="krok">
+
+**Odsetki = przyrost kapitału:**
+
+$$O = K_2 - K_0 = 11\,236 - 10\,000 = 1\,236 \text{ zł}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: B</strong> — $1\,236$ zł
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór A ($1200$ zł)** — procent **prosty** ($2 \cdot 6\% \cdot 10\,000 = 1200$). Treść mówi „procent składany", co dolicza odsetki od coraz większego kapitału.
+
+  **Różnica:** procent **składany** po 2 latach to $1236$, procent **prosty** to $1200$. Różnica $36$ zł to odsetki naliczone w 2. roku od $600$ zł zarobionych w 1. roku ($6\% \cdot 600 = 36$).
+</div>
+
+## Po co to umieć
+
+**Procent składany:** $K_n = K_0 (1 + r)^n$
+**Procent prosty:** $K_n = K_0 (1 + r \cdot n)$
+
+Po 1 roku oba są równe. Im więcej lat, tym większa różnica — to istota „odsetek od odsetek".

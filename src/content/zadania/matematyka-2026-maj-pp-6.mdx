@@ -3,14 +3,17 @@ arkusz: matematyka-2026-maj-pp
 subject: matematyka
 nr: 6
 punkty: 1
-typ: otwarte-rozszerzone
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 6
-difficulty: 3
-tresc: Zadanie 6 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+typ: zamkniete-abcd
+topic: wzory skróconego mnożenia, podstawianie
+difficulty: 2
+tresc: "Oblicz wartość $x^2 + 10x + 25$ dla $x = \\sqrt{2} - 5$."
+odpowiedz: A
+pulapka: |
+  Najczęstszy błąd: bezpośrednie podstawianie i rozwijanie kwadratu pierwiastka — dużo rachunków. Klucz: zauważyć, że $x^2 + 10x + 25 = (x + 5)^2$, więc $x + 5 = \sqrt{2}$, a kwadrat = $2$.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  I.5 — wzory skróconego mnożenia.
+podobne:
+  - matematyka-2023-maj-pp-5
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +22,54 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-06.webp"
-  alt="Zadanie 6 - strona 6 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 6 arkusza CKE. Pelna tresc zadania 6."
+  alt="Zadanie 6 - wzór skróconego mnożenia"
+  caption="Strona 6 arkusza CKE 2026 PP - zadanie 6."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={6}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Rozpoznaj wzór skróconego mnożenia.** $x^2 + 10x + 25 = (x + 5)^2$.
+
+</div>
+
+<div class="krok">
+
+**Podstaw $x = \sqrt{2} - 5$:**
+
+$$x + 5 = \sqrt{2} - 5 + 5 = \sqrt{2}$$
+
+</div>
+
+<div class="krok">
+
+**Podnieś do kwadratu:**
+
+$$(x + 5)^2 = (\sqrt{2})^2 = 2$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: A</strong> — $2$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Bezpośrednie podstawienie i rozwijanie** — działa, ale dłużej. $x^2 = (\sqrt{2}-5)^2 = 2 - 10\sqrt{2} + 25 = 27 - 10\sqrt{2}$. $10x = 10\sqrt{2} - 50$. $x^2 + 10x + 25 = 27 - 10\sqrt{2} + 10\sqrt{2} - 50 + 25 = 2$ ✓. Wynik ten sam, ale 5× więcej rachunków.
+
+  **Wybór D ($62 - 10\sqrt{2}$)** — błąd przy odejmowaniu w połowie liczenia.
+</div>
+
+## Po co to umieć
+
+Zawsze sprawdź czy wyrażenie to **kwadrat sumy/różnicy**: $a^2 \pm 2ab + b^2 = (a \pm b)^2$. Skraca radykalnie obliczenia, gdy $x$ jest "dobrane" pod ten wzór.

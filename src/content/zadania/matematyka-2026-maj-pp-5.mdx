@@ -3,14 +3,17 @@ arkusz: matematyka-2026-maj-pp
 subject: matematyka
 nr: 5
 punkty: 1
-typ: zamkniete-abcd
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 5
+typ: zamkniete-pf
+topic: potęgi, podzielność, liczba cyfr
 difficulty: 3
-tresc: Zadanie 5 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+tresc: "Oceń P/F dwa zdania o liczbie $4^{12} \\cdot 5^{24}$: podzielność przez $20$, liczba 25-cyfrowa."
+odpowiedz: PP
+pulapka: |
+  Najczęstszy błąd: nieuznanie, że $4^{12} \cdot 5^{24} = 10^{24}$. Klucz: $4^{12} = 2^{24}$, więc iloczyn to $2^{24} \cdot 5^{24} = 10^{24}$. To liczba $1\underbrace{00\ldots0}_{24}$ — łatwo sprawdzić oba stwierdzenia.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  I.2 — działania na potęgach o wykładniku całkowitym.
+podobne:
+  - matematyka-2026-maj-pp-3
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +22,56 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-06.webp"
-  alt="Zadanie 5 - strona 6 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 6 arkusza CKE. Pelna tresc zadania 5."
+  alt="Zadanie 5 - potęgi i podzielność"
+  caption="Strona 6 arkusza CKE 2026 PP - zadanie 5."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={6}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Uprość iloczyn.** $4 = 2^2$, więc $4^{12} = 2^{24}$. Stąd:
+
+$$4^{12} \cdot 5^{24} = 2^{24} \cdot 5^{24} = (2 \cdot 5)^{24} = 10^{24}$$
+
+To liczba $1\underbrace{000\ldots0}_{24 \text{ zer}}$.
+
+</div>
+
+<div class="krok">
+
+**Zdanie 1: $10^{24}$ podzielna przez $20$?** $10^{24} = 20 \cdot 5 \cdot 10^{22}$ (bo $20 \cdot 5 = 100$). **Tak — P.**
+
+</div>
+
+<div class="krok">
+
+**Zdanie 2: $10^{24}$ jest liczbą 25-cyfrową?** $10^{24}$ to "1 i 24 zera" = **25 cyfr**. **Tak — P.**
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: PP</strong>
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Niezauważenie, że $4^{12} \cdot 5^{24} = 10^{24}$.** Bez tej obserwacji oba zdania są trudne. Trik: $4 = 2^2$, więc $4^{12} = 2^{24}$, a $2^{24} \cdot 5^{24} = 10^{24}$.
+
+  **Liczba cyfr.** $10^n$ ma $n+1$ cyfr (jedna jedynka + $n$ zer). Np. $10^3 = 1000$ — 4 cyfry.
+</div>
+
+## Po co to umieć
+
+**Reguła**: $a^n \cdot b^n = (ab)^n$. Często pozwala przekształcić dziwny iloczyn potęg do $10^n$, co radykalnie upraszcza zadanie.
+
+**Liczba cyfr $10^n$:** $n + 1$.

@@ -2,15 +2,19 @@
 arkusz: matematyka-2026-maj-pp
 subject: matematyka
 nr: 7
-punkty: 1
+punkty: 2
 typ: otwarte-rozszerzone
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 7
+topic: dowód, podzielność, parzystość liczb sąsiednich
 difficulty: 3
-tresc: Zadanie 7 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+tresc: "Wykaż, że dla każdej liczby całkowitej $n$ liczba $7n^2 + 21n$ jest podzielna przez $14$."
+odpowiedz: |
+  $7n^2 + 21n = 7n(n+3)$. Wystarczy pokazać, że $n(n+3)$ jest podzielna przez $2$. Liczby $n$ i $n+3$ mają **różną parzystość** (różnią się o liczbę nieparzystą $3$), więc dokładnie jedna z nich jest parzysta. Iloczyn $n(n+3) = 2k$ dla pewnego $k$, stąd $7n(n+3) = 14k$. ∎
+pulapka: |
+  Najczęstszy błąd: "$n$ i $n+3$ to liczby kolejne" — **NIE**. Kolejne to $n, n+1$. Tutaj $n+3$ ma inną parzystość niż $n$ (różnica nieparzysta), więc działają jak liczby kolejne pod względem parzystości.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  III.1 — dowody algebraiczne.
+podobne:
+  - matematyka-2023-maj-pp-3
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +23,70 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-07.webp"
-  alt="Zadanie 7 - strona 7 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 7 arkusza CKE. Pelna tresc zadania 7."
+  alt="Zadanie 7 - dowód podzielności przez 14"
+  caption="Strona 7 arkusza CKE 2026 PP - zadanie 7."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={7}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wyłącz wspólny czynnik:**
+
+$$7n^2 + 21n = 7n(n + 3)$$
+
+</div>
+
+<div class="krok">
+
+**Cel:** Pokazać, że $7n(n+3)$ jest podzielne przez $14 = 7 \cdot 2$. Współczynnik $7$ już mamy. Wystarczy wykazać, że $n(n+3)$ jest **parzyste**.
+
+</div>
+
+<div class="krok">
+
+**Zauważ kluczową własność:** $n$ i $n+3$ mają **różną parzystość**, bo różnica jest **nieparzysta** ($3$). Więc dokładnie jedna z nich jest parzysta:
+
+- $n$ parzyste → $n = 2k$ → $n(n+3) = 2k(2k+3)$ podzielne przez $2$
+- $n$ nieparzyste → $n+3$ parzyste → $n+3 = 2k$ → $n(n+3) = n \cdot 2k$ podzielne przez $2$
+
+W obu przypadkach $n(n+3) = 2m$ dla pewnego $m \in \mathbb{Z}$.
+
+</div>
+
+<div class="krok">
+
+**Wniosek:**
+
+$$7n(n+3) = 7 \cdot 2m = 14m$$
+
+To znaczy, że $7n^2 + 21n$ jest podzielne przez $14$ dla każdej liczby całkowitej $n$. ∎
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    **Dowód:** $7n^2 + 21n = 7n(n+3) = 14m$, gdzie $m = \frac{n(n+3)}{2} \in \mathbb{Z}$ (bo $n$ i $n+3$ mają różną parzystość). ∎
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **"n i n+3 to kolejne liczby"** — NIE. Kolejne to $n, n+1$. Ale parzystość: $n+3$ ma inną parzystość niż $n$, bo $3$ jest nieparzyste.
+
+  **Pomijanie dowodu parzystości iloczynu.** Bez wykazania, że $n(n+3)$ jest parzyste, nie ma dowodu na $14$. Sam wzór $7n(n+3)$ pokazuje tylko podzielność przez $7$.
+</div>
+
+## Po co to umieć
+
+**Reguła parzystości iloczynu:** dwie liczby o **różnej parzystości** dają iloczyn parzysty. Dwie liczby o **tej samej parzystości** — iloczyn też tej samej parzystości jak składniki (parzyste × parzyste = parzyste, nieparzyste × nieparzyste = nieparzyste).
+
+Liczby $n, n+1$ (kolejne): zawsze różna parzystość → iloczyn parzysty.
+Liczby $n, n+3$ (różnica nieparzysta): też różna parzystość → iloczyn parzysty.

@@ -4,13 +4,16 @@ subject: matematyka
 nr: 1
 punkty: 1
 typ: zamkniete-abcd
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 1
-difficulty: 3
-tresc: Zadanie 1 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+topic: pierwiastki, potęgi, działania na liczbach
+difficulty: 1
+tresc: "Oblicz $\\sqrt{\\frac{25}{8}} \\cdot \\sqrt{2} + 2^{-1}$."
+odpowiedz: C
+pulapka: |
+  Najczęstszy błąd: $2^{-1} = -2$. Pamiętaj, że $a^{-n} = \frac{1}{a^n}$, więc $2^{-1} = \frac{1}{2}$.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  I.1 — wykonywanie obliczeń w zbiorze liczb rzeczywistych.
+podobne:
+  - matematyka-2026-maj-pp-2
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +22,60 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-04.webp"
-  alt="Zadanie 1 - strona 4 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 4 arkusza CKE. Pelna tresc zadania 1."
+  alt="Zadanie 1 - obliczenie z pierwiastkami i potęgą"
+  caption="Strona 4 arkusza CKE 2026 PP - zadanie 1."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={4}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Połącz pierwiastki.** $\sqrt{a} \cdot \sqrt{b} = \sqrt{a \cdot b}$:
+
+$$\sqrt{\frac{25}{8}} \cdot \sqrt{2} = \sqrt{\frac{25}{8} \cdot 2} = \sqrt{\frac{25}{4}}$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz pierwiastek:**
+
+$$\sqrt{\frac{25}{4}} = \frac{\sqrt{25}}{\sqrt{4}} = \frac{5}{2}$$
+
+</div>
+
+<div class="krok">
+
+**Dodaj $2^{-1} = \frac{1}{2}$:**
+
+$$\frac{5}{2} + \frac{1}{2} = \frac{6}{2} = 3$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: C</strong> — $3$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **$2^{-1} = -2$** — błędne, to $\frac{1}{2}$. Definicja: $a^{-n} = \frac{1}{a^n}$.
+
+  **Niepołączenie pierwiastków.** Bez wzoru $\sqrt{a} \cdot \sqrt{b} = \sqrt{ab}$ trzeba liczyć $\sqrt{25/8} = \frac{5}{2\sqrt{2}}$ i potem mnożyć — dłużej i więcej okazji na błąd.
+</div>
+
+## Po co to umieć
+
+Podstawowe własności pierwiastków i potęg:
+- $\sqrt{a} \cdot \sqrt{b} = \sqrt{ab}$
+- $\sqrt{\frac{a}{b}} = \frac{\sqrt{a}}{\sqrt{b}}$
+- $a^{-n} = \frac{1}{a^n}$
+- $a^0 = 1$ ($a \neq 0$)

@@ -4,13 +4,16 @@ subject: matematyka
 nr: 3
 punkty: 1
 typ: zamkniete-abcd
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 3
-difficulty: 3
-tresc: Zadanie 3 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+topic: pierwiastki, potęgi ułamkowe
+difficulty: 2
+tresc: "Oblicz $\\sqrt{5\\sqrt{5}}$."
+odpowiedz: C
+pulapka: |
+  Najczęstszy błąd: $\sqrt{5\sqrt{5}} = 5$ albo $5^{1/2}$. Pamiętaj o **podwójnym pierwiastku** — sam $\sqrt{5} = 5^{1/2}$, a cała wartość $\sqrt{5 \cdot 5^{1/2}} = 5^{3/4}$.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  I.2 — działania na potęgach o wykładniku wymiernym.
+podobne:
+  - matematyka-2026-maj-pp-1
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +22,50 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-05.webp"
-  alt="Zadanie 3 - strona 5 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 5 arkusza CKE. Pelna tresc zadania 3."
+  alt="Zadanie 3 - podwójny pierwiastek"
+  caption="Strona 5 arkusza CKE 2026 PP - zadanie 3."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={5}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zamień pierwiastki na potęgi ułamkowe.** $\sqrt{a} = a^{1/2}$:
+
+$$\sqrt{5} = 5^{1/2}$$
+
+$$5\sqrt{5} = 5^1 \cdot 5^{1/2} = 5^{1 + 1/2} = 5^{3/2}$$
+
+</div>
+
+<div class="krok">
+
+**Pierwiastek z $5^{3/2}$:**
+
+$$\sqrt{5^{3/2}} = 5^{\frac{3/2}{2}} = 5^{3/4}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: C</strong> — $5^{3/4}$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór D ($5$)** — pomylenie z $\sqrt{5^2} = 5$. Tutaj mamy $\sqrt{5 \cdot \sqrt{5}}$, czyli pierwiastek z $5^{3/2}$, nie z $5^2$.
+
+  **Wybór A ($5^{1/4}$)** lub B ($5^{1/2}$) — pomyłka w wykładniku przy dwukrotnym pierwiastkowaniu. Reguła: $\sqrt{a^n} = a^{n/2}$.
+</div>
+
+## Po co to umieć
+
+Pierwiastki = potęgi o wykładniku ułamkowym: $\sqrt[n]{a^k} = a^{k/n}$. Dla zadań z zagnieżdżonymi pierwiastkami zawsze przejdź na potęgi — działania są wtedy oczywiste.
