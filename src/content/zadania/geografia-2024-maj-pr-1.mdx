@@ -70,21 +70,97 @@ Przyjmij, że:
 
 **Oblicz, ile czasu zajęło turyście przejście ze stacji kolejowej Wałbrzych Główny na szczyt góry Borowej. Wynik podaj w godzinach i minutach. Zapisz obliczenia.**
 
-## Klucz odpowiedzi (CKE)
+## Co zrobić?
+
+### 1.1. — identyfikacja szczytów z fotografii
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Połącz fotografię z mapą topograficzną.** Kierunek SE fotografii → patrz na pole B2/3 mapy. Sprawdź układ szczytów (np. odległości, wysokości).
+
+</div>
+
+<div class="krok">
+
+**Sprawdź, czy trasa rzeczywiście prowadzi na X / między Y a Z.** Trasa wycieczki idzie szlakiem czerwonym do Borowej, potem żółtym do Przełęczy Koziej. Sprawdzasz, czy konkretny szczyt jest **na trasie** czy obok niej.
+
+Z reguły CKE robi z tego pułapkę: turysta przechodzi **obok** szczytów X i Y, nie wchodzi na nie, a trasa biegnie inną stroną niż między dwoma podanymi szczytami → oba zdania **fałszywe** → **FP** (gdy jedno P, drugie F).
+
+</div>
+
+</div>
+
+### 1.2. — obliczenie czasu wycieczki
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Czas na płaskim terenie** = długość ÷ prędkość:
+
+$$t_1 = \frac{4{,}375\,\text{km}}{3{,}5\,\text{km/h}} = 1{,}25\,\text{h} = 75\,\text{min}$$
+
+</div>
+
+<div class="krok">
+
+**Różnica wysokości**: szczyt Borowej (853 m n.p.m. — z mapy) minus stacja Wałbrzych Główny (483 m n.p.m.):
+
+$$\Delta h = 853 - 483 = 370\,\text{m}$$
+
+</div>
+
+<div class="krok">
+
+**Dodatkowy czas na podejście** (10 min na każde 100 m):
+
+$$t_2 = \frac{370\,\text{m}}{100\,\text{m}} \cdot 10\,\text{min} = 37\,\text{min}$$
+
+</div>
+
+<div class="krok">
+
+**Czas łączny**:
+
+$$t = t_1 + t_2 = 75 + 37 = 112\,\text{min} = 1\,\text{h}\,52\,\text{min}$$
+
+</div>
+
+</div>
 
 <div class="odpowiedz">
 <div>
 
-### 1.1. — **FP**
+**1.1. — FP**
 
-### 1.2. — **1 h 52 min**
+**1.2. — 1 h 52 min**
 
-$$t = \frac{4{,}375\,\text{km}}{3{,}5\,\text{km/h}} + \frac{370\,\text{m}}{100\,\text{m}} \cdot 10\,\text{min} = 75\,\text{min} + 37\,\text{min} = 112\,\text{min} = 1\,\text{h}\,52\,\text{min}$$
+$$t = \frac{4{,}375}{3{,}5} + \frac{370}{100} \cdot 10 = 75 + 37 = 112\,\text{min}$$
 
 </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+
+  **1.2: Pomylenie "100 m" z "1000 m"** — w treści wyraźnie: "każde **100 m** różnicy wysokości". Dla 370 m daje to **37 min**, nie 3,7 min.
+
+  **1.2: Konwersja 1,25 h** — to **1 h 15 min** (bo 0,25 h × 60 min = 15 min), nie "1 h 25 min" ani "1,25 godziny".
+
+  **1.2: Pominięcie podejścia** — sam czas na płaskim terenie (75 min) daje tylko 1 pkt. Trzeba **dodać** czas podejścia.
 </div>
 
 ## Punktacja CKE
 
 - **1.1:** 1 pkt — dwie poprawne oceny zdań.
-- **1.2:** 2 pkt — poprawne obliczenie czasu z uwzględnieniem różnicy wysokości; 1 pkt — poprawne obliczenie tylko jednego składnika; 0 pkt — odpowiedź niespełniająca wymagań.
+- **1.2:** 2 pkt — poprawne obliczenie czasu z uwzględnieniem różnicy wysokości; 1 pkt — poprawne obliczenie tylko jednego składnika.
+
+## Po co to umieć
+
+**Czas marszu w terenie górskim** — klasyczna formuła turystyczna PTTK:
+
+$$t = \frac{L}{v} + \frac{\Delta h}{100} \cdot 10\,\text{min}$$
+
+gdzie $L$ — długość, $v$ — prędkość na płaskim, $\Delta h$ — różnica wysokości. To **wzór Naismitha** dostosowany do polskich szlaków. Działa też dla dolnej granicy lasu, pojezierzy, parków narodowych.
