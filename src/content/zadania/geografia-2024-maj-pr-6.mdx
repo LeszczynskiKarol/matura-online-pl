@@ -40,23 +40,84 @@ Wysokość słońca: .........................
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/geografia/MGEP-R0-100-2405-mapa.pdf"
 />
 
-## Klucz odpowiedzi (CKE)
+## Co zrobić?
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Odczyt z mapy**: szerokość geograficzna szczytu Klasztorzysko (pole C2). Z siatki geograficznej **φ ≈ 50°45′ N**.
+
+</div>
+
+<div class="krok">
+
+**Wzór dla dnia równonocy** (deklinacja Słońca δ = 0°):
+
+$$h_{gS} = 90° - \varphi$$
+
+</div>
+
+<div class="krok">
+
+**Podstaw φ = 50°45′ N**:
+
+$$h_{gS} = 90° - 50°45'$$
+
+</div>
+
+<div class="krok">
+
+**Wykonaj odejmowanie**. Pożycz 60′ z 1°:
+
+$$90° = 89°60'$$
+
+$$h_{gS} = 89°60' - 50°45' = 39°15'$$
+
+</div>
+
+</div>
 
 <div class="odpowiedz">
 <div>
 
-**Wysokość słońca: 39°15′**
+**Wysokość Słońca: 39°15′**
 
-$$h_{gS} = 90° - \varphi$$
-$$h_{gS} = 90° - 50°45' = 39°15'$$
-
-(φ = 50°45′ N odczytana z mapy)
+$h_{gS} = 90° - 50°45' = 39°15'$
 
 </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+
+  **Pomylenie wzoru z równonocy z przesileniem**:
+  - Równonoc (21 III, 23 IX): $h = 90° - \varphi$ (δ = 0°).
+  - Przesilenie letnie (22 VI, półkula N): $h = 90° - \varphi + 23°27'$.
+  - Przesilenie zimowe (22 XII, półkula N): $h = 90° - \varphi - 23°27'$.
+
+  **Błąd przy odejmowaniu minut** — pamiętaj $90° = 89°60'$ przy pożyczaniu z 1°. Inaczej dostajesz absurdalne wyniki (np. $39°-45'$).
+
+  **Brak dokładności odczytu z mapy** — przyjmij **do 1'**, nie zaokrąglaj do całego stopnia (CKE wymaga konkretnej dokładności).
 </div>
 
 ## Punktacja CKE
 
 - **2 pkt** — poprawny sposób obliczenia wysokości słońca i poprawny wynik.
 - **1 pkt** — poprawny sposób obliczenia z błędem rachunkowym **albo** odczytanie φ z mapy bez obliczenia.
-- **0 pkt** — odpowiedź niespełniająca wymagań.
+
+## Po co to umieć
+
+**Wysokość Słońca w południe (górowanie)** zależy od:
+- **Szerokości geograficznej** φ.
+- **Deklinacji Słońca** δ (zmienna w roku: -23°27′ ↔ +23°27′).
+
+Pełny wzór: $h_{gS} = 90° - |\varphi - \delta|$.
+
+W Polsce (φ ≈ 52° N):
+- W równonoc: h ≈ 38°.
+- W lecie (δ = +23°27′): h ≈ 61°.
+- W zimie (δ = -23°27′): h ≈ 14°.
+
+Ta zmienność wpływa na klimat, długość dnia, intensywność opadów. To **fundament astronomicznej geografii**.
+
