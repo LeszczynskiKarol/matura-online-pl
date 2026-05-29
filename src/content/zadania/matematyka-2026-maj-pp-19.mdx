@@ -2,15 +2,19 @@
 arkusz: matematyka-2026-maj-pp
 subject: matematyka
 nr: 19
-punkty: 2
-typ: otwarte-rozszerzone
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 19
+punkty: 1
+typ: zamkniete-abcd
+topic: okrąg, kąt środkowy, kąt wpisany
 difficulty: 3
-tresc: Zadanie 19 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+tresc: |
+  Punkty A, B, C, D na okręgu o środku O. B leży na krótszym łuku AC. $\angle CDA = 50°$, $\angle COB = 30°$. Oblicz $\angle BOA$ (ostry).
+odpowiedz: C
+pulapka: |
+  Klucz: kąt wpisany $\angle CDA = 50°$ opiera się na **łuku CA niezawierającym D**, czyli na łuku przez **B**. Kąt środkowy = $2 \cdot 50° = 100°$ — i ten kąt to suma $\angle COB + \angle BOA$.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  VIII.1 — okrąg, kąty środkowe i wpisane.
+podobne:
+  - matematyka-2024-maj-pp-22
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +23,68 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-21.webp"
-  alt="Zadanie 19 - strona 21 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 21 arkusza CKE. Pelna tresc zadania 19."
+  alt="Zadanie 19 - kąt środkowy i wpisany w okręgu"
+  caption="Strona 21 arkusza CKE 2026 PP - zadanie 19."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={21}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Twierdzenie o kącie środkowym i wpisanym.** Kąt środkowy = $2 \times$ kąt wpisany, jeśli oba opierają się na **tym samym łuku**.
+
+$\angle CDA = 50°$ (kąt wpisany) — opiera się na łuku $CA$ **niezawierającym** punktu $D$. Z rysunku: ten łuk to łuk przez $B$ (B jest po przeciwnej stronie niż D).
+
+</div>
+
+<div class="krok">
+
+**Odpowiadający kąt środkowy.** Mierzony przez ten sam łuk (przez $B$):
+
+$$\angle \text{środkowy oparty na łuku przez } B = 2 \cdot 50° = 100°$$
+
+Ten kąt to $\angle COA$ "mierzony przez stronę z $B$", czyli $\angle COA = \angle COB + \angle BOA$.
+
+</div>
+
+<div class="krok">
+
+**Oblicz $\angle BOA$.**
+
+$$\angle COB + \angle BOA = 100°$$
+
+$$30° + \angle BOA = 100°$$
+
+$$\angle BOA = 70°$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: C</strong> — $\angle BOA = 70°$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór A (50°)** — pomylenie kąta wpisanego z odpowiadającym kątem środkowym (myślenie, że są równe). Twierdzenie mówi: środkowy = **2 ×** wpisany.
+
+  **Wybór D (100°)** — zatrzymanie się na połowie zadania. Trzeba jeszcze odjąć $\angle COB = 30°$.
+
+  **Strona łuku** — kąt wpisany $\angle CDA$ "patrzy" na łuk $CA$ **bez** $D$. W tym zadaniu B jest na tym łuku (po przeciwnej stronie), więc kąt środkowy obejmuje cały odcinek $C \to B \to A$.
+</div>
+
+## Po co to umieć
+
+Dwa twierdzenia z okręgu w jednym zadaniu:
+1. **Środkowy = 2 × wpisany** (oparte na tym samym łuku).
+2. **Suma kątów** wokół środka po jednej stronie = kątowi środkowemu obejmującemu cały łuk.
+
+Zawsze sprawdź, na którym łuku opiera się każdy kąt (patrz na rozmieszczenie punktów na rysunku).

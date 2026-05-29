@@ -3,14 +3,17 @@ arkusz: matematyka-2026-maj-pp
 subject: matematyka
 nr: 16
 punkty: 1
-typ: otwarte-rozszerzone
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 16
-difficulty: 3
-tresc: Zadanie 16 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+typ: zamkniete-abcd
+topic: ciąg arytmetyczny, wzór ogólny
+difficulty: 1
+tresc: "Ciąg arytmetyczny: $a_1 = 1$, $a_5 = 17$. Oblicz $a_9$."
+odpowiedz: B
+pulapka: |
+  Częsty błąd: $a_9 = a_1 + 9r$ zamiast $a_1 + 8r$. Pozycja $n$ wymaga **$(n-1)$** różnic od pierwszego wyrazu.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  V.2 — ciąg arytmetyczny.
+podobne:
+  - matematyka-2024-maj-pp-18
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +22,50 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-19.webp"
-  alt="Zadanie 16 - strona 19 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 19 arkusza CKE. Pelna tresc zadania 16."
+  alt="Zadanie 16 - ciąg arytmetyczny, dziewiąty wyraz"
+  caption="Strona 19 arkusza CKE 2026 PP - zadanie 16."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={19}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wyznacz różnicę $r$.** Wzór ogólny: $a_n = a_1 + (n-1) \cdot r$.
+
+$$a_5 = a_1 + 4r$$
+
+$$17 = 1 + 4r \implies r = 4$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz $a_9$.**
+
+$$a_9 = a_1 + 8r = 1 + 8 \cdot 4 = 33$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: B</strong> — $a_9 = 33$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór D (37)** — $a_9 = a_1 + 9r = 1 + 36$. Pamiętaj: dla $n$-tego wyrazu dodajemy $(n-1)$, nie $n$ różnic.
+
+  **Skrót**: $a_9 - a_5 = 4r$, więc $a_9 = a_5 + 4r = 17 + 16 = 33$. To samo, ale mniej rachunków.
+</div>
+
+## Po co to umieć
+
+Ciąg arytmetyczny: stała różnica $r$. Wzór: $a_n = a_1 + (n-1)r$. Z dowolnych dwóch wyrazów wyznaczasz $r$, potem każdy inny.

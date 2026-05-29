@@ -2,15 +2,19 @@
 arkusz: matematyka-2026-maj-pp
 subject: matematyka
 nr: 18
-punkty: 2
-typ: otwarte-rozszerzone
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 18
-difficulty: 3
-tresc: Zadanie 18 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+punkty: 1
+typ: zamkniete-abcd
+topic: trygonometria, trójkąt prostokątny, twierdzenie Pitagorasa
+difficulty: 2
+tresc: |
+  Trójkąt prostokątny ABC. AC = przeciwprostokątna = $2\sqrt{10}$, BC = 2 (przyprostokątna), kąt prosty przy B. Kąt $\gamma = \angle BCA$. Oblicz $\sin \gamma$.
+odpowiedz: C
+pulapka: |
+  $\sin \gamma$ to stosunek boku **naprzeciw** kąta $\gamma$ do przeciwprostokątnej. Naprzeciw $\angle BCA$ leży bok $AB$ — najpierw policz go z Pitagorasa.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  VII.1 — trygonometria kąta ostrego, trójkąt prostokątny.
+podobne:
+  - matematyka-2023-maj-pp-20
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +23,56 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-20.webp"
-  alt="Zadanie 18 - strona 20 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 20 arkusza CKE. Pelna tresc zadania 18."
+  alt="Zadanie 18 - trójkąt prostokątny, sinus kąta"
+  caption="Strona 20 arkusza CKE 2026 PP - zadanie 18."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={20}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Pitagoras dla $AB$.** Kąt prosty przy $B$, przeciwprostokątna $AC = 2\sqrt{10}$:
+
+$$AB^2 + BC^2 = AC^2$$
+
+$$AB^2 + 4 = 40$$
+
+$$AB = 6$$
+
+</div>
+
+<div class="krok">
+
+**Sinus kąta $\gamma = \angle BCA$** (przy wierzchołku $C$).
+
+Naprzeciw $\gamma$ leży bok $AB$:
+
+$$\sin \gamma = \frac{\text{przeciw}}{\text{przeciwprost.}} = \frac{AB}{AC} = \frac{6}{2\sqrt{10}} = \frac{3}{\sqrt{10}}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: C</strong> — $\sin \gamma = \frac{3}{\sqrt{10}}$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór A ($\frac{1}{\sqrt{10}}$)** — pomylenie sinusa z **kosinusem** $\gamma$. $\cos \gamma = \frac{BC}{AC} = \frac{2}{2\sqrt{10}} = \frac{1}{\sqrt{10}}$ — przyległa (nie przeciw).
+
+  **Memo: SOH–CAH–TOA.** $\sin = \frac{\text{Op}}{\text{H}}$ (opposite/hypotenuse), $\cos = \frac{\text{A}}{\text{H}}$, $\tan = \frac{\text{Op}}{\text{A}}$.
+
+  Sprawdź: $\sin^2 + \cos^2 = \frac{9}{10} + \frac{1}{10} = 1$ ✓.
+</div>
+
+## Po co to umieć
+
+Trójkąt prostokątny → trygonometria z definicji boków. Kluczowe: poprawnie zidentyfikować **który bok jest przeciw** danemu kątowi (po przeciwnej stronie), **który przyległy** (tworzy ramię kąta). Przeciwprostokątna zawsze leży naprzeciw kąta prostego.

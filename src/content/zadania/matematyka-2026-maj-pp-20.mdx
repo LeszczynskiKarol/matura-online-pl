@@ -2,15 +2,19 @@
 arkusz: matematyka-2026-maj-pp
 subject: matematyka
 nr: 20
-punkty: 2
-typ: otwarte-rozszerzone
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 20
+punkty: 1
+typ: zamkniete-abcd
+topic: trójkąty podobne, proste równoległe, twierdzenie Talesa
 difficulty: 3
-tresc: Zadanie 20 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+tresc: |
+  Proste $k \parallel l$. Sieczne $m$ i $n$ przecinają je odpowiednio w $A, C$ i $D, B$. Odcinki $AC$ i $BD$ przecinają się w $O$. $|OA| = 12$, $|OB| = 6$, $|OC| = 8$. Oblicz $|OD|$.
+odpowiedz: B
+pulapka: |
+  Pułapka: trójkąty $AOD$ i $COB$ są podobne (kąty wierzchołkowe + kąty naprzemianległe przy $k \parallel l$). Stosunek: $\frac{OA}{OC} = \frac{OD}{OB}$.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  VIII.3 — trójkąty podobne, twierdzenie Talesa.
+podobne:
+  - matematyka-2024-maj-pp-23
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +23,62 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-22.webp"
-  alt="Zadanie 20 - strona 22 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 22 arkusza CKE. Pelna tresc zadania 20."
+  alt="Zadanie 20 - trójkąty podobne między równoległymi"
+  caption="Strona 22 arkusza CKE 2026 PP - zadanie 20."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={22}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Podobieństwo trójkątów $AOD$ i $COB$.**
+- $\angle AOD = \angle COB$ — kąty wierzchołkowe w $O$.
+- $\angle OAD = \angle OCB$ — kąty naprzemianległe (prosta $m$ przecina równoległe $k \parallel l$).
+
+Trójkąty $AOD$ i $COB$ są **podobne** w skali $\frac{OA}{OC}$.
+
+</div>
+
+<div class="krok">
+
+**Stosunek boków.** W podobnych trójkątach odpowiednie boki proporcjonalne:
+
+$$\frac{OA}{OC} = \frac{OD}{OB}$$
+
+$$\frac{12}{8} = \frac{OD}{6}$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiąż.**
+
+$$OD = \frac{12 \cdot 6}{8} = \frac{72}{8} = 9$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: B</strong> — $|OD| = 9$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór C (10)** — wynik dodawania bez podobieństwa (np. $|OD| = |OA| - |OB| + |OC| - ...$), brak myślenia o trójkątach.
+
+  **Odpowiedniość boków.** Klucz: w trójkątach $AOD$ i $COB$ wierzchołek $A$ odpowiada $C$, $O$ odpowiada $O$, $D$ odpowiada $B$. **Boki naprzeciw odpowiednich wierzchołków** są proporcjonalne — np. $AO \leftrightarrow CO$, $OD \leftrightarrow OB$.
+</div>
+
+## Po co to umieć
+
+Zawsze gdy w zadaniu są **proste równoległe** i sieczne przecinające się w punkcie — szukaj **trójkątów podobnych** (przez kąty naprzemianległe i wierzchołkowe). To klasyk Twierdzenia Talesa.
+
+Sprawdź na końcu: jeśli $\frac{12}{8} = \frac{9}{6} = 1{,}5$ — proporcja zachowana ✓.

@@ -3,14 +3,21 @@ arkusz: matematyka-2026-maj-pp
 subject: matematyka
 nr: 21
 punkty: 2
-typ: otwarte-rozszerzone
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 21
-difficulty: 3
-tresc: Zadanie 21 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+typ: dowod
+topic: planimetria, dwusieczna kąta, wzór na pole z sinusa
+difficulty: 4
+tresc: |
+  Trójkąt $KLM$, $|KM| = a$, $|LM| = b$. Dwusieczna kąta $LMK$ przecina bok $KL$ w punkcie $N$. Wykaż, że $\frac{P_{KNM}}{P_{NLM}} = \frac{a}{b}$.
+odpowiedz: |
+  Dwusieczna $MN$ tworzy z bokami $KM$ i $LM$ równe kąty $\alpha = \angle KMN = \angle LMN$.
+  Pole z sinusa: $P_{KNM} = \frac{1}{2} \cdot a \cdot MN \cdot \sin\alpha$ i $P_{NLM} = \frac{1}{2} \cdot b \cdot MN \cdot \sin\alpha$.
+  Stosunek: $\frac{P_{KNM}}{P_{NLM}} = \frac{a}{b}$.
+pulapka: |
+  Klucz dowodu: oba trójkąty mają wspólne ramię $MN$ i **równe kąty przy $M$** (bo $MN$ to dwusieczna). Wzór $P = \frac{1}{2} \cdot b \cdot c \cdot \sin\alpha$ skraca wszystko poza $a$ i $b$.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  VIII.2 — pole trójkąta z dwóch boków i kąta między nimi (wzór z sinusa).
+podobne:
+  - matematyka-2024-maj-pp-25
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +26,74 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-23.webp"
-  alt="Zadanie 21 - strona 23 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 23 arkusza CKE. Pelna tresc zadania 21."
+  alt="Zadanie 21 - dowód stosunku pól, dwusieczna"
+  caption="Strona 23 arkusza CKE 2026 PP - zadanie 21."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={23}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Co wiemy z dwusiecznej.** $MN$ dzieli $\angle LMK$ na połowy:
+
+$$\angle KMN = \angle LMN = \alpha$$
+
+</div>
+
+<div class="krok">
+
+**Pole trójkąta $KNM$** z dwóch boków $KM$ i $MN$ oraz kąta między nimi:
+
+$$P_{KNM} = \frac{1}{2} \cdot |KM| \cdot |MN| \cdot \sin(\angle KMN) = \frac{1}{2} \cdot a \cdot MN \cdot \sin\alpha$$
+
+</div>
+
+<div class="krok">
+
+**Pole trójkąta $NLM$** analogicznie:
+
+$$P_{NLM} = \frac{1}{2} \cdot |LM| \cdot |MN| \cdot \sin(\angle LMN) = \frac{1}{2} \cdot b \cdot MN \cdot \sin\alpha$$
+
+</div>
+
+<div class="krok">
+
+**Stosunek.** $MN$, $\sin\alpha$ i $\frac{1}{2}$ się skracają:
+
+$$\frac{P_{KNM}}{P_{NLM}} = \frac{\frac{1}{2} \cdot a \cdot MN \cdot \sin\alpha}{\frac{1}{2} \cdot b \cdot MN \cdot \sin\alpha} = \frac{a}{b}$$
+
+$$\blacksquare$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Dowód zakończony</strong> — $\frac{P_{KNM}}{P_{NLM}} = \frac{a}{b}$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Alternatywny dowód** (krótszy, ale wymaga obserwacji): trójkąty $KNM$ i $NLM$ mają **wspólną wysokość z $M$** na prostą $KL$. Pole = $\frac{1}{2} \cdot \text{podstawa} \cdot h$, więc:
+
+  $$\frac{P_{KNM}}{P_{NLM}} = \frac{KN}{NL}$$
+
+  Z twierdzenia o dwusiecznej kąta: $\frac{KN}{NL} = \frac{KM}{LM} = \frac{a}{b}$.
+
+  **Pułapka.** Trzeba **wyraźnie zacytować** twierdzenie o dwusiecznej (CKE wymaga). Łatwiej iść przez $\sin\alpha$ — to dowód od podstaw, bez powoływania się na osobne twierdzenie.
+
+  **Nie zapomnij** zaznaczyć równości kątów ($\angle KMN = \angle LMN$) — bez tego brakuje uzasadnienia, że $\sin$ jest ten sam.
+</div>
+
+## Po co to umieć
+
+Wzór $P = \frac{1}{2}bc\sin\alpha$ to **maturalna obowiązkowa identyczność**. Działa zawsze gdy znasz dwa boki i kąt między nimi.
+
+W dowodach: zawsze szukaj **tego co się skraca** — wspólne wysokości, kąty, boki. Dobierz wzór pod te skróty.

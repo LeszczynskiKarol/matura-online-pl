@@ -2,15 +2,18 @@
 arkusz: matematyka-2026-maj-pp
 subject: matematyka
 nr: 23
-punkty: 2
-typ: otwarte-rozszerzone
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 23
-difficulty: 3
-tresc: Zadanie 23 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+punkty: 1
+typ: zamkniete-abcd
+topic: trygonometria, tangens, manipulacja wyrażeniem
+difficulty: 2
+tresc: "Kąt $\\alpha$ ostry, $\\frac{3\\sin\\alpha + 4\\cos\\alpha}{4\\cos\\alpha} = 6$. Oblicz $\\tan\\alpha$."
+odpowiedz: D
+pulapka: |
+  Klucz: rozdziel ułamek na sumę: $\frac{3\sin\alpha}{4\cos\alpha} + \frac{4\cos\alpha}{4\cos\alpha} = \frac{3}{4}\tan\alpha + 1$. Bez tego nie wyciągniesz $\tan$.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  VII.2 — tożsamości trygonometryczne.
+podobne:
+  - matematyka-2023-maj-pp-23
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +22,59 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-24.webp"
-  alt="Zadanie 23 - strona 24 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 24 arkusza CKE. Pelna tresc zadania 23."
+  alt="Zadanie 23 - tangens kąta ostrego z wyrażenia trygonometrycznego"
+  caption="Strona 24 arkusza CKE 2026 PP - zadanie 23."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={24}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Rozdziel ułamek na sumę dwóch.**
+
+$$\frac{3\sin\alpha + 4\cos\alpha}{4\cos\alpha} = \frac{3\sin\alpha}{4\cos\alpha} + \frac{4\cos\alpha}{4\cos\alpha}$$
+
+$$= \frac{3}{4} \cdot \frac{\sin\alpha}{\cos\alpha} + 1 = \frac{3}{4}\tan\alpha + 1$$
+
+</div>
+
+<div class="krok">
+
+**Równanie z $\tan\alpha$.**
+
+$$\frac{3}{4}\tan\alpha + 1 = 6$$
+
+$$\frac{3}{4}\tan\alpha = 5$$
+
+$$\tan\alpha = \frac{20}{3}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: D</strong> — $\tan\alpha = \frac{20}{3}$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór B ($\frac{8}{3}$)** — błędne rozdzielenie ułamka albo pominięcie $+1$. Pamiętaj: $\frac{4\cos\alpha}{4\cos\alpha} = 1$, **nie** $\frac{1}{\tan\alpha}$.
+
+  **Klucz: $\tan\alpha = \frac{\sin\alpha}{\cos\alpha}$** — definicja, którą zawsze możesz podstawić.
+
+  **Sprawdzenie**: $\tan\alpha = \frac{20}{3}$, $\frac{3}{4} \cdot \frac{20}{3} + 1 = 5 + 1 = 6$ ✓.
+</div>
+
+## Po co to umieć
+
+W zadaniach trygonometrycznych zawsze szukaj, jak **dzielić ułamki na sumy**, **przemnażać przez $\cos\alpha$** lub **wyciągać $\tan\alpha$**.
+
+Tożsamość, którą warto znać:
+$$\sin^2 + \cos^2 = 1 \quad\Longrightarrow\quad 1 + \tan^2 = \frac{1}{\cos^2}$$
