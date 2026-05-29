@@ -35,22 +35,88 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
   pdfPage={10}
 />
 
-## Klucz odpowiedzi (CKE)
+## Co zrobić?
+
+### 5.1. — ruch obiegowy
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Cztery kluczowe daty astronomiczne** w półkuli północnej:
+- **21 marca** — równonoc wiosenna (początek **astronomicznej wiosny**).
+- **22 czerwca** — przesilenie letnie (początek **astronomicznego lata**).
+- **23 września** — równonoc jesienna (początek **astronomicznej jesieni**).
+- **22 grudnia** — przesilenie zimowe (początek **astronomicznej zimy**).
+
+</div>
+
+<div class="krok">
+
+W zadaniu kontekst miesiąca lub zjawiska → przyporządkuj porę roku. Druga luka (kierunek wschodu Słońca) → **wschód** (Słońce zawsze "wschodzi na wschodzie", choć **dokładny punkt** wschodu zmienia się: latem na NE, zimą na SE, w równonoc dokładnie na E).
+
+</div>
+
+</div>
+
+### 5.2. — wysokość górowania Słońca w dniu równonocy
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wzór w dniu równonocy** (Słońce nad równikiem, deklinacja = 0°):
+
+$$h_{gS} = 90° - \varphi$$
+
+gdzie $\varphi$ to szerokość geograficzna.
+
+</div>
+
+<div class="krok">
+
+**Podstawienie**: $\varphi = 54°47'\,\text{N}$.
+
+$$h_{gS} = 90° - 54°47' = 89°60' - 54°47' = 35°13'$$
+
+</div>
+
+<div class="krok">
+
+**Wskazówka rachunkowa**: $90° = 89°60'$ (jak $1 = 0,59 + 0,01$). Po odjęciu dostajemy $35°13'$.
+
+</div>
+
+</div>
 
 <div class="odpowiedz">
 <div>
 
-### 5.1.
-1. **astronomicznego lata**
-2. **wschód**
+**5.1.** 1. **astronomicznego lata**, 2. **wschód**.
 
-### 5.2.
-$$h_{gS} = 90° - 54°47' = 35°13'$$
+**5.2.** $h_{gS} = 90° - 54°47' = 35°13'$.
 
 </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+
+  **5.2: błąd przy odejmowaniu minut.** $90° - 54°47'$: trzeba "pożyczyć" 60' z 1°. Czyli: $89°60' - 54°47' = 35°13'$. Niektórzy odejmują $90°00' - 54°47'$ i dostają $35°-47'$ (bzdura).
+
+  **Dla równonocy** wzór jest **prosty**: $90° - \varphi$. Dla przesileń: $90° - \varphi \pm 23°27'$ (lato +, zima −). Nie myl wzorów.
 </div>
 
 ## Punktacja CKE
 
 - 5.1: **1 pkt** — dwie poprawne odpowiedzi.
 - 5.2: **1 pkt** — poprawny sposób obliczenia i wynik.
+
+## Po co to umieć
+
+**Wysokość Słońca w południe** (górowanie) to klucz astronomicznej geografii. Wzory:
+- **Równonoc** (21 III, 23 IX): $h = 90° - \varphi$
+- **Przesilenie letnie** (22 VI): $h = 90° - \varphi + 23°27'$ (półkula N)
+- **Przesilenie zimowe** (22 XII): $h = 90° - \varphi - 23°27'$ (półkula N)
+
+W zadaniach maturalnych ten wzór wraca co rok. Trening: dla Polski $\varphi \approx 50°$–$54°$, więc latem $h \approx 60°$, zimą $h \approx 15°$.
