@@ -2,15 +2,23 @@
 arkusz: matematyka-2026-maj-pp
 subject: matematyka
 nr: 33
-punkty: 5
-typ: otwarte-rozszerzone
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 33
-difficulty: 3
-tresc: Zadanie 33 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+punkty: 2
+typ: zamkniete-abcd
+topic: funkcja kwadratowa, zastosowanie fizyczne, wierzchołek paraboli
+difficulty: 2
+tresc: |
+  Wysokość piłeczki: $h(t) = -4{,}9t^2 + 14{,}7t$.
+  **33.1.** Kiedy uderzy w ziemię?
+  **33.2.** Kiedy osiągnęła największą wysokość?
+odpowiedz: |
+  **33.1.** **D** — $t = 3$ s.
+  **33.2.** **A** — $t = 1{,}5$ s.
+pulapka: |
+  Klucz: $h(t) = 0$ daje **dwa** rozwiązania ($t = 0$ — wyrzut, $t = 3$ — upadek). Pierwszy "uderza w ziemię" to ten **drugi**. Max wysokości to wierzchołek paraboli — środek między miejscami zerowymi.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  IV.6 — funkcja kwadratowa, miejsca zerowe i wierzchołek.
+podobne:
+  - matematyka-2024-maj-pp-35
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +27,91 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-32.webp"
-  alt="Zadanie 33 - strona 32 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 32 arkusza CKE. Pelna tresc zadania 33."
+  alt="Zadanie 33 - lot piłeczki, funkcja kwadratowa"
+  caption="Strona 32 arkusza CKE 2026 PP - zadanie 33.1."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={32}
 />
 
-## Klucz odpowiedzi i punktacja
+<MaterialZrodlowy
+  src="/arkusze/matematyka/2026-maj-pp/ark-33.webp"
+  alt="Zadanie 33.2 - największa wysokość piłeczki"
+  caption="Strona 33 arkusza CKE 2026 PP - zadanie 33.2."
+  zrodlo="CKE 2026"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
+  pdfPage={33}
+/>
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+## Co zrobić?
+
+### 33.1. — kiedy uderzy w ziemię?
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**$h(t) = 0$** — piłeczka na poziomie ziemi.
+
+$$-4{,}9t^2 + 14{,}7t = 0$$
+
+$$t \cdot (-4{,}9t + 14{,}7) = 0$$
+
+</div>
+
+<div class="krok">
+
+**Dwa rozwiązania:**
+- $t = 0$ (moment wyrzutu)
+- $-4{,}9t + 14{,}7 = 0 \implies t = \frac{14{,}7}{4{,}9} = 3$ (uderzenie w ziemię)
+
+</div>
+
+</div>
+
+### 33.2. — największa wysokość?
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wierzchołek paraboli.** Funkcja kwadratowa $h(t) = at^2 + bt + c$, ekstremum przy:
+
+$$t_W = -\frac{b}{2a} = -\frac{14{,}7}{2 \cdot (-4{,}9)} = \frac{14{,}7}{9{,}8} = 1{,}5$$
+
+Bo $a = -4{,}9 < 0$, parabola ma maksimum.
+
+</div>
+
+<div class="krok">
+
+**Sprawdzenie**: dla paraboli (lot symetryczny) max jest dokładnie w **połowie czasu lotu**: $\frac{3}{2} = 1{,}5$ s ✓.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>33.1. Odpowiedź: D</strong> — $t = 3$ s.<br/>
+    <strong>33.2. Odpowiedź: A</strong> — $t = 1{,}5$ s.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **33.1: wybór $t = 0$ jako "uderzenia"** — to moment wyrzutu, nie upadku. Bierz **drugie** miejsce zerowe.
+
+  **33.2: pomylenie wysokości z czasem.** Wysokość maksymalna to $h_W$ (wartość $y$ wierzchołka), ale pytanie pyta **kiedy** osiągnęła max — czyli czas $t_W$ (wartość $x$ wierzchołka).
+
+  **Sprawdzenie**: $h(1{,}5) = -4{,}9 \cdot 2{,}25 + 14{,}7 \cdot 1{,}5 = -11{,}025 + 22{,}05 = 11{,}025$ m — max wysokość.
+</div>
+
+## Po co to umieć
+
+Klasyczny model fizyczny: $h(t) = h_0 + v_0 t - \frac{1}{2}gt^2$ ($g \approx 9{,}8$ m/s²). Tu $h_0 = 0$, $v_0 = 14{,}7$ m/s.
+
+Trzy własności paraboli z fizyki:
+1. **Miejsca zerowe** — czasy startu i upadku.
+2. **Wierzchołek $t_W$** — moment max. wysokości (w połowie czasu lotu).
+3. **Wartość $h_W$** — sama maksymalna wysokość.

@@ -2,15 +2,18 @@
 arkusz: matematyka-2026-maj-pp
 subject: matematyka
 nr: 28
-punkty: 2
-typ: otwarte-rozszerzone
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 28
-difficulty: 3
-tresc: Zadanie 28 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+punkty: 1
+typ: zamkniete-abcd
+topic: stereometria, stożek vs walec, objętość
+difficulty: 2
+tresc: "Stożek i walec mają równe wysokości. $R_{stożka} = 2 \\cdot r_{walca}$. Oblicz $\\frac{V_{stożka}}{V_{walca}}$."
+odpowiedz: D
+pulapka: |
+  Klucz: $V_{stożka} = \frac{1}{3}\pi R^2 H$ — przy $R = 2r$ kwadrat daje **4** raz większą podstawę, ale dzielenie przez 3 to równoważy: $\frac{4}{3}$.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  X.3 — bryły obrotowe, objętość.
+podobne:
+  - matematyka-2024-maj-pp-30
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +22,58 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-28.webp"
-  alt="Zadanie 28 - strona 28 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 28 arkusza CKE. Pelna tresc zadania 28."
+  alt="Zadanie 28 - stosunek objętości stożka i walca"
+  caption="Strona 28 arkusza CKE 2026 PP - zadanie 28."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={28}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Niech $r$ = promień podstawy walca, $H$ = wspólna wysokość.** Wtedy $R_{stożka} = 2r$.
+
+</div>
+
+<div class="krok">
+
+**Objętości:**
+
+$$V_{stożka} = \frac{1}{3} \pi R^2 H = \frac{1}{3} \pi (2r)^2 H = \frac{1}{3} \pi \cdot 4r^2 H = \frac{4}{3} \pi r^2 H$$
+
+$$V_{walca} = \pi r^2 H$$
+
+</div>
+
+<div class="krok">
+
+**Stosunek.**
+
+$$\frac{V_{stożka}}{V_{walca}} = \frac{\frac{4}{3} \pi r^2 H}{\pi r^2 H} = \frac{4}{3}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: D</strong> — $\frac{V_{stożka}}{V_{walca}} = \frac{4}{3}$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór A ($\frac{1}{12}$)** — zapomnienie o **kwadracie promienia** w $\pi R^2$. Bez kwadratu wyszłoby $\frac{2}{3}$, ale z kwadratem to $\frac{4}{3}$.
+
+  **Wybór C ($\frac{2}{3}$)** — pamiętano $\frac{1}{3}$ stożka, ale $R = 2r$ wpłynęło tylko liniowo (zapomniany kwadrat).
+
+  **Klucz**: promień zawsze w **kwadracie** w polu koła i objętości brył obrotowych.
+</div>
+
+## Po co to umieć
+
+Wzory na bryły obrotowe — pamiętaj $\frac{1}{3}$ dla bryły **z wierzchołkiem** (stożek, ostrosłup) i brak współczynnika dla **bryły walcowej**. To wynika z całki — bryła z wierzchołkiem to integral $r^2$ wzdłuż $H$, walec to po prostu $r^2 \cdot H$.

@@ -3,14 +3,22 @@ arkusz: matematyka-2026-maj-pp
 subject: matematyka
 nr: 24
 punkty: 2
-typ: otwarte-rozszerzone
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 24
+typ: zamkniete-abcd
+topic: geometria analityczna, trójkąt prostokątny, środek okręgu opisanego
 difficulty: 3
-tresc: Zadanie 24 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+tresc: |
+  $A = (0, -3)$, $B = (2, 1)$, $C = (0, 2)$ — wierzchołki trójkąta prostokątnego.
+  **24.1.** Pole trójkąta.
+  **24.2.** Środek okręgu opisanego.
+odpowiedz: |
+  **24.1.** **B** — pole = 5.
+  **24.2.** **D** — środek = $(0, -\frac{1}{2})$.
+pulapka: |
+  W trójkącie prostokątnym środek okręgu opisanego = środek **przeciwprostokątnej**. Klucz: zidentyfikuj który bok to przeciwprostokątna (sprawdź iloczyny skalarne lub Pitagoras).
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  IX.1 — odległość punktów, pole trójkąta w układzie współrzędnych.
+podobne:
+  - matematyka-2023-maj-pp-24
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +27,99 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-25.webp"
-  alt="Zadanie 24 - strona 25 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 25 arkusza CKE. Pelna tresc zadania 24."
+  alt="Zadanie 24 - trójkąt prostokątny w układzie współrzędnych"
+  caption="Strona 25 arkusza CKE 2026 PP - zadanie 24.1 + 24.2."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={25}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+### 24.1. — Pole trójkąta
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wektory boków.**
+- $\vec{AB} = (2 - 0, 1 - (-3)) = (2, 4)$
+- $\vec{AC} = (0, 5)$
+- $\vec{BC} = (-2, 1)$
+
+</div>
+
+<div class="krok">
+
+**Sprawdź gdzie kąt prosty.** Iloczyn skalarny = 0 → prostopadłe.
+
+$$\vec{AB} \cdot \vec{BC} = 2 \cdot (-2) + 4 \cdot 1 = 0$$
+
+Kąt prosty przy wierzchołku $B$.
+
+</div>
+
+<div class="krok">
+
+**Długości przyprostokątnych.**
+
+$$|AB| = \sqrt{4 + 16} = 2\sqrt{5}$$
+
+$$|BC| = \sqrt{4 + 1} = \sqrt{5}$$
+
+</div>
+
+<div class="krok">
+
+**Pole.**
+
+$$P = \frac{1}{2} \cdot 2\sqrt{5} \cdot \sqrt{5} = \frac{1}{2} \cdot 2 \cdot 5 = 5$$
+
+</div>
+
+</div>
+
+### 24.2. — Środek okręgu opisanego
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Twierdzenie.** W trójkącie prostokątnym środek okręgu opisanego = środek **przeciwprostokątnej** (twierdzenie Talesa odwrotne).
+
+Przeciwprostokątna = bok naprzeciw kąta prostego. Kąt prosty przy $B$ → przeciwprostokątna = $AC$.
+
+</div>
+
+<div class="krok">
+
+**Środek odcinka $AC$.**
+
+$$S = \left(\frac{0 + 0}{2}, \frac{-3 + 2}{2}\right) = \left(0, -\frac{1}{2}\right)$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>24.1. Odpowiedź: B</strong> — pole = $5$.<br/>
+    <strong>24.2. Odpowiedź: D</strong> — środek = $\left(0, -\frac{1}{2}\right)$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **24.1: Wybór D (10)** — pomylenie podstawy z wysokością, np. obliczenie $|AC| \cdot \text{coś}$ bez dzielenia przez 2.
+
+  **24.2: Wybór A ($(\frac{2}{3}, 0)$)** — pomylenie środka okręgu opisanego z **środkiem ciężkości** (= średnia współrzędnych trzech wierzchołków). Środek ciężkości $\neq$ środek okręgu opisanego (poza wyjątkowymi przypadkami).
+
+  **Klucz**: w trójkącie prostokątnym wszystkie wzory się upraszczają — przeciwprostokątna = średnica okręgu opisanego, więc środek przeciwprostokątnej = środek okręgu.
+</div>
+
+## Po co to umieć
+
+Geometria analityczna trójkąta prostokątnego — najlepsza droga przez:
+1. **Wektory boków** $\vec{AB}$, $\vec{BC}$, $\vec{CA}$.
+2. **Iloczyn skalarny** = 0 wykrywa kąt prosty.
+3. **Twierdzenie Talesa** o trójkącie w półokręgu: kąt prosty $\iff$ wierzchołek leży na okręgu z przeciwprostokątną jako średnicą.

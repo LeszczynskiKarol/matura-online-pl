@@ -3,14 +3,18 @@ arkusz: matematyka-2026-maj-pp
 subject: matematyka
 nr: 30
 punkty: 2
-typ: otwarte-rozszerzone
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 30
+typ: otwarte-krotkie
+topic: prawdopodobieństwo klasyczne, podzielność przez 6
 difficulty: 3
-tresc: Zadanie 30 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+tresc: |
+  $X = \{1, 3, 5, 7, 9\}$, $Y = \{0, 2, 4, 6, 8\}$. Cyfra dziesiątek z $X$, cyfra jedności z $Y$. Oblicz prawdopodobieństwo, że liczba jest podzielna przez 6.
+odpowiedz: "$P(A) = \\frac{9}{25}$"
+pulapka: |
+  Klucz: podzielność przez 6 = (parzyste) AND (podzielne przez 3). Cyfra jedności z $Y$ — wszystkie parzyste, więc każda liczba jest parzysta. Pozostaje liczyć podzielne przez 3 (suma cyfr).
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  XI.2 — prawdopodobieństwo klasyczne.
+podobne:
+  - matematyka-2024-maj-pp-32
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +23,82 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-29.webp"
-  alt="Zadanie 30 - strona 29 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 29 arkusza CKE. Pelna tresc zadania 30."
+  alt="Zadanie 30 - prawdopodobieństwo, podzielność przez 6"
+  caption="Strona 29 arkusza CKE 2026 PP - zadanie 30."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={29}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wszystkie zdarzenia elementarne $|\Omega|$.** Dwie niezależne losowania: 5 cyfr z $X$ × 5 cyfr z $Y$:
+
+$$|\Omega| = 5 \cdot 5 = 25$$
+
+</div>
+
+<div class="krok">
+
+**Kryterium podzielności przez 6.** Liczba podzielna przez 6 $\iff$ podzielna przez 2 **i** przez 3.
+
+- **Przez 2.** Cyfra jedności z $Y = \{0, 2, 4, 6, 8\}$ — wszystkie parzyste. ✓ zawsze.
+- **Przez 3.** Suma cyfr podzielna przez 3.
+
+</div>
+
+<div class="krok">
+
+**Wypisz pary $(d, j)$ z $d + j$ podzielne przez 3.**
+
+| $d$ (dziesiątki) | Możliwe $j$ | Liczby |
+|---|---|---|
+| 1 | 2, 8 | 12, 18 |
+| 3 | 0, 6 | 30, 36 |
+| 5 | 4 | 54 |
+| 7 | 2, 8 | 72, 78 |
+| 9 | 0, 6 | 90, 96 |
+
+Razem: $2 + 2 + 1 + 2 + 2 = 9$ par.
+
+</div>
+
+<div class="krok">
+
+**Prawdopodobieństwo.**
+
+$$P(A) = \frac{|A|}{|\Omega|} = \frac{9}{25}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> $P(A) = \frac{9}{25}$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Brak rozbicia na "podzielne przez 2 i 3"** — próba bezpośredniego sprawdzania podzielności przez 6 dla wszystkich 25 liczb. Działa, ale dłużej. Rozbicie skraca myślenie.
+
+  **Pominięcie zera** w cyfrach jedności — $30$ i $90$ są podzielne przez 6 (bo $30 = 6 \cdot 5$, $90 = 6 \cdot 15$). $0$ jest parzyste.
+
+  **Sprawdzenie listy**: 12, 18, 30, 36, 54, 72, 78, 90, 96. Wszystkie dzielą się przez 6 ✓.
+</div>
+
+## Po co to umieć
+
+Prawdopodobieństwo klasyczne: $P = \frac{|A|}{|\Omega|}$.
+
+Cechy podzielności (warto pamiętać):
+- przez **2** ⟺ ostatnia cyfra parzysta
+- przez **3** ⟺ suma cyfr podzielna przez 3
+- przez **5** ⟺ ostatnia cyfra to 0 lub 5
+- przez **6** ⟺ podzielna przez 2 i 3
+- przez **9** ⟺ suma cyfr podzielna przez 9

@@ -2,15 +2,18 @@
 arkusz: matematyka-2026-maj-pp
 subject: matematyka
 nr: 29
-punkty: 2
-typ: otwarte-rozszerzone
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 29
-difficulty: 3
-tresc: Zadanie 29 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+punkty: 1
+typ: zamkniete-abcd
+topic: kombinatoryka, reguła mnożenia
+difficulty: 2
+tresc: "Ile jest liczb trzycyfrowych nieparzystych z cyfr {0, 1, 2, 3, 4, 5, 6}?"
+odpowiedz: A
+pulapka: |
+  Trzy ograniczenia: cyfra setek $\neq 0$ (6 opcji), cyfra jedności nieparzysta z {1,3,5} (3 opcje), dziesiątki — wszystkie 7 opcji.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  XI.1 — reguła mnożenia.
+podobne:
+  - matematyka-2024-maj-pp-31
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +22,62 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-28.webp"
-  alt="Zadanie 29 - strona 28 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 28 arkusza CKE. Pelna tresc zadania 29."
+  alt="Zadanie 29 - liczba trzycyfrowych nieparzystych z danych cyfr"
+  caption="Strona 28 arkusza CKE 2026 PP - zadanie 29."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={28}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Cyfra setek (pierwsza pozycja).** Nie może być $0$ (inaczej liczba nie jest trzycyfrowa). Z $\{0, 1, 2, 3, 4, 5, 6\}$ zostają: $\{1, 2, 3, 4, 5, 6\}$ → **6 opcji**.
+
+</div>
+
+<div class="krok">
+
+**Cyfra dziesiątek.** Dowolna z $\{0, 1, 2, 3, 4, 5, 6\}$ — bez ograniczeń → **7 opcji**.
+
+</div>
+
+<div class="krok">
+
+**Cyfra jedności (nieparzysta).** Z $\{0, 1, 2, 3, 4, 5, 6\}$ tylko $\{1, 3, 5\}$ jest nieparzyste → **3 opcje**.
+
+</div>
+
+<div class="krok">
+
+**Reguła mnożenia.** Łączna liczba:
+
+$$6 \cdot 7 \cdot 3$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: A</strong> — $6 \cdot 7 \cdot 3 = 126$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór B ($6 \cdot 7 \cdot 7$)** — zapomnienie o ograniczeniu "nieparzysta" na ostatniej cyfrze.
+
+  **Wybór C ($7 \cdot 7 \cdot 3$)** — zapomnienie, że $0$ na pierwszej pozycji daje liczbę dwucyfrową (np. $056 = 56$).
+
+  **Wybór D ($7 \cdot 7 \cdot 7$)** — bez żadnych ograniczeń (najwyższa odpowiedź).
+</div>
+
+## Po co to umieć
+
+Reguła mnożenia: niezależne wybory mnożą się. Klucz: **przeczytaj ograniczenia po kolei** dla każdej pozycji i policz ile opcji zostaje.
+
+W zadaniach o liczbach uważaj na "trzycyfrowa" (pierwsza cyfra $\neq 0$) i "parzysta/nieparzysta" (ostatnia cyfra ograniczona).

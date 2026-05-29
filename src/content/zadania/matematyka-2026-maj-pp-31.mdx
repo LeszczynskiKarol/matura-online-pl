@@ -2,15 +2,19 @@
 arkusz: matematyka-2026-maj-pp
 subject: matematyka
 nr: 31
-punkty: 2
-typ: otwarte-rozszerzone
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 31
+punkty: 1
+typ: zamkniete-pf
+topic: statystyka, średnia arytmetyczna, mediana
 difficulty: 3
-tresc: Zadanie 31 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+tresc: |
+  Dwa rozkłady ocen (1-6) w klasach IV A i IV B (po 20 uczniów). **(1)** Średnie równe? **(2)** Mediany równe?
+odpowiedz: "PP"
+pulapka: |
+  Pułapka wzrokowa: rozkłady wyglądają **różnie** (jeden ma szczyty na 2 i 5, drugi na 3 i 4), ale są **symetryczne względem 3,5**. Dlatego średnia i mediana wychodzą takie same.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  XI.3 — statystyka opisowa: średnia, mediana.
+podobne:
+  - matematyka-2024-maj-pp-33
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +23,99 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-30.webp"
-  alt="Zadanie 31 - strona 30 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 30 arkusza CKE. Pelna tresc zadania 31."
+  alt="Zadanie 31 - statystyka, średnia i mediana ocen"
+  caption="Strona 30 arkusza CKE 2026 PP - zadanie 31."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={30}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+### Odczyt z diagramów
+
+| Ocena | 1 | 2 | 3 | 4 | 5 | 6 | Suma |
+|---|---|---|---|---|---|---|---|
+| IV A | 1 | 6 | 3 | 3 | 6 | 1 | 20 |
+| IV B | 1 | 3 | 6 | 6 | 3 | 1 | 20 |
+
+### Stwierdzenie 1: średnie równe?
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**IV A:**
+
+$$\bar{x}_A = \frac{1 \cdot 1 + 2 \cdot 6 + 3 \cdot 3 + 4 \cdot 3 + 5 \cdot 6 + 6 \cdot 1}{20} = \frac{1 + 12 + 9 + 12 + 30 + 6}{20} = \frac{70}{20} = 3{,}5$$
+
+</div>
+
+<div class="krok">
+
+**IV B:**
+
+$$\bar{x}_B = \frac{1 \cdot 1 + 2 \cdot 3 + 3 \cdot 6 + 4 \cdot 6 + 5 \cdot 3 + 6 \cdot 1}{20} = \frac{1 + 6 + 18 + 24 + 15 + 6}{20} = \frac{70}{20} = 3{,}5$$
+
+</div>
+
+</div>
+
+Średnie równe → **PRAWDA**.
+
+### Stwierdzenie 2: mediany równe?
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Mediana z 20 ocen** = średnia 10. i 11. wartości po posortowaniu.
+
+**IV A** posortowane:
+- 1 (×1) — pozycja 1
+- 2 (×6) — pozycje 2-7
+- 3 (×3) — pozycje **8-10**
+- 4 (×3) — pozycje **11-13**
+
+Pozycje 10. i 11.: **3** oraz **4** → mediana = $\frac{3 + 4}{2} = 3{,}5$.
+
+</div>
+
+<div class="krok">
+
+**IV B** posortowane:
+- 1 (×1) — pozycja 1
+- 2 (×3) — pozycje 2-4
+- 3 (×6) — pozycje 5-**10**
+- 4 (×6) — pozycje **11**-16
+
+Pozycje 10. i 11.: **3** oraz **4** → mediana = $\frac{3 + 4}{2} = 3{,}5$.
+
+</div>
+
+</div>
+
+Mediany równe → **PRAWDA**.
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: PP</strong> — średnie 3,5; mediany 3,5.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Powierzchowny odczyt z diagramów** — rozkłady wyglądają różnie (A "garby" na 2 i 5; B "garb" w środku, na 3-4). Ale **oba są symetryczne względem osi $x = 3{,}5$**, co zapewnia tę samą średnią i medianę.
+
+  **Pomyłka z medianą.** Dla **parzystej** liczby obserwacji (20) bierzemy **średnią dwóch środkowych** wartości po posortowaniu, nie jedną.
+
+  **Sprawdzenie**: suma wszystkich ocen w obu klasach = 70. Liczba uczniów = 20. Średnia musi być 3,5.
+</div>
+
+## Po co to umieć
+
+Średnia arytmetyczna i mediana są **odrębnymi** miarami:
+- Średnia "ciągnie się" w kierunku wartości skrajnych.
+- Mediana jest na nie odporna.
+
+Czasem dwa rozkłady mają taką samą średnią/medianę, ale różną **rozproszenia** (wariancja, odchylenie). Tu obie klasy mają taką samą średnią, ale klasa A ma **większą** wariancję (oceny rozjechane na 2 i 5).

@@ -2,15 +2,18 @@
 arkusz: matematyka-2026-maj-pp
 subject: matematyka
 nr: 32
-punkty: 5
-typ: otwarte-rozszerzone
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 32
-difficulty: 3
-tresc: Zadanie 32 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+punkty: 1
+typ: zamkniete-abcd
+topic: statystyka, średnia ważona
+difficulty: 2
+tresc: "Średnia 3 liczb $a, b, c$ = 2. Średnia 4 liczb $d, e, f, g$ = 5,5. Oblicz średnią 7 liczb."
+odpowiedz: C
+pulapka: |
+  **Nie uśredniaj średnich** — $\frac{2 + 5{,}5}{2} = 3{,}75$ to **błąd** (zignorowane różne liczebności grup). Klucz: suma 7 liczb = suma trójki + suma czwórki.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  XI.3 — statystyka opisowa, średnia.
+podobne:
+  - matematyka-2024-maj-pp-34
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +22,64 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-31.webp"
-  alt="Zadanie 32 - strona 31 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 31 arkusza CKE. Pelna tresc zadania 32."
+  alt="Zadanie 32 - średnia ważona"
+  caption="Strona 31 arkusza CKE 2026 PP - zadanie 32."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={31}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Z definicji średniej**: suma = średnia · liczba elementów.
+
+$$a + b + c = 3 \cdot 2 = 6$$
+
+$$d + e + f + g = 4 \cdot 5{,}5 = 22$$
+
+</div>
+
+<div class="krok">
+
+**Suma 7 liczb:**
+
+$$a + b + c + d + e + f + g = 6 + 22 = 28$$
+
+</div>
+
+<div class="krok">
+
+**Średnia 7 liczb:**
+
+$$\frac{28}{7} = 4$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: C</strong> — średnia = $4$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór B (3,75)** — niepoprawne uśrednianie samych średnich: $\frac{2 + 5{,}5}{2} = 3{,}75$. To ignoruje, że pierwsza grupa ma 3 liczby a druga 4.
+
+  **Poprawny wzór dla średniej ważonej**:
+
+  $$\bar{x}_{ogólne} = \frac{n_1 \bar{x}_1 + n_2 \bar{x}_2}{n_1 + n_2} = \frac{3 \cdot 2 + 4 \cdot 5{,}5}{3 + 4} = \frac{28}{7} = 4$$
+
+  Średnie ważymy **liczebnościami** grup.
+</div>
+
+## Po co to umieć
+
+Łączenie grup w statystyce: **zawsze sumuj wartości, nie średnie**. Średnia ważona to kompensacja za różne wielkości grup.
+
+W praktyce: jeśli pierwsza grupa ma 100 osób ze średnią 50, a druga 10 osób ze średnią 100, łączna średnia jest bliżej 50, nie pośrodku.
