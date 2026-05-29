@@ -4,13 +4,19 @@ subject: matematyka
 nr: 19
 punkty: 2
 typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom podstawowy â€” zadanie 19
+topic: ciąg arytmetyczny, suma wyrazów, zadanie kontekstowe
 difficulty: 3
-tresc: Zadanie 19 z arkusza maturalnego CKE z matematyki, maj 2023, poziom podstawowy. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+tresc: "Zadanie 17 CKE: Pan Stanisław spłacił pożyczkę $8910$ zł w $18$ ratach. Każda kolejna rata była mniejsza od poprzedniej o $30$ zł. Oblicz pierwszą ratę."
+odpowiedz: |
+  **Pierwsza rata: $750$ zł**
+
+  Wzór: $S_{18} = \frac{18(a_1 + a_{18})}{2} = 8910$, $a_{18} = a_1 - 510$ → $18a_1 - 4590 = 8910$ → $a_1 = 750$.
+pulapka: |
+  Najczęstszy błąd: pomylenie $r = 30$ z $r = -30$. Skoro raty maleją, różnica jest **ujemna**. Drugi błąd: użycie wzoru $a_n = a_1 + n \cdot r$ zamiast $a_n = a_1 + (n-1) \cdot r$ — w 18. wyrazie różnicę dodajemy **17 razy**, nie 18.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  IV.7 — suma wyrazów ciągu arytmetycznego; modelowanie ciągiem.
+podobne:
+  - matematyka-2023-maj-pp-18
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -18,18 +24,79 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pp/ark-17.webp"
-  alt="Zadanie 19 - strona 17 arkusza CKE matematyka maj 2023 poziom podstawowy"
-  caption="Strona 17 arkusza CKE. Pelna tresc zadania 19."
+  src="/arkusze/matematyka/2023-maj-pp/ark-16.webp"
+  alt="Zadanie 19 (17 CKE) - pożyczka w ratach"
+  caption="Strona 16 arkusza CKE - zadanie 17 (ciąg arytmetyczny w kontekście)."
   zrodlo="CKE 2023"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
-  pdfPage={17}
+  pdfPage={16}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf)
+Raty tworzą **ciąg arytmetyczny** z różnicą $r = -30$ (bo kolejna rata jest mniejsza). Suma 18 rat: $8910$. Znajdź pierwszą ratę $a_1$.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 19 sprawdza umiejetnosci w zakresie matematyki poziomu podstawowy maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Zapisz wzór na ostatnią ratę.** W ciągu arytmetycznym:
+
+$$a_n = a_1 + (n-1) \cdot r$$
+
+Dla $n = 18$, $r = -30$:
+
+$$a_{18} = a_1 + 17 \cdot (-30) = a_1 - 510$$
+
+</div>
+
+<div class="krok">
+
+**Zapisz wzór na sumę 18 wyrazów.**
+
+$$S_n = \frac{n(a_1 + a_n)}{2}$$
+
+Dla $n = 18$:
+
+$$S_{18} = \frac{18(a_1 + a_{18})}{2} = 9(a_1 + a_{18})$$
+
+</div>
+
+<div class="krok">
+
+**Podstaw $a_{18} = a_1 - 510$ i $S_{18} = 8910$:**
+
+$$9(a_1 + a_1 - 510) = 8910$$
+$$9(2a_1 - 510) = 8910$$
+$$18a_1 - 4590 = 8910$$
+$$18a_1 = 13500$$
+$$a_1 = 750$$
+
+</div>
+
+<div class="krok">
+
+**Sprawdzenie:** $a_{18} = 750 - 510 = 240$. Suma: $\frac{18 \cdot (750 + 240)}{2} = 9 \cdot 990 = 8910$. ✓
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Pierwsza rata: $a_1 = 750$ zł</strong>
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Zła wartość $r$.** „Mniejsza o 30" oznacza **odjąć**, czyli $r = -30$. Jeśli wziąłeś $r = +30$, raty by rosły — sprzeczne z treścią.
+
+  **Wzór $a_n = a_1 + n \cdot r$ (bez $-1$).** Pamiętaj: różnica dodaje się $(n-1)$ razy, nie $n$ razy. Pierwszy wyraz nie ma żadnego doliczenia, drugi ma $1 \cdot r$, ..., $n$-ty ma $(n-1) \cdot r$.
+
+  **Pomylenie sumy z ostatnim wyrazem.** $S_{18} = 8910$ to **suma wszystkich rat**, nie ostatnia rata.
+</div>
+
+## Po co to umieć
+
+Zadania kontekstowe z ciągami pojawiają się prawie na każdej maturze. Schemat: (1) zidentyfikuj typ ciągu, (2) zapisz dane jako $a_1$, $r$/$q$, $n$, $a_n$, $S_n$, (3) ułóż równanie z dwóch znanych wzorów.

@@ -3,14 +3,17 @@ arkusz: matematyka-2023-maj-pp
 subject: matematyka
 nr: 15
 punkty: 1
-typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom podstawowy â€” zadanie 15
-difficulty: 3
-tresc: Zadanie 15 z arkusza maturalnego CKE z matematyki, maj 2023, poziom podstawowy. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+typ: zamkniete-abcd
+topic: funkcja liniowa, znaki współczynników a i b
+difficulty: 2
+tresc: "Zadanie 13: Funkcja liniowa $f(x) = ax + b$. Wykres jest opadający i przecina oś $y$ między $0$ a $1$. Wskaż znaki $a$ i $b$."
+odpowiedz: C
+pulapka: |
+  Najczęstszy błąd: pomylenie znaczenia $a$ (kierunek) i $b$ (przesunięcie). $a$ to **nachylenie** (znak $a$ ⇒ rośnie/maleje), $b$ to **punkt przecięcia z osią $y$**.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  IV.2 — znaczenie współczynników we wzorze funkcji liniowej.
+podobne:
+  - matematyka-2023-maj-pp-10
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -18,18 +21,60 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pp/ark-15.webp"
-  alt="Zadanie 15 - strona 15 arkusza CKE matematyka maj 2023 poziom podstawowy"
-  caption="Strona 15 arkusza CKE. Pelna tresc zadania 15."
+  src="/arkusze/matematyka/2023-maj-pp/ark-13.webp"
+  alt="Zadanie 15 (13) - znaki a i b funkcji liniowej"
+  caption="Strona 13 arkusza CKE - zadanie 13."
   zrodlo="CKE 2023"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
-  pdfPage={15}
+  pdfPage={13}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf)
+Z wykresu funkcji liniowej $f(x) = ax + b$ odczytaj znaki $a$ i $b$.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 15 sprawdza umiejetnosci w zakresie matematyki poziomu podstawowy maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Wyznacz znak $a$.** Wykres jest **opadający** (z lewej-góry do prawej-dołu). Funkcja liniowa opada ⟺ $a < 0$.
+
+</div>
+
+<div class="krok">
+
+**Wyznacz znak $b$.** $b$ to wartość $f(0)$ — punkt przecięcia wykresu z osią $y$.
+
+Z wykresu: punkt przecięcia jest **powyżej** osi $x$ (między $0$ a $1$), więc $b > 0$.
+
+</div>
+
+<div class="krok">
+
+**Wniosek:** $a < 0$ i $b > 0$ → odpowiedź **C**.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: C</strong> — $a < 0$ i $b > 0$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór A** — pomylenie kierunku. Opadająca = $a < 0$, nie $a > 0$.
+
+  **Wybór D** — pomyłka znaku $b$. $b$ to wartość $y$ przy $x = 0$ — jeśli wykres przecina oś $y$ POWYŻEJ punktu $0$, to $b > 0$.
+</div>
+
+## Po co to umieć
+
+Współczynnik $a$ w $f(x) = ax + b$:
+- $a > 0$ → rośnie ↗
+- $a < 0$ → maleje ↘
+- $a = 0$ → stała (pozioma)
+
+Współczynnik $b$ — punkt przecięcia z osią $y$. $b > 0$ → powyżej osi $x$, $b < 0$ → poniżej.

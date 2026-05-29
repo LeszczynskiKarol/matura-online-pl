@@ -2,15 +2,18 @@
 arkusz: matematyka-2023-maj-pp
 subject: matematyka
 nr: 21
-punkty: 2
-typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom podstawowy â€” zadanie 21
-difficulty: 4
-tresc: Zadanie 21 z arkusza maturalnego CKE z matematyki, maj 2023, poziom podstawowy. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+punkty: 1
+typ: zamkniete-abcd
+topic: tożsamości trygonometryczne, jedynka trygonometryczna
+difficulty: 2
+tresc: "Zadanie 19 CKE: Uprość $\\sin^4 \\alpha + \\sin^2 \\alpha \\cdot \\cos^2 \\alpha$ (dla kąta ostrego)."
+odpowiedz: A
+pulapka: |
+  Najczęstszy błąd: próba sumowania w wyrazach albo zamiany na pierwiastek. Klucz: **wyłącz wspólny czynnik $\sin^2 \alpha$**, a nawias upraszcza się do $1$ przez **jedynkę trygonometryczną**.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  V.2 — stosowanie tożsamości trygonometrycznych, w tym jedynki trygonometrycznej.
+podobne:
+  - matematyka-2023-maj-pp-20
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -18,18 +21,67 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pp/ark-18.webp"
-  alt="Zadanie 21 - strona 18 arkusza CKE matematyka maj 2023 poziom podstawowy"
-  caption="Strona 18 arkusza CKE. Pelna tresc zadania 21."
+  src="/arkusze/matematyka/2023-maj-pp/ark-17.webp"
+  alt="Zadanie 21 (19 CKE) - tożsamość trygonometryczna"
+  caption="Strona 17 arkusza CKE - zadanie 19."
   zrodlo="CKE 2023"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
-  pdfPage={18}
+  pdfPage={17}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf)
+Uprość $\sin^4 \alpha + \sin^2 \alpha \cdot \cos^2 \alpha$.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 21 sprawdza umiejetnosci w zakresie matematyki poziomu podstawowy maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Zauważ wspólny czynnik $\sin^2 \alpha$** w obu składnikach:
+
+$$\sin^4 \alpha = \sin^2 \alpha \cdot \sin^2 \alpha$$
+
+</div>
+
+<div class="krok">
+
+**Wyłącz $\sin^2 \alpha$ przed nawias:**
+
+$$\sin^4 \alpha + \sin^2 \alpha \cdot \cos^2 \alpha = \sin^2 \alpha \cdot (\sin^2 \alpha + \cos^2 \alpha)$$
+
+</div>
+
+<div class="krok">
+
+**Użyj jedynki trygonometrycznej.** Dla każdego kąta $\alpha$:
+
+$$\sin^2 \alpha + \cos^2 \alpha = 1$$
+
+Zatem:
+
+$$\sin^2 \alpha \cdot 1 = \sin^2 \alpha$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: A</strong> — $\sin^2 \alpha$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór B ($\sin^6 \alpha \cdot \cos^2 \alpha$)** — pomnożenie potęg zamiast dodania. Pamiętaj, że nie wolno mnożyć dwóch różnych składników: są **plusem rozdzielone**, nie pomnożone.
+
+  **Wybór D ($\sin^2 \alpha \cdot (\sin\alpha + \cos\alpha)(\sin\alpha - \cos\alpha)$)** — błędne rozłożenie $\sin^2 - \cos^2$. To by było prawdziwe dla wyrażenia z **minusem**, ale my mamy **plus**.
+
+  **Wybór C ($\sin^4 \alpha + 1$)** — zamiana drugiego składnika na $1$ bez uwzględnienia $\sin^2$.
+</div>
+
+## Po co to umieć
+
+**Jedynka trygonometryczna** $\sin^2 \alpha + \cos^2 \alpha = 1$ to **najczęściej używana tożsamość** trygonometryczna na maturze. Patrz na wyrażenie — jeśli widzisz sumę $\sin^2$ i $\cos^2$, prawie zawsze da się skrócić do $1$.
+
+Klucz przy tego typu uproszczeniach: **wyłącz wspólny czynnik**, sprawdź czy w nawiasie nie jest właśnie jedynka trygonometryczna.

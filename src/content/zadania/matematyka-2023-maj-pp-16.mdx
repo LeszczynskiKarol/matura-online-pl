@@ -3,14 +3,17 @@ arkusz: matematyka-2023-maj-pp
 subject: matematyka
 nr: 16
 punkty: 1
-typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom podstawowy â€” zadanie 16
-difficulty: 3
-tresc: Zadanie 16 z arkusza maturalnego CKE z matematyki, maj 2023, poziom podstawowy. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+typ: zamkniete-abcd
+topic: funkcja kwadratowa, miejsca zerowe, oś symetrii
+difficulty: 2
+tresc: Funkcja kwadratowa $f$ ma jedno miejsce zerowe $-5$. Pierwsza współrzędna wierzchołka wynosi $3$. Wyznacz drugie miejsce zerowe.
+odpowiedz: A
+pulapka: |
+  Najczęstszy błąd: próba ułożenia wzoru postaci kanonicznej z trzech niewiadomych. Szybciej i pewniej: skorzystać z faktu, że oś symetrii paraboli jest **w połowie odległości** między miejscami zerowymi.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  IV.4 — własności funkcji kwadratowej, oś symetrii paraboli.
+podobne:
+  - matematyka-2023-maj-pp-15
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -18,18 +21,70 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pp/ark-15.webp"
-  alt="Zadanie 16 - strona 15 arkusza CKE matematyka maj 2023 poziom podstawowy"
-  caption="Strona 15 arkusza CKE. Pelna tresc zadania 16."
+  src="/arkusze/matematyka/2023-maj-pp/ark-14.webp"
+  alt="Zadanie 16 (14 CKE) - miejsca zerowe paraboli"
+  caption="Strona 14 arkusza CKE - zadanie 14."
   zrodlo="CKE 2023"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
-  pdfPage={15}
+  pdfPage={14}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf)
+Mając: $x_1 = -5$ (pierwsze miejsce zerowe) i $x_w = 3$ (pierwsza współrzędna wierzchołka), znajdź $x_2$ (drugie miejsce zerowe).
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 16 sprawdza umiejetnosci w zakresie matematyki poziomu podstawowy maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Kluczowy fakt: wierzchołek paraboli leży na osi symetrii.** Oś symetrii paraboli leży **dokładnie pośrodku** między miejscami zerowymi:
+
+$$x_w = \frac{x_1 + x_2}{2}$$
+
+</div>
+
+<div class="krok">
+
+**Podstaw dane:**
+
+$$3 = \frac{-5 + x_2}{2}$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiąż:**
+
+$$6 = -5 + x_2$$
+$$x_2 = 11$$
+
+</div>
+
+<div class="krok">
+
+**Sprawdzenie geometryczne.** Odległość od wierzchołka $x_w = 3$ do miejsca zerowego $x_1 = -5$ to $|3 - (-5)| = 8$. Drugie miejsce zerowe musi być w **takiej samej odległości** po drugiej stronie wierzchołka: $3 + 8 = 11$. ✓
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: A</strong> — $11$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór B ($1$)** — wzięcie $3 - (-5) = 8$ i odjęcie od $3$, czyli $3 - 2 = 1$. Błędna intuicja.
+
+  **Wybór D ($-13$)** — odejście w złą stronę od $-5$: $-5 - 8 = -13$. Drugie miejsce zerowe leży **po drugiej stronie** wierzchołka.
+
+  **Wybór C ($-1$)** — pomylenie środka. $\frac{-5 + 3}{2} = -1$ to nie wzór na nic sensownego.
+</div>
+
+## Po co to umieć
+
+Parabola ($y = ax^2 + bx + c$) jest **symetryczna względem prostej pionowej** $x = x_w$. Dwa miejsca zerowe są w takiej samej odległości od wierzchołka.
+
+Wzory: $x_w = \frac{x_1 + x_2}{2}$ (oś symetrii), $x_w = -\frac{b}{2a}$ (alternatywnie ze współczynników).

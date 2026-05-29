@@ -2,15 +2,18 @@
 arkusz: matematyka-2023-maj-pp
 subject: matematyka
 nr: 17
-punkty: 2
-typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom podstawowy â€” zadanie 17
-difficulty: 3
-tresc: Zadanie 17 z arkusza maturalnego CKE z matematyki, maj 2023, poziom podstawowy. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+punkty: 1
+typ: zamkniete-abcd
+topic: ciąg, wzór ogólny, obliczanie wyrazu
+difficulty: 1
+tresc: Ciąg $(a_n)$ jest określony wzorem $a_n = 2^n \cdot (n+1)$ dla każdej liczby naturalnej $n \geq 1$. Oblicz wyraz $a_4$.
+odpowiedz: D
+pulapka: |
+  Najczęstszy błąd: pomylenie $2^n \cdot (n+1)$ z $2^{n+1}$ albo $2^n + n + 1$. Wzór jest **iloczynem** $2^n$ i $(n+1)$.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  IV.6 — obliczanie wyrazów ciągu określonego wzorem ogólnym.
+podobne:
+  - matematyka-2023-maj-pp-18
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -18,18 +21,62 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pp/ark-16.webp"
-  alt="Zadanie 17 - strona 16 arkusza CKE matematyka maj 2023 poziom podstawowy"
-  caption="Strona 16 arkusza CKE. Pelna tresc zadania 17."
+  src="/arkusze/matematyka/2023-maj-pp/ark-15.webp"
+  alt="Zadanie 17 (15 CKE) - czwarty wyraz ciągu"
+  caption="Strona 15 arkusza CKE - zadanie 15."
   zrodlo="CKE 2023"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
-  pdfPage={16}
+  pdfPage={15}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf)
+Wstaw $n = 4$ do wzoru $a_n = 2^n \cdot (n+1)$.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 17 sprawdza umiejetnosci w zakresie matematyki poziomu podstawowy maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Podstaw $n = 4$:**
+
+$$a_4 = 2^4 \cdot (4 + 1)$$
+
+</div>
+
+<div class="krok">
+
+**Oblicz po kolei:**
+
+$$2^4 = 16$$
+$$4 + 1 = 5$$
+
+</div>
+
+<div class="krok">
+
+**Pomnóż:**
+
+$$a_4 = 16 \cdot 5 = 80$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: D</strong> — $80$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wybór A ($64$)** — wzięcie $2^4 \cdot 4 = 64$ zamiast $2^4 \cdot 5$. Pomyłka w obliczeniu $(n+1)$ przy $n = 4$.
+
+  **Wybór C ($48$)** — wzięcie $2^4 \cdot 3 = 48$. Może być wynikiem $2^4 \cdot (4-1)$ (pomyłka znaku).
+
+  **Wybór B ($40$)** — $2^3 \cdot 5 = 40$. Pomyłka w wykładniku ($n = 3$ zamiast $4$).
+</div>
+
+## Po co to umieć
+
+Wzór ogólny ciągu daje wartość każdego wyrazu po podstawieniu $n$. Pamiętaj o **kolejności działań**: najpierw potęga ($2^n$) i nawias ($n+1$), potem mnożenie.
