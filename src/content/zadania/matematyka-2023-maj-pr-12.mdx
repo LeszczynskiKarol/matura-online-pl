@@ -2,15 +2,21 @@
 arkusz: matematyka-2023-maj-pr
 subject: matematyka
 nr: 12
-punkty: 4
+punkty: 5
 typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom rozszerzony â€” zadanie 12
-difficulty: 4
-tresc: Zadanie 12 z arkusza maturalnego CKE z matematyki, maj 2023, poziom rozszerzony. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+topic: logarytmy, ekstrema funkcji, pochodne
+difficulty: 5
+tresc: "$f(x) = 81^{\\log_3 x} + \\frac{2 \\log_2 \\sqrt{27} \\cdot \\log_3 2}{3} \\cdot x^2 - 6x$ dla $x > 0$. Wykaż że $f(x) = x^4 + x^2 - 6x$ (12.1) i znajdź minimum lokalne (12.2)."
+odpowiedz: |
+  **12.1.** $81^{\log_3 x} = (3^4)^{\log_3 x} = 3^{4\log_3 x} = x^4$. $\frac{2\log_2\sqrt{27} \cdot \log_3 2}{3} = \frac{3 \log_2 3 \cdot \log_3 2}{3} = \frac{3 \cdot 1}{3} = 1$. Stąd $f(x) = x^4 + x^2 - 6x$.
+
+  **12.2.** $f'(x) = 4x^3 + 2x - 6 = 2(x-1)(2x^2+2x+3)$. Pierwiastek $x = 1$ (drugi czynnik $\Delta < 0$ — bez pierwiastków). Minimum lokalne w $x = 1$: $f(1) = 1+1-6 = -4$.
+pulapka: |
+  Najczęstszy błąd w 12.1: zapomnienie własności $a^{\log_a b} = b$ i $\log_a b \cdot \log_b a = 1$. W 12.2: brak sprawdzenia że $2x^2+2x+3$ nie ma pierwiastków ($\Delta = 4 - 24 = -20 < 0$).
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  I.6 — własności logarytmów; IV.3 — ekstrema funkcji przez pochodne.
+podobne:
+  - matematyka-2023-maj-pp-4
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,17 +25,117 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2023-maj-pr/ark-20.webp"
-  alt="Zadanie 12 - strona 20 arkusza CKE matematyka maj 2023 poziom rozszerzony"
-  caption="Strona 20 arkusza CKE. Pelna tresc zadania 12."
-  zrodlo="CKE 2023"
+  alt="Zadanie 12 - logarytmy + ekstrema"
+  caption="Strona 20 arkusza CKE PR - zadanie 12."
+  zrodlo="CKE 2023 PR"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-R0-100-2305-arkusz.pdf"
   pdfPage={20}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-R0-100-2305-zasady.pdf)
+### Zadanie 12.1: Uprość wyrażenie
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 12 sprawdza umiejetnosci w zakresie matematyki poziomu rozszerzony maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Pierwszy składnik: $81^{\log_3 x}$**
+
+$81 = 3^4$, więc $81^{\log_3 x} = (3^4)^{\log_3 x} = 3^{4 \log_3 x} = 3^{\log_3 x^4} = x^4$
+
+(skorzystaliśmy z $4 \log_3 x = \log_3 x^4$ i $a^{\log_a b} = b$)
+
+</div>
+
+<div class="krok">
+
+**Drugi składnik: $\frac{2 \log_2 \sqrt{27} \cdot \log_3 2}{3}$**
+
+$\sqrt{27} = 3^{3/2}$, więc $\log_2 \sqrt{27} = \frac{3}{2} \log_2 3$.
+
+Wstaw: $\frac{2 \cdot \frac{3}{2} \log_2 3 \cdot \log_3 2}{3} = \frac{3 \cdot \log_2 3 \cdot \log_3 2}{3}$
+
+Zastosuj $\log_a b \cdot \log_b a = 1$: $\log_2 3 \cdot \log_3 2 = 1$.
+
+$$\frac{3 \cdot 1}{3} = 1$$
+
+</div>
+
+<div class="krok">
+
+**Podsumowanie:**
+
+$$f(x) = x^4 + 1 \cdot x^2 - 6x = x^4 + x^2 - 6x \quad \blacksquare$$
+
+</div>
+
+</div>
+
+### Zadanie 12.2: Znajdź minimum lokalne
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Policz pochodną $f'(x)$:**
+
+$$f'(x) = 4x^3 + 2x - 6$$
+
+</div>
+
+<div class="krok">
+
+**Rozłóż $f'$.** Zauważ, że $f'(1) = 4 + 2 - 6 = 0$. Czyli $x = 1$ jest pierwiastkiem. Podziel przez $(x-1)$:
+
+$$4x^3 + 2x - 6 = (x-1)(4x^2 + 4x + 6) = 2(x-1)(2x^2 + 2x + 3)$$
+
+</div>
+
+<div class="krok">
+
+**Sprawdź $2x^2 + 2x + 3$.** $\Delta = 4 - 24 = -20 < 0$ — brak pierwiastków rzeczywistych. Wyraz $> 0$ dla wszystkich $x$.
+
+</div>
+
+<div class="krok">
+
+**Znak $f'(x)$:** $2(x-1) \cdot (\text{dodatnie})$. Czyli $f'(x) > 0 \iff x > 1$, $f'(x) < 0 \iff x < 1$. To znaczy:
+
+- $f$ maleje na $(0, 1)$
+- $f$ rośnie na $(1, +\infty)$
+
+**Minimum lokalne w $x = 1$**, $f(1) = 1 + 1 - 6 = -4$.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    **12.1.** $f(x) = x^4 + x^2 - 6x$ ✓
+    
+    **12.2.** Minimum lokalne w punkcie $(1, -4)$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **12.1.** Zapomnienie własności logarytmów. Trzy klucze tutaj:
+  - $a^{\log_a b} = b$
+  - $\log_a b^k = k \log_a b$
+  - $\log_a b \cdot \log_b a = 1$
+
+  **12.2.** Niesprawdzenie czy $2x^2 + 2x + 3$ ma pierwiastki. Bez tego nie wiadomo, czy są dodatkowe ekstrema. Sprawdzenie $\Delta = -20 < 0$ pokazuje, że tylko $x = 1$.
+
+  **Wzór skróconego mnożenia $a^{\log_a b} = b$** — wynika z definicji logarytmu: $\log_a b$ to wykładnik, do którego trzeba podnieść $a$, by otrzymać $b$.
+</div>
+
+## Po co to umieć
+
+**Trzy własności logarytmów** najczęściej testowane na PR:
+1. $a^{\log_a b} = b$ (definicja)
+2. $\log_a b \cdot \log_b a = 1$
+3. $\log_a b = \frac{\log_c b}{\log_c a}$ (zmiana podstawy)
+
+**Algorytm znajdowania ekstremów**: $f'(x) = 0$, znajdź pierwiastki, sprawdź zmianę znaku pochodnej (z $-$ na $+$ → minimum; z $+$ na $-$ → maksimum).

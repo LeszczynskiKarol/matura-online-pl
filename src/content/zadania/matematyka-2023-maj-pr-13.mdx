@@ -2,15 +2,22 @@
 arkusz: matematyka-2023-maj-pr
 subject: matematyka
 nr: 13
-punkty: 4
+punkty: 6
 typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom rozszerzony â€” zadanie 13
-difficulty: 4
-tresc: Zadanie 13 z arkusza maturalnego CKE z matematyki, maj 2023, poziom rozszerzony. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+topic: geometria analityczna, okrąg, kąt wpisany, parabola
+difficulty: 5
+tresc: "Prosta $l: x - y - 2 = 0$ przecina parabolę $y = 4x^2 - 7x + 1$ w A i B. $AB$ — średnica okręgu O. $C$ na okręgu nad prostą, kąt $BAC = \\alpha$ ostry, $\\tan\\alpha = \\frac{1}{3}$. Oblicz współrzędne C."
+odpowiedz: |
+  **$C = \left(\frac{11}{10}, -\frac{3}{10}\right)$**
+
+  Z układu prostej i paraboli: $A = (\frac{1}{2}, -\frac{3}{2})$, $B = (\frac{3}{2}, -\frac{1}{2})$. Z tw. Talesa (AB średnica) → $\angle ACB = 90°$. W trójkącie prostokątnym ACB: $|AB| = \sqrt{2}$, $\tan\alpha = BC/AC = 1/3$ → $AC = \frac{3}{\sqrt{5}}$, $BC = \frac{1}{\sqrt{5}}$. Wektory: $\hat{AB} = \frac{1}{\sqrt{2}}(1,1)$, prostopadła w górę $= \frac{1}{\sqrt{2}}(-1, 1)$. $C = A + AC\cos\alpha \cdot \hat{AB} + AC\sin\alpha \cdot \hat{n}$ daje $C = (1{,}1; -0{,}3)$.
+pulapka: |
+  Najczęstszy błąd: pomylenie kierunku „nad prostą" — kąt $\alpha$ ma dwa możliwe położenia $C$ (po obu stronach AB). Z rysunku/treści wynika, że $C$ leży po stronie $y$ większej (nad $l$).
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  VII.2 — geometria analityczna; VI.4 — kąt wpisany, twierdzenie Talesa.
+podobne:
+  - matematyka-2023-maj-pr-5
+  - matematyka-2023-maj-pr-7
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,17 +26,98 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2023-maj-pr/ark-22.webp"
-  alt="Zadanie 13 - strona 22 arkusza CKE matematyka maj 2023 poziom rozszerzony"
-  caption="Strona 22 arkusza CKE. Pelna tresc zadania 13."
-  zrodlo="CKE 2023"
+  alt="Zadanie 13 - parabola, prosta, okrąg, kąt wpisany"
+  caption="Strona 22 arkusza CKE PR - zadanie 13."
+  zrodlo="CKE 2023 PR"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-R0-100-2305-arkusz.pdf"
   pdfPage={22}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-R0-100-2305-zasady.pdf)
+<div class="kroki-lista">
 
-## Po co to umiec
+<div class="krok">
 
-Zadanie 13 sprawdza umiejetnosci w zakresie matematyki poziomu rozszerzony maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+**Znajdź A i B** (przecięcie prostej z parabolą). Z $l$: $y = x - 2$. Wstaw do paraboli:
+
+$$x - 2 = 4x^2 - 7x + 1 \iff 4x^2 - 8x + 3 = 0$$
+
+$\Delta = 64 - 48 = 16$, $x = \frac{8 \pm 4}{8}$, czyli $x = \frac{1}{2}$ lub $x = \frac{3}{2}$.
+
+$$A = \left(\tfrac{1}{2}, -\tfrac{3}{2}\right), \quad B = \left(\tfrac{3}{2}, -\tfrac{1}{2}\right)$$
+
+</div>
+
+<div class="krok">
+
+**$|AB|$ i twierdzenie Talesa.** AB to średnica okręgu, więc dla każdego $C$ na okręgu:
+
+$$\angle ACB = 90°$$
+
+Długość: $|AB| = \sqrt{1^2 + 1^2} = \sqrt{2}$.
+
+</div>
+
+<div class="krok">
+
+**Trójkąt prostokątny ACB.** $\tan\alpha = \frac{BC}{AC} = \frac{1}{3} \implies AC = 3 BC$.
+
+Z Pitagorasa: $AC^2 + BC^2 = 2 \implies 9 BC^2 + BC^2 = 2 \implies BC = \frac{1}{\sqrt{5}}, AC = \frac{3}{\sqrt{5}}$.
+
+</div>
+
+<div class="krok">
+
+**Wyznacz $\cos\alpha, \sin\alpha$.** Z $\tan\alpha = 1/3$ i $\alpha$ ostry: hipotenuza pomocnicza $\sqrt{10}$, więc $\cos\alpha = \frac{3}{\sqrt{10}}$, $\sin\alpha = \frac{1}{\sqrt{10}}$.
+
+</div>
+
+<div class="krok">
+
+**Wektor jednostkowy wzdłuż AB:** $\hat{AB} = \frac{1}{\sqrt{2}}(1, 1)$.
+
+**Wektor prostopadły, skierowany w górę** (z $y > 0$): $\hat{n} = \frac{1}{\sqrt{2}}(-1, 1)$.
+
+</div>
+
+<div class="krok">
+
+**Wyznacz $C$ z dekompozycji wektora $\vec{AC}$:**
+
+$$\vec{AC} = AC \cos\alpha \cdot \hat{AB} + AC \sin\alpha \cdot \hat{n}$$
+
+Komponenty:
+- $AC \cos\alpha = \frac{3}{\sqrt{5}} \cdot \frac{3}{\sqrt{10}} = \frac{9}{\sqrt{50}} = \frac{9}{5\sqrt{2}}$
+- $AC \sin\alpha = \frac{3}{\sqrt{5}} \cdot \frac{1}{\sqrt{10}} = \frac{3}{5\sqrt{2}}$
+
+Wkład w x: $\frac{9}{5\sqrt{2}} \cdot \frac{1}{\sqrt{2}} - \frac{3}{5\sqrt{2}} \cdot \frac{1}{\sqrt{2}} = \frac{9 - 3}{10} = \frac{6}{10} = \frac{3}{5}$
+
+Wkład w y: $\frac{9}{5\sqrt{2}} \cdot \frac{1}{\sqrt{2}} + \frac{3}{5\sqrt{2}} \cdot \frac{1}{\sqrt{2}} = \frac{9 + 3}{10} = \frac{12}{10} = \frac{6}{5}$
+
+$$C = A + \left(\frac{3}{5}, \frac{6}{5}\right) = \left(\frac{1}{2} + \frac{3}{5},\ -\frac{3}{2} + \frac{6}{5}\right) = \left(\frac{11}{10},\ -\frac{3}{10}\right)$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    $C = \left(\dfrac{11}{10},\ -\dfrac{3}{10}\right) = (1{,}1;\ -0{,}3)$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Niezauważenie tw. Talesa.** Średnica okręgu + punkt na okręgu → kąt prosty. Bez tego nie ma trójkąta prostokątnego ACB, trzeba liczyć dłużej.
+
+  **Wybór złej strony prostej.** Kąt $\alpha$ przy A daje dwa możliwe położenia $C$ (po dwóch stronach AB). Z treści: $C$ jest **nad** $l$, czyli po stronie z większymi $y$.
+
+  **Pomyłki w wektorze prostopadłym.** Prostopadła do $(1,1)$ to $(1,-1)$ albo $(-1,1)$. Wybierz tę, która wskazuje w górę (z dodatnim $y$).
+</div>
+
+## Po co to umieć
+
+**Twierdzenie Talesa** (kąt wpisany oparty na średnicy = 90°) to klucz do zadań „okrąg + średnica + punkt na okręgu".
+
+**Geometria analityczna 2D** — dekompozycja wektora na kierunek równoległy + prostopadły. Niezbędne w zadaniach typu „znajdź punkt $C$ jeśli...".

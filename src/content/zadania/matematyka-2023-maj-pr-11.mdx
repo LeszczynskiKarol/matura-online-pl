@@ -2,15 +2,23 @@
 arkusz: matematyka-2023-maj-pr
 subject: matematyka
 nr: 11
-punkty: 4
+punkty: 5
 typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom rozszerzony â€” zadanie 11
-difficulty: 4
-tresc: Zadanie 11 z arkusza maturalnego CKE z matematyki, maj 2023, poziom rozszerzony. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+topic: równanie kwadratowe z parametrem, wzory Viete'a
+difficulty: 5
+tresc: "Wyznacz $m \\neq 2$ tak, że $x^2 + 4x - \\frac{m-3}{m-2} = 0$ ma dwa różne rozwiązania rzeczywiste $x_1, x_2$ z $x_1^3 + x_2^3 > -28$."
+odpowiedz: |
+  **$m \in \left(\frac{11}{5},\ \frac{9}{4}\right)$**
+
+  Wzory Viety: $x_1 + x_2 = -4$, $x_1 x_2 = -\frac{m-3}{m-2}$.
+
+  Warunki: (1) $\Delta > 0$ → $\frac{5m-11}{m-2} > 0$ → $m < 2$ lub $m > \frac{11}{5}$; (2) $x_1^3 + x_2^3 = (x_1+x_2)[(x_1+x_2)^2 - 3 x_1 x_2] > -28$ → $x_1 x_2 > 3$ → $\frac{4m-9}{m-2} < 0$ → $2 < m < \frac{9}{4}$. Część wspólna: $\frac{11}{5} < m < \frac{9}{4}$.
+pulapka: |
+  Najczęstszy błąd: pominięcie warunku $\Delta > 0$. Tylko sam warunek na $x_1^3 + x_2^3$ daje $2 < m < 9/4$, ale dla $m \in (2, 11/5)$ równanie ma rozwiązania zespolone — trzeba wykluczyć.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  III.2 — równania kwadratowe z parametrem, wzory Viete'a.
+podobne:
+  - matematyka-2023-maj-pr-3
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,17 +27,98 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2023-maj-pr/ark-18.webp"
-  alt="Zadanie 11 - strona 18 arkusza CKE matematyka maj 2023 poziom rozszerzony"
-  caption="Strona 18 arkusza CKE. Pelna tresc zadania 11."
-  zrodlo="CKE 2023"
+  alt="Zadanie 11 - równanie kwadratowe z parametrem"
+  caption="Strona 18 arkusza CKE PR - zadanie 11."
+  zrodlo="CKE 2023 PR"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-R0-100-2305-arkusz.pdf"
   pdfPage={18}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-R0-100-2305-zasady.pdf)
+Trzy warunki: (1) $m \neq 2$ (dziedzina), (2) $\Delta > 0$ (dwa różne rozwiązania), (3) $x_1^3 + x_2^3 > -28$.
 
-## Po co to umiec
+<div class="kroki-lista">
 
-Zadanie 11 sprawdza umiejetnosci w zakresie matematyki poziomu rozszerzony maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+<div class="krok">
+
+**Wzory Viety.** Dla $x^2 + 4x + c = 0$ z $c = -\frac{m-3}{m-2}$:
+
+$$x_1 + x_2 = -4, \quad x_1 x_2 = -\frac{m-3}{m-2}$$
+
+</div>
+
+<div class="krok">
+
+**Warunek $\Delta > 0$:**
+
+$$\Delta = 16 - 4 \cdot \left(-\frac{m-3}{m-2}\right) = 16 + \frac{4(m-3)}{m-2}$$
+
+$$= \frac{16(m-2) + 4(m-3)}{m-2} = \frac{20m - 44}{m-2} = \frac{4(5m-11)}{m-2}$$
+
+$\Delta > 0 \iff \frac{5m-11}{m-2} > 0 \iff m < 2$ lub $m > \frac{11}{5}$.
+
+</div>
+
+<div class="krok">
+
+**Wyraź $x_1^3 + x_2^3$ przez Viete'a:**
+
+$$x_1^3 + x_2^3 = (x_1 + x_2)\left[(x_1+x_2)^2 - 3 x_1 x_2\right]$$
+
+$$= -4 \cdot [16 - 3 \cdot x_1 x_2] = -64 + 12 x_1 x_2$$
+
+Warunek: $-64 + 12 x_1 x_2 > -28 \iff x_1 x_2 > 3$.
+
+</div>
+
+<div class="krok">
+
+**Rozwiąż $-\frac{m-3}{m-2} > 3$:**
+
+$$\frac{m-3}{m-2} < -3 \iff \frac{m-3 + 3(m-2)}{m-2} < 0 \iff \frac{4m-9}{m-2} < 0$$
+
+Zerówki: $m = \frac{9}{4}$ i $m = 2$. Iloraz $< 0$ ⟺ $2 < m < \frac{9}{4}$.
+
+</div>
+
+<div class="krok">
+
+**Część wspólna obu warunków:**
+
+- $\Delta > 0$: $m < 2$ lub $m > \frac{11}{5}$
+- $x_1^3 + x_2^3 > -28$: $2 < m < \frac{9}{4}$
+
+Przecięcie: $\frac{11}{5} < m < \frac{9}{4}$.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    $m \in \left(\dfrac{11}{5},\ \dfrac{9}{4}\right)$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Pominięcie warunku $\Delta > 0$.** Sam warunek na $x_1^3 + x_2^3$ daje $2 < m < \frac{9}{4} = 2{,}25$. Ale dla $m$ między $2$ a $\frac{11}{5} = 2{,}2$ równanie ma rozwiązania zespolone — wzory Viety wciąż działają (formalnie), ale rozwiązania nie są rzeczywiste.
+
+  **$\frac{11}{5}$ vs $\frac{9}{4}$ — kolejność.** $\frac{11}{5} = 2{,}2$, $\frac{9}{4} = 2{,}25$. Przedział jest „cienki" — $0{,}05$ szerokości. Łatwo o pomyłkę.
+
+  **Wzór $x_1^3 + x_2^3$.** $(a+b)^3 = a^3 + b^3 + 3ab(a+b)$, więc $a^3 + b^3 = (a+b)^3 - 3ab(a+b) = (a+b)[(a+b)^2 - 3ab]$.
+</div>
+
+## Po co to umieć
+
+**Wzory Viete'a** dla $ax^2 + bx + c = 0$ z rozwiązaniami $x_1, x_2$:
+- $x_1 + x_2 = -\frac{b}{a}$
+- $x_1 x_2 = \frac{c}{a}$
+
+Pozwalają wyrazić **dowolne symetryczne wyrażenie** $x_1, x_2$ przez współczynniki, bez liczenia samych pierwiastków. Klasyk PR.
+
+Wyrażenia symetryczne:
+- $x_1^2 + x_2^2 = (x_1+x_2)^2 - 2 x_1 x_2$
+- $x_1^3 + x_2^3 = (x_1+x_2)^3 - 3 x_1 x_2(x_1+x_2) = (x_1+x_2)[(x_1+x_2)^2 - 3 x_1 x_2]$
+- $\frac{1}{x_1} + \frac{1}{x_2} = \frac{x_1 + x_2}{x_1 x_2}$

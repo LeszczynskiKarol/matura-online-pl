@@ -4,13 +4,19 @@ subject: matematyka
 nr: 8
 punkty: 4
 typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom rozszerzony â€” zadanie 8
+topic: czworokąt opisany na okręgu, twierdzenie sinusów
 difficulty: 4
-tresc: Zadanie 8 z arkusza maturalnego CKE z matematyki, maj 2023, poziom rozszerzony. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+tresc: "Czworokąt ABCD opisany na okręgu, $|BC|=4$, $|CD|=5$. Przekątna AC z BC tworzy kąt $60°$, z AB kąt $\\alpha$ o $\\sin\\alpha = \\frac{1}{4}$. Oblicz obwód."
+odpowiedz: |
+  **Obwód: $16\sqrt{3} + 10$**
+
+  Z twierdzenia sinusów w $\triangle ABC$: $AB = \frac{4 \sin 60°}{\sin\alpha} = \frac{4 \cdot \sqrt{3}/2}{1/4} = 8\sqrt{3}$. Z własności czworokąta opisanego: $AD = AB + CD - BC = 8\sqrt{3} + 5 - 4 = 8\sqrt{3} + 1$. Obwód = $AB + BC + CD + DA = 8\sqrt{3} + 4 + 5 + 8\sqrt{3} + 1 = 16\sqrt{3} + 10$.
+pulapka: |
+  Najczęstszy błąd: pomylenie czworokąta **opisanego** (boki styczne do okręgu wewnętrznego) z **wpisanym** (wierzchołki na okręgu). Własności są różne! Opisany: $AB + CD = BC + AD$. Wpisany: $\angle A + \angle C = 180°$.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  VI.6 — czworokąty i ich własności (opisany, wpisany).
+podobne:
+  - matematyka-2023-maj-pr-5
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,17 +25,72 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2023-maj-pr/ark-12.webp"
-  alt="Zadanie 8 - strona 12 arkusza CKE matematyka maj 2023 poziom rozszerzony"
-  caption="Strona 12 arkusza CKE. Pelna tresc zadania 8."
-  zrodlo="CKE 2023"
+  alt="Zadanie 8 - czworokąt opisany na okręgu"
+  caption="Strona 12 arkusza CKE PR - zadanie 8."
+  zrodlo="CKE 2023 PR"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-R0-100-2305-arkusz.pdf"
   pdfPage={12}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-R0-100-2305-zasady.pdf)
+<div class="kroki-lista">
 
-## Po co to umiec
+<div class="krok">
 
-Zadanie 8 sprawdza umiejetnosci w zakresie matematyki poziomu rozszerzony maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+**Skorzystaj z twierdzenia sinusów w $\triangle ABC$:**
+
+$\angle ACB = 60°$, $\angle BAC = \alpha$ ($\sin\alpha = \frac{1}{4}$), $|BC| = 4$.
+
+$$\frac{BC}{\sin\angle BAC} = \frac{AB}{\sin\angle ACB}$$
+
+$$\frac{4}{1/4} = \frac{AB}{\sqrt{3}/2}$$
+
+$$16 = \frac{2 \cdot AB}{\sqrt{3}} \implies AB = 8\sqrt{3}$$
+
+</div>
+
+<div class="krok">
+
+**Wykorzystaj własność czworokąta opisanego na okręgu.** Sumy długości boków przeciwległych są równe:
+
+$$AB + CD = BC + AD$$
+
+$$8\sqrt{3} + 5 = 4 + AD \implies AD = 8\sqrt{3} + 1$$
+
+</div>
+
+<div class="krok">
+
+**Obwód:**
+
+$$L = AB + BC + CD + AD$$
+
+$$= 8\sqrt{3} + 4 + 5 + 8\sqrt{3} + 1$$
+
+$$= 16\sqrt{3} + 10$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    **Obwód czworokąta ABCD:** $\boxed{16\sqrt{3} + 10}$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Pomylenie czworokąta opisanego z wpisanym.** Opisany na okręgu = boki styczne; własność: $AB + CD = BC + AD$ (Pitota). Wpisany w okrąg = wierzchołki na okręgu; własność: $\angle A + \angle C = 180°$.
+
+  **Liczenie poszczególnych boków metodą trygonometrii zamiast wykorzystania własności.** Boku $AD$ nie da się policzyć z czystego trójkąta $ACD$, bo nie znamy wszystkich kątów i potrzebowalibyśmy długości $AC$.
+</div>
+
+## Po co to umieć
+
+**Twierdzenie Pitota** dla czworokąta opisanego: $AB + CD = BC + AD$.
+
+**Twierdzenie sinusów** w trójkącie: $\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C} = 2R$ (R - promień okręgu opisanego).
+
+Klasyczne zadanie PR — łączenie własności czworokąta z trygonometrią trójkąta utworzonego przez przekątną.

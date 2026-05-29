@@ -4,13 +4,19 @@ subject: matematyka
 nr: 9
 punkty: 4
 typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom rozszerzony â€” zadanie 9
+topic: nierówność z modułami, suma odległości
 difficulty: 4
-tresc: Zadanie 9 z arkusza maturalnego CKE z matematyki, maj 2023, poziom rozszerzony. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+tresc: "Rozwiąż $\\sqrt{x^2+4x+4} < \\frac{25}{3} - \\sqrt{x^2-6x+9}$."
+odpowiedz: |
+  $x \in \left(-\frac{11}{3},\ \frac{14}{3}\right)$.
+
+  Zauważ: $\sqrt{x^2+4x+4} = |x+2|$, $\sqrt{x^2-6x+9} = |x-3|$. Nierówność: $|x+2| + |x-3| < \frac{25}{3}$. Rozpatruje 3 przypadki znaków modułów.
+pulapka: |
+  Najczęstszy błąd: $\sqrt{x^2} = x$ zamiast $|x|$. Pamiętaj — pierwiastek kwadratowy z liczby jest **zawsze nieujemny**, więc $\sqrt{a^2} = |a|$, nie $a$.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  III.3 — rozwiązywanie nierówności z wartością bezwzględną.
+podobne:
+  - matematyka-2023-maj-pr-6
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,17 +25,96 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2023-maj-pr/ark-14.webp"
-  alt="Zadanie 9 - strona 14 arkusza CKE matematyka maj 2023 poziom rozszerzony"
-  caption="Strona 14 arkusza CKE. Pelna tresc zadania 9."
-  zrodlo="CKE 2023"
+  alt="Zadanie 9 - nierówność z pierwiastkami"
+  caption="Strona 14 arkusza CKE PR - zadanie 9."
+  zrodlo="CKE 2023 PR"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-R0-100-2305-arkusz.pdf"
   pdfPage={14}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-R0-100-2305-zasady.pdf)
+<div class="kroki-lista">
 
-## Po co to umiec
+<div class="krok">
 
-Zadanie 9 sprawdza umiejetnosci w zakresie matematyki poziomu rozszerzony maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+**Rozpoznaj kwadraty pełne pod pierwiastkami.**
+
+$$x^2 + 4x + 4 = (x+2)^2 \implies \sqrt{(x+2)^2} = |x+2|$$
+
+$$x^2 - 6x + 9 = (x-3)^2 \implies \sqrt{(x-3)^2} = |x-3|$$
+
+Nierówność przyjmuje postać:
+
+$$|x+2| + |x-3| < \frac{25}{3}$$
+
+</div>
+
+<div class="krok">
+
+**Rozpatrz 3 przypadki znaków modułów** (krytyczne punkty: $x = -2$ i $x = 3$).
+
+**Przypadek 1: $x < -2$.** Wtedy $|x+2| = -(x+2)$, $|x-3| = 3-x$:
+
+$$-(x+2) + (3-x) = -2x + 1 < \frac{25}{3}$$
+$$-2x < \frac{22}{3} \implies x > -\frac{11}{3}$$
+
+Razem z $x < -2$: $-\frac{11}{3} < x < -2$.
+
+</div>
+
+<div class="krok">
+
+**Przypadek 2: $-2 \leq x < 3$.** Wtedy $|x+2| = x+2$, $|x-3| = 3-x$:
+
+$$(x+2) + (3-x) = 5$$
+
+$5 < \frac{25}{3}$? $5 = \frac{15}{3} < \frac{25}{3}$ ✓
+
+**Cały przedział $-2 \leq x < 3$ jest rozwiązaniem.**
+
+</div>
+
+<div class="krok">
+
+**Przypadek 3: $x \geq 3$.** Wtedy $|x+2| = x+2$, $|x-3| = x-3$:
+
+$$(x+2) + (x-3) = 2x - 1 < \frac{25}{3}$$
+$$2x < \frac{28}{3} \implies x < \frac{14}{3}$$
+
+Razem z $x \geq 3$: $3 \leq x < \frac{14}{3}$.
+
+</div>
+
+<div class="krok">
+
+**Zbierz wszystkie przedziały:**
+
+$$\left(-\frac{11}{3}, -2\right) \cup [-2, 3) \cup \left[3, \frac{14}{3}\right) = \left(-\frac{11}{3},\ \frac{14}{3}\right)$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    $x \in \left(-\frac{11}{3},\ \frac{14}{3}\right)$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **$\sqrt{a^2} = a$.** To prawda **tylko gdy $a \geq 0$**. W ogólności $\sqrt{a^2} = |a|$. Wskazówka CKE eksplicytnie o tym wspomina.
+
+  **Pominięcie 2. przypadku.** Czasem zdający rozpatruje tylko 2 przypadki ($x < $ minimum punktów krytycznych, $x > $ maksimum). To **3 przypadki** — pośrodku też.
+
+  **Niezauważenie, że w przypadku 2. nierówność redukuje się do $5 < \frac{25}{3}$ niezależnie od $x$.** To geometryczna interpretacja: dla $x \in [-2, 3]$ suma odległości od $-2$ i od $3$ jest **stała** = 5 (długość odcinka).
+</div>
+
+## Po co to umieć
+
+**$\sqrt{a^2} = |a|$** — fundament. To dlatego $\sqrt{x^2} \neq x$ dla wszystkich $x$.
+
+**Geometryczna interpretacja**: $|x - a|$ = odległość $x$ od $a$. Wyrażenie $|x+2| + |x-3| = |x - (-2)| + |x - 3|$ = suma odległości $x$ od $-2$ i od $3$.
+
+Dla punktów **pomiędzy** $-2$ a $3$ ta suma jest stale równa $5$ (długość odcinka). Poza nim — rośnie liniowo. To pozwala szybciej rozumować geometrycznie.

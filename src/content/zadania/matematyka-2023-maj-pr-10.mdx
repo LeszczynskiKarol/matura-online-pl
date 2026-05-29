@@ -4,13 +4,19 @@ subject: matematyka
 nr: 10
 punkty: 4
 typ: otwarte-rozszerzone
-topic: matematyka maj 2023 poziom rozszerzony â€” zadanie 10
-difficulty: 4
-tresc: Zadanie 10 z arkusza maturalnego CKE z matematyki, maj 2023, poziom rozszerzony. Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+topic: szereg geometryczny, geometria, twierdzenie Pitagorasa
+difficulty: 5
+tresc: "$K_1$ kwadrat o boku $a$. $K_{n}$ — kwadrat z wierzchołkami na bokach $K_{n-1}$ dzielącymi bok w stosunku $1:3$. Obwody kwadratów tworzą nieskończony ciąg geometryczny. Oblicz sumę."
+odpowiedz: |
+  **Suma: $S = \frac{8a(4+\sqrt{10})}{3}$**
+
+  Bok $K_2$ z Pitagorasa: $\sqrt{(a/4)^2 + (3a/4)^2} = \frac{a\sqrt{10}}{4}$. Iloraz $q = \frac{\sqrt{10}}{4}$. Suma szeregu geom.: $S = \frac{4a}{1 - \sqrt{10}/4} = \frac{16a}{4-\sqrt{10}} = \frac{8a(4+\sqrt{10})}{3}$.
+pulapka: |
+  Najczęstszy błąd: liczenie pól zamiast obwodów. Iloraz pól = $q_{pole}^2 = \left(\frac{\sqrt{10}}{4}\right)^2 = \frac{10}{16} = \frac{5}{8}$. Treść mówi o **obwodach**.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  IV.7 — suma nieskończonego ciągu geometrycznego.
+podobne:
+  - matematyka-2023-maj-pr-1
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,17 +25,82 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2023-maj-pr/ark-16.webp"
-  alt="Zadanie 10 - strona 16 arkusza CKE matematyka maj 2023 poziom rozszerzony"
-  caption="Strona 16 arkusza CKE. Pelna tresc zadania 10."
-  zrodlo="CKE 2023"
+  alt="Zadanie 10 - szereg geometryczny z kwadratów"
+  caption="Strona 16 arkusza CKE PR - zadanie 10."
+  zrodlo="CKE 2023 PR"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-R0-100-2305-arkusz.pdf"
   pdfPage={16}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-R0-100-2305-zasady.pdf)
+<div class="kroki-lista">
 
-## Po co to umiec
+<div class="krok">
 
-Zadanie 10 sprawdza umiejetnosci w zakresie matematyki poziomu rozszerzony maturalnego CKE. Rozwiazanie krok po kroku â€” wkrotce.
+**Wyznacz bok $K_2$.** Każdy wierzchołek $K_2$ leży na boku $K_1$ i dzieli go w stosunku $1 : 3$. Czyli odcinki to $\frac{a}{4}$ i $\frac{3a}{4}$.
+
+Bok $K_2$ to przeciwprostokątna trójkąta prostokątnego o przyprostokątnych $\frac{a}{4}$ i $\frac{3a}{4}$:
+
+$$b_2 = \sqrt{\left(\frac{a}{4}\right)^2 + \left(\frac{3a}{4}\right)^2} = \sqrt{\frac{a^2 + 9a^2}{16}} = \sqrt{\frac{10a^2}{16}} = \frac{a\sqrt{10}}{4}$$
+
+</div>
+
+<div class="krok">
+
+**Wyznacz iloraz obwodów.** Obwód $K_n = 4 b_n$, więc:
+
+$$q = \frac{L_2}{L_1} = \frac{4 \cdot a\sqrt{10}/4}{4a} = \frac{\sqrt{10}}{4}$$
+
+Sprawdzenie: $\frac{\sqrt{10}}{4} \approx 0{,}79 < 1$, więc szereg jest zbieżny.
+
+</div>
+
+<div class="krok">
+
+**Wzór na sumę nieskończonego ciągu geometrycznego (przy $|q| < 1$):**
+
+$$S = \frac{L_1}{1 - q}$$
+
+$$S = \frac{4a}{1 - \frac{\sqrt{10}}{4}} = \frac{4a}{\frac{4 - \sqrt{10}}{4}} = \frac{16a}{4 - \sqrt{10}}$$
+
+</div>
+
+<div class="krok">
+
+**Racjonalizacja mianownika:** pomnóż licznik i mianownik przez $4 + \sqrt{10}$:
+
+$$S = \frac{16a (4 + \sqrt{10})}{(4 - \sqrt{10})(4 + \sqrt{10})} = \frac{16a(4 + \sqrt{10})}{16 - 10} = \frac{16a(4 + \sqrt{10})}{6}$$
+
+$$\boxed{S = \frac{8a(4 + \sqrt{10})}{3}}$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    **Suma obwodów wszystkich kwadratów:** $S = \frac{8a(4 + \sqrt{10})}{3}$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Pomylenie pól z obwodami.** Iloraz długości boków: $\frac{\sqrt{10}}{4}$. Iloraz pól: $\frac{10}{16} = \frac{5}{8}$. Iloraz obwodów = iloraz boków (bo obwód = $4 \cdot $ bok).
+
+  **Pominięcie racjonalizacji.** Wynik z $\sqrt{10}$ w mianowniku — zostaje 0 punktów za końcową formę (treść wymaga estetycznego zapisu).
+
+  **Brak sprawdzenia zbieżności.** Wzór $S = \frac{a_1}{1-q}$ działa tylko gdy $|q| < 1$. Tutaj $\frac{\sqrt{10}}{4} \approx 0{,}79 < 1$ ✓.
+</div>
+
+## Po co to umieć
+
+**Suma nieskończonego ciągu geometrycznego:**
+
+$$S = \frac{a_1}{1 - q} \quad \text{dla } |q| < 1$$
+
+**Typowy schemat** zadań o „nieskończonej spirali figur":
+1. Wyznacz parametr drugiej figury (z Pitagorasa lub trygonometrii).
+2. Iloraz tego parametru = $q$ ciągu.
+3. Suma = $\frac{a_1}{1-q}$.
+4. Racjonalizuj mianownik (jeśli pierwiastek).
