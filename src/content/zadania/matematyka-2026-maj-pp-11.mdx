@@ -2,15 +2,19 @@
 arkusz: matematyka-2026-maj-pp
 subject: matematyka
 nr: 11
-punkty: 1
-typ: otwarte-rozszerzone
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 11
+punkty: 2
+typ: otwarte-krotkie
+topic: zadanie tekstowe, układ równań, procenty
 difficulty: 3
-tresc: Zadanie 11 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+tresc: |
+  Bilety: normalny 35 zł, ulgowy 25 zł. Sprzedano łącznie 200 biletów. Koszty = 25% wpływów. Po opłaceniu kosztów organizatorom zostało 4665 zł. Oblicz liczbę biletów ulgowych.
+odpowiedz: "78 biletów ulgowych"
+pulapka: |
+  Najczęstszy błąd: 4665 zł to **już po** odjęciu kosztów. Wpływy całkowite to $\frac{4665}{0,75} = 6220$ zł, nie 4665.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  XII.1 — modelowanie matematyczne. III.5 — układy równań.
+podobne:
+  - matematyka-2023-maj-pp-15
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +23,72 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-10.webp"
-  alt="Zadanie 11 - strona 10 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 10 arkusza CKE. Pelna tresc zadania 11."
+  alt="Zadanie 11 - bilety teatralne, układ równań"
+  caption="Strona 10 arkusza CKE 2026 PP - zadanie 11."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={10}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Odzyskaj całkowite wpływy.** Koszty = 25% wpływów, czyli organizatorom zostało 75%:
+
+$$0{,}75 \cdot W = 4665$$
+
+$$W = \frac{4665}{0{,}75} = 6220 \text{ zł}$$
+
+</div>
+
+<div class="krok">
+
+**Wprowadź niewiadome.** Niech $n$ = liczba biletów normalnych, $u$ = ulgowych.
+
+$$\begin{cases} n + u = 200 \\ 35n + 25u = 6220 \end{cases}$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiąż przez podstawienie.** $n = 200 - u$:
+
+$$35(200 - u) + 25u = 6220$$
+
+$$7000 - 35u + 25u = 6220$$
+
+$$7000 - 10u = 6220$$
+
+$$10u = 780$$
+
+$$u = 78$$
+
+</div>
+
+<div class="krok">
+
+**Sprawdzenie.** $n = 200 - 78 = 122$. Wpływy: $35 \cdot 122 + 25 \cdot 78 = 4270 + 1950 = 6220$ zł ✓. Po 25% kosztach: $6220 \cdot 0{,}75 = 4665$ zł ✓.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> sprzedano <strong>78 biletów ulgowych</strong>.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Liczenie z 4665 zł jako wpływów** — to **już po** opłaceniu kosztów. Trzeba najpierw cofnąć 25% koszt: $4665 / 0{,}75 = 6220$ zł.
+
+  **Pomylenie kierunku procentu** — "koszty = 25% wpływów" oznacza, że zostaje 75% wpływów. To nie to samo co "koszty obniżyły o 25% to co zostało".
+</div>
+
+## Po co to umieć
+
+Zadania tekstowe z procentami: zawsze najpierw odzyskaj **wielkość bazową** (wpływy, cena przed promocją), potem układ równań. Bez tego dane nie pasują.

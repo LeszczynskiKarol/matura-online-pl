@@ -2,15 +2,23 @@
 arkusz: matematyka-2026-maj-pp
 subject: matematyka
 nr: 12
-punkty: 1
-typ: otwarte-rozszerzone
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 12
+punkty: 4
+typ: otwarte-krotkie
+topic: funkcja kawałkami, odczyt z wykresu, zbiór wartości
 difficulty: 3
-tresc: Zadanie 12 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+tresc: |
+  Funkcja $f(x) = x+2$ dla $x \in [-4, 2]$ oraz $f(x) = -x+5$ dla $x \in (2, 5)$.
+  **12.1.** Rozwiąż $f(x) = 3$ i znajdź największą wartość $f$ w $[2, 3]$.
+  **12.2.** Podaj zbiór wartości $f$ i zbiór argumentów, dla których $f(x) > 1$.
+odpowiedz: |
+  **12.1.** $x = 1$; największa wartość = $4$.
+  **12.2.** Zbiór wartości: $\langle -2, 4 \rangle$. Argumenty z $f(x) > 1$: $(-1, 4)$.
+pulapka: |
+  Pułapka: w punkcie $x = 2$ funkcja przyjmuje wartość z **pierwszej** gałęzi ($x+2 = 4$), bo $2 \in [-4, 2]$ (przedział domknięty). Druga gałąź $(2, 5)$ nie obejmuje $x=2$ (kółko otwarte).
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  IV.1, IV.2 — funkcje zadane wzorem, odczyt z wykresu.
+podobne:
+  - matematyka-2023-maj-pp-17
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +27,92 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-12.webp"
-  alt="Zadanie 12 - strona 12 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 12 arkusza CKE. Pelna tresc zadania 12."
+  alt="Zadanie 12.1 - funkcja kawałkami, wykres"
+  caption="Strona 12 arkusza CKE 2026 PP - zadanie 12.1."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={12}
 />
 
-## Klucz odpowiedzi i punktacja
+<MaterialZrodlowy
+  src="/arkusze/matematyka/2026-maj-pp/ark-13.webp"
+  alt="Zadanie 12.2 - zbiór wartości, argumenty"
+  caption="Strona 13 arkusza CKE 2026 PP - zadanie 12.2."
+  zrodlo="CKE 2026"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
+  pdfPage={13}
+/>
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+## Co zrobić?
+
+### 12.1. — równanie $f(x) = 3$ i max na $[2, 3]$
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Pierwsza gałąź:** $x + 2 = 3 \implies x = 1$. Sprawdź: $1 \in [-4, 2]$ ✓.
+
+**Druga gałąź:** $-x + 5 = 3 \implies x = 2$. Sprawdź: $2 \notin (2, 5)$ ✗ (kółko otwarte).
+
+**Wynik:** $x = 1$.
+
+</div>
+
+<div class="krok">
+
+**Max na $[2, 3]$.**
+- $x = 2$ należy do **pierwszej** gałęzi (przedział domknięty $[-4, 2]$): $f(2) = 2 + 2 = 4$.
+- $x \in (2, 3]$ — druga gałąź $-x + 5$, malejąca. Wartości: $\lim_{x \to 2^+} = 3$ (nieosiągnięta), $f(3) = 2$.
+
+**Największa wartość = $4$** (przy $x = 2$).
+
+</div>
+
+</div>
+
+### 12.2. — zbiór wartości i argumenty $f(x) > 1$
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Zbiór wartości.**
+- Pierwsza gałąź ($x+2$, $x \in [-4, 2]$): od $f(-4) = -2$ do $f(2) = 4$, czyli $\langle -2, 4 \rangle$.
+- Druga gałąź ($-x+5$, $x \in (2, 5)$): od $f(2^+) = 3$ do $f(5^-) = 0$, czyli $(0, 3)$.
+
+Suma: $\langle -2, 4 \rangle \cup (0, 3) = \langle -2, 4 \rangle$ (druga gałąź daje tylko wartości już zawarte w pierwszej).
+
+</div>
+
+<div class="krok">
+
+**Argumenty z $f(x) > 1$.**
+- Pierwsza gałąź: $x + 2 > 1 \implies x > -1$, w $[-4, 2]$ daje $(-1, 2\rangle$.
+- Druga gałąź: $-x + 5 > 1 \implies x < 4$, w $(2, 5)$ daje $(2, 4)$.
+
+Suma: $(-1, 2\rangle \cup (2, 4) = (-1, 4)$ (w $x = 2$ wartość $4 > 1$, więc nie ma dziury).
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>12.1.</strong> $x = 1$; największa wartość na $[2, 3]$ to $\boxed{4}$.<br/>
+    <strong>12.2.</strong> Zbiór wartości: $\langle -2, 4 \rangle$. Argumenty: $(-1, 4)$.
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Wpadnięcie na "kropkę otwartą" przy $x = 2$.** Druga gałąź $(2, 5)$ wyklucza $x = 2$. Dlatego do $f(2)$ używamy **pierwszej** gałęzi: $f(2) = 4$, nie $3$.
+
+  **Zbiór wartości – brak unii**. Trzeba uwzględnić obie gałęzie, sprawdzić, czy się pokrywają, i wynik wyrazić bez powtórzeń.
+
+  **$f(x) > 1$ przy $x = 2$**. Wynik $f(2) = 4 > 1$, więc $2$ należy do zbioru — to "łączy" oba przedziały w jeden $(-1, 4)$.
+</div>
+
+## Po co to umieć
+
+Funkcja kawałkami: zawsze patrz **na typ nawiasów w definicji** ($[$ vs $($). To one decydują, do której gałęzi należy punkt graniczny. Wykres pomaga zwizualizować, ale rachunek robisz na definicji.

@@ -2,15 +2,19 @@
 arkusz: matematyka-2026-maj-pp
 subject: matematyka
 nr: 15
-punkty: 1
-typ: otwarte-rozszerzone
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 15
+punkty: 3
+typ: otwarte-krotkie
+topic: ciąg arytmetyczny, ciąg geometryczny, warunek na ciąg geometryczny
 difficulty: 3
-tresc: Zadanie 15 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+tresc: |
+  $a_n = 3n + 5$. Ciąg $(a_1, a_9, a_k)$ jest geometryczny. Oblicz $k$.
+odpowiedz: "$k = 41$"
+pulapka: |
+  Warunek na ciąg geometryczny: $a_9^2 = a_1 \cdot a_k$ (kwadrat środkowego = iloczyn skrajnych), nie iloraz wyrazów.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  V.2 — ciąg arytmetyczny i geometryczny.
+podobne:
+  - matematyka-2024-maj-pp-19
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +23,82 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-18.webp"
-  alt="Zadanie 15 - strona 18 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 18 arkusza CKE. Pelna tresc zadania 15."
+  alt="Zadanie 15 - ciąg geometryczny w arytmetycznym"
+  caption="Strona 18 arkusza CKE 2026 PP - zadanie 15."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={18}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Oblicz $a_1$ i $a_9$.**
+
+$$a_1 = 3 \cdot 1 + 5 = 8$$
+
+$$a_9 = 3 \cdot 9 + 5 = 32$$
+
+</div>
+
+<div class="krok">
+
+**Wyraź $a_k$.**
+
+$$a_k = 3k + 5$$
+
+</div>
+
+<div class="krok">
+
+**Warunek na ciąg geometryczny.** Trzy kolejne wyrazy są geometryczne $\iff$ kwadrat środkowego = iloczyn skrajnych:
+
+$$a_9^2 = a_1 \cdot a_k$$
+
+$$32^2 = 8 \cdot (3k + 5)$$
+
+$$1024 = 24k + 40$$
+
+</div>
+
+<div class="krok">
+
+**Rozwiąż.**
+
+$$24k = 984$$
+
+$$k = 41$$
+
+</div>
+
+<div class="krok">
+
+**Sprawdzenie.** $a_{41} = 3 \cdot 41 + 5 = 128$. Iloraz $q = \frac{a_9}{a_1} = \frac{32}{8} = 4$. $a_9 \cdot q = 32 \cdot 4 = 128 = a_{41}$ ✓.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> $k = 41$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Pomylenie warunków** ciągu arytmetycznego z geometrycznym:
+  - Arytmetyczny: $2a_9 = a_1 + a_k$ (środkowy to **średnia arytmetyczna**)
+  - Geometryczny: $a_9^2 = a_1 \cdot a_k$ (środkowy to **średnia geometryczna**, w **kwadracie**)
+
+  **$a_n = 3n + 5$ to ciąg arytmetyczny** (różnica $r = 3$). Ale wybrane wyrazy $(a_1, a_9, a_k)$ mają być geometryczne — to inny warunek.
+</div>
+
+## Po co to umieć
+
+Wzór $a_n = pn + q$ daje **ciąg arytmetyczny** (różnica = $p$). Wzór $a_n = c \cdot q^n$ daje **geometryczny** (iloraz = $q$).
+
+Trzy liczby $a, b, c$ są geometryczne $\iff b^2 = ac$. Z tego wzoru wyciągasz każdą z trzech jak masz dwie pozostałe.

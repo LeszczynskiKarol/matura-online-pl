@@ -2,15 +2,18 @@
 arkusz: matematyka-2026-maj-pp
 subject: matematyka
 nr: 10
-punkty: 1
-typ: otwarte-rozszerzone
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 10
+punkty: 2
+typ: otwarte-krotkie
+topic: nierówność kwadratowa, delta, znak paraboli
 difficulty: 3
-tresc: Zadanie 10 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+tresc: "Rozwiąż nierówność $3x^2 + 4x \\geq 6x + 8$."
+odpowiedz: "$x \\in \\left(-\\infty, -\\frac{4}{3}\\right\\rangle \\cup \\langle 2, +\\infty)$"
+pulapka: |
+  Częsty błąd: $\geq 0$ przy paraboli w górę → przedział **na zewnątrz** miejsc zerowych, nie między.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  III.4 — nierówności kwadratowe.
+podobne:
+  - matematyka-2023-maj-pp-12
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +22,70 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-09.webp"
-  alt="Zadanie 10 - strona 9 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 9 arkusza CKE. Pelna tresc zadania 10."
+  alt="Zadanie 10 - nierówność kwadratowa"
+  caption="Strona 9 arkusza CKE 2026 PP - zadanie 10."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={9}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Przenieś wszystko na lewą stronę:**
+
+$$3x^2 + 4x - 6x - 8 \geq 0$$
+
+$$3x^2 - 2x - 8 \geq 0$$
+
+</div>
+
+<div class="krok">
+
+**Wyróżnik:**
+
+$$\Delta = (-2)^2 - 4 \cdot 3 \cdot (-8) = 4 + 96 = 100$$
+
+$$\sqrt{\Delta} = 10$$
+
+</div>
+
+<div class="krok">
+
+**Miejsca zerowe:**
+
+$$x_1 = \frac{2 - 10}{6} = -\frac{8}{6} = -\frac{4}{3}$$
+
+$$x_2 = \frac{2 + 10}{6} = \frac{12}{6} = 2$$
+
+</div>
+
+<div class="krok">
+
+**Znak paraboli.** $a = 3 > 0$ → ramiona do góry. Nierówność $\geq 0$ — szukamy gdzie parabola jest **nad** osią lub na niej:
+
+$$x \in \left(-\infty, -\frac{4}{3}\right\rangle \cup \langle 2, +\infty)$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź:</strong> $x \in \left(-\infty, -\frac{4}{3}\right\rangle \cup \langle 2, +\infty)$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **Zamiana przedziału na "między"** — to byłoby dla nierówności $\leq 0$. Dla $\geq 0$ przy parabolaie w górę: **na zewnątrz** miejsc zerowych.
+
+  **Nawiasy** — przy $\geq$ (z równością) nawiasy **domknięte** $\langle \rangle$. Przy $>$ — otwarte $($ $)$.
+</div>
+
+## Po co to umieć
+
+Algorytm: 1) Wszystko na lewą stronę. 2) $\Delta$. 3) Miejsca zerowe. 4) Naszkicuj parabolę i wybierz przedziały zgodne z nierównością.

@@ -3,14 +3,17 @@ arkusz: matematyka-2026-maj-pp
 subject: matematyka
 nr: 8
 punkty: 1
-typ: otwarte-rozszerzone
-topic: matematyka maj 2026 poziom podstawowy â€” zadanie 8
-difficulty: 3
-tresc: Zadanie 8 z arkusza maturalnego CKE z maja 2026 (poziom podstawowy). Tresc oryginalna na obrazie strony arkusza ponizej.
-odpowiedz: Pelny klucz odpowiedzi CKE â€” patrz link "Klucz CKE (PDF)" ponizej.
+typ: zamkniete-abcd
+topic: równanie iloczynowe, parametr
+difficulty: 2
+tresc: "$3(x+3)(x-m)(2x+4) = 0$. Suma rozwiązań = $0$. Oblicz $m$."
+odpowiedz: C
+pulapka: |
+  Najczęstszy błąd: $2x + 4 = 0$ daje $x = -4$ (zła operacja). Poprawnie: $x = -2$.
 wymaganie: |
-  Patrz tresc zasad oceniania CKE (link ponizej).
-podobne: []
+  III.2 — równania wielomianowe iloczynowe.
+podobne:
+  - matematyka-2023-maj-pp-7
 ---
 
 import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
@@ -19,13 +22,51 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 <MaterialZrodlowy
   src="/arkusze/matematyka/2026-maj-pp/ark-08.webp"
-  alt="Zadanie 8 - strona 8 arkusza CKE maj 2026 poziom podstawowy"
-  caption="Strona 8 arkusza CKE. Pelna tresc zadania 8."
+  alt="Zadanie 8 - równanie iloczynowe z parametrem"
+  caption="Strona 8 arkusza CKE 2026 PP - zadanie 8."
   zrodlo="CKE 2026"
   pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
   pdfPage={8}
 />
 
-## Klucz odpowiedzi i punktacja
+## Co zrobić?
 
-Pelne rozwiazanie + punktacja CKE: [Klucz odpowiedzi (PDF CKE)](https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-zasady.pdf)
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Iloczyn = 0 ⟺ któryś czynnik = 0.** Rozwiązania:
+- $x + 3 = 0 \implies x = -3$
+- $x - m = 0 \implies x = m$
+- $2x + 4 = 0 \implies x = -2$
+
+</div>
+
+<div class="krok">
+
+**Suma rozwiązań:**
+
+$$-3 + m + (-2) = 0$$
+
+$$m = 5$$
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+  <div>
+    <strong>Odpowiedź: C</strong> — $m = 5$
+  </div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Typowy błąd</div>
+  **$2x + 4 = 0$ daje $x = -4$** — to błąd. $2x = -4 \implies x = -2$, nie $-4$.
+
+  **$3$ przed wszystkim** — to stała, nie daje rozwiązania $x = 0$ ani innego.
+</div>
+
+## Po co to umieć
+
+W równaniu iloczynowym każdy nawias z $x$ daje jedno rozwiązanie. Stałe (jak $3$) nie dają nic. Suma rozwiązań pozwala wyznaczyć parametr.
