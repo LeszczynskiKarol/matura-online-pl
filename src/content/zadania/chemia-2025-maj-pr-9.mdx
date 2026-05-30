@@ -1,0 +1,231 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 9
+punkty: 2
+typ: otwarte-krotkie
+topic: reakcje metali z kwasami, szereg napięciowy, HNO3, HCl, redoks, cynk, srebro
+difficulty: 4
+tresc: |
+  Dwa doświadczenia: metale (cynk, srebro) + kwasy (kwas solny, kwas azotowy(V) stężony). Każdy reagent użyty **tylko raz**.
+
+  **Doświadczenie 1**: **brunatne gazy** (zdjęcie: brązowy obłok w probówce).
+  **Doświadczenie 2**: **bezbarwne bańki** (zdjęcie: klarowny roztwór z bańkami gazu).
+
+  Napisz w **formie jonowej skróconej** równania reakcji dla obu doświadczeń.
+odpowiedz: |
+  **Identyfikacja**:
+
+  **Reguła**: srebro NIE reaguje z HCl (Ag jest poniżej H w szeregu napięciowym → nie wypiera H₂). Reaguje tylko z HNO₃ (utleniacz). Cynk reaguje z HCl (wypiera H₂).
+
+  - **Doświadczenie 1** = **Ag + HNO₃ stęż.** → brunatny gaz NO₂.
+  - **Doświadczenie 2** = **Zn + HCl** → bezbarwny gaz H₂.
+
+  **Doświadczenie 1** — forma jonowa skrócona:
+
+  $$\mathbf{Ag + 2\,H^+ + NO_3^- \rightarrow Ag^+ + NO_2\uparrow + H_2O}$$
+
+  **Analiza redoks**:
+  - Ag (0) → Ag⁺ + e⁻ (utlenianie, oddaje 1 e).
+  - NO₃⁻ + 2 H⁺ + e⁻ → NO₂ + H₂O (redukcja, N⁺⁵ → N⁺⁴).
+  - Bilans e: 1 = 1 ✓.
+
+  Bilans atomów: Ag: 1=1; H: 2=2; N: 1=1; O: 3=2+1=3 ✓. Ładunek: 0+2-1 = +1 = +1+0+0 ✓.
+
+  **Doświadczenie 2** — forma jonowa skrócona:
+
+  $$\mathbf{Zn + 2\,H^+ \rightarrow Zn^{2+} + H_2\uparrow}$$
+
+  **Analiza redoks**:
+  - Zn (0) → Zn²⁺ + 2 e⁻ (utlenianie, oddaje 2 e).
+  - 2 H⁺ + 2 e⁻ → H₂ (redukcja).
+  - Bilans e: 2 = 2 ✓.
+
+  Bilans atomów: Zn: 1=1; H: 2=2 ✓. Ładunek: 0+2 = +2 = +2+0 ✓.
+pulapka: |
+  Pułapka — pomylenie srebra z cynkiem. **Ag nie reaguje z HCl** (jest poniżej H w szeregu). Tylko z **HNO₃** (silny utleniacz, działa nie tylko przez H⁺ ale przez NO₃⁻ jako utleniacz).
+
+  Pułapka — brunatny gaz. **NO₂** = brunatny gaz. Powstaje z HNO₃ **stężonego**. Z HNO₃ rozcieńczonego powstaje NO (bezbarwny, który na powietrzu → NO₂ brunatny). Tu zdjęcie pokazuje **wewnątrz** probówki brunatny → bezpośredni produkt = NO₂ → stężony HNO₃.
+
+  Pułapka — H⁺ w równaniu jonowym. **Nie pisz całego HNO₃** — w roztworze jest jako H⁺ + NO₃⁻. Forma jonowa skrócona = tylko jony aktywne + cząsteczki obojętne.
+wymaganie: |
+  III.4 — reakcje metali, szereg napięciowy.
+  III.5 — kwasy utleniające (HNO₃, H₂SO₄ stęż.).
+podobne:
+  - chemia-2025-maj-pr-6
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-13.webp"
+  alt="Zadanie 9 - reakcje metali z kwasami"
+  caption="Strona 13 arkusza CKE 2025 PR chemia - zadanie 9 (Zn, Ag + HCl, HNO₃)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={13}
+/>
+
+## Klucz pojęciowy — szereg napięciowy metali
+
+Metale uporządkowane wg **standardowych potencjałów redoks** (od najbardziej do najmniej aktywnych):
+
+**K > Ca > Na > Mg > Al > Mn > Zn > Cr > Fe > Cd > Co > Ni > Sn > Pb >> [H] >> Cu > Hg > Ag > Pt > Au**
+
+**Reguła**: metal **z góry** szeregu (przed H) wypiera metale **z dołu** + wodór z kwasów.
+
+- **Cynk (Zn)** — przed H → wypiera H₂ z HCl, H₂SO₄ rozc., itp.
+- **Srebro (Ag)** — **po H** → **nie wypiera** H₂ z HCl. Reaguje tylko z kwasami utleniającymi (HNO₃, H₂SO₄ stęż.).
+
+## Klucz pojęciowy — kwasy nieutleniające vs utleniające
+
+| Typ | Mechanizm | Produkt z metalami | Przykłady |
+|---|---|---|---|
+| **Nieutleniający** (rozcieńczone) | H⁺ utlenia metal | **H₂↑** + sól metalu | HCl, HBr, HI, H₂SO₄ rozc. |
+| **Utleniający** (mocny lub stężony) | Anion utlenia metal (nie H⁺) | NO₂, NO, SO₂, H₂O (nie H₂) | **HNO₃**, H₂SO₄ stęż. |
+
+**Klucz**: HCl + Zn → H₂. HNO₃ + Zn → NO/NO₂, **nigdy** H₂ (bo NO₃⁻ jest silniejszym utleniaczem niż H⁺).
+
+## Mechanizm: Ag + HNO₃ stęż. (dośw. 1)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Srebro** = metal szlachetny (po H w szeregu). NIE reaguje z HCl, H₂SO₄ rozc., octem, kwasami organicznymi.
+
+</div>
+
+<div class="krok">
+
+**Reaguje z HNO₃** — silnym utleniaczem (NO₃⁻ utlenia, nie H⁺). Reakcja:
+
+**Ze stężonym HNO₃**: Ag + 2 HNO₃(stęż.) → AgNO₃ + NO₂↑ + H₂O.
+
+Produkt: NO₂ = **brunatny gaz** (zdjęcie 1).
+
+</div>
+
+<div class="krok">
+
+**Z rozcieńczonym HNO₃**: 3 Ag + 4 HNO₃(rozc.) → 3 AgNO₃ + NO↑ + 2 H₂O.
+
+Produkt: NO = bezbarwny (na powietrzu szybko → brunatny NO₂).
+
+</div>
+
+<div class="krok">
+
+**Tu** — z brunatnego gazu wewnątrz probówki → **stężony HNO₃**.
+
+</div>
+
+</div>
+
+**Forma jonowa skrócona**: Ag + 2 H⁺ + NO₃⁻ → Ag⁺ + NO₂ + H₂O.
+
+## Mechanizm: Zn + HCl (dośw. 2)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Cynk** = metal aktywny (przed H). Reaguje z każdym kwasem nieutleniającym, wypierając H₂.
+
+</div>
+
+<div class="krok">
+
+**Zn + 2 HCl → ZnCl₂ + H₂↑**
+
+Produkt: H₂ = bezbarwny gaz (bańki na zdjęciu 2).
+
+</div>
+
+<div class="krok">
+
+**Forma jonowa skrócona**: Zn + 2 H⁺ → Zn²⁺ + H₂. (Cl⁻ to "widz" — nie zmienia).
+
+</div>
+
+</div>
+
+## Dlaczego Ag nie reaguje z HCl?
+
+**Reakcja teoretyczna**: 2 Ag + 2 HCl → 2 AgCl + H₂?
+
+NIE zachodzi w warunkach normalnych, ponieważ:
+1. **Potencjał redoks Ag/Ag⁺** = +0,80 V > 0 V (H⁺/H₂).
+2. Ag NIE wyparta H z roztworu (Ag nie utleni się przez H⁺).
+3. Termodynamicznie nieopłacalna.
+
+**Co więcej**: nawet gdyby zaszła, AgCl jest **nierozpuszczalny** (biały osad) → reakcja jest **podwójnie blokowana** termodynamicznie.
+
+Dlatego **Ag** "rozumie" tylko **HNO₃** lub **H₂SO₄ stęż.** (utleniacze).
+
+## Jak rozpoznać NO vs NO₂?
+
+| Cecha | NO | NO₂ |
+|---|---|---|
+| **Kolor** | Bezbarwny | **Brunatny / brązowy** |
+| **Stan** | Gaz | Gaz |
+| **Stabilność** | Niestabilny na powietrzu | Stabilny |
+| **Reakcja z O₂** | 2 NO + O₂ → 2 NO₂ (szybko) | Reaguje wolniej |
+| **Powstaje z** | HNO₃ rozcieńczonego | HNO₃ stężonego |
+
+**Pamięć**: stężony HNO₃ + metal → **NO₂ (brunatny)**. Rozcieńczony → NO (bezbarwny).
+
+<div class="odpowiedz">
+<div>
+
+**Doświadczenie 1** (Ag + HNO₃ stęż.):
+
+$$\text{Ag} + 2\,\text{H}^+ + \text{NO}_3^- \rightarrow \text{Ag}^+ + \text{NO}_2 \uparrow + \text{H}_2\text{O}$$
+
+**Doświadczenie 2** (Zn + HCl):
+
+$$\text{Zn} + 2\,\text{H}^+ \rightarrow \text{Zn}^{2+} + \text{H}_2 \uparrow$$
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — Ag nie wypiera H z HNO₃</div>
+
+Ag + HNO₃ → AgNO₃ + NO₂ (lub NO). **NIE H₂!** Bo to redukcja **NO₃⁻**, nie H⁺. Reakcja:
+- N w NO₃⁻ ma stopień +5.
+- N w NO₂ ma +4 (zmiana -1 = przyjmuje 1 e).
+- N w NO ma +2 (zmiana -3 = przyjmuje 3 e).
+
+Każdy elektron oddany przez Ag (Ag → Ag⁺) zużywany jest na redukcję NO₃⁻, nie H⁺.
+</div>
+
+## Punktacja CKE
+
+- **9.** 2 pkt — oba równania poprawne (po 1 pkt za każde).
+
+## Po co to umieć
+
+**Szereg napięciowy** = klucz **elektrochemii**:
+- **Ogniwa galwaniczne** — różnica potencjałów → SEM.
+- **Korozja metali** — żelazo (przed H) koroduje w wilgotnym powietrzu z CO₂.
+- **Galwanizacja** — pokrywanie metalu mniej szlachetnym ochronnym (Zn na Fe = "ocynkowanie").
+- **Ekstrakcja metali** — Fe wypiera Cu z CuSO₄ (klasyczna reakcja kuchenna).
+
+**Kwasy utleniające**:
+- **HNO₃** — atak na "szlachetne" metale (Cu, Ag).
+- **H₂SO₄ stężony** — atak na Cu (Cu + 2 H₂SO₄ stęż. → CuSO₄ + SO₂ + 2 H₂O).
+- **Aqua regia** (HNO₃ + 3 HCl) — rozpuszcza nawet **złoto** (Au + HCl → [AuCl₄]⁻ + NO).
+
+**Brunatne dymy nad miastami** — NO₂ z spalin samochodowych. Mechanizm:
+- N₂ + O₂ (wysokie T w silniku) → 2 NO.
+- 2 NO + O₂ → 2 NO₂ (na powietrzu).
+- NO₂ + H₂O → HNO₃ + HNO₂ (**kwaśny deszcz**).
+
+**Reakcje analityczne**:
+- **Testy na Ag⁺**: Ag⁺ + Cl⁻ → AgCl ↓ (biały, ciemnieje na świetle).
+- **Testy na Zn²⁺**: Zn²⁺ + 2 OH⁻ → Zn(OH)₂ ↓ (biały), amfoteryczny.
+
+**Historyczna chemia**: **Dżinn (alchemia)** używał wieleukładów: HNO₃ ("aqua fortis") atakuje wszystkie metale **poza złotem**; **aqua regia** (HCl+HNO₃) atakuje też złoto. **"Acid that even attacks gold"** — tabu alchemików.
