@@ -1,0 +1,200 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 18
+punkty: 1
+typ: otwarte-krotkie
+topic: chemia organiczna, areny, p-ksylen, bromowanie, substytucja rodnikowa, elektrofilowa
+difficulty: 4
+tresc: |
+  **p-ksylen** (1,4-dimetylobenzen) reaguje z bromem:
+  - **Pod wpływem światła** (hν).
+  - **W obecności żelaza** (Fe jako katalizator).
+
+  Uzupełnij tabelę: typ reakcji (addycja / eliminacja / substytucja) + mechanizm (elektrofilowy / nukleofilowy / rodnikowy).
+odpowiedz: |
+  | | Pod wpływem światła | W obecności Fe |
+  |---|---|---|
+  | **Typ reakcji** | **substytucja** | **substytucja** |
+  | **Mechanizm** | **rodnikowy** | **elektrofilowy** |
+
+  **Pod wpływem światła (hν)** — **substytucja rodnikowa** w **łańcuchu bocznym** (na grupach metylowych):
+  - Br₂ pod wpływem hν → 2 Br• (homoliza wiązania Br-Br).
+  - Br• atakuje C-H grupy metylowej (C ze szlachetnym H, benzylowym).
+  - Produkty: pochodne **CH₂Br** (np. 1-bromometylo-4-metylobenzen).
+  - **Pierścień aromatyczny nie reaguje** w warunkach świetlnych.
+
+  **W obecności Fe (lub FeBr₃)** — **substytucja elektrofilowa aromatyczna (SEAr)**:
+  - FeBr₃ + Br₂ → FeBr₄⁻ + Br⁺ (elektrofil Br⁺).
+  - Br⁺ atakuje pierścień aromatyczny (π elektrony) → kompleks σ.
+  - Utrata H⁺ → przywrócenie aromatyczności.
+  - Produkty: **brominacja pierścienia** (np. 2-bromo-1,4-dimetylobenzen).
+  - Grupy metylowe są **kierującymi orto/para** (aktywujące → szybkie SEAr).
+pulapka: |
+  Pułapka — pomylenie warunków. **Światło = rodniki** (homoliza Br-Br, atak na C-H boczne). **Fe (FeBr₃) = elektrofilowa** (atak na pierścień).
+
+  Pułapka — pomylenie typu reakcji. **Oba** to **substytucja** (NIE addycja). Pierścień aromatyczny nie ulega łatwo addycji (utrata aromatyczności).
+
+  Pułapka — pomylenie mechanizmu. Bromowanie areny **na pierścieniu** = elektrofilowa (E). Bromowanie areny **w łańcuchu bocznym** = rodnikowa (R, dla benzylowych H).
+wymaganie: |
+  X.6 — związki aromatyczne, areny, substytucja elektrofilowa.
+podobne:
+  - chemia-2025-maj-pr-19
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-24.webp"
+  alt="Zadanie 18 - p-ksylen + Br2"
+  caption="Strona 24 arkusza CKE 2025 PR chemia - zadanie 18 (p-ksylen, bromowanie)."
+  zrodlo="CKE 2025 / J. McMurry, Chemia organiczna"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={24}
+/>
+
+## Klucz pojęciowy — reakcje arenów (związków aromatycznych)
+
+**Cechy pierścienia aromatycznego (benzenu)**:
+- **Stabilność rezonansowa** = ~150 kJ/mol energii.
+- **Trudno ulega addycji** (utraciłby aromatyczność).
+- **Łatwo ulega substytucji** elektrofilowej (zachowuje aromatyczność).
+
+**Typy reakcji**:
+| Typ | Wymaga | Co się dzieje |
+|---|---|---|
+| **Substytucja elektrofilowa (SEAr)** | E⁺ (HNO₃/H₂SO₄, Cl₂/AlCl₃, Br₂/FeBr₃, RCl/AlCl₃) | Na pierścieniu: H zamieniony na E |
+| **Substytucja rodnikowa** | hν, Br₂ lub Cl₂ | W łańcuchu bocznym (benzylowe C-H) |
+| **Addycja** (rzadko) | H₂/Pt, ciśnienie | Cały pierścień → cykloheksan |
+| **Utlenienie łańcucha** | KMnO₄, KCr₂O₇ | -CH₃ → -COOH |
+
+## Mechanizm: bromowanie pod światłem (substytucja rodnikowa)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Inicjacja**: Br₂ + hν → 2 Br• (homoliza, energia foton ~150 kJ/mol).
+
+</div>
+
+<div class="krok">
+
+**Propagacja**:
+- Br• + ArCH₃ → ArCH₂• + HBr (oderwanie H z grupy metylowej).
+- ArCH₂• + Br₂ → ArCH₂Br + Br• (regeneracja Br•).
+
+</div>
+
+<div class="krok">
+
+**Terminacja**: 2 Br• → Br₂ (lub inne łączenia rodników).
+
+</div>
+
+<div class="krok">
+
+**Produkt**: 4-bromometylotoluen = ArCH₂Br (jeden CH₃ zamieniony na CH₂Br). Pierścień aromatyczny **nienaruszony**.
+
+</div>
+
+</div>
+
+**Dlaczego C-H benzylowy?**: rodnik ArCH₂• jest **stabilizowany rezonansowo** (sprzężenie z pierścieniem) → łatwiej powstaje niż zwykły alkilowy rodnik.
+
+## Mechanizm: bromowanie w obecności Fe (substytucja elektrofilowa)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Aktywacja Br₂ przez katalizator**: Fe + 3 Br₂ → 2 FeBr₃ (kataliza Lewisowska).
+FeBr₃ + Br₂ → FeBr₄⁻ + Br⁺ (powstaje elektrofil Br⁺).
+
+</div>
+
+<div class="krok">
+
+**Atak elektrofilowy**: Br⁺ + pierścień aromatyczny → kompleks σ (arenium) z dodatnim ładunkiem rozłożonym po pierścieniu.
+
+</div>
+
+<div class="krok">
+
+**Strata H⁺**: kompleks σ → 4-bromo-1,4-dimetylobenzen + H⁺ (przywrócenie aromatyczności).
+
+</div>
+
+<div class="krok">
+
+**Regeneracja katalizatora**: H⁺ + FeBr₄⁻ → HBr + FeBr₃.
+
+</div>
+
+<div class="krok">
+
+**Produkt**: 2-bromo-1,4-dimetylobenzen (Br wstawiony w pozycji 2 lub 6 — orto względem CH₃).
+
+</div>
+
+</div>
+
+**Grupy CH₃ na pierścieniu** = **kierujące orto/para** (aktywujące podstawniki). W p-ksylenie pozycje orto względem dwóch CH₃ są **dostępne** (pozycje 2, 3, 5, 6 — wszystkie są orto/meta do CH₃).
+
+## Klucz pojęciowy — porównanie mechanizmów
+
+| Cecha | **Rodnikowa (hν)** | **Elektrofilowa (Fe)** |
+|---|---|---|
+| **Inicjator** | Światło (hν) lub nadtlenek | Katalizator Lewisa (FeBr₃, AlCl₃) |
+| **Cząstka atakująca** | **Rodnik** (Br•) | **Elektrofil** (Br⁺) |
+| **Miejsce ataku** | **C-H w łańcuchu bocznym** (benzyl) | **Pierścień aromatyczny** |
+| **Produkt** | ArCH₂Br | ArBr (z H na pierścieniu) |
+| **Energia aktywacji** | Niska | Wysoka (potrzeba katalizatora) |
+
+<div class="odpowiedz">
+<div>
+
+| | Pod wpływem światła | W obecności Fe |
+|---|---|---|
+| **Typ reakcji** | **substytucja** | **substytucja** |
+| **Mechanizm** | **rodnikowy** | **elektrofilowy** |
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — kierowanie w EAS</div>
+
+W zadaniu **p-ksylen** ma 2 grupy CH₃ kierujące orto/para. Wszystkie wolne pozycje (2, 3, 5, 6) są **orto względem przynajmniej jednego CH₃**. Bromowanie EAS daje **2-bromo-1,4-dimetylobenzen** (lub równoważnie 3-bromo, ale pozycje są symetryczne).
+</div>
+
+## Punktacja CKE
+
+- **18.** 1 pkt — wszystkie 4 wpisy w tabeli (typ × 2, mechanizm × 2).
+
+## Po co to umieć
+
+**Aromaty w przemyśle**:
+- **BTX** (benzen, toluen, ksyleny) = surowce z benzyny krakowanej.
+- **Benzen** → fenol, anilina, styren (z toluenu chlorek benzylu).
+- **Toluen** → TNT (trójnitrotoluen), wybuchy + barwniki.
+- **Ksyleny** (orto, meta, **para**) → kwas tereftalowy (PET butelki) z p-ksylenu.
+
+**Substytucja elektrofilowa** = **najważniejsza reakcja** chemii aromatycznej:
+- Nitrowanie (HNO₃/H₂SO₄) → aniliny, dynamity.
+- Sulfonowanie (H₂SO₄) → detergenty, barwniki.
+- Halogenowanie (Cl₂, Br₂/Fe) → herbicydy, leki.
+- Alkilowanie i acylowanie (Friedel-Crafts).
+
+**Substytucja rodnikowa w przemyśle**:
+- **Chlorometan** z metanu (CH₄ + Cl₂ → CH₃Cl + HCl), światło.
+- **Polietylen niskiej gęstości** (LDPE) — polimeryzacja rodnikowa.
+- **Styrene-butadiene rubber** (kauczuk SBR) — rodnikowa.
+
+**Toksyczność benzenu**: benzen + jego pochodne (toluen, ksyleny) są **kancerogenne**. BTEX z benzyn samochodowych = problem **smogowy w miastach**.
+
+**Tlenowanie toluenu → kwas benzoesowy** (KMnO₄ atakuje C-H benzylowy + utlenia → COOH). To **odwrotność rodnikowego** mechanizmu — początkowo H rodnikowy, potem utleniony.
+
+**Reaktywność benzylów (ArCH₃)** — łańcuch boczny **bardziej reaktywny** niż w alkanach (stabilizacja rezonansowa rodnika i karbokationu).
