@@ -1,0 +1,244 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 12
+punkty: 3
+typ: otwarte-krotkie
+topic: hydroliza, pH, NH4Cl, kation amonowy, wskaźniki, błękit bromotymolowy
+difficulty: 5
+tresc: |
+  0,10 g NH₄Cl rozpuszczono w wodzie → 100 cm³ roztworu.
+
+  **Hydroliza**: NH₄⁺ + H₂O ⇌ NH₃ + H₃O⁺.
+
+  Do próbki dodano **błękit bromotymolowy**. 3 zdjęcia: A (zielony), B (żółty), C (niebieski).
+
+  Oblicz **pH** (1 miejsce po przecinku) + wybierz zdjęcie.
+
+  *Dane: K_a(NH₄⁺) = 5,6·10⁻¹⁰. K_b(NH₃) = 1,8·10⁻⁵.*
+odpowiedz: |
+  **Krok 1**: stężenie NH₄Cl.
+  - M(NH₄Cl) = 14 + 4·1 + 35,5 = **53,5 g/mol**.
+  - n(NH₄Cl) = 0,10 / 53,5 = **1,87·10⁻³ mol**.
+  - c(NH₄Cl) = 1,87·10⁻³ / 0,1 = **1,87·10⁻² mol/dm³** ≈ 0,019 mol/dm³.
+
+  **Krok 2**: NH₄Cl dysocjuje całkowicie → c(NH₄⁺) = 1,87·10⁻² mol/dm³.
+
+  **Krok 3**: stała hydrolizy K_a(NH₄⁺):
+  - K_a = K_w / K_b(NH₃) = 10⁻¹⁴ / 1,8·10⁻⁵ = **5,56·10⁻¹⁰**.
+
+  **Krok 4**: równanie równowagi hydrolizy.
+  - K_a = [H₃O⁺][NH₃] / [NH₄⁺].
+  - Dla przybliżenia: [H₃O⁺] = [NH₃] = x; [NH₄⁺] ≈ c (bardzo małe x).
+  - K_a = x² / c → x² = K_a · c.
+
+  **Krok 5**: obliczenie [H₃O⁺]:
+  - x² = 5,56·10⁻¹⁰ · 1,87·10⁻² = **1,04·10⁻¹¹**.
+  - x = √(1,04·10⁻¹¹) = **3,22·10⁻⁶ mol/dm³**.
+
+  **Krok 6**: pH:
+  - pH = -log[H₃O⁺] = -log(3,22·10⁻⁶) = 6 - log(3,22) = 6 - 0,51 ≈ **5,5**.
+
+  **Krok 7**: wybór zdjęcia.
+
+  **Błękit bromotymolowy** — zmiana barwy:
+  - pH < 6,0: **żółty**.
+  - pH 6,0-7,6: zielony.
+  - pH > 7,6: niebieski.
+
+  pH = 5,5 < 6,0 → **żółty** → **zdjęcie B**.
+
+  **Odpowiedź**:
+  - **pH ≈ 5,5**.
+  - **Zdjęcie: B** (żółty).
+pulapka: |
+  Pułapka — K_a vs K_b. **NH₄⁺ jest słabym kwasem**: K_a(NH₄⁺) = K_w/K_b(NH₃). NH₄⁺ oddaje H⁺ → roztwór KWASOWY (pH < 7).
+
+  Pułapka — przybliżenie x << c. Klucz: gdy K_a · c << K_a² (małe stężenia), trzeba użyć pełnej formuły kwadratowej. Tu sprawdzamy: x = 3,22·10⁻⁶ << c = 1,87·10⁻² → przybliżenie OK.
+
+  Pułapka — wybór wskaźnika. **Błękit bromotymolowy zmienia barwę 6,0-7,6**. pH < 6 = żółty (kwasowy), pH > 7,6 = niebieski (zasadowy), pomiędzy = zielony.
+wymaganie: |
+  IV.3 — pH, hydroliza soli.
+  IV.4 — sole, kationy amonowe.
+podobne:
+  - chemia-2025-maj-pr-11
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-17.webp"
+  alt="Zadanie 12 - pH NH4Cl"
+  caption="Strona 17 arkusza CKE 2025 PR chemia - zadanie 12 (NH₄Cl, błękit bromotymolowy)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={17}
+/>
+
+## Klucz pojęciowy — hydroliza soli
+
+**Hydroliza** = reakcja jonu soli z wodą, dająca produkty kwasowe lub zasadowe.
+
+**Reguły**:
+- **Sól mocnego kwasu + mocnej zasady** (np. NaCl): **brak hydrolizy**, pH ≈ 7.
+- **Sól słabego kwasu + mocnej zasady** (np. CH₃COONa): hydroliza **anionu**, pH > 7 (zasadowa).
+- **Sól mocnego kwasu + słabej zasady** (np. **NH₄Cl**): hydroliza **kationu**, **pH < 7 (kwasowa)**.
+- **Sól słabego kwasu + słabej zasady** (np. CH₃COONH₄): zależy od K_a vs K_b.
+
+**Wzory**:
+- Dla soli A: K_h = K_w / K_b (hydroliza kationu).
+- Dla soli B: K_h = K_w / K_a (hydroliza anionu).
+
+## Mechanizm: hydroliza NH₄Cl
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+NH₄Cl w wodzie dysocjuje całkowicie: NH₄Cl → NH₄⁺ + Cl⁻.
+
+</div>
+
+<div class="krok">
+
+**NH₄⁺** jest słabym kwasem (sprzężoną parą NH₃ — słaba zasada).
+**Cl⁻** jest **bardzo słabą zasadą** (sprzężoną z HCl — mocny kwas, więc Cl⁻ niemal nie hydrolizuje).
+
+</div>
+
+<div class="krok">
+
+Tylko NH₄⁺ hydrolizuje: **NH₄⁺ + H₂O ⇌ NH₃ + H₃O⁺**.
+
+Produkt: H₃O⁺ → roztwór **kwasowy** (pH < 7).
+
+</div>
+
+<div class="krok">
+
+**Stała hydrolizy** (= K_a kationu): K_a(NH₄⁺) = K_w / K_b(NH₃) = 10⁻¹⁴ / 1,8·10⁻⁵ = 5,56·10⁻¹⁰.
+
+</div>
+
+</div>
+
+## Mechanizm: obliczenia pH
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Stężenie molowe NH₄Cl**:
+- M = 53,5 g/mol → n = 0,10/53,5 = 1,87·10⁻³ mol.
+- c = n/V = 1,87·10⁻³ / 0,1 = **1,87·10⁻² mol/dm³**.
+
+</div>
+
+<div class="krok">
+
+**Równanie równowagi**:
+K_a = [H₃O⁺][NH₃] / [NH₄⁺]
+
+**Przybliżenie**:
+- [H₃O⁺] = [NH₃] = x (powstają w stosunku 1:1).
+- [NH₄⁺] ≈ c (bardzo małe x).
+
+</div>
+
+<div class="krok">
+
+**K_a = x² / c**
+
+x² = K_a · c = 5,56·10⁻¹⁰ · 1,87·10⁻² = 1,04·10⁻¹¹.
+x = 3,22·10⁻⁶ mol/dm³ = [H₃O⁺].
+
+</div>
+
+<div class="krok">
+
+**Walidacja przybliżenia**: x = 3,22·10⁻⁶, c = 1,87·10⁻². 
+- x/c = 1,7·10⁻⁴ → x << c ✓ (przybliżenie poprawne, błąd <0,1%).
+
+</div>
+
+<div class="krok">
+
+**pH = -log[H₃O⁺] = -log(3,22·10⁻⁶) = 5,49 ≈ 5,5**.
+
+</div>
+
+</div>
+
+## Mechanizm: wskaźniki
+
+**Wskaźniki kwasowo-zasadowe** = słabe kwasy/zasady, których forma protonowana i deprotonowana mają **różne kolory**.
+
+| Wskaźnik | Zakres pH zmiany | Kolor kwasowy | Kolor zasadowy |
+|---|---|---|---|
+| **Czerwień metylowa** | 4,4 - 6,2 | czerwony | żółty |
+| **Lakmus** | 5,0 - 8,0 | czerwony | niebieski |
+| **Błękit bromotymolowy** | **6,0 - 7,6** | **żółty** | **niebieski** |
+| **Fenoloftaleina** | 8,2 - 10,0 | bezbarwny | różowy |
+| **Czerwień obojętna** | 6,8 - 8,0 | czerwony | żółty |
+
+**W zadaniu**: pH = 5,5 < 6,0 → błękit bromotymolowy = **żółty** → **zdjęcie B**.
+
+<div class="odpowiedz">
+<div>
+
+**pH ≈ 5,5** (roztwór kwasowy z hydrolizy NH₄⁺).
+
+**Zdjęcie B** (żółty) — pH = 5,5 jest poniżej zakresu zmiany barwy błękitu bromotymolowego (6,0-7,6), więc wskaźnik pozostaje w kolorze **kwasowym = żółtym**.
+
+**Obliczenia w skrócie**:
+- c(NH₄⁺) = 0,10/53,5/0,1 = 1,87·10⁻² mol/dm³.
+- K_a(NH₄⁺) = 10⁻¹⁴/1,8·10⁻⁵ = 5,56·10⁻¹⁰.
+- [H₃O⁺] = √(K_a · c) = √(5,56·10⁻¹⁰ · 1,87·10⁻²) = 3,22·10⁻⁶ mol/dm³.
+- pH = -log(3,22·10⁻⁶) = **5,5**.
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — NH₄Cl daje pH kwasowe</div>
+
+Często studenci myślą "sól = pH 7". NIE — sole **słabej zasady + mocnego kwasu** dają roztwór **kwasowy**. Klucz: rozróżnić mocne/słabe składniki soli.
+
+- NH₃ jest **słaba zasada** (K_b = 10⁻⁵). HCl jest **mocny kwas**.
+- W roztworze: NH₄⁺ jest **silniejszy** kwas niż Cl⁻ jest zasadą.
+- Roztwór NH₄Cl = pH ~5-5,5 (zależnie od stężenia).
+</div>
+
+## Punktacja CKE
+
+- **12.** 3 pkt:
+  - 1 pkt: obliczenie stężenia NH₄⁺.
+  - 1 pkt: obliczenie pH = 5,5 (±0,1).
+  - 1 pkt: wybór zdjęcia B.
+
+## Po co to umieć
+
+**Hydroliza soli** w przyrodzie:
+- **Nawozy amonowe** (NH₄NO₃, (NH₄)₂SO₄) → **zakwaszają glebę**. Stosowane intensywnie w rolnictwie → problem zakwaszania gleb.
+- **Mydła sodowe i potasowe** (R-COO⁻ Na⁺) → roztwór zasadowy (hydroliza octanu). Stąd mydła czyszczą tłuszcz (saponifikacja w środowisku zasadowym).
+- **Sól kuchenna NaCl** → pH ~7 (brak hydrolizy, mocny kwas + mocna zasada).
+
+**NH₄Cl (salmiak)** w przemyśle:
+- **Baterie cynkowo-węglowe** (Leclanché, 1866) — elektrolit pasta z NH₄Cl + ZnCl₂.
+- **Lutowanie** — flux do trawienia tlenków z metali (NH₄Cl topiony + para HCl).
+- **Lecznictwo** — wyksusznicy (mucolyticum), zwiększa wydalanie śluzu.
+
+**Wskaźniki w analizie**:
+- **Uniwersalny papierek wskaźnikowy** = mieszanka kilku wskaźników, daje kolor zależny od pH od 1 do 14.
+- **pH-metr elektroniczny** — szklana elektroda + miernik napięcia. Dokładność do 0,01 pH.
+
+**Hydroliza w organizmie**:
+- **Sok żołądkowy** ~pH 1,5 (HCl).
+- **Krew** ~pH 7,4 (bufor HCO₃⁻/H₂CO₃).
+- **Mocz** ~pH 5-7 (zależnie od diety).
+- **Pot** ~pH 4-7.
+- **Wnętrze komórki** ~pH 7,0-7,4.
+
+**Zakwaszenie gleb** = problem rolnictwa: pH < 5 → uwalnianie Al³⁺ → toksyczne dla korzeni. Korekta: **wapnowanie** gleby (CaO, CaCO₃).
