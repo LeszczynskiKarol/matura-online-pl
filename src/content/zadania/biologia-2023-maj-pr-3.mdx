@@ -1,0 +1,207 @@
+---
+arkusz: biologia-2023-maj-pr
+subject: biologia
+nr: 3
+punkty: 2
+typ: otwarte-krotkie
+topic: mejoza, cykl życiowy, przemienność pokoleń, metageneza, krążkopławy, ploidalność
+difficulty: 4
+tresc: |
+  **Naprzemienność zapłodnienia i mejozy** = u wszystkich eukariontów rozmnażających się płciowo. Cykle różnych grup mogą się znacznie różnić.
+
+  **A. Rośliny** (przemienność pokoleń): sporofit → zarodniki → gametofit → gamety → zygota → sporofit.
+  **B. Krążkopławy** (meduzy, metageneza): polip → strobila → meduza → gamety → zygota → polip.
+
+  **3.1.** Zaznacz symbolem "R!" etap, na którym zachodzi **mejoza** w obu cyklach (A + B).
+
+  **3.2.** Wykaż, że mejoza jest **niezbędna** do zamknięcia cyklu życiowego eukariontów rozmnażających się płciowo.
+odpowiedz: |
+  **3.1.** Mejoza zachodzi w obu cyklach przy przejściu z formy **diploidalnej (2n)** do **haploidalnej (n)**.
+
+  **A. Rośliny**: **R!** na strzałce **sporofit → zarodniki**.
+  - **Sporofit** (2n) wytwarza w **zarodni** zarodniki przez **mejozę** → **zarodniki haploidalne (n)**.
+  - Zarodniki kiełkują → gametofit (n) → wytwarza gamety (n) przez **mitozę** (gametofit już jest haploidalny).
+  - Zapłodnienie (2 gamety n) → zygota (2n) → sporofit (2n).
+
+  **B. Krążkopławy**: **R!** na strzałce **meduza → gamety**.
+  - Cykl rozpoczyna się polip (2n) → strobila → meduza (2n).
+  - **Meduza** wytwarza gamety (n) przez **mejozę** → gamety **haploidalne**.
+  - Zapłodnienie (2 gamety n) → zygota (2n) → planula → polip (2n).
+
+  **3.2.** Mejoza jest **niezbędna** do zamknięcia cyklu, ponieważ:
+
+  - **Rozmnażanie płciowe = łączenie się gamet** → zygota.
+  - Bez mejozy gamety pozostawałyby **diploidalne** (2n). Po zapłodnieniu zygota byłaby **4n** → kolejne pokolenie **8n** → 16n → niekontrolowany wzrost ploidalności.
+  - **Mejoza redukuje** liczbę chromosomów o **połowę** (2n → n). Gamety są **haploidalne (n)**.
+  - Zapłodnienie (n + n) **przywraca** diploidalność (2n) → zygota = 2n = jak rodzic.
+  - Cykl się **zamyka** stabilnie: 2n → mejoza → n + n → zapłodnienie → 2n.
+
+  Bez mejozy: każde pokolenie miałoby **podwojoną** ploidalność → niestabilne genetycznie → niezdolne do rozwoju (większość poliploidalnych zarodków zwierząt nie przeżywa).
+
+  Dodatkowo: **mejoza zapewnia zmienność genetyczną** (crossing-over + segregacja niezależna). Bez tego potomstwo byłoby **klonami** rodziców → spadek zmienności → spadek adaptacyjności.
+pulapka: |
+  Pułapka 3.1.A — pomylenie miejsca mejozy. **U roślin** mejoza zachodzi w **sporoficie** → zarodniki (sporogeneza). Gametofit już jest haploidalny, więc wytwarza gamety przez **mitozę**, nie mejozę.
+
+  Pułapka 3.1.B — pomylenie mejozy. **U krążkopławów** mejoza zachodzi w **meduzie** → gamety (gametogeneza). Polip dzieli się przez **pączkowanie** (rozmnażanie bezpłciowe).
+
+  Pułapka 3.2 — niewspomnienie redukcji ploidalności. Klucz: mejoza **redukuje** 2n → n. Bez tego po zapłodnieniu ploidalność by się **podwajała** każdej generacji. Sama "zmienność genetyczna" = za mało.
+wymaganie: |
+  III.7 — mejoza, mitoza, cykle życiowe eukariontów.
+  VII.2 — różnorodność zwierząt (krążkopławy).
+podobne:
+  - biologia-2023-maj-pr-2
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2023-maj-pr/ark-07.webp"
+  alt="Zadanie 3 - cykle życiowe roślin i krążkopławów"
+  caption="Strona 7 arkusza CKE 2023 PR biologia - zadanie 3 (przemienność pokoleń roślin vs metageneza krążkopławów)."
+  zrodlo="CKE 2023"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/Biologia/MBIP-R0-100-2305.pdf"
+  pdfPage={7}
+/>
+
+## Klucz pojęciowy — typy cykli życiowych
+
+| Grupa | Cykl | Dominacja |
+|---|---|---|
+| **Człowiek + ssaki** | 2n (cały organizm) → mejoza → n (gamety) → zapłodnienie → 2n. **Diplofazowy**. | Diploidalny |
+| **Rośliny mchy** | n (gametofit, zielony) → mitoza → gamety (n) → zygota (2n) → sporofit (2n, mały, pasożytuje) → mejoza → zarodniki (n). **Haplofazowo-diplofazowy z dominacją haploidalnej**. | Haploidalny |
+| **Rośliny nasienne** | 2n (sporofit, drzewa) → mejoza → zarodniki (n, w ziarnach pyłku/zalążkach) → gametofit (n, zredukowany) → gamety (n) → zygota (2n). **Haplofazowo-diplofazowy z dominacją diploidalnej**. | Diploidalny |
+| **Krążkopławy** (meduzy) | 2n: polip (bezpłciowo pączkuje strobile, te tworzą meduzy) → meduza 2n → mejoza → gamety n → zygota 2n → planula → polip 2n. **Metageneza**. | Diploidalny (z fazą polipa+meduzy) |
+| **Grzyby** | Najczęściej dominacja n (haplofaza). Mejoza po krótkotrwałej diplofazie. | Haploidalny |
+
+## Mechanizm: mejoza u roślin (3.1.A)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Sporofit (2n)** — dorosła roślina (drzewo, krzew, byliny u nasiennych; paprotka u paprotników).
+
+</div>
+
+<div class="krok">
+
+W **zarodni** (sporangium) sporofitu komórka macierzysta (2n) ulega **MEJOZIE** → **4 zarodniki (n)**. To kluczowy etap "**R!**" — przejście 2n → n.
+
+</div>
+
+<div class="krok">
+
+Zarodniki kiełkują → wytwarzają **gametofit (n)**.
+
+</div>
+
+<div class="krok">
+
+Gametofit (n) wytwarza **gamety (n) przez MITOZĘ** (już haploidalny, nie potrzebuje mejozy).
+
+</div>
+
+<div class="krok">
+
+Gamety łączą się (zapłodnienie) → **zygota (2n)** → rozwija się w sporofit (2n). Cykl zamknięty.
+
+</div>
+
+</div>
+
+## Mechanizm: mejoza u krążkopławów (3.1.B)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Polip (2n)** — przyrastający do podłoża, rozmnaża się **bezpłciowo** (pączkowanie + strobilacja).
+
+</div>
+
+<div class="krok">
+
+**Strobila** = pączkujący polip dzieli się poprzecznie → uwalnia młode **meduzy (efyry)** które dorastają do dorosłych meduz (2n).
+
+</div>
+
+<div class="krok">
+
+**Meduza (2n)** ma **gonady**. Komórki macierzyste w gonadach przechodzą **MEJOZĘ** → **gamety (n)**. To kluczowy etap "**R!**" — 2n → n.
+
+</div>
+
+<div class="krok">
+
+Gamety łączą się (zapłodnienie zewnętrzne w wodzie) → **zygota (2n)** → larwa planula → osadza się → polip (2n). Cykl zamknięty.
+
+</div>
+
+</div>
+
+## Mechanizm: niezbędność mejozy (3.2)
+
+**Zasada arytmetyczna**:
+- Mitoza: 2n → 2n (kopia).
+- Mejoza: 2n → n (redukcja).
+- Zapłodnienie: n + n → 2n (suma).
+
+**Zamknięty cykl** wymaga: redukcji = mejoza.
+
+**Co byłoby bez mejozy?**:
+- Gamety pozostają 2n.
+- Zapłodnienie: 2n + 2n = **4n**.
+- Następne pokolenie: 4n + 4n = **8n**.
+- I tak dalej: 16n, 32n, 64n...
+- Po kilku pokoleniach: chromosomy w tysiącach kopii → niefunkcjonalne komórki → śmierć potomstwa.
+
+**Mejoza** = **filtr utrzymujący stałą ploidalność** pokoleń. Plus daje zmienność genetyczną (crossing-over).
+
+<div class="odpowiedz">
+<div>
+
+**3.1.**
+- **A. Rośliny**: **R!** na strzałce **sporofit → zarodniki** (mejoza w zarodni sporofitu).
+- **B. Krążkopławy**: **R!** na strzałce **meduza → gamety** (mejoza w gonadach meduzy).
+
+**3.2.** Mejoza **redukuje** liczbę chromosomów (2n → n) → gamety haploidalne. Zapłodnienie (n + n) przywraca diploidalność (2n) → cykl zamknięty. Bez mejozy każde pokolenie miałoby **PODWOJONĄ** ploidalność (4n → 8n → 16n...) → komórki niefunkcjonalne, niemożność rozwoju potomstwa. Dodatkowo: mejoza zapewnia **zmienność genetyczną** (crossing-over, segregacja niezależna).
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — mejoza vs mitoza</div>
+
+**Mitoza** = 2n → 2n (kopiowanie, np. wzrost organizmu, regeneracja).
+**Mejoza** = 2n → n (redukcja, tylko w gametogenezie / sporogenezie).
+
+Gametofity roślin produkują gamety przez **MITOZĘ** (już są haploidalne!). To pułapka — łatwo pomylić.
+</div>
+
+## Punktacja CKE
+
+- **3.1.** 1 pkt — obie odpowiedzi poprawne (R! na sporofit→zarodniki + meduza→gamety).
+- **3.2.** 1 pkt — wskazanie redukcji ploidalności + konsekwencji bez mejozy (poliploidia).
+- **Suma**: 2 pkt.
+
+## Po co to umieć
+
+**Mejoza odkryta w XIX wieku** (Beneden 1883, Boveri 1888) — przełom genetyki. Wraz z **prawami Mendla** zsyntetyzowała **dziedziczność** + **zmienność**.
+
+**Choroby związane z mejozą**:
+- **Aneuploidie** (nieprawidłowy rozdział chromosomów):
+  - **Trisomia 21** (Down) — 47, XX(Y), +21. Częstsza u starszych matek (oocyty starzeją się w mejozie I od urodzenia).
+  - **Trisomia 18** (Edwards), trisomia 13 (Patau).
+  - **Zespół Klinefeltera** (47, XXY), **zespół Turnera** (45, X).
+
+**Klonalne organizmy** = bez mejozy:
+- Niektóre **gatunki** rozrodu wegetatywnego (truskawka — rozłogi, ziemniak — bulwy).
+- **Partenogeneza** (mszyce, niektóre gady, ryby) — gamety bez zapłodnienia.
+
+**Polyploidia jako sukces**:
+- Niektóre **rośliny** są naturalnie poliploidalne i im służy (pszenica heksaploidalna 6n, truskawka oktaploidalna 8n, banan triploidalny 3n).
+- Zwierzęta poliploidalne **prawie nie istnieją** (wyjątek: niektóre płazy, ryby) — bo mejoza jest trudna przy poliploidii.
+
+Mejoza = jeden z najważniejszych **wynalazków ewolucyjnych** Ziemi. Datowana na ~2 mld lat temu, początek **rozmnażania płciowego**, które dramatycznie przyspieszyło ewolucję eukariontów.
