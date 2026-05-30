@@ -28,3 +28,6 @@ Thumbs.db
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Audio MP3 (duże pliki, deploy bezpośrednio na S3)
+public/audio/
