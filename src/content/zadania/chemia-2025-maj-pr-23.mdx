@@ -1,0 +1,176 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 23
+punkty: 2
+typ: otwarte-krotkie
+topic: chemia organiczna, feksofenadyna, NaBH4, hybrydyzacja, redukcja, elektrony
+difficulty: 4
+tresc: |
+  Synteza **feksofenadyny** (leku przeciwhistaminowego) — końcowy etap: redukcja grupy karbonylowej **C=O** w substracie → **CH-OH** w produkcie (feksofenadynie) przez NaBH₄.
+
+  Uzupełnij:
+  - Redukcja 1 mola substratu wymaga (dwóch / trzech) moli elektronów.
+  - Hybrydyzacja C ulegającego redukcji w substracie: (sp / sp² / sp³).
+  - Hybrydyzacja tego samego C w produkcie: (sp / sp² / sp³).
+odpowiedz: |
+  **Liczba moli elektronów**:
+
+  Zmiana stopnia utlenienia C:
+  - W ketonie C=O (substrat): C ma **stopień utlenienia +2** (połączony z 2 C i 1 O podwójnie).
+  - W alkoholu CH-OH (produkt): C ma **stopień utlenienia 0** (połączony z 2 C, 1 H, 1 OH).
+  - **Zmiana**: +2 → 0 = redukcja, **przyjęcie 2 e⁻**.
+
+  → Redukcja 1 mola substratu wymaga **DWÓCH** moli elektronów.
+
+  **Hybrydyzacja w substracie** (C w C=O):
+  - C tworzy: 1 wiązanie σ z C (po jednej stronie) + 1 wiązanie σ z C (po drugiej stronie) + 1 wiązanie σ z O + 1 wiązanie π z O = łącznie 3 wiązania σ + 1 π.
+  - **3 hybrydy** = **sp²**.
+  - Płaska geometria wokół tego C (kąty 120°).
+
+  **Hybrydyzacja w produkcie** (C w CH-OH):
+  - C tworzy: 1 wiązanie σ z C + 1 σ z C + 1 σ z H + 1 σ z O = łącznie **4 wiązania σ** + 0 π.
+  - **4 hybrydy** = **sp³**.
+  - Tetraedryczna geometria (kąty 109,5°).
+
+  **Odpowiedzi**:
+  - **DWÓCH** moli elektronów.
+  - Substrat: **sp²**.
+  - Produkt: **sp³**.
+pulapka: |
+  Pułapka — pomylenie liczby elektronów. Redukcja **C=O → CH-OH** = przyjęcie **2 e⁻ + 2 H⁺**. To 2 e per cząsteczka.
+
+  Pułapka — hybrydyzacja w substracie. Karbonyl **C=O** to **sp²** (3 σ + 1 π). NIE sp³ (to byłby C bez wiązania π).
+
+  Pułapka — hybrydyzacja w produkcie. Alkohol C-OH to **sp³** (4 wiązania σ, tetraedryczna geometria). NIE sp² (nie ma już wiązania π).
+
+  Pułapka — pomylenie kierunku zmiany. Z sp² → sp³ przy redukcji C=O (dodanie 2 H = wzrost koordynacji C z 3 do 4).
+wymaganie: |
+  X.7 — redukcja związków karbonylowych.
+  I.4 — hybrydyzacja atomów C.
+podobne:
+  - chemia-2025-maj-pr-21
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-27.webp"
+  alt="Zadanie 23 - feksofenadyna"
+  caption="Strona 27 arkusza CKE 2025 PR chemia - zadanie 23 (synteza feksofenadyny przez NaBH4)."
+  zrodlo="CKE 2025 / Goralski, Singaram, Organic Process Research"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={27}
+/>
+
+## Klucz pojęciowy — hybrydyzacja atomów węgla
+
+| Hybrydyzacja | Liczba wiązań σ | Geometria | Kąty | Przykład |
+|---|---|---|---|---|
+| **sp** | 2 (+ 2 π) | Liniowa | 180° | C≡C (alkin), C=C=C (kumulen) |
+| **sp²** | 3 (+ 1 π) | Trygonalna płaska | 120° | C=C (alken), **C=O (keton/aldehyd)**, areny |
+| **sp³** | 4 (+ 0 π) | Tetraedryczna | 109,5° | C-C (alkan), **C-OH (alkohol)** |
+
+**Reguła**: liczba hybryd = liczba wiązań σ + liczba wolnych par.
+
+## Mechanizm: redukcja C=O → CH-OH
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Substrat — keton** (R-CO-R₁):
+- C centralny: **sp²** (3 wiązania σ z R, R₁, O + 1 π z O).
+- Płaska geometria (R, R₁, O w jednej płaszczyźnie z C).
+- Stopień utlenienia C = +2 (jeśli R, R₁ to obojętne grupy organiczne).
+
+</div>
+
+<div class="krok">
+
+**Redukcja**: NaBH₄ dostarcza **2 e⁻ + 2 H⁺** (jeden H z hydrydku BH₄⁻, drugi z protonowego rozpuszczalnika).
+- C=O + 2 e⁻ + 2 H⁺ → C-H + O-H (czyli CH-OH).
+
+</div>
+
+<div class="krok">
+
+**Produkt — alkohol** (R-CHOH-R₁):
+- C centralny: **sp³** (4 wiązania σ z R, R₁, H, OH; brak π).
+- Tetraedryczna geometria.
+- Stopień utlenienia C = 0 (jeśli R, R₁ obojętne).
+
+</div>
+
+<div class="krok">
+
+**Zmiana**:
+- Stopień utlenienia: +2 → 0 (redukcja o 2 e).
+- Hybrydyzacja: sp² → sp³.
+- Geometria: płaska (120°) → tetraedr (109,5°).
+
+</div>
+
+</div>
+
+## Klucz pojęciowy — feksofenadyna
+
+**Feksofenadyna** (handlowa: Allegra, Telfast) = lek **antyhistaminowy II generacji**:
+- Blokuje **receptor H1** histaminy.
+- Stosowana w **alergiach** (katar sienny, pokrzywka, atopowe zapalenie skóry).
+- **Nieprzekraczająca bariery krew-mózg** → brak senności (zaleta nad antyhistaminami I gen. = difenhydramina, klemastyna).
+
+**Synteza farmaceutyczna feksofenadyny** = wieloetapowa, z ostatnim krokiem redukcji **C=O → C-OH** za pomocą NaBH₄ (jak w zadaniu).
+
+## Mechanizm: dlaczego sp² → sp³?
+
+**W substracie** (keton C=O):
+- C ma 3 sąsiadów (R, R₁, O = 2 σ + 1 π).
+- "3 grupy" wokół C → **3 hybrydy** = sp².
+- Wiązanie π zostaje z 4-tego orbitalu p.
+
+**W produkcie** (alkohol C-OH):
+- C ma 4 sąsiadów (R, R₁, H, OH = 4 σ).
+- "4 grupy" → **4 hybrydy** = sp³.
+
+**Po redukcji**:
+- Dodanie 2 atomów (H i H, jeden na C, jeden na O) zmienia C z 3-rzędowego (sp²) na 4-rzędowy (sp³).
+
+<div class="odpowiedz">
+<div>
+
+- Redukcja 1 mola substratu wymaga **DWÓCH** moli elektronów (zmiana s.u. C: +2 → 0).
+- Hybrydyzacja C w substracie: **sp²** (keton, 3 wiązania σ + 1 π).
+- Hybrydyzacja C w produkcie: **sp³** (alkohol, 4 wiązania σ).
+
+</div>
+</div>
+
+## Punktacja CKE
+
+- **23.** 2 pkt — wszystkie 3 wybory (2 e, sp², sp³).
+
+## Po co to umieć
+
+**Hybrydyzacja w farmacji**:
+- **Cykl gemini** = enzymy często rozpoznają kąty wiązań → ważne, czy keton (sp²) czy alkohol (sp³).
+- **Stereoselektywność** redukcji = klucz w syntezie chiralnych leków (jeden enancjomer aktywny).
+
+**Antyhistaminy historia**:
+- **I generacja** (50-70. lata): difenhydramina (Benadryl), klemastyna (Tavegyl). Przechodzą barierę krew-mózg → **senność**.
+- **II generacja** (80-90. lata): loratadyna (Claritin), feksofenadyna (Allegra), cetirizyna (Zyrtec). **Nie powodują senności**.
+- **III generacja**: desloratadyna (active metabolite), lewocetirizyna (R-enancjomer). Bardziej selektywne.
+
+**Reakcje redoks w syntezie**:
+- **Redukcja** = dodanie e⁻ i H (lub usunięcie O). Reduktor: NaBH₄, LiAlH₄, H₂/kat.
+- **Utlenianie** = usunięcie e⁻ i H (lub dodanie O). Utleniacz: KMnO₄, K₂Cr₂O₇, PCC.
+
+**Wzory szkieletowe** (skeletal formula) — standardowy zapis w chemii organicznej:
+- Atomy C ukryte (są w wierzchołkach linii).
+- Wodory na C ukryte.
+- Tylko **heteroatomy** (N, O, S, halogeny) + ich H są zaznaczone.
+- Wiązania wielokrotne (=, ≡) zaznaczone podwójną/potrójną kreską.
+
+To **szybsza forma** rysowania złożonych cząsteczek (jak feksofenadyna).
