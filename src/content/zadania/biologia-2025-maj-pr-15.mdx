@@ -1,0 +1,157 @@
+---
+arkusz: biologia-2025-maj-pr
+subject: biologia
+nr: 15
+punkty: 2
+typ: zamkniete-dobierz
+topic: elektroforeza DNA, apoptoza, nekroza, biologia molekularna
+difficulty: 3
+tresc: |
+  Elektroforeza DNA w żelu agarozowym — rozdzielanie cząsteczek wg masy. Apoptoza: fragmenty DNA ~180 par zasad i wielokrotności (drabinka). Nekroza: losowa fragmentacja DNA (rozmycie / smużenie). Zdrowe komórki: DNA prawie cały — jedna jasna prążka u góry.
+
+  Trzy ścieżki A, B, C:
+  - **A**: 1 zwarty prążek u góry (DNA niefragmentowany)
+  - **B**: drabinka prążków (wielokrotności ~180 bp)
+  - **C**: rozmyte smużenie od góry do dołu
+
+  **15.1.** Nekroza → ścieżka (A / B / C)?
+  **15.2.** Apoptoza → ścieżka (A / B / C)?
+odpowiedz: |
+  **15.1.** Nekroza → **C** (rozmyty obraz, smużenie).
+
+  **Uzasadnienie**: nekroza = **niekontrolowana** śmierć komórki. Wewnętrzne enzymy + zewnętrzne czynniki **losowo** fragmentują DNA → fragmenty o **dowolnej** długości → na elektroforezie **rozmyte smużenie** od dużych do małych fragmentów (smear). Brak charakterystycznych prążków.
+
+  **15.2.** Apoptoza → **B** (drabinka prążków, "DNA ladder").
+
+  **Uzasadnienie**: apoptoza = **zaprogramowana** śmierć komórki. **Endonukleaza apoptotyczna (CAD)** tnie DNA **między nukleosomami** (chromatyna jest nawinięta na histony co ~180 par zasad). Powstają fragmenty: 180 bp, 360 bp, 540 bp, 720 bp, ... → **wielokrotności 180** → na elektroforezie **drabinka** wyraźnych prążków.
+
+  (Ścieżka **A** = zdrowe komórki, DNA niepodzielony, prawie cały na starcie.)
+pulapka: |
+  Pułapka — pomylenie nekrozy z apoptozą. **Apoptoza = drabinka** (regularna, 180 bp wielokrotności — endonukleaza tnie między nukleosomami). **Nekroza = smear** (chaotyczna fragmentacja).
+
+  Pułapka — kierunek migracji. **Małe fragmenty wędrują DALEJ** (szybciej przez żel). Duże zostają u góry (przy obszarze nanoszenia). Niefragmentowane DNA = wysoko (A).
+wymaganie: |
+  III.2 — biologia molekularna, metody badań DNA, apoptoza vs nekroza.
+podobne:
+  - biologia-2025-maj-pr-13
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2025-maj-pr/ark-23.webp"
+  alt="Zadanie 15 - elektroforeza DNA, apoptoza vs nekroza"
+  caption="Strona 23 arkusza CKE 2025 PR biologia - zadanie 15 (elektroforeza DNA, ścieżki A, B, C)."
+  zrodlo="CKE 2025 / Tomei i Cope, Apoptosis: The Molecular Basis of Cell Death"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Biologia/MBIP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={23}
+/>
+
+## Klucz pojęciowy — elektroforeza DNA
+
+| Element | Funkcja |
+|---|---|
+| **Żel agarozowy** | Sito molekularne — pory zatrzymują duże cząsteczki, przepuszczają małe |
+| **Pole elektryczne** | DNA ujemne (grupy fosforanowe) → wędruje do **+ (anody)** |
+| **Masa fragmentu** | **Małe → wędrują dalej**, duże → bliżej startu |
+| **Barwnik fluorescencyjny** | Wiąże DNA (etidium bromek, GelRed) → wizualizacja w UV |
+| **Drabinka markerów** | Wzorzec o znanej długości (np. 100 bp, 500 bp, 1000 bp...) |
+
+## Apoptoza vs nekroza — porównanie
+
+| Cecha | **Apoptoza** | **Nekroza** |
+|---|---|---|
+| **Typ** | Zaprogramowana (programmed cell death) | Patologiczna, niekontrolowana |
+| **Wyzwolenie** | Sygnał wewnętrzny lub zewnętrzny | Uraz, niedotlenienie, toksyny |
+| **Energia (ATP)** | Wymaga ATP | Nie wymaga |
+| **Błona komórkowa** | Zachowana, "pączkuje" ciałka apoptotyczne | **Pęka** — uwalnia zawartość |
+| **Reakcja zapalna** | **Brak** (ciałka pożerane przez fagocyty) | **Tak** (zapalenie, obrzęk) |
+| **Fragmentacja DNA** | **Regularnie** co ~180 bp (między nukleosomami) | **Losowo** (chaotycznie) |
+| **Obraz elektroforezy** | **Drabinka** (DNA ladder) | **Smear** (smużenie) |
+| **Endonukleaza** | CAD (caspase-activated DNase) | Niespecyficzne nukleazy lizosomalne |
+
+## Mechanizm: dlaczego apoptoza daje "drabinkę" 180 bp?
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Chromatyna w jądrze** zorganizowana jest w **nukleosomy** — DNA owinięte wokół ośmiu histonów (oktamerowy rdzeń). Każdy nukleosom = **~147 par zasad** owiniętego DNA + **~30-50 bp linkera** między nukleosomami → łącznie **~180 bp** na nukleosom.
+
+</div>
+
+<div class="krok">
+
+**W apoptozie** aktywuje się **CAD** (caspase-activated DNase, endonukleaza zależna od kaspaz). Enzym tnie DNA **tylko w obszarach linkerowych** (między nukleosomami) — chromatyna histonowa go zasłania.
+
+</div>
+
+<div class="krok">
+
+**Powstają fragmenty**: 1 nukleosom = 180 bp; 2 nukleosomy = 360 bp; 3 = 540 bp; n = n × 180 bp.
+
+</div>
+
+<div class="krok">
+
+**Elektroforeza**: te dyskretne fragmenty migrują z różnymi prędkościami → **regularne, oddzielone prążki** układające się w **drabinkę**.
+
+</div>
+
+</div>
+
+## Mechanizm: dlaczego nekroza daje smear?
+
+W nekrozie błona lizosomu **pęka** → uwalniają się **lizosomalne nukleazy** (DNAzy I i II), które tną DNA **w przypadkowych miejscach** (nie znają granic nukleosomów). 
+
+Powstają fragmenty o **dowolnej długości** — od kilku bp do wielu kb. Na elektroforezie tworzy to **ciągłą plamę** (smear) bez wyraźnych prążków.
+
+## Analiza ścieżek A, B, C
+
+| Ścieżka | Obraz | Typ DNA |
+|---|---|---|
+| **A** | Jeden prążek przy starcie (obszarze nanoszenia) | **DNA zdrowych komórek** — niefragmentowany, masa >50 kb |
+| **B** | Drabinka regularnych prążków (wielokrotności 180 bp) | **Apoptoza** — CAD tnie między nukleosomami |
+| **C** | Rozmyte smużenie od góry do dołu | **Nekroza** — losowa fragmentacja przez niespecyficzne nukleazy |
+
+<div class="odpowiedz">
+<div>
+
+**15.1.** Nekroza → **C** (smużenie / smear od losowej fragmentacji DNA).
+
+**15.2.** Apoptoza → **B** (drabinka wielokrotności ~180 bp od cięcia między nukleosomami).
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — co jest ścieżką A?</div>
+
+Ścieżka A = **zdrowe komórki**. DNA prawie cały (>50 kb), nie wchodzi w żel — siedzi na starcie jako jeden prążek. NIE jest to ani apoptoza, ani nekroza. To **kontrola**.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — pomylenie apoptozy z nekrozą</div>
+
+Apoptoza = **uporządkowana**. Nekroza = **chaotyczna**. Stąd: apoptoza → **regularna drabinka**, nekroza → **chaos / smear**. Zapamiętaj: **180 bp = drabinka = apoptoza** (chromatyna nawinięta na histony).
+</div>
+
+## Punktacja CKE
+
+- **15.1.** 1 pkt — "C" (nekroza = smear).
+- **15.2.** 1 pkt — "B" (apoptoza = drabinka).
+- **Suma**: 2 pkt.
+
+## Po co to umieć
+
+**Apoptoza** jest **fundamentalnym procesem biologicznym**:
+- **Embriogeneza** — usuwanie błon między palcami u zarodków.
+- **Rozwój układu nerwowego** — eliminacja zbędnych neuronów.
+- **Układ immunologiczny** — niszczenie autoreaktywnych limfocytów (centralna tolerancja).
+- **Obrona przeciwnowotworowa** — komórka z uszkodzeniem DNA **sama się eliminuje** (kaspazy + p53).
+
+Brak apoptozy = **rak** (komórki "nieśmiertelne"). Nadmiar apoptozy = choroby neurodegeneracyjne (Alzheimer, Parkinson).
+
+Test elektroforetyczny **DNA ladder** jest **klasycznym markerem** apoptozy w badaniach in vitro. W diagnostyce nowotworowej używa się go do oceny skuteczności chemioterapii — czy terapia indukuje apoptozę komórek nowotworowych.
