@@ -1,0 +1,168 @@
+---
+arkusz: biologia-2024-maj-pr
+subject: biologia
+nr: 16
+punkty: 2
+typ: zamkniete-dobierz
+topic: genetyka, dziedziczenie, dwa loci, brzanka sumatrzańska, paskowanie, dominacja
+difficulty: 4
+tresc: |
+  **Brzanka sumatrzańska** (*Puntigrus tetrazona*) — ryba z czarnymi paskami poprzecznymi. Trzy wzory paskowania (1, 2, 3) różnią się długością paska oznaczonego strzałką.
+
+  Wzór paskowania zależy od **dwóch niesprzężonych loci A i B** z allelami dominującymi (A i B) i recesywnymi (a i b):
+  - **wzór 1** — dominujący allel A i B (oba) → pełne paskowanie.
+  - **wzór 2** — homozygotyczność recesywna **tylko w jednym** z loci → skrócenie paska.
+  - **wzór 3** — podwójna homozygotyczność recesywna → pasek skrócony do połowy korpusu w linii nacgrzebowej.
+
+  **Zadanie**: dopasuj genotypy do wzorów paskowania.
+odpowiedz: |
+  **Genotypy odpowiadające wzorom**:
+
+  | Wzór | Genotyp | Wygląd |
+  |---|---|---|
+  | **1** | **A_ B_** (np. AABB, AaBB, AABb, AaBb) | Pełne paskowanie |
+  | **2** | **A_ bb** lub **aa B_** | Skrócenie paska (jeden locus homozygot. recesywny) |
+  | **3** | **aabb** | Pasek tylko do połowy (oba loci homozygot. recesywne) |
+
+  **Mechanizm dziedziczenia**:
+  - **Allel dominujący** (A lub B) → produkt funkcjonalny → pełne paskowanie.
+  - **Recesywne homozygoty w jednym locus** → utrata jednej funkcji → częściowe skrócenie.
+  - **Recesywne homozygoty w obu locus** → utrata obu funkcji → maksymalne skrócenie.
+
+  To **klasyczna komplementacja genów**: dwa geny współpracują, by dać pełny fenotyp. Każdy z osobna jest niezbędny.
+
+  **Niesprzężone loci** = na **różnych chromosomach** (lub w bardzo dużej odległości na tym samym) → segregacja **niezależna** podczas mejozy → cross AaBb × AaBb daje **rozszczepienie 9:3:3:1** (jeśli oba loci ze swoimi recesywnymi homozygotami niezależnie):
+  - 9/16 A_B_ (wzór 1)
+  - 3/16 A_bb (wzór 2)
+  - 3/16 aaB_ (wzór 2)
+  - 1/16 aabb (wzór 3)
+
+  → łącznie **9 : 6 : 1** w stosunku wzór 1 : wzór 2 : wzór 3.
+pulapka: |
+  Pułapka — pomylenie loci sprzężonych z niesprzężonymi. **Niesprzężone** = na **różnych chromosomach** → segregacja niezależna → klasyczne 9:3:3:1 lub jego modyfikacje. **Sprzężone** → segregacja **zależna** (linkage) → niestandardowe stosunki.
+
+  Pułapka — pomylenie A_ i a_. **A_** = dominujący homozygota (AA) lub heterozygota (Aa). Klucz: kreska "_" = "dowolny allel".
+
+  Pułapka — "wzór 2 to AaBb". NIE — wzór 2 wymaga **homozygotyczności recesywnej w JEDNYM locus** → A_bb lub aaB_. AaBb to wzór 1 (oba dominujące obecne).
+wymaganie: |
+  IV.2 — dziedziczenie cech, prawa Mendla, dwa geny niezależne.
+podobne:
+  - biologia-2024-maj-pr-15
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2024-maj-pr/ark-20.webp"
+  alt="Zadanie 16 - brzanka sumatrzańska, paskowanie"
+  caption="Strona 20 arkusza CKE 2024 PR biologia - zadanie 16 (genetyka paskowania brzanki sumatrzańskiej)."
+  zrodlo="CKE 2024 / Frenkel, Inheritance of Trunk Striping..."
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/Biologia/MBIP-R0-100-A-2405-arkusz.pdf"
+  pdfPage={20}
+/>
+
+## Klucz pojęciowy — dziedziczenie dwóch genów
+
+| Typ dziedziczenia | Stosunek F2 | Cecha |
+|---|---|---|
+| **9 : 3 : 3 : 1** | klasyczny dihybrydowy | Dwa geny niezależne, oba z pełną dominacją, brak interakcji |
+| **9 : 7** | komplementacja | Oba geny dominujące potrzebne razem (gluconel) |
+| **9 : 6 : 1** | semi-komplementacja | Trzy fenotypy: oba+jeden+brak |
+| **9 : 3 : 4** | epistaza recesywna | Recesywny w jednym locus blokuje drugi (np. ABO + FUT1) |
+| **12 : 3 : 1** | epistaza dominująca | Dominujący w jednym locus maskuje drugi |
+| **15 : 1** | działanie duplikatów | Dwa geny z efektem addytywnym |
+
+**Brzanka sumatrzańska** = **9 : 6 : 1** (semi-komplementacja).
+
+## Mechanizm: trzy wzory paskowania
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wzór 1**: dominujący allel **w obu locach** (A_ B_).
+- Genotypy: **AABB, AaBB, AABb, AaBb** (4 z 9 kombinacji = 9/16 populacji F2).
+- Fenotyp: **pełne** paskowanie (dwa funkcjonalne białka tworzą pełny pasek).
+
+</div>
+
+<div class="krok">
+
+**Wzór 2**: homozygotyczność recesywna **tylko w jednym locus** (A_bb lub aaB_).
+- Genotypy: **AAbb, Aabb, aaBB, aaBb** (4 z 9 kombinacji = 6/16 populacji F2).
+- Fenotyp: **skrócony** pasek (jedno funkcjonalne białko + drugie nie działa → częściowy efekt).
+
+</div>
+
+<div class="krok">
+
+**Wzór 3**: homozygotyczność recesywna **w obu locach** (aabb).
+- Genotyp: **aabb** (1 z 9 kombinacji = 1/16 populacji F2).
+- Fenotyp: **pasek do połowy korpusu** (oba białka nie działają → minimalny efekt).
+
+</div>
+
+</div>
+
+## Mechanizm: skrzyżowanie F1 × F1
+
+**Cross**: AaBb × AaBb (heterozygoty w obu locach, F1 z pełnym paskowaniem).
+
+| | AB | Ab | aB | ab |
+|---|---|---|---|---|
+| **AB** | AABB | AABb | AaBB | AaBb |
+| **Ab** | AABb | AAbb | AaBb | Aabb |
+| **aB** | AaBB | AaBb | aaBB | aaBb |
+| **ab** | AaBb | Aabb | aaBb | aabb |
+
+Sumując fenotypowo (niesprzężone, segregacja niezależna):
+- **9/16** A_B_ → wzór 1 (pełny pasek)
+- **3/16** A_bb → wzór 2
+- **3/16** aaB_ → wzór 2
+- **1/16** aabb → wzór 3 (skrócony do połowy)
+
+**Stosunek fenotypowy**: 9 (wzór 1) : 6 (wzór 2) : 1 (wzór 3).
+
+<div class="odpowiedz">
+<div>
+
+**Genotypy odpowiadające wzorom**:
+
+- **Wzór 1**: **A_ B_** (oba loci z co najmniej jednym allelem dominującym) → AABB, AaBB, AABb, AaBb.
+- **Wzór 2**: **A_ bb lub aa B_** (jeden locus homozygotyczny recesywnie) → AAbb, Aabb, aaBB, aaBb.
+- **Wzór 3**: **aa bb** (oba loci homozygotyczne recesywnie) → aabb.
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — AaBb to wzór 1</div>
+
+AaBb to **heterozygota** w obu locach. Oba allele dominujące **obecne** (A i B) → **pełne paskowanie** (wzór 1), nie skrócone. Heterozygota = pełny fenotyp (przy pełnej dominacji).
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — niesprzężone vs sprzężone</div>
+
+**Niesprzężone** loci = różne chromosomy = segregacja niezależna = klasyczne stosunki Mendla. **Sprzężone** = ten sam chromosom blisko = segregacja zależna = niestandardowe stosunki + crossing-over.
+</div>
+
+## Punktacja CKE
+
+- **16.** 2 pkt — wszystkie 3 dopasowania genotyp-wzór poprawne. 1 pkt za 2/3, 0 pkt za 1/3.
+
+## Po co to umieć
+
+**Brzanka sumatrzańska** = popularna ryba akwariowa. **Modelowy gatunek** w genetyce dziedziczenia paskowania:
+- Genetyka paskowania **danio rerio** (zebrafish) — bardziej zaawansowane modelowanie biologiczne.
+- Wzory paskowania kontrolowane przez geny **leopard** (poprzeczne pasy), **jaguar**, **rose** (rozkład komórek pigmentowych).
+
+**Klasyczne stosunki Mendla** w przyrodzie:
+- **9:3:3:1** = dihybrydowy (kolor + kształt nasiona u groszku).
+- **9:7** = komplementacja (kolor kwiatu groszku — potrzeba obu enzymów).
+- **9:3:4** = epistaza (kolor sierści labradora — gen E maskuje gen B).
+- **9:6:1** = semi-komplementacja (paskowanie brzanki, kolor pyska psów).
+
+Modyfikacje stosunku 9:3:3:1 to ulubiony temat olimpiad biologicznych — pokazują, że **fenotyp ≠ prosta suma efektów alleli**. Interakcje genów (epistaza, komplementacja, addytywność) tworzą bogactwo wzorów.
