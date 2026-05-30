@@ -1,0 +1,210 @@
+---
+arkusz: biologia-2024-maj-pr
+subject: biologia
+nr: 13
+punkty: 2
+typ: otwarte-krotkie
+topic: endokrynologia, tarczyca, jod, tyroksyna, TSH, sprzężenie zwrotne ujemne
+difficulty: 3
+tresc: |
+  **Jod** = niezbędny składnik diety, wchodzi w skład **hormonów tarczycy**. Długotrwały niedobór jodu → wzrost wydzielania **TSH** (hormonu tyreotropowego) z przysadki mózgowej.
+
+  **13.1.** Podaj nazwę przykładowego ludzkiego hormonu **zawierającego jod**.
+
+  **13.2.** Wyjaśnij, dlaczego niski poziom jodu → wysoki TSH. Uwzględnij **mechanizm sprzężenia zwrotnego ujemnego**.
+odpowiedz: |
+  **13.1.** **Tyroksyna (T4)** lub **trójjodotyronina (T3)**.
+
+  Obie są hormonami tarczycy:
+  - **T4** (tyroksyna) — zawiera **4 atomy jodu** w cząsteczce. Główna forma wydzielana przez tarczycę (~90% produkcji).
+  - **T3** (trójjodotyronina) — zawiera **3 atomy jodu**. Aktywna forma — powstaje głównie z konwersji T4 w tkankach.
+
+  Oba są pochodnymi aminokwasu **tyrozyny** z dołączonymi jodami. Bez jodu — biosynteza niemożliwa.
+
+  **13.2.** **Mechanizm sprzężenia zwrotnego ujemnego** w osi podwzgórze → przysadka → tarczyca:
+
+  **W zdrowym stanie**:
+  - Podwzgórze produkuje **TRH** → pobudza przysadkę.
+  - Przysadka produkuje **TSH** → pobudza tarczycę.
+  - Tarczyca produkuje **T3/T4** (z jodu).
+  - Wysokie **T3/T4** we krwi **HAMUJE** wydzielanie TSH (i TRH) → pętla sprzężenia ujemnego stabilizuje poziom hormonów.
+
+  **Przy niedoborze jodu**:
+  - **Jod jest substratem** do syntezy T3/T4. Bez jodu tarczyca **nie może** wyprodukować T3/T4.
+  - Mimo bodźca TSH, poziom T3/T4 we krwi **pozostaje niski**.
+  - **Brak hamowania** przysadki — niskie T3/T4 nie hamuje TSH.
+  - Przysadka "dopisuje" więcej TSH, próbując pobudzić tarczycę silniej → **TSH rośnie**.
+  - Wzrost TSH stymuluje przerost tarczycy → **wole** (struma) — tarczyca rośnie próbując zwiększyć produkcję hormonów.
+
+  Cykl: niski jod → niskie T3/T4 → brak hamowania → wysokie TSH → przerost tarczycy. Ale bez jodu produkcja T3/T4 i tak pozostaje niska.
+pulapka: |
+  Pułapka 13.1 — odpowiedź "T3" lub "T4" bez nazwy. Klucz: **tyroksyna** lub **trójjodotyronina** (pełna nazwa) — bezpieczniej.
+
+  Pułapka 13.1 — pomylenie z kalcytoniną. Kalcytonina to też hormon tarczycy, ale **nie zawiera jodu** (peptydowa, reguluje wapń).
+
+  Pułapka 13.2 — niewspomnienie kierunku sprzężenia. Klucz: **T3/T4 HAMUJE** przysadkę (= sprzężenie ujemne). Niski T3/T4 = brak hamowania = wysoki TSH.
+
+  Pułapka 13.2 — opisanie tylko jednego kierunku. Trzeba **oba**: w stanie zdrowym T3/T4 hamuje + przy niedoborze brak hamowania → wzrost TSH.
+wymaganie: |
+  V.7 — układ dokrewny: tarczyca, sprzężenie zwrotne (oś HPT).
+podobne:
+  - biologia-2024-maj-pr-11
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2024-maj-pr/ark-17.webp"
+  alt="Zadanie 13 - jod i tarczyca"
+  caption="Strona 17 arkusza CKE 2024 PR biologia - zadanie 13 (jod, tyroksyna, TSH, sprzężenie zwrotne)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/Biologia/MBIP-R0-100-A-2405-arkusz.pdf"
+  pdfPage={17}
+/>
+
+## Klucz pojęciowy — oś podwzgórze-przysadka-tarczyca (HPT)
+
+| Hierarchia | Hormon | Funkcja |
+|---|---|---|
+| **Podwzgórze** | TRH (thyrotropin-releasing hormone) | Pobudza przysadkę |
+| **Przysadka mózgowa** (przedni płat) | TSH (tyreotropina) | Pobudza tarczycę |
+| **Tarczyca** | **T4 (tyroksyna)** + **T3 (trójjodotyronina)** | Wpływa na metabolizm wszystkich tkanek |
+| **Tkanki obwodowe** | (T4 → T3 konwersja przez 5'-dejodynazę) | T3 = forma aktywna w komórkach |
+
+## Klucz pojęciowy — sprzężenie zwrotne
+
+**Sprzężenie zwrotne ujemne** (negative feedback) = produkt **hamuje** swoją produkcję.
+
+Przykład: T3/T4 we krwi:
+- **Wysokie** T3/T4 → hamują TRH (podwzgórze) i TSH (przysadka) → spadek produkcji.
+- **Niskie** T3/T4 → brak hamowania → wzrost TRH/TSH → wzrost produkcji.
+
+To **homeostaza** — stabilizacja poziomu hormonu.
+
+## Mechanizm: T3/T4 są jodowanymi pochodnymi tyrozyny
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Tarczyca pobiera jod** z krwi przez **NIS** (sodium-iodide symporter) — pompa Na/I.
+
+</div>
+
+<div class="krok">
+
+**Jod utleniany** do I⁺ przez peroksydazę tarczycową (TPO).
+
+</div>
+
+<div class="krok">
+
+**Jodowanie reszt tyrozynowych** w białku tyreoglobulinie (Tg) → MIT (monojodotyrozyna) lub DIT (dijodotyrozyna).
+
+</div>
+
+<div class="krok">
+
+**Sprzężenie**: MIT + DIT → T3 lub DIT + DIT → T4.
+
+</div>
+
+<div class="krok">
+
+**Wydzielanie**: tarczyca przy stymulacji TSH endocytozuje tyreoglobulinę, hydrolizuje ją do T3/T4 → uwalnianie do krwi.
+
+</div>
+
+</div>
+
+## Mechanizm: niedobór jodu → wzrost TSH (13.2)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Normalny stan**: jod dostępny → tarczyca produkuje T3/T4 → wysokie T3/T4 we krwi → **hamują przysadkę** (sprzężenie ujemne) → TSH umiarkowane. Pętla stabilna.
+
+</div>
+
+<div class="krok">
+
+**Niedobór jodu**: brak substratu do syntezy T3/T4. Mimo bodźca TSH, tarczyca nie może wyprodukować hormonów.
+
+</div>
+
+<div class="krok">
+
+**Niski poziom T3/T4 we krwi** → **brak hamowania** przysadki (sprzężenie ujemne **nie działa**).
+
+</div>
+
+<div class="krok">
+
+**Przysadka** "myśli", że T3/T4 jest za mało (i ma rację) → zwiększa wydzielanie **TSH** próbując mocniej stymulować tarczycę.
+
+</div>
+
+<div class="krok">
+
+**Wysokie TSH** → przerost tarczycy (**wole, struma**) — tarczyca rośnie próbując zwiększyć produkcję. Wciąż jednak brakuje substratu (jodu) → pozostaje niedoczynność (hipotyreoza).
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+<div>
+
+**13.1.** **Tyroksyna (T4)** lub **trójjodotyronina (T3)** — hormony tarczycy zawierające jod (4 lub 3 atomy w cząsteczce, pochodne tyrozyny).
+
+**13.2.** W warunkach normalnych **wysokie T3/T4 we krwi HAMUJE wydzielanie TSH** (sprzężenie zwrotne ujemne). 
+
+Przy niedoborze jodu tarczyca nie ma substratu do syntezy T3/T4 → **niski poziom T3/T4 we krwi** → **brak hamowania** przysadki → przysadka **zwiększa** wydzielanie TSH, próbując silniej pobudzić tarczycę → **wysokie TSH** przy niskim T3/T4. Brak sprzężenia ujemnego = niekontrolowany wzrost TSH.
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — kierunek sprzężenia</div>
+
+**Sprzężenie ujemne**: produkt (T3/T4) HAMUJE swoją produkcję. Jeśli go brakuje, hamowanie znika → produkcja rośnie (TSH).
+
+NIE: "TSH wzrasta bo organizm potrzebuje T3/T4". Klucz: **brak hamowania przez T3/T4**.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — wole (struma)</div>
+
+Wole tarczycowe może mieć **wiele przyczyn**:
+- **Endemiczne** (niedobór jodu w diecie) — klasyczne wole proste.
+- **Choroba Gravesa-Basedowa** (autoimmunologiczne nadczynność).
+- **Hashimoto** (autoimmunologiczne niedoczynność).
+
+Pytanie dotyczy endemicznego (z niedoboru jodu).
+</div>
+
+## Punktacja CKE
+
+- **13.1.** 1 pkt — tyroksyna lub trójjodotyronina (T3 / T4 też akceptowane).
+- **13.2.** 1 pkt — mechanizm sprzężenia zwrotnego ujemnego: niski T3/T4 → brak hamowania → wzrost TSH.
+- **Suma**: 2 pkt.
+
+## Po co to umieć
+
+**Niedobór jodu** to **najczęstsza endokrynopatia** świata:
+- **Wole endemiczne** — w regionach z niskim jodem w diecie (góry, daleko od morza). Polska historycznie miała problem (Tatry, Karpaty).
+- **Kretynizm** (kretenizm) — niedobór jodu w ciąży → uszkodzenie mózgu płodu → opóźnienie umysłowe + niski wzrost.
+
+**Jodowanie soli kuchennej**:
+- Od **1937 r. w Polsce** sól kuchenna jest **obowiązkowo jodowana** (KI / KIO₃).
+- Skutek: niemal pełna eliminacja wola endemicznego w Polsce.
+- Globalnie: ~70% świata używa jodowanej soli.
+
+**Czarnobyl 1986** — uwolnienie radioaktywnego **¹³¹I** (jod-131). Profilaktyka: tabletki **stabilnego jodu (KI)** "nasycają" tarczycę → mniej przyswajania radioaktywnego jodu → ochrona przed rakiem tarczycy. W Polsce **akcja jodowa 1986** — milionom dzieci podano stabilny jod.
+
+**Choroba Hashimoto + Gravesa-Basedowa** — najczęstsze autoimmunologiczne choroby tarczycy. Hashimoto: niedoczynność, wzrost TSH. Gravesa: nadczynność, spadek TSH.
+
+**Test TSH** = podstawowe badanie funkcji tarczycy. **TSH ≈ 0,4-4,0 μIU/mL** to norma. >10 = jawna niedoczynność. <0,1 = nadczynność.
