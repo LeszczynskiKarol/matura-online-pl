@@ -1,0 +1,122 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 19
+punkty: 1
+typ: otwarte-krotkie
+topic: chemia organiczna, monobromowanie, p-ksylen, substytucja rodnikowa, wzory półstrukturalne
+difficulty: 3
+tresc: |
+  Napisz równanie reakcji **monobromowania p-ksylenu pod wpływem światła**. Wzory półstrukturalne.
+odpowiedz: |
+  **Równanie reakcji** (monobromowanie pod hν):
+
+  $$\text{CH}_3 - \text{C}_6\text{H}_4 - \text{CH}_3 + \text{Br}_2 \xrightarrow{h\nu} \text{CH}_2\text{Br} - \text{C}_6\text{H}_4 - \text{CH}_3 + \text{HBr}$$
+
+  Lub bardziej szczegółowo:
+
+  **4-CH₃-C₆H₄-CH₃ + Br₂ →(hν)→ 4-CH₃-C₆H₄-CH₂Br + HBr**
+
+  **Wyjaśnienie**:
+  - **Pod wpływem światła** zachodzi **substytucja rodnikowa** w łańcuchu bocznym (na grupie metylowej).
+  - Monobromowanie = tylko **1 atom H** w jednej z grup CH₃ zostaje zastąpiony przez Br.
+  - Pierścień aromatyczny **nie reaguje** (warunki świetlne nie aktywują pierścienia).
+  - Produkt: **1-(bromometylo)-4-metylobenzen** (lub p-bromometylotoluen) = 4-metylobenzylobromek.
+  - Współpridrodukt: HBr.
+
+  **Bilans**: po jednej cząsteczce Br₂ → jeden CH₂Br + jeden HBr.
+pulapka: |
+  Pułapka — bromowanie pierścienia zamiast łańcucha. **Światło** = rodnikowe, atak w **łańcuchu bocznym**. Tylko Fe (FeBr₃) daje atak na pierścień.
+
+  Pułapka — dwubromowanie zamiast monobromowania. Zadanie wyraźnie: **mono**bromowanie. Tylko **1 H zamieniony** w jednej cząsteczce, nie 2.
+
+  Pułapka — zapis cząsteczkowy. Trzeba **wzór półstrukturalny** (grupowy), nie sumaryczny C₈H₉Br.
+wymaganie: |
+  X.6 — substytucja rodnikowa w arenach (łańcuch boczny).
+podobne:
+  - chemia-2025-maj-pr-18
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-25.webp"
+  alt="Zadanie 19 - monobromowanie p-ksylenu"
+  caption="Strona 25 arkusza CKE 2025 PR chemia - zadanie 19 (równanie SR)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={25}
+/>
+
+## Mechanizm: monobromowanie p-ksylenu
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Inicjacja**: Br₂ + hν → 2 Br• (homoliza wiązania Br-Br, energia foton).
+
+</div>
+
+<div class="krok">
+
+**Propagacja**:
+- Br• + CH₃-C₆H₄-CH₃ → CH₂•-C₆H₄-CH₃ + HBr (atak Br• na C-H grupy metylowej, ofiara H).
+- CH₂•-C₆H₄-CH₃ + Br₂ → CH₂Br-C₆H₄-CH₃ + Br• (atak rodnika na Br₂).
+
+</div>
+
+<div class="krok">
+
+**Terminacja**: 2 Br• → Br₂; lub R• + Br• → RBr.
+
+</div>
+
+</div>
+
+**Dlaczego CH₃ benzylowe?**: rodnik R-CH₂• jest **stabilizowany rezonansowo** (sprzężenie z pierścieniem aromatycznym), więc reakcja jest preferowana.
+
+## Bilans
+
+| Atom | Lewa strona | Prawa strona |
+|---|---|---|
+| C | 8 (w p-ksylenie) | 8 (7 w pierścieniu + CH₂Br + CH₃) |
+| H | 10 (4 w pierścieniu + 6 w 2× CH₃) | 9 (4 + 2 + 3) + 1 (w HBr) = 10 |
+| Br | 2 | 1 (w CH₂Br) + 1 (w HBr) = 2 |
+
+Wszystko się zgadza ✓.
+
+<div class="odpowiedz">
+<div>
+
+$$\text{CH}_3-\text{C}_6\text{H}_4-\text{CH}_3 + \text{Br}_2 \xrightarrow{h\nu} \text{CH}_2\text{Br}-\text{C}_6\text{H}_4-\text{CH}_3 + \text{HBr}$$
+
+(Pierścień aromatyczny niezmieniony; 1 H z grupy metylowej zamieniony na Br; **substytucja rodnikowa**.)
+
+</div>
+</div>
+
+## Punktacja CKE
+
+- **19.** 1 pkt — poprawne równanie z wzorami półstrukturalnymi.
+
+## Po co to umieć
+
+**Benzylobromki** = ważne **substraty syntezy organicznej**:
+- W reakcjach Williamsona (synteza eterów).
+- Z aminami → aminy II-rzędowe.
+- Z karbanionami → wydłużanie łańcuchów C.
+
+**4-(bromometylo)toluen** = popularny reagent w syntezie farmaceutycznej. Używany do "alkilowania" amin, alkoholi, fenoli.
+
+**Reakcja rodnikowa pod hν**:
+- **Wallach-Pavlik**: chlorowanie alkanów pod światłem.
+- **Polietylen** (LDPE): inicjowane przez nadtlenki organiczne.
+- **Synteza HCFC, HFC** (zamienniki freonów): chlorowanie/fluorowanie alkanów.
+
+**Bromowanie selektywne**:
+- Pierścień aromatyczny chroniony przy hν.
+- Łańcuch boczny aktywowany (benzyl).
+- Pozwala na **selektywną** modyfikację bocznego łańcucha bez naruszenia pierścienia.
