@@ -1,0 +1,251 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 11
+punkty: 2
+typ: otwarte-krotkie
+topic: Brønsted, kwasy, zasady, sole fosforanowe, amfoteryczność, pary sprzężone
+difficulty: 4
+tresc: |
+  Wodne roztwory **Na₂HPO₄** (wodoroortofosforan(V) sodu) i **NaH₂PO₄** (diwodoroortofosforan(V) sodu) o jednakowych stężeniach. Test wskaźnikami:
+
+  - **Na₂HPO₄**: fenoloftaleina **różowa**, czerwień obojętna **żółta** → **zasadowy**.
+  - **NaH₂PO₄**: fenoloftaleina **bezbarwna**, czerwień obojętna **czerwona** → **kwasowy**.
+
+  Napisz równania reakcji decydujących o odczynie (z parą Brønsteda: kwas 1, zasada 2 → zasada 1, kwas 2).
+odpowiedz: |
+  **Roztwór Na₂HPO₄** (zasadowy): jon **HPO₄²⁻** zachowuje się jak **zasada Brønsteda** (przyjmuje H⁺ z wody).
+
+  $$\text{H}_2\text{O} + \text{HPO}_4^{2-} \rightleftharpoons \text{OH}^- + \text{H}_2\text{PO}_4^-$$
+
+  **Pary sprzężone**:
+  - **Kwas 1**: H₂O (oddaje H⁺) ↔ **Zasada 1**: OH⁻.
+  - **Zasada 2**: HPO₄²⁻ (przyjmuje H⁺) ↔ **Kwas 2**: H₂PO₄⁻.
+
+  Wynik: roztwór zawiera **OH⁻** → odczyn **zasadowy** ✓.
+
+  **Roztwór NaH₂PO₄** (kwasowy): jon **H₂PO₄⁻** zachowuje się jak **kwas Brønsteda** (oddaje H⁺ do wody).
+
+  $$\text{H}_2\text{PO}_4^- + \text{H}_2\text{O} \rightleftharpoons \text{HPO}_4^{2-} + \text{H}_3\text{O}^+$$
+
+  **Pary sprzężone**:
+  - **Kwas 1**: H₂PO₄⁻ (oddaje H⁺) ↔ **Zasada 1**: HPO₄²⁻.
+  - **Zasada 2**: H₂O (przyjmuje H⁺) ↔ **Kwas 2**: H₃O⁺.
+
+  Wynik: roztwór zawiera **H₃O⁺** → odczyn **kwasowy** ✓.
+
+  **Dlaczego HPO₄²⁻ jest zasadą, a H₂PO₄⁻ kwasem?**
+
+  Oba jony są **amfoteryczne** (mogą być kwasem lub zasadą). Decyduje porównanie K_a i K_b:
+
+  | Jon | K_a | K_b | Przewaga |
+  |---|---|---|---|
+  | **HPO₄²⁻** | K_a3 ≈ 4·10⁻¹³ | K_b2 = K_w/K_a2 ≈ 1,6·10⁻⁷ | **K_b >> K_a → zachowuje się jak zasada** |
+  | **H₂PO₄⁻** | K_a2 ≈ 6,2·10⁻⁸ | K_b3 = K_w/K_a1 ≈ 1,3·10⁻¹² | **K_a >> K_b → zachowuje się jak kwas** |
+pulapka: |
+  Pułapka — pomylenie kierunku. **Na₂HPO₄** = sól **dwusodowa** → ma w roztworze HPO₄²⁻, który jest BARDZIEJ zasadowy niż kwasowy. Stąd roztwór **zasadowy**.
+
+  Pułapka — H₂PO₄⁻ w NaH₂PO₄ jest BARDZIEJ kwasowy niż zasadowy. Stąd roztwór **kwasowy**.
+
+  Pułapka — pary sprzężone. Kwas → po oddaniu H⁺ staje się **zasadą sprzężoną**. Zasada → po przyjęciu H⁺ staje się **kwasem sprzężonym**.
+wymaganie: |
+  IV.2 — teoria Brønsteda kwasów i zasad.
+  IV.4 — sole, hydroliza, pH.
+podobne:
+  - chemia-2025-maj-pr-8
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-16.webp"
+  alt="Zadanie 11 - Brønsted, sole fosforanowe"
+  caption="Strona 16 arkusza CKE 2025 PR chemia - zadanie 11 (Na₂HPO₄ vs NaH₂PO₄, wskaźniki, Brønsted)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={16}
+/>
+
+## Klucz pojęciowy — teoria Brønsteda
+
+| Pojęcie | Definicja |
+|---|---|
+| **Kwas** | Donor H⁺ (protonu) |
+| **Zasada** | Akceptor H⁺ |
+| **Para sprzężona** | Kwas + zasada różnią się **1 protonem** |
+| **Reakcja kwas-zasada** | Kwas₁ + Zasada₂ ⇌ Zasada₁ + Kwas₂ |
+
+**Przykład** (HCl + H₂O):
+- HCl + H₂O → H₃O⁺ + Cl⁻.
+- Kwas₁: HCl ↔ Zasada₁: Cl⁻.
+- Zasada₂: H₂O ↔ Kwas₂: H₃O⁺.
+
+## Klucz pojęciowy — kwas ortofosforowy(V) (H₃PO₄)
+
+**H₃PO₄** ma **3 protony kwasowe** → dysocjuje trójstopniowo:
+
+| Stopień | Reakcja | K_a |
+|---|---|---|
+| 1 | H₃PO₄ ⇌ H₂PO₄⁻ + H⁺ | K_a1 = 7,5·10⁻³ (mocny) |
+| 2 | H₂PO₄⁻ ⇌ HPO₄²⁻ + H⁺ | K_a2 = 6,2·10⁻⁸ (słaby) |
+| 3 | HPO₄²⁻ ⇌ PO₄³⁻ + H⁺ | K_a3 = 4,8·10⁻¹³ (bardzo słaby) |
+
+**Klucz**: każdy kolejny stopień jest **znacznie słabszy** (K_a maleje 10⁵× między stopniami).
+
+## Mechanizm: dlaczego Na₂HPO₄ zasadowy?
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+Na₂HPO₄ w wodzie dysocjuje całkowicie: Na₂HPO₄ → 2 Na⁺ + HPO₄²⁻.
+
+</div>
+
+<div class="krok">
+
+**HPO₄²⁻** jest **amfoteryczny** (ma 1 proton, może go oddać; ma ładunek -2, może przyjąć proton).
+
+</div>
+
+<div class="krok">
+
+**Reakcja kwasowa** (oddaje H⁺):
+HPO₄²⁻ ⇌ PO₄³⁻ + H⁺ (K_a3 ≈ 4·10⁻¹³, BARDZO SŁABO).
+
+</div>
+
+<div class="krok">
+
+**Reakcja zasadowa** (przyjmuje H⁺ z H₂O):
+HPO₄²⁻ + H₂O ⇌ H₂PO₄⁻ + OH⁻ (K_b ≈ 1,6·10⁻⁷, słabo ale silniej).
+
+</div>
+
+<div class="krok">
+
+**Porównanie**: K_b (1,6·10⁻⁷) >> K_a (4·10⁻¹³) → **przewaga zasady** → roztwór ZASADOWY.
+
+</div>
+
+</div>
+
+**Reakcja decydująca o odczynie**:
+
+$$\text{H}_2\text{O} + \text{HPO}_4^{2-} \rightleftharpoons \text{OH}^- + \text{H}_2\text{PO}_4^-$$
+
+| Element | Para sprzężona |
+|---|---|
+| Kwas 1: **H₂O** | Zasada 1: **OH⁻** |
+| Zasada 2: **HPO₄²⁻** | Kwas 2: **H₂PO₄⁻** |
+
+## Mechanizm: dlaczego NaH₂PO₄ kwasowy?
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+NaH₂PO₄ → Na⁺ + H₂PO₄⁻ (pełna dysocjacja).
+
+</div>
+
+<div class="krok">
+
+**H₂PO₄⁻** jest **amfoteryczny**.
+
+</div>
+
+<div class="krok">
+
+**Reakcja kwasowa** (oddaje H⁺):
+H₂PO₄⁻ + H₂O ⇌ HPO₄²⁻ + H₃O⁺ (K_a2 ≈ 6,2·10⁻⁸).
+
+</div>
+
+<div class="krok">
+
+**Reakcja zasadowa** (przyjmuje H⁺):
+H₂PO₄⁻ + H₂O ⇌ H₃PO₄ + OH⁻ (K_b ≈ 1,3·10⁻¹², bardzo słabo).
+
+</div>
+
+<div class="krok">
+
+**Porównanie**: K_a (6,2·10⁻⁸) >> K_b (1,3·10⁻¹²) → **przewaga kwasu** → roztwór KWASOWY.
+
+</div>
+
+</div>
+
+**Reakcja decydująca**:
+
+$$\text{H}_2\text{PO}_4^- + \text{H}_2\text{O} \rightleftharpoons \text{HPO}_4^{2-} + \text{H}_3\text{O}^+$$
+
+| Element | Para sprzężona |
+|---|---|
+| Kwas 1: **H₂PO₄⁻** | Zasada 1: **HPO₄²⁻** |
+| Zasada 2: **H₂O** | Kwas 2: **H₃O⁺** |
+
+## Sole fosforanowe — charakterystyka
+
+| Sól | Anion | Odczyn | Zastosowanie |
+|---|---|---|---|
+| **Na₃PO₄** | PO₄³⁻ | **silnie zasadowy** | Detergenty, chemikalia |
+| **Na₂HPO₄** | HPO₄²⁻ | **słabo zasadowy** | Bufor, regulator pH |
+| **NaH₂PO₄** | H₂PO₄⁻ | **słabo kwasowy** | Bufor, regulator pH |
+| **H₃PO₄** | (kwas) | kwasowy | Coca-cola, produkcja nawozów |
+
+**Bufor fosforanowy** = mieszanka NaH₂PO₄ + Na₂HPO₄. Utrzymuje pH ≈ 7,4 (fizjologiczne pH ludzkiej krwi).
+
+<div class="odpowiedz">
+<div>
+
+**Równanie w roztworze Na₂HPO₄** (odczyn zasadowy):
+
+$$\text{H}_2\text{O} + \text{HPO}_4^{2-} \rightleftharpoons \text{OH}^- + \text{H}_2\text{PO}_4^-$$
+
+Pary: **kwas 1** = H₂O, **zasada 2** = HPO₄²⁻ → **zasada 1** = OH⁻, **kwas 2** = H₂PO₄⁻.
+
+**Równanie w roztworze NaH₂PO₄** (odczyn kwasowy):
+
+$$\text{H}_2\text{PO}_4^- + \text{H}_2\text{O} \rightleftharpoons \text{HPO}_4^{2-} + \text{H}_3\text{O}^+$$
+
+Pary: **kwas 1** = H₂PO₄⁻, **zasada 2** = H₂O → **zasada 1** = HPO₄²⁻, **kwas 2** = H₃O⁺.
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — amfoteryczność</div>
+
+Oba jony (HPO₄²⁻ i H₂PO₄⁻) są **amfoteryczne** — mogą być kwasem LUB zasadą. Klucz: **która reakcja dominuje** (większa K).
+
+HPO₄²⁻: K_b > K_a → zachowuje się jak zasada → roztwór zasadowy.
+H₂PO₄⁻: K_a > K_b → zachowuje się jak kwas → roztwór kwasowy.
+</div>
+
+## Punktacja CKE
+
+- **11.** 2 pkt — oba równania poprawne (po 1 pkt każde, z parami kwas/zasada).
+
+## Po co to umieć
+
+**Teoria Brønsteda-Lowry'ego** (1923) = standard współczesnej chemii:
+- Bardziej ogólna niż **teoria Arrheniusa** (kwas = HX w wodzie).
+- Obejmuje reakcje w **dowolnych rozpuszczalnikach** (nie tylko woda).
+- Każdy proton ma "kierunek" — donor (kwas) i akceptor (zasada).
+
+**Bufor fosforanowy** w organizmie:
+- Komórki ludzkie utrzymują pH ~7,2 (bufor HPO₄²⁻/H₂PO₄⁻).
+- Krew pH ~7,4 (bufor wodorowęglanowy HCO₃⁻/H₂CO₃).
+- Niedobór buforów → **kwasica** lub **alkaloza** → groźne dla życia.
+
+**ATP** (adenozyno-tri-fosforan) = nośnik energii w komórce. **3 grupy fosforanowe** połączone wiązaniami fosfoanhydrydowymi. Hydroliza ATP → ADP + P_i + ~30 kJ/mol energii.
+
+**Detergenty fosforanowe** (Na₃PO₄, polifosforany) = kiedyś główne składniki proszków do prania. Skutek: **eutrofizacja jezior** → zakwity sinic. Wycofane w UE z proszków do prania od 2013 r.
+
+**H₃PO₄ w Coca-Coli** = ~0,055% (kwasowość pH ~2,5). Daje "kwaśny" smak + konserwuje + reaguje z minerałami zębów (erozja szkliwa).
+
+**Fosfor w przyrodzie**: krytyczny pierwiastek dla życia (DNA, RNA, ATP, fosfolipidy błon, kości). Cykl fosforu w przyrodzie = wymywanie z gleb do oceanów → akumulacja w osadach → wynurzanie geologiczne (miliony lat). **Apatyt** (Ca₅(PO₄)₃F) = główne źródło fosforanów dla nawozów.
