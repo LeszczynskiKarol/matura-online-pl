@@ -1,0 +1,148 @@
+---
+arkusz: biologia-2024-maj-pr
+subject: biologia
+nr: 2
+punkty: 2
+typ: otwarte-krotkie
+topic: wirusologia, HIV, odwrotna transkryptaza, retrowirusy, biologia molekularna
+difficulty: 3
+tresc: |
+  **Retrowirusy** (np. HIV) — materiał genetyczny: jednoniciowy **RNA**. Po wniknięciu do komórki wprowadzają enzym — **odwrotną transkryptazę**, która przepisuje RNA wirusa na DNA.
+
+  Odwrotna transkryptaza HIV: 2 podjednostki **p66** (czerwona) + **p51** (pomarańczowa). p66 ma **dwa aktywne obszary**: **polimerazy** + **rybonukleazy**.
+
+  Uzupełnij tabelę: funkcja każdego obszaru w procesie przepisywania RNA → DNA.
+odpowiedz: |
+  | Obszar | Funkcja |
+  |---|---|
+  | **Polimeraza** | **Syntezuje nić DNA** na matrycy RNA (a potem na matrycy DNA — w drugim etapie). Wbudowuje deoksyrybonukleotydy zgodnie z zasadą komplementarności (A-T, G-C; w pierwszym etapie A-U z RNA → T w DNA). |
+  | **Rybonukleaza** (RNase H) | **Degraduje (tnie) nić RNA** w hybrydzie **RNA-DNA**. Usuwa matrycę RNA po tym, jak polimeraza zsyntezowała pierwszą nić DNA → zostaje jednoniciowy DNA gotowy do syntezy drugiej nici. |
+
+  **Pełny mechanizm** (sekwencja):
+  1. **Polimeraza** czyta RNA → tworzy nić DNA → powstaje hybryda RNA-DNA.
+  2. **RNase H** degraduje RNA → zostaje pojedyncza nić DNA.
+  3. **Polimeraza** ponownie — używa tej nici DNA jako matrycy → syntezuje drugą nić DNA → powstaje dwuniciowy DNA.
+  4. Dwuniciowy DNA wirusa **integruje** się z genomem komórki gospodarza (przez **integrazę**).
+pulapka: |
+  Pułapka — pomylenie polimerazy z rybonukleazą. **Polimeraza** = **syntezuje** (buduje DNA). **Rybonukleaza** = **rozkłada** (tnie RNA). Klucz: nazwa "polimer-aza" → tworzenie polimeru. "Rybo-nukle-aza" → trawienie kwasu rybonukleinowego (RNA).
+
+  Pułapka — pominięcie typu matrycy. Polimeraza odwrotnej transkryptazy używa **najpierw RNA jako matrycy** (RNA → DNA), a **potem DNA jako matrycy** (DNA → drugą nić DNA). To **wyjątek** od reguły "DNA → RNA" w klasycznym dogmacie centralnym.
+
+  Pułapka — rola RNase H. To NIE jest enzym syntezy. Tnie **TYLKO** nić RNA w hybrydzie RNA-DNA (nie tnie czystego RNA wirionu, nie tnie DNA).
+wymaganie: |
+  III.6 — biologia wirusów, retrowirusy.
+  III.3 — odwrotna transkrypcja, dogmat centralny biologii.
+podobne:
+  - biologia-2024-maj-pr-3
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2024-maj-pr/ark-05.webp"
+  alt="Zadanie 2 - odwrotna transkryptaza HIV"
+  caption="Strona 5 arkusza CKE 2024 PR biologia - zadanie 2 (model 3D odwrotnej transkryptazy HIV)."
+  zrodlo="CKE 2024 / pdb101.rcsb.org"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/Biologia/MBIP-R0-100-A-2405-arkusz.pdf"
+  pdfPage={5}
+/>
+
+## Klucz pojęciowy — retrowirusy
+
+| Element | Funkcja |
+|---|---|
+| **Retrowirus** | Wirus z materiałem genetycznym **RNA** (np. HIV, HTLV) |
+| **Odwrotna transkryptaza** | Enzym przepisujący **RNA → DNA** |
+| **Polimeraza** (część odwrotnej transkr.) | **Syntezuje DNA** (najpierw na matrycy RNA, potem na matrycy DNA) |
+| **RNase H** (rybonukleaza H) | **Degraduje RNA** w hybrydzie RNA-DNA |
+| **Integraza** | Wbudowuje wirusowy DNA do genomu gospodarza |
+| **Prowirus** | DNA wirusa wbudowany do chromosomu człowieka |
+
+## Mechanizm: odwrotna transkrypcja krok po kroku
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Wniknięcie**: HIV wprowadza do komórki RNA + odwrotną transkryptazę + integrazę.
+
+</div>
+
+<div class="krok">
+
+**Synteza pierwszej nici DNA**: **polimeraza** używa **RNA** wirusa jako matrycy → buduje **nić DNA** komplementarną do RNA. Powstaje **hybryda RNA-DNA**.
+
+</div>
+
+<div class="krok">
+
+**Degradacja RNA**: **RNase H** tnie nić RNA hybrydy → zostaje **pojedyncza nić DNA**.
+
+</div>
+
+<div class="krok">
+
+**Synteza drugiej nici DNA**: **polimeraza** używa nici **DNA** jako matrycy → buduje **drugą nić DNA**. Powstaje **dwuniciowy DNA** (dsDNA).
+
+</div>
+
+<div class="krok">
+
+**Integracja**: **integraza** wbudowuje dsDNA do chromosomu człowieka → **prowirus**. Genom gospodarza zostaje zmieniony permanentnie.
+
+</div>
+
+</div>
+
+## Dlaczego enzym ma dwa centra aktywne?
+
+**Polimeraza i rybonukleaza działają sekwencyjnie**:
+- Polimeraza tworzy hybrydę.
+- RNase H ją "rozplątuje" usuwając RNA.
+- Bez RNase H — RNA "blokowałby" matrycę dla drugiej nici DNA.
+
+Dwa centra w **jednym** enzymie = efektywne sprzężenie aktywności + szybkość katalizy. To **architektoniczny zysk ewolucyjny**.
+
+<div class="odpowiedz">
+<div>
+
+| Obszar | Funkcja |
+|---|---|
+| **polimerazy** | **Syntezuje DNA** na matrycy RNA (a w II etapie na matrycy DNA) — wbudowuje deoksyrybonukleotydy zgodnie z zasadą komplementarności. |
+| **rybonukleazy** | **Degraduje (tnie) nić RNA** w hybrydzie RNA-DNA → usuwa matrycę RNA, zostawia pojedynczą nić DNA gotową do syntezy drugiej nici. |
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — polimeraza vs nukleaza</div>
+
+**Polimeraza** = **buduje** (kondensacja monomerów). **Nukleaza** = **tnie** kwas nukleinowy. Nie pomyl ról.
+
+Suffix **-aza** = enzym. **Polimer-aza** → polimeruje (buduje). **Rybonukle-aza** → rozkłada rybonukleinowy (RNA).
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — dogmat centralny</div>
+
+Klasyczny dogmat: **DNA → RNA → białko**. Retrowirusy **łamią** tę regułę — robią **RNA → DNA** (odwrotna transkrypcja).
+
+To odkrycie (1970, Temin i Baltimore — Nobel 1975) zrewolucjonizowało biologię molekularną. Otworzyło drogę do **inżynierii genetycznej** (cDNA z mRNA).
+</div>
+
+## Punktacja CKE
+
+- **2.** 2 pkt — obie funkcje poprawne (polimeraza + rybonukleaza).
+- 1 pkt — jedna z funkcji poprawna.
+
+## Po co to umieć
+
+**Odwrotna transkryptaza** to klucz do:
+- **Leczenia HIV** — inhibitory odwrotnej transkryptazy (NRTI, NNRTI) to **pierwsza linia** terapii antyretrowirusowej. Np. **azydotymidyna (AZT)** — pierwszy lek anty-HIV (1987).
+- **Klonowania genów** — **cDNA** powstaje z mRNA przez odwrotną transkryptazę. Pozwala otrzymać gen **bez intronów** (sam egzon), wygodny do ekspresji w bakteriach.
+- **RT-PCR** — najczulsza metoda detekcji RNA (np. SARS-CoV-2 = RNA → odwrotna transkrypcja → DNA → PCR amplifikacja).
+- **Retrotranspozonów** — "skaczące geny" w naszym genomie używają tej samej enzymatyki (ok. 17% ludzkiego DNA to retroelementy).
+
+**HIV** infekuje limfocyty T CD4+ (pomocnicze) → wyniszczenie układu odpornościowego → **AIDS** (zespół nabytego niedoboru odporności). Bez leczenia śmierć w ~10 lat. Z **HAART** (highly active antiretroviral therapy) → praktycznie normalna długość życia.
