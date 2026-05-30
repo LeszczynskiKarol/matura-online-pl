@@ -1,0 +1,271 @@
+---
+arkusz: biologia-2023-maj-pr
+subject: biologia
+nr: 15
+punkty: 3
+typ: otwarte-krotkie
+topic: genetyka, epistaza recesywna, labrador retriever, dziedziczenie koloru sierści, krzyżówka dihybrydowa
+difficulty: 5
+tresc: |
+  **Labradory retrievery** — 3 fenotypy koloru sierści: **czarna, brązowa, żółta**. Dwa loci:
+
+  - **Locus E**: allel dominujący **E** = wytwarzanie pigmentu (ciemna sierść). Allel recesywny **e** = brak pigmentu (sierść jasna = żółta). U homozygot **ee** sierść zawsze jest żółta — niezależnie od locus B (**epistaza recesywna**).
+
+  - **Locus B**: allel dominujący **B** = sierść czarna. Allel recesywny **b** = sierść brązowa. Działa tylko gdy E_ (jest pigment).
+
+  Pies o sierści żółtej **NIE wskazuje** na genotyp w B — niewidoczna.
+
+  **Krzyżówka**: żółta samica + brązowy samiec, mający **po jednym recesywnym allelu w obu loci** (heterozygota w drugim locus). Skrzyżowanie pokazuje rozkład fenotypów + prawdopodobieństwo ciemnego nosa u żółtych szczeniąt.
+
+  **15.** Zapisz krzyżówkę + stosunek fenotypowy + P(żółte szczenię ma ciemny nos).
+odpowiedz: |
+  **Genotypy rodziców**:
+  - **Żółta samica**: musi być **ee** w locus E (homozygota recesywna, daje fenotyp żółty). W locus B ma "jeden allel recesywny" → **Bb**. Genotyp pełny: **eeBb**.
+  - **Brązowy samiec**: musi być **bb** w locus B + **E_** w locus E. Z "jeden recesywny w E" → **Ee**. Genotyp pełny: **Eebb**.
+
+  **Krzyżówka: eeBb × Eebb**
+
+  Gamety samicy (eeBb): **eB, eb** (po 50%).
+  Gamety samca (Eebb): **Eb, eb** (po 50%).
+
+  | | Eb (50%) | eb (50%) |
+  |---|---|---|
+  | **eB** (50%) | EeBb (25%) | eeBb (25%) |
+  | **eb** (50%) | Eebb (25%) | eebb (25%) |
+
+  **Fenotypy potomstwa**:
+  - **EeBb** (25%) → E_B_ = **czarny** (E pozwala na pigment, B daje czarny).
+  - **Eebb** (25%) → E_bb = **brązowy** (E pozwala, B daje brązowy).
+  - **eeBb** (25%) → ee = **żółty** (e blokuje pigment, B nieaktywny).
+  - **eebb** (25%) → ee = **żółty** (jw.).
+
+  **Oczekiwany stosunek fenotypowy** = **czarne : brązowe : żółte = 1 : 1 : 2**
+
+  **Prawdopodobieństwo, że żółte szczenię miało ciemny nos**:
+
+  Kolor nosa zależy od locus B:
+  - **B_** (Bb lub BB) → ciemny (czarny) pigment w nosie.
+  - **bb** → brązowy pigment w nosie.
+
+  Wśród **żółtych szczeniąt**:
+  - **eeBb** (25% całości) → ciemny nos.
+  - **eebb** (25% całości) → brązowy nos.
+  - Stosunek wśród żółtych: 1 (Bb, ciemny) : 1 (bb, brązowy).
+
+  **P(żółte ma ciemny nos) = 1/2 = 50%**.
+pulapka: |
+  Pułapka — pomylenie epistazy z dihybrydem klasycznym. Klucz: **ee jest epistatyczne** wobec locus B. Niezależnie od B, jeśli ee → fenotyp żółty.
+
+  Pułapka — uznanie żółtego za jednolity fenotyp. **Żółte** może mieć **różne genotypy w B** (Bb, BB, bb). Nos pokazuje genotyp B (kolor pigmentu w nosie nie podlega epistazie ee — pigment w nosie powstaje niezależnie od pigmentu w sierści).
+
+  Pułapka — pomylenie kierunku epistazy. Tu jest **epistaza recesywna** (recesywny w locus E blokuje wszystko). Klucz: ee dominuje fenotypowo nad B.
+wymaganie: |
+  IV.4 — dziedziczenie cech, epistaza recesywna.
+podobne:
+  - biologia-2025-maj-pr-16
+  - biologia-2024-maj-pr-16
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2023-maj-pr/ark-24.webp"
+  alt="Zadanie 15 - labrador retriever, epistaza"
+  caption="Strona 24 arkusza CKE 2023 PR biologia - zadanie 15 (dziedziczenie koloru sierści labradorów)."
+  zrodlo="CKE 2023 / labrador.org.pl"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/Biologia/MBIP-R0-100-2305.pdf"
+  pdfPage={24}
+/>
+
+## Klucz pojęciowy — epistaza
+
+| Typ interakcji | Stosunek F2 (z AaBb × AaBb) | Mechanizm |
+|---|---|---|
+| **Brak interakcji (klasyczny dihybryd)** | 9 : 3 : 3 : 1 | 4 fenotypy |
+| **Epistaza recesywna** | **9 : 3 : 4** | aa hamuje ekspresję B/b (oba bbb mają fenotyp aa) |
+| **Epistaza dominująca** | 12 : 3 : 1 | A_ hamuje ekspresję B/b |
+| **Komplementacja** | 9 : 7 | Oba dominujące potrzebne razem |
+| **Działanie duplikatów** | 15 : 1 | Każdy dominujący wystarczy |
+
+**Labrador retriever** = klasyczny przykład **epistazy recesywnej** (ee maskuje B/b).
+
+## Mechanizm: ee jako epistaza recesywna
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Locus E** koduje enzym **MC1R** (melanocortin 1 receptor), aktywujący syntezę **eumelaniny** (ciemny pigment).
+
+</div>
+
+<div class="krok">
+
+**Allel E** = funkcjonalny MC1R → wytwarzanie eumelaniny w sierści → ciemna sierść.
+
+</div>
+
+<div class="krok">
+
+**Allel e** = niefunkcjonalny MC1R → brak eumelaniny → wytwarzana tylko **feomelanina** (żółty/rudy pigment). Sierść żółta.
+
+</div>
+
+<div class="krok">
+
+**Homozygota ee** → cała sierść żółta, **niezależnie od locus B**.
+
+</div>
+
+<div class="krok">
+
+**Locus B** koduje enzym **TYRP1** (tyrosinase-related protein 1), decydujący o kolorze eumelaniny:
+- **B** = TYRP1 funkcjonalny → eumelanina **czarna**.
+- **b** = TYRP1 niefunkcjonalny → eumelanina **brązowa**.
+
+</div>
+
+<div class="krok">
+
+**Wniosek**: bez eumelaniny (ee) → kolor TYRP1 nie ma znaczenia. ee maskuje fenotyp B/b.
+
+</div>
+
+</div>
+
+## Mechanizm: kolor nosa vs kolor sierści
+
+**Kolor nosa** zależy od locus B (TYRP1):
+- B_ → **czarny nos** (eumelanina czarna w nosie).
+- bb → **brązowy nos** (eumelanina brązowa).
+
+**Kolor sierści** zależy od OBU loci.
+
+**Locus E** wpływa **tylko na sierść** (gdzie produkcja eumelaniny zależy od MC1R). W nosie eumelanina **i tak się** produkuje (przez inny mechanizm — bezpośrednio bez MC1R).
+
+→ Stąd: żółte labradorki mają **różne kolory nosa** w zależności od B:
+- **eeBb / eeBB** → żółta sierść + **czarny** nos.
+- **eebb** → żółta sierść + **brązowy** nos (rzadziej, mniej charakterystyczne).
+
+## Krzyżówka labradorów (zadanie)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Genotypy rodziców**:
+- Żółta samica: **eeBb** (ee = żółta, Bb = nos czarny).
+- Brązowy samiec: **Eebb** (Ee = pigment, bb = brązowy).
+
+</div>
+
+<div class="krok">
+
+**Gamety**:
+- Samica (eeBb): **eB** + **eb** (po 50%).
+- Samiec (Eebb): **Eb** + **eb** (po 50%).
+
+</div>
+
+<div class="krok">
+
+**F1 (kwadrat Punnetta)**:
+
+| | Eb | eb |
+|---|---|---|
+| **eB** | EeBb (E_B_ = czarny) | eeBb (ee = żółty, Bb = nos czarny) |
+| **eb** | Eebb (E_bb = brązowy) | eebb (ee = żółty, bb = nos brązowy) |
+
+</div>
+
+<div class="krok">
+
+**Fenotypy F1 (1/4 każda kombinacja)**:
+- 1/4 EeBb → **czarny**.
+- 1/4 Eebb → **brązowy**.
+- 1/4 eeBb → **żółty** (nos czarny).
+- 1/4 eebb → **żółty** (nos brązowy).
+
+**Stosunek**: 1 czarny : 1 brązowy : 2 żółte = **1 : 1 : 2**.
+
+</div>
+
+<div class="krok">
+
+**Wśród żółtych szczeniąt** (2 z 4):
+- 1 ma genotyp eeBb → **ciemny nos**.
+- 1 ma genotyp eebb → brązowy nos.
+
+**P(żółte ma ciemny nos) = 1/2 = 50%**.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+<div>
+
+**Krzyżówka genetyczna**: eeBb × Eebb
+
+Gamety samicy: eB, eb (po 50%). Gamety samca: Eb, eb (po 50%).
+
+| | Eb | eb |
+|---|---|---|
+| **eB** | EeBb (czarny) | eeBb (żółty + nos czarny) |
+| **eb** | Eebb (brązowy) | eebb (żółty + nos brązowy) |
+
+**Oczekiwany stosunek fenotypowy** czarne : brązowe : żółte = **1 : 1 : 2**.
+
+**P(żółte szczenię ma ciemny nos)** = **1/2 (50%)**. Połowa żółtych potomków ma genotyp eeBb (nos czarny), połowa eebb (nos brązowy).
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — żółte = wszystkie BB?</div>
+
+NIE. **ee** maskuje pigmentację sierści, ale **NIE** wpływa na pigmentację nosa. Żółte szczenięta mogą mieć **różne genotypy w B** → różne kolory nosa.
+
+To **klucz** zadania: rozróżnić **sierść** (zależną od E + B) od **nosa** (zależnego tylko od B).
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — stosunek 9:3:4</div>
+
+Klasyczny stosunek epistazy recesywnej **dla F2** z AaBb × AaBb = 9 (A_B_) : 3 (A_bb) : 4 (aaB_ + aabb).
+
+Tu mamy **inny** stosunek, bo krzyżujemy heterozygoty w innych konfiguracjach (eeBb × Eebb). Wynik: 1 : 1 : 2 = nie klasyczny F2. Zawsze policz **gamety + Punnetta**.
+</div>
+
+## Punktacja CKE
+
+- **15.** 3 pkt:
+  - Krzyżówka z gametami i F1 — 1 pkt.
+  - Stosunek fenotypowy 1 : 1 : 2 — 1 pkt.
+  - P(żółte ma ciemny nos) = 1/2 — 1 pkt.
+
+## Po co to umieć
+
+**Labrador retriever** — najpopularniejsza rasa psa świata. Trzy oficjalne kolory:
+- **Czarny** (najczęstszy) — E_B_.
+- **Czekoladowy / brązowy** — E_bb.
+- **Żółty** (od kremowego do złotego) — ee__.
+
+**Inne rasy z epistazą koloru**:
+- **Złoty retriever** — zawsze ee, ale różne odcienie złotego/kremowego (geny modyfikatorów).
+- **Owczarki niemieckie** — czarna + brązowa + sable (rdzawa).
+
+**Genetyka koloru sierści** to **klasyka** w analizie krzyżówek hodowlanych. Studia genetyki **na uniwersytetach weterynaryjnych** dotyczą tego intensywnie.
+
+**Epistaza w przyrodzie**:
+- **Grupa krwi Bombay** (FUT1 maskuje ABO) → patrz [[biologia-2025-maj-pr-16]].
+- **Kolor sierści wielu ssaków** (kotów, myszy, koni).
+- **Kolor kwiatów** roślin (groszek pachnący).
+
+**Test DNA labradora**:
+- **Komercyjne testy** (Embark, Wisdom Panel) — pokazują genotyp w E, B, K i in.
+- Hodowcy używają by przewidzieć kolory szczeniąt + uniknąć recesywnych chorób (PRA, EIC).
+
+**Inżynierowanie sierści CRISPR** — teoretycznie możliwe, ale komercyjnie niedostępne. Etyczne dyskusje.
