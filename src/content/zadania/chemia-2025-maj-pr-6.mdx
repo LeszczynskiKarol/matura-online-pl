@@ -1,0 +1,212 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 6
+punkty: 1
+typ: otwarte-krotkie
+topic: chemia nieorganiczna, sole, wodorotlenki, strącanie, rozpuszczalność, BaSO4, CuO
+difficulty: 4
+tresc: |
+  Doświadczenie: otrzymanie czystego **tlenku miedzi(II) CuO** dwuetapowo:
+  - Etap 1: strącenie **Cu(OH)₂** dodaniem Ba(OH)₂.
+  - Etap 2: rozkład termiczny Cu(OH)₂ w łaźni wodnej → CuO + H₂O.
+
+  **Probówka I**: Ba(OH)₂(aq) + **CuCl₂(aq)**.
+  **Probówka II**: Ba(OH)₂(aq) + **CuSO₄(aq)**.
+
+  Po dekompozycji + przesączeniu — w której probówce otrzymano **TYLKO tlenek metalu**? Uzasadnij.
+odpowiedz: |
+  **Rozstrzygnięcie**: **Probówka I** (z CuCl₂).
+
+  **Uzasadnienie**:
+
+  **Probówka I — reakcje**:
+  - Strącanie: Ba(OH)₂ + CuCl₂ → **Cu(OH)₂↓** (osad niebieskoniebieski) + BaCl₂ (rozpuszczalny).
+  - Rozkład termiczny: Cu(OH)₂ → **CuO** + H₂O.
+  - **Po przesączeniu**: osad = **tylko CuO** (BaCl₂ pozostaje w roztworze rozpuszczony).
+
+  **Probówka II — reakcje**:
+  - Strącanie: Ba(OH)₂ + CuSO₄ → **Cu(OH)₂↓** + **BaSO₄↓** (BaSO₄ **NIErozpuszczalny w wodzie**!).
+  - Rozkład termiczny: Cu(OH)₂ → CuO + H₂O. BaSO₄ **NIE** ulega rozkładowi termicznemu w łaźni wodnej (T~100°C, za niska).
+  - **Po przesączeniu**: osad = **CuO + BaSO₄** → mieszanina, NIE tylko tlenek metalu.
+
+  **Kluczowa różnica**: chlorek baru BaCl₂ jest **rozpuszczalny** w wodzie i przy przesączaniu zostaje w przesączu. Siarczan baru BaSO₄ jest **praktycznie nierozpuszczalny** (Ksp ≈ 1·10⁻¹⁰) i strąca się jako biały osad.
+
+  Stąd **tylko probówka I** daje czysty CuO po opisanej procedurze.
+pulapka: |
+  Pułapka — niezauważenie nierozpuszczalności BaSO₄. **BaSO₄ jest praktycznie nierozpuszczalny** — to wyjątek wśród soli baru. BaCl₂, Ba(NO₃)₂, Ba(OH)₂ są rozpuszczalne; BaSO₄ — nie.
+
+  Pułapka — założenie, że rozkład termiczny rozłoży też BaSO₄. **NIE** — BaSO₄ jest stabilny do bardzo wysokich T (>1000°C). W łaźni wodnej (~100°C) tylko Cu(OH)₂ się rozkłada.
+
+  Pułapka — odpowiedź "obie probówki" lub "II". Klucz: w I powstaje tylko CuO (BaCl₂ w przesączu); w II powstaje CuO + BaSO₄ (oba w osadzie).
+wymaganie: |
+  IV.5 — sole, rozpuszczalność, reakcje strąceniowe.
+podobne:
+  - chemia-2025-maj-pr-7
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-10.webp"
+  alt="Zadanie 6 - otrzymanie CuO"
+  caption="Strona 10 arkusza CKE 2025 PR chemia - zadanie 6 (dwuetapowe otrzymanie CuO)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={10}
+/>
+
+## Klucz pojęciowy — rozpuszczalność soli baru
+
+| Sól | Rozpuszczalność | Uwaga |
+|---|---|---|
+| **BaCl₂** | Rozpuszczalna (~36 g/100 g H₂O) | Trujący — kation Ba²⁺ |
+| **BaBr₂** | Rozpuszczalna | — |
+| **Ba(NO₃)₂** | Rozpuszczalna | — |
+| **Ba(OH)₂** | Słabo rozpuszczalna (silna zasada) | Stosowana w analizie |
+| **BaCO₃** | **Praktycznie nierozpuszczalna** | Występuje jako witeryt |
+| **BaSO₄** | **Praktycznie nierozpuszczalna** (Ksp = 1·10⁻¹⁰) | Stosowana w radiologii (kontrast RTG) |
+| **BaCrO₄** | Nierozpuszczalna | Żółty osad |
+
+**Klucz**: chlorki, bromki, azotany baru = **rozpuszczalne**. Siarczany, węglany, chromiany = **NIErozpuszczalne**.
+
+## Mechanizm: dlaczego I dało czysty CuO?
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Probówka I — reakcja strąceniowa**:
+- **Cu²⁺ + 2 OH⁻ → Cu(OH)₂↓** (niebieski osad).
+- **Ba²⁺ + 2 Cl⁻** (rozpuszczone w roztworze, brak strącenia).
+
+</div>
+
+<div class="krok">
+
+**Rozkład termiczny w łaźni wodnej** (~100°C):
+- **Cu(OH)₂ → CuO + H₂O** (T~80-100°C). Niebieski Cu(OH)₂ → czarny CuO.
+
+</div>
+
+<div class="krok">
+
+**Przesączanie**:
+- Osad na sączku = **CuO** (czysty).
+- Przesącz = BaCl₂(aq) (rozpuszczone).
+
+</div>
+
+<div class="krok">
+
+**Wynik**: osad to **TYLKO tlenek metalu** (CuO). ✓
+
+</div>
+
+</div>
+
+## Mechanizm: dlaczego II NIE dało czystego CuO?
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Probówka II — strącanie podwójne**:
+- **Cu²⁺ + 2 OH⁻ → Cu(OH)₂↓** (niebieski osad).
+- **Ba²⁺ + SO₄²⁻ → BaSO₄↓** (biały osad, nierozpuszczalny, Ksp~10⁻¹⁰).
+
+</div>
+
+<div class="krok">
+
+**Rozkład termiczny w łaźni wodnej**:
+- **Cu(OH)₂ → CuO** ✓.
+- **BaSO₄ — NIE rozkłada się** w 100°C (stabilny do >1000°C).
+
+</div>
+
+<div class="krok">
+
+**Przesączanie**:
+- Osad na sączku = **CuO + BaSO₄** (mieszanina dwóch ciał stałych).
+- Przesącz = czysta woda (z H₂O z rozkładu).
+
+</div>
+
+<div class="krok">
+
+**Wynik**: osad to **mieszanina tlenku metalu + siarczanu** — NIE czysty CuO. ✗
+
+</div>
+
+</div>
+
+## Tabela rozpuszczalności (klucz)
+
+**Praktyczne reguły rozpuszczalności w wodzie**:
+
+| Anion | Rozpuszczalne | Nierozpuszczalne |
+|---|---|---|
+| NO₃⁻ | **Wszystkie** | — |
+| CH₃COO⁻ | Wszystkie | — |
+| Cl⁻, Br⁻, I⁻ | Większość | AgX, Hg₂X₂, PbX₂ |
+| SO₄²⁻ | Większość | **BaSO₄**, SrSO₄, PbSO₄, CaSO₄ (słabo) |
+| S²⁻, OH⁻, CO₃²⁻, PO₄³⁻ | Tylko z metalami alkalicznymi + NH₄⁺ | Większość |
+
+**Klucz dla zadania**: BaSO₄ to **klasyczny nierozpuszczalny siarczan**. Każdy chemik to wie — wykorzystywany jako **standard rentgenowski w żołądku** (białe zawiesiny doustne).
+
+<div class="odpowiedz">
+<div>
+
+**Rozstrzygnięcie**: **Probówka I**.
+
+**Uzasadnienie**:
+- W probówce I powstają Cu(OH)₂↓ (osad) + BaCl₂ (rozpuszczony). Po rozkładzie Cu(OH)₂ → CuO, BaCl₂ pozostaje w roztworze. Po przesączeniu osad = **tylko CuO**.
+- W probówce II powstają Cu(OH)₂↓ + **BaSO₄↓ (nierozpuszczalny!)**. Po rozkładzie Cu(OH)₂ → CuO, ale BaSO₄ NIE ulega rozkładowi w 100°C. Osad po przesączeniu = **CuO + BaSO₄** (mieszanina, nie czysty tlenek).
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — rozpuszczalność BaSO₄</div>
+
+To **fundamentalna wiedza**:
+- **BaSO₄ jest praktycznie nierozpuszczalny** (Ksp = 1·10⁻¹⁰).
+- Używany jako **kontrast radiologiczny** (papka z BaSO₄ wypija się przed RTG przewodu pokarmowego — nie wchłania się, więc nie jest toksyczny mimo że Ba²⁺ jest trujący).
+- Zaprawiać sobie: **siarczany + Ba = nierozpuszczalne**. Klasyczny test analityczny.
+</div>
+
+## Punktacja CKE
+
+- **6.** 1 pkt — wskazanie probówki **I** + uzasadnienie odwołujące się do **nierozpuszczalności BaSO₄**.
+
+## Po co to umieć
+
+**Tablica rozpuszczalności** — klucz **analizy jakościowej**:
+- Trzeba znać na pamięć — większość zadań CKE z chemii nieorganicznej tego wymaga.
+- W laboratorium chemicznym — codzienne stosowanie.
+
+**Synteza tlenków metali** — często wieloetapowa:
+- Cu(OH)₂ → CuO (T~100°C).
+- Mg(OH)₂ → MgO (T~350°C).
+- Al(OH)₃ → Al₂O₃ (T~500°C).
+- Fe(OH)₃ → Fe₂O₃ (T~200°C).
+
+**BaSO₄ w medycynie**:
+- **Doustne** = kontrast RTG dla przewodu pokarmowego.
+- Bezpieczne mimo toksyczności Ba²⁺ — bo nie ulega rozpuszczeniu, więc nie wchłania się przez nabłonek.
+- Po RTG wydalany w stolcu.
+
+**Reakcje strąceniowe** — zastosowania:
+- **Oczyszczanie wody** — usuwanie żelaza, manganu, fosforanów (strącenia).
+- **Galwanotechnika** — strącanie wodorotlenków metali.
+- **Analiza jakościowa** — identyfikacja jonów po kolorze osadu.
+
+**Klasyczna analiza kationów** (Fresenius):
+- Grupa I (Ag⁺, Pb²⁺): strąca z HCl.
+- Grupa II (Cu²⁺, Hg²⁺): strąca z H₂S w środowisku kwaśnym.
+- Grupa III (Fe³⁺, Al³⁺): strąca z H₂S w buforze amonowym.
+- Grupa IV (Ca²⁺, Ba²⁺): strąca z (NH₄)₂CO₃.
+- Grupa V (Na⁺, K⁺, NH₄⁺): nie strąca — identyfikuje płomieniem.
