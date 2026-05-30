@@ -1,0 +1,233 @@
+---
+arkusz: biologia-2024-maj-pr
+subject: biologia
+nr: 17
+punkty: 3
+typ: otwarte-krotkie
+topic: biologia molekularna, tRNA, translacja, antykodon, ramię akceptorowe, struktura RNA
+difficulty: 3
+tresc: |
+  **tRNA** (transferowe RNA) — cząsteczka pośrednicząca w translacji (transkrypcji → translacja → białko).
+
+  Struktura 3D widoczna na schemacie: kształt "**L**" (lub "kupą" liścia koniczyny w 2D), z **ramieniem akceptorowym** (koniec 3', wierzchołek) + **antykodonem** (pętla na dole).
+
+  **17.1.** Cząsteczki tRNA zbudowane są z (A. jednej / B. dwóch) nici. Komplementarne odcinki nici położone są w (1. przeciwnej / 2. tej samej) orientacji.
+
+  **17.2.** Określ funkcję ramienia **akceptorowego** + funkcję **antykodonu**.
+odpowiedz: |
+  **17.1.** **A1** — cząsteczki tRNA zbudowane są z **jednej** nici, a komplementarne odcinki nici położone są w **przeciwnej** orientacji.
+
+  **Uzasadnienie**:
+  - **Jedna nić**: tRNA to **pojedyncza** cząsteczka RNA o długości **~76 nukleotydów**, która **sama na siebie się zwija** (zawija się), tworząc obszary dwuniciowe (przez wewnętrzne parowanie zasad).
+  - **Przeciwna orientacja**: w obszarach dwuniciowych ("łodygach" liścia koniczyny) jedna część nici biegnie 5'→3', a komplementarna część 3'→5' — **antyrównolegle**. To analog do dwuniciowego DNA.
+
+  Struktura 2D = **liść koniczyny** (cloverleaf): 4 ramiona (akceptorowe + D-pętla + antykodon + TψC). Struktura 3D = **litera L** — bardziej zwarta, optymalna do interakcji z rybosomem.
+
+  **17.2.**
+
+  **Ramię akceptorowe**: **przyłącza odpowiedni aminokwas** (na końcu 3' — sekwencja CCA-3'). Aminokwas jest przyłączany kowalencyjnie do grupy 2'/3'-OH końcowej adenozyny przez enzym **aminoacylo-tRNA-syntetazę** (każdy z 20 aminokwasów ma swój własny enzym, rozpoznający konkretny tRNA). Tak załadowany tRNA = **aminoacylo-tRNA**, gotowy do udziału w translacji.
+
+  **Antykodon**: **rozpoznaje kodon** mRNA podczas translacji w rybosomie. Trzy nukleotydy w pętli antykodonowej są **komplementarne i antyrównoległe** do trzech nukleotydów kodonu mRNA. Wiązanie kodon-antykodon (wodorowe) zapewnia precyzję translacji — dopasowanie aminokwasu do odpowiedniego kodonu.
+
+  Razem: **antykodon** decyduje, **gdzie** tRNA usiądzie na mRNA; **ramię akceptorowe** decyduje, **który** aminokwas zostanie dodany do białka.
+pulapka: |
+  Pułapka 17.1 — odpowiedź "B" (dwóch nici). Klucz: tRNA to **pojedyncza** cząsteczka. Wygląd dwuniciowy w schemacie powstaje z **samo-zawijania** się jednej nici, nie z dwóch osobnych.
+
+  Pułapka 17.1 — odpowiedź "2" (tej samej orientacji). Klucz: zawsze gdy są **komplementarne odcinki**, są **antyrównoległe** (w DNA i RNA). To prawo fizyczne wiązań wodorowych między A-U / G-C.
+
+  Pułapka 17.2 — opis funkcji "transport" zamiast "rozpoznawanie/przyłączanie". Klucz: tRNA jest **adaptorem** — antykodon **rozpoznaje** kodon, ramię **wiąże** aminokwas. Sam transport jest skutkiem, nie funkcją.
+wymaganie: |
+  III.4 — kwasy nukleinowe (tRNA, mRNA), translacja.
+  III.5 — synteza białka.
+podobne:
+  - biologia-2024-maj-pr-2
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2024-maj-pr/ark-22.webp"
+  alt="Zadanie 17 - struktura tRNA"
+  caption="Strona 22 arkusza CKE 2024 PR biologia - zadanie 17 (struktura przestrzenna tRNA)."
+  zrodlo="CKE 2024 / pdb101.rcsb.org"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/Biologia/MBIP-R0-100-A-2405-arkusz.pdf"
+  pdfPage={22}
+/>
+
+## Klucz pojęciowy — struktury tRNA
+
+| Element | Funkcja |
+|---|---|
+| **Ramię akceptorowe** | Wiązanie aminokwasu (3' koniec, CCA-3') |
+| **Pętla antykodonowa** | Rozpoznawanie kodonu mRNA |
+| **Pętla D** | Stabilizacja 3D, kontakty z aminoacylo-tRNA syntetazą |
+| **Pętla TψC** | Stabilizacja, kontakt z rybosomem |
+| **Pętla zmienna** | Różna długość między tRNA, dodatkowa identyfikacja |
+
+## Klucz pojęciowy — translacja
+
+| Element | Funkcja |
+|---|---|
+| **mRNA** | Matryca kodonowa — niesie informację z DNA do rybosomu |
+| **tRNA** | **Adaptor** — przekłada kodon na aminokwas |
+| **Rybosom** | Maszyna katalityczna — łączy aminokwasy peptydowo |
+| **Aminoacylo-tRNA syntetaza** | Enzym ładujący tRNA odpowiednim aminokwasem |
+| **GTP** | Energia dla każdego kroku translacji |
+
+## Mechanizm: samo-zawijanie tRNA
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Jedna nić** tRNA (~76 nt) wytworzona w transkrypcji z genu tRNA.
+
+</div>
+
+<div class="krok">
+
+**Wewnętrzne parowanie zasad**: niektóre fragmenty nici są komplementarne do innych. Parują się przez wiązania wodorowe (A-U, G-C, plus parowanie zmodyfikowane np. G-U).
+
+</div>
+
+<div class="krok">
+
+**Komplementarne odcinki — antyrównoległe**: jedna część nici biegnie 5'→3', druga 3'→5'. To **konieczność strukturalna** wiązań wodorowych między zasadami.
+
+</div>
+
+<div class="krok">
+
+**Powstają 4 "łodygi"** (helikalne dwuniciowe odcinki) + 4 "pętle" (jednoniciowe) → struktura **liścia koniczyny** (2D).
+
+</div>
+
+<div class="krok">
+
+**Dalsze fałdowanie 3D**: liść koniczyny składa się w **kształt L** — pętle D i TψC stykają się, antykodon w jednym końcu, ramię akceptorowe w drugim.
+
+</div>
+
+</div>
+
+## Mechanizm: funkcje końców tRNA
+
+### Ramię akceptorowe (3' koniec)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Sekwencja 3'**: zawsze **CCA-3'** (ostatnie 3 nukleotydy każdego tRNA) — konserwowane uniwersalnie.
+
+</div>
+
+<div class="krok">
+
+**Aminoacylo-tRNA syntetaza** rozpoznaje konkretny tRNA (~20 enzymów na 20 aa).
+
+</div>
+
+<div class="krok">
+
+**Aktywacja**: aminokwas + ATP → aminoacylo-AMP + PPi (zużycie energii).
+
+</div>
+
+<div class="krok">
+
+**Przyłączenie**: aminoacylo-AMP + tRNA → **aminoacylo-tRNA** (aminokwas przy CCA-3' wiązaniem estrowym) + AMP.
+
+</div>
+
+<div class="krok">
+
+**Gotowy aminoacylo-tRNA** wnosi swój aminokwas do rybosomu.
+
+</div>
+
+</div>
+
+### Antykodon (środkowa pętla)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**3 nukleotydy** w specyficznej pozycji w pętli antykodonowej.
+
+</div>
+
+<div class="krok">
+
+**Rozpoznawanie kodonu**: antykodon paruje się z kodonem mRNA antyrównolegle (5'-3' antykodonu vs 3'-5' kodonu).
+
+</div>
+
+<div class="krok">
+
+**Przykład**: aminokwas Met = kodon **5'-AUG-3'** = antykodon **3'-UAC-5'** (komplementarny + antyrównoległy).
+
+</div>
+
+<div class="krok">
+
+**Reguła wobblingu**: trzecia pozycja antykodonu może parować się z różnymi zasadami (degeneracja kodu genetycznego — 64 kodony, 20 aa + STOP).
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+<div>
+
+**17.1.** **A1** — tRNA zbudowane z **jednej** nici. Komplementarne odcinki położone są w **przeciwnej** (antyrównoległej) orientacji.
+
+**17.2.**
+- **Ramię akceptorowe**: **przyłącza odpowiedni aminokwas** na końcu 3' (sekwencja CCA-3'). Reakcja katalizowana przez aminoacylo-tRNA-syntetazę. Aminoacylo-tRNA wnosi aminokwas do rybosomu.
+- **Antykodon**: **rozpoznaje kodon mRNA** podczas translacji. Trzy nukleotydy antykodonu wiążą się komplementarnie i antyrównoległe z trzema nukleotydami kodonu mRNA → zapewnia precyzję wbudowania aminokwasu zgodnie z kodem genetycznym.
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka 17.1 — "dwie nici"</div>
+
+Wygląd tRNA na schemacie ZA WYDAJE się jak dwie nici, ale to **jedna** nić zawinięta. Klucz: jeden gen tRNA → jedna nić → 76 nukleotydów.
+
+Porównanie:
+- **DNA** = dwie osobne nici (komplementarne) → dwuniciowe.
+- **mRNA / tRNA / rRNA** = jedna nić (może się sama składać).
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka 17.2 — "transport aminokwasów"</div>
+
+Sama "transport" = niepełne. Klucz: **co dokładnie robi każde ramię**:
+- Akceptorowe: **WIĄŻE** aminokwas (chemiczne wiązanie estrowe).
+- Antykodon: **ROZPOZNAJE** kodon (parowanie zasad).
+
+Bez tych funkcji translacja byłaby ślepa lub nie miałaby aminokwasów do przyłączania.
+</div>
+
+## Punktacja CKE
+
+- **17.1.** 1 pkt — A1 (oba wybory poprawne).
+- **17.2.** 2 pkt — obie funkcje poprawnie opisane (po 1 pkt).
+- **Suma**: 3 pkt.
+
+## Po co to umieć
+
+**tRNA** to **kluczowy element** translacji — bez niego DNA byłoby tylko ciągiem liter bez znaczenia biologicznego.
+
+**~40-60 różnych tRNA w komórce** (mniej niż 61 kodonów, dzięki wobblingowi).
+
+**Suppressor tRNA** — mutacje w antykodonie pozwalające tRNA **czytać kodon STOP** jako aminokwas. Wykorzystywane w **inżynierii genetycznej** do wprowadzania **nienaturalnych aminokwasów** w określone miejsca białka (technologia stop codon suppression). Powstają białka z syntetycznymi grupami (fluorofory, "click chemistry tags", krzyżujące fotochemicznie).
+
+**Mutacje tRNA**: choroby mitochondrialne (mt-tRNA mutations) — MELAS, MERRF, deafness DEAFA1. Ponieważ tRNA jest niezbędny do **całej** translacji, mutacje są zwykle ciężkie i wielonarządowe.
+
+**Antybiotyki + tRNA**: niektóre antybiotyki działają na bakteryjne tRNA (puromycyna, mocna analogia do aminoacylo-tRNA → wbudowuje się do białka, ale powoduje przedwczesne terminowanie). Streptomycyna zaburza wiązanie tRNA-mRNA w bakteryjnym rybosomie.
+
+**Origin of life**: tRNA = jedna z najstarszych cząsteczek. RNA World (świat RNA) hipoteza: tRNA + rRNA + rybozymy istniały **przed** białkami i DNA. Współczesne tRNA = molekularne "skamieliny" tej epoki.
