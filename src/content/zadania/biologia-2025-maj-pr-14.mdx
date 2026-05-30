@@ -1,0 +1,165 @@
+---
+arkusz: biologia-2025-maj-pr
+subject: biologia
+nr: 14
+punkty: 3
+typ: otwarte-krotkie
+topic: inżynieria genetyczna, Agrobacterium tumefaciens, T-DNA, restryktaza, ligaza, wektor
+difficulty: 4
+tresc: |
+  Schemat otrzymywania roślin transgenicznych z użyciem **Agrobacterium tumefaciens**: plazmid + obcy DNA → E1 → zrekombinowany plazmid → E2 → zrekombinowana komórka bakteryjna → infekcja komórki roślinnej → wbudowanie T-DNA z transgenem do chromosomu → hodowla in vitro → transgeniczna roślina.
+
+  **14.1.** Uzupełnij tabelę: nazwa enzymu E1 i E2 (helikaza / ligaza / restryktaza) + funkcja.
+  **14.2.** Wykaż, że **A. tumefaciens** pełni w tej metodzie funkcję **wektora**.
+odpowiedz: |
+  **14.1.**
+
+  | Enzym | Nazwa | Funkcja |
+  |---|---|---|
+  | **E1** | **restryktaza** (endonukleaza restrykcyjna) | Tnie nić DNA (plazmid + obcy DNA) w **swoistej sekwencji**, generując **lepkie końce** umożliwiające połączenie obcego fragmentu z plazmidem. |
+  | **E2** | **ligaza DNA** | **Łączy** wolne końce obcego DNA z otwartym plazmidem **wiązaniem fosfodiestrowym** → powstaje zamknięty, kolisty **zrekombinowany plazmid**. |
+
+  (Helikaza odpada — rozplata podwójną helisę, używana w replikacji, nie w klonowaniu in vitro.)
+
+  **14.2.** **Wektor** = nośnik obcego DNA, który przenosi gen do komórki gospodarza i **włącza go do jej genomu** (lub utrzymuje stabilnie).
+
+  **Agrobacterium tumefaciens** spełnia tę funkcję:
+  - Naturalnie **infekuje komórki roślinne** (powodując guzy korzeniowe — crown gall).
+  - Posiada plazmid **Ti**, którego fragment **T-DNA** jest **wbudowywany do genomu rośliny**.
+  - W zrekombinowanym plazmidzie T-DNA **niesie transgen** (zastąpione onkogeny).
+  - Po infekcji T-DNA z transgenem **integruje się z chromosomem roślinnym** → roślina **wyraża** transgen.
+
+  Bakteria działa więc jak "kurier" przenoszący obcy gen z probówki do genomu rośliny — definicja wektora.
+pulapka: |
+  Pułapka 14.1 — pomieszanie ról: **restryktaza tnie**, **ligaza łączy**. Helikaza w klonowaniu nie występuje (rozplata DNA w replikacji).
+
+  Pułapka 14.2 — odpowiedź "bo infekuje rośliny" bez wskazania **integracji T-DNA z genomem**. Klucz: A. tumefaciens **wbudowuje** obcy gen (z T-DNA) do **chromosomu** rośliny → przenosi obcy DNA do genomu gospodarza = wektor.
+wymaganie: |
+  III.6 — inżynieria genetyczna, wektory, organizmy transgeniczne (GMO).
+podobne:
+  - biologia-2025-maj-pr-13
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2025-maj-pr/ark-22.webp"
+  alt="Zadanie 14 - schemat otrzymywania roślin transgenicznych"
+  caption="Strona 22 arkusza CKE 2025 PR biologia - zadanie 14 (Agrobacterium tumefaciens, T-DNA, enzymy E1/E2)."
+  zrodlo="CKE 2025 / G.J. Tortora i in. Microbiology: An Introduction"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Biologia/MBIP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={22}
+/>
+
+## Klucz pojęciowy — enzymy inżynierii genetycznej
+
+| Enzym | Funkcja | Gdzie występuje naturalnie |
+|---|---|---|
+| **Restryktaza** (endonukleaza restrykcyjna) | **Tnie DNA** w sekwencji rozpoznania (4–8 nt) — lepkie lub tępe końce | Bakterie (ochrona przed wirusami — system R-M) |
+| **Ligaza DNA** | **Łączy** wolne końce DNA wiązaniem **fosfodiestrowym** | Wszystkie komórki — naprawa DNA, replikacja (fragmenty Okazaki) |
+| Helikaza | Rozplata podwójną helisę | Replikacja DNA — nie w klonowaniu in vitro |
+| Polimeraza DNA | Syntezuje nową nić DNA | Replikacja, PCR |
+| Odwrotna transkryptaza | RNA → cDNA | Retrowirusy, klonowanie genów |
+
+## Mechanizm: tworzenie zrekombinowanego plazmidu (E1 + E2)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Krok 1 — wycięcie**: **E1 (restryktaza)** rozpoznaje **specyficzną sekwencję** (np. 6 nt) w plazmidzie Ti i w **obcym DNA** zawierającym transgen. Tnie **OBA** w tym samym miejscu sekwencji → powstają **lepkie końce** (komplementarne 1-niciowe wystające fragmenty).
+
+</div>
+
+<div class="krok">
+
+**Krok 2 — hybrydyzacja**: lepkie końce obcego DNA pasują do lepkich końców plazmidu (komplementarne pary zasad) → łączą się **wiązaniami wodorowymi**.
+
+</div>
+
+<div class="krok">
+
+**Krok 3 — zszycie**: **E2 (ligaza DNA)** tworzy **wiązanie fosfodiestrowe** między grupą 3'-OH a 5'-fosforanem → **zamyka pierścień plazmidu**. Powstaje **zrekombinowany plazmid** (Ti z transgenem).
+
+</div>
+
+<div class="krok">
+
+**Krok 4 — transformacja**: zrekombinowany plazmid wprowadzany do **A. tumefaciens** (transformacja bakterii).
+
+</div>
+
+<div class="krok">
+
+**Krok 5 — infekcja rośliny**: bakteria zaraża komórki roślinne. **T-DNA** (z transgenem) zostaje **wbudowane do chromosomu** komórki rośliny.
+
+</div>
+
+<div class="krok">
+
+**Krok 6 — hodowla in vitro**: pojedyncze komórki transgeniczne → wzrost na pożywce → cała **transgeniczna roślina** (totipotencja roślin).
+
+</div>
+
+</div>
+
+## Dlaczego A. tumefaciens to wektor? (14.2)
+
+**Definicja wektora**: nośnik DNA, który **przenosi** obcy gen do komórki docelowej i powoduje, że ten gen jest **stabilnie utrzymywany / replikowany / włączony do genomu** gospodarza.
+
+**A. tumefaciens — naturalny wektor roślin**:
+- Bakteria glebowa, infekuje rośliny dwuliścienne przez rany.
+- Plazmid **Ti** (tumor-inducing) zawiera region **T-DNA** (transferred DNA, ~20 kb).
+- Po infekcji **T-DNA** zostaje **wycięte z plazmidu** i **wbudowane do genomu rośliny** (rekombinacja kierowana białkami bakteryjnymi VirD1/D2).
+- Naturalnie T-DNA niesie geny powodujące namnażanie komórek roślinnych (guz) + syntezę opin (pokarm dla bakterii).
+- W **inżynierii genetycznej** te geny **zastępujemy transgenem** (np. odporność na herbicyd, witamina A — "złoty ryż", białko Bt). T-DNA staje się "koniem trojańskim" — nadal wbudowuje się do genomu, ale teraz **niesie nasz gen**.
+
+**Funkcja wektora spełniona**:
+1. Przenosi obcy gen do komórki rośliny ✓
+2. Włącza go do **chromosomu** (stabilna integracja) ✓
+3. Roślina dziedziczy transgen i wyraża go ✓
+
+<div class="odpowiedz">
+<div>
+
+**14.1.**
+
+| Enzym | Nazwa | Funkcja |
+|---|---|---|
+| **E1** | **restryktaza** | Tnie DNA (plazmid i obcy DNA) w specyficznej sekwencji rozpoznania → lepkie końce gotowe do łączenia. |
+| **E2** | **ligaza DNA** | Łączy wolne końce obcego DNA z plazmidem wiązaniem fosfodiestrowym → zamknięty, kolisty zrekombinowany plazmid. |
+
+**14.2.** **A. tumefaciens jest wektorem**, ponieważ przenosi obcy gen (w T-DNA zrekombinowanego plazmidu) do komórki rośliny i **integruje go z chromosomem roślinnym**. Po infekcji T-DNA z transgenem zostaje **wbudowane do genomu** rośliny → transgen jest dziedziczony i wyrażany. To definicja wektora — nośnik DNA dostarczający i włączający obcy gen do genomu gospodarza.
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka 14.1 — helikaza</div>
+
+**Helikaza** rozplata podwójną helisę w **replikacji DNA** (in vivo). W klonowaniu **in vitro** **nie używa się** helikazy — lepkie końce powstają z restryktazy. Klucz: pytanie dotyczy **tworzenia zrekombinowanego plazmidu**, a nie kopiowania DNA.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka 14.2 — "bo infekuje"</div>
+
+Sama infekcja **nie czyni** wektora. Klucz: A. tumefaciens **wbudowuje T-DNA z transgenem do chromosomu** rośliny → stabilna integracja + dziedziczenie. To, że bakteria jest patogenem, jest tylko mechanizmem dostarczenia.
+</div>
+
+## Punktacja CKE
+
+- **14.1.** 1 pkt — poprawnie obie nazwy (restryktaza + ligaza) + funkcje. (Jedna błędna = 0 pkt — bo enzymy są skorelowane.)
+- **14.2.** 1 pkt — wskazanie **wbudowania T-DNA z transgenem do genomu rośliny** (lub równoważnie: integracja obcego DNA z chromosomem).
+- **Suma**: 2 pkt (część "0–2" + "0–1").
+
+## Po co to umieć
+
+**Agrobacterium tumefaciens** to **pierwszy odkryty naturalny wektor roślin** (lata 70. XX w.). Dzięki niemu powstały:
+- **Złoty ryż** (witamina A — walka z ślepotą w Azji).
+- **Bawełna Bt** (odporna na szkodniki).
+- **Kukurydza odporna na herbicydy** (Roundup Ready).
+- **Pomidory FlavrSavr** (pierwsza komercyjna GMO żywność, 1994).
+
+To narzędzie biotechnologii — pozwala wprowadzać dowolny gen do roślin uprawnych. Dla zwierząt analogiczne wektory: **retrowirusy**, **lentiwirusy**, **AAV** (adeno-associated virus — terapia genowa).
