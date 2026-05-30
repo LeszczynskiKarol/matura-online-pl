@@ -1,0 +1,285 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 5
+punkty: 4
+typ: otwarte-krotkie
+topic: redoks, bilansowanie, jonowo-elektronowe, VSEPR, ICl₃, związki międzyhalogenowe
+difficulty: 5
+tresc: |
+  **Związki międzyhalogenowe** AXᵧ (y = 1, 3, 5, 7). A = mniej elektroujemny, X = bardziej elektroujemny.
+
+  **Trichlorek jodu** ICl₃ — przykład. Otrzymywany w reakcji:
+  IO₃⁻ + I₂ + H⁺ + Cl⁻ → ICl₃ + H₂O
+
+  **5.1.** Napisz równanie reakcji **redukcji** (zapis jonowo-elektronowy) + uzupełnij współczynniki stechiometryczne pełnego równania.
+
+  **5.2.** Wzór elektronowy ICl₃ + ocena zgodności modelu (x=3, L_p=4) + wartość liczby przestrzennej ICl₃.
+odpowiedz: |
+  **5.1.** Analiza stopni utlenienia:
+  - **I w IO₃⁻**: I + 3·(-2) = -1 → I = **+5**.
+  - **I w I₂**: **0**.
+  - **I w ICl₃**: I + 3·(-1) = 0 → I = **+3** (Cl bardziej elektroujemny → -1).
+  - **Cl w Cl⁻**: -1. **Cl w ICl₃**: -1.
+
+  **Procesy redoks**:
+  - **IO₃⁻ (I⁺⁵) → ICl₃ (I⁺³)**: **REDUKCJA** (I przyjmuje **2 e**).
+  - **I₂ (I⁰) → ICl₃ (I⁺³)**: **UTLENIANIE** (każdy I oddaje **3 e**, łącznie 6 e na 1 I₂).
+
+  **Równanie REDUKCJI** (jonowo-elektronowe):
+
+  $$\text{IO}_3^- + 6\,\text{H}^+ + 3\,\text{Cl}^- + 2\,e^- \rightarrow \text{ICl}_3 + 3\,\text{H}_2\text{O}$$
+
+  Bilans: I: 1=1, O: 3=3 (w H₂O), H: 6=6, Cl: 3=3, ładunek: -1+6-3-2 = 0 = 0 ✓.
+
+  **Równanie utleniania**:
+
+  $$\text{I}_2 + 6\,\text{Cl}^- \rightarrow 2\,\text{ICl}_3 + 6\,e^-$$
+
+  **Pełne równanie** (3 × redukcja + 1 × utlenianie, by 6 e się zrównoważyło):
+
+  $$\mathbf{3\,IO_3^- + I_2 + 18\,H^+ + 15\,Cl^- \rightarrow 5\,ICl_3 + 9\,H_2O}$$
+
+  Współczynniki: **3, 1, 18, 15 → 5, 9**.
+
+  **Bilans**: I: 3+2=5 ✓; O: 9=9 ✓; H: 18=18 ✓; Cl: 15=15 ✓; ładunek: -3+18-15 = 0 ✓.
+
+  **5.2.** **Wzór elektronowy ICl₃**:
+
+  ```
+        ..      ..
+        :Cl      Cl:
+         |      /
+         |     /
+         I̅:̅ (atom centralny z 2 wolnymi parami)
+         |
+         |
+        :Cl:
+         ..
+  ```
+
+  Atom centralny **I** ma **7 elektronów walencyjnych** (grupa 17):
+  - 3 z nich tworzą **3 wiązania σ I-Cl** (pary wiążące).
+  - Pozostałe 4 = **2 wolne pary elektronowe**.
+
+  **Liczba przestrzenna ICl₃**: L_p = x + y = **3 + 2 = 5**.
+
+  **Rozstrzygnięcie**: model przedstawiony (z x=3 podstawnikami i L_p=4, czyli y=1) **NIE** jest ilustracją kształtu ICl₃.
+
+  ICl₃ ma L_p = 5 (3 podstawniki + 2 wolne pary) → kształt **T (T-shape)** — wzorowane na trygonalnej bipiramidzie z dwoma wolnymi parami w pozycjach ekwatorialnych. Model z zadania pokazuje **piramidę trygonalną** (NH₃-podobną, L_p=4), inną od T-shape.
+pulapka: |
+  Pułapka 5.1 — pomylenie utleniacza i reduktora. **IO₃⁻** to **utleniacz** (redukowany z +5 do +3). **I₂** to **reduktor** (utleniany z 0 do +3). **Oba** są źródłem jodu w produkcie ICl₃!
+
+  Pułapka 5.1 — pominięcie Cl⁻ w równaniu redukcji. ICl₃ wymaga 3 Cl, które dostarcza Cl⁻ z roztworu. Klucz: równanie połówkowe musi zawierać **wszystkie** substraty potrzebne do uzyskania produktu.
+
+  Pułapka 5.2 — pomylenie I z atomem podgrupy s/p małej grupy. I ma 7 e walencyjnych (grupa 17). 3 wiązania + 2 wolne pary = 5 par = oktet "rozszerzony" (atom okresu 5 może mieć więcej niż 8 e przez d-orbitale).
+wymaganie: |
+  III.4 — reakcje redoks, bilansowanie jonowo-elektronowe.
+  I.4 — VSEPR, kształty cząsteczek.
+podobne:
+  - chemia-2025-maj-pr-3
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strony arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-08.webp"
+  alt="Zadanie 5 - ICl3 redoks"
+  caption="Strona 8 arkusza CKE 2025 PR chemia - zadanie 5.1 (redoks ICl₃)."
+  zrodlo="CKE 2025 / Bielański, Podstawy chemii nieorganicznej"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={8}
+/>
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-09.webp"
+  alt="Zadanie 5.2 - VSEPR ICl3"
+  caption="Strona 9 arkusza CKE 2025 PR chemia - zadanie 5.2 (wzór elektronowy ICl₃ + VSEPR)."
+  zrodlo="CKE 2025 / Gillespie, Coordination Chemistry Reviews"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={9}
+/>
+
+## Klucz pojęciowy — VSEPR
+
+**VSEPR** (Valence Shell Electron Pair Repulsion) = teoria odpychania par elektronów powłoki walencyjnej.
+
+| L_p | Geometria par | Kształt cząsteczki (z wolnymi parami y) |
+|---|---|---|
+| **2** | Liniowa | y=0: liniowa (CO₂). y=1: kątowa (rzadko). |
+| **3** | Trygonalna płaska | y=0: trygonalna płaska (BF₃). y=1: kątowa (SO₂). |
+| **4** | Tetraedryczna | y=0: tetraedr (CH₄). y=1: piramida trygonalna (NH₃). y=2: kątowa (H₂O). |
+| **5** | Trygonalna bipiramida | y=0: TBP (PF₅). y=1: huśtawka (SF₄). y=2: **T-shape (ICl₃, ClF₃)**. y=3: liniowa (XeF₂). |
+| **6** | Oktaedryczna | y=0: oktaedr (SF₆). y=1: piramida kwadratowa (BrF₅). y=2: kwadrat planarny (XeF₄). |
+
+**ICl₃** = klasyczny **T-shape** (L_p=5, x=3, y=2).
+
+## Mechanizm: bilansowanie reakcji jonowo-elektronowej (5.1)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Krok 1 — stopnie utlenienia**:
+- IO₃⁻: I = +5.
+- I₂: I = 0.
+- ICl₃: I = +3.
+- Cl: -1 (bez zmiany).
+- H: +1 (bez zmiany).
+- O: -2 (bez zmiany).
+
+</div>
+
+<div class="krok">
+
+**Krok 2 — co się utlenia, co redukuje**:
+- I⁺⁵ → I⁺³: **redukcja** (różnica -2 → przyjmuje 2 e).
+- I⁰ → I⁺³: **utlenianie** (różnica +3 → oddaje 3 e).
+
+</div>
+
+<div class="krok">
+
+**Krok 3 — połówki**:
+
+**Redukcja** (z H⁺ i Cl⁻ jako pomocnicze):
+IO₃⁻ + 6 H⁺ + 3 Cl⁻ + **2 e⁻** → ICl₃ + 3 H₂O
+
+**Utlenianie**:
+I₂ + 6 Cl⁻ → 2 ICl₃ + **6 e⁻**
+
+</div>
+
+<div class="krok">
+
+**Krok 4 — bilans elektronów**. Redukcja: 2 e. Utlenianie: 6 e. NWW = 6:
+- Redukcja × 3: 3 IO₃⁻ + 18 H⁺ + 9 Cl⁻ + 6 e⁻ → 3 ICl₃ + 9 H₂O.
+- Utlenianie × 1: I₂ + 6 Cl⁻ → 2 ICl₃ + 6 e⁻.
+
+</div>
+
+<div class="krok">
+
+**Krok 5 — suma**:
+3 IO₃⁻ + I₂ + 18 H⁺ + 9 Cl⁻ + 6 Cl⁻ → 3 ICl₃ + 2 ICl₃ + 9 H₂O
+
+→ **3 IO₃⁻ + I₂ + 18 H⁺ + 15 Cl⁻ → 5 ICl₃ + 9 H₂O**
+
+</div>
+
+</div>
+
+## Mechanizm: wzór elektronowy ICl₃ (5.2)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Atom centralny** = **I** (jod) — mniejsza elektroujemność (2,66) niż Cl (3,16). Reguła VSEPR: centralny = mniej elektroujemny.
+
+</div>
+
+<div class="krok">
+
+**Elektrony walencyjne I**: 7 (grupa 17, konfiguracja 5s² 5p⁵).
+
+</div>
+
+<div class="krok">
+
+**3 wiązania I-Cl**: każde wiązanie zabiera 1 e z I. Pozostaje 7 - 3 = **4 e wolnych** = **2 wolne pary**.
+
+</div>
+
+<div class="krok">
+
+**Liczba przestrzenna**: L_p = liczba podstawników + liczba wolnych par = 3 + 2 = **5**.
+
+</div>
+
+<div class="krok">
+
+**Geometria** (z tabeli VSEPR dla L_p=5, y=2):
+- 5 pozycji w trygonalnej bipiramidzie.
+- 2 wolne pary zajmują pozycje **ekwatorialne** (większa przestrzeń).
+- 3 podstawniki: 2 aksjalne + 1 ekwatorialna.
+- Kształt = **T-shape** (litera T).
+
+</div>
+
+<div class="krok">
+
+**Model z zadania** (x=3, L_p=4): to **piramida trygonalna** (jak NH₃, z 1 wolną parą).
+- ICl₃ ma L_p=5, nie 4.
+- Model NIE pasuje do ICl₃.
+
+</div>
+
+</div>
+
+**Wzór elektronowy** (uproszczony):
+
+I (centralny) ma:
+- 3 kreski (wiązania) idące do 3 atomów Cl, każdy Cl ma 3 wolne pary.
+- 2 kreski (wolne pary) na samym I.
+
+```
+       Cl − I = Cl
+            |
+            Cl
+       z 2 wolnymi parami na I (above + below)
+```
+
+<div class="odpowiedz">
+<div>
+
+**5.1.** Równanie redukcji:
+
+$$\text{IO}_3^- + 6\,\text{H}^+ + 3\,\text{Cl}^- + 2\,e^- \rightarrow \text{ICl}_3 + 3\,\text{H}_2\text{O}$$
+
+Pełne równanie (zbilansowane):
+
+$$\mathbf{3\,IO_3^- + I_2 + 18\,H^+ + 15\,Cl^- \rightarrow 5\,ICl_3 + 9\,H_2O}$$
+
+Współczynniki: **3, 1, 18, 15 → 5, 9**.
+
+**5.2.** **Wzór elektronowy ICl₃**: atom I (centralny) z 3 wiązaniami σ do Cl + **2 wolne pary** na I. Każdy Cl ma 3 wolne pary.
+
+**Rozstrzygnięcie**: model **NIE** jest ilustracją ICl₃ (model: L_p=4, y=1 — piramida trygonalna; ICl₃: L_p=5, y=2 — T-shape).
+
+**Liczba przestrzenna ICl₃**: **L_p = 5**.
+
+</div>
+</div>
+
+## Punktacja CKE
+
+- **5.1.** 2 pkt — równanie redukcji + pełne zbilansowane.
+- **5.2.** 2 pkt — wzór elektronowy + rozstrzygnięcie + L_p=5.
+- **Suma**: 4 pkt.
+
+## Po co to umieć
+
+**Bilansowanie redoks** — klasyczna umiejętność chemii. Wszędzie używana:
+- **Korozja metali** — utlenianie.
+- **Galwanotechnika** — redukcja metali na elektrodach.
+- **Baterie** — redoks (Pb-PbO₂, Li-LiCoO₂).
+- **Spalanie** — utlenianie paliw + tlen.
+- **Fotosynteza** — H₂O → O₂ (utlenianie) + CO₂ → glukoza (redukcja).
+
+**VSEPR** — fundament chemii kwantowej:
+- Pozwala **przewidywać kształty** cząsteczek bez obliczeń kwantowych.
+- Stosowana w **projektowaniu leków** (kształt cząsteczki = aktywność biologiczna).
+- W **chemii ciała stałego** (sieci krystaliczne).
+
+**Związki międzyhalogenowe** (np. ClF₃, BrF₅, IF₇) — bardzo reaktywne, silne utleniacze:
+- **ClF₃** używany w **paliwach rakietowych** (utleniacz).
+- **IF₇** — najmniejsza znana cząsteczka o L_p=7 (siedmio-pozycyjne ułożenie).
+
+**T-shape** — geometria ICl₃, ClF₃:
+- Wykorzystywana w niektórych ligandach (chemia koordynacyjna).
+- Wpływa na **właściwości fizyczne** (dipol momentowy, T topnienia).
+
+**ICl₃** — w praktyce istnieje jako **dimer I₂Cl₆** w stanie stałym (mostkowe Cl). Monomer ICl₃ tylko w fazie gazowej. Reaguje gwałtownie z wodą → HIO + HCl + I.
