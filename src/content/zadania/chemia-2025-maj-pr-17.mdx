@@ -1,0 +1,171 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 17
+punkty: 2
+typ: otwarte-krotkie
+topic: chemia organiczna, alkeny, reguła Markownikowa, hydroboracja, addycja wody
+difficulty: 5
+tresc: |
+  **Reguła Markownikowa**: addycja HX (lub H₂O w środowisku kwaśnym) do niesymetrycznego alkenu → OH/X na **bardziej rzędowym** atomie C.
+
+  **Odstępstwo (anti-Markownikow)**: addycja wody przez **BH₃ + H₂O₂/OH⁻** → OH na **mniej rzędowym** atomie C.
+
+  Schematy:
+
+  **Reakcja 1**: Alken + H₂O → CH₃-CH₂-**C(OH)(CH₂CH₃)**-CH₂-CH₃ (alkohol III-rzędowy = 3-etylo-3-pentanol).
+
+  **Reakcja 2**: Alken + H₂O → CH₃-CH₂-CH(CH₃)-**CH₂-OH** (alkohol I-rzędowy = 2-metylo-1-butanol).
+
+  Uzupełnij: wzór alkenu + warunki reakcji.
+odpowiedz: |
+  **Reakcja 1**: produkt = 3-etylo-3-pentanol (alkohol III-rzędowy).
+
+  Aby otrzymać OH na **bardziej rzędowym C** (C3 = III-rzędowy w pentanie) — **zgodnie z Markownikowem**:
+
+  **Alken**: **CH₃-CH=C(C₂H₅)-CH₂-CH₃** (3-etylo-2-penten lub równoważnie 3-etylo-2-pentene).
+
+  **Warunki**: **H₂O, kat. H⁺** (np. H₂SO₄ rozc. lub H₃PO₄).
+
+  Mechanizm:
+  - Alken: CH₃-CH=C(C₂H₅)-CH₂-CH₃.
+  - +H⁺ → karbokation 3°-rzędowy (najstabilniejszy): CH₃-CH₂-C⁺(C₂H₅)-CH₂-CH₃.
+  - +H₂O, -H⁺ → CH₃-CH₂-C(OH)(C₂H₅)-CH₂-CH₃ (Markownikow).
+
+  **Reakcja 2**: produkt = 2-metylo-1-butanol (alkohol I-rzędowy).
+
+  Aby otrzymać OH na **mniej rzędowym C** (C1 = I-rzędowy) — **niezgodnie z Markownikowem** (anti-Markownikow):
+
+  **Alken**: **CH₂=C(CH₃)-CH₂-CH₃** (2-metylo-1-buten).
+
+  **Warunki**: **1) BH₃**, **2) H₂O₂ / OH⁻** (hydroboracja-oksydacja).
+
+  Mechanizm:
+  - Alken: CH₂=C(CH₃)-CH₂-CH₃.
+  - +BH₃: bór wchodzi na **mniej zatłoczony** C (= mniej rzędowy = CH₂), H na bardziej rzędowy C (= z metylem).
+  - Pośredni: BH₂-CH₂-CH(CH₃)-CH₂-CH₃.
+  - +H₂O₂/OH⁻: zamiana B-C na HO-C → HO-CH₂-CH(CH₃)-CH₂-CH₃ = **2-metylo-1-butanol** (anti-Markownikow).
+pulapka: |
+  Pułapka 1 — pomylenie alkenu. Klucz: **odwrotny kierunek** addycji daje **inny alken**.
+  - Markownikow: alken z C=C otaczany przez większą grupę → OH na bardziej rzędowym (alkohol III- lub II-rzędowy).
+  - Anti-Markownikow: alken końcowy (CH₂=) → OH na końcowym CH₂ (alkohol I-rzędowy).
+
+  Pułapka 2 — warunki. **H₂O + H⁺** = Markownikow. **BH₃ + H₂O₂/OH⁻** = anti-Markownikow (hydroboracja).
+
+  Pułapka — pisanie nazwy zamiast wzoru. Zadanie pyta o **wzór półstrukturalny** (grupowy), np. CH₃-CH=C(C₂H₅)-CH₂-CH₃, nie nazwę systematyczną.
+wymaganie: |
+  X.3 — alkeny, addycja, reguła Markownikowa.
+  X.7 — alkohole.
+podobne:
+  - chemia-2025-maj-pr-18
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-22.webp"
+  alt="Zadanie 17 - Markownikow + hydroboracja"
+  caption="Strona 22 arkusza CKE 2025 PR chemia - zadanie 17 (addycja wody do alkenów)."
+  zrodlo="CKE 2025 / J. McMurry, Chemia organiczna"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={22}
+/>
+
+## Klucz pojęciowy — reguła Markownikowa
+
+**Reguła Markownikowa (1869)**: w addycji HX (lub H₂O w środowisku kwaśnym) do **niesymetrycznego** alkenu:
+- **H** przyłącza się do **C z większą liczbą H** (mniej rzędowy).
+- **X (lub OH)** przyłącza się do **C z mniejszą liczbą H** (bardziej rzędowy).
+
+**Mechanizm**: powstaje **najstabilniejszy karbokation** (3°-rzędowy > 2°-rzędowy > 1°-rzędowy).
+
+**Przykład**: propen + HCl:
+- CH₂=CH-CH₃ + HCl → CH₃-CHCl-CH₃ (2-chloropropan, NIE 1-chloropropan).
+
+**W zadaniu** (reakcja 1):
+- 3-etylo-2-penten (CH₃-CH=C(C₂H₅)-CH₂-CH₃).
+- C2 ma 1 H, C3 ma 0 H (więcej podstawników).
+- Markownikow: H na C2, OH na C3 → 3-etylo-3-pentanol (III-rzędowy).
+
+## Klucz pojęciowy — hydroboracja-oksydacja
+
+**Hydroboracja** (H.C. Brown, Nobel 1979):
+1. **Etap 1**: BH₃ + alken → alkilobor R-BH₂.
+   - Bór wchodzi na **mniej zatłoczony** C (regioselektywność **anti-Markownikow**).
+2. **Etap 2**: R-BH₂ + H₂O₂ + OH⁻ → R-OH.
+   - Zachowanie pozycji B (utrata grupy BH₂ → OH zostaje).
+
+**Skutek**: OH na **mniej rzędowym C** (przeciwnie do reguły Markownikowa).
+
+**W zadaniu** (reakcja 2):
+- 2-metylo-1-buten (CH₂=C(CH₃)-CH₂-CH₃).
+- C1 (CH₂=) jest **mniej zatłoczony** niż C2 (z metylem + etylem).
+- Hydroboracja: B na C1, H na C2.
+- Po utlenieniu: OH na C1 → 2-metylo-1-butanol (I-rzędowy).
+
+## Mechanizm: dlaczego BH₃ wchodzi na mniej rzędowy C?
+
+**Przyczyna**: zawada steryczna.
+- Atom **B (mały)** + 3 atomy H tworzą "BH₂-" grupę, która woli **mniej zatłoczone** otoczenie.
+- Bardziej rzędowy C jest "zatłoczony" przez podstawniki → trudniej tam wciągnąć B.
+
+**Efekt elektroniczny**: BH₃ nieco elektrofilowy (puste orbitale na B), ale dominuje **zawada**.
+
+## Klucz pojęciowy — rzędowość alkoholu
+
+| Rzędowość | Liczba C połączonych z C-OH | Przykład |
+|---|---|---|
+| **I-rzędowy** (1°) | 1 (lub 0) | CH₃-CH₂-CH₂-OH (1-propanol) |
+| **II-rzędowy** (2°) | 2 | CH₃-CH(OH)-CH₃ (2-propanol) |
+| **III-rzędowy** (3°) | 3 | (CH₃)₃C-OH (tert-butanol) |
+
+**W zadaniu**:
+- Reakcja 1: 3-etylo-3-pentanol = (C₂H₅)(CH₂CH₃)(CH₂CH₃)C-OH → 3 grupy etylowe na C-OH → **III-rzędowy** ✓.
+- Reakcja 2: 2-metylo-1-butanol = HO-CH₂-CH(CH₃)-CH₂-CH₃ → 1 grupa na C-OH (i 2 H) → **I-rzędowy** ✓.
+
+<div class="odpowiedz">
+<div>
+
+**Reakcja 1** (Markownikow → alkohol III-rzędowy):
+- **Alken**: CH₃-CH=C(C₂H₅)-CH₂-CH₃ (3-etylo-2-penten).
+- **Warunki**: H₂O, kat. H⁺ (lub H₂SO₄, H₃PO₄ rozc.).
+
+**Reakcja 2** (anti-Markownikow → alkohol I-rzędowy):
+- **Alken**: CH₂=C(CH₃)-CH₂-CH₃ (2-metylo-1-buten).
+- **Warunki**: 1) BH₃, 2) H₂O₂/OH⁻ (hydroboracja-oksydacja).
+
+</div>
+</div>
+
+## Punktacja CKE
+
+- **17.1.** 2 pkt — oba alkeny + warunki. 1 pkt za 1/2 poprawnych.
+
+## Po co to umieć
+
+**Reguła Markownikowa** = fundament chemii organicznej:
+- Wszystkie reakcje **elektrofilowej addycji** do alkenów (HX, H₂O, X₂).
+- Wyjaśnia **regioselektywność** w syntezie.
+- Klucz dla **syntezy farmaceutycznej** (kontrola izomerii).
+
+**Hydroboracja-oksydacja** = przełomowa metoda Browna (1956, Nobel 1979):
+- Pozwala **odwrócić** regioselektywność.
+- Łagodne warunki (T pokojowa).
+- Wysoka **stereo- i regio-selektywność**.
+- Stosowana w **syntezie naturalnych produktów** + leków.
+
+**Alkohole w przemyśle**:
+- **III-rzędowe** (np. tert-butanol) — rozpuszczalniki, dodatki paliw, syntety.
+- **II-rzędowe** (np. izopropanol) — antyseptyki, rozpuszczalniki, kosmetyki.
+- **I-rzędowe** (np. etanol, butanol) — paliwa, biopaliwa, rozpuszczalniki.
+
+**Synteza biologiczna**: w organizmach **enzymy** (hydratazy) ostro kontrolują regioselektywność. Na przykład cytochromy P450 utleniają konkretne C w substratach.
+
+**Reakcje addycji w przemyśle**:
+- **Polietylen** (PE): n CH₂=CH₂ → (-CH₂-CH₂-)ₙ. Najbardziej produkowane tworzywo.
+- **Polipropylen** (PP): n CH₂=CH(CH₃) → polimer.
+- **PVC** (polichlorek winylu): addycja Cl₂ + dehydrohalogenacja, polimeryzacja.
+
+**Markownikow w pamięci** — proste prawo: "**rich gets richer**" (bogaty staje się bogatszy). C z większą liczbą H dostaje jeszcze jeden H. C z mniejszą liczbą H dostaje OH/X.
