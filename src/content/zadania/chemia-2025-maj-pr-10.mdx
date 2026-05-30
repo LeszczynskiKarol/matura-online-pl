@@ -1,0 +1,325 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 10
+punkty: 5
+typ: otwarte-krotkie
+topic: kinetyka chemiczna, równanie kinetyczne, rząd reakcji, stała szybkości, stechiometria
+difficulty: 5
+tresc: |
+  Reakcja: **X₂(g) + 2 Y₂(g) → 2 XY₂(g)**. Równanie kinetyczne: v = k · c_X₂^a · c_Y₂^b.
+
+  Wykres: v vs stężenie X₂ (przy c_Y₂=1) — **liniowa** (czerwona). v vs c_Y₂ (przy c_X₂=1) — **parabola** (zielona).
+
+  Z wykresu: c=1, v=1; c_X₂=2, v=2; c_Y₂=2, v=4.
+
+  **10.1.** P/F: 1) zmniejszenie V w izotermii → wzrost v? 2) wzrost T w izobarii → spadek v?
+
+  **10.2.** Wyznacz **a, b**, oblicz **k**, oblicz szybkość gdy w reaktorze 4 dm³ łącznie **9,0 mol** gazów (start: stechiometryczna mieszanina 12,0 mol).
+odpowiedz: |
+  **10.1.**
+  - 1. Zmniejszenie V w izotermii → wzrost stężeń → wzrost v. **P**.
+  - 2. Wzrost T w izobarii → wzrost stałej k (równanie Arrheniusa) → wzrost v. Stwierdzenie "spadek" = **F**.
+
+  **10.2.** Wyznaczenie **a** i **b** z wykresów:
+
+  **Wykres czerwony** (v vs c_X₂ przy c_Y₂=1):
+  - c_X₂=1 → v=1.
+  - c_X₂=2 → v=2.
+  - **Liniowa** (proporcjonalność) → v ∝ c_X₂¹ → **a = 1**.
+
+  **Wykres zielony** (v vs c_Y₂ przy c_X₂=1):
+  - c_Y₂=1 → v=1.
+  - c_Y₂=2 → v=4 (4× wzrost).
+  - **Parabola** (v ∝ c²) → 2² = 4 ✓ → **b = 2**.
+
+  **Równanie kinetyczne**:
+  $$v = k \cdot c_{X_2} \cdot c_{Y_2}^2$$
+
+  **Stała szybkości k**: z punktu c_X₂=1, c_Y₂=1, v=1:
+  - 1 = k · 1 · 1² → **k = 1**.
+  - **Jednostka**: v [mol·dm⁻³·s⁻¹] = k · [mol·dm⁻³] · [mol²·dm⁻⁶] → k = mol⁻²·dm⁶·s⁻¹.
+  - **k = 1 mol⁻²·dm⁶·s⁻¹**.
+
+  **Obliczenie szybkości przy 9,0 mol gazów**:
+
+  **Krok 1**: stechiometria startowa.
+  - Reakcja: X₂ + 2 Y₂ → 2 XY₂. Stosunek X₂ : Y₂ = 1 : 2.
+  - 12 mol gazów łącznie, stosunek 1:2 → n(X₂) = 12/3 = **4 mol**, n(Y₂) = 12·2/3 = **8 mol**.
+
+  **Krok 2**: stężenia początkowe (V = 4 dm³):
+  - c(X₂)₀ = 4/4 = 1 mol/dm³.
+  - c(Y₂)₀ = 8/4 = 2 mol/dm³.
+
+  **Krok 3**: ile X₂ przereagowało (ξ), gdy łączne 9,0 mol?
+  - Po reakcji: n(X₂) = 4-ξ; n(Y₂) = 8-2ξ; n(XY₂) = 2ξ.
+  - Suma: (4-ξ) + (8-2ξ) + 2ξ = **12 - ξ**.
+  - 12 - ξ = 9 → **ξ = 3 mol**.
+
+  **Krok 4**: stężenia w tej chwili:
+  - n(X₂) = 4-3 = 1 mol → c(X₂) = 1/4 = **0,25 mol/dm³**.
+  - n(Y₂) = 8-6 = 2 mol → c(Y₂) = 2/4 = **0,5 mol/dm³**.
+
+  **Krok 5**: szybkość v:
+  - v = k · c(X₂) · c(Y₂)² = 1 · 0,25 · 0,5² = 1 · 0,25 · 0,25 = **0,0625 mol·dm⁻³·s⁻¹**.
+
+  **Odpowiedź**: **v ≈ 0,063 mol·dm⁻³·s⁻¹** (lub 6,25·10⁻² mol·dm⁻³·s⁻¹).
+pulapka: |
+  Pułapka 10.1.2 — wpływ T w izobarii. W izobarii (p=const) wzrost T → wzrost V → spadek stężenia. ALE k rośnie z T (Arrhenius, ~2× co 10°C). Wzrost k **dominuje** nad spadkiem c → v rośnie. Stwierdzenie "spadek" = F.
+
+  Pułapka 10.2 — wyznaczanie a, b. Klucz: **rząd reakcji**. Liniowa zależność v od c → rząd 1. Kwadratowa → rząd 2. Sześcienna → rząd 3.
+
+  Pułapka 10.2 — jednostka k. Dla v = k·c^n, k ma jednostkę [mol/(dm³·s)] / [mol/dm³]ⁿ = mol^(1-n)·dm^(3n-3)·s⁻¹. Tu n = a+b = 3 → k = mol⁻²·dm⁶·s⁻¹.
+
+  Pułapka 10.2 — stechiometria. **1 X₂ : 2 Y₂** (z równania). Mieszanina stechiometryczna 12 mol → X₂ = 4, Y₂ = 8 (nie 6:6).
+wymaganie: |
+  V.1 — kinetyka chemiczna, równanie kinetyczne, rząd reakcji.
+  V.2 — wpływ czynników na szybkość.
+podobne:
+  - chemia-2025-maj-pr-8
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strony arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-14.webp"
+  alt="Zadanie 10 - kinetyka"
+  caption="Strona 14 arkusza CKE 2025 PR chemia - zadanie 10 (wykres v vs c)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={14}
+/>
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-15.webp"
+  alt="Zadanie 10.2"
+  caption="Strona 15 arkusza CKE 2025 PR chemia - zadanie 10.2 (obliczenia)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={15}
+/>
+
+## Klucz pojęciowy — kinetyka chemiczna
+
+| Pojęcie | Wzór | Opis |
+|---|---|---|
+| **Szybkość reakcji** | v = -dc(substrat)/dt = +dc(produkt)/dt | [mol/(dm³·s)] |
+| **Równanie kinetyczne** | v = k · c_A^a · c_B^b | k = stała szybkości |
+| **Rząd reakcji** | n = a + b | Sumaryczny rząd reakcji |
+| **Stała k** | k = A · exp(-E_a/RT) | Równanie Arrheniusa |
+| **Reguła van't Hoffa** | Co 10°C wzrostu T → v rośnie 2-4× | Przybliżenie |
+
+## Klucz pojęciowy — wpływ czynników
+
+**Czynniki wpływające na szybkość**:
+- **Stężenia** substratów (więcej c → więcej zderzeń → wyższe v).
+- **Temperatura** (wyższe T → więcej cząsteczek ma E ≥ E_a → wyższe k → wyższe v).
+- **Powierzchnia** (rozdrobnienie substratów stałych).
+- **Katalizator** (zmniejsza E_a → wyższe k).
+- **Ciśnienie** (dla gazów = równoważne stężeniu).
+
+## Mechanizm: 10.1 (P/F)
+
+**Stwierdzenie 1**: zmniejszenie V w izotermii → wzrost v.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+W izotermii T = const → k = const.
+
+</div>
+
+<div class="krok">
+
+Liczba moli substratów = const, ale **V maleje** → c = n/V **rośnie**.
+
+</div>
+
+<div class="krok">
+
+v = k · c_X₂ · c_Y₂² rośnie z c → **v rośnie**. **P** ✓
+
+</div>
+
+</div>
+
+**Stwierdzenie 2**: wzrost T w izobarii → spadek v.
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+W izobarii p = const. Z PV = nRT → V = nRT/p. T rośnie → V rośnie → **c spada**.
+
+</div>
+
+<div class="krok">
+
+ALE k = A·exp(-E_a/RT) → T rośnie → -E_a/RT mniej ujemne → exp większy → **k rośnie** (wykładniczo).
+
+</div>
+
+<div class="krok">
+
+**Wpływ k zwykle dominuje** nad spadkiem c (k rośnie wykładniczo, c liniowo). → **v rośnie**.
+
+</div>
+
+<div class="krok">
+
+Stwierdzenie "v spada" = **F** ✗.
+
+</div>
+
+</div>
+
+## Mechanizm: wyznaczanie a, b z wykresów (10.2)
+
+**Wykres czerwony** (c_X₂, c_Y₂ = 1 stała):
+- v ∝ c_X₂^a · 1^b = c_X₂^a.
+- Liniowa → v ~ c → a = 1.
+
+**Wykres zielony** (c_Y₂, c_X₂ = 1 stała):
+- v ∝ 1^a · c_Y₂^b = c_Y₂^b.
+- Parabola → v ~ c² → b = 2.
+
+**Weryfikacja**: c_Y₂ = 2 → v powinno być 2² = 4 razy większe niż przy c_Y₂ = 1. Z wykresu: v(1) ≈ 1, v(2) ≈ 4 ✓.
+
+**Sumaryczny rząd reakcji**: a + b = 1 + 2 = **3**.
+
+## Mechanizm: obliczanie k
+
+**Punkt odniesienia**: c_X₂ = 1, c_Y₂ = 1 (przecięcie linii):
+- v = 1 mol/(dm³·s).
+- v = k · 1 · 1² = k.
+- **k = 1**.
+
+**Jednostka k**:
+- v [mol·dm⁻³·s⁻¹] = k · [mol·dm⁻³] · [mol·dm⁻³]² = k · mol³·dm⁻⁹.
+- k = mol·dm⁻³·s⁻¹ / mol³·dm⁻⁹ = **mol⁻²·dm⁶·s⁻¹**.
+
+**k = 1 mol⁻²·dm⁶·s⁻¹**.
+
+## Mechanizm: szybkość przy 9,0 mol (10.2 obliczenia)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Stechiometria startowa**: X₂ + 2 Y₂ → 2 XY₂. Stosunek X₂ : Y₂ = **1 : 2**. 
+- Mieszanina stechiometryczna 12 mol = 4 mol X₂ + 8 mol Y₂.
+
+</div>
+
+<div class="krok">
+
+**Stężenia początkowe** (V = 4 dm³):
+- c(X₂)₀ = 4/4 = **1 mol/dm³**.
+- c(Y₂)₀ = 8/4 = **2 mol/dm³**.
+
+</div>
+
+<div class="krok">
+
+**Bilans po reakcji** (przereagowało ξ mol X₂):
+- X₂: 4 - ξ.
+- Y₂: 8 - 2ξ.
+- XY₂: 0 + 2ξ.
+- **Suma**: (4-ξ) + (8-2ξ) + 2ξ = 12 - ξ.
+
+</div>
+
+<div class="krok">
+
+**Warunek**: suma = 9 → 12 - ξ = 9 → **ξ = 3 mol** X₂ przereagowało.
+
+</div>
+
+<div class="krok">
+
+**Stężenia w tej chwili**:
+- n(X₂) = 4-3 = 1 mol → c(X₂) = 1/4 = **0,25 mol/dm³**.
+- n(Y₂) = 8-6 = 2 mol → c(Y₂) = 2/4 = **0,5 mol/dm³**.
+
+</div>
+
+<div class="krok">
+
+**Szybkość**:
+- v = 1 · 0,25 · 0,5² = 1 · 0,25 · 0,25 = **0,0625 mol/(dm³·s)**.
+
+</div>
+
+</div>
+
+**Wniosek**: po ξ=3 mol reakcji szybkość spadła z **1,0** (start) do **~0,06 mol/(dm³·s)** = **16-krotnie wolniej** (zubożenie substratów).
+
+<div class="odpowiedz">
+<div>
+
+**10.1.**
+- 1. **P** — mniejsze V → wyższe c → v rośnie.
+- 2. **F** — wzrost T → k rośnie wykładniczo (Arrhenius) → v rośnie, mimo spadku c. Stwierdzenie "spadek" = fałsz.
+
+**10.2.**
+- Wykładniki: **a = 1**, **b = 2**.
+- Równanie kinetyczne: $v = k \cdot c_{X_2} \cdot c_{Y_2}^2$.
+- **Stała k = 1 mol⁻²·dm⁶·s⁻¹**.
+- Szybkość przy 9,0 mol gazów: 
+  - Przereagowało ξ = 3 mol X₂.
+  - c(X₂) = 0,25 mol/dm³, c(Y₂) = 0,5 mol/dm³.
+  - **v = 1 · 0,25 · 0,5² = 0,0625 mol·dm⁻³·s⁻¹**.
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka 10.1.2 — Arrhenius</div>
+
+**Równanie Arrheniusa**: k = A · exp(-E_a/RT). T rośnie → k rośnie **wykładniczo**.
+
+W izobarii: spadek c (liniowy) << wzrost k (wykładniczy) → v rośnie. Wyjątek: reakcje **bardzo niskiej** E_a (rzadkie), gdzie wpływ T na k jest mały.
+
+W zadaniu CKE: standardowo zakładamy że k dominuje → v rośnie z T (zawsze).
+</div>
+
+## Punktacja CKE
+
+- **10.1.** 1 pkt — oba P/F.
+- **10.2.** 4 pkt:
+  - 1 pkt: a=1, b=2.
+  - 1 pkt: k = 1 mol⁻²·dm⁶·s⁻¹.
+  - 1 pkt: stężenia c(X₂)=0,25, c(Y₂)=0,5.
+  - 1 pkt: v = 0,0625 mol/(dm³·s).
+- **Suma**: 5 pkt.
+
+## Po co to umieć
+
+**Kinetyka chemiczna** = klucz do **przemysłu chemicznego**:
+- **Reaktory chemiczne** projektuje się na podstawie równań kinetycznych.
+- **Optymalizacja warunków** (T, p, c) → maksymalne wydajności + minimalne koszty.
+- **Katalizatory** (Haber-Bosch dla NH₃, kontaktowy dla H₂SO₄) — zmieniają k bez zmiany Δ G.
+
+**Równanie Arrheniusa** (1889):
+- k = A · exp(-E_a/RT).
+- A = czynnik częstości (zderzeń).
+- E_a = energia aktywacji (kJ/mol).
+- Reguła "10°C dwukrotne v" = przybliżenie dla typowych E_a ~50-100 kJ/mol.
+
+**Zastosowania praktyczne**:
+- **Konserwacja żywności**: niska T → niska v reakcji rozkładu (lodówki).
+- **Chłodnice** w samochodach: utrzymanie T silnika.
+- **Reakcje atmosferyczne**: ozon (O₃), gazy cieplarniane.
+
+**Rzędy reakcji w przykładach**:
+- **0-tego rzędu**: v = const, niezależne od c (np. fotoliza).
+- **1-szego rzędu**: v = k·c (rozpad radioaktywny, T₁/₂ stałe).
+- **2-go rzędu**: v = k·c² lub v = k·c_A·c_B (zderzenia dwucząsteczkowe).
+
+**Reaktory katalityczne** w przemyśle:
+- **Syntez NH₃** (Haber-Bosch): N₂ + 3H₂ → 2NH₃, katalizator Fe + promotory. 450°C, 200 atm. Bez katalizatora: wymagałoby >1000°C → nieekonomiczne.
+- **Cracking ropy** w rafinerii.
+- **Kataliza enzymatyczna** w biologii (enzymy = biologiczne katalizatory).
