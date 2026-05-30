@@ -1,0 +1,162 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 21
+punkty: 1
+typ: otwarte-krotkie
+topic: chemia organiczna, NaBH4, redukcja aldehydów, neopentanol, 2,2-dimetylopropanal
+difficulty: 3
+tresc: |
+  **NaBH₄** selektywnie redukuje **grupę karbonylową** w aldehydach i ketonach do grupy hydroksylowej (nie redukuje kwasów karboksylowych ani estrów).
+
+  Schemat: R-CO-R₁ + NaBH₄ → R-CH(OH)-R₁.
+
+  Uzupełnij schemat reakcji otrzymywania **2,2-dimetylopropan-1-olu** metodą NaBH₄. Wzory półstrukturalne.
+odpowiedz: |
+  **Produkt**: 2,2-dimetylopropan-1-ol = **HOCH₂-C(CH₃)₃** (neopentanol).
+
+  To **alkohol I-rzędowy** (CH₂OH na C1). 
+
+  Aby otrzymać go z NaBH₄ → trzeba zredukować **aldehyd** (R-CHO) → R-CH₂OH.
+
+  **Substrat**: **2,2-dimetylopropanal** = (CH₃)₃C-CHO = piwalaldehyd.
+
+  **Schemat reakcji**:
+
+  $$(\text{CH}_3)_3\text{C}-\text{CHO} \xrightarrow{\text{NaBH}_4} (\text{CH}_3)_3\text{C}-\text{CH}_2\text{OH}$$
+
+  Lub równoważnie:
+
+  $$\text{CH}_3 - \underset{\text{CH}_3}{\overset{\text{CH}_3}{\text{C}}} - \text{CHO} \xrightarrow{\text{NaBH}_4} \text{CH}_3 - \underset{\text{CH}_3}{\overset{\text{CH}_3}{\text{C}}} - \text{CH}_2\text{OH}$$
+
+  **Mechanizm**:
+  - NaBH₄ uwolnia H⁻ (jon hydrydkowy) → atakuje C w C=O.
+  - O⁻ powstałe wiąże H z protonowego rozpuszczalnika → C-OH.
+  - Wynik: C=O → CH(OH).
+pulapka: |
+  Pułapka — wybór ketonu zamiast aldehydu. NaBH₄ redukuje **oba** typy karbonylowych. Ale produkt I-rzędowy (CH₂OH) wymaga **aldehydu** (R-CHO → R-CH₂OH). Keton dałby **II-rzędowy** alkohol.
+
+  Pułapka — niewłaściwy aldehyd. **2,2-dimetylopropanal** ma 3 CH₃ na C2 → po redukcji daje 2,2-dimetylopropan-1-ol z 3 CH₃ na C2 ✓.
+
+  Pułapka — pomylenie reduktora. **NaBH₄** — łagodny, selektywny, NIE redukuje kwasów/estrów. **LiAlH₄** — silniejszy, redukuje wszystko (kwasy, estry, amidy do alkoholi i amin).
+wymaganie: |
+  X.7 — alkohole, redukcja związków karbonylowych.
+podobne:
+  - chemia-2025-maj-pr-22
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-26.webp"
+  alt="Zadanie 21 - synteza neopentanolu"
+  caption="Strona 26 arkusza CKE 2025 PR chemia - zadanie 21 (NaBH4 redukcja aldehydu)."
+  zrodlo="CKE 2025 / L.G. Wade, Organic chemistry"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={26}
+/>
+
+## Klucz pojęciowy — NaBH₄ vs LiAlH₄
+
+| Reduktor | Siła | Redukuje | Nie redukuje | Rozpuszczalnik |
+|---|---|---|---|---|
+| **NaBH₄** | Łagodny | Aldehydy, ketony → alkohole | Kwasy, estry, amidy | MeOH, EtOH, H₂O |
+| **LiAlH₄** | Silny | Wszystkie karbonylowe + alkohole | Alkeny, alkany | THF, eter (suchy!) |
+
+**Klucz**: NaBH₄ jest **selektywny** — możesz mieć aldehyd + ester w cząsteczce i zredukować TYLKO aldehyd. LiAlH₄ zredukowałby oba.
+
+## Klucz pojęciowy — neopentanol (2,2-dimetylopropan-1-ol)
+
+| Cecha | Wartość |
+|---|---|
+| Wzór sumaryczny | C₅H₁₂O |
+| Wzór półstrukturalny | (CH₃)₃C-CH₂OH |
+| Nazwa zwyczajowa | Neopentanol, tert-butylokarbinol |
+| Klasa | Alkohol I-rzędowy |
+| Stan | Białe ciało stałe, T_top = 53°C |
+
+## Mechanizm: redukcja aldehydu przez NaBH₄
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**NaBH₄** dysocjuje w protonowym rozpuszczalniku (MeOH):
+NaBH₄ ⇌ Na⁺ + BH₄⁻.
+
+</div>
+
+<div class="krok">
+
+**BH₄⁻** przekazuje **jon hydrydkowy H⁻** do C grupy karbonylowej (atak nukleofilowy):
+- R-CHO + H⁻ → R-CH(H)-O⁻.
+
+</div>
+
+<div class="krok">
+
+**Anion alkoksylowy** R-CH₂-O⁻ jest protonowany przez rozpuszczalnik:
+- R-CH₂-O⁻ + CH₃OH → R-CH₂-OH + CH₃O⁻.
+
+</div>
+
+<div class="krok">
+
+**Produkt końcowy**: alkohol R-CH₂-OH (I-rzędowy z aldehydu) lub R-CHOH-R₁ (II-rzędowy z ketonu).
+
+</div>
+
+</div>
+
+## Mechanizm: zastosowanie do (CH₃)₃C-CHO
+
+(CH₃)₃C-CHO + NaBH₄/MeOH → (CH₃)₃C-CH₂OH (neopentanol).
+
+- Substrat: aldehyd C5 z trzema grupami CH₃ na C2.
+- Wynik: alkohol I-rzędowy z grupą OH na C1.
+- Pierścień **nie ma chiralnego C** (C1 ma 2H, więc nie jest stereocentrum).
+
+<div class="odpowiedz">
+<div>
+
+**Schemat reakcji**:
+
+$$(\text{CH}_3)_3\text{C}-\text{CHO} \xrightarrow{\text{NaBH}_4} (\text{CH}_3)_3\text{C}-\text{CH}_2\text{OH}$$
+
+Substrat: **2,2-dimetylopropanal** (piwalaldehyd).
+Produkt: **2,2-dimetylopropan-1-ol** (neopentanol).
+
+</div>
+</div>
+
+## Punktacja CKE
+
+- **21.** 1 pkt — substrat (2,2-dimetylopropanal) + produkt (2,2-dimetylopropan-1-ol) we wzorach półstrukturalnych.
+
+## Po co to umieć
+
+**NaBH₄ w syntezie organicznej**:
+- **Łagodny reduktor** = preferowany w syntezie farmaceutycznej.
+- Redukuje **selektywnie** karbonylowe (aldehyd/keton) bez ruszania innych grup.
+- Bezpieczny (rozpuszczalny w MeOH, mniej reaktywny niż LiAlH₄).
+
+**Neopentanol** w przemyśle:
+- Surowiec do **politestrów neopentylowych** (np. ftalany w PVC, lakiery).
+- **Plastyfikator** w niektórych formulacjach.
+- **Antyseptyk** w niektórych zastosowaniach.
+
+**Redukcja w biochemii**:
+- **NADH** = naturalny reduktor (analog NaBH₄).
+- Enzymy **dehydrogenazy** wykorzystują NAD(P)H do redukowania ketonów → alkoholi.
+- **Glikoliza, cykl Krebsa**, **synteza tłuszczów** wszystko opiera się na NADH/NADPH.
+
+**Reduktor LiAlH₄**:
+- Bardzo silny — eter MUSI być suchy (LiAlH₄ + H₂O → eksplozja).
+- Redukuje:
+  - Kwasy karboksylowe RCOOH → RCH₂OH.
+  - Estry RCOOR' → RCH₂OH + R'OH.
+  - Amidy RCONR'R'' → RCH₂-NR'R''.
+  - Nitryle R-CN → R-CH₂NH₂.
+- W laboratorium ostrożnie!

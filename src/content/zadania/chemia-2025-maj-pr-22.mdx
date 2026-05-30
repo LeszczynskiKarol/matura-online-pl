@@ -1,0 +1,172 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 22
+punkty: 1
+typ: otwarte-krotkie
+topic: chemia organiczna, stereochemia, chiralność, enancjomery, ketony, butan-2-on, propan-2-on
+difficulty: 4
+tresc: |
+  Dwie redukcje NaBH₄:
+  - **Propan-2-on** (CH₃-CO-CH₃) → propan-2-ol.
+  - **Butan-2-on** (CH₃-CO-CH₂-CH₃) → butan-2-ol.
+
+  W której powstaje **mieszanina enancjomerów**? Uzasadnij.
+odpowiedz: |
+  **Rozstrzygnięcie**: mieszanina enancjomerów powstaje w reakcji z **butan-2-onem**.
+
+  **Uzasadnienie**:
+
+  **Propan-2-on** (aceton) → propan-2-ol:
+  - Substrat: CH₃-CO-CH₃.
+  - Produkt: CH₃-CH(OH)-CH₃ = 2-propanol.
+  - Atom C₂ (z OH) jest połączony z: **CH₃, CH₃, H, OH** = ma **dwa identyczne podstawniki** (2 × CH₃) → **NIE jest centrum chiralności** → produkt **NIE** ma enancjomerów (jest **achiralny**).
+
+  **Butan-2-on** → butan-2-ol:
+  - Substrat: CH₃-CO-CH₂-CH₃.
+  - Produkt: CH₃-CH(OH)-CH₂-CH₃ = 2-butanol.
+  - Atom C₂ (z OH) jest połączony z: **CH₃, C₂H₅ (CH₂CH₃), H, OH** = **wszystkie 4 podstawniki różne** → **centrum chiralności (asymetryczny atom C)** → produkt ma **2 enancjomery** (R i S).
+
+  **NaBH₄** jest **niechiralnym** reduktorem → atakuje grupę C=O z **obu stron** z równym prawdopodobieństwem → powstaje **mieszanina racemiczna 1:1** (50% R + 50% S).
+
+  W przypadku **butan-2-onu** → mieszanina enancjomerów (R)-butan-2-ol + (S)-butan-2-ol w stosunku 1:1.
+
+  W przypadku **propan-2-onu** → tylko jeden produkt (achiralny), bez enancjomerów.
+pulapka: |
+  Pułapka — niewłaściwa identyfikacja centrum chiralności. **Stereo-centrum (chiralny C)** = C połączony z **4 różnymi** podstawnikami. Klucz: porównaj **wszystkie 4** grupy wokół C.
+
+  Pułapka — pomylenie kierunku. Aceton (CH₃-CO-CH₃) ma **symetrię** wokół C=O → po redukcji centrum C ma dwa identyczne CH₃ → **brak** chiralności. Butan-2-on (CH₃-CO-CH₂CH₃) ma **asymetrię** → po redukcji 4 różne grupy → chiralność.
+
+  Pułapka — racemiczna mieszanina. NaBH₄ niechiralny → R:S = 1:1 (racemat). Chiralny reduktor (np. enzym, BINAL-H) → preferencja jednej formy.
+wymaganie: |
+  X.7 — alkohole, stereochemia, izomeria optyczna.
+podobne:
+  - chemia-2025-maj-pr-21
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-26.webp"
+  alt="Zadanie 22 - enancjomery z NaBH4"
+  caption="Strona 26 arkusza CKE 2025 PR chemia - zadanie 22 (chiralność po redukcji ketonów)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={26}
+/>
+
+## Klucz pojęciowy — chiralność i enancjomery
+
+**Chiralność** = cząsteczka **nie nakłada się** ze swoim lustrzanym odbiciem.
+
+**Stereocentrum (chiralny atom C)** = atom C połączony z **4 różnymi** podstawnikami.
+
+**Enancjomery** = pary chiralnych cząsteczek, lustrzane odbicia, **nieidentyczne**. Mają takie same właściwości fizyczne (T_topnienia, T_wrzenia, gęstość) ALE:
+- **Skręcają płaszczyznę światła spolaryzowanego** w przeciwnych kierunkach (R: + dextro lub - lewo; S: vice versa).
+- **Reakcje z chiralnymi cząsteczkami** mogą być różne (np. enzymy działają na 1 enancjomer).
+
+**Racemat** = mieszanina 50:50 enancjomerów R i S. Nie skręca światła (efekty się znoszą).
+
+## Analiza: propan-2-ol vs butan-2-ol
+
+**Propan-2-ol** (CH₃-CH(OH)-CH₃):
+- C₂ (z OH): otoczony **CH₃, CH₃, H, OH**.
+- **2 identyczne podstawniki (CH₃)** → NIE chiralny → **achiralny**.
+- **Brak enancjomerów**.
+
+**Butan-2-ol** (CH₃-CH(OH)-CH₂-CH₃):
+- C₂ (z OH): otoczony **CH₃ (mała grupa), CH₂CH₃ (większa), H, OH**.
+- **4 różne podstawniki** → C₂ jest **stereocentrum** → **chiralny**.
+- **2 enancjomery**: (R)-butan-2-ol i (S)-butan-2-ol.
+
+## Mechanizm: niechiralny NaBH₄ daje racemat
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**NaBH₄** = mała symetryczna cząsteczka (tetraedr) → niechiralna.
+
+</div>
+
+<div class="krok">
+
+**Atak na C grupy C=O**: hydrydek (H⁻) z BH₄⁻ atakuje C z dwóch stron (od góry lub od dołu płaszczyzny C=O) z **równym prawdopodobieństwem**.
+
+</div>
+
+<div class="krok">
+
+**Wynik**: produkty (R) i (S) powstają w **stosunku 1:1** (racemat).
+
+</div>
+
+<div class="krok">
+
+**Sumaryczne skręcenie światła** = 0 (racemat nieoptycznie czynny).
+
+</div>
+
+</div>
+
+## Mechanizm: jak otrzymać czysty enancjomer?
+
+Sposoby otrzymywania **jednego** enancjomera:
+- **Synteza asymetryczna** (chiralne reduktory, np. BINAL-H, Corey CBS).
+- **Enzymy** (dehydrogenazy bakteryjne) — biologicznie chiralne.
+- **Rozdział racematu** (resolution): krystalizacja diastereomerów, chromatografia chiralna.
+- **Chiral pool** synteza z naturalnych chiralnych substratów (cukry, aminokwasy).
+
+## Klucz pojęciowy — znaczenie enancjomerii w farmacji
+
+**90% leków** to chiralne związki. Często **tylko 1 enancjomer** jest aktywny:
+
+| Lek | Aktywny enancjomer | Nieaktywny |
+|---|---|---|
+| **Ibuprofen** | (S) = aktywny przeciwzapalny | (R) — nieaktywny |
+| **Thalidomid** (Contergan) | (R) = sedatyw | **(S) = teratogeniczny** (deformacje płodu!) |
+| **Lewotyroksyna (T4)** | (S, L) = naturalna, aktywna | (R, D) — nieaktywna |
+| **Penicylina** | tylko (D) - aktywna | (L) - nieaktywna |
+
+**Tragedia Thalidomidu** (lata 60.) — racemat sprzedawany jako lek na poranne nudności w ciąży. **(S)-enancjomer powodował malformacje płodu**. ~10 000 dzieci urodzonych z deformacjami. Lekcja: enancjomery mogą być **drastycznie różne** w działaniu biologicznym.
+
+<div class="odpowiedz">
+<div>
+
+**Rozstrzygnięcie**: mieszanina enancjomerów powstaje w reakcji z **butan-2-onem**.
+
+**Uzasadnienie**:
+
+- Po redukcji **propan-2-onu** powstaje propan-2-ol, w którym C2 ma 2 takie same podstawniki (CH₃) → NIE jest stereocentrum → produkt achiralny, brak enancjomerów.
+
+- Po redukcji **butan-2-onu** powstaje butan-2-ol, w którym C2 ma **4 różne podstawniki** (CH₃, CH₂CH₃, H, OH) → JEST stereocentrum → produkt chiralny. Niechiralny NaBH₄ atakuje C=O z obu stron równo → powstaje **racemat (R + S)**.
+
+</div>
+</div>
+
+## Punktacja CKE
+
+- **22.** 1 pkt — butan-2-on + uzasadnienie odwołujące się do stereocentrum (4 różne grupy).
+
+## Po co to umieć
+
+**Chiralność w naturze**:
+- **Cukry** — w naturze prawie wyłącznie **D-cukry** (D-glukoza, D-fruktoza).
+- **Aminokwasy** — w naturze prawie wyłącznie **L-aminokwasy** (poza glicyną, niechiralną).
+- **DNA** — prawoskrętna helisa (forma B-DNA).
+
+**Origin of homochirality** = niewyjaśniony problem biochemii. Dlaczego życie wybrało D-cukry + L-aminokwasy? Teorie: katalityczne meteoryty, polaryzacja kosmiczna, autokataliza.
+
+**Chiralność w przemyśle farmaceutycznym**:
+- FDA wymaga **osobnego testowania** każdego enancjomera dla nowych leków.
+- **Synteza asymetryczna** = Nobel 2001 (Knowles, Noyori, Sharpless).
+- **Enzymy w syntezie** = "green chemistry", stosowane w produkcji leków.
+
+**Chiralne katalizatory**:
+- **BINAP** (Noyori, asymetryczne uwodornianie) — Nobel 2001.
+- **Sharpless asymetryczne epoksydowanie** olefin (R/S diastereomery).
+- **Kataliza enzymatyczna** w syntezie statyn, antybiotyków.
+
+**Test polariskopowy** — prosty sposób identyfikacji chiralnych związków: jeśli substancja **skręca polarisację**, jest chiralna i nie jest racematem.
