@@ -1,0 +1,215 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 15
+punkty: 2
+typ: otwarte-krotkie
+topic: termochemia, entalpia spalania, LPG, propan, butan, gęstość, stechiometria
+difficulty: 4
+tresc: |
+  **LPG** = mieszanina propanu (C₃H₈) + butanu (C₄H₁₀).
+
+  **Letni LPG**: n_propan : n_butan = **30 : 70**. Gęstość ciekłego = **0,56 g/cm³** (T = 273 K).
+
+  ΔH°_spalania:
+  - Propan: -2219 kJ/mol.
+  - Butan: -2878 kJ/mol.
+
+  Oblicz **energię** wydzieloną do otoczenia w wyniku spalenia **1,0 dm³** letniego LPG.
+odpowiedz: |
+  **Krok 1**: masa całkowita LPG.
+  - V = 1,0 dm³ = **1000 cm³**.
+  - m_LPG = V · ρ = 1000 · 0,56 = **560 g**.
+
+  **Krok 2**: skład molowy.
+  - Stosunek n_propan : n_butan = 30 : 70 = **3 : 7**.
+  - Niech n_propan = 3x, n_butan = 7x.
+
+  **Krok 3**: masy molowe.
+  - M(C₃H₈) = 3·12 + 8·1 = **44 g/mol**.
+  - M(C₄H₁₀) = 4·12 + 10·1 = **58 g/mol**.
+
+  **Krok 4**: bilans masy.
+  - m_propan = 3x · 44 = **132x g**.
+  - m_butan = 7x · 58 = **406x g**.
+  - m_LPG = 132x + 406x = **538x g** = 560 g.
+  - **x = 560 / 538 = 1,041**.
+
+  **Krok 5**: liczba moli każdego węglowodoru.
+  - n_propan = 3 · 1,041 = **3,123 mol**.
+  - n_butan = 7 · 1,041 = **7,287 mol**.
+
+  **Krok 6**: energia wydzielona (entalpia spalania jest **ujemna**, więc energia wydzielona = |ΔH| · n):
+  - E_propan = 2219 · 3,123 = **6 929 kJ**.
+  - E_butan = 2878 · 7,287 = **20 972 kJ**.
+  - **E_total = 6 929 + 20 972 = 27 901 kJ ≈ 27 900 kJ**.
+
+  **Odpowiedź**: **E ≈ 27 900 kJ** (≈ 2,79·10⁴ kJ) energii wydziela się do otoczenia w wyniku spalenia 1,0 dm³ letniego LPG.
+pulapka: |
+  Pułapka — pomylenie stosunku molowego z masowym. Stosunek 30:70 to **mol** (n), nie masa. Trzeba obliczyć masy z mas molowych.
+
+  Pułapka — pomylenie znaku ΔH. ΔH_spalania < 0 (egzotermiczne). **Energia wydzielona = |ΔH|** (wartość bezwzględna, dodatnia liczba).
+
+  Pułapka — pomyłka w gęstości. ρ = 0,56 g/cm³, V = 1000 cm³ → m = 560 g. NIE 0,56 kg (= 560 g, tak samo, ale w innym kontekście).
+wymaganie: |
+  V.6 — termochemia, entalpia spalania.
+podobne:
+  - chemia-2025-maj-pr-13
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-20.webp"
+  alt="Zadanie 15 - LPG i termochemia"
+  caption="Strona 20 arkusza CKE 2025 PR chemia - zadanie 15 (energia spalania letniego LPG)."
+  zrodlo="CKE 2025 / e-petrol.pl"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={20}
+/>
+
+## Klucz pojęciowy — entalpia spalania
+
+**Entalpia spalania** ΔH°_c = energia wydzielona/pochłonięta w **standardowym spalaniu 1 mola** substancji (T=298 K, p=1 atm), z wodą jako ciekłą.
+
+**Spalanie węglowodorów**:
+- C_nH_(2n+2) + (3n+1)/2 O₂ → n CO₂ + (n+1) H₂O.
+- ΔH°_c **ujemne** (egzotermiczne) — spalanie wydziela energię.
+
+| Węglowodór | ΔH°_c (kJ/mol) | Wzór |
+|---|---|---|
+| CH₄ (metan) | -890 | główny składnik gazu ziemnego |
+| C₂H₆ (etan) | -1560 | |
+| C₃H₈ (propan) | **-2219** | LPG |
+| C₄H₁₀ (butan) | **-2878** | LPG |
+| C₆H₁₄ (heksan) | -4163 | benzyna |
+| C₈H₁₈ (oktan) | -5470 | benzyna premium |
+
+**Wzór ogólny**: entalpia rośnie proporcjonalnie do liczby atomów C (każdy CH₂ dodaje ~659 kJ/mol).
+
+## Mechanizm: zliczanie moli z mieszaniny
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Stosunek molowy w letnim LPG**: 30 : 70 (propan : butan) = 3 : 7.
+
+</div>
+
+<div class="krok">
+
+**Masa molowa** każdego:
+- C₃H₈: 44 g/mol.
+- C₄H₁₀: 58 g/mol.
+
+</div>
+
+<div class="krok">
+
+**Bilans masy**: w mieszaninie 1000 cm³ × 0,56 g/cm³ = 560 g.
+
+Jeśli n_propan = 3x i n_butan = 7x, to:
+m = 3x · 44 + 7x · 58 = 132x + 406x = 538x g.
+
+</div>
+
+<div class="krok">
+
+**538x = 560 → x = 1,041**.
+
+</div>
+
+<div class="krok">
+
+**Liczby moli**:
+- n_propan = 3 · 1,041 = 3,123 mol.
+- n_butan = 7 · 1,041 = 7,287 mol.
+
+</div>
+
+</div>
+
+## Mechanizm: energia spalania
+
+**Energia wydzielona** = (-) ΔH × liczba moli:
+
+$$E = |\Delta H_{propan}| \cdot n_{propan} + |\Delta H_{butan}| \cdot n_{butan}$$
+
+$$E = 2219 \cdot 3,123 + 2878 \cdot 7,287$$
+
+$$E = 6929 + 20972 = 27901 \text{ kJ}$$
+
+**E ≈ 27 900 kJ** lub **27,9 MJ**.
+
+## Porównanie z innymi paliwami
+
+| Paliwo | Energia (kJ/L) |
+|---|---|
+| **Benzyna** | ~32 000 kJ/L |
+| **LPG letni** | **~27 900 kJ/L** (zadanie!) |
+| LPG zimowy (więcej propanu) | ~26 000 kJ/L (propan ma niższą gęstość energii na L) |
+| Diesel | ~36 000 kJ/L |
+| Bioethanol E85 | ~21 000 kJ/L |
+| Drewno | ~15 000 kJ/L |
+| Bateria Li-ion | ~1 000 kJ/L (znacznie mniej!) |
+
+**LPG ma niższą gęstość energii** niż benzyna, ale jest **tańszy** i ma niższe emisje CO₂/CO.
+
+## Dlaczego "letni" vs "zimowy" LPG?
+
+**Propan** wrze w -42°C, **butan** w -1°C.
+
+**Zimowy LPG** (więcej propanu, 70:30): butan zamarza w mrozie → propan utrzymuje płynność.
+
+**Letni LPG** (więcej butanu, 30:70): butan tańszy, dobrze paruje w lecie. Zimą zamarzałby + nie parował.
+
+W Polsce regulacje wymagają **różnych** mieszanek dla różnych pór roku — ważne dla zapewnienia pracy silnika.
+
+<div class="odpowiedz">
+<div>
+
+**Obliczenia**:
+1. m_LPG = 1000 cm³ · 0,56 g/cm³ = **560 g**.
+2. Z stosunku 3:7 i mas molowych 44/58: x = 560/(3·44 + 7·58) = 560/538 = **1,041**.
+3. n_propan = 3,123 mol, n_butan = 7,287 mol.
+4. E_propan = 2219 · 3,123 = **6 929 kJ**.
+5. E_butan = 2878 · 7,287 = **20 972 kJ**.
+6. **E_total ≈ 27 900 kJ** (lub 2,79·10⁴ kJ).
+
+</div>
+</div>
+
+## Punktacja CKE
+
+- **15.** 2 pkt:
+  - 1 pkt: obliczenia liczby moli propanu i butanu.
+  - 1 pkt: poprawna energia ≈ 27 900 kJ (±200).
+
+## Po co to umieć
+
+**LPG (Liquefied Petroleum Gas)** w Polsce:
+- ~20% samochodów ma instalację LPG.
+- Sprężony do ~5 atm (skroplony) w zbiornikach.
+- **Tańsze** od benzyny o ~50%, ale mniej energii na litr.
+- **Niższe emisje** CO₂, PM2.5, NOx.
+
+**Termochemia w inżynierii**:
+- **Bilans energii** elektrowni cieplnych (~30-40% sprawność).
+- **Projektowanie silników** (Carnot, Otto, Diesel).
+- **Domowe ogrzewanie**: gaz ziemny (CH₄) vs LPG vs węgiel vs olej.
+
+**Spalanie zupełne vs niezupełne**:
+- **Zupełne** (z O₂ w nadmiarze): C_nH_m + O₂ → CO₂ + H₂O. Maksimum energii.
+- **Niezupełne** (brak O₂): C_nH_m → CO (toksyczny!) lub sadza C. Mniej energii + zatrucia.
+
+**Standardowe entalpie tworzenia/spalania** = wartości tabelaryczne w tablicach chemicznych. Wymagane na maturze + w obliczeniach inżynierskich.
+
+**Bomba kalorymetryczna** (urządzenie laboratoryjne) — eksperymentalne mierzenie ΔH_c. Próbka spalana w O₂, ciepło absorbowane przez wodę, T mierzona → ΔH_c obliczane.
+
+**Globalne emisje CO₂ z paliw kopalnych** (2024):
+- 36 mld ton CO₂/rok.
+- ~25% z transportu (benzyna, diesel, LPG).
+- Łączna efektywność spalania paliw kopalnych ≈ 35%.
