@@ -1,0 +1,257 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 14
+punkty: 3
+typ: otwarte-krotkie
+topic: elektrochemia, ogniwa galwaniczne, półogniwa, potencjały redoks, MnO4, Br2, Co3+
+difficulty: 4
+tresc: |
+  Trzy półogniwa:
+  - **A**: MnO₄⁻ + 8 H⁺ + 5 e⁻ ⇌ Mn²⁺ + 4 H₂O  (E° = +1,51 V)
+  - **B**: Br₂ + 2 e⁻ ⇌ 2 Br⁻  (E° = +1,07 V)
+  - **C**: Co³⁺ + e⁻ ⇌ Co²⁺  (E° = +1,82 V)
+
+  **14.1.** Aby pH malało w półogniwie A, [H⁺] musi się (zwiększać/zmniejszać) → proces (redukcji/utleniania) → drugie półogniwo pełni funkcję (anody/katody). Z którym półogniwem (B / C) połączyć A?
+
+  **14.2.** Schemat ogniwa B + C generującego prąd.
+odpowiedz: |
+  **14.1.** Aby pH malało → [H⁺] musi się **ZWIĘKSZAĆ** (mniejsze pH = więcej H⁺).
+
+  Analiza półogniwa A:
+  - **Reakcja redukcji** (w prawo): MnO₄⁻ + 8 H⁺ + 5 e⁻ → Mn²⁺ + 4 H₂O. **H⁺ zużywane** → stężenie maleje → pH rośnie.
+  - **Reakcja utleniania** (w lewo): Mn²⁺ + 4 H₂O → MnO₄⁻ + 8 H⁺ + 5 e⁻. **H⁺ powstaje** → stężenie rośnie → pH **maleje** ✓.
+
+  Aby pH malało, w półogniwie A musi zachodzić **UTLENIANIE** → A działa jako **anoda**.
+
+  Drugie półogniwo pełni funkcję **KATODY** (zachodzi redukcja).
+
+  **Wybór: B czy C?**
+
+  Aby A działało jako **anoda** (utlenianie zachodzi spontanicznie), drugie półogniwo musi mieć **WYŻSZY potencjał standardowy** (E°), by "ciągnęło" elektrony.
+
+  - E°(A) = +1,51 V.
+  - E°(B) = +1,07 V (NIŻSZE niż A) — nie spełnia warunku.
+  - E°(C) = +1,82 V (WYŻSZE niż A) → spełnia warunek ✓.
+
+  → **Należy połączyć półogniwo A z półogniwem C**.
+
+  **W ogniwie A-C**:
+  - **Anoda (A)**: Mn²⁺ + 4 H₂O → MnO₄⁻ + 8 H⁺ + 5 e⁻ (utlenianie, [H⁺] rośnie → pH maleje ✓).
+  - **Katoda (C)**: Co³⁺ + e⁻ → Co²⁺ (redukcja).
+  - SEM = E°(C) - E°(A) = 1,82 - 1,51 = **+0,31 V** > 0 ✓ (spontaniczne).
+
+  **14.2.** Ogniwo B + C — porównanie E°:
+  - E°(B) = +1,07 V (niższe).
+  - E°(C) = +1,82 V (wyższe).
+
+  Półogniwo o **wyższym** E° = **katoda (+)**. Niższe E° = **anoda (-)**.
+  - **Anoda B (-)**: 2 Br⁻ → Br₂ + 2 e⁻.
+  - **Katoda C (+)**: Co³⁺ + e⁻ → Co²⁺.
+
+  **Schemat ogniwa** (z elektrodami Pt jako obojętne, dla form rozpuszczonych):
+
+  $$(-) \text{ Pt } | \text{ Br}^-(aq), \text{Br}_2 \,||\, \text{Co}^{3+}(aq), \text{Co}^{2+}(aq) | \text{ Pt } (+)$$
+
+  **SEM** = E°(C) - E°(B) = 1,82 - 1,07 = **+0,75 V** ✓ (spontaniczne).
+pulapka: |
+  Pułapka 14.1 — kierunek zmiany pH. **pH MALEJE = [H⁺] ROŚNIE**. (pH = -log[H⁺]).
+
+  Pułapka 14.1 — kierunek reakcji. Standardowe równanie półogniwa pisze się jako **redukcja**. Reakcja zachodzi w przeciwną stronę (utlenianie) gdy półogniwo działa jako **anoda**.
+
+  Pułapka 14.1 — wybór półogniwa. Aby A działało jako **anoda** (utlenianie), drugie półogniwo musi mieć **wyższy E°** (przyciąga elektrony jako katoda). C (1,82) > A (1,51), więc C ✓.
+
+  Pułapka 14.2 — schemat ogniwa. Konwencja: po **lewej anoda** (-), po **prawej katoda** (+). Jedna kreska "|" = granica faza, podwójna "||" = klucz/elektrolit. Pt jest obojętna (elektroda inertna dla redoks w roztworze).
+wymaganie: |
+  V.5 — elektrochemia, ogniwa galwaniczne, potencjały standardowe.
+podobne:
+  - chemia-2025-maj-pr-15
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-19.webp"
+  alt="Zadanie 14 - ogniwa galwaniczne"
+  caption="Strona 19 arkusza CKE 2025 PR chemia - zadanie 14 (półogniwa A, B, C, ogniwa)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={19}
+/>
+
+## Klucz pojęciowy — ogniwo galwaniczne
+
+**Ogniwo galwaniczne** = urządzenie zamieniające energię chemiczną na elektryczną (spontaniczne redoks).
+
+| Element | Funkcja |
+|---|---|
+| **Anoda (-)** | Elektroda **utleniania**. Oddaje elektrony do obwodu zewnętrznego |
+| **Katoda (+)** | Elektroda **redukcji**. Przyjmuje elektrony z obwodu |
+| **Klucz elektrolityczny** | Pozwala na ruch jonów między półogniwami (utrzymuje neutralność) |
+| **SEM** (E_ogn) | = E°(katoda) - E°(anoda). Dodatnia → spontaniczne ogniwo |
+| **Reguła** | Półogniwo o **wyższym** E° = **katoda**. Niższym = **anoda** |
+
+## Mechanizm: dlaczego A z C, nie z B?
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Warunek**: w półogniwie A pH ma maleć → [H⁺] rosnąć → musi zachodzić **utlenianie**:
+Mn²⁺ + 4 H₂O → MnO₄⁻ + 8 H⁺ + 5 e⁻.
+
+</div>
+
+<div class="krok">
+
+A jest **anodą** w tym ogniwie. Anoda = niższy potencjał spośród pary półogniw.
+
+</div>
+
+<div class="krok">
+
+**Test A vs B**: E°(A)=1,51, E°(B)=1,07. A > B → A byłoby katodą, B anodą. NIE spełnia.
+
+**Test A vs C**: E°(A)=1,51, E°(C)=1,82. A < C → A jest anodą, C katodą ✓.
+
+</div>
+
+<div class="krok">
+
+**Wybór**: A + C → A działa jako anoda → utlenianie Mn²⁺ → H⁺ powstaje → pH maleje ✓.
+
+</div>
+
+</div>
+
+## Mechanizm: konstrukcja ogniwa B + C
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**E°(B) = +1,07 V, E°(C) = +1,82 V**.
+
+</div>
+
+<div class="krok">
+
+**Katoda** (wyższy E°): **C** = Co³⁺/Co²⁺. Reakcja: Co³⁺ + e⁻ → Co²⁺.
+
+</div>
+
+<div class="krok">
+
+**Anoda** (niższy E°): **B** = Br⁻/Br₂. Reakcja: 2 Br⁻ → Br₂ + 2 e⁻.
+
+</div>
+
+<div class="krok">
+
+**Reakcja sumaryczna**: 2 Br⁻ + 2 Co³⁺ → Br₂ + 2 Co²⁺.
+
+</div>
+
+<div class="krok">
+
+**SEM ogniwa**: E_ogn = E°(C) - E°(B) = 1,82 - 1,07 = +0,75 V (spontaniczne ✓).
+
+</div>
+
+<div class="krok">
+
+**Schemat (konwencja IUPAC)**: anoda (-) po lewej, katoda (+) po prawej.
+
+$(-)$ Pt | Br⁻, Br₂ || Co³⁺, Co²⁺ | Pt $(+)$
+
+</div>
+
+</div>
+
+## Klucz pojęciowy — standardowe potencjały redoks
+
+**E°** = potencjał standardowy redukcji (vs SHE, standardowa elektroda wodorowa).
+
+**Wyższe E°** = silniejszy utleniacz (chce się zredukować).
+**Niższe E°** = silniejszy reduktor (chce się utlenić).
+
+**Wybrane potencjały**:
+
+| Reakcja | E° (V) |
+|---|---|
+| F₂ + 2e⁻ → 2 F⁻ | +2,87 (najsilniejszy utleniacz nieorganiczny) |
+| **Co³⁺ + e⁻ → Co²⁺** | +1,82 |
+| MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O | +1,51 |
+| Cl₂ + 2e⁻ → 2 Cl⁻ | +1,36 |
+| **Br₂ + 2e⁻ → 2 Br⁻** | +1,07 |
+| Ag⁺ + e⁻ → Ag | +0,80 |
+| Cu²⁺ + 2e⁻ → Cu | +0,34 |
+| **2 H⁺ + 2e⁻ → H₂** | **0,00 (definicja SHE)** |
+| Zn²⁺ + 2e⁻ → Zn | -0,76 |
+| Li⁺ + e⁻ → Li | -3,04 (najsilniejszy reduktor metaliczny) |
+
+<div class="odpowiedz">
+<div>
+
+**14.1.**
+- Aby pH malało, [H⁺] musi się **ZWIĘKSZAĆ**.
+- W półogniwie A zachodzi proces **UTLENIANIA** (Mn²⁺ → MnO₄⁻, powstaje H⁺).
+- Drugie półogniwo pełni funkcję **KATODY** (redukcja).
+- Należy połączyć A z półogniwem **C** (E°(C)=1,82 > E°(A)=1,51, więc A jest anodą).
+
+**14.2.** Schemat ogniwa B + C generującego prąd:
+
+$$(-) \text{ Pt } | \text{Br}^-, \text{Br}_2 \,||\, \text{Co}^{3+}, \text{Co}^{2+} | \text{ Pt } (+)$$
+
+SEM = E°(C) - E°(B) = 1,82 - 1,07 = +0,75 V (spontaniczne).
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — konwencja schematu ogniwa</div>
+
+Reguła IUPAC: schemat zapisany **od anody (-) do katody (+)**:
+- Lewa strona: anoda + jej elektrolit.
+- Klucz solny ||.
+- Prawa strona: elektrolit katody + katoda.
+
+Tak, by **SEM = E_prawej - E_lewej > 0** dla spontanicznego ogniwa.
+</div>
+
+## Punktacja CKE
+
+- **14.1.** 2 pkt — wybory w nawiasach (zwiększać, utleniania, katody) + półogniwo C.
+- **14.2.** 1 pkt — schemat ogniwa B-C.
+- **Suma**: 3 pkt.
+
+## Po co to umieć
+
+**Ogniwa galwaniczne w życiu codziennym**:
+- **Bateria alkaliczna** (Zn + MnO₂ w KOH): SEM = 1,5 V.
+- **Bateria litowo-jonowa** (Li + Co/Ni/Mn oxide): SEM = 3,7 V.
+- **Akumulator ołowiowy** (Pb + PbO₂ w H₂SO₄): SEM = 2,0 V/cell (6 cell = 12 V auto).
+- **Ogniwa paliwowe** (H₂/O₂): SEM = 1,23 V, używane w samochodach (Toyota Mirai).
+
+**Potencjały standardowe** = ostro praktyczne narzędzie:
+- **Korozja metali**: Fe (-0,44) atakowany w wilgotnym powietrzu z O₂ (+1,23). Ochrona katodowa = poświęcony Zn (-0,76).
+- **Pokrywanie metali**: złoto, srebro, chrom — elektroliza (wymuszona redukcja kationów).
+- **Wydobycie metali**: Cu z roztworu CuSO₄ wypiera Fe (Fe + Cu²⁺ → Fe²⁺ + Cu).
+
+**MnO₄⁻** = jeden z **najsilniejszych utleniaczy** używanych w analizie:
+- **KMnO₄** = fioletowy, mocno utleniający.
+- W środowisku kwaśnym → Mn²⁺ (jak w zadaniu).
+- W środowisku obojętnym → MnO₂ (brunatny osad).
+- W środowisku zasadowym → MnO₄²⁻ (manganian).
+- Stosowany w **miareczkowaniu redoks** (manganometria) — oznaczanie żelaza, H₂O₂, ...
+
+**Co³⁺** = bardzo silny utleniacz:
+- W roztworach niestabilny — utlenia H₂O do O₂!
+- Stabilizowany w kompleksach (np. [Co(NH₃)₆]³⁺).
+- Witamina B12 ma rdzeń kobaltowy (Co³⁺).
+
+**Br₂** w przemyśle:
+- Ekstrakcja z **wody morskiej** (Cl₂ wypiera Br⁻ → Br₂).
+- **Bromki** w fotografii, lekach, retardantach ognia.
