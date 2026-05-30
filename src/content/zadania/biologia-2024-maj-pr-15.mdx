@@ -1,0 +1,198 @@
+---
+arkusz: biologia-2024-maj-pr
+subject: biologia
+nr: 15
+punkty: 3
+typ: otwarte-krotkie
+topic: mitochondria, mtDNA, heteroplazmia, dziedziczenie matczyne, choroby mitochondrialne, organelle półautonomiczne
+difficulty: 4
+tresc: |
+  **Mitochondria** są pod kontrolą **dwóch genomów**: jądrowego + własnego (mtDNA). Większość białek pochodzi z jądra, ale **kilka kluczowych** jest kodowanych przez mtDNA. Mutacje w mtDNA + w genach jądrowych kodujących białka mitochondrialne → **choroby mitochondrialne** (głównie tkanek o wysokim zapotrzebowaniu energetycznym).
+
+  **Heteroplazmia** — w komórce różne kopie mtDNA (część zmutowane, część prawidłowe). Objawy chorób mt zależą od proporcji zmutowanego do prawidłowego mtDNA (próg ekspresji).
+
+  Mitochondria są **dziedziczone matczynie** (od ojca segregowane w czasie embriogenezy).
+
+  **15.1.** Wykaż, że mitochondria są organellami **półautonomicznymi**.
+
+  **15.2.** Oceń P/F:
+  1. Jeśli przyczyną choroby mitochondrialnej jest mutacja **autosomalna jądrowa**, choroba dziedziczy się zgodnie z prawami Mendla.
+  2. Dzieci mężczyzny z mutacją w mtDNA odziedziczą zaburzenia metaboliczne związane z dziedziczonymi mitochondriami.
+  3. Zdiagnozowanie u dwóch osób tej samej mutacji mitochondrialnej oznacza, że u tej osoby wystąpią takie same objawy.
+odpowiedz: |
+  **15.1.** Mitochondria są **półautonomiczne**, ponieważ:
+  - **Posiadają własny DNA (mtDNA)** — kolisty, podobny do bakteryjnego.
+  - **Posiadają własne rybosomy 70S** (typu prokariotycznego).
+  - **Same syntezują** część swoich białek (~13 białek u człowieka — głównie podjednostki łańcucha oddechowego).
+  - **Replikują się niezależnie** od podziału komórki (replikacja mtDNA poza fazą S cyklu komórkowego).
+
+  Ale są **półautonomiczne** (nie w pełni autonomiczne), bo:
+  - **Większość białek** mitochondriów (~1000+) kodowanych jest w **DNA jądrowym** — syntezowanych w cytoplazmie i **importowanych** do mitochondriów.
+  - Lipidy błon mitochondrialnych pochodzą z retikulum endoplazmatycznego.
+
+  Połączenie własnej "mini-genetyki" + zależności od jądra = definicja **półautonomiczności**.
+
+  **15.2.**
+
+  | # | Stwierdzenie | P/F |
+  |---|---|---|
+  | 1 | Mutacja **autosomalna** kodująca białko mt → dziedziczenie wg Mendla | **P** |
+  | 2 | Dzieci **mężczyzny** z mutacją mtDNA odziedziczą zaburzenia | **F** |
+  | 3 | Ta sama mutacja → ten sam fenotyp u różnych osób | **F** |
+
+  **Uzasadnienia**:
+  1. **P** — geny **jądrowe autosomalne** dziedziczone wg Mendla (równo od obu rodziców). Białka mitochondrialne kodowane jądrowo (większość) wpadają pod prawa Mendla.
+
+  2. **F** — **mtDNA dziedziczone jest matczynie** (po linii żeńskiej). Mitochondria plemnika są **niszczone** w zygocie (przez ubikwitynacjie + autofagię). Dzieci mężczyzny z mutacją mtDNA **NIE** odziedziczą tej mutacji.
+
+  3. **F** — z powodu **heteroplazmii**. Komórki różnych osób mają **różny stosunek** zmutowanego do prawidłowego mtDNA. Próg ekspresji objawów = ~60-80% zmutowanego mtDNA. Jedna osoba 50% (bezobjawowa), druga 90% (ciężkie objawy) — **różne nasilenie** mimo tej samej mutacji.
+pulapka: |
+  Pułapka 15.1 — odpowiedź "mają DNA". Klucz: **półautonomiczne** = **CZĘŚCIOWA** autonomia. Trzeba: własny DNA + rybosomy + replikacja, ALE też zależność od jądra.
+
+  Pułapka 15.2.1 — mylenie autosomalnego z mitochondrialnym. Mutacja **autosomalna** (na chromosomie autosomalnym jądra) = klasyczny Mendel. Mutacja w **mtDNA** = niemendlowska, matczyna.
+
+  Pułapka 15.2.2 — "ojciec też ma mtDNA". Tak, ma — w swoich mitochondriach. Ale **nie przekazuje** dzieciom. mtDNA dziedziczone tylko od matki.
+
+  Pułapka 15.2.3 — "ta sama mutacja → ten sam fenotyp". To prawda dla genów jądrowych z pełną dominancją, ALE nie dla mtDNA. **Heteroplazmia** to klucz.
+wymaganie: |
+  II.2 — mitochondria, mtDNA, łańcuch oddechowy.
+  IV.5 — dziedziczenie mitochondrialne, heteroplazmia.
+podobne:
+  - biologia-2024-maj-pr-14
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2024-maj-pr/ark-19.webp"
+  alt="Zadanie 15 - mitochondria, mtDNA"
+  caption="Strona 19 arkusza CKE 2024 PR biologia - zadanie 15 (półautonomia mitochondriów, dziedziczenie matczyne)."
+  zrodlo="CKE 2024 / Piotrowska, Postępy Biochemii 2016"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/Biologia/MBIP-R0-100-A-2405-arkusz.pdf"
+  pdfPage={19}
+/>
+
+## Klucz pojęciowy — mitochondria
+
+| Cecha | Mitochondria | Bakteria |
+|---|---|---|
+| **DNA** | Koliste, mtDNA ~16 kb (człowiek) | Kolisty chromosom + plazmidy |
+| **Rybosomy** | **70S** (50S + 30S) | **70S** |
+| **Błony** | Podwójna, wewnętrzna z krystami | Pojedyncza/podwójna |
+| **Podział** | **Binarny** (binary fission) | **Binarny** |
+| **Geneza** | **Endosymbioza** (~2 mld lat temu) | Praprzodek mitochondrium |
+
+**Teoria endosymbiozy** (Lynn Margulis) — mitochondria pochodzą z **bakterii proteobakteryjnych** (przodek Rickettsia) pochłoniętych przez praeukarionta. Z czasem przeniosły większość swoich genów do jądra → straciły autonomię, stały się półautonomiczne.
+
+## Mechanizm: dziedziczenie matczyne mtDNA
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Komórka jajowa** (oocyt) zawiera ~100 000 mitochondriów (ogromna komórka, mnóstwo cytoplazmy).
+
+</div>
+
+<div class="krok">
+
+**Plemnik** zawiera ~50-100 mitochondriów w **wstawce** (środkowej części) — dostarczają ATP do ruchu witkowego.
+
+</div>
+
+<div class="krok">
+
+**Zapłodnienie**: plemnik wnika do komórki jajowej + jego mitochondria znajdują się w zygocie.
+
+</div>
+
+<div class="krok">
+
+**Eliminacja**: mitochondria ojcowskie zostają **ubikwitynowane** (oznaczone) + **degradowane** przez autofagię w pierwszych podziałach embrionalnych.
+
+</div>
+
+<div class="krok">
+
+**Skutek**: zarodek + płód + dziecko ma mitochondria **WYŁĄCZNIE od matki**. → mtDNA dziedziczone matczynie.
+
+</div>
+
+</div>
+
+## Mechanizm: heteroplazmia
+
+**W jednej komórce** może być **wiele kopii** mtDNA (od 100 do 1000 mitochondriów, każde z 1-10 kopiami).
+
+**Heteroplazmia** = mix prawidłowego + zmutowanego mtDNA w komórce.
+
+**Próg ekspresji** (threshold effect):
+- ~60-80% zmutowanego mtDNA → objawy kliniczne.
+- Poniżej progu = bezobjawowo.
+
+**Loteria mitotyczna**: podczas podziałów komórkowych mitochondria losowo rozdzielane → różne tkanki mogą mieć różny stosunek mutacji. Stąd:
+- Jedna osoba: 70% mut. w mózgu, 30% w mięśniach → ataksja, padaczka.
+- Inna osoba: 30% w mózgu, 70% w mięśniach → osłabienie mięśni, bez objawów neurologicznych.
+
+To wyjaśnia **fenotypową heterogeniczność** chorób mitochondrialnych przy tej samej mutacji.
+
+## Choroby mitochondrialne — przykłady
+
+| Choroba | Mutacja | Objawy |
+|---|---|---|
+| **LHON** (Lebera neuropatia nerwu wzrokowego) | mtDNA (np. ND4 G11778A) | Ostra utrata wzroku u młodych mężczyzn |
+| **MELAS** | mt-tRNA Leu (UUR) | Encefalomiopatia, kwasica mleczanowa, udary podobne |
+| **MERRF** | mt-tRNA Lys | Epilepsja miokloniczna, ataksja |
+| **Zespół Leigh'a** | różne (mtDNA lub jądrowe) | Postępująca encefalopatia, śmierć w dzieciństwie |
+
+<div class="odpowiedz">
+<div>
+
+**15.1.** Mitochondria są **półautonomiczne**, ponieważ posiadają:
+- **Własny DNA** (mtDNA, kolisty, podobny do bakteryjnego).
+- **Własne rybosomy 70S**.
+- **Zdolność do syntezy części białek** (np. podjednostek łańcucha oddechowego).
+- **Niezależną replikację** (binarny podział).
+
+ALE jednocześnie są zależne od jądra komórkowego — większość białek (>95%) kodowanych jądrowo, syntezowanych w cytoplazmie i importowanych. To **częściowa autonomia** = półautonomia.
+
+**15.2.**
+1. **P** — mutacja autosomalna kodująca białko mitochondrialne (większość chorób mitochondrialnych ma genezę jądrową) dziedziczy się klasycznie wg Mendla.
+2. **F** — mtDNA dziedziczone wyłącznie **matczynie**. Plemniki ojca nie wnoszą funkcjonalnych mt do zygoty.
+3. **F** — z powodu **heteroplazmii** ten sam wariant mtDNA może dawać **różne objawy** u różnych osób (różny procent zmutowanego mtDNA, różne tkanki).
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — "ojciec też przekazuje mt"</div>
+
+To intuicyjne, ale **FAŁSZ**. Mechanizm eliminacji ojcowskich mt jest **aktywny** (ubikwityna + autofagia). Wyjątki bardzo rzadkie (2018 — pierwsza dokumentacja ojcowskiego mtDNA u człowieka).
+</div>
+
+## Punktacja CKE
+
+- **15.1.** 1 pkt — wskazanie kilku cech: własny DNA + własne rybosomy + zdolność do syntezy własnych białek + replikacja.
+- **15.2.** 2 pkt — wszystkie 3 P/F (P, F, F). 1 pkt za 2/3.
+- **Suma**: 3 pkt.
+
+## Po co to umieć
+
+**Choroby mitochondrialne** = obszar intensywnych badań:
+- **Częstość**: ~1 na 5 000 osób. Najczęstsza grupa wrodzonych chorób metabolicznych.
+- **Tkanki dotknięte**: te z wysokim zapotrzebowaniem ATP — **mózg, serce, mięśnie szkieletowe**. Stąd kombinacja: padaczka + kardiomiopatia + miopatia.
+- **Leczenie**: brak swoistego. Symptomatyczne + suplementy (koenzym Q10, kreatyna, ryboflawina).
+
+**Terapia trzech rodziców** (mitochondrial replacement therapy):
+- Dla kobiet z ciężką mutacją mtDNA — przeniesienie jądra komórki jajowej do **enukleowanej** komórki dawczyni (z zdrowym mtDNA).
+- Dziecko ma **DNA jądrowy od matki + ojca** + **mtDNA dawczyni**.
+- Legalna w UK od 2015 r., pierwsze dziecko urodzone 2016 (Meksyk, USA klinika).
+
+**mtDNA w genealogii**:
+- Bardzo wolne tempo rekombinacji (brak crossing-over) + matczyne dziedziczenie → idealne do śledzenia **linii matczynej**.
+- **Ewa mitochondrialna** = najpóźniejsza wspólna przodkini wszystkich żywych ludzi po linii matczynej (~150 000 lat temu, Afryka).
+- Test "mtDNA" u zwykłych ludzi (23andMe, MyHeritage) — odkryje twoją linię matczyną w sieci ludzkich migracji.
+
+**mtDNA w kryminalistyce**: gdy próbka jest stara/zniszczona (DNA jądrowy zdegradowany), mtDNA **przeżywa** dłużej (więcej kopii w komórce). Identyfikacja po fragmentach kości (np. Romanowie z grobu zbiorowego po 1918 r.).
