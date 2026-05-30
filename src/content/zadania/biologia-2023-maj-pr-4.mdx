@@ -1,0 +1,239 @@
+---
+arkusz: biologia-2023-maj-pr
+subject: biologia
+nr: 4
+punkty: 4
+typ: otwarte-krotkie
+topic: fotosynteza, chlorofil a i b, adaptacje świetlne, eksperyment kontrolowany, storczyk
+difficulty: 4
+tresc: |
+  **Storczyk Phalaenopsis 'Edessa'** — doświadczenie nad wpływem intensywności światła na zawartość chlorofilu.
+
+  **Etap 1** (2 miesiące): wszystkie rośliny w **100 μmol/m²/s**, 28°C, 75% wilgotności.
+
+  **Etap 2** (5 tygodni): podział na 2 grupy:
+  - **LL** (low light) = 50 μmol/m²/s.
+  - **HL** (high light) = 200 μmol/m²/s.
+
+  Pomiary chlorofilu a, b, całkowitego + stosunku a/b w dniach 1, 4, 6, 10 (tygodni).
+
+  **4.1.** Oceń P/F (ostatni dzień etapu 2):
+  1. Chl a wyższy w LL niż HL.
+  2. Chl całkowity w HL niższy o **ponad 300 mg/m²** niż w pierwszym dniu etapu 2.
+  3. Stosunek a/b w LL przeszło **dwukrotnie** większy niż w HL.
+
+  **4.2.** Cel pierwszego etapu — uprawy wszystkich roślin w **takich samych** warunkach.
+
+  **4.3.** Cel pomiarów chlorofilu w **pierwszym dniu drugiego etapu**.
+odpowiedz: |
+  **4.1.**
+
+  | # | Stwierdzenie | Ocena |
+  |---|---|---|
+  | 1 | Chl a wyższy w LL niż HL | **P** |
+  | 2 | Chl całkowity w HL niższy o ponad 300 mg/m² niż w 1. dniu etapu 2 | **P** |
+  | 3 | Stosunek a/b w LL przeszło dwukrotnie większy niż w HL | **F** |
+
+  **Uzasadnienia**:
+  1. **P** — rośliny w **słabym świetle (LL)** akumulują **więcej chlorofilu** (próbują wychwytywać każdy foton). Rośliny w **silnym świetle (HL)** degradują nadmiar chlorofilu (fotoochrona, by uniknąć uszkodzeń fotosystemów). Z wykresów: chl a w LL ~1000-1200 mg/m², w HL ~600-700 mg/m².
+
+  2. **P** — w grupie HL chlorofil **maleje** w ciągu etapu 2 (fotodegradacja przy nadmiarze światła). Spadek **powyżej 300 mg/m²** widoczny w wykresie chl całkowity (z ~1500 do <1200).
+
+  3. **F** — **odwrotna zależność**: rośliny **cieniste (LL)** mają **NIŻSZY** stosunek a/b (więcej chl b w stosunku do a — chl b lepiej absorbuje "zielone" światło rozproszone w cieniu). Rośliny **słoneczne (HL)** mają **WYŻSZY** stosunek a/b (więcej chl a w stosunku do b). Zatem stosunek a/b w LL **NIE** jest większy niż w HL — przeciwnie, MNIEJSZY.
+
+  **4.2.** Cel uprawy w jednakowych warunkach w etapie 1: **wyrównanie stanu wyjściowego** roślin (kontrola zmiennych ubocznych) → wszystkie rośliny **na starcie etapu 2** miały takie same parametry fizjologiczne (zawartość chlorofilu, kondycja, rozmiar). 
+
+  **Bez tej standaryzacji**: różnice między grupami LL i HL na końcu eksperymentu mogłyby wynikać z **różnic początkowych** (np. niektóre rośliny już ciemniejsze), a nie z efektu czynnika eksperymentalnego (intensywności światła). Standaryzacja = eliminacja **zmiennych zakłócających** (confounding variables).
+
+  **4.3.** Cel pomiaru chlorofilu w **1. dniu etapu 2**: ustalenie **wartości wyjściowej (baseline)** — punkt odniesienia, do którego porównuje się późniejsze pomiary (4, 6, 10 tydzień). 
+
+  Dzięki temu można:
+  - **Określić wielkość zmiany** chlorofilu pod wpływem światła (LL vs HL).
+  - **Potwierdzić jednakowość** wyjściowych wartości w obu grupach (efekt etapu 1).
+  - Odróżnić **zmiany w trakcie etapu 2** od już istniejących różnic.
+
+  Bez baseline: gdybyśmy mierzyli tylko na końcu, nie wiedzielibyśmy, czy chlorofil **wzrósł, spadł czy się nie zmienił** vs stan początkowy.
+pulapka: |
+  Pułapka 4.1.3 — stosunek a/b. Intuicja "więcej chlorofilu w cieniu = większy stosunek a/b" jest **błędna**. W rzeczywistości: cień → **więcej chl b** → niższy a/b. Słońce → **mniej chl b** → wyższy a/b. Klucz: rola chl b jako "anteny" w słabym świetle.
+
+  Pułapka 4.2 — odpowiedź "żeby rosły zdrowo". Klucz: **standaryzacja** = wszystkie rośliny rozpoczynają etap 2 w **identycznych** warunkach fizjologicznych → różnice na końcu pochodzą tylko z czynnika eksperymentalnego (światła).
+
+  Pułapka 4.3 — odpowiedź "żeby zobaczyć ile mają chlorofilu". Klucz: **baseline** = punkt odniesienia. Pozwala oszacować **zmianę** (delta) zamiast absolutnej wartości.
+wymaganie: |
+  VI.5 — fotosynteza (chlorofil a, b, adaptacje świetlne).
+  X.2 — metodologia (eksperyment kontrolowany, standaryzacja, baseline).
+podobne:
+  - biologia-2024-maj-pr-21
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strony arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2023-maj-pr/ark-08.webp"
+  alt="Zadanie 4 - storczyk, chlorofil, intensywność światła"
+  caption="Strona 8 arkusza CKE 2023 PR biologia - zadanie 4 (Phalaenopsis, wykresy A-D zawartości chlorofilu)."
+  zrodlo="CKE 2023 / Ceusters et al., Frontiers in Plant Science 2019"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/Biologia/MBIP-R0-100-2305.pdf"
+  pdfPage={8}
+/>
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2023-maj-pr/ark-09.webp"
+  alt="Zadanie 4.1-4.3"
+  caption="Strona 9 arkusza CKE 2023 PR biologia - polecenia 4.1, 4.2, 4.3."
+  zrodlo="CKE 2023"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/Biologia/MBIP-R0-100-2305.pdf"
+  pdfPage={9}
+/>
+
+## Klucz pojęciowy — chlorofile a i b
+
+| Cecha | Chlorofil **a** | Chlorofil **b** |
+|---|---|---|
+| **Funkcja** | **Centrum reakcji** PSI i PSII | **Antena** — pomocnicze pochłanianie |
+| **Spektrum absorpcji** | 430 + 660 nm (niebieski + czerwony) | 460 + 645 nm |
+| **Dystrybucja** | Wszystkie organizmy fotosyntetyczne | Rośliny + zielone glony |
+| **W cieniu** | Mniej | **Więcej** (lepsze wychwytywanie rozproszonego światła) |
+| **Stosunek a/b** | — | Słońce: ~3-4; Cień: ~2 |
+
+**Klucz**: chl b pochłania **szersze spektrum** — w cieniu, gdzie światło jest **filtrowane** przez korony drzew (mniej czerwonego, więcej zielonego/żółtego), chl b jest bardziej użyteczny.
+
+## Mechanizm: adaptacja roślin do światła
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Rośliny słoneczne** (HL):
+- Mało chlorofilu — by nie pochłaniać nadmiaru fotonów (chroni przed fotoinhibicją).
+- Wysoki stosunek a/b (więcej a, mniej b).
+- Mniejsze kompleksy LHC (light-harvesting complexes).
+- Liście grubsze, mniejsze.
+
+</div>
+
+<div class="krok">
+
+**Rośliny cieniste** (LL):
+- Dużo chlorofilu — by wychwytywać każdy dostępny foton.
+- **Niski** stosunek a/b (więcej b w proporcji do a) — chl b lepiej absorbuje światło rozproszone.
+- Duże kompleksy LHC.
+- Liście większe, cieńsze.
+
+</div>
+
+<div class="krok">
+
+**Storczyki Phalaenopsis** w naturze rosną **w cieniu drzew lasów tropikalnych** (epifity). Z natury są typu cienistego. Po przeniesieniu do HL **fotodegradacja chlorofilu** (zbyt wiele fotonów uszkadza fotosystemy → enzymy oksydacyjne degradują chlorofil → spada zawartość).
+
+</div>
+
+</div>
+
+## Metodologia: kontrola zmiennych (4.2 + 4.3)
+
+**Eksperyment kontrolowany** wymaga:
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Etap przygotowawczy** (pre-treatment): wszystkie obiekty w **jednakowych** warunkach. Cel: usunąć różnice indywidualne (np. wiek roślin, początkowa kondycja, historia uprawy).
+
+</div>
+
+<div class="krok">
+
+**Pomiar wyjściowy** (baseline, time = 0): zmierz parametr **przed** rozpoczęciem manipulacji eksperymentalnej. Cel: punkt odniesienia do oceny zmian.
+
+</div>
+
+<div class="krok">
+
+**Manipulacja eksperymentalna**: zastosuj różne traktowania (LL vs HL) na różne grupy.
+
+</div>
+
+<div class="krok">
+
+**Pomiar w trakcie i końcowy**: obserwuj **zmiany** od baseline w obu grupach.
+
+</div>
+
+<div class="krok">
+
+**Porównanie**: różnica między grupami **mierzy efekt czynnika eksperymentalnego**.
+
+</div>
+
+</div>
+
+## Mechanizm: dlaczego rośliny cieniste mają niższy stosunek chl a/b?
+
+W cieniu lasu:
+- **Korony drzew** filtrują światło, pochłaniając niebieski + czerwony (długości fal optymalne dla chl a).
+- Pozostaje światło **zielono-żółte + dalekie czerwone** (~650-700 nm).
+- **Chl b** pochłania w tym zakresie LEPIEJ niż chl a.
+- **Rośliny cieniste** **zwiększają proporcję chl b** → niższy stosunek a/b → lepsze wychwytywanie dostępnego światła.
+
+To **adaptacyjna strategia** — z tej samej liczby cząsteczek pigmentu wycisnąć maksimum energii świetlnej.
+
+<div class="odpowiedz">
+<div>
+
+**4.1.**
+1. **P** — chl a wyższy w LL (rośliny cieniste akumulują pigment).
+2. **P** — w HL chl całkowity spadł powyżej 300 mg/m² (fotodegradacja).
+3. **F** — stosunek a/b jest **NIŻSZY** w LL (więcej chl b proporcjonalnie), **WYŻSZY** w HL. Twierdzenie odwrotne = fałsz.
+
+**4.2.** Pierwszy etap = **standaryzacja**. Wszystkie rośliny w jednakowych warunkach → **takie same parametry wyjściowe** dla etapu 2 → różnice na końcu wynikać będą tylko z czynnika eksperymentalnego (intensywności światła), nie z różnic indywidualnych.
+
+**4.3.** Pomiar w 1. dniu etapu 2 = **baseline** (wartość wyjściowa). Pozwala:
+- Określić **wielkość zmiany** chlorofilu pod wpływem światła.
+- Potwierdzić, że LL i HL miały identyczne wartości na starcie.
+- Odróżnić zmiany etapu 2 od istniejących różnic.
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka 4.1.3 — stosunek a/b</div>
+
+Intuicja: "więcej chlorofilu = większy stosunek". **Błąd**. Stosunek a/b mówi o **proporcji** typów, nie absolutnej ilości.
+
+Cień: dużo chl ogółem, ale w proporcji **więcej b** → a/b NIŻSZY.
+Słońce: mało chl ogółem, ale w proporcji **więcej a** → a/b WYŻSZY.
+</div>
+
+## Punktacja CKE
+
+- **4.1.** 2 pkt — wszystkie 3 P/F poprawne. 1 pkt za 2/3.
+- **4.2.** 1 pkt — wskazanie celu: standaryzacja / wyrównanie warunków wyjściowych.
+- **4.3.** 1 pkt — wskazanie celu: baseline / wartość wyjściowa do porównania.
+- **Suma**: 4 pkt.
+
+## Po co to umieć
+
+**Adaptacje świetlne roślin** są klasycznym tematem ekologii fizjologicznej:
+- **Sztuczne oświetlenie** w szklarniach: lampy sodowe (HPS) vs LED — różne spektra → różne efekty na rośliny.
+- **Hodowla orchidei** (Phalaenopsis): zbyt dużo światła → liście żółkną, fotodegradacja. Hobbiści orchidei muszą **kontrolować** światło.
+- **Akwarystyka roślinna**: rośliny cieniste (mchy, anubias) — niskie wymagania świetlne. Słoneczne (np. Eichhornia) — wysokie.
+
+**Eksperyment kontrolowany** w nauce — **metoda naukowa**:
+1. **Hipoteza** (np. "więcej światła → mniej chlorofilu").
+2. **Próby** (kontrolna + eksperymentalna).
+3. **Standaryzacja** (eliminacja zmiennych zakłócających).
+4. **Pomiar baseline** + końcowy.
+5. **Analiza statystyczna** (czy różnice są istotne?).
+6. **Wniosek** + ewent. **powtórzenie** (replikacja).
+
+**Phalaenopsis 'Edessa'** to popularna odmiana hodowlana — biało-różowe kwiaty, dobrze rośnie w mieszkaniu. Naturalne siedlisko: lasy tropikalne Filipin, Indonezji — światło rozproszone, ciepło, wilgoć.
+
+**Fotoinhibicja** w słońcu pełnym (>1500 μmol/m²/s) uszkadza białko D1 fotosystemu II. Roślina aktywuje:
+- **Cykl ksantofili** (zeaxantyna ↔ wioloksantyna) — dyssypacja energii jako ciepło.
+- **Degradację chlorofilu** — zmniejszenie liczby anten → mniej pochłoniętej energii.
+- **Naprawę D1** — szybka resynteza białek fotosystemu.
+
+Bez tych mechanizmów słońce by **paliło** liście jak ogniem (oksydacja).
