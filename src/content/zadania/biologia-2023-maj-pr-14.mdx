@@ -1,0 +1,245 @@
+---
+arkusz: biologia-2023-maj-pr
+subject: biologia
+nr: 14
+punkty: 3
+typ: otwarte-krotkie
+topic: kod genetyczny, translacja, mutacja punktowa, kodon STOP, aminokwasy, tryptofan, fenyloalanina
+difficulty: 5
+tresc: |
+  **Schemat A**: pierwsze **4 reszty aminokwasowe** polipeptydu (172-mer):
+  - aa 1: H₂N + reszta z **S-CH₃** (tioeter siarki) → **Metionina** (Met).
+  - aa 2: **Indol** z NH (pierścień pięcioczłonowy + sześcioczłonowy) → **Tryptofan** (Trp).
+  - aa 3: **Pierścień fenylowy** → **Fenyloalanina** (Phe).
+  - aa 4: Indol z NH → **Tryptofan** (Trp).
+
+  **Schemat B**: peptyd skrócony do **3 aa** (Met-Trp-Phe) w wyniku **mutacji w trzeciej pozycji czwartego kodonu** → kodon STOP → przedwczesne zakończenie translacji.
+
+  **14.1.** Sekwencja aminokwasowa A (od końca N do C).
+  **14.2.** Dwie możliwe sekwencje mRNA (5'→3') dla A.
+  **14.3.** Sekwencja **czwartego kodonu** mRNA dla B (5'→3').
+odpowiedz: |
+  **14.1.** Sekwencja aminokwasowa polipeptydu A (od końca N do końca C):
+
+  **Met – Trp – Phe – Trp** (Metionina – Tryptofan – Fenyloalanina – Tryptofan).
+
+  **Identyfikacja aa ze schematu**:
+  - **Met (Metionina)** — reszta boczna z **siarką + grupą metylową** (-S-CH₃). Łatwo rozpoznać po dwóch atomach C i siarce. Zawsze pierwszy aa = kodon **start AUG**.
+  - **Trp (Tryptofan)** — reszta boczna z **indolem** (pierścień benzenu zrosły z pirolem, NH wewnątrz). Charakterystyczna struktura aromatyczna.
+  - **Phe (Fenyloalanina)** — reszta boczna z **pierścieniem benzenowym** (sam fenyl, bez NH).
+
+  **14.2.** Dwie możliwe sekwencje **mRNA** (5'→3') dla A (Met-Trp-Phe-Trp):
+
+  1. **5'-AUG-UGG-UUU-UGG-3'**
+  2. **5'-AUG-UGG-UUC-UGG-3'**
+
+  **Uzasadnienie (kod genetyczny)**:
+  - **Met** = **AUG** (jedyny kodon, też kodon **START**).
+  - **Trp** = **UGG** (jedyny kodon).
+  - **Phe** = **UUU lub UUC** (2 kodony).
+
+  **Tylko Phe** daje 2 możliwości → 2 sekwencje mRNA. Met i Trp są unikatowo kodowane.
+
+  **14.3.** Sekwencja **czwartego kodonu** mRNA dla B (peptyd skrócony — przedwczesny STOP):
+
+  **5'-UGA-3'**
+
+  **Uzasadnienie**:
+  - W A czwarty kodon = **UGG** (kodon Trp).
+  - Mutacja jest w **trzeciej pozycji** → zmiana ostatniej zasady **G**.
+  - Możliwe zmiany trzeciej zasady UGG:
+    - UG**A** = **STOP** (nonsense, kodon STOP "opal").
+    - UG**C** = Cys.
+    - UG**U** = Cys.
+  - **Tylko UGA daje STOP** → przedwczesne zakończenie translacji → peptyd skrócony do 3 aa.
+
+  Sekwencja czwartego kodonu w mRNA mutanta: **UGA**.
+pulapka: |
+  Pułapka 14.1 — pomylenie Trp z innym aromatycznym. **Tryptofan** = indol (pierścień z NH). **Tyrozyna** = fenyl z OH. **Fenyloalanina** = sam fenyl.
+
+  Pułapka 14.2 — Met kodowany wyłącznie AUG (1 kodon) + Trp wyłącznie UGG (1 kodon). Tylko Phe ma 2 kodony (UUU/UUC). **Tylko jedna pozycja zmienna** → 2 możliwości.
+
+  Pułapka 14.3 — wybór niewłaściwego kodonu STOP. **3 kodony STOP** w kodzie genetycznym: **UAA, UAG, UGA**. Z UGG mutacja w trzeciej pozycji → **tylko UGA daje STOP** (UGA, nie UAA ani UAG, bo zmiana tylko trzeciej zasady).
+wymaganie: |
+  III.5 — kod genetyczny, translacja, kodony START i STOP.
+podobne:
+  - biologia-2024-maj-pr-18
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2023-maj-pr/ark-23.webp"
+  alt="Zadanie 14 - polipeptyd, mutacja, kodon STOP"
+  caption="Strona 23 arkusza CKE 2023 PR biologia - zadanie 14 (struktura aa + kod genetyczny + STOP)."
+  zrodlo="CKE 2023"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/Biologia/MBIP-R0-100-2305.pdf"
+  pdfPage={23}
+/>
+
+## Klucz pojęciowy — kod genetyczny
+
+| Aminokwas | Symbol | Kodony |
+|---|---|---|
+| **Metionina** | Met (M) | **AUG** (1 kodon, też START) |
+| **Tryptofan** | Trp (W) | **UGG** (1 kodon) |
+| **Fenyloalanina** | Phe (F) | UUU, UUC (2 kodony) |
+| **Leucyna** | Leu (L) | UUA, UUG, CUU, CUC, CUA, CUG (6 kodonów) |
+| **Seryna** | Ser (S) | UCU, UCC, UCA, UCG, AGU, AGC (6 kodonów) |
+| **Argini** | Arg (R) | CGU, CGC, CGA, CGG, AGA, AGG (6 kodonów) |
+| **STOP** | — | UAA, UAG, UGA (3 kodony "amber, ochre, opal") |
+
+**Degeneracja kodu**: większość aa ma >1 kodon (kod **wyrodny**, ale jednoznaczny). Wyjątki: Met i Trp (po 1 kodonie).
+
+## Identyfikacja aa ze struktury chemicznej
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Metionina** — wzór: H₂N-CH(R)-COOH, gdzie R = **-CH₂-CH₂-S-CH₃**. Charakterystyczne: **siarka z grupą metylową** (tioeter). Pierwszy aa każdego białka (po cięciu signal peptide czasem usunięta).
+
+</div>
+
+<div class="krok">
+
+**Tryptofan** — R = **-CH₂-indol**. Indol = pierścień benzenowy zrosły z pierścieniem pirolu (5-członowym z NH). Największa boczna grupa wśród aa.
+
+</div>
+
+<div class="krok">
+
+**Fenyloalanina** — R = **-CH₂-fenyl** (benzene). Aromatyczna ale **bez OH** (w przeciwieństwie do Tyr).
+
+</div>
+
+<div class="krok">
+
+**Tyrozyna** — R = -CH₂-fenyl-**OH**. Jak Phe + grupa hydroksylowa.
+
+</div>
+
+</div>
+
+## Mechanizm: mutacja punktowa (14.3)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Oryginalna sekwencja A** (mRNA, 5'→3'): AUG-UGG-UUU/UUC-**UGG**-... (4. kodon = UGG = Trp).
+
+</div>
+
+<div class="krok">
+
+**Mutacja punktowa** w trzeciej pozycji czwartego kodonu: **G → A**.
+
+</div>
+
+<div class="krok">
+
+**Nowy kodon**: UG**A** = **STOP** (kodon "opal").
+
+</div>
+
+<div class="krok">
+
+**Translacja zatrzymuje się** na tym kodonie → rybosom rozpoznaje STOP → uwalnia peptyd. Powstaje skrócony peptyd: **Met-Trp-Phe** (3 aa zamiast 172).
+
+</div>
+
+<div class="krok">
+
+**Skutek biologiczny**: peptyd 3-aa jest **niefunkcjonalny** (zbyt krótki). Tak działają wiele **chorób genetycznych**:
+- Anemia sierpowata (mutacja punktowa, ale nie STOP).
+- Niektóre formy talasemii (premature STOP).
+- Niektóre formy mukowiscydozy.
+
+</div>
+
+</div>
+
+## Mechanizm: 3 kodony STOP
+
+| Kodon STOP | Nazwa historyczna | Częstość użycia (człowiek) |
+|---|---|---|
+| **UAA** | **Ochre** | Najczęstszy |
+| **UAG** | **Amber** | Średnio |
+| **UGA** | **Opal** | Najrzadszy |
+
+**UGA jest wyjątkowy** — w niektórych organizmach koduje **selenocysteinę** (Sec) — 21. aminokwas. Ale w standardowym kodzie = STOP.
+
+**Mutacja UGG → UGA** = klasyczna mutacja **nonsense** (zmiana znaczenia z aa na STOP). Bardzo szkodliwa, bo:
+- Białko skrócone.
+- Brakuje funkcjonalnych domen z części C-terminala.
+- mRNA z przedwczesnym STOP jest **degradowane** przez **Nonsense-Mediated Decay (NMD)** → mniej białka w ogóle.
+
+<div class="odpowiedz">
+<div>
+
+**14.1.** Sekwencja aminokwasowa A (od N do C):
+
+**Met – Trp – Phe – Trp** (Metionina – Tryptofan – Fenyloalanina – Tryptofan).
+
+**14.2.** Dwie możliwe sekwencje mRNA (5'→3'):
+1. **5'-AUG-UGG-UUU-UGG-3'**
+2. **5'-AUG-UGG-UUC-UGG-3'**
+
+(Tylko Phe ma 2 kodony: UUU lub UUC. Met = AUG, Trp = UGG — jedyne kodony.)
+
+**14.3.** Czwarty kodon mRNA dla B: **5'-UGA-3'**.
+
+Mutacja G→A w trzeciej pozycji kodonu UGG (Trp) → UGA = kodon **STOP** → przedwczesne zakończenie translacji → peptyd skrócony do 3 aa.
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka 14.2 — wszystkie sekwencje</div>
+
+CKE pyta o **2 możliwe**, ponieważ tylko Phe ma 2 kodony. Klucz: zidentyfikować, **który aa** w sekwencji ma >1 kodon → tam jest zmienność.
+
+Gdyby polipeptyd zawierał Leu (6 kodonów) lub Ser (6 kodonów), byłoby więcej możliwości — ale Met/Trp są **unikatowe**.
+</div>
+
+## Punktacja CKE
+
+- **14.1.** 1 pkt — Met-Trp-Phe-Trp.
+- **14.2.** 1 pkt — obie sekwencje (z różniącym się trzecim kodonem UUU/UUC).
+- **14.3.** 1 pkt — UGA.
+- **Suma**: 3 pkt.
+
+## Po co to umieć
+
+**Kod genetyczny** — odkryty w latach 1960. **Marshall Nirenberg** + **Har Gobind Khorana** (Nobel 1968) — rozszyfrowali wszystkie 64 kodony.
+
+**Cechy kodu genetycznego**:
+- **Trójkowy** — 3 nukleotydy na 1 aa.
+- **Wyrodny** (degenerate) — kilka kodonów na większość aa.
+- **Jednoznaczny** — każdy kodon koduje tylko 1 aa.
+- **Bez przecinków** — kodony stykają się bezpośrednio, ramka odczytu kluczowa.
+- **Uniwersalny** — ten sam u bakterii i człowieka (z drobnymi wyjątkami w mitochondriach).
+
+**Mutacje punktowe**:
+- **Synonimowa** (cicha): zmiana nukleotydu, **bez** zmiany aa (np. UUU→UUC, oba = Phe).
+- **Missense**: zmiana nukleotydu, **inny aa** (np. GAA→GUA: Glu→Val w anemii sierpowatej).
+- **Nonsense**: zmiana nukleotydu, **kodon STOP** (np. UGG→UGA — przedwczesne zakończenie).
+- **Frameshift**: insercja/delecja nie wielokrotności 3 → przesunięcie ramki → całość zmieniona.
+
+**Choroby genetyczne z premature STOP**:
+- **Mukowiscydoza** (CFTR) — ~10% mutacji to nonsense (np. G542X = UGG→UGA).
+- **Dystrofia mięśniowa Duchenne'a** (DMD) — ~30% przypadków nonsense.
+- **Choroba von Willebranda** (VWF) — nonsense.
+
+**Read-through therapy** — eksperymentalne leki (ataluren, **Translarna**) pozwalają rybosomowi **ignorować** przedwczesny STOP → produkcja pełnej długości białka. Klucz dla leczenia chorób z premature stop.
+
+**Tryptofan** — fascynujący aa:
+- Prekursor **serotoniny** (neuroprzekaźnika "szczęścia").
+- Prekursor **melatoniny** (hormonu snu).
+- W mięsie indyka — dużo Trp → senność po Wigilii (klasyczny mit, choć efekt znacznie wyolbrzymiony).
+- **Niacyna** (witamina B3) syntezowana z Trp.
+
+**Mutacja UGG → UGA** w **mitochondrium** = inna sprawa. W mitochondrialnym kodzie genetycznym **UGA = Trp** (a nie STOP)! To jeden z wyjątków od uniwersalności kodu.
