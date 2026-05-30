@@ -1,0 +1,243 @@
+---
+arkusz: biologia-2025-maj-pr
+subject: biologia
+nr: 16
+punkty: 4
+typ: otwarte-krotkie
+topic: genetyka, grupy krwi ABO, gen FUT1, fenotyp Bombay, mutacja, zmiana ramki odczytu
+difficulty: 5
+tresc: |
+  Układ ABO: 4 fenotypy (A, B, AB, 0) warunkowane przez gen ABO. Antygeny H powstają z prekursora w obecności fukozylotransferazy kodowanej przez gen **FUT1** (allel **H** dominujący — wytwarza antygen H; **h** recesywny — niefunkcjonalne białko, brak antygenu H = fenotyp **Bombay**).
+
+  Allel **I^A** koduje transferazę przekształcającą antygen H w A; **I^B** → B; **i** koduje niefunkcjonalne białko (mutacja **I^A**).
+
+  Tabela fragmentu nici kodującej DNA:
+  | Allel | Fragment DNA | Aminokwasy |
+  |---|---|---|
+  | **I^A** | CTC GTG GTG ACC CCT T | Leu – Val – Val – Thr – Pro |
+  | **i** | CTG GTG GT- ACC CCT T | ? |
+
+  **16.1.** Nazwij mutację, która doprowadziła do powstania allelu **i**.
+  **16.2.** Uzupełnij sekwencję aminokwasową dla allelu **i**.
+  **16.3.** Konsekwencją mutacji jest: A. zmiana ramki / B. substytucja aa / C. odwrócenie kolejności aa / D. zwielokrotnienie aa.
+  **16.4.** Podaj **wszystkie** genotypy warunkujące grupę krwi A (uwzględnij FUT1 + ABO).
+odpowiedz: |
+  **16.1.** **Delecja** (utrata) **jednego nukleotydu** (zasady azotowej) w sekwencji DNA allelu **I^A**.
+
+  Skutek: **zmiana ramki odczytu** (mutacja **frameshift**) — od miejsca delecji dalszy ciąg sekwencji jest odczytywany w innych trójkach kodonowych → inne aminokwasy + szybko pojawia się **przedwczesny kodon STOP** → skrócone, **niefunkcjonalne białko**.
+
+  **16.2.** Sekwencja aa kodowana przez fragment DNA allelu **i** (po przesunięciu ramki):
+
+  CTG – GTG – GTA – CCC – CTT
+  → **Leu – Val – Val – Pro – Leu**
+
+  Pierwsze dwa aminokwasy są takie same jak w I^A (Leu – Val), trzeci pozostaje Val (kodon GTA — synonim), ale **dwa kolejne** są zmienione: Pro zamiast Thr, Leu zamiast Pro. Dalej (poza fragmentem) — kolejne aa są przesunięte i pojawia się STOP.
+
+  **16.3.** **A** — **zmiana ramki odczytu**.
+
+  Uzasadnienie: delecja **jednego** nukleotydu (a nie wielokrotności trzech) przesuwa ramkę odczytu od miejsca delecji → wszystkie kodony za nią są inne.
+
+  **16.4.** Grupa krwi A wymaga:
+  - przynajmniej jednego allelu **I^A** w genie ABO (aby powstała transferaza A),
+  - przynajmniej jednego allelu **H** w genie FUT1 (aby był prekursor antygenu H).
+
+  **4 możliwe genotypy**:
+  1. **I^A I^A · HH**
+  2. **I^A I^A · Hh**
+  3. **I^A i · HH**
+  4. **I^A i · Hh**
+pulapka: |
+  Pułapka 16.1 — odpowiedź "mutacja punktowa" jest **nieprecyzyjna**. Klucz: **delecja** (typ mutacji) + skutek = **zmiana ramki**.
+
+  Pułapka 16.2 — czytanie kodonów bez przesunięcia ramki. Klucz: po delecji nukleotydu w trzecim kodonie reszta sekwencji jest **przesunięta o 1**, więc czytamy: CTG-GTG-GTA-CCC-CTT (a NIE "trzy aa różne, dwa takie same").
+
+  Pułapka 16.4 — pominięcie genu FUT1. **Bez allelu H** nawet osoba z I^A I^A ma fenotyp **Bombay (0_h)**, bo brak prekursora → transferaza A nie ma na czym działać. To **epistaza recesywna** (h epistatyczne wobec ABO).
+
+  Pułapka 16.4 — wpisanie genotypu **I^A i hh** jako grupy A. To **NIE jest** grupa A — to **Bombay** (fenotyp 0), bo brak antygenu H.
+wymaganie: |
+  III.5 — typy mutacji, struktura genu, kod genetyczny.
+  IV.4 — dziedziczenie grup krwi ABO, epistaza, gen FUT1.
+podobne:
+  - biologia-2025-maj-pr-17
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strony arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2025-maj-pr/ark-24.webp"
+  alt="Zadanie 16 - grupy krwi ABO, FUT1, tabela alleli IA i i"
+  caption="Strona 24 arkusza CKE 2025 PR biologia - zadanie 16 (tabela DNA alleli, podpunkty 16.1-16.2)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Biologia/MBIP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={24}
+/>
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2025-maj-pr/ark-25.webp"
+  alt="Zadanie 16.3-16.4"
+  caption="Strona 25 arkusza CKE 2025 PR biologia - podpunkty 16.3 (ABCD) i 16.4 (genotypy grupy A)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Biologia/MBIP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={25}
+/>
+
+## Klucz pojęciowy — układ ABO + FUT1
+
+| Gen | Allel | Produkt | Funkcja |
+|---|---|---|---|
+| **FUT1** | **H** | fukozylotransferaza | Modyfikuje prekursor → **antygen H** |
+| **FUT1** | **h** | niefunkcjonalne | Brak antygenu H → **fenotyp Bombay** |
+| **ABO** | **I^A** | transferaza A | Antygen H → **antygen A** |
+| **ABO** | **I^B** | transferaza B | Antygen H → **antygen B** |
+| **ABO** | **i** | niefunkcjonalne | Antygen H **niezmieniony** |
+
+**Klucz**: I^A i I^B są **kodominujące**; oba są **dominujące** względem **i**. Allel **H** jest **dominujący** względem **h**. Allel h jest **epistatyczny** wobec I^A/I^B/i (brak prekursora = brak grupy krwi mimo posiadania ABO).
+
+## Mechanizm: mutacja allelu I^A → i (16.1, 16.3)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Allel I^A** (funkcjonalny): CTC-GTG-GTG-ACC-CCT-T...
+Kodowane aa: Leu-Val-Val-Thr-Pro-...
+
+</div>
+
+<div class="krok">
+
+**Mutacja**: utrata (delecja) **jednego** nukleotydu w sekwencji.
+**Allel i**: CTG-GTG-GT_-ACC-CCT-T... (gdzie _ = brak nukleotydu)
+
+</div>
+
+<div class="krok">
+
+**Skutek 1 — zmiana ramki odczytu** (frameshift):
+Ponieważ delecja **NIE jest** wielokrotnością 3, wszystkie kodony za miejscem delecji są **przesunięte** → odczytywane są inne trójki → inne aminokwasy.
+
+</div>
+
+<div class="krok">
+
+**Skutek 2 — przedwczesny kodon STOP**:
+W nowej ramce **szybko** pojawia się jeden z kodonów STOP (UAA, UAG, UGA) → translacja kończy się **przedwcześnie** → polipeptyd **skrócony**.
+
+</div>
+
+<div class="krok">
+
+**Skutek 3 — białko niefunkcjonalne**:
+Skrócona transferaza nie ma centrum aktywnego → nie przekształca antygenu H w A → fenotyp grupy **0** (przy braku I^B).
+
+</div>
+
+</div>
+
+## Sekwencja aa allelu i (16.2)
+
+**Czytanie kodonów po delecji** (CTGGTGGTACCCCTT, czyli 15 nt):
+
+| Kodon | Aminokwas |
+|---|---|
+| CTG | Leu (Leucyna) |
+| GTG | Val (Walina) |
+| GTA | Val (Walina) |
+| CCC | Pro (Prolina) |
+| CTT | Leu (Leucyna) |
+
+→ **Leu – Val – Val – Pro – Leu**
+
+**Porównanie**:
+| Pozycja | Allel I^A | Allel i | Status |
+|---|---|---|---|
+| 1 | Leu | Leu | identyczna (oba CTC i CTG kodują Leu) |
+| 2 | Val | Val | identyczna |
+| 3 | Val | Val | identyczna (synonim GTG → GTA) |
+| 4 | Thr | **Pro** | **zmiana** |
+| 5 | Pro | **Leu** | **zmiana** |
+
+Już od **4. pozycji** różnice w sekwencji aa — dalej (poza fragmentem) coraz więcej zmian + szybko STOP.
+
+## Genotypy grupy A (16.4)
+
+**Wymagania fenotypu A**:
+- Co najmniej jeden allel **I^A** w ABO.
+- Co najmniej jeden allel **H** w FUT1.
+- **Brak** allelu I^B (bo I^A I^B = grupa AB).
+
+**Wszystkie kombinacje**:
+
+| Genotyp ABO | Genotyp FUT1 | Genotyp łączny |
+|---|---|---|
+| I^A I^A | HH | **I^A I^A HH** |
+| I^A I^A | Hh | **I^A I^A Hh** |
+| I^A i | HH | **I^A i HH** |
+| I^A i | Hh | **I^A i Hh** |
+
+→ **4 genotypy** dają fenotyp grupy A.
+
+**Co NIE jest grupą A**:
+- I^A I^A hh → **Bombay (0_h)** — brak antygenu H, transferaza A nie ma substratu.
+- I^A i hh → też **Bombay**.
+- i i HH → grupa **0** (brak transferazy A, ale antygen H obecny).
+- I^A I^B HH/Hh → grupa **AB**.
+
+<div class="odpowiedz">
+<div>
+
+**16.1.** **Delecja jednego nukleotydu** (zasady azotowej) — **mutacja zmiany ramki odczytu** (frameshift). Powoduje przesunięcie ramki w dalszej części genu → inne kodony → inne aminokwasy + przedwczesny STOP → niefunkcjonalne białko.
+
+**16.2.** Sekwencja aa allelu **i**: **Leu – Val – Val – Pro – Leu**.
+
+**16.3.** **A** — zmiana ramki odczytu.
+
+**16.4.** Genotypy grupy A (4):
+- **I^A I^A · HH**
+- **I^A I^A · Hh**
+- **I^A i · HH**
+- **I^A i · Hh**
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — fenotyp Bombay</div>
+
+Osoba z genotypem **I^A I^A hh** wygląda jak **grupa 0** w testach serologicznych. Bo bez allelu H **nie powstaje antygen H** (prekursor). Transferaza A (kodowana przez I^A) **nie ma substratu**.
+
+**Skutek krwiodawstwa**: osoba Bombay może otrzymać krew **TYLKO** od innego Bombay (nawet "uniwersalna" grupa 0 zawiera antygen H, który u Bombay byłby antygenem obcym).
+
+To **klasyczny przykład epistazy recesywnej** (h epistatyczne wobec ABO).
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — pominięcie genu FUT1 w 16.4</div>
+
+Częsty błąd: zapisanie tylko I^A I^A i I^A i (zapomnienie o FUT1). To **0 pkt** — zadanie wyraźnie pyta o oba geny. Trzeba podać **4 pełne genotypy** (ABO × FUT1).
+</div>
+
+## Punktacja CKE
+
+- **16.1.** 1 pkt — delecja (utrata) jednego nukleotydu / zasady.
+- **16.2.** 1 pkt — poprawna sekwencja Leu-Val-Val-Pro-Leu (lub równoważnie aa zgodnie z przesuniętą ramką).
+- **16.3.** 1 pkt — A.
+- **16.4.** 1 pkt — wszystkie 4 genotypy (I^A I^A HH, I^A I^A Hh, I^A i HH, I^A i Hh).
+- **Suma**: 4 pkt.
+
+## Po co to umieć
+
+**Fenotyp Bombay** odkryty w 1952 r. w Mumbaju (dawniej Bombay) — stąd nazwa. Niezwykle **rzadki** w Europie (~1:1 000 000), częstszy w Indiach (~1:10 000).
+
+**Implikacje medyczne**:
+- Osoba Bombay zinterpretowana jako "grupa 0" → otrzymuje krew "0" → **silna reakcja hemolityczna** (antygen H jest obcy!).
+- Dlatego w bankach krwi w Indiach utrzymuje się **osobny rejestr** dawców Bombay.
+
+**Mutacje frameshift** to częsta przyczyna chorób genetycznych:
+- **Mukowiscydoza** (mutacja ΔF508 — delecja 3 nukleotydów, NIE frameshift, ale klasyczny przykład delecji).
+- **Choroba Tay-Sachsa**.
+- **Niektóre formy hemofilii**.
+
+Mutacje **frameshift** zwykle są **dewastujące** — bo zmieniają **wszystko** za miejscem delecji, podczas gdy substytucje zmieniają tylko **jeden** aminokwas.
