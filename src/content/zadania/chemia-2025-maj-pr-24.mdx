@@ -1,0 +1,162 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 24
+punkty: 1
+typ: zamkniete-dobierz
+topic: chemia organiczna, estry, temperatura wrzenia, izomery, octany butylu
+difficulty: 3
+tresc: |
+  Trzy estry (wszystkie izomery, C₆H₁₂O₂, M=116):
+  - **A**: octan tert-butylu (CH₃-COO-C(CH₃)₃).
+  - **B**: octan n-butylu (CH₃-COO-CH₂-CH₂-CH₂-CH₃).
+  - **C**: octan sec-butylu (CH₃-COO-CH(CH₃)-CH₂-CH₃).
+
+  Uszereguj zgodnie ze **wzrostem T wrzenia**.
+odpowiedz: |
+  **Kolejność wzrostu T wrzenia**:
+
+  **A** (tert-butyl, ~98°C) **< C** (sec-butyl, ~112°C) **< B** (n-butyl, ~126°C).
+
+  **Najniższa T wrz: A → C → B: Najwyższa T wrz**.
+
+  **Uzasadnienie**:
+
+  Wszystkie 3 estry to **izomery** (ten sam wzór sumaryczny C₆H₁₂O₂, ta sama masa molowa 116 g/mol). Różnią się **rozgałęzieniem** łańcucha alkilowego.
+
+  **Reguła**: dla izomerów (ta sama masa), bardziej **liniowa** struktura = wyższa T wrzenia.
+
+  **Mechanizm**:
+  - **Liniowe cząsteczki** (n-butyl, B) mają większą powierzchnię kontaktu → silniejsze **siły van der Waalsa** (dispersyjne, Londona) → trudniej oderwać cząsteczki → wyższa T wrzenia.
+  - **Rozgałęzione** cząsteczki (tert-butyl, A) są **kompaktowe, sferyczne** → mniejsza powierzchnia kontaktu → słabsze siły dyspersyjne → niższa T wrzenia.
+  - **Sec-butyl** (C) — pośrednie rozgałęzienie → pośrednia T wrzenia.
+
+  **Wartości empiryczne (przy 1 atm)**:
+  - A (octan tert-butylu): T_wrz = **97-98°C**.
+  - C (octan sec-butylu): T_wrz = **112°C**.
+  - B (octan n-butylu): T_wrz = **126°C**.
+
+  Różnica między A i B = ~28°C (znacząca dla izomerów o tej samej masie molowej).
+pulapka: |
+  Pułapka — założenie że T wrz zależy od masy molowej. **Te estry mają taką samą M (116 g/mol)**! Różnica w T wrz pochodzi z **rozgałęzienia** struktury.
+
+  Pułapka — odwrotna kolejność. Bardziej **rozgałęzione** = **niższa** T wrz (mniej kontaktów międzycząsteczkowych). Mylące, bo intuicyjnie "rozgałęzione = większe", ale wartości się różnią.
+
+  Pułapka — pomylenie z polarnymi cząsteczkami. Wszystkie 3 estry mają **podobną polarność** (jedna grupa -COO-). Różnica T_wrz wynika **wyłącznie z geometrii**.
+wymaganie: |
+  X.8 — estry, izomeria, właściwości fizyczne.
+podobne:
+  - chemia-2025-maj-pr-25
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-28.webp"
+  alt="Zadanie 24 - T wrzenia estrów"
+  caption="Strona 28 arkusza CKE 2025 PR chemia - zadanie 24 (3 estry, T wrzenia)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={28}
+/>
+
+## Klucz pojęciowy — czynniki wpływające na T wrzenia
+
+| Czynnik | Wpływ |
+|---|---|
+| **Masa molowa** | M ↑ → T_wrz ↑ (więcej elektronów = silniejsze siły dyspersyjne) |
+| **Polarność** | Polarne (np. R-OH) → T_wrz ↑ (siły dipol-dipol) |
+| **Wiązania wodorowe** | Najsilniejszy efekt (np. alkohole vs etery) → T_wrz znacznie ↑ |
+| **Rozgałęzienie** | Mniej rozgałęzione → T_wrz ↑ (większa powierzchnia kontaktu) |
+| **Geometria** | Płaska/wydłużona → T_wrz ↑ |
+
+## Mechanizm: dlaczego rozgałęzione mają niższą T wrzenia?
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Siły van der Waalsa** (dispersyjne, Londona) działają **proporcjonalnie do powierzchni kontaktu** między cząsteczkami.
+
+</div>
+
+<div class="krok">
+
+**Liniowa cząsteczka** (n-butyl): wydłużona, "kij baseballowy" → cząsteczki mogą "leżeć równolegle" → **duża powierzchnia kontaktu** → silne siły van der Waalsa → wysoka T wrz.
+
+</div>
+
+<div class="krok">
+
+**Rozgałęziona cząsteczka** (tert-butyl): zwarta, "kulista" → cząsteczki mogą się stykać **tylko punktowo** → **mała powierzchnia kontaktu** → słabe siły van der Waalsa → niska T wrz.
+
+</div>
+
+<div class="krok">
+
+**Skutek**: ta sama formuła sumaryczna, różne kształty → różne T wrzenia.
+
+</div>
+
+</div>
+
+## Przykład — pentany
+
+Pokażmy ten sam efekt dla pentanów (C₅H₁₂):
+- **n-pentan** (liniowy): T_wrz = 36°C.
+- **izopentan** (2-metylobutan, 1 rozgałęzienie): T_wrz = 28°C.
+- **neopentan** (2,2-dimetylopropan, 2 rozgałęzienia): T_wrz = **9°C** (gaz w T pokojowej!).
+
+Ten sam wzór C₅H₁₂, ale różnica T_wrz aż **27°C**.
+
+## Klucz pojęciowy — octany butylu
+
+| Octan | Wzór | T_wrz |
+|---|---|---|
+| **n-butylu** (n-BuOAc) | CH₃COO-CH₂CH₂CH₂CH₃ | **126°C** |
+| **sec-butylu** | CH₃COO-CH(CH₃)CH₂CH₃ | **112°C** |
+| **izobutylu** | CH₃COO-CH₂CH(CH₃)₂ | 117°C |
+| **tert-butylu** | CH₃COO-C(CH₃)₃ | **98°C** |
+
+Im więcej rozgałęzień, tym niższa T_wrz (przy tej samej masie molowej).
+
+<div class="odpowiedz">
+<div>
+
+**Kolejność wzrostu T wrzenia**:
+
+**A** (octan tert-butylu, 98°C) **<** **C** (octan sec-butylu, 112°C) **<** **B** (octan n-butylu, 126°C).
+
+Bardziej rozgałęzione cząsteczki = bardziej kompaktowe = mniejsza powierzchnia kontaktu = słabsze siły van der Waalsa = niższa T wrzenia.
+
+</div>
+</div>
+
+## Punktacja CKE
+
+- **24.** 1 pkt — poprawna kolejność A → C → B.
+
+## Po co to umieć
+
+**Octany butylu w przemyśle**:
+- **n-butyl** = popularne **rozpuszczalniki** (lakiery, farby, kleje). Słodki zapach owocowy (banana).
+- **iso/sec-butyl** = używane jako rozpuszczalniki + składniki perfum.
+- **tert-butyl** = mało stosowany (drogi, niska T_wrz).
+
+**Reguły T wrzenia w syntezie organicznej**:
+- **Destylacja** = rozdzielanie izomerów wykorzystując różnicę T_wrz.
+- Rozgałęzienie zmienia T_wrz o **5-30°C** zwykle.
+- Wiązania wodorowe (alkohole) → znaczny wzrost T_wrz.
+- Polarność (estry vs eter) → umiarkowany wzrost.
+
+**Przykład praktyczny**: oddzielenie n-pentanu (36°C) od neopentanu (9°C) → łatwo destylacją.
+
+**Siły międzycząsteczkowe** w cieczach:
+- **London dispersion** (najsłabsze, w każdej cząsteczce, ale często sumarycznie ważne).
+- **Dipol-dipol** (polarne cząsteczki).
+- **Wiązanie wodorowe** (-OH, -NH₂, =O...) — najsilniejsze.
+- **Jonowe-dipol** (jony w roztworze).
+
+**Punkt wrzenia** rośnie wraz z **siłą wiązań międzycząsteczkowych** + **kontaktem** między cząsteczkami.
