@@ -1,0 +1,208 @@
+---
+arkusz: biologia-2024-maj-pr
+subject: biologia
+nr: 18
+punkty: 2
+typ: otwarte-krotkie
+topic: biologia molekularna, transkrypcja, splicing, introny, eksony, kod genetyczny, translacja
+difficulty: 5
+tresc: |
+  Ekspresja informacji genetycznej u eukariontów: **transkrypcja → obróbka potranskrypcyjna (splicing) → translacja**.
+
+  Schemat fragmentu **nici matrycowej DNA** (czytanej 3' → 5'):
+
+  3'…**TATTA**tactgc[**TACGGGCGCACA**]**CACACT**[**ACGTATGCCATG**]**ACTCTC**[**ACAATT**]…5'
+
+  - **Pomarańczowy TATTA** = sekwencja promotorowa.
+  - **Niebieski CACACT, ACTCTC** = introny.
+  - **Eksony w ramkach**: TACGGGCGCACA, ACGTATGCCATG, ACAATT.
+
+  **18.1.** Jaką sekwencję będzie miał **dojrzały mRNA** (po splicingu)?
+  - A. 5' UAUUAUACUGCUACGGGCGCACAACGUAUGCCAUGACAAUU 3'
+  - B. 5' AUAAUAUGACGAUGCCCGCGUGUUGCAUACGGUACUGUUAA 3'
+  - C. 5' AUGACGAUGCCCGCGUGUGUGUGAUGCAUACGGUAC 3'
+  - **D. 5' AUGACGAUGCCCGCGUGUUGCAUACGGUACUGUUAA 3'**
+
+  **18.2.** Podaj sekwencję aminokwasową kodowaną przez **pierwszy ekson** (od końca N do C).
+odpowiedz: |
+  **18.1.** **D** — 5' AUGACGAUGCCCGCGUGUUGCAUACGGUACUGUUAA 3'
+
+  **Mechanizm**:
+  1. **Transkrypcja**: RNA-polimeraza II czyta nić matrycową DNA od 3' do 5' kierując się promotorem TATTA. Synteza pre-mRNA przebiega 5' → 3' jako **antyrównoległa** komplementarność (T→A, A→U, C→G, G→C).
+  2. **Pre-mRNA** (przed obróbką) zawiera całą sekwencję transkrybowaną po promotorze, w tym introny i eksony.
+  3. **Splicing**: wycięcie intronów (CACACT, ACTCTC w DNA matrycowym → GUGUGA, UGAGAG w pre-mRNA) → dojrzały mRNA tylko z eksonami + 5'UTR.
+
+  **Schemat składania**:
+  - Nić matrycowa po promotorze (3'→5'): tactgc - [TACGGGCGCACA] - CACACT - [ACGTATGCCATG] - ACTCTC - [ACAATT]
+  - Pre-mRNA (5'→3' komplementarne): AUGACG - **AUGCCCGCGUGU** - GUGUGA - **UGCAUACGGUAC** - UGAGAG - **UGUUAA**
+  - Po splicingu (introny wycięte): **AUGACGAUGCCCGCGUGUUGCAUACGGUACUGUUAA** = opcja **D**.
+
+  **18.2.** Pierwszy ekson koduje sekwencję aminokwasową: **Met – Pro – Ala – Cys** (Metionina – Prolina – Alanina – Cysteina).
+
+  **Uzasadnienie**:
+  - Pierwszy ekson w mRNA: **AUGCCCGCGUGU** (12 nukleotydów = 4 kodony).
+  - Pozycja w dojrzałym mRNA: ramka odczytu zaczyna się od pierwszego AUG (Met, kodon start) na pozycji 1.
+  - Pierwszy ekson zaczyna się na pozycji 7-18 (po 5'UTR "AUGACG"):
+    - **AUG** = Met (Metionina)
+    - **CCC** = Pro (Prolina)
+    - **GCG** = Ala (Alanina)
+    - **UGU** = Cys (Cysteina)
+
+  → Sekwencja aminokwasowa pierwszego eksonu: **Met – Pro – Ala – Cys**.
+pulapka: |
+  Pułapka 18.1 — pomylenie nici matrycowej z kodującą. Klucz: matrycowa = 3' → 5' (jest dana). mRNA = 5' → 3' (komplementarne + antyrównoległe). Komplementarność: T→A, A→U, C→G, G→C.
+
+  Pułapka 18.1 — nieuwzględnienie splicingu. Pre-mRNA zawiera introny, dojrzały mRNA NIE. Opcje C zawiera pewnie pełny pre-mRNA — nie pasuje. Klucz: tylko eksony + UTR.
+
+  Pułapka 18.1 — promotor jest **nie transkrybowany**. TATTA = sygnał startu dla RNA-polimerazy, ale nie pojawia się w mRNA.
+
+  Pułapka 18.2 — czytanie nici matrycowej jak mRNA. Klucz: mRNA jest **komplementarne** do nici matrycowej. Sekwencja DNA "TACGGGCGCACA" daje mRNA "AUGCCCGCGUGU" (po odwróceniu kierunku i komplementarności).
+
+  Pułapka 18.2 — pominięcie ramki odczytu. Klucz: ramka **zaczyna się od pierwszego AUG** (kodon START). Pierwszy AUG w dojrzałym mRNA jest na pozycji 1.
+wymaganie: |
+  III.5 — kod genetyczny, transkrypcja, translacja.
+  III.3 — eksony, introny, splicing.
+podobne:
+  - biologia-2024-maj-pr-17
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2024-maj-pr/ark-23.webp"
+  alt="Zadanie 18 - transkrypcja, splicing, kod genetyczny"
+  caption="Strona 23 arkusza CKE 2024 PR biologia - zadanie 18 (od DNA matrycowego do białka)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/Biologia/MBIP-R0-100-A-2405-arkusz.pdf"
+  pdfPage={23}
+/>
+
+## Klucz pojęciowy — od genu do białka
+
+| Etap | Co się dzieje | Lokalizacja |
+|---|---|---|
+| **Transkrypcja** | DNA → pre-mRNA (cała sekwencja po promotorze) | Jądro komórkowe |
+| **Obróbka 5'** | Dodanie czapeczki 7-metyloguanozyny | Jądro |
+| **Splicing** | Wycięcie intronów, łączenie eksonów | Jądro (spliceosom) |
+| **Obróbka 3'** | Dodanie ogona poli-A (200+ A) | Jądro |
+| **Eksport** | Dojrzały mRNA wynoszony z jądra | Pora jądrowa |
+| **Translacja** | mRNA → białko | Cytoplazma (rybosomy) |
+
+## Mechanizm: komplementarność DNA → mRNA
+
+**Zasady**:
+- DNA: A pasuje T, G pasuje C.
+- DNA → mRNA: A → **U** (zamiast T), T → A, G → C, C → G.
+- mRNA antyrównoległe do matrycy: jeśli matryca biegnie 3' → 5', mRNA biegnie 5' → 3'.
+
+**Krok-po-kroku** dla nici matrycowej DNA "TACGGGCGCACA" (3' → 5'):
+
+| Pozycja matrycy | Nukleotyd | mRNA komplementarne |
+|---|---|---|
+| 1 (3' koniec) | T | **A** (mRNA, 5' koniec) |
+| 2 | A | U |
+| 3 | C | G |
+| 4 | G | C |
+| 5 | G | C |
+| 6 | G | C |
+| 7 | C | G |
+| 8 | G | C |
+| 9 | C | G |
+| 10 | A | U |
+| 11 | C | G |
+| 12 (5' koniec) | A | **U** (mRNA, 3' koniec eksonu) |
+
+→ Pierwszy ekson mRNA: **AUGCCCGCGUGU** (5' → 3').
+
+## Mechanizm: splicing
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Pre-mRNA** zawiera wszystkie ekson + intron sekwencje. Introny mają **konserwowane sekwencje granicy**: GT (na 5' końcu intronu) + AG (na 3' końcu).
+
+</div>
+
+<div class="krok">
+
+**Spliceosom** (RNP, rybonukleoproteid) wiąże się do granic intronu. Składa się z **snRNP** (U1, U2, U4, U5, U6).
+
+</div>
+
+<div class="krok">
+
+**Pierwsze cięcie**: GT 5' intronu jest atakowany przez 2'-OH adenozyny w pętli intronu → powstaje **lariat** (pętla intronowa).
+
+</div>
+
+<div class="krok">
+
+**Drugie cięcie**: AG 3' intronu cięty → **eksony łączone wiązaniem fosfodiestrowym**. Intron jako lariat uwalniany i degradowany.
+
+</div>
+
+<div class="krok">
+
+**Wynik**: dojrzały mRNA = **tylko eksony** + UTR-y.
+
+</div>
+
+</div>
+
+## Tabela odczytu kodonów (pierwszy ekson, 18.2)
+
+| Pozycja w mRNA | Kodon | Aminokwas |
+|---|---|---|
+| **AUG** (1-3 startu) | start | **Met** (Metionina) |
+| ACG (4-6) | acg | Thr (Treonina) |
+| **AUG** (7-9, początek eksonu 1) | aug | **Met** |
+| CCC (10-12) | ccc | **Pro** (Prolina) |
+| GCG (13-15) | gcg | **Ala** (Alanina) |
+| UGU (16-18) | ugu | **Cys** (Cysteina) |
+
+Pierwszy ekson (kodonów 7-18) = **Met – Pro – Ala – Cys**.
+
+<div class="odpowiedz">
+<div>
+
+**18.1.** **D** — 5' AUGACGAUGCCCGCGUGUUGCAUACGGUACUGUUAA 3'. Powstaje z transkrypcji + wycięcia obu intronów (CACACT i ACTCTC).
+
+**18.2.** Pierwszy ekson koduje: **Met – Pro – Ala – Cys** (Metionina – Prolina – Alanina – Cysteina). Cztery kodony: AUG-CCC-GCG-UGU.
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka 18.1 — opcja C (pre-mRNA bez splicingu)</div>
+
+Opcja C zawiera fragment intronu (GUGUGUG widoczne) — to pre-mRNA przed splicingiem. Klucz: zadanie pyta o **dojrzały** mRNA. Splicing musiał być wykonany.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka 18.2 — sekwencja DNA = sekwencja aa?</div>
+
+NIE — sekwencja DNA musi najpierw zostać transkrybowana na mRNA (komplementarność + antyrównoległość), a dopiero potem translacja w trójkach (kodonach).
+</div>
+
+## Punktacja CKE
+
+- **18.1.** 1 pkt — D.
+- **18.2.** 1 pkt — sekwencja **Met-Pro-Ala-Cys** od końca N do C.
+- **Suma**: 2 pkt.
+
+## Po co to umieć
+
+**Splicing alternatywny** = klucz do **bogactwa białek**:
+- Ludzki genom ma ~20 000 genów, ale ~100 000 białek dzięki splicingowi alternatywnemu.
+- Jeden gen → kilka mRNA → kilka izoform białek (np. troponina T ma >7 wariantów w sercu vs mięśniach).
+
+**Choroby splicingu**:
+- **β-talasemia** — mutacja w sekwencji granicy intronu → splicing nieprawidłowy → uszkodzona hemoglobina.
+- **Rdzeniowy zanik mięśni (SMA)** — wadliwy splicing genu SMN1. **Spinraza/Nusinersen** = lek antysensowny, koryguje splicing SMN2 (jednorazowo: $750 000).
+
+**Kod genetyczny** to **universalny** kod — ten sam u bakterii, drożdży, człowieka (z drobnymi wyjątkami w mitochondriach). Dlatego można wyrażać ludzkie geny w bakteriach (insulina rekombinacyjna od 1982).
+
+**Promotor TATA box** — sekwencja TATAAA ~25 par zasad przed startem transkrypcji. Sygnał dla TF II D (z TATA-binding protein, TBP) → łączenie RNA-polimerazy II. Klasyczny "wzorzec" eukariotycznych genów.
