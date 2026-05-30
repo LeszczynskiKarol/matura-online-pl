@@ -1,0 +1,183 @@
+---
+arkusz: biologia-2024-maj-pr
+subject: biologia
+nr: 4
+punkty: 1
+typ: zamkniete-dobierz
+topic: neurofizjologia, potencjał czynnościowy, depolaryzacja, repolaryzacja, stwardnienie rozsiane
+difficulty: 4
+tresc: |
+  **Potencjał czynnościowy** = krótka depolaryzacja błony neuronu + repolaryzacja. Wykres pokazuje przewodnictwo Na⁺ (czerwony — wzrasta wcześnie, szybko opada) + K⁺ (niebieski — wzrasta później, opada wolniej) wraz z przebiegiem potencjału (czarny).
+
+  **SM (stwardnienie rozsiane)**: uszkodzenia osłonek mielinowych → osłabienie przewodzenia nerwowego. Leczenie: **bloker kanału jonowego** → ograniczenie przewodnictwa jednego jonu → **wydłużenie czasu trwania** potencjału czynnościowego → poprawa propagacji.
+
+  **Pytanie**: wydłużenie potencjału jest skutkiem podania:
+  - **A.** blokera kanału K⁺
+  - **B.** blokera kanału Na⁺
+
+  i ten bloker wydłuża fazę:
+  - **1.** depolaryzacji
+  - **2.** repolaryzacji
+odpowiedz: |
+  **A2** — **bloker kanału K⁺**, który wydłuża fazę **repolaryzacji**.
+
+  **Uzasadnienie**:
+
+  **Co dzieje się normalnie podczas potencjału czynnościowego**:
+  1. **Depolaryzacja**: otwarcie kanałów Na⁺ → Na⁺ wpływa do komórki → potencjał wzrasta z −70 mV do +30 mV.
+  2. **Repolaryzacja**: zamknięcie Na⁺, otwarcie K⁺ → K⁺ wypływa → potencjał wraca do −70 mV.
+
+  **Co dałby bloker Na⁺ (opcja B)**:
+  - Brak napływu Na⁺ → **brak depolaryzacji** → brak potencjału czynnościowego → neuron nie przewodzi w ogóle. **NIE** wydłuża czasu — uniemożliwia powstanie potencjału. Niewłaściwe leczenie.
+
+  **Co daje bloker K⁺ (opcja A)**:
+  - Po depolaryzacji K⁺ **nie może wypłynąć** (kanał zablokowany) → komórka **wolno wraca** do −70 mV → **wydłużona faza repolaryzacji**.
+  - Cały potencjał czynnościowy **trwa dłużej** → impuls "dłużej widoczny" na sąsiednich segmentach → poprawa przewodzenia w neuronach z uszkodzoną mieliną.
+
+  → **A2** (bloker K⁺ wydłuża repolaryzację).
+pulapka: |
+  Pułapka — bloker Na⁺ NIE wydłuża, tylko **eliminuje** potencjał. Jest stosowany jako **znieczulenie** (lidokaina, novokaina blokują Na⁺ → neuron nie przewodzi bólu). W SM byłby przeciwskuteczny.
+
+  Pułapka — odpowiedź "depolaryzacji". Faza depolaryzacji to **Na⁺ wpływa** (rosnąca część potencjału). Repolaryzacja to **K⁺ wypływa** (powrót do spoczynku). Bloker K⁺ → wpływa na **K⁺-zależną fazę** = repolaryzację.
+
+  Pułapka — wykres. Faza depolaryzacji: przewodnictwo Na⁺ wzrasta. Faza repolaryzacji: przewodnictwo K⁺ wzrasta (z opóźnieniem). Blokowanie kanału K⁺ = wydłużenie fazy, w której K⁺ jest aktywny = **repolaryzacji**.
+wymaganie: |
+  V.6 — fizjologia neuronu, potencjał czynnościowy, kanały jonowe.
+podobne:
+  - biologia-2025-maj-pr-11
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2024-maj-pr/ark-07.webp"
+  alt="Zadanie 4 - potencjał czynnościowy, stwardnienie rozsiane"
+  caption="Strona 7 arkusza CKE 2024 PR biologia - zadanie 4 (wykres potencjału czynnościowego + zadanie A/B 1/2)."
+  zrodlo="CKE 2024 / S. Konturek, Atlas fizjologii Nettera"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/Biologia/MBIP-R0-100-A-2405-arkusz.pdf"
+  pdfPage={7}
+/>
+
+## Klucz pojęciowy — potencjał czynnościowy
+
+| Faza | Co się dzieje | Kanał | Jon |
+|---|---|---|---|
+| **Spoczynek** | Membrana spolaryzowana (−70 mV) | Na⁺/K⁺-ATPaza utrzymuje gradient | Na⁺ na zewnątrz, K⁺ wewnątrz |
+| **Depolaryzacja** | Potencjał wzrasta do +30 mV | **Otwierają się kanały Na⁺ napięciowe** | **Na⁺ wpływa** do komórki |
+| **Repolaryzacja** | Potencjał wraca do −70 mV | Kanały Na⁺ zamknięte, **otwierają się K⁺ napięciowe** | **K⁺ wypływa** z komórki |
+| **Hiperpolaryzacja** | Krótki overshoot do −80 mV | K⁺ nadal otwarte | K⁺ wypływa nadal |
+| **Stan spoczynku** | Powrót do −70 mV | Pompa Na/K przywraca gradient | — |
+
+## Analiza wykresu
+
+**Przewodnictwo Na⁺ (czerwony)**:
+- Wzrasta **gwałtownie** w fazie depolaryzacji (~0-0,3 ms).
+- Spada szybko (inaktywacja kanałów Na⁺).
+- Wraca do zera ~0,5 ms.
+
+**Przewodnictwo K⁺ (niebieski)**:
+- Wzrasta **z opóźnieniem** (~0,3 ms).
+- Pik w fazie repolaryzacji.
+- Wraca powoli do zera (~1,5 ms).
+
+**Potencjał** (czarny):
+- Spoczynek: −70 mV.
+- Pik: +10 do +30 mV (depolaryzacja).
+- Powrót do −70 mV (repolaryzacja).
+- Krótka hiperpolaryzacja (−80 mV) → spoczynek.
+
+## Analiza: dlaczego blok K⁺?
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Problem w SM**: osłonki mielinowe uszkodzone → potencjał czynnościowy **rozprasza się** i może nie dotrzeć do następnego węzła Ranviera → utrata impulsu.
+
+</div>
+
+<div class="krok">
+
+**Rozwiązanie**: wydłużyć potencjał = zwiększyć szanse, że "dotrze".
+
+</div>
+
+<div class="krok">
+
+**Sposób**: zablokować K⁺ → bez wypływu K⁺ komórka nie wraca szybko do −70 mV → potencjał **utrzymuje się dłużej**.
+
+</div>
+
+<div class="krok">
+
+**Lek**: **4-aminopirydyna (4-AP)** = **fampridyna** = **dalfampridine** (nazwa handlowa **Fampyra/Ampyra**). Bloker kanałów K⁺ Kv. Zarejestrowany w 2010-2011 dla pacjentów SM z osłabieniem chodu.
+
+</div>
+
+</div>
+
+## Dlaczego NIE Na⁺?
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Bloker Na⁺** = **nie pozwala** na napływ Na⁺ → **brak depolaryzacji** → brak potencjału czynnościowego w ogóle. To **znieczulenie** (lidokaina), nie wzmocnienie sygnału.
+
+</div>
+
+<div class="krok">
+
+W SM neuron **chce** przewodzić — problem polega na słabej propagacji. Blokowanie Na⁺ pogłębiłoby problem.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+<div>
+
+**Odpowiedź: A2** — bloker kanału **K⁺**, który wydłuża fazę **repolaryzacji**.
+
+Mechanizm: w fazie repolaryzacji K⁺ wypływa z komórki przywracając −70 mV. Blokowanie K⁺ → wolny powrót do spoczynku → wydłużony potencjał czynnościowy → poprawa propagacji w neuronach z uszkodzoną mieliną.
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — bloker Na⁺</div>
+
+Bloker Na⁺ to klasyczny **anestetyk** (lidokaina, ksylokaina). Hamuje przewodzenie bólu **całkowicie**. W SM byłby **odwrotnością** terapii — pogorszyłby propagację.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — który jon w której fazie</div>
+
+Memoryzm: **D**epolaryzacja = **N**a⁺ wpływa (D, N — sąsiadują w alfabecie). **R**epolaryzacja = **K**⁺ wypływa.
+
+Logika: Na⁺ wchodzi (depolaryzuje = "robi pluso"); potem K⁺ wychodzi (repolaryzuje = "robi minuso z powrotem").
+</div>
+
+## Punktacja CKE
+
+- **4.** 1 pkt — A2.
+
+## Po co to umieć
+
+**Stwardnienie rozsiane (SM, MS)** = autoimmunologiczna choroba demielinizacyjna:
+- Limfocyty T atakują **mielinę** osłonek aksonów w OUN.
+- Skutek: spowolnienie / blok przewodzenia → niedowłady, zaburzenia widzenia, koordynacji.
+- ~2.5 mln pacjentów na świecie, częstsze u kobiet 30-50 lat.
+
+**Leczenie SM (2026)**:
+1. **Immunomodulujące** (najwyższy poziom): okrelizumab, natalizumab, fingolimod, kladrybina, ofatumumab.
+2. **Wzmacniające przewodzenie** (objawowe): **fampridyna** (Fampyra) = bloker K⁺ — działa na fakt z zadania.
+3. **Sterydy** w rzutach (metyloprednizolon).
+
+**Lidokaina** (bloker Na⁺) — przeciwieństwo: znieczulenie miejscowe. Też hamuje arytmie serca (klasa I antyarytmików).
+
+**Tetrodotoksyna (TTX)** = śmiertelna toksyna z **rozdymki/fugu**. Specyficzny bloker Na⁺. 1 mg zabija 8 dorosłych ludzi. Sushi z fugu = przygotowanie wymaga licencji.
+
+Lekcja: **kanały jonowe = punkty interwencji medycznej**. Każdy ważny lek psychotropowy / kardiologiczny / neurologiczny działa na jakiś kanał jonowy.
