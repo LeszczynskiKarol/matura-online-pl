@@ -1,0 +1,206 @@
+---
+arkusz: biologia-2025-maj-pr
+subject: biologia
+nr: 12
+punkty: 4
+typ: otwarte-krotkie
+topic: fizjologia, transport glukozy, GLUT2/GLUT4, insulina, glukagon
+difficulty: 4
+tresc: |
+  Schemat regulacji transportu glukozy przez insulinę:
+  - **Komórka mięśnia szkieletowego**: GLUT4 magazynowany w pęcherzykach (głód) → insulina wbudowuje GLUT4 w błonę (sytość) → dyfuzja glukozy do komórki.
+  - **Komórka wątroby**: GLUT2 stale w błonie. W głodzie glukoza wypływa z wątroby do krwi. W sytości glukoza wpływa do wątroby + insulina aktywuje fosforylację (glukozo-6-fosforan).
+
+  **12.1.** Przyporządkuj typ transportu (A endocytoza / B egzocytoza / C dyfuzja wspomagana).
+  **12.2.** Jak insulina zapewnia **ciągłą dyfuzję** glukozy do wątroby w sytości?
+  **12.3.** Znaczenie GLUT2 w wątrobie w okresie głodu.
+  **12.4.** Hormon ludzki podnoszący glukozę we krwi.
+odpowiedz: |
+  **12.1.**
+  - Transport GLUT4 do błony komórkowej w mięśniu w sytości: **B (egzocytoza)** — pęcherzyki z GLUT4 zlewają się z błoną.
+  - Transport glukozy z wątroby do płynu zewnątrzkomórkowego w głodzie: **C (dyfuzja wspomagana)** — przez GLUT2 zgodnie z gradientem stężeń.
+
+  **12.2.** Po posiłku glukoza we krwi wysoka → wpływa do wątroby przez GLUT2. **Insulina aktywuje heksokinazę / glukokinazę** → glukoza w komórce wątroby zostaje **ufosforylowana do glukozo-6-fosforanu** (G6P). 
+
+  G6P **nie może wypłynąć** z komórki (GLUT2 transportuje tylko wolną glukozę, nie G6P). W efekcie **stężenie wolnej glukozy w wątrobie pozostaje niskie**, mimo dużego napływu z krwi. **Gradient stężeń (krew > wątroba)** zostaje **utrzymany** → **ciągła dyfuzja** glukozy do komórki.
+
+  Bez fosforylacji glukoza w wątrobie podniosłaby się do poziomu krwi → gradient by zniknął → dyfuzja by się zatrzymała.
+
+  **12.3.** GLUT2 w błonie wątroby pozwala na **dwukierunkowy transport glukozy** zgodnie z gradientem stężeń. W okresie głodu:
+  - Wątroba **rozkłada glikogen** (glikogenoliza) → wolna glukoza wewnątrz komórki.
+  - Stężenie glukozy w wątrobie staje się **wyższe** niż w osoczu (które maleje przy głodzie).
+  - **GLUT2 umożliwia wypływ glukozy** z wątroby do krwi → **uzupełnianie poziomu glukozy w osoczu**.
+
+  W rezultacie GLUT2 **ogranicza spadek glukozy we krwi** w okresie głodu — utrzymuje homeostazę dla mózgu (zależny od stałego dopływu glukozy).
+
+  **12.4.** **Glukagon** (hormon trzustki, komórki α wysp Langerhansa). Stymuluje **glikogenolizę** (rozkład glikogenu wątroby) i **glukoneogenezę** (synteza glukozy z aminokwasów, glicerolu) → uwalnianie glukozy do krwi.
+
+  Inne dopuszczalne: **adrenalina** (rdzeń nadnerczy, szybko), **kortyzol** (kora nadnerczy, długotrwale), **hormon wzrostu (GH)**, **tyroksyna**.
+pulapka: |
+  Pułapka 12.1 — **endocytoza vs egzocytoza**. Endocytoza = **wchłanianie** do komórki. Egzocytoza = **wydzielanie / wstawianie do błony**. GLUT4 jest **wstawiany do błony** = **egzo**.
+
+  Pułapka 12.2 — bez wspomnienia o **fosforylacji**. Klucz: insulina nie tylko otwiera transport, ale i **trzyma glukozę "uwięzioną"** w komórce przez G6P → utrzymuje gradient.
+
+  Pułapka 12.4 — wymienienie **insuliny** (która OBNIŻA glukozę). Glukagon, adrenalina, kortyzol, GH — **podnoszą** glukozę. To **antagonistyczne** hormony.
+wymaganie: |
+  V.7 — homeostaza glukozy, hormony trzustki, transport glukozy, glikoliza.
+podobne:
+  - biologia-2025-maj-pr-11
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strony arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2025-maj-pr/ark-18.webp"
+  alt="Zadanie 12 - GLUT2/GLUT4, insulina"
+  caption="Strona 18 arkusza CKE 2025 PR biologia - zadanie 12 (regulacja transportu glukozy)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Biologia/MBIP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={18}
+/>
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2025-maj-pr/ark-19.webp"
+  alt="Zadanie 12.1-12.4"
+  caption="Strona 19 arkusza CKE 2025 PR biologia - zadanie 12.1-12.4."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Biologia/MBIP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={19}
+/>
+
+## Klucz pojęciowy — transportery glukozy
+
+| Transporter | Lokalizacja | Regulacja | Mechanizm |
+|---|---|---|---|
+| **GLUT1** | Większość komórek (uniwersalny) | Stały | Stały transport (mózg) |
+| **GLUT2** | Wątroba, trzustka, nerki, jelito | Stały, dwukierunkowy | Dyfuzja wspomagana |
+| **GLUT3** | Mózg, neurony | Stały, wysokie powinowactwo | Dyfuzja wspomagana |
+| **GLUT4** | Mięśnie, tłuszczowy | **Regulowany insuliną** | Wbudowanie do błony przez egzocytozę |
+
+## Mechanizm: insulina + glukokinaza w wątrobie (12.2)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Bez insuliny** (głód): mała ilość glukozy w komórce + mała aktywność glukokinazy. Stężenie wolnej glukozy w komórce ≈ w osoczu. Transport słabo efektywny.
+
+</div>
+
+<div class="krok">
+
+**Z insuliną** (sytość): glukoza wpływa do wątroby przez GLUT2 (dyfuzja). Insulina aktywuje **glukokinazę (heksokinazę IV)** → fosforyluje glukozę → **glukozo-6-fosforan (G6P)**.
+
+</div>
+
+<div class="krok">
+
+**G6P NIE może wyjść** — GLUT2 nie transportuje ufosforylowanej formy. G6P jest "uwięziony" w komórce.
+
+</div>
+
+<div class="krok">
+
+**Efekt**: wolna glukoza w wątrobie pozostaje **niska**, mimo wysokiego dopływu z krwi. **Gradient stężeń utrzymany** → ciągła dyfuzja glukozy do wnętrza.
+
+</div>
+
+<div class="krok">
+
+**Dalej**: G6P używany do:
+- **Synteza glikogenu** (magazyn).
+- **Glikoliza** (energia).
+- **Pentozofosforany** (NADPH, ryboza).
+
+</div>
+
+</div>
+
+## Mechanizm: rola GLUT2 w głodzie (12.3)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**W głodzie**: niska glukoza we krwi → trzustka wydziela **glukagon**.
+
+</div>
+
+<div class="krok">
+
+**Glukagon** stymuluje wątrobę:
+- **Glikogenoliza**: rozkład glikogenu → wolna glukoza.
+- **Glukoneogeneza**: synteza glukozy z aminokwasów (alanina), glicerolu (z tłuszczów), mleczanu.
+
+</div>
+
+<div class="krok">
+
+**Stężenie glukozy w wątrobie** rośnie powyżej poziomu we krwi.
+
+</div>
+
+<div class="krok">
+
+**GLUT2** (stale w błonie, dwukierunkowy) → glukoza **wypływa** z wątroby do krwi (zgodnie z gradientem).
+
+</div>
+
+<div class="krok">
+
+**Skutek**: poziom glukozy we krwi jest **utrzymywany** → mózg ma stały dopływ paliwa.
+
+</div>
+
+</div>
+
+## Klucz odpowiedzi
+
+| Zad | Odpowiedź | Mechanizm |
+|---|---|---|
+| 12.1-1 | **B (egzocytoza)** | GLUT4 z pęcherzyków → fuzja z błoną |
+| 12.1-2 | **C (dyfuzja wspomagana)** | GLUT2 przepuszcza glukozę zgodnie z gradientem |
+| 12.2 | Insulina aktywuje **fosforylację** glukozy → G6P uwięziony → gradient utrzymany → ciągła dyfuzja |
+| 12.3 | GLUT2 umożliwia **wypływ glukozy z wątroby do krwi** w głodzie (po glikogenolizie) → ograniczenie spadku |
+| 12.4 | **Glukagon** (lub adrenalina, kortyzol, GH) |
+
+<div class="odpowiedz">
+<div>
+
+**12.1.** 1 = **B** (egzocytoza); 2 = **C** (dyfuzja wspomagana).
+
+**12.2.** Insulina aktywuje **heksokinazę / glukokinazę** → glukoza w wątrobie jest **fosforylowana** do **G6P**, który **nie może wyjść** z komórki. To utrzymuje **niski poziom wolnej glukozy w komórce** → **gradient stężeń krew>komórka** zostaje zachowany → glukoza może ciągle dyfundować do wątroby.
+
+**12.3.** GLUT2 pozwala na **wypływ glukozy z wątroby do krwi** w okresie głodu. Wątroba rozkłada glikogen → wolna glukoza → przez GLUT2 do krwi → **uzupełnianie poziomu glukozy**, ograniczenie spadku.
+
+**12.4.** **Glukagon** (z komórek α trzustki). Inne: adrenalina, kortyzol, GH, tyroksyna.
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka 12.4 — insulina</div>
+
+**Insulina OBNIŻA** glukozę. NIE jest odpowiedzią.
+
+Hormony **podnoszące** glukozę: glukagon, adrenalina, kortyzol, hormon wzrostu (GH), tyroksyna. To **antagoniści** insuliny.
+</div>
+
+## Punktacja CKE
+
+- **12.1.** 1 pkt — oba transporty poprawne.
+- **12.2.** 1 pkt — wspomnienie fosforylacji + utrzymanie gradientu.
+- **12.3.** 1 pkt — wypływ glukozy z wątroby do krwi.
+- **12.4.** 1 pkt — glukagon (lub inny hiperglikemiczny).
+
+## Po co to umieć
+
+**Regulacja glukozy** to **fundament endokrynologii**:
+- **Insulina** (z komórek β trzustki) → obniża glukozę po posiłku.
+- **Glukagon** (z komórek α) → podnosi glukozę w głodzie.
+- **Adrenalina** → szybko podnosi glukozę (stres/ucieczka).
+- **Kortyzol** → długotrwale podnosi glukozę (stres).
+
+**Cukrzyca** to zaburzenie tej regulacji. Sportowcy wykorzystują regulację GLUT4 (trening zwiększa ich liczbę → lepsze pobieranie glukozy bez insuliny).
