@@ -1,0 +1,218 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 27
+punkty: 2
+typ: otwarte-krotkie
+topic: chemia organiczna, oktopamina, fenole, aminy, alkohole, FeCl3, identyfikacja grup
+difficulty: 4
+tresc: |
+  **Oktopamina** (hormon bezkręgowców) — wzór: HO-C₆H₄-CH(OH)-CH₂-NH₂.
+
+  Fragmenty:
+  - **A**: pierścień fenylowy z fenolową grupą -OH.
+  - **B**: grupa aminowa -CH₂-NH₂.
+  - **C**: alkoholowa grupa -OH (na C drugorzędowym).
+
+  **27.1.** P/F:
+  1. Grupy -OH w cząsteczce oktopaminy różnią się zdolnością odłączania protonu.
+  2. Oktopamina może być utleniona do ketonu.
+
+  **27.2.** 
+  - HCl reaguje z fragmentem (A/B/C).
+  - Fragment A (uległ/nie uległ) reakcji z FeCl₃.
+odpowiedz: |
+  **27.1.**
+
+  | # | Stwierdzenie | Ocena |
+  |---|---|---|
+  | 1 | Grupy -OH różnią się zdolnością odłączania protonu | **P** |
+  | 2 | Oktopamina może być utleniona do ketonu | **P** |
+
+  **Uzasadnienia**:
+
+  1. **P** — oktopamina ma **2 typy grup OH**:
+     - **Fenolowa** -OH na pierścieniu aromatycznym (fragment A). pK_a ≈ **10** (umiarkowanie kwasowa).
+     - **Alkoholowa** -OH na C drugorzędowym (fragment C). pK_a ≈ **16-18** (znacznie słabiej kwasowa).
+     - **Różnica pK_a ~6** = 10⁶ razy w zdolności odłączania H⁺ → różnią się znacznie.
+
+  2. **P** — alkohol **drugorzędowy** (fragment C) może być utleniony do **ketonu** (KMnO₄, K₂Cr₂O₇, PCC):
+     - R-CHOH-R' → R-CO-R' (z utratą 2 H).
+     - W oktopaminie: ArCH(OH)CH₂NH₂ → ArC(=O)CH₂NH₂ (keton).
+
+  **27.2.**
+
+  **Rozcieńczony HCl reaguje z fragmentem B** (grupa aminowa -NH₂).
+
+  Reakcja: -NH₂ + HCl → -NH₃⁺Cl⁻ (chlorowodorek aminy, sól rozpuszczalna).
+
+  Aminy są **zasadami Brønsteda** (przyjmują H⁺) → reagują z kwasami silnymi jak HCl.
+
+  **Fragment A UŁEGŁ reakcji z FeCl₃**.
+
+  Reakcja: **fenole** (-OH na pierścieniu aromatycznym) + FeCl₃ → fioletowy/niebieski kompleks Fe³⁺-fenolan:
+  - 6 ArOH + Fe³⁺ → [Fe(OAr)₆]³⁻ + 6 H⁺ (lub uproszczony Fe(OAr)₃).
+  - Charakterystyczna **fioletowo-zielona** barwa = klasyczna **próba fenoli z FeCl₃**.
+
+  Alkohole (fragment C) i aminy (fragment B) **NIE reagują** z FeCl₃ w taki sposób.
+pulapka: |
+  Pułapka 27.1.1 — założenie że "obie OH są takie same". **Fenol** (Ar-OH) jest znacznie **bardziej kwasowy** niż **alkohol** (R-OH) → różne pK_a (10 vs 16-18).
+
+  Pułapka 27.1.2 — utlenianie aminy zamiast alkoholu. Klucz: utleniany jest **alkohol drugorzędowy** (CHOH) → keton. Aminy są utleniane do nitrozo/nitro, nie do ketonu.
+
+  Pułapka 27.2 — pomylenie reaktywności:
+  - **HCl** (kwas) + **amina** (zasada) → sól amoniowa. (NIE z fenolem - fenole są kwasami, nie zasadami.)
+  - **FeCl₃** (próba) + **fenol** (-OH aromatyczny) → fioletowy kompleks. (NIE z alkoholem/aminą.)
+wymaganie: |
+  X.9 — fenole, aminy, kwasowość/zasadowość.
+podobne:
+  - chemia-2025-maj-pr-26
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-30.webp"
+  alt="Zadanie 27 - oktopamina"
+  caption="Strona 30 arkusza CKE 2025 PR chemia - zadanie 27 (oktopamina, identyfikacja grup)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={30}
+/>
+
+## Klucz pojęciowy — fenol vs alkohol
+
+| Cecha | **Fenol** (Ar-OH) | **Alkohol** (R-OH) |
+|---|---|---|
+| **Kwasowość (pK_a)** | ~10 (umiarkowanie kwasowy) | ~16-18 (bardzo słabo kwasowy) |
+| **Reakcja z NaOH** | Tak (powstaje fenolan) | Nie (alkohol nie reaguje) |
+| **Reakcja z Na (metalem)** | Tak (NaOR + H₂) | Tak (NaOR + H₂) |
+| **Próba z FeCl₃** | **Tak** (fioletowy kompleks) | **Nie** |
+| **Utlenianie do ketonu/aldehydu** | Trudniej (ar-OH stabilny) | Tak (R-OH → R-CO, alkohol I-rz → CHO, II-rz → CO) |
+
+**Dlaczego fenol jest bardziej kwasowy?**: anion fenolanu (Ar-O⁻) jest **stabilizowany rezonansowo** przez pierścień aromatyczny (-ładunek rozłożony). Alkohol R-O⁻ nie ma takiej stabilizacji.
+
+## Klucz pojęciowy — aminy
+
+**Aminy** mają grupę -NH₂ (I-rz), -NHR (II-rz), -NR₂ (III-rz).
+
+**Aminy = zasady Brønsteda**:
+- -NH₂ + H⁺ → -NH₃⁺ (akceptują proton).
+- pK_b alkilowej aminy ~3-4 (mocniejsze zasady niż NH₃).
+- pK_b aromatycznej aminy (anilina) ~9-10 (słabsze, bo wolna para na N w pierścieniu).
+
+**Reakcje aminy z kwasami**:
+- R-NH₂ + HCl → R-NH₃⁺Cl⁻ (chlorowodorek aminy, sól krystaliczna, rozpuszczalna w wodzie).
+- Stosowane w **farmacji**: leki w postaci chlorowodorków (np. lidokaina HCl, morfina HCl) → lepsza rozpuszczalność.
+
+## Mechanizm: próba fenoli z FeCl₃
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Fenol** Ar-OH + FeCl₃ → kompleks Fe³⁺ z fenolanowymi tlenami.
+
+</div>
+
+<div class="krok">
+
+**Stechiometria**: 3 Ar-OH + FeCl₃ → Fe(OAr)₃ + 3 HCl (lub w roztworze [Fe(OAr)₆]³⁻).
+
+</div>
+
+<div class="krok">
+
+**Kolor kompleksu** zależy od typu fenolu:
+- Fenol prosty (C₆H₅OH): **fioletowy**.
+- Salicylany (kwas salicylowy): **purpurowy**.
+- Pirogalol (1,2,3-trihydroksybenzen): **głęboki zielony/niebieski**.
+- Inne polifenole: różne odcienie.
+
+</div>
+
+<div class="krok">
+
+**Próba diagnostyczna**: jeśli związek + FeCl₃ → kolor (nie żółty/brunatny FeCl₃) → **zawiera grupę fenolową**.
+
+</div>
+
+</div>
+
+## Klucz pojęciowy — oktopamina
+
+**Oktopamina** = neurohormon i neuroprzekaźnik u **bezkręgowców** (owady, mięczaki, robaki):
+- **Analog noradrenaliny** u kręgowców.
+- Wpływa na **lotne zachowanie**, agresję, snu/budzenia u owadów.
+- **Cel insektycydów** — niektóre pestycydy działają na oktopaminowe receptory.
+
+**Struktura**: meta-tyramina hydroksylowana w łańcuchu bocznym:
+- HO-C₆H₄-CH(OH)-CH₂-NH₂ = 4-hydroksyfenetyloamina z dodatkową grupą OH.
+
+## Mechanizm: utlenianie do ketonu
+
+**Alkohol drugorzędowy** (C-OH z 2 grupami C) → **keton** (C=O z 2 grupami C):
+
+**Reagenty**:
+- **KMnO₄** (silny, agresywny).
+- **K₂Cr₂O₇/H⁺** (silny).
+- **PCC** (pirydyno-chlorochromian, łagodniejszy).
+- **DMSO** + reagent Swern (laboratoryjnie).
+
+**Wzór ogólny**:
+$$R-CHOH-R' + [O] \rightarrow R-CO-R' + H_2O$$
+
+W oktopaminie:
+HO-C₆H₄-**CH(OH)**-CH₂-NH₂ → HO-C₆H₄-**CO**-CH₂-NH₂ (= 4-hydroksyfenacetamid lub podobny keton).
+
+**Alkohol I-rzędowy** → aldehyd → kwas karboksylowy (kontynuacja utleniania).
+**Alkohol III-rzędowy** → NIE utlenia się łatwo (brak H na C-OH).
+
+<div class="odpowiedz">
+<div>
+
+**27.1.**
+1. **P** — fenolowa -OH (pK_a ~10) jest bardziej kwasowa niż alkoholowa -OH (pK_a ~16-18).
+2. **P** — alkohol II-rzędowy w oktopaminie (fragment C) można utlenić do ketonu (np. KMnO₄, K₂Cr₂O₇).
+
+**27.2.**
+- HCl reaguje z fragmentem **B** (amina -NH₂ jako zasada Brønsteda → chlorowodorek aminy).
+- Fragment A (fenol) **uległ** reakcji z FeCl₃ (charakterystyczna próba fenoli — fioletowy kompleks).
+
+</div>
+</div>
+
+## Punktacja CKE
+
+- **27.1.** 1 pkt — oba P/F poprawne.
+- **27.2.** 1 pkt — B (HCl + amina) + "uległ" (fenol + FeCl₃).
+- **Suma**: 2 pkt.
+
+## Po co to umieć
+
+**Identyfikacja grup funkcyjnych** = klasyczne ćwiczenie chemii analitycznej:
+- **Aldehyd**: Tollens (lusterko Ag), Fehling/Trommer (Cu₂O ceglasty).
+- **Keton**: 2,4-dinitrofenylohydrazyna (DNPH) → żółty osad.
+- **Alkohol**: bezwodnik octowy (estryfikacja); Lucas (HCl/ZnCl₂).
+- **Karboksyl**: NaHCO₃ → CO₂ (gaz!).
+- **Amina**: HCl (sól amoniowa); azotyn sodowy → diazoniowy/azotki.
+- **Fenol**: **FeCl₃ → fioletowy** (najbardziej charakterystyczna).
+- **Wiązanie peptydowe**: biuret z Cu(OH)₂ → fioletowy.
+
+**Oktopamina i komory leków**:
+- **Insektycydy** atakujące oktopaminowe receptory → wybiórczo zabijają owady, oszczędzając ssaki.
+- **Amitraz** (pestycyd) — działa na receptory oktopaminy.
+
+**Hormony i neuroprzekaźniki — porównanie**:
+| Bezkręgowce | Kręgowce (analog) |
+|---|---|
+| **Oktopamina** | **Noradrenalina** (NA) |
+| **Tyramina** | NA, dopamina |
+| **Serotonina** | **Serotonina** (zachowana ewolucyjnie!) |
+
+**Sole aminowe w farmacji**:
+- Morfina HCl, kodeina HCl, oksykodon HCl.
+- Adrenalina (epinefryna) — zwykle dostępna jako HCl.
+- Większość amin lekowych podawana jest jako **chlorowodorki** dla lepszej rozpuszczalności + stabilności.
