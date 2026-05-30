@@ -1,0 +1,186 @@
+---
+arkusz: biologia-2024-maj-pr
+subject: biologia
+nr: 19
+punkty: 2
+typ: otwarte-krotkie
+topic: genetyka, mutacje chromosomowe, translokacja, chromosom Filadelfia, białaczka, BCR-ABL
+difficulty: 4
+tresc: |
+  **Przewlekła białaczka szpikowa (CML)** = choroba genetyczna. W komórkach macierzystych szpiku powstają geny fuzyjne BCR-ABL1 i ABL1-BCR przez **wzajemne przeniesienie fragmentów chromosomów 22 i 9**. Skutek: kinaza BCR-ABL1 stale aktywna → nadmierne podziały komórek → białaczka.
+
+  **Chromosom Filadelfia** = chromosom 22 z fragmentem chromosomu 9, charakterystyczny dla CML.
+
+  **19.1.** Określ typ mutacji: A. duplikacja / B. inwersja / **C. translokacja** / D. delecja.
+
+  **19.2.** Oceń P/F:
+  1. Mutacja powoduje zmiany w strukturze chromosomów **oraz w ich liczbie**.
+  2. Zmiany w strukturze chromosomów 9 i 22 są **widoczne w kariotypie**.
+odpowiedz: |
+  **19.1.** **C — translokacja** (wzajemna, reciprocal translocation).
+
+  **Uzasadnienie**:
+  - **Translokacja** = przeniesienie fragmentu chromosomu do innego chromosomu.
+  - **Wzajemna** translokacja = wymiana fragmentów między dwoma niehomologicznymi chromosomami.
+  - W CML: fragment długiego ramienia chromosomu 9 (zawierający gen ABL1) → przemieszcza się na chromosom 22; fragment chromosomu 22 (z genem BCR) → na chromosom 9.
+  - Powstają geny fuzyjne **BCR-ABL1** (na chr. 22 = Ph) i ABL1-BCR (na chr. 9).
+
+  **Dlaczego nie inne opcje?**:
+  - **A. Duplikacja** = pojawienie się dodatkowej kopii fragmentu. Nie ma jej tutaj.
+  - **B. Inwersja** = odwrócenie fragmentu o 180°. Nie ma jej.
+  - **D. Delecja** = utrata fragmentu. W CML fragmenty są **wymieniane** (nie tracone).
+
+  **19.2.**
+
+  | # | Stwierdzenie | Ocena |
+  |---|---|---|
+  | 1 | Mutacja zmienia strukturę **oraz liczbę** chromosomów | **F** |
+  | 2 | Zmiany w strukturze chromosomów 9 i 22 widoczne w kariotypie | **P** |
+
+  **Uzasadnienia**:
+  1. **F** — translokacja zmienia **STRUKTURĘ** chromosomów (skład, długość, organizację genów), ale **NIE LICZBĘ**. W CML pacjent ma nadal **46 chromosomów** (jak zdrowi), tylko 22 i 9 są inne strukturalnie.
+
+  2. **P** — chromosom Filadelfia (Ph) jest **mniejszy** niż normalny chromosom 22 (bo stracił fragment) i tym samym **widoczny w klasycznym kariotypie** (barwienie barwnikiem Giemsa). To była **pierwsza odkryta** mutacja chromosomowa związana z nowotworem (1960, Nowell i Hungerford). Diagnostyka CML obejmuje:
+     - **Kariotyp** (cytogenetyka klasyczna): chromosom Ph.
+     - **FISH** (fluorescent in situ hybridization): wykrycie genu fuzyjnego.
+     - **RT-PCR**: detekcja mRNA BCR-ABL1.
+pulapka: |
+  Pułapka 19.1 — pomylenie translokacji z delecją. **Translokacja** = wymiana między chromosomami (oba zmienione, nic nie znika). **Delecja** = utrata fragmentu (jeden chromosom skrócony, fragment ginie).
+
+  Pułapka 19.2.1 — "zmiana liczby". Klucz: **liczba chromosomów = 46** (norma). Translokacja zmienia **strukturę**, nie liczbę. Aneuploidia (np. trisomia 21 = Down) = zmiana **liczby**.
+
+  Pułapka 19.2.2 — niezauważenie że Ph jest widoczny. Tak, jest. Z chromosomu 22 ucina fragment + dodaje (mniejszy) z chromosomu 9 → chromosom 22 staje się **mniejszy** = zauważalny.
+wymaganie: |
+  IV.6 — mutacje chromosomowe (translokacje, delecje), choroby genetyczne.
+podobne:
+  - biologia-2024-maj-pr-18
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2024-maj-pr/ark-24.webp"
+  alt="Zadanie 19 - chromosom Filadelfia, CML"
+  caption="Strona 24 arkusza CKE 2024 PR biologia - zadanie 19 (translokacja BCR-ABL1, przewlekła białaczka szpikowa)."
+  zrodlo="CKE 2024 / Żółnierowicz et al., Hematologia 2010"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/Biologia/MBIP-R0-100-A-2405-arkusz.pdf"
+  pdfPage={24}
+/>
+
+## Klucz pojęciowy — mutacje chromosomowe
+
+| Typ | Opis | Przykład |
+|---|---|---|
+| **Delecja** | Utrata fragmentu | Cri-du-chat (5p-) |
+| **Duplikacja** | Dodatkowa kopia | Triploidia 21p (Down częściowy) |
+| **Inwersja** | Obrócenie fragmentu o 180° | Inwersja chr. 9 (często bezobjawowa) |
+| **Translokacja** | Przeniesienie do innego chromosomu | **Ph chromosome** (BCR-ABL1) → CML |
+| **Translokacja Robertsona** | Połączenie dwóch akrocentrycznych | Mutacje rodzinne |
+
+**Aneuploidia** (zmiana liczby): trisomia 21 (Down), trisomia 18 (Edwards), monosomia X (Turnera). To **inna kategoria** mutacji.
+
+## Mechanizm: translokacja BCR-ABL1
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Stan normalny**: chromosom 9 zawiera gen **ABL1** (kinaza tyrozynowa, ważna w sygnalizacji). Chromosom 22 zawiera gen **BCR** (breakpoint cluster region).
+
+</div>
+
+<div class="krok">
+
+**Translokacja t(9;22)**: fragmenty chromosomów 9 i 22 wymieniają się.
+- Fragment chromosomu 9 z ABL1 → przyłączony do chromosomu 22.
+- Fragment chromosomu 22 z BCR → przyłączony do chromosomu 9.
+
+</div>
+
+<div class="krok">
+
+**Powstają fuzyjne geny**:
+- **BCR-ABL1** (na chromosomie Filadelfia = Ph = chr. 22 zmodyfikowany).
+- ABL1-BCR (na chromosomie 9 zmodyfikowanym, mniej istotne).
+
+</div>
+
+<div class="krok">
+
+**Białko BCR-ABL** = **konstytutywnie aktywna kinaza tyrozynowa** (zawsze włączona, niezależnie od sygnałów). Stymuluje stałe podziały komórek macierzystych szpiku.
+
+</div>
+
+<div class="krok">
+
+**Skutek**: niekontrolowane podziały → leukocyty patologiczne → **przewlekła białaczka szpikowa (CML)**.
+
+</div>
+
+</div>
+
+## Mechanizm: kariotyp + chromosom Filadelfia
+
+**Kariotyp** = uporządkowane ułożenie chromosomów w pary, od największego do najmniejszego, według wyglądu (centromer, prążkowanie).
+
+**W zdrowym kariotypie**:
+- 23 pary chromosomów (46 łącznie).
+- 22 autosomy + chromosomy płciowe (XX lub XY).
+
+**W CML z Ph+**:
+- Liczba chromosomów = **46** (niezmieniona!).
+- Chromosom 22 jest **mniejszy** niż normalnie (= **chromosom Filadelfia**).
+- Jeden z chromosomów 9 jest **większy** (przyjął fragment z 22).
+
+Diagnoza **wizualnie** w mikroskopie świetlnym po barwieniu Giemsa lub FISH.
+
+<div class="odpowiedz">
+<div>
+
+**19.1.** **C — translokacja** (wzajemna). Fragment chromosomu 9 z genem ABL1 przenosi się na chromosom 22, a fragment chr. 22 z genem BCR na chromosom 9. Powstają **fuzyjne geny BCR-ABL1** i ABL1-BCR.
+
+**19.2.**
+1. **F** — mutacja zmienia STRUKTURĘ chromosomów (długość, sekwencję), ale NIE liczbę. Liczba chromosomów = 46 (norma).
+2. **P** — chromosom Filadelfia (Ph) jest mniejszy niż normalny chr. 22 → widoczny w klasycznym kariotypie.
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — translokacja a aneuploidia</div>
+
+**Translokacja** = zmiana struktury, **bez** zmiany liczby chromosomów (46 → 46).
+**Aneuploidia** = zmiana liczby (np. 47 chromosomów w trisomii 21).
+
+To **różne kategorie** mutacji. Translokacja może być zrównoważona (osobnik zdrowy) lub niezrównoważona (objawowy).
+</div>
+
+## Punktacja CKE
+
+- **19.1.** 1 pkt — C (translokacja).
+- **19.2.** 1 pkt — oba stwierdzenia poprawne (F, P).
+- **Suma**: 2 pkt.
+
+## Po co to umieć
+
+**CML** to **najbardziej zrewolucjonizowana** choroba w historii medycyny:
+- **1960** — odkrycie chromosomu Ph (Nowell i Hungerford, Filadelfia).
+- **1973** — Janet Rowley odkrywa, że Ph to wynik **translokacji** t(9;22).
+- **1982-86** — identyfikacja genów BCR + ABL1, mechanizmu fuzji.
+- **1990** — wykazanie, że BCR-ABL **wystarczy** do wywołania CML u myszy.
+- **2001** — **imatinib (Glivec)** — pierwszy lek **celowany**: inhibitor kinazy BCR-ABL. CML z choroby śmiertelnej staje się **przewlekłą, kontrolowalną**.
+
+**Przeżywalność CML**:
+- Przed imatinibem: 3-5 lat życia.
+- Z imatinibem: 90%+ pacjentów żyje 10+ lat. Większość ma normalną długość życia.
+
+**Imatinib** = wzór nowoczesnej **medycyny precyzyjnej** (precision medicine) — lek "celowany" na konkretną cząsteczkę w komórce nowotworowej. Otworzył erę inhibitorów kinaz tyrozynowych (TKI) w onkologii.
+
+**Inne nowotwory** z fuzjami:
+- **APL** (ostra białaczka promielocytowa): t(15;17) PML-RARα → leczenie kwasem retinowym.
+- **Mięsak Ewinga**: t(11;22) EWS-FLI1.
+- **Chłoniak Burkitta**: t(8;14) MYC-IGH.
+
+Translokacje są **konstytutywnymi sygnaturami** wielu nowotworów = ważne dla diagnostyki + celowanej terapii.
