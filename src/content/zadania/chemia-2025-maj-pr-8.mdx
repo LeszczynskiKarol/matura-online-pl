@@ -1,0 +1,233 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 8
+punkty: 2
+typ: otwarte-krotkie
+topic: stechiometria, miareczkowanie, pH, kwas bromowodorowy, KBr, H2SO4
+difficulty: 4
+tresc: |
+  Otrzymanie HBr: 9,5 g czystego KBr + stężony H₂SO₄ → KBr + H₂SO₄ → KHSO₄ + HBr.
+
+  HBr pochłonięto w 80 cm³ wody → kwas bromowodorowy.
+
+  **Próbka 1,0 cm³** kwasu rozcieńczona + miareczkowana **6,9 cm³ KOH (pH = 13)** do zobojętnienia.
+
+  Oblicz, jaka część KBr (%) uległa reakcji z H₂SO₄.
+odpowiedz: |
+  **Krok 1**: stężenie KOH z pH.
+  - pH = 13 → pOH = 14 - 13 = 1.
+  - [OH⁻] = 10⁻¹ = **0,1 mol/dm³**.
+  - KOH = silna zasada → [KOH] = [OH⁻] = **0,1 mol/dm³**.
+
+  **Krok 2**: liczba moli KOH zużytego do zobojętnienia próbki.
+  - V(KOH) = 6,9 cm³ = 6,9·10⁻³ dm³.
+  - n(KOH) = c · V = 0,1 · 6,9·10⁻³ = **6,9·10⁻⁴ mol**.
+
+  **Krok 3**: liczba moli HBr w próbce 1,0 cm³.
+  - Reakcja zobojętniania: HBr + KOH → KBr + H₂O (stosunek 1:1).
+  - n(HBr) w próbce = n(KOH) = **6,9·10⁻⁴ mol**.
+
+  **Krok 4**: stężenie HBr w cylindrze.
+  - c(HBr) = n / V_próbki = 6,9·10⁻⁴ / 1,0·10⁻³ = **0,69 mol/dm³**.
+
+  **Krok 5**: całkowita liczba moli HBr w 80 cm³.
+  - n(HBr) całkowity = c · V_cylindra = 0,69 · 80·10⁻³ = 0,69 · 0,08 = **0,0552 mol**.
+
+  *(Alternatywnie bez stężenia: w 1 cm³ jest 6,9·10⁻⁴ mol HBr → w 80 cm³ jest 80 · 6,9·10⁻⁴ = 0,0552 mol HBr).*
+
+  **Krok 6**: liczba moli KBr który zareagował (stosunek 1:1 z HBr).
+  - n(KBr_zareagowało) = n(HBr) = **0,0552 mol**.
+
+  **Krok 7**: początkowa liczba moli KBr.
+  - M(KBr) = 39 + 80 = 119 g/mol.
+  - n(KBr_początkowe) = m / M = 9,5 / 119 = **0,0798 mol**.
+
+  **Krok 8**: procent KBr który zareagował.
+  - % = n(KBr_zareagowało) / n(KBr_początkowe) × 100%
+  - % = 0,0552 / 0,0798 × 100% = 69,17%
+  - **% ≈ 69,2%** (z dokładnością do 1 cyfry po przecinku) lub **~69%**.
+
+  **Odpowiedź**: Około **69,2%** użytego KBr uległo reakcji z H₂SO₄.
+pulapka: |
+  Pułapka — przeliczanie pH na stężenie. **pH = 13 → [H⁺] = 10⁻¹³**. **pOH = 1 → [OH⁻] = 10⁻¹ = 0,1 mol/dm³**. Dla KOH (silnej zasady, dysocjacja 100%): [KOH] = [OH⁻] = 0,1.
+
+  Pułapka — pominięcie kroku z całym cylindrem. Próbka 1 cm³ z 80 cm³ → trzeba pomnożyć przez 80, by dostać moli HBr **w całości**.
+
+  Pułapka — M(KBr) ≠ 80 g/mol. M(K) = 39, M(Br) = 80, M(KBr) = **119** g/mol.
+wymaganie: |
+  II.1 — obliczenia stechiometryczne.
+  IV.3 — pH, miareczkowanie kwasowo-zasadowe.
+podobne:
+  - chemia-2025-maj-pr-4
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-12.webp"
+  alt="Zadanie 8 - otrzymywanie HBr, miareczkowanie"
+  caption="Strona 12 arkusza CKE 2025 PR chemia - zadanie 8 (KBr + H₂SO₄ → HBr, obliczenia)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={12}
+/>
+
+## Klucz pojęciowy — pH i stężenie
+
+| Wielkość | Wzór | Przykład |
+|---|---|---|
+| **pH** | -log[H⁺] | pH=7 → [H⁺]=10⁻⁷ mol/dm³ |
+| **pOH** | -log[OH⁻] | pOH=1 → [OH⁻]=10⁻¹ mol/dm³ |
+| **pH + pOH** | = **14** (w 25°C) | Reguła iloczynu jonowego wody Kw=10⁻¹⁴ |
+| **Silna zasada** | Pełna dysocjacja | KOH → K⁺ + OH⁻ (100%). [KOH] = [OH⁻] |
+
+## Mechanizm: rozwiązanie krok-po-kroku
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Identyfikacja danych**:
+- m(KBr) = 9,5 g.
+- V(HBr cylinder) = 80 cm³.
+- V(próbka) = 1,0 cm³.
+- V(KOH użyte) = 6,9 cm³.
+- pH(KOH) = 13.
+
+</div>
+
+<div class="krok">
+
+**Krok 1 — stężenie KOH z pH**:
+pH = 13 → pOH = 1 → [OH⁻] = 0,1 mol/dm³ → [KOH] = 0,1 mol/dm³.
+
+</div>
+
+<div class="krok">
+
+**Krok 2 — moli KOH użytego**:
+n(KOH) = 0,1 mol/dm³ · 6,9·10⁻³ dm³ = **6,9·10⁻⁴ mol**.
+
+</div>
+
+<div class="krok">
+
+**Krok 3 — moli HBr w próbce** (stosunek 1:1 w zobojętnianiu):
+n(HBr w 1 cm³) = 6,9·10⁻⁴ mol.
+
+</div>
+
+<div class="krok">
+
+**Krok 4 — moli HBr w całym cylindrze (80 cm³)**:
+n(HBr całkowity) = 6,9·10⁻⁴ · 80 = **0,0552 mol**.
+
+</div>
+
+<div class="krok">
+
+**Krok 5 — moli KBr który zareagował** (stosunek 1:1 z HBr w reakcji KBr+H₂SO₄):
+n(KBr zareagowało) = 0,0552 mol.
+
+</div>
+
+<div class="krok">
+
+**Krok 6 — początkowa moli KBr**:
+M(KBr) = 39 + 80 = 119 g/mol.
+n(KBr początk.) = 9,5 / 119 = 0,0798 mol.
+
+</div>
+
+<div class="krok">
+
+**Krok 7 — procent który zareagował**:
+% = 0,0552 / 0,0798 × 100% = **69,17%** ≈ **69,2%**.
+
+</div>
+
+</div>
+
+## Klucz pojęciowy — miareczkowanie kwasowo-zasadowe
+
+**Punkt równoważnikowy** (PR): liczba moli kwasu = liczba moli zasady (przy stosunku 1:1 H⁺/OH⁻).
+
+**Dla HBr + KOH** (oba mocne, stosunek 1:1):
+- Reakcja: HBr + KOH → KBr + H₂O.
+- Punkt równoważnikowy: n(HBr) = n(KOH).
+- W roztworze po PR: KBr (sól mocnego kwasu + mocnej zasady) → **pH = 7**.
+
+**Wskaźniki**:
+- **Fenoloftaleina** (zmiana barwy 8,2-10,0) — często używana.
+- **Oranż metylowy** (3,1-4,4) — dla miareczkowania słabej zasady mocnym kwasem.
+- **Czerwień metylowa**, błękit bromotymolowy itp.
+
+W zadaniu **nie potrzeba** wskaźnika — pH₅ podane bezpośrednio.
+
+## Sprawdzenie wyników
+
+**Sprawdzenie**:
+- KBr początkowe: 9,5 g / 119 g/mol = 0,0798 mol ✓.
+- HBr powstały: 0,0552 mol → masa: 0,0552 · 81 = 4,47 g HBr.
+- 69,2% z 9,5 g KBr = 6,57 g zareagowało → moli = 6,57 / 119 = 0,0552 ✓.
+
+Obliczenia spójne.
+
+<div class="odpowiedz">
+<div>
+
+**Procent KBr który zareagował**:
+
+- n(KBr początk.) = 9,5 / 119 = **0,0798 mol**.
+- [KOH] z pH=13: [OH⁻] = 10⁻¹ = **0,1 mol/dm³**.
+- n(KOH) = 0,1 · 6,9·10⁻³ = **6,9·10⁻⁴ mol** w próbce 1 cm³.
+- n(HBr) = n(KOH) = **6,9·10⁻⁴ mol** w 1 cm³.
+- n(HBr całkowity, 80 cm³) = 80 · 6,9·10⁻⁴ = **0,0552 mol**.
+- n(KBr zareagowało) = n(HBr) = **0,0552 mol**.
+- **% = 0,0552 / 0,0798 × 100% = 69,17% ≈ 69,2%**.
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — pH 13 = silna zasada</div>
+
+pH = 13 oznacza **bardzo zasadowy** roztwór. [H⁺] = 10⁻¹³ mol/dm³ (śladowe!). [OH⁻] = 10⁻¹ mol/dm³ = 0,1 M. To stężenie KOH **silnie zasadowe**.
+
+Dla porównania:
+- pH 0 = 1 M HCl.
+- pH 7 = woda destylowana.
+- pH 14 = 1 M NaOH.
+</div>
+
+## Punktacja CKE
+
+- **8.** 2 pkt — kompletne obliczenia + wynik 69,2% (lub ±0,5%).
+- 1 pkt za poprawną metodę z błędem rachunkowym.
+
+## Po co to umieć
+
+**Miareczkowanie kwasowo-zasadowe** — klasyczna technika analityczna:
+- **Standaryzacja roztworów** (NaOH miareczkowane wzorcem ftalanu potasu).
+- **Określanie kwasowości** wina, octu, soków.
+- **Kontrola jakości** żywności (kwas mlekowy w jogurcie, kwas cytrynowy w napojach).
+- **Pomiar mocnokwasów żołądkowych** (badania kliniczne).
+
+**Otrzymywanie HBr** — chemia laboratoryjna:
+- Metoda **z zadania** (KBr + H₂SO₄) ma **problem**: stężony H₂SO₄ **utlenia** część HBr do Br₂! Stąd niskie wydajności (~70% w zadaniu).
+- Lepsza metoda: **NaBr + H₃PO₄** (kwas fosforowy(V) — nie utleniacz).
+- Najlepsza: **HBr generowany z H₂ + Br₂** w katalitycznym reaktorze.
+
+**HBr w chemii**:
+- **Mocniejszy** niż HCl (Ka większa) — większy promień Br vs Cl + słabsze wiązanie.
+- Używany w **syntezie organicznej** (dodawanie do alkenów: HBr + CH₂=CH₂ → CH₃CH₂Br).
+- **Kwas bromowodorowy** = klasyczny **mocny kwas**.
+
+**Bromki w przemyśle**:
+- **NaBr** = sól bromu, używana w **fotografii** (już rzadko).
+- **AgBr** = ważne dla emulsji fotograficznych (kiedyś), dziś w jaspisowych soczewkach.
+- **CH₃Br** = bromek metylu, do niedawna fumigant rolny (zakazany - niszczy ozonosferę).
+- **HBr** = kwas używany w produkcji **bromków alkilowych** (od HBr).
