@@ -1,0 +1,208 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 2
+punkty: 2
+typ: otwarte-krotkie
+topic: chemia jądrowa, rozszczepienie, uran, stosunek neutron/proton, bilans nukleonowy
+difficulty: 3
+tresc: |
+  **Rozszczepienie ciężkich jąder**: jądro bombardowane neutronem dzieli się na **2 lżejsze fragmenty** + emisja **2-3 neutronów**.
+
+  **Reakcja**: ²³⁵U + n → ?·n + ⁹²₃₆Kr + ¹⁴¹₅₆Ba
+
+  **2.1.** Uzupełnij schemat reakcji (liczba neutronów + ich liczba masowa/atomowa + liczby przy U i n).
+
+  **2.2.** ²³⁵U + n → ⁹³Sr + 3n + ? (¹³⁹I / ¹⁴⁰Xe / ¹⁴⁰Ba). Większy N/Z: ²³⁵U / ⁹³Sr?
+odpowiedz: |
+  **2.1.** Uzupełnione równanie:
+
+  $$^{235}_{92}\text{U} + ^{1}_{0}\text{n} \rightarrow 3\,^{1}_{0}\text{n} + ^{92}_{36}\text{Kr} + ^{141}_{56}\text{Ba}$$
+
+  **Sprawdzenie bilansu**:
+  - **Liczba atomowa** (protony): 92 + 0 = 36 + 56 + 0 = **92** ✓
+  - **Liczba masowa** (nukleony): 235 + 1 = 236 = 92 + 141 + 3·1 = **236** ✓
+
+  → Powstają **3 neutrony** (²³⁶U się rozpada na Kr + Ba + 3n).
+
+  **2.2.** Drugie jądro = **¹⁴⁰Xe** (ksenon).
+
+  **Wyliczenie**:
+  - ²³⁵₉₂U + ¹n → ⁹³₃₈Sr + 3·¹n + ?
+  - **Liczba atomowa drugiego jądra**: 92 - 38 = **54** = Xe (ksenon).
+  - **Liczba masowa**: 236 - 93 - 3 = **140**.
+  - **²³⁵U + n → ⁹³Sr + 3n + ¹⁴⁰₅₄Xe**.
+
+  ¹³⁹I (Z=53) — niepasująca liczba atomowa.
+  ¹⁴⁰Ba (Z=56) — niepasująca liczba atomowa.
+  **¹⁴⁰Xe** (Z=54) — pasuje ✓.
+
+  **Większy stosunek N/Z**:
+  - ²³⁵U: N = 235 - 92 = **143**, Z = 92 → **N/Z = 143/92 ≈ 1,55**.
+  - ⁹³Sr: N = 93 - 38 = **55**, Z = 38 → **N/Z = 55/38 ≈ 1,45**.
+
+  → **Większy N/Z ma ²³⁵U** (1,55 > 1,45).
+
+  **Wniosek fizyczny**: ciężkie jądra (jak U) mają **więcej neutronów** w stosunku do protonów niż jądra lekkie — siła jądrowa silna ma krótki zasięg, a odpychanie elektrostatyczne protonów rośnie z odległością → ciężkie jądra wymagają proporcjonalnie więcej "neutronowego cementu" (neutrony oddziaływają tylko siłą silną, bez elektrostatyki).
+pulapka: |
+  Pułapka 2.1 — pomylenie liczby atomowej i masowej w bilansie. Klucz: **masa** = górny indeks (235), **ładunek/Z** = dolny indeks (92). Po obu stronach reakcji muszą się **bilansować osobno**.
+
+  Pułapka 2.1 — zapomnienie o neutronie po lewej (1 wchodzi). Pełne równanie: 235 + 1 = 236 nukleonów po lewej.
+
+  Pułapka 2.2 — wybór ¹⁴⁰Ba (gdyby bilans masowy zgadzał się). Klucz: liczba **atomowa** Ba = 56, a wymagana = 54. Wiec Ba odpada → tylko Xe (Z=54) pasuje.
+
+  Pułapka 2.2 — pomylenie kierunku N/Z. Klucz: cięższe jądra (U) MAJĄ większy N/Z (więcej neutronów dla stabilności jądra).
+wymaganie: |
+  I.3 — chemia jądrowa, izotopy, rozszczepienie.
+podobne:
+  - chemia-2025-maj-pr-1
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-05.webp"
+  alt="Zadanie 2 - rozszczepienie jąder"
+  caption="Strona 5 arkusza CKE 2025 PR chemia - zadanie 2 (rozszczepienie ²³⁵U, bilans nukleonowy)."
+  zrodlo="CKE 2025 / Bielański, Podstawy chemii nieorganicznej"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={5}
+/>
+
+## Klucz pojęciowy — chemia jądrowa
+
+| Pojęcie | Opis |
+|---|---|
+| **Nuklid (izotop)** | Atom o konkretnej liczbie protonów i neutronów. Zapis: ᴬZX (masa A, ładunek Z) |
+| **Liczba atomowa (Z)** | Liczba **protonów** w jądrze |
+| **Liczba masowa (A)** | Liczba **nukleonów** (protony + neutrony) |
+| **Liczba neutronów (N)** | N = A - Z |
+| **Stosunek N/Z** | Wskaźnik stabilności jądrowej. Optymalne 1-1,6 (rośnie z A) |
+| **Rozszczepienie** (fission) | Rozpad ciężkiego jądra na 2 lżejsze fragmenty + neutrony |
+| **Synteza** (fusion) | Łączenie lekkich jąder w cięższe (np. H + H → He) |
+
+## Mechanizm: bilans reakcji jądrowej
+
+**Zasady zachowania w reakcjach jądrowych**:
+1. **Liczba masowa** (sumaryczna): po obu stronach równa.
+2. **Liczba atomowa** (sumaryczny ładunek): po obu stronach równa.
+3. (Masa-energia: w reakcjach jądrowych masa **NIE** jest zachowana — defekt masowy zamienia się w energię, E=mc².)
+
+**Krok-po-kroku** dla 2.1:
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Po lewej**: ²³⁵₉₂U + ¹₀n.
+- Suma mas: 235 + 1 = **236**.
+- Suma ładunków: 92 + 0 = **92**.
+
+</div>
+
+<div class="krok">
+
+**Po prawej**: x·¹₀n + ⁹²₃₆Kr + ¹⁴¹₅₆Ba.
+- Suma ładunków: 0·x + 36 + 56 = **92** ✓ (już zgodne, niezależnie od x).
+- Suma mas: 1·x + 92 + 141 = 233 + x.
+
+</div>
+
+<div class="krok">
+
+**Bilans mas**: 236 = 233 + x → **x = 3**.
+
+</div>
+
+<div class="krok">
+
+**Pełne równanie**: ²³⁵₉₂U + ¹₀n → **3** ¹₀n + ⁹²₃₆Kr + ¹⁴¹₅₆Ba.
+
+</div>
+
+</div>
+
+## Mechanizm: stosunek N/Z (2.2)
+
+**Stabilność jąder** zależy od **stosunku N/Z** (neutrony : protony):
+- **Lekkie jądra** (Z<20): stabilne przy N/Z ≈ 1 (np. ¹²C: N=6, Z=6, N/Z=1).
+- **Średnie** (Z 20-50): N/Z ≈ 1,2-1,3.
+- **Ciężkie** (Z>50): N/Z **rośnie** do ~1,5-1,6 (np. ²³⁵U: 143/92 ≈ 1,55).
+
+**Dlaczego rośnie?**:
+- Siła jądrowa silna ma **krótki zasięg** (~10⁻¹⁵ m), działa między wszystkimi nukleonami w sąsiedztwie.
+- Odpychanie elektrostatyczne protonów ma **długi zasięg** (1/r²), rośnie z każdym dodatkowym protonem.
+- W ciężkich jądrach: dużo protonów → potrzeba **dodatkowych neutronów** by zwiększyć siłę silną bez dodawania odpychania → wyższy N/Z.
+
+**Pasy stabilności**: w wykresie N vs Z stabilne jądra tworzą "pas stabilności" o rosnącym N/Z. Jądra poza pasem są **promieniotwórcze** (rozpadają się różnymi mechanizmami).
+
+## Mechanizm: reakcja łańcuchowa rozszczepiania (kontekst)
+
+**²³⁵U** + 1 n → 2 fragmenty + **3 n** (średnio).
+
+Wyemitowane 3 n mogą trafić w kolejne jądra ²³⁵U → **reakcja łańcuchowa**:
+- 1 → 3 → 9 → 27 → ... → wykładniczy wzrost.
+- Każde rozszczepienie wydziela ~200 MeV energii.
+
+**Reaktory jądrowe**: kontrolowana reakcja łańcuchowa (k=1, każdy n trafia w jedno jądro). **Bomby atomowe**: niekontrolowana (k>1, wykładniczy wzrost).
+
+<div class="odpowiedz">
+<div>
+
+**2.1.** ²³⁵₉₂U + ¹₀n → **3** ¹₀n + ⁹²₃₆Kr + ¹⁴¹₅₆Ba
+
+Bilans: masa 235+1 = 236 = 3·1 + 92 + 141 = 236 ✓. Ładunek 92+0 = 0+36+56 = 92 ✓.
+
+**2.2.** Drugie jądro = **¹⁴⁰₅₄Xe** (ksenon).
+
+Wyliczenie: 92 = 38 (Sr) + Z → Z = 54 = Xe. 236 = 93 + 3·1 + A → A = 140.
+
+**Większy stosunek N/Z ma ²³⁵U**:
+- ²³⁵U: N/Z = 143/92 ≈ **1,55**.
+- ⁹³Sr: N/Z = 55/38 ≈ **1,45**.
+
+Cięższe jądra mają wyższy N/Z (potrzeba więcej neutronów dla stabilności wobec rosnącego odpychania elektrostatycznego protonów).
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka 2.2 — wybór ¹⁴⁰Ba</div>
+
+¹⁴⁰Ba ma **liczbę masową** zgodną z bilansem (140), ale **liczbę atomową** Ba = **56**, a wymagana = 54. Bilans Z: 92 = 38 + Z_drugiego, więc Z = 54 = Xe.
+
+Klucz: **dwa równania bilansu** — masy i ładunku. Oba muszą się zgadzać.
+</div>
+
+## Punktacja CKE
+
+- **2.1.** 1 pkt — poprawne uzupełnienie schematu (3 neutrony, indeksy).
+- **2.2.** 1 pkt — ¹⁴⁰Xe + ²³⁵U (większy N/Z).
+- **Suma**: 2 pkt.
+
+## Po co to umieć
+
+**Reaktory jądrowe** (1942 — pierwsza kontrolowana reakcja, Enrico Fermi w Chicago):
+- **PWR** (Pressurized Water Reactor) — najczęstszy typ. Paliwo: pręty UO₂ wzbogacony w ²³⁵U (~3-5%).
+- **Polska**: w 2026 r. budowa **pierwszej elektrowni jądrowej** (Choczewo, Bełchatów).
+- **Globalnie**: ~10% energii elektrycznej z atomu.
+
+**Bomby atomowe**:
+- **Little Boy** (Hiroszima 1945) — ²³⁵U.
+- **Fat Man** (Nagasaki 1945) — ²³⁹Pu.
+- Nadkrytyczność masy → niekontrolowana reakcja łańcuchowa.
+
+**Czarnobyl 1986** — reaktor RBMK-1000 eksplodował z powodu **niestabilnego współczynnika reaktywności** + błędu operatora. Uwolnienie ~5% rdzenia → masywne skażenie.
+
+**Fukushima 2011** — tsunami zatopiło systemy chłodzenia → stopienie rdzeni + uwolnienie ²³¹Cs, ¹³¹I.
+
+**Promieniotwórcze izotopy w medycynie**:
+- **¹³¹I** — leczenie raka tarczycy.
+- **⁹⁹ᵐTc** — najczęstszy izotop w **scyntygrafii** (obrazowanie medyczne).
+- **¹⁸F-FDG** — PET (pozytronowa tomografia emisyjna).
+
+**Datowanie radiowęglowe** (¹⁴C) — pomiar wieku obiektów organicznych do ~50 000 lat (T₁/₂ = 5730 lat). Wykorzystywane w archeologii (Całun Turyński, mumie).
+
+**Energia jądrowa vs odnawialna** — debata XXI wieku. Atom = **brak CO₂** + duża gęstość energii + odpady promieniotwórcze (problem) + ryzyko awarii.
