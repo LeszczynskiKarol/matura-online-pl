@@ -1,0 +1,222 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 13
+punkty: 2
+typ: otwarte-krotkie
+topic: równowaga chemiczna, synteza amoniaku, stała Kc, ciśnienie, Haber-Bosch
+difficulty: 5
+tresc: |
+  Synteza amoniaku w reaktorze o **stałej objętości** w temperaturze T:
+
+  N₂ + 3 H₂ ⇌ 2 NH₃
+
+  **Dane**: c(N₂)₀ = 0,20 mol/dm³, c(H₂)₀ = 0,60 mol/dm³. Po pewnym czasie ciśnienie spadło do **75%** początkowej wartości.
+
+  Oblicz **stężeniową stałą równowagi K_c**.
+odpowiedz: |
+  **Krok 1**: spadek ciśnienia ↔ spadek liczby moli (stała T, V).
+  - Z **PV = nRT**: p ∝ n (przy stałych T i V).
+  - Sumaryczne stężenie początkowe: c_total(0) = c(N₂) + c(H₂) = 0,20 + 0,60 = **0,80 mol/dm³**.
+  - Sumaryczne stężenie po reakcji: c_total = 0,80 · 0,75 = **0,60 mol/dm³**.
+  - **Spadek**: Δc = -0,20 mol/dm³.
+
+  **Krok 2**: bilans z stechiometrii.
+
+  Niech **x mol/dm³** N₂ przereagowało. Z równania N₂ + 3 H₂ → 2 NH₃:
+  - Zmiana c(N₂): -x.
+  - Zmiana c(H₂): -3x.
+  - Zmiana c(NH₃): +2x.
+  - **Sumaryczna zmiana**: -x - 3x + 2x = **-2x**.
+
+  **Krok 3**: -2x = -0,20 → **x = 0,10 mol/dm³**.
+
+  **Krok 4**: stężenia w równowadze.
+  - c(N₂) = 0,20 - 0,10 = **0,10 mol/dm³**.
+  - c(H₂) = 0,60 - 3·0,10 = 0,60 - 0,30 = **0,30 mol/dm³**.
+  - c(NH₃) = 2·0,10 = **0,20 mol/dm³**.
+
+  Sprawdzenie: 0,10 + 0,30 + 0,20 = **0,60 mol/dm³** ✓ (75% z 0,80).
+
+  **Krok 5**: stała równowagi.
+
+  $$K_c = \frac{[\text{NH}_3]^2}{[\text{N}_2] \cdot [\text{H}_2]^3} = \frac{(0,20)^2}{0,10 \cdot (0,30)^3} = \frac{0,04}{0,10 \cdot 0,027} = \frac{0,04}{0,0027}$$
+
+  **K_c ≈ 14,8 mol⁻²·dm⁶**
+
+  *(Lub bez jednostki, w zależności od konwencji ~14,81).*
+
+  **Odpowiedź**: **K_c ≈ 14,8 mol⁻²·dm⁶** (lub równoważnie ~14,81).
+pulapka: |
+  Pułapka — pominięcie spadku stężenia. Z PV = nRT przy stałych T i V → **p ∝ n**. Spadek p z 100% do 75% = spadek n (i sumaryczne stężenie) o 25%.
+
+  Pułapka — błędna stechiometria. **Na 1 mol N₂ + 3 mol H₂ powstają 2 mole NH₃**. Łączna zmiana moli = -1 -3 +2 = -2 (na każde 1 mol N₂ przereagowane).
+
+  Pułapka — wzór na K_c. Trzeba **podnosić stężenie do potęgi współczynnika** stechiometrycznego: K_c = [NH₃]² / ([N₂][H₂]³). NIE: [NH₃]/[N₂][H₂].
+
+  Pułapka — jednostka K_c. Dla reakcji N₂ + 3H₂ ⇌ 2NH₃: K_c = mol²/dm⁶ / (mol/dm³ · mol³/dm⁹) = mol⁻²·dm⁶.
+wymaganie: |
+  V.3 — równowaga chemiczna, stała równowagi Kc.
+  V.4 — reguła przekory Le Chateliera.
+podobne:
+  - chemia-2025-maj-pr-10
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-18.webp"
+  alt="Zadanie 13 - synteza amoniaku"
+  caption="Strona 18 arkusza CKE 2025 PR chemia - zadanie 13 (Haber-Bosch, K_c)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={18}
+/>
+
+## Klucz pojęciowy — stała równowagi
+
+**Dla reakcji**: aA + bB ⇌ cC + dD
+
+**Stężeniowa stała równowagi**:
+$$K_c = \frac{[C]^c \cdot [D]^d}{[A]^a \cdot [B]^b}$$
+
+**Ciśnieniowa stała równowagi** (dla gazów):
+$$K_p = K_c \cdot (RT)^{\Delta n}$$
+
+gdzie Δn = (c+d) - (a+b) = zmiana liczby moli gazów.
+
+**Cechy K_c**:
+- Bezwymiarowa lub z jednostką (zależnie od Δn).
+- **K_c >> 1**: równowaga przesunięta w prawo (dużo produktów).
+- **K_c << 1**: równowaga w lewo (dużo substratów).
+- **K_c ≈ 1**: porównywalne stężenia substratów i produktów.
+
+## Mechanizm: stechiometria reakcji Habera (N₂ + 3 H₂ ⇌ 2 NH₃)
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Reakcja**: N₂(g) + 3 H₂(g) ⇌ 2 NH₃(g).
+
+**Zmiana liczby moli gazów** Δn = 2 - (1+3) = **-2**.
+
+</div>
+
+<div class="krok">
+
+**Wpływ ciśnienia (Le Chatelier)**: wzrost p → równowaga przesuwa się w stronę **mniejszej liczby moli** = produkty (NH₃). Dlatego Haber-Bosch używa **wysokich ciśnień** (~200 atm).
+
+</div>
+
+<div class="krok">
+
+**Tutaj**: ciśnienie spadło do 75%, co odpowiada **spadkowi liczby moli** o 25% — synteza zaszła w pewnym stopniu.
+
+</div>
+
+</div>
+
+## Mechanizm: bilans masy (tabela ICE)
+
+**Tabela ICE** (Initial-Change-Equilibrium) dla N₂ + 3 H₂ ⇌ 2 NH₃:
+
+| | N₂ | H₂ | NH₃ |
+|---|---|---|---|
+| **Initial** (c₀) | 0,20 | 0,60 | 0 |
+| **Change** | -x | -3x | +2x |
+| **Equilibrium** | 0,20 - x | 0,60 - 3x | 2x |
+
+**Warunek**: sumaryczne stężenie końcowe = 75% początkowego.
+- Początkowo: 0,20 + 0,60 = 0,80.
+- Po reakcji: (0,20-x) + (0,60-3x) + 2x = 0,80 - 2x.
+- 0,80 - 2x = 0,80 · 0,75 = 0,60.
+- 2x = 0,20 → **x = 0,10 mol/dm³**.
+
+**Stężenia w równowadze**:
+- c(N₂) = 0,20 - 0,10 = **0,10**.
+- c(H₂) = 0,60 - 0,30 = **0,30**.
+- c(NH₃) = 2 · 0,10 = **0,20** mol/dm³.
+
+## Mechanizm: obliczanie K_c
+
+$$K_c = \frac{[\text{NH}_3]^2}{[\text{N}_2] \cdot [\text{H}_2]^3}$$
+
+$$K_c = \frac{(0,20)^2}{0,10 \cdot (0,30)^3} = \frac{0,04}{0,10 \cdot 0,027} = \frac{0,04}{0,0027} = 14,81$$
+
+**K_c ≈ 14,8** (lub 14,81) **mol⁻²·dm⁶**.
+
+**Jednostka**: [c]² / ([c] · [c]³) = mol²/dm⁶ / (mol⁴/dm¹²) = mol⁻²·dm⁶.
+
+## Synteza amoniaku — proces Habera-Boscha (1908)
+
+**Historia**:
+- 1908: Fritz Haber odkrył reakcję, ciśnienie >100 atm, T ~500°C.
+- 1913: Carl Bosch skomercjalizował proces w BASF.
+- Nobel: Haber 1918, Bosch 1931.
+- Wzór laboratorium → przemysł: produkcja ~150 mln ton NH₃ rocznie globalnie.
+
+**Warunki przemysłowe**:
+- **T = 400-500°C** (kompromis: niższa = wyższa K, ale wolniejsza reakcja).
+- **p = 150-300 atm** (wyższa K, równowaga w prawo).
+- **Katalizator**: Fe + Al₂O₃ + K₂O (zwiększa szybkość, nie zmienia równowagi).
+
+**Wpływ na świat**:
+- ~50% azotu w białkach człowieka pochodzi z amoniaku Habera (przez nawozy).
+- **Wyżywienie 4 miliardów ludzi** (z 8 miliardów) zależy od nawozów Habera.
+- Konsumpcja energii: ~1-2% światowej energii idzie na ten proces (~30 GJ/t NH₃).
+
+**Energia w procesie Habera**:
+- Reakcja egzotermiczna: ΔH = -92 kJ/mol.
+- W praktyce kontrolowane T → kompromis kinetyka + termodynamika.
+
+<div class="odpowiedz">
+<div>
+
+**Obliczenia**:
+1. Spadek p o 25% = spadek liczby moli o 25%: 0,80 → 0,60 mol/dm³.
+2. Zmiana sumarycznego stężenia: -0,20.
+3. Z bilansu stechiometrycznego: x = 0,10 mol/dm³ (zmiana N₂).
+4. Stężenia w równowadze:
+   - c(N₂) = 0,10 mol/dm³.
+   - c(H₂) = 0,30 mol/dm³.
+   - c(NH₃) = 0,20 mol/dm³.
+5. K_c = (0,20)² / (0,10 · (0,30)³) = 0,04 / 0,0027 = **14,81 ≈ 14,8 mol⁻²·dm⁶**.
+
+</div>
+</div>
+
+## Punktacja CKE
+
+- **13.** 2 pkt:
+  - 1 pkt: poprawne obliczenia stężeń w równowadze.
+  - 1 pkt: poprawna wartość K_c (~14,8) z jednostką.
+
+## Po co to umieć
+
+**Synteza amoniaku** = jeden z **najważniejszych procesów chemicznych** XX wieku:
+- **Nawozy azotowe** (mocznik, NH₄NO₃, (NH₄)₂SO₄) — bez nich nie wyżywilibyśmy 8 miliardów ludzi.
+- **Materiały wybuchowe** (TNT, nitrogliceryna) — wymagają HNO₃ z NH₃.
+- **Tworzywa sztuczne** (poliamidy: nylon, kewlar) — z amoniaku.
+- **Leki** (sulfonamidy, niektóre antybiotyki) — pochodne amoniaku.
+
+**Le Chatelier w praktyce**:
+- **Wzrost p** → równowaga w stronę mniej moli (tu: produkty NH₃ ✓).
+- **Wzrost T** → w stronę reakcji endotermicznej (tu: substraty, bo Haber jest egzotermiczna).
+- **Dodanie substratu** → w stronę produktów.
+- **Usunięcie produktu** → w stronę produktów (NH₃ skraplany + usuwany).
+
+**Konsumpcja amoniaku globalnie** (2024):
+- 80% → nawozy.
+- 10% → tworzywa, włókna, materiały wybuchowe.
+- 5% → chłodnictwo (NH₃ jako czynnik chłodniczy w przemysłowych chłodniach).
+- 5% → inne (czyściwa, baterie alkaliczne, paliwa).
+
+**Amoniak jako paliwo przyszłości**: spalanie NH₃ → N₂ + H₂O (bez CO₂!). Jest **rozważany jako paliwo statków morskich** (zastąpienie mazutu).
+
+**Bakteryjna fiksacja azotu** = naturalna "synteza amoniaku":
+- Bakterie symbiotyczne (Rhizobium z roślinami strączkowymi) wiążą N₂ → NH₃.
+- Robi to **bezprzemysłowo, w warunkach pokojowych** dzięki enzymowi **nitrogenazie** (z Fe-Mo kofaktorem).
+- Cały **świat industrialny** próbuje powielić to enzymatycznie — jeszcze bez sukcesu.
