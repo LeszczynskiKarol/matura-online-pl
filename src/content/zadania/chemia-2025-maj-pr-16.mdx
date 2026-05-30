@@ -1,0 +1,132 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 16
+punkty: 1
+typ: otwarte-krotkie
+topic: termochemia, LPG, propan, butan, porównanie spalania, CO2
+difficulty: 4
+tresc: |
+  Porównanie spalania **1,0 dm³** zimowego LPG (propan:butan = 70:30, ρ=0,54) vs letniego LPG (30:70, ρ=0,56):
+
+  - Energia z zimowego: (mniejsza/taka sama/większa) niż z letniego.
+  - Więcej CO₂ z (letniego/zimowego).
+odpowiedz: |
+  **Energia ze spalania zimowego LPG**:
+
+  m(zimowy) = 1000 · 0,54 = **540 g**.
+
+  Stosunek molowy 70:30 (propan:butan) = 7:3. Niech n_propan = 7x, n_butan = 3x.
+  - m = 7x · 44 + 3x · 58 = 308x + 174x = 482x = 540.
+  - x = 540 / 482 = **1,120**.
+  - n_propan = 7,84 mol, n_butan = 3,36 mol.
+
+  E_zimowy = 7,84 · 2219 + 3,36 · 2878 = **17 397 + 9 670 = 27 067 kJ ≈ 27 100 kJ**.
+
+  E_letni z poprzedniego zadania = **~27 900 kJ**.
+
+  **Porównanie**: 27 100 < 27 900 → **zimowy LPG wydziela MNIEJSZĄ energię** niż letni (przy tej samej objętości).
+
+  **Ilość CO₂ emitowana** (1 mol propanu → 3 mol CO₂; 1 mol butanu → 4 mol CO₂):
+
+  - **Zimowy**: n_CO₂ = 7,84 · 3 + 3,36 · 4 = 23,5 + 13,4 = **36,9 mol CO₂**.
+  - **Letni**: n_CO₂ = 3,12 · 3 + 7,29 · 4 = 9,4 + 29,2 = **38,5 mol CO₂**.
+
+  **Letni emituje więcej CO₂** (38,5 > 36,9 mol — różnica ~4%).
+
+  **Odpowiedzi**:
+  - Energia z zimowego LPG jest **mniejsza niż** ze spalania letniego LPG.
+  - Więcej CO₂ emituje **letni** LPG.
+pulapka: |
+  Pułapka — odwrotny kierunek. Letni LPG ma więcej **butanu** (większego węglowodoru), który daje **więcej energii NA MOL** (2878 vs 2219), ale w 1 dm³ jest **mniej moli całkowicie** (mniejsza gęstość energii na mol = większa cząsteczka).
+
+  Klucz: letni LPG MIMO większej zawartości butanu daje **WIĘCEJ** energii na dm³ (bo butan ma więcej energii niż propan).
+
+  Pułapka — niewłaściwe stechiometrie CO₂. Propan C₃H₈ + 5 O₂ → 3 CO₂ + 4 H₂O. Butan C₄H₁₀ + 13/2 O₂ → 4 CO₂ + 5 H₂O.
+wymaganie: |
+  V.6 — termochemia, spalanie, emisja CO₂.
+podobne:
+  - chemia-2025-maj-pr-15
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-21.webp"
+  alt="Zadanie 16 - porównanie LPG"
+  caption="Strona 21 arkusza CKE 2025 PR chemia - zadanie 16 (porównanie zimowego vs letniego LPG)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={21}
+/>
+
+## Porównanie LPG — tabela
+
+| Cecha | Zimowy LPG | Letni LPG |
+|---|---|---|
+| **Skład molowy (propan:butan)** | 70:30 | 30:70 |
+| **Gęstość (g/cm³)** | 0,54 | 0,56 |
+| **Masa 1 dm³** | 540 g | 560 g |
+| **n_propan** (mol) | 7,84 | 3,12 |
+| **n_butan** (mol) | 3,36 | 7,29 |
+| **Energia (kJ)** | **~27 100** | **~27 900** |
+| **CO₂ (mol)** | **36,9** | **38,5** |
+| **CO₂ / kJ** | ~1,36·10⁻³ | ~1,38·10⁻³ |
+
+**Wnioski**:
+- Letni LPG: **więcej energii** + **więcej CO₂** (oba przez większy udział butanu).
+- Emisja CO₂ na jednostkę energii **podobna** dla obu mieszanek.
+
+## Mechanizm: dlaczego butan daje więcej energii niż propan?
+
+Butan (C₄H₁₀): więcej atomów C i H niż propan (C₃H₈).
+- Spalanie 1 mol propanu: C₃H₈ + 5 O₂ → 3 CO₂ + 4 H₂O. ΔH = -2219 kJ.
+- Spalanie 1 mol butanu: C₄H₁₀ + 13/2 O₂ → 4 CO₂ + 5 H₂O. ΔH = -2878 kJ.
+
+Butan **dłuższy** = więcej wiązań C-H + C-C → więcej energii zwolnionej w spalaniu.
+
+**Na atom C**:
+- Propan: 2219/3 = 740 kJ/mol C.
+- Butan: 2878/4 = 720 kJ/mol C.
+
+**Podobnie efektywne** na atom C, ale butan ma **więcej** atomów C → więcej energii na cząsteczkę.
+
+<div class="odpowiedz">
+<div>
+
+Ilość energii ze spalania 1 dm³ **zimowego** LPG jest **MNIEJSZA NIŻ** ze spalania 1 dm³ **letniego** LPG.
+
+Ilość CO₂ emitowanego ze spalania 1 dm³ LPG jest większa w przypadku **LETNIEGO** LPG.
+
+**Liczby**:
+- E_zimowy ≈ 27 100 kJ.
+- E_letni ≈ 27 900 kJ.
+- CO₂_zimowy ≈ 36,9 mol.
+- CO₂_letni ≈ 38,5 mol.
+
+</div>
+</div>
+
+## Punktacja CKE
+
+- **16.** 1 pkt — oba wybory (mniejsza + letni).
+
+## Po co to umieć
+
+**Dlaczego dwie wersje LPG?**:
+- **Zimowy LPG (70% propan)** — propan wrze w -42°C → parowanie zimą OK. Butan wrze w -1°C → w mrozie nie paruje, silnik nie pracuje na LPG.
+- **Letni LPG (70% butan)** — butan tańszy. Wystarczy do parowania w temperaturach >5°C. W zimie zawiódłby.
+
+**Emisje samochodowe**:
+- **Spalanie LPG** = mniej cząstek stałych (PM2.5) + mniej NOx niż diesel.
+- ~10% mniej CO₂ na km niż benzyna (zależy od silnika).
+- **Wymagana modyfikacja silnika** (instalacja LPG) — koszt ~3000-5000 zł.
+
+**Globalna konsumpcja LPG** (2024):
+- ~300 mln ton/rok.
+- Polska: ~3 mln ton/rok (jeden z największych konsumentów w UE).
+- Główne źródła: rafinerie + wydobycie gazu ziemnego.
+
+**Bioplyn** = analog LPG ale z biomasy (mieszanka CH₄ + CO₂). Odnawialne źródło.
