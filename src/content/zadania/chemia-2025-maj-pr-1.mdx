@@ -1,0 +1,253 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 1
+punkty: 4
+typ: otwarte-krotkie
+topic: budowa atomu, konfiguracja elektronowa, liczby kwantowe, układ okresowy, bloki s/p/d
+difficulty: 4
+tresc: |
+  **Pierwiastek E**: elektrony w stanie podstawowym zajmują **osiem orbitali**, przy czym **sześć** jest całkowicie zapełnionych.
+
+  **Pierwiastek X**: konfiguracja w jednym ze stanów **wzbudzonych**:
+  - 1s² 2s² 2p⁶ 3s¹ 3p³ 3d³
+
+  **1.1.** Tabela: symbole E i X, symbol bloku konfiguracyjnego, liczba elektronów walencyjnych.
+
+  **1.2.** Liczby kwantowe (główna n, poboczna l) niesparowanego elektronu **atomu E w stanie podstawowym**.
+
+  **1.3.** Pełna konfiguracja elektronowa **jonu X⁻** w stanie podstawowym.
+odpowiedz: |
+  **Identyfikacja pierwiastków**:
+
+  **E**: 8 orbitali zajętych, 6 całkowicie zapełnionych. Test:
+  - 1s²(1) + 2s²(1) + 2p⁶(3) + 3s²(1) + 3p²(2) = **8 orbitali**.
+  - Zapełnione: 1s + 2s + 3×2p + 3s = **6 zapełnionych** ✓.
+  - 3p² ma 2 niesparowane (reguła Hunda — każdy orbital po 1 e).
+  - Łącznie: 14 elektronów → **Z = 14 → krzem (Si)**.
+
+  **X**: konfiguracja wzbudzona 1s² 2s² 2p⁶ 3s¹ 3p³ 3d³ = 2+2+6+1+3+3 = **17 elektronów** → **Z = 17 → chlor (Cl)**.
+
+  Konfiguracja w stanie podstawowym Cl: 1s² 2s² 2p⁶ 3s² **3p⁵**.
+
+  **1.1.** Tabela:
+
+  | Pierwiastek | Symbol | Blok | Elektrony walencyjne |
+  |---|---|---|---|
+  | E | **Si** | **p** | **4** (3s² 3p²) |
+  | X | **Cl** | **p** | **7** (3s² 3p⁵) |
+
+  Uzasadnienie:
+  - **Blok p**: elektrony walencyjne wchodzą do podpowłoki **p** (tak dla Si: 3p², dla Cl: 3p⁵).
+  - **Elektrony walencyjne** = elektrony powłoki najbardziej zewnętrznej (n=3 dla obu): Si ma 2+2=4 (3s²+3p²); Cl ma 2+5=7 (3s²+3p⁵).
+
+  **1.2.** Liczby kwantowe niesparowanego elektronu Si (3p²):
+
+  | Liczby kwantowe | Wartość |
+  |---|---|
+  | **Główna n** | **3** (powłoka M) |
+  | **Poboczna l** | **1** (podpowłoka p) |
+
+  W stanie podstawowym Si (1s² 2s² 2p⁶ 3s² 3p²) elektrony niesparowane są w **3p**:
+  - Powłoka 3 (n=3).
+  - Podpowłoka p (l=1 — z reguły: s→l=0, p→l=1, d→l=2, f→l=3).
+
+  **1.3.** Pełna konfiguracja jonu **X⁻ (Cl⁻)** w stanie podstawowym:
+
+  **Cl⁻: 1s² 2s² 2p⁶ 3s² 3p⁶**
+
+  (Lub równoważnie: [Ar] — konfiguracja argonu, gazu szlachetnego.)
+
+  **Uzasadnienie**:
+  - Cl: Z = 17 (17 protonów, 17 elektronów w atomie obojętnym).
+  - Cl⁻: 1 dodatkowy elektron → **18 elektronów**.
+  - 18 elektronów obsadzonych zgodnie z regułą Madelunga: 1s² 2s² 2p⁶ 3s² 3p⁶.
+  - To **konfiguracja oktetu** (powłoka walencyjna pełna) → Cl⁻ stabilny.
+pulapka: |
+  Pułapka 1.1 — pomylenie pierwiastka E z innym. Klucz: 8 orbitali zajętych + 6 całkowicie zapełnionych = krzem (Si, 1s²2s²2p⁶3s²3p², gdzie 3p² oznacza 2 orbitale niezapełnione w pełni).
+
+  Pułapka 1.2 — niesparowane elektrony Si w stanie **podstawowym** są w 3p (nie 3s). 3s² jest całkowicie zapełnione (2 e sparowane). 3p² ma 2 niesparowane elektrony (Hund: każdy orbital po 1 e).
+
+  Pułapka 1.3 — pomylenie X⁻ z X. Cl⁻ ma 18 elektronów (Cl + 1 dodany do anionu), nie 17. Konfiguracja: 1s²2s²2p⁶3s²3p⁶ (jak argon).
+wymaganie: |
+  I.1 — budowa atomu, konfiguracja elektronowa.
+  I.2 — układ okresowy, bloki konfiguracyjne.
+podobne:
+  - chemia-2025-maj-pr-2
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-04.webp"
+  alt="Zadanie 1 - konfiguracja elektronowa"
+  caption="Strona 4 arkusza CKE 2025 PR chemia - zadanie 1 (pierwiastki E i X, konfiguracja, liczby kwantowe)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={4}
+/>
+
+## Klucz pojęciowy — liczby kwantowe
+
+| Liczba | Symbol | Wartości | Co opisuje |
+|---|---|---|---|
+| **Główna** | n | 1, 2, 3, ... | Powłoka (energia, odległość od jądra) |
+| **Poboczna** | l | 0, 1, ..., n-1 | Podpowłoka (kształt orbitalu): s, p, d, f |
+| **Magnetyczna** | m | -l, ..., 0, ..., +l | Orientacja orbitalu w przestrzeni |
+| **Spinowa** | m_s | +1/2 lub -1/2 | Spin elektronu |
+
+**Reguły obsadzania**:
+- **Madelung (reguła n+l)**: niższa n+l zapełnia się pierwsza. Przy równym n+l, niższe n.
+- **Hund**: w każdym orbitalu podpowłoki najpierw 1 elektron (równoległe spiny), potem dopiero parowanie.
+- **Pauli**: w jednym orbitalu maksymalnie 2 elektrony, o **przeciwnych** spinach.
+
+## Klucz pojęciowy — bloki układu okresowego
+
+| Blok | Charakterystyka | Pierwiastki |
+|---|---|---|
+| **s** | Walencja kończy się na s | H, He, metale 1 i 2 grupy |
+| **p** | Walencja kończy się na p | Niemetale, półmetale, niektóre metale (Al, Sn, Pb) — grupy 13-18 |
+| **d** | Walencja w d | **Metale przejściowe** (np. Fe, Cu, Zn) |
+| **f** | Walencja w f | Lantanowce + aktynowce |
+
+**Si (krzem)** = blok **p**, grupa 14 (IV główna). **Cl (chlor)** = blok **p**, grupa 17 (VII główna).
+
+## Mechanizm: identyfikacja pierwiastka E
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Liczba orbitali zajętych** = 8. Sprawdzamy konfiguracje:
+- 1s² 2s² 2p⁶ 3s² 3p² → 1+1+3+1+2 = 8 ✓
+- 1s² 2s² 2p⁶ 3s² 3p³ → 1+1+3+1+3 = 9 ✗
+- 1s² 2s² 2p⁶ 3s² 3p¹ → 1+1+3+1+1 = 7 ✗
+
+</div>
+
+<div class="krok">
+
+**Liczba zapełnionych** (orbitalów z 2 e) = 6. Sprawdzamy 1s² 2s² 2p⁶ 3s² 3p²:
+- 1s² → 1 zapełniony.
+- 2s² → 1 zapełniony.
+- 2p⁶ → 3 zapełnione.
+- 3s² → 1 zapełniony.
+- 3p² → 2 niesparowane orbitale (każdy 1 e, Hund) → **0 zapełnionych**.
+- Suma: 1+1+3+1+0 = 6 ✓
+
+</div>
+
+<div class="krok">
+
+**Liczba elektronów**: 2+2+6+2+2 = 14 → Z = 14 → **krzem (Si)**.
+
+</div>
+
+</div>
+
+## Mechanizm: identyfikacja pierwiastka X
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Stan wzbudzony**: 1s² 2s² 2p⁶ 3s¹ 3p³ 3d³.
+
+</div>
+
+<div class="krok">
+
+**Liczba elektronów**: 2+2+6+1+3+3 = **17** → Z = 17 → **chlor (Cl)**.
+
+</div>
+
+<div class="krok">
+
+**Stan podstawowy Cl**: elektrony "spadają" do najniższych energii → 1s² 2s² 2p⁶ 3s² 3p⁵ (z 3d³ idą do 3s i 3p).
+
+</div>
+
+</div>
+
+## Mechanizm: jon Cl⁻
+
+Cl ma 17 elektronów (Z=17). **Cl⁻** = Cl + 1 elektron = **18 elektronów**.
+
+**Reguła Madelunga** (obsadzanie kolejnych podpowłok):
+1s → 2s → 2p → 3s → 3p → 4s → 3d → 4p → ...
+
+Dla 18 elektronów: 1s² (2), 2s² (4), 2p⁶ (10), 3s² (12), 3p⁶ (18) ✓.
+
+**Konfiguracja Cl⁻ = 1s² 2s² 2p⁶ 3s² 3p⁶ = [Ar]** (konfiguracja argonu — gazu szlachetnego).
+
+To dlaczego chlor **chętnie** przyjmuje elektron (silna elektroujemność): osiąga stabilny **oktet** (3s² 3p⁶ = 8 elektronów walencyjnych).
+
+<div class="odpowiedz">
+<div>
+
+**1.1.**
+
+| Pierwiastek | Symbol | Blok | Elektrony walencyjne |
+|---|---|---|---|
+| E | **Si** | **p** | **4** |
+| X | **Cl** | **p** | **7** |
+
+**1.2.**
+
+| Liczby kwantowe | Wartość |
+|---|---|
+| Główna n | **3** |
+| Poboczna l | **1** |
+
+Niesparowane elektrony Si w stanie podstawowym są w podpowłoce 3p (n=3, l=1).
+
+**1.3.** **Cl⁻: 1s² 2s² 2p⁶ 3s² 3p⁶** (= [Ar]). 18 elektronów (Cl + 1 dodany), pełen oktet walencyjny.
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — orbital "zajęty" vs "zapełniony"</div>
+
+**Zajęty** = ma co najmniej 1 elektron. **Zapełniony** = ma 2 elektrony (sparowane). 
+
+3p² według Hunda = 2 orbitale ZAJĘTE (po 1 e), ale 0 ZAPEŁNIONYCH (brak orbitalu z 2 e w 3p).
+</div>
+
+## Punktacja CKE
+
+- **1.1.** 2 pkt — wszystkie 4 informacje (symbole Si, Cl + blok p + walencyjne 4, 7).
+- **1.2.** 1 pkt — n=3, l=1.
+- **1.3.** 1 pkt — 1s²2s²2p⁶3s²3p⁶.
+- **Suma**: 4 pkt.
+
+## Po co to umieć
+
+**Konfiguracja elektronowa** = klucz do zrozumienia **całej chemii**:
+- **Reaktywność** pierwiastków zależy od elektronów walencyjnych.
+- **Wiązania chemiczne** = wymiana/dzielenie elektronów walencyjnych.
+- **Właściwości magnetyczne** — paramagnetyzm (niesparowane e) vs diamagnetyzm.
+
+**Krzem (Si)**:
+- Drugie najczęstsze pierwiastek skorupy ziemskiej (po tlenie).
+- **Półprzewodnik** — fundament elektroniki, paneli słonecznych.
+- 4 elektrony walencyjne = tworzy 4 wiązania (jak węgiel).
+
+**Chlor (Cl)**:
+- Niemetal halogenowy (grupa 17).
+- **NaCl** = sól kuchenna.
+- **HCl** = kwas solny.
+- **Cl₂** = gaz żółto-zielony, silny utleniacz, dezynfekcja wody (chlorowanie).
+- **PVC** (polichlorek winylu) — najczęściej używane tworzywo sztuczne.
+
+**Stany wzbudzone** atomów — wykorzystywane w **spektroskopii**:
+- **Spektroskopia atomowa** identyfikuje pierwiastki po widmie emisji.
+- **Lampy sodowe** (żółte światło uliczne) = przejścia elektronowe w atomach Na.
+- **Lasery** (Nobel 1981 + 2018) — wymuszone przejścia kwantowe.
+
+**Anion Cl⁻**:
+- W organizmie człowieka — ~100 g (głównie w żołądku jako HCl, w osoczu, kale, pocie).
+- Niezbędny do **trawienia** (kwaśne środowisko żołądka).
+- W gospodarce wodnej — wraz z Na⁺ utrzymuje ciśnienie osmotyczne krwi.
