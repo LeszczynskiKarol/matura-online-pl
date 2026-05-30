@@ -1,0 +1,212 @@
+---
+arkusz: biologia-2024-maj-pr
+subject: biologia
+nr: 5
+punkty: 5
+typ: otwarte-krotkie
+topic: ekstremofile, psychrofile, termofile, błona komórkowa, GC vs AU, PCR, prokarioty
+difficulty: 4
+tresc: |
+  **Ekstremofile**:
+  - **Psychrofile** — opt. T poniżej 15°C. Adaptacje błony do zachowania **płynności** w niskich T.
+  - **Termofile** — opt. T powyżej 50°C. Adaptacje: nasycone kwasy tłuszczowe w błonie, **mostki disiarczkowe** w białkach, **wysokie GC** w rRNA/tRNA.
+
+  **5.1.** T/N — czy modyfikacje stanowią adaptację do niskiej T?
+  - Wzrost zawartości **nasyconych** kwasów tłuszczowych.
+  - Wzrost zawartości **krótkich** kwasów tłuszczowych.
+
+  **5.2.** Aminokwas tworzący mostki disiarczkowe.
+
+  **5.3.** Wykaż, że wyższe GC (vs AU) zwiększa stabilność rRNA/tRNA w wysokich T.
+
+  **5.4.** Termofile czy psychrofile — źródło polimeraz DNA do PCR? Uzasadnij.
+
+  **5.5.** Cecha prokariontów: A. mitochondria / B. rybosomy 80S / C. chityna w ścianie / D. translacja przed zakończeniem transkrypcji.
+odpowiedz: |
+  **5.1.**
+
+  | Modyfikacja | Adaptacja do niskiej T? |
+  |---|---|
+  | Wzrost **nasyconych** kwasów tłuszczowych | **N** |
+  | Wzrost **krótkich** kwasów tłuszczowych | **T** |
+
+  Uzasadnienie:
+  - **Nasycone** kwasy tłuszczowe (proste łańcuchy) ciasno się układają → **sztywna** błona. To pomaga w **wysokich** T (chroni przed nadmierną płynnością), NIE w niskich. Przy niskich T potrzeba **nienasyconych** (z wiązaniami podwójnymi = "zagięciami") aby błona pozostała płynna.
+  - **Krótkie** łańcuchy zajmują mniej miejsca → mniej oddziaływań van der Waalsa → błona **płynniejsza** → adaptacja do niskich T (T).
+
+  **5.2.** **Cysteina** (Cys, C). Zawiera grupę -SH w reszcie bocznej. Dwie cysteiny tworzą **mostek disiarczkowy** (-S-S-) przez utlenienie (kowalencyjne wiązanie kowalencyjne). Mostki S-S stabilizują strukturę III-rzędową białek — szczególnie ważne w termofilach.
+
+  **5.3.** Wiązania wodorowe między zasadami komplementarnymi:
+  - Para **G-C**: **3 wiązania wodorowe** (więcej energii do rozerwania).
+  - Para **A-U** (w RNA) / A-T (w DNA): **2 wiązania wodorowe**.
+
+  Im wyższy procent GC, tym **więcej wiązań wodorowych** stabilizujących strukturę dwuniciową rRNA/tRNA. W wysokich temperaturach (termofile) wiązania wodorowe są **rozrywane** przez ruch termiczny. Cząsteczka z dużą zawartością GC ma więcej wiązań → wymaga **wyższej energii** do destabilizacji → pozostaje funkcjonalna w wyższych T.
+
+  Cząsteczka z dużą zawartością AU rozpada się szybciej w wysokich T → utrata struktury III-rz. tRNA → brak translacji.
+
+  **5.4.** **Termofile**.
+
+  Uzasadnienie: PCR wykorzystuje cykliczne podnoszenie temperatury do **~95°C** (denaturacja DNA). Polimeraza musi pozostać **aktywna** mimo tej temperatury. Polimerazy psychrofili / mezofili (np. *E. coli*) **denaturują się** w 50-60°C → nieużyteczne dla PCR. Polimerazy termofili (np. **Taq z *Thermus aquaticus*** — gorące źródła Yellowstone) są **termostabilne** — nie tracą funkcji w 95°C. Dlatego do PCR używa się polimeraz z termofili.
+
+  **5.5.** **D** — translacja mRNA rozpoczyna się **przed zakończeniem** jego syntezy.
+
+  Uzasadnienie: u prokariontów **brak jądra** → transkrypcja i translacja zachodzą w **tej samej** komorze cytoplazmy → rybosomy "siadają" na mRNA **zanim** RNA-polimeraza skończy transkrypcję. To **sprzężona** transkrypcja-translacja (klasyczny obraz "choinki" — wiele rybosomów na jednym mRNA jednocześnie).
+pulapka: |
+  Pułapka 5.1 — pomylenie kierunku adaptacji. **Niska T** → ryzyko **zamrożenia** błony → potrzeba **nienasyconych + krótkich** kwasów tłuszczowych (płynniejsza). **Wysoka T** → ryzyko **nadmiernej płynności** → potrzeba **nasyconych + długich**.
+
+  Pułapka 5.2 — odpowiedź "Met" lub inne aminokwasy z siarką. Metionina ma siarkę ale **nie tworzy mostków S-S**. Tylko **cysteina** (Cys, -SH) tworzy mostki disiarczkowe.
+
+  Pułapka 5.3 — niewspomnienie LICZBY wiązań wodorowych. Klucz: GC = **3 H**, AU = **2 H**. Bez tej liczby = niepełna odpowiedź.
+
+  Pułapka 5.5 — odpowiedź C "chityna". Chityna to **grzyby** (i pancerze stawonogów), NIE bakterie. Bakterie mają **peptydoglikan** (mureinę).
+wymaganie: |
+  III.6 — różnorodność bakterii, ekstremofile.
+  II.1 — błona komórkowa, kwasy tłuszczowe.
+  III.4 — struktura kwasów nukleinowych (GC vs AU).
+  III.6 — różnice prokariota/eukariota.
+podobne:
+  - biologia-2024-maj-pr-2
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strony arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2024-maj-pr/ark-08.webp"
+  alt="Zadanie 5 - ekstremofile"
+  caption="Strona 8 arkusza CKE 2024 PR biologia - zadanie 5 (tekst + polecenia 5.1, 5.2)."
+  zrodlo="CKE 2024 / Zabłotni, Dziadosz, Ekstremofile..."
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/Biologia/MBIP-R0-100-A-2405-arkusz.pdf"
+  pdfPage={8}
+/>
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2024-maj-pr/ark-09.webp"
+  alt="Zadanie 5.3-5.5"
+  caption="Strona 9 arkusza CKE 2024 PR biologia - polecenia 5.3 (GC vs AU), 5.4 (PCR), 5.5 (cecha prokariontów)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/Biologia/MBIP-R0-100-A-2405-arkusz.pdf"
+  pdfPage={9}
+/>
+
+## Klucz pojęciowy — ekstremofile
+
+| Grupa | Optimum | Adaptacje |
+|---|---|---|
+| **Psychrofile** | poniżej 15°C (lodowce, głębiny) | **Nienasycone + krótkie** kwasy tłuszczowe → płynna błona; "anty-zamarzające" białka (AFP) |
+| **Mezofile** | 20-45°C (większość organizmów) | Standardowe białka i błony |
+| **Termofile** | 50-80°C (gorące źródła) | **Nasycone + długie** kwasy tłuszczowe; **mostki S-S** w białkach; **wysokie GC** w RNA/DNA |
+| **Hipertermofile** | powyżej 80°C (kominy hydrotermalne) | Ekstremalne wszystkie adaptacje termofili |
+| **Halofile** | wysokie zasolenie (np. Morze Martwe) | Kompatybilne osmolity (gliceryna, betaina) |
+| **Acydofile** | pH poniżej 3 | Pompy protonowe, kwasoodporne błony |
+
+## Mechanizm: błona przy niskich T (5.1)
+
+**Płynność błony** zależy od:
+- **Nasycenie** kwasów tłuszczowych (więcej nienasyconych = płynniejsza, bo zagięcia łańcuchów).
+- **Długość** łańcucha (krótsze = płynniejsza, bo mniej oddziaływań van der Waalsa).
+- **Cholesterol** (u zwierząt — buforuje płynność).
+
+W **niskich** T błona "krzepnie" → komórka traci funkcje transportowe → śmierć. Psychrofile zapobiegają:
+- **Nienasycone** kwasy (z wiązaniami C=C w cis = "kink") — łańcuchy nie pakują się ciasno.
+- **Krótkie** kwasy (C12, C14 zamiast C16, C18) — mniej kontaktów.
+
+## Mechanizm: mostki disulfidowe (5.2)
+
+**Cysteina** (HS-CH₂-CH(NH₂)-COOH) ma grupę **-SH** w reszcie bocznej.
+
+**Reakcja**: 2 Cys-SH → Cys-S-S-Cys + 2H⁺ + 2e⁻ (utlenianie).
+
+Mostek S-S = **wiązanie kowalencyjne** (znacznie silniejsze niż wodorowe). W termofilach **wiele Cys → wiele mostków S-S** → białko trzyma kształt nawet w 90°C.
+
+Przykłady wykorzystania: insulina (3 mostki S-S), keratyna włosów (mostki S-S w trakcie odgrzewania = "trwała ondulacja").
+
+## Mechanizm: GC vs AU (5.3)
+
+| Para zasad | Wiązania wodorowe | Energia (kJ/mol) |
+|---|---|---|
+| **G-C** | **3** | ~12-15 |
+| **A-T / A-U** | **2** | ~8-10 |
+
+W cząsteczce o **wysokim GC%** więcej wiązań wodorowych podtrzymuje strukturę:
+- **rRNA bakterii termofilnej**: ~70% GC.
+- **rRNA bakterii mezofilnej**: ~50% GC.
+- **rRNA psychrofila**: ~40% GC.
+
+W wysokich T **wiązania wodorowe pękają** (ruch Browna). Cząsteczka z 70% GC ma więcej "stabilizatorów" = pozostaje **funkcjonalna** w 80°C.
+
+To samo dotyczy DNA — termofile mają **wyższą temperaturę topnienia** (melting point) DNA.
+
+## Mechanizm: Taq polimeraza i PCR (5.4)
+
+**PCR** (Polymerase Chain Reaction) — cykl:
+1. **Denaturacja DNA**: 95°C (3 min początkowo, potem ~30 sek).
+2. **Annealing primerów**: 50-65°C.
+3. **Elongacja**: 72°C (synteza DNA).
+
+Cykl powtarzany 25-40 razy → eksponencjalne namnożenie DNA.
+
+**Problem klasyczny** (przed Taq): polimeraza E. coli denaturuje w 95°C → trzeba dodawać świeżą po każdym cyklu (ręczna praca, kosztowna).
+
+**Rozwiązanie** (Mullis 1983, Nobel 1993): polimeraza z ***Thermus aquaticus*** — bakteria z gorących źródeł Yellowstone, optimum 70°C. **Taq polimeraza** wytrzymuje 95°C i działa optymalnie w 72°C. Jedna dawka starcza na cały cykl PCR.
+
+→ **Termofile** = źródło Taq, Pfu, KOD, Vent — wszystkie polimerazy PCR.
+
+## Mechanizm: prokarionty (5.5)
+
+| Cecha | Prokarionty | Eukarionty |
+|---|---|---|
+| **Jądro** | brak | obecne |
+| **Organelle z błoną** | brak (małe wyjątki) | mitochondria, ER, Golgi, lizosomy... |
+| **Rybosomy** | **70S** (50S + 30S) | **80S** (60S + 40S) |
+| **Ściana komórkowa** | **peptydoglikan** (mureina) | brak (zwierzęta), celuloza (rośliny), chityna (grzyby) |
+| **DNA** | kolisty, w nukleoidzie | linearny, w chromosomach |
+| **Transkrypcja + translacja** | **Sprzężone** (jednoczesne) | Rozdzielone (jądro vs cytoplazma) |
+
+Odpowiedź **D** = sprzężona transkrypcja-translacja. **Klasyczne** zdjęcie z mikroskopu elektronowego (Miller 1969) pokazuje mRNA z rybosomami "wieszającymi się" na nim podczas gdy polimeraza nadal transkrybuje.
+
+<div class="odpowiedz">
+<div>
+
+**5.1.**
+| | Adaptacja do niskiej T? |
+|---|---|
+| Nasycone kwasy tłuszczowe | **N** |
+| Krótkie kwasy tłuszczowe | **T** |
+
+**5.2.** **Cysteina** (Cys) — grupa -SH tworzy mostki disiarczkowe -S-S-.
+
+**5.3.** Para **G-C** ma **3 wiązania wodorowe**, para **A-U** ma **2**. Im więcej GC, tym **więcej wiązań wodorowych** stabilizujących strukturę → cząsteczka rRNA/tRNA wymaga **wyższej energii** (T) do destabilizacji. W termofilach to **chroni** struktury kwasów nukleinowych przed denaturacją w wysokich T.
+
+**5.4.** **Termofile**. Polimeraza DNA do PCR musi przeżyć **denaturację w 95°C** każdego cyklu. Polimerazy termofilów (Taq z *Thermus aquaticus*) są **termostabilne** — działają w wysokich T, nie tracą funkcji. Polimerazy psychrofilów / mezofilów zdenaturowałyby się.
+
+**5.5.** **D** — translacja mRNA rozpoczyna się **przed zakończeniem** jego syntezy (sprzężona transkrypcja-translacja, brak jądra u prokariontów).
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — niskotemperaturowe adaptacje</div>
+
+Zamrażarka domowa → krzepnięcie tłuszczu. Tłuszcz **nasycony** (smalec) jest **stały** w niskich T. Tłuszcz **nienasycony** (olej rzepakowy) pozostaje **płynny** nawet w lodówce. Analogia: psychrofile = oliwa, termofile = smalec.
+</div>
+
+## Punktacja CKE
+
+- **5.1.** 1 pkt — obie odpowiedzi T/N poprawne.
+- **5.2.** 1 pkt — cysteina.
+- **5.3.** 1 pkt — wskazanie liczby wiązań wodorowych (3 vs 2) + wniosek o stabilności.
+- **5.4.** 1 pkt — "termofile" + uzasadnienie termostabilności.
+- **5.5.** 1 pkt — D.
+- **Suma**: 5 pkt.
+
+## Po co to umieć
+
+**Ekstremofile** zmieniły biologię i biotechnologię:
+- **Taq polimeraza** (1983) → cała genomika, PCR, sekwencjonowanie, COVID-testy.
+- **Termostabilne enzymy przemysłowe**: amylazy, proteazy, lipazy w detergentach (myją w 60°C).
+- **CRISPR-Cas9** pochodzi z systemu obronnego bakterii (CRISPR loci) — narzędzie edycji genów (Nobel 2020).
+- **Astrobiologia**: ekstremofile pokazują, że **życie jest możliwe** w warunkach Marsa, Europy (księżyca Jowisza), Tytana → poszukiwania astrobiologiczne.
+
+**Termofile z Yellowstone** — gorące źródła pod kwaśnymi wodami siarkowymi (60-90°C, pH 2). Mikrobiom kolorystyczny (zielony, żółty, pomarańczowy) widoczny w **Grand Prismatic Spring**. To prawdziwa kolebka biotechnologii.
