@@ -1,0 +1,197 @@
+---
+arkusz: biologia-2025-maj-pr
+subject: biologia
+nr: 13
+punkty: 3
+typ: otwarte-krotkie
+topic: immunologia, ADC, przeciwciała monoklonalne, antygen, lizosomy, leczenie celowane
+difficulty: 4
+tresc: |
+  ADC (antibody-drug conjugate) — lek celowany: przeciwciało monoklonalne + łącznik chemiczny + toksyczna substancja. Po związaniu z antygenem nowotworowym kompleks ulega endocytozie do komórki nowotworowej, a lizosom uwalnia toksynę.
+
+  **13.1.** Wyjaśnij, dlaczego ADC dostarcza toksynę **tylko** do komórek nowotworowych.
+  **13.2.** Wykaż, że **stabilność łącznika** podczas transportu w krążeniu jest konieczna do prawidłowego działania leku.
+  **13.3.** Rola **lizosomów** w mechanizmie ADC.
+odpowiedz: |
+  **13.1.** Przeciwciało monoklonalne w ADC ma **wysoką swoistość** wobec **antygenu** charakterystycznego dla komórek nowotworowych (np. HER2 w raku piersi, CD30 w chłoniakach). 
+
+  Komórki zdrowe **nie wykazują** tego antygenu (lub mają go znikomo) → przeciwciało **nie wiąże się** z nimi → kompleks nie jest endocytozowany → toksyna nie dociera. 
+
+  Komórki nowotworowe — antygen na powierzchni → wiązanie przeciwciało-antygen → endocytoza całego kompleksu → uwolnienie toksyny **wewnątrz** komórki nowotworowej.
+
+  **13.2.** **Łącznik** trzyma toksynę "przyczepioną" do przeciwciała w krążeniu (zanim ADC dotrze do komórki docelowej).
+
+  Gdyby łącznik **rozpadł się przedwcześnie** w osoczu → **toksyna uwolniona we krwi** → krąży swobodnie → trafia **do wszystkich komórek** (także zdrowych) → zatruwa cały organizm + traci selektywność.
+
+  Stabilny łącznik gwarantuje, że toksyna **uwalnia się dopiero w lizosomie komórki nowotworowej** (po endocytozie), a NIE w krwi.
+
+  **13.3.** Po endocytozie kompleks ADC trafia do **endosomu** → łączy się z **lizosomem** (fuzja).
+
+  Lizosomy zawierają **enzymy hydrolityczne** (proteazy, lipazy) o niskim pH (~5). Enzymy:
+  - **Trawią białko** przeciwciała.
+  - **Rozcinają łącznik** (cleavable linker) → **uwalniają toksynę** wewnątrz komórki.
+
+  Toksyna uwolniona w cytoplazmie → uszkadza DNA / mikrotubule / błony → **śmierć komórki nowotworowej**.
+pulapka: |
+  Pułapka 13.1 — odpowiedź "bo działa na nowotwór" bez wskazania **mechanizmu antygenowego**. Klucz: **swoistość przeciwciała → antygen na komórce nowotworowej → wiązanie tylko tam**.
+
+  Pułapka 13.2 — odpowiedź "żeby się nie rozpadł" bez **skutków**. Klucz: rozpad łącznika → toksyna we krwi → uszkodzenie zdrowych komórek → utrata selektywności.
+
+  Pułapka 13.3 — pominięcie **enzymów lizosomalnych**. Klucz: lizosom = hydrolazy + niskie pH → trawienie przeciwciała + cleavage łącznika → uwolnienie toksyny.
+wymaganie: |
+  III.4, V.6 — immunologia, przeciwciała monoklonalne, organelle (lizosomy), leczenie celowane.
+podobne:
+  - biologia-2025-maj-pr-12
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strony arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2025-maj-pr/ark-20.webp"
+  alt="Zadanie 13 - ADC schemat"
+  caption="Strona 20 arkusza CKE 2025 PR biologia - zadanie 13 (mechanizm ADC, schemat komórki nowotworowej)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Biologia/MBIP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={20}
+/>
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2025-maj-pr/ark-21.webp"
+  alt="Zadanie 13.1-13.3"
+  caption="Strona 21 arkusza CKE 2025 PR biologia - polecenia 13.1, 13.2, 13.3."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Biologia/MBIP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={21}
+/>
+
+## Klucz pojęciowy — ADC (antibody-drug conjugate)
+
+| Element | Funkcja |
+|---|---|
+| **Przeciwciało monoklonalne** | Rozpoznaje swoiście **antygen** komórek nowotworowych (np. HER2, CD30) |
+| **Łącznik (linker)** | Trzyma toksynę przy przeciwciele; **stabilny w krwi**, **rozkładany w lizosomie** |
+| **Toksyna (payload)** | Cytostatyk silnie toksyczny (np. DM1, MMAE) — działa po uwolnieniu w komórce |
+| **Antygen** | Białko na powierzchni komórki nowotworowej, **brak / mało** na zdrowych |
+| **Endocytoza** | ADC wchłaniany do komórki po związaniu z antygenem |
+| **Lizosom** | Hydrolazy + niskie pH → trawienie + uwalnianie toksyny |
+
+## Mechanizm ADC — krok po kroku
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Krok 1 — krążenie**: ADC podawany dożylnie krąży w naczyniach. Łącznik **stabilny** → toksyna pozostaje przyczepiona do przeciwciała.
+
+</div>
+
+<div class="krok">
+
+**Krok 2 — rozpoznanie**: ADC trafia na komórkę nowotworową. Przeciwciało **wiąże antygen** (np. HER2). Z komórkami zdrowymi (brak antygenu) **nie wiąże się**.
+
+</div>
+
+<div class="krok">
+
+**Krok 3 — endocytoza**: kompleks ADC-antygen jest **wchłaniany** do komórki nowotworowej (endocytoza receptorowa). Powstaje pęcherzyk endosomalny.
+
+</div>
+
+<div class="krok">
+
+**Krok 4 — fuzja z lizosomem**: endosom łączy się z lizosomem. **pH spada** (~5). **Hydrolazy** trawią białko przeciwciała + **tną łącznik**.
+
+</div>
+
+<div class="krok">
+
+**Krok 5 — uwolnienie toksyny**: cytostatyk wydostaje się z lizosomu do **cytoplazmy** → atakuje **DNA** (np. kalicheamycyna) / **mikrotubule** (np. MMAE) → **śmierć komórki**.
+
+</div>
+
+</div>
+
+## Mechanizm: dlaczego tylko komórki nowotworowe? (13.1)
+
+**Klucz: swoistość przeciwciała + dystrybucja antygenu**.
+
+- **Antygen** (np. HER2) jest **nadekspresjonowany** na komórkach nowotworowych (czasem 100× więcej niż na zdrowych).
+- Przeciwciało monoklonalne ma **jeden epitop** — wiąże **tylko ten antygen**.
+- **Komórka zdrowa**: brak antygenu → brak wiązania → ADC dryfuje dalej z krwią.
+- **Komórka nowotworowa**: antygen → wiązanie → endocytoza → uwolnienie toksyny **wewnątrz**.
+
+To **leczenie celowane** (targeted therapy) — różni się od **chemioterapii klasycznej** (tnie wszystko, co się szybko dzieli — także szpik, włosy, jelita).
+
+## Mechanizm: dlaczego łącznik musi być stabilny? (13.2)
+
+**Klucz: gdyby się rozpadł w krwi**.
+
+Sekwencja zdarzeń przy **niestabilnym** łączniku:
+1. ADC podany dożylnie.
+2. Łącznik pęka **w krążeniu** (przed dotarciem do guza).
+3. Toksyna **uwolniona w osoczu** — krąży swobodnie.
+4. Toksyna trafia do **wszystkich tkanek** (także zdrowych).
+5. Klasyczne objawy chemii: mielosupresja, mucositis, łysienie.
+6. **Selektywność stracona** — ADC = zwykły cytostatyk.
+
+**Stabilny** łącznik = toksyna otwarta **dopiero w lizosomie** komórki nowotworowej → toksyczność **lokalna**.
+
+## Mechanizm: rola lizosomów (13.3)
+
+**Lizosom** = pęcherzyk z enzymami hydrolitycznymi (~50 typów) w niskim pH (~5).
+
+**Co robi z ADC**:
+1. **Fuzja** endosomu (z ADC) z lizosomem.
+2. **Niskie pH** aktywuje hydrolazy.
+3. **Proteazy** (np. katepsyna B) trawią **białko przeciwciała**.
+4. **Cleavable linker** rozcinany przez proteazy / hydrolizę pH-zależną → **uwolnienie toksyny**.
+5. Toksyna (mała cząsteczka) **dyfunduje** z lizosomu do cytoplazmy → cel cytotoksyczny.
+
+**Bez lizosomów** ADC nie zadziałałby — pozostałby uwięziony w endosomie z toksyną wciąż przyczepioną.
+
+<div class="odpowiedz">
+<div>
+
+**13.1.** Przeciwciało monoklonalne w ADC rozpoznaje swoiście **antygen** charakterystyczny **dla komórek nowotworowych**. Komórki zdrowe **nie mają** tego antygenu, więc przeciwciało się z nimi **nie wiąże** — kompleks nie jest endocytozowany, toksyna nie wchodzi do środka. Tylko komórki nowotworowe z antygenem na powierzchni są wybiórczo "oznaczane" przez ADC i wchłaniają go.
+
+**13.2.** Łącznik utrzymuje toksynę przy przeciwciele w krwi. Gdyby **rozpadł się w krążeniu** → toksyna **uwolniona w osoczu** → trafia do **wszystkich** komórek organizmu (także zdrowych) → zatrucie ogólnoustrojowe, utrata selektywności leczenia. Stabilność łącznika gwarantuje, że toksyna uwalnia się **dopiero w lizosomie** komórki nowotworowej.
+
+**13.3.** Po endocytozie kompleksu ADC w komórce nowotworowej endosom łączy się z **lizosomem**. **Enzymy hydrolityczne** lizosomu (w niskim pH) **trawią białko** przeciwciała i **rozcinają łącznik** → **uwalniają toksyczną substancję** do cytoplazmy → uszkodzenie DNA / mikrotubul → **śmierć komórki nowotworowej**.
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka 13.1 — "działa na nowotwór"</div>
+
+Sama odpowiedź "działa na komórki nowotworowe" = **0 pkt**. Klucz: **mechanizm swoistości** = **przeciwciało rozpoznaje antygen** obecny **tylko / głównie na nowotworze**.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka 13.2 — "żeby się nie rozpadł"</div>
+
+Nie wystarczy "łącznik musi być stabilny". Trzeba **konsekwencja**: rozpad → **toksyna we krwi** → **uszkodzenie zdrowych komórek** → utrata selektywności.
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka 13.3 — pominięcie enzymów</div>
+
+Nie wystarczy "lizosom uwalnia toksynę". Trzeba: **enzymy hydrolityczne** (proteazy) **trawią białko / łącznik** → uwolnienie. Mechanizm enzymatyczny jest punktowany.
+</div>
+
+## Punktacja CKE
+
+- **13.1.** 1 pkt — swoistość przeciwciała + obecność antygenu na komórkach nowotworowych (brak na zdrowych).
+- **13.2.** 1 pkt — stabilność łącznika → toksyna nie uwalnia się w krwi → nie uszkadza zdrowych komórek.
+- **13.3.** 1 pkt — enzymy hydrolityczne lizosomu trawią białko + rozcinają łącznik → uwolnienie toksyny.
+
+## Po co to umieć
+
+**ADC** to **kolejna generacja onkologii**:
+- **Trastuzumab-emtanzyna (T-DM1, Kadcyla)** — rak piersi HER2+.
+- **Brentuksymab-vedotin (Adcetris)** — chłoniak Hodgkina CD30+.
+- **Sacituzumab-govitecan (Trodelvy)** — TNBC.
+
+Połączenie **przeciwciała monoklonalnego** (rozpoznawanie celu) + **klasycznego cytostatyku** (zabijanie) — celowane "doręczanie" leku zamiast trucia całego organizmu. To kierunek przyszłości w onkologii (~200 ADC w badaniach klinicznych w 2026 r.).
