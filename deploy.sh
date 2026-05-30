@@ -101,12 +101,15 @@ echo ""
 echo ">>> [3/4] S3 sync s3://${S3_BUCKET}/ ..."
 
 # Assets (everything except HTML/robots/sitemap) — immutable, long cache
+# audio/* wykluczone z sync (--delete by je czyściło) — MP3 angielskich nagrań
+# są wgrywane osobno przez `aws s3 cp` (zob. scripts/upload-audio.sh).
 aws s3 sync dist/ "s3://${S3_BUCKET}/" \
   --delete \
   --cache-control "public, max-age=31536000, immutable" \
   --exclude "*.html" \
   --exclude "robots.txt" \
-  --exclude "sitemap*.xml"
+  --exclude "sitemap*.xml" \
+  --exclude "audio/*"
 
 # HTML + robots + sitemap + _commit.txt — no cache, must revalidate
 aws s3 sync dist/ "s3://${S3_BUCKET}/" \
