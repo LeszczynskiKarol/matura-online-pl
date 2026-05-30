@@ -1,0 +1,199 @@
+---
+arkusz: chemia-2025-maj-pr
+subject: chemia
+nr: 4
+punkty: 2
+typ: otwarte-krotkie
+topic: stechiometria, wzór empiryczny, wzór rzeczywisty, tlenek jodu, procent masowy
+difficulty: 4
+tresc: |
+  W jednym z **tlenków jodu** masa tlenu stanowi **20,14%** masy tego tlenku. We wzorze **rzeczywistym** liczba atomów jodu jest **2 razy większa** niż we wzorze **empirycznym**.
+
+  Ustal i napisz **wzór empiryczny** oraz **wzór rzeczywisty** opisanego tlenku.
+odpowiedz: |
+  **Obliczenia**:
+
+  **Krok 1**: % I w tlenku.
+  - % O = 20,14%
+  - % I = 100% - 20,14% = **79,86%**
+
+  **Krok 2**: liczba moli pierwiastków w 100 g tlenku.
+  - m_I = 79,86 g, M_I = 127 g/mol → n_I = 79,86 / 127 = **0,629 mol**.
+  - m_O = 20,14 g, M_O = 16 g/mol → n_O = 20,14 / 16 = **1,259 mol**.
+
+  **Krok 3**: stosunek molowy I : O.
+  - n_I : n_O = 0,629 : 1,259
+  - Dzielimy przez mniejszą (0,629):
+  - 1 : 2,001 ≈ **1 : 2**
+
+  **Krok 4**: wzór empiryczny.
+  - I : O = 1 : 2 → **IO₂**
+
+  **Krok 5**: wzór rzeczywisty.
+  - "Liczba atomów I jest 2 razy większa niż we wzorze empirycznym":
+  - Wzór rzeczywisty = (IO₂)₂ = **I₂O₄**.
+
+  **Sprawdzenie**:
+  - M(I₂O₄) = 2·127 + 4·16 = 254 + 64 = **318 g/mol**.
+  - % O = (4·16) / 318 = 64/318 = **20,13%** ≈ 20,14% ✓.
+
+  **Odpowiedź**:
+  - **Wzór empiryczny: IO₂**
+  - **Wzór rzeczywisty: I₂O₄**
+pulapka: |
+  Pułapka — pomylenie wzoru empirycznego z rzeczywistym. **Empiryczny** = najmniejszy stosunek atomów (IO₂). **Rzeczywisty** = faktyczna cząsteczka (I₂O₄, z 2× więcej atomów).
+
+  Pułapka — niewłaściwa masa molowa jodu. M_I = **127 g/mol** (a nie 126 czy 128). Sprawdzaj układ okresowy.
+
+  Pułapka — nieuwzględnienie informacji o "2× więcej atomów I". Bez tego: odpowiedź byłaby tylko IO₂. Zadanie wyraźnie zaznacza relację rzeczywisty/empiryczny.
+wymaganie: |
+  II.1 — stechiometria, wzór empiryczny i rzeczywisty.
+podobne:
+  - chemia-2025-maj-pr-3
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2025-maj-pr/ark-07.webp"
+  alt="Zadanie 4 - wzór empiryczny i rzeczywisty tlenku jodu"
+  caption="Strona 7 arkusza CKE 2025 PR chemia - zadanie 4 (obliczenia stechiometryczne)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfPage={7}
+/>
+
+## Klucz pojęciowy — wzory chemiczne
+
+| Wzór | Definicja | Przykład (glukoza) |
+|---|---|---|
+| **Empiryczny** | Najprostszy stosunek atomów pierwiastków | CH₂O |
+| **Rzeczywisty (sumaryczny)** | Faktyczna liczba atomów w cząsteczce | C₆H₁₂O₆ |
+| **Strukturalny** | Pokazuje wiązania między atomami | (rysunek z grupami OH, CHO) |
+| **Stereochemiczny** | Pokazuje przestrzenne ułożenie | (Haworth, Fisher) |
+
+**Glukoza** = klasyczny przykład: wzór empiryczny CH₂O, rzeczywisty C₆H₁₂O₆ (6× empiryczny).
+
+## Mechanizm: jak obliczyć wzór empiryczny
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Krok 1**: z % wagowych → masa każdego pierwiastka w 100 g substancji.
+
+</div>
+
+<div class="krok">
+
+**Krok 2**: masa → mole każdego pierwiastka (n = m/M).
+
+</div>
+
+<div class="krok">
+
+**Krok 3**: stosunek molowy → najmniejsza liczba całkowita.
+- Dzielimy wszystkie n przez najmniejsze.
+- Jeśli wyjdą ułamki (np. 1, 1,5, 2,5) — mnożymy przez 2 by uzyskać całkowite.
+
+</div>
+
+<div class="krok">
+
+**Krok 4**: wzór empiryczny = pierwiastki z ich stosunkami w indeksach dolnych.
+
+</div>
+
+</div>
+
+## Mechanizm: wzór rzeczywisty z empirycznego
+
+**Wzór rzeczywisty** = n × wzór empiryczny, gdzie n = 1, 2, 3, ...
+
+**Jak znaleźć n?**:
+- Z **masy molowej** (jeśli dana). n = M(rzeczywista) / M(empiryczna).
+- Z **dodatkowej informacji** w zadaniu (jak tu: "liczba I 2× większa" → n = 2).
+
+**Tu**: empiryczny IO₂. "Liczba I 2× większa" → rzeczywisty = (IO₂)₂ = **I₂O₄**.
+
+## Mechanizm: weryfikacja
+
+**Sprawdzenie**: % O w I₂O₄:
+- M(I₂O₄) = 2·127 + 4·16 = 254 + 64 = 318 g/mol.
+- m(O w I₂O₄) = 4·16 = 64 g/mol.
+- % O = 64 / 318 × 100% = **20,13%**.
+
+Porównanie z danymi: 20,14% (założenie) vs 20,13% (obliczone). **Zgodność do trzeciej cyfry znaczącej** ✓.
+
+## Tlenek I₂O₄ — chemia
+
+**I₂O₄** istnieje realnie — to **dwutlenek dijodu** (mniej znany niż I₂O₅, ale udokumentowany):
+- Wzór alternatywny: [I⁺(IO₃)⁻] (sól jodozyl-jodanowa).
+- Powstaje w niektórych reakcjach jodu z tlenem.
+- Niestabilny — rozpada się powyżej 100°C.
+
+**Tlenki jodu — przegląd**:
+- **I₂O** (jodek tlenku I), I = +1.
+- **I₂O₃** (tritlenek dijodu), I = +3, niestabilny.
+- **I₂O₄** (dwutlenek dijodu) — produkt tego zadania, I jak [I⁺(IO₃)⁻].
+- **I₂O₅** (pentatlenek dijodu) — najważniejszy, I = +5.
+- **I₂O₇** (heptatlenek dijodu), hipotetyczny.
+
+<div class="odpowiedz">
+<div>
+
+**Obliczenia**:
+1. % I = 100% - 20,14% = 79,86%.
+2. n_I = 79,86 / 127 = 0,629 mol.
+3. n_O = 20,14 / 16 = 1,259 mol.
+4. n_I : n_O = 0,629 / 0,629 : 1,259 / 0,629 = **1 : 2**.
+
+**Wzór empiryczny: IO₂**.
+
+**Wzór rzeczywisty**: "2× więcej atomów I" → (IO₂)₂ = **I₂O₄**.
+
+Sprawdzenie: M(I₂O₄) = 318 g/mol, % O = 64/318 = 20,13% ≈ 20,14% ✓.
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — najmniejsza całkowita</div>
+
+Jeśli wychodzą ułamki (np. 1 : 1,5), **pomnóż** przez 2 by uzyskać całkowite (2 : 3). Wzór CH₁,₅ to nieprawidłowy zapis — używamy całkowitych.
+
+W tym zadaniu: 0,629 / 0,629 = 1, 1,259 / 0,629 = 2,001 ≈ 2. **Ładnie wychodzi** 1 : 2.
+</div>
+
+## Punktacja CKE
+
+- **4.** 2 pkt — wzór empiryczny IO₂ + wzór rzeczywisty I₂O₄ + obliczenia.
+- 1 pkt za poprawny empiryczny i niepoprawny rzeczywisty (lub na odwrót).
+- 0 pkt za błędy w obu.
+
+## Po co to umieć
+
+**Wzór empiryczny vs rzeczywisty** — klasyczny problem chemii:
+- **Spalanie organiczne** → CO₂ + H₂O → analiza % C, H, O → wzór empiryczny.
+- **Spektrometria mas** → masa molowa → wzór rzeczywisty.
+
+**Glukoza vs formaldehyd vs kwas octowy**:
+- Wszystkie mają wzór empiryczny **CH₂O**.
+- Rzeczywiste: HCHO (formaldehyd, M=30), C₂H₄O₂ (kwas octowy, M=60), C₆H₁₂O₆ (glukoza, M=180).
+
+**Spektrometria mas (MS)** — kluczowa technika identyfikacji związków:
+- Mierzy **stosunek masy do ładunku** (m/z) jonów.
+- Z masy molowej + procentowego składu → wzór sumaryczny.
+- Standardowa metoda w **chemii organicznej**, **biochemii**, **kryminalistyce**, **analizie środowiskowej**.
+
+**Analiza elementarna** (CHN analyzer):
+- Spala próbkę w O₂ → CO₂ + H₂O + N₂.
+- Mierzy ilości produktów → oblicza %C, %H, %N.
+- Standardowa metoda dla **nowych związków organicznych**.
+
+**Lavoisier i Dalton** — historyczni "ojcowie" chemii ilościowej:
+- Lavoisier (1789): prawo zachowania masy.
+- Dalton (1808): teoria atomistyczna, stałych proporcji.
+- Z tego rozwinęła się **stechiometria**.
