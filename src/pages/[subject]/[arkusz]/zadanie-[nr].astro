@@ -197,9 +197,9 @@ const typLabels: Record<string, string> = {
             class="tresc-zadania mt-3 text-[1.0625rem] leading-relaxed"
             set:html={trescHtml}
           />
-          {zadanie.data.hasAudio && arkusz.data.audioUrl && (
+          {zadanie.data.hasAudio && (zadanie.data.audioUrl || arkusz.data.audioUrl) && (
             <AudioPlayer
-              src={arkusz.data.audioUrl}
+              src={zadanie.data.audioUrl ?? arkusz.data.audioUrl!}
               title={`Nagranie do zadania ${zadanie.data.nr} (CKE)`}
             />
           )}
