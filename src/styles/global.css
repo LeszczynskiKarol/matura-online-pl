@@ -107,11 +107,15 @@ h3 { font-size: var(--text-fs-h3); }
 p { max-width: 70ch; }
 
 a {
-  color: var(--color-accent);
   text-decoration: none;
   transition: color 200ms;
 }
-a:hover { color: var(--color-accent-hover); }
+/* Kolor linków w ZEROWEJ specyficzności (:where) — żeby utility koloru tekstu
+   (np. text-[var(--color-accent-fg)], text-white) na przyciskach-linkach NIE było
+   nadpisywane na hover. Wcześniej `a:hover` (0,1,1) > `.text-*` (0,1,0), więc tekst
+   przycisku przyjmował na hover kolor accent-hover = kolor tła → tekst znikał. */
+:where(a) { color: var(--color-accent); }
+:where(a:hover) { color: var(--color-accent-hover); }
 
 /* Underline TYLKO w treści prose (markdown body). NIE w `article` ogólnie —
    strony zadań są w <article>, ale linki nawigacji/prev-next/podobne nie mogą

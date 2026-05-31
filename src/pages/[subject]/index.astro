@@ -6,6 +6,7 @@ import SiteHeader from "../../components/SiteHeader.astro";
 import SiteFooter from "../../components/SiteFooter.astro";
 import IconBadge from "../../components/IconBadge.astro";
 import { siteConfig } from "../../config/site";
+import { renderRichText } from "../../lib/render-math";
 
 export async function getStaticPaths() {
   const subjects = await getCollection("subjects");
@@ -100,9 +101,10 @@ const jsonLd = [
         </div>
 
         {subject.data.longDescription && (
-          <p class="mt-6 max-w-[65ch] text-lg leading-relaxed text-[var(--color-text-muted)]">
-            {subject.data.longDescription}
-          </p>
+          <p
+            class="mt-6 max-w-[65ch] text-lg leading-relaxed text-[var(--color-text-muted)] [&_strong]:font-semibold [&_strong]:text-[var(--color-text)]"
+            set:html={renderRichText(subject.data.longDescription)}
+          />
         )}
       </div>
     </section>

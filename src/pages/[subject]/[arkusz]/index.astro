@@ -7,7 +7,7 @@ import SiteFooter from "../../../components/SiteFooter.astro";
 import IconBadge from "../../../components/IconBadge.astro";
 import AudioPlayer from "../../../components/AudioPlayer.astro";
 import { siteConfig } from "../../../config/site";
-import { renderInlineMath } from "../../../lib/render-math";
+import { renderRichText } from "../../../lib/render-math";
 
 export async function getStaticPaths() {
   const arkusze = await getCollection("arkusze");
@@ -212,8 +212,8 @@ const allNrs = Array.from({ length: arkusz.data.liczbaZadan }, (_, i) => i + 1);
                         </span>
                       </div>
                       <p
-                        class="mt-1 text-sm text-[var(--color-text-muted)] line-clamp-2"
-                        set:html={renderInlineMath(zadanie.data.tresc)}
+                        class="mt-1 text-sm text-[var(--color-text-muted)] line-clamp-2 [&_strong]:font-semibold [&_strong]:text-[var(--color-text)]"
+                        set:html={renderRichText(zadanie.data.tresc)}
                       />
                     </div>
                     <Icon

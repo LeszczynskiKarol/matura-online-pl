@@ -3,7 +3,7 @@
 
 export const siteConfig = {
   // Brand
-  name: "matura-online.pl",
+  name: "Matura-Online.pl",
   shortName: "matura-online",
   url: "https://www.matura-online.pl",
   locale: "pl_PL",
@@ -17,8 +17,8 @@ export const siteConfig = {
   // Legal (dla polityka-prywatnosci)
   legal: {
     adminName: "Karol Leszczyński",
-    adminAddress: "ADMIN_ADDRESS_PLACEHOLDER",
-    adminNip: "NIP_PLACEHOLDER",
+    adminAddress: "kontakt@kurs-copywritingu.pl",
+    adminNip: "9562203948",
     adminEmail: "kontakt@matura-online.pl",
   },
 
@@ -46,7 +46,7 @@ export const siteConfig = {
 
   // Cross-link do apki (z briefu — naturalna konwersja na ćwiczenia)
   apka: {
-    url: "https://matury-online.pl",
+    url: "https://www.matury-online.pl",
     name: "matury-online.pl",
     cta: "Przećwicz w aplikacji",
   },

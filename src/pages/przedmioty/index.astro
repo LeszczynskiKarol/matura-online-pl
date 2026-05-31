@@ -1,0 +1,128 @@
+---
+import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import IconBadge from "../../components/IconBadge.astro";
+import BackgroundDecor from "../../components/BackgroundDecor.astro";
+import { siteConfig } from "../../config/site";
+
+const subjects = (await getCollection("subjects")).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const arkusze = await getCollection("arkusze");
+
+const liczbaArkuszyDla = (subjectId: string) =>
+  arkusze.filter((a) => a.data.subject.id === subjectId).length;
+
+const title = "Przedmioty maturalne — rozwiązania zadań CKE";
+const description =
+  "Wszystkie przedmioty maturalne z rozwiązaniami zadań CKE: matematyka, język polski, angielski, biologia, chemia, fizyka i inne. Arkusze z lat 2023–2026, krok po kroku.";
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Strona główna", item: siteConfig.url },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Przedmioty",
+        item: `${siteConfig.url}/przedmioty/`,
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: title,
+    description: description,
+    inLanguage: "pl-PL",
+    hasPart: subjects.map((s) => ({
+      "@type": "LearningResource",
+      name: `Matura ${s.data.nameDopelniacz} — rozwiązania zadań CKE`,
+      url: `${siteConfig.url}/${s.data.slug}/`,
+    })),
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <SiteHeader />
+
+  <main id="main">
+    <nav aria-label="Breadcrumb" class="border-b border-[var(--color-border)]">
+      <div class="mx-auto max-w-6xl px-4 py-3 text-sm sm:px-6 lg:px-8">
+        <ol class="flex flex-wrap items-center gap-2 text-[var(--color-text-muted)]">
+          <li><a href="/" class="no-underline hover:text-[var(--color-text)]">Strona główna</a></li>
+          <li aria-hidden="true">/</li>
+          <li class="text-[var(--color-text)]" aria-current="page">Przedmioty</li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="relative overflow-hidden border-b border-[var(--color-border)]">
+      <BackgroundDecor variant="mesh" intensity="subtle" />
+      <div class="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <IconBadge icon="lucide:layers" label="Przedmioty maturalne" tone="accent" />
+        <h1 class="mt-4 font-serif text-[length:var(--text-fs-h1)] font-medium leading-tight tracking-tight">
+          Wybierz przedmiot
+        </h1>
+        <p class="mt-4 max-w-[60ch] text-lg leading-relaxed text-[var(--color-text-muted)]">
+          Każdy przedmiot zawiera arkusze CKE z lat 2023–2026, podzielone na poziom podstawowy
+          i rozszerzony. Rozwiązania krok po kroku — z omówieniem pułapek i punktacji.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {subjects.map((s) => {
+            const liczba = liczbaArkuszyDla(s.id);
+            return (
+              <a
+                href={`/${s.data.slug}/`}
+                class:list={[
+                  "card group flex flex-col gap-3 no-underline",
+                  !s.data.hasContent && "opacity-60",
+                ]}
+              >
+                <div class="flex items-start justify-between">
+                  <span class="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
+                    <Icon name={s.data.icon} class="h-5 w-5" />
+                  </span>
+                  {s.data.hasContent ? (
+                    <span class="text-xs font-mono uppercase tracking-wide text-[var(--color-correct)]">
+                      Dostępne
+                    </span>
+                  ) : (
+                    <span class="text-xs font-mono uppercase tracking-wide text-[var(--color-text-faint)]">
+                      Wkrótce
+                    </span>
+                  )}
+                </div>
+                <h2 class="font-serif text-xl font-medium leading-tight text-[var(--color-text)]">
+                  {s.data.name}
+                </h2>
+                <p class="text-sm leading-relaxed text-[var(--color-text-muted)]">
+                  {s.data.description}
+                </p>
+                {liczba > 0 && (
+                  <span class="mt-1 inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wide text-[var(--color-text-muted)]">
+                    <Icon name="lucide:file-text" class="h-3.5 w-3.5" />
+                    {liczba} {liczba === 1 ? "arkusz" : "arkuszy"}
+                  </span>
+                )}
+              </a>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>

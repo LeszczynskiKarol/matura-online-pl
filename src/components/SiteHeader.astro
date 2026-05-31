@@ -8,20 +8,25 @@ import ThemeToggle from "./ThemeToggle.astro";
   <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
     <a
       href="/"
-      class="inline-flex items-center gap-2 no-underline"
+      class="inline-flex items-center gap-2.5 no-underline"
       aria-label={siteConfig.name + " — strona główna"}
     >
-      <span class="inline-flex h-9 w-9 items-center justify-center rounded-md bg-[var(--color-accent)] font-serif text-base font-semibold text-[var(--color-accent-fg)]">
+      <span class="inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-md bg-[var(--color-accent)] font-serif text-base font-semibold text-[var(--color-accent-fg)]">
         m
       </span>
-      <span class="font-serif text-lg font-medium tracking-tight text-[var(--color-text)]">
-        matura<span class="text-[var(--color-text-muted)]">-online.pl</span>
+      <span class="flex flex-col leading-none">
+        <span class="font-serif text-lg font-medium tracking-tight text-[var(--color-text)]">
+          Matura<span class="text-[var(--color-text-muted)]">-Online.pl</span>
+        </span>
+        <span class="mt-0.5 font-sans text-[0.6875rem] italic text-[var(--color-text-muted)]">
+          Rozwiązania zadań maturalnych
+        </span>
       </span>
     </a>
 
     <nav aria-label="Główne" class="hidden items-center gap-6 md:flex">
       <a
-        href="/matematyka/"
+        href="/przedmioty/"
         class="text-[0.9375rem] text-[var(--color-text-muted)] no-underline hover:text-[var(--color-text)]"
       >
         Przedmioty
