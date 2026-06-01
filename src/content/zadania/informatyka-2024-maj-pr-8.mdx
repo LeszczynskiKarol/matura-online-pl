@@ -1,0 +1,149 @@
+---
+arkusz: informatyka-2024-maj-pr
+subject: informatyka
+nr: 8
+punkty: 7
+typ: otwarte-rozszerzone
+topic: baza danych, SQL, JOIN, agregacja, antyjoin, sortowanie
+difficulty: 4
+tresc: |
+  **Zadanie 8. Rejestr wykroczeń**
+
+  W trzech plikach tekstowych o nazwach: `kierowcy.txt`, `taryfikator.txt`, `rejestr.txt`, zapisano dane związane z przekroczeniem dozwolonych prędkości pojazdów na pewnej trasie w okresie 2023-01-01 — 2023-12-30 (wszystkie dane są fikcyjne i wygenerowane na potrzeby zadania).
+
+  Pierwszy wiersz każdego z plików jest wierszem nagłówkowym, a dane w wierszach rozdzielono znakiem średnika.
+
+  Plik o nazwie `kierowcy.txt` zawiera informacje o 1000 osobach będących właścicielami samochodów. W każdym wierszu znajdują się:
+  - IdOsoby — identyfikator osoby
+  - Imie — imię
+  - Nazwisko — nazwisko
+  - NrRejestracyjny — numer rejestracyjny samochodu.
+
+  Plik o nazwie `taryfikator.txt` zawiera informacje o 6 rodzajach wykroczeń związanych z przekroczeniem prędkości. W każdym wierszu znajdują się:
+  - IdWykroczenia — identyfikator
+  - Wykroczenie — opis wykroczenia
+  - Punkty — liczba punktów karnych za dane wykroczenie
+  - Kwota — kwota mandatu, jaką należy zapłacić za to wykroczenie.
+
+  Przykład `taryfikator.txt`:
+  ```
+  1;Przekroczenie predkosci do 10 km/h;0;50
+  2;Przekroczenie predkosci od 11 do 20 km/h;2;100
+  3;Przekroczenie predkosci od 21 do 30 km/h;4;200
+  4;Przekroczenie predkosci od 31 do 40 km/h;6;400
+  5;Przekroczenie predkosci od 41 do 50 km/h;8;800
+  6;Przekroczenie predkosci od 51 km/h;10;1500
+  ```
+
+  **Zadanie 8.1. (0–2)** Podaj imię i nazwisko kierowcy, dla którego suma kwot za wszystkie mandaty była największa, oraz podaj tę największą sumę. Jest tylko jeden taki kierowca.
+
+  **Zadanie 8.2. (0–2)** W którym miesiącu kierowcy otrzymali najmniej punktów karnych (łącznie) za wykroczenia polegające na przekroczeniu dozwolonej prędkości o więcej niż 20 km/h (wykroczenia o identyfikatorach od 3 do 6)? Podaj miesiąc oraz łączną liczbę punktów karnych z tego miesiąca.
+
+  **Zadanie 8.3. (0–3)** Wykonaj zestawienie numerów rejestracyjnych samochodów wraz z imionami i nazwiskami ich właścicieli, którzy **nie figurują** w rejestrze wykroczeń. Zestawienie posortuj alfabetycznie według numerów rejestracyjnych samochodów.
+odpowiedz: |
+  Najwygodniej rozwiązać SQL-em po zaimportowaniu trzech CSV (separator `;`) jako tabel. Poniżej rozwiązania w SQLite / standardowym SQL oraz alternatywa w Pythonie pandas.
+
+  **8.1.** Kierowca z największą sumą kwot mandatów:
+
+  ```sql
+  SELECT k.Imie, k.Nazwisko, SUM(t.Kwota) AS suma_kwot
+  FROM rejestr r
+    JOIN kierowcy k    ON r.IdOsoby = k.IdOsoby
+    JOIN taryfikator t ON r.IdWykroczenia = t.IdWykroczenia
+  GROUP BY k.IdOsoby, k.Imie, k.Nazwisko
+  ORDER BY suma_kwot DESC
+  LIMIT 1;
+  ```
+
+  **8.2.** Miesiąc z **najmniejszą** sumą punktów karnych za wykroczenia o id 3–6:
+
+  ```sql
+  SELECT strftime('%Y-%m', r.Data) AS miesiac, SUM(t.Punkty) AS pkt
+  FROM rejestr r
+    JOIN taryfikator t ON r.IdWykroczenia = t.IdWykroczenia
+  WHERE t.IdWykroczenia BETWEEN 3 AND 6
+  GROUP BY miesiac
+  ORDER BY pkt ASC
+  LIMIT 1;
+  ```
+
+  **8.3.** Numery rejestracyjne i właściciele, którzy NIE są w `rejestr.txt`, sortowane alfabetycznie po `NrRejestracyjny`:
+
+  ```sql
+  SELECT k.NrRejestracyjny, k.Imie, k.Nazwisko
+  FROM kierowcy k
+  WHERE k.IdOsoby NOT IN (SELECT IdOsoby FROM rejestr)
+  ORDER BY k.NrRejestracyjny ASC;
+  ```
+
+  **Alternatywa Pythonem (pandas):**
+
+  ```python
+  import pandas as pd
+  kierowcy    = pd.read_csv("kierowcy.txt",    sep=";")
+  taryfikator = pd.read_csv("taryfikator.txt", sep=";")
+  rejestr     = pd.read_csv("rejestr.txt",     sep=";", parse_dates=["Data"])
+
+  # 8.1.
+  d = (rejestr.merge(taryfikator, on="IdWykroczenia")
+              .merge(kierowcy,    on="IdOsoby"))
+  s = d.groupby(["IdOsoby","Imie","Nazwisko"])["Kwota"].sum().sort_values(ascending=False)
+  print("8.1.", s.head(1))
+
+  # 8.2.
+  d2 = d[d["IdWykroczenia"].between(3,6)]
+  d2["miesiac"] = d2["Data"].dt.to_period("M")
+  pkt = d2.groupby("miesiac")["Punkty"].sum().sort_values()
+  print("8.2.", pkt.head(1))
+
+  # 8.3.
+  brak = kierowcy[~kierowcy["IdOsoby"].isin(rejestr["IdOsoby"])] \
+              .sort_values("NrRejestracyjny")
+  brak[["NrRejestracyjny","Imie","Nazwisko"]].to_csv("wyniki8_3.csv", index=False)
+  ```
+
+  Wszystkie odpowiedzi zapisujemy do `wyniki8.txt`, każdą poprzedzając numerem podzadania.
+pulapka: |
+  Najczęstsze błędy: (1) w 8.1 sumowanie punktów zamiast kwot (treść CKE mówi „suma **kwot** za mandaty"); (2) w 8.2 wybór miesiąca z **największą** liczbą punktów zamiast najmniejszą — uważnie czytaj „najmniej"; (3) w 8.2 zignorowanie filtra "od więcej niż 20 km/h" (id 3–6); (4) w 8.3 użycie INNER JOIN zamiast antyjoin — wtedy zwracamy kierowców WYSTĘPUJĄCYCH w rejestrze, czyli odwrotnie; (5) sortowanie ASCII vs alfabetyczne PL — dla numerów rejestracyjnych nie ma znaków diakrytycznych więc zwykłe ORDER BY wystarczy; (6) brak nagłówka w pliku odpowiedzi mimo że dane mają nagłówek.
+wymaganie: |
+  V. Wykorzystanie komputera oraz urządzeń cyfrowych do rozszerzania własnych możliwości — projektowanie i wykonywanie zapytań w bazach danych (SQL, JOIN, GROUP BY, agregacje, antyjoin/NOT IN).
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2024-maj-pr/zad-08.webp"
+  alt="Zadanie 8 - informatyka 2024 PR"
+  caption="Strona arkusza CKE 2024 PR informatyka - zadanie 8 (Rejestr wykroczeń)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_informatyka_2024_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={15}
+/>
+
+## Rozwiązanie
+
+Klasyczna baza danych z 3 tabelami:
+- `kierowcy` (1000 wierszy) — IdOsoby, Imie, Nazwisko, NrRejestracyjny
+- `taryfikator` (6 wierszy) — IdWykroczenia, Wykroczenie, Punkty, Kwota
+- `rejestr` — IdOsoby + IdWykroczenia + Data (wykroczenia w 2023)
+
+Trzy podzadania to typowe operacje SQL:
+1. **JOIN + GROUP BY + ORDER BY** (najwyższa suma)
+2. **JOIN + WHERE + GROUP BY miesiąc + MIN** (najmniejsza suma punktów w miesiącu)
+3. **ANTI-JOIN** (NOT IN / LEFT JOIN ... WHERE IS NULL) + ORDER BY
+
+**Konkretne wartości** zależą od danych w plikach. Schemat odpowiedzi w `wyniki8.txt`:
+
+```
+8.1. Jan Kowalski 5400
+8.2. 2023-08 28
+8.3. (tabela posortowana po NrRejestracyjny)
+GA12345 Anna Nowak
+GA12399 Tomasz Wilk
+...
+```
+
+W zestawie do oceny oddajemy `wyniki8.txt` oraz pliki źródłowe / arkusz / skrypt Python.

@@ -6,7 +6,16 @@ punkty: 1
 typ: zamkniete-abcd
 topic: wartość bezwzględna, oś liczbowa, suma przedziałów
 difficulty: 2
-tresc: Na osi liczbowej zaznaczono sumę przedziałów $(-\infty, -2\rangle \cup \langle 5, +\infty)$. Wybierz nierówność z wartością bezwzględną, której zbiorem rozwiązań jest ta suma.
+tresc: |
+  ### Zadanie 1. (0-1)
+
+  Na osi liczbowej zaznaczono sumę przedziałów (zacieniowane półproste z końcami w punktach $-2$ oraz $5$, obie domknięte, rozchodzące się w przeciwnych kierunkach do nieskończoności).
+
+  **Dokończ zdanie. Wybierz właściwą odpowiedź spośród podanych.**
+
+  Zbiór zaznaczony na osi jest zbiorem wszystkich rozwiązań nierówności
+
+  **A.** $|x - 3{,}5| \geq 1{,}5$     **B.** $|x - 1{,}5| \geq 3{,}5$     **C.** $|x - 3{,}5| \leq 1{,}5$     **D.** $|x - 1{,}5| \leq 3{,}5$
 odpowiedz: B
 pulapka: |
   Najczęstszy błąd: pominięcie środka przedziału. Środek to $(-2+5)/2 = 1{,}5$, a nie $3{,}5$. Inny błąd: zła orientacja nierówności (≤ zamiast ≥ — zaznaczono dopełnienie odcinka, nie sam odcinek).
@@ -22,11 +31,11 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pp/ark-04.webp"
+  src="/arkusze/matematyka/2023-maj-pp/zad-01.webp"
   alt="Zadanie 1 - oś liczbowa z sumą przedziałów"
   caption="Strona 4 arkusza CKE - zadanie 1 (wartość bezwzględna, oś liczbowa)."
   zrodlo="CKE 2023"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_podstawowy_arkusz_2023_zadania.pdf"
   pdfPage={4}
 />
 

@@ -1,0 +1,123 @@
+---
+arkusz: chemia-2023-maj-pr
+subject: chemia
+nr: 31
+punkty: 1
+typ: otwarte-krotkie
+topic: aminokwasy, alanina, jon obojnaczy, punkt izoelektryczny, miareczkowanie pH
+difficulty: 3
+tresc: |
+  Do zakwaszonego roztworu alaniny dodawano kroplami wodny roztwór wodorotlenku sodu
+  i mierzono pH mieszaniny reakcyjnej. Na wykresie zilustrowano zależność pH mieszaniny
+  od objętości dodanego roztworu wodorotlenku sodu (w jednostkach umownych). Na krzywej
+  zaznaczono trzy punkty: I (pH ≈ 2,3 przy V ≈ 0,5), II (pH ≈ 6,0 przy V ≈ 1,0)
+  oraz III (pH ≈ 9,7 przy V ≈ 1,5).
+
+  Aminokwasy w roztworach wodnych istnieją głównie w formie jonów. W roztworach o niskim
+  pH cząsteczka aminokwasu jest protonowana. W pewnym zakresie pH dominującą formą
+  jest jon obojnaczy. W roztworach o wysokim pH cząsteczka aminokwasu traci proton.
+  W punkcie oznaczonym na wykresie numerem I alanina jest mieszaniną formy protonowanej
+  i jonu obojnaczego w stosunku molowym 1 : 1, a w punkcie oznaczonym na wykresie
+  numerem III ten aminokwas jest mieszaniną jonu obojnaczego i formy zdeprotonowanej
+  w stosunku molowym 1 : 1.
+
+  Na podstawie: J. McMurry, Chemia organiczna, Warszawa 2005.
+
+  Zadanie 31.1. (0–1)
+  Napisz wzór półstrukturalny (grupowy) tej formy alaniny, która występuje przy
+  wartości pH odpowiadającej punktowi II zaznaczonemu na wykresie. Podaj nazwę tej
+  wartości pH.
+odpowiedz: |
+  **Punkt II — analiza wykresu**
+
+  W punkcie II (pH ≈ 6,0) krzywa miareczkowania ma środkowe plateau, leżące pomiędzy
+  punktem I (mieszanina formy protonowanej i jonu obojnaczego 1 : 1) a punktem III
+  (mieszanina jonu obojnaczego i formy zdeprotonowanej 1 : 1). W tym zakresie pH
+  dominującą formą aminokwasu jest **jon obojnaczy** (zwitterion) — cząsteczka ma
+  jednocześnie naładowaną dodatnio grupę aminową (−NH₃⁺) i naładowaną ujemnie
+  grupę karboksylanową (−COO⁻), a jej wypadkowy ładunek wynosi zero.
+
+  **Wzór półstrukturalny (grupowy) jonu obojnaczego alaniny**
+
+  CH₃−CH(NH₃⁺)−COO⁻
+
+  (równoważnie zapisywany jako H₃N⁺−CH(CH₃)−COO⁻)
+
+  **Nazwa tej wartości pH**
+
+  Wartość pH, przy której aminokwas występuje wyłącznie (a w istocie: w największym
+  stopniu) w postaci jonu obojnaczego i wypadkowy ładunek cząsteczek w roztworze
+  wynosi zero, nazywa się **punktem izoelektrycznym** (oznaczanym pI lub pHI).
+  Dla alaniny pI ≈ 6,0, co zgadza się z położeniem punktu II na wykresie.
+
+  pI jest średnią arytmetyczną dwóch wartości pKa grup kwasowo-zasadowych alaniny:
+
+  pI = (pKa₁ + pKa₂) / 2 ≈ (2,3 + 9,7) / 2 ≈ 6,0
+pulapka: |
+  - Mylenie jonu obojnaczego (zwitterionu) z formą obojętną elektrycznie zapisaną
+    jako CH₃−CH(NH₂)−COOH — taka forma w roztworze wodnym praktycznie nie występuje,
+    bo proton przeskakuje z grupy −COOH na grupę −NH₂.
+  - Zapominanie o ładunkach przy grupach (−NH₃⁺ i −COO⁻) — bez nich wzór jest błędny
+    i nie spełnia wymagania CKE.
+  - Mylenie pojęć „punkt izoelektryczny” i „punkt równoważnikowy” — w punkcie II
+    krzywej miareczkowania alaniny nie zachodzi neutralizacja całkowita, lecz
+    występuje plateau buforowe między dwoma pKa.
+  - Podanie pH ≈ 6 jako odpowiedzi na pytanie o „nazwę wartości pH” — pytanie
+    wymaga terminu (punkt izoelektryczny / pI), a nie wartości liczbowej.
+wymaganie: |
+  Wymaganie ogólne: wykorzystanie i tworzenie informacji.
+  Wymaganie szczegółowe: chemia organiczna — aminokwasy; budowa i formy jonowe
+  aminokwasów w zależności od pH, jon obojnaczy, punkt izoelektryczny;
+  interpretacja krzywej miareczkowania aminokwasu.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2023-maj-pr/zad-31.webp"
+  alt="Zadanie 31 - chemia 2023 PR"
+  caption="Strona arkusza CKE 2023 PR chemia - zadanie 31."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_chemia_2023_rozszerzony_arkusz_zadania_pytania.pdf"
+  pdfPage={26}
+/>
+
+## Rozwiązanie
+
+### Krok 1 — odczyt punktu II z wykresu
+
+Punkt II leży na środkowym plateau krzywej miareczkowania, przy pH ≈ 6,0.
+Plateau znajduje się pomiędzy dwoma odcinkami stromego wzrostu pH, które
+odpowiadają miareczkowaniu kolejnych grup kwasowo-zasadowych alaniny:
+
+- punkt I (pH ≈ 2,3) — w połowie odmiareczkowania grupy −COOH (pKa₁),
+- punkt III (pH ≈ 9,7) — w połowie odmiareczkowania grupy −NH₃⁺ (pKa₂).
+
+### Krok 2 — dominująca forma w punkcie II
+
+Między pKa₁ a pKa₂ grupa karboksylowa jest już zdeprotonowana (−COO⁻),
+a grupa aminowa nadal sprotonowana (−NH₃⁺). Cząsteczka ma więc dwa
+przeciwne ładunki cząstkowe, a wypadkowy ładunek = 0. Jest to **jon obojnaczy
+(zwitterion)** alaniny.
+
+### Krok 3 — wzór półstrukturalny (grupowy)
+
+CH₃−CH(NH₃⁺)−COO⁻
+
+### Krok 4 — nazwa tej wartości pH
+
+Wartość pH, przy której aminokwas w roztworze występuje przede wszystkim
+w postaci jonu obojnaczego (wypadkowy ładunek = 0), to **punkt izoelektryczny
+(pI)**. Dla alaniny:
+
+pI = (pKa₁ + pKa₂) / 2 ≈ (2,3 + 9,7) / 2 ≈ 6,0
+
+co odpowiada położeniu punktu II na wykresie.
+
+### Odpowiedź końcowa
+
+- **Wzór:** CH₃−CH(NH₃⁺)−COO⁻
+- **Nazwa wartości pH:** punkt izoelektryczny (pI) alaniny

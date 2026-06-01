@@ -7,7 +7,25 @@ typ: otwarte-rozszerzone
 topic: stereometria, stożek, optymalizacja z pochodną
 difficulty: 5
 tresc: |
-  Rozważamy wszystkie stożki, których wysokość jest większa od $5$, a odległość środka podstawy od tworzącej jest równa $5$. Zadanie ma dwie części. **12.1** (2 pkt): wykaż, że objętość $V$ stożka, jako funkcja wysokości $h$, wyraża się wzorem $V(h) = \dfrac{\pi}{3} \cdot \dfrac{25 h^3}{h^2 - 25}$. **12.2** (4 pkt): wyznacz wysokość stożka o najmniejszej objętości i oblicz tę najmniejszą objętość.
+  ### Zadanie 12.
+
+  Rozważamy wszystkie stożki, których wysokość jest większa od $5$, a odległość środka podstawy od tworzącej jest równa $5$.
+
+  ### Zadanie 12.1. (0–2)
+
+  **Wykaż, że objętość $V$ stożka, jako funkcja wysokości $h$ stożka, wyraża się wzorem**
+
+  $$V(h) = \dfrac{\pi}{3} \cdot \dfrac{25 h^3}{h^2 - 25}$$
+
+  ### Zadanie 12.2. (0–4)
+
+  Objętość $V$ stożka, jako funkcja wysokości $h$ stożka, wyraża się wzorem
+
+  $$V(h) = \dfrac{\pi}{3} \cdot \dfrac{25 h^3}{h^2 - 25}$$
+
+  dla $h \in (5, +\infty)$.
+
+  **Wyznacz wysokość tego z rozważanych stożków, którego objętość jest najmniejsza. Oblicz tę najmniejszą objętość. Zapisz obliczenia.**
 odpowiedz: |
   12.2: $h = 5\sqrt{3}$, $V_{\min} = \dfrac{125\sqrt{3}}{2} \pi$
 pulapka: |
@@ -25,11 +43,11 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z tym zadaniem
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2025-maj-pr/ark-25.webp"
+  src="/arkusze/matematyka/2025-maj-pr/zad-12.webp"
   alt="Zadanie 12 - strona 25 arkusza CKE"
   caption="Strona 25 arkusza CKE z trescia zadania 12."
   zrodlo="CKE"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Matematyka/MMAP-R0-100-2505-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_rozszerzony_arkusz_2025_zadania.pdf"
   pdfPage={25}
 />
 
@@ -140,7 +158,7 @@ $$h^2 (h^2 - 75) = 0$$
 
 W mianowniku $(h^2 - 25)^2 > 0$ zawsze. Licznik $h^2 (h^2 - 75)$:
 
-- dla $h \in (5, 5\sqrt{3})$: $h^2 < 75$ → $h^2 - 75 < 0$, czyli $V'(h) < 0$ — funkcja **malejąca**
+- dla $h \in (5, 5\sqrt{3})$: $h^2 &lt; 75$ → $h^2 - 75 &lt; 0$, czyli $V'(h) &lt; 0$ — funkcja **malejąca**
 - dla $h = 5\sqrt{3}$: $V'(h) = 0$ — punkt ekstremalny
 - dla $h > 5\sqrt{3}$: $h^2 > 75$ → $V'(h) > 0$ — funkcja **rosnąca**
 
@@ -185,7 +203,7 @@ Sprawdzenie: dla $h$ bardzo bliskiej $5$ (np. $5{,}1$), $V$ jest bardzo duże. D
 
 Z klucza CKE 12.2: za samo znalezienie $h = 5\sqrt{3}$ dostajesz **2 pkt**. **Uzasadnienie, że to MINIMUM** (np. badanie znaku pochodnej, lub argumentacja przez monotoniczność) jest dodatkowe — bez tego maksimum 3 pkt zamiast 4.
 
-Argumentacja: pochodna $V'(h) = C \cdot h^2(h^2 - 75)/(h^2 - 25)^2$. Znaki: $V' < 0$ na $(5, 5\sqrt{3})$, $V' > 0$ na $(5\sqrt{3}, \infty)$ → $V$ przechodzi z malejącej na rosnącą → minimum w $h = 5\sqrt{3}$.
+Argumentacja: pochodna $V'(h) = C \cdot h^2(h^2 - 75)/(h^2 - 25)^2$. Znaki: $V' &lt; 0$ na $(5, 5\sqrt{3})$, $V' > 0$ na $(5\sqrt{3}, \infty)$ → $V$ przechodzi z malejącej na rosnącą → minimum w $h = 5\sqrt{3}$.
 </div>
 
 ## Punktacja CKE

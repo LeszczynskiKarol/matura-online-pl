@@ -6,7 +6,16 @@ punkty: 1
 typ: zamkniete-abcd
 topic: funkcja liniowa, znaki współczynników a i b
 difficulty: 2
-tresc: "Zadanie 13: Funkcja liniowa $f(x) = ax + b$. Wykres jest opadający i przecina oś $y$ między $0$ a $1$. Wskaż znaki $a$ i $b$."
+tresc: |
+  ### Zadanie 15. (0-1)
+
+  Ciąg $(a_n)$ jest określony wzorem $a_n = 2^n \cdot (n+1)$ dla każdej liczby naturalnej $n \geq 1$.
+
+  **Dokończ zdanie. Wybierz właściwą odpowiedź spośród podanych.**
+
+  Wyraz $a_4$ jest równy
+
+  **A.** $64$     **B.** $40$     **C.** $48$     **D.** $80$
 odpowiedz: C
 pulapka: |
   Najczęstszy błąd: pomylenie znaczenia $a$ (kierunek) i $b$ (przesunięcie). $a$ to **nachylenie** (znak $a$ ⇒ rośnie/maleje), $b$ to **punkt przecięcia z osią $y$**.
@@ -21,11 +30,11 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pp/ark-13.webp"
+  src="/arkusze/matematyka/2023-maj-pp/zad-15.webp"
   alt="Zadanie 15 (13) - znaki a i b funkcji liniowej"
   caption="Strona 13 arkusza CKE - zadanie 13."
   zrodlo="CKE 2023"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_podstawowy_arkusz_2023_zadania.pdf"
   pdfPage={13}
 />
 
@@ -37,7 +46,7 @@ Z wykresu funkcji liniowej $f(x) = ax + b$ odczytaj znaki $a$ i $b$.
 
 <div class="krok">
 
-**Wyznacz znak $a$.** Wykres jest **opadający** (z lewej-góry do prawej-dołu). Funkcja liniowa opada ⟺ $a < 0$.
+**Wyznacz znak $a$.** Wykres jest **opadający** (z lewej-góry do prawej-dołu). Funkcja liniowa opada ⟺ $a &lt; 0$.
 
 </div>
 
@@ -51,7 +60,7 @@ Z wykresu: punkt przecięcia jest **powyżej** osi $x$ (między $0$ a $1$), wię
 
 <div class="krok">
 
-**Wniosek:** $a < 0$ i $b > 0$ → odpowiedź **C**.
+**Wniosek:** $a &lt; 0$ i $b > 0$ → odpowiedź **C**.
 
 </div>
 
@@ -59,13 +68,13 @@ Z wykresu: punkt przecięcia jest **powyżej** osi $x$ (między $0$ a $1$), wię
 
 <div class="odpowiedz">
   <div>
-    <strong>Odpowiedź: C</strong> — $a < 0$ i $b > 0$
+    <strong>Odpowiedź: C</strong> — $a &lt; 0$ i $b > 0$
   </div>
 </div>
 
 <div class="pulapka">
   <div class="pulapka-label">Typowy błąd</div>
-  **Wybór A** — pomylenie kierunku. Opadająca = $a < 0$, nie $a > 0$.
+  **Wybór A** — pomylenie kierunku. Opadająca = $a &lt; 0$, nie $a > 0$.
 
   **Wybór D** — pomyłka znaku $b$. $b$ to wartość $y$ przy $x = 0$ — jeśli wykres przecina oś $y$ POWYŻEJ punktu $0$, to $b > 0$.
 </div>
@@ -74,7 +83,7 @@ Z wykresu: punkt przecięcia jest **powyżej** osi $x$ (między $0$ a $1$), wię
 
 Współczynnik $a$ w $f(x) = ax + b$:
 - $a > 0$ → rośnie ↗
-- $a < 0$ → maleje ↘
+- $a &lt; 0$ → maleje ↘
 - $a = 0$ → stała (pozioma)
 
-Współczynnik $b$ — punkt przecięcia z osią $y$. $b > 0$ → powyżej osi $x$, $b < 0$ → poniżej.
+Współczynnik $b$ — punkt przecięcia z osią $y$. $b > 0$ → powyżej osi $x$, $b &lt; 0$ → poniżej.

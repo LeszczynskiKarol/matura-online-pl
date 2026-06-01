@@ -1,0 +1,140 @@
+---
+arkusz: informatyka-2023-maj-pr
+subject: informatyka
+nr: 7
+punkty: 8
+typ: otwarte-rozszerzone
+topic: baza danych, SQL, JOIN, GROUP BY, ranking gier planszowych
+difficulty: 4
+tresc: |
+  **Zadanie 7. Gry planszowe**
+
+  Pewien serwis internetowy prowadzi ranking gier planszowych. Baza serwisu została zapisana w trzech plikach.
+
+  **Plik gry.txt** zawiera informacje o grach planszowych. W każdym wierszu zapisano:
+  - id_gry – unikatowy numer gry planszowej
+  - nazwa – tytuł gry planszowej
+  - kategoria – kategoria, do jakiej została zakwalifikowana gra planszowa; każda gra należy tylko do jednej kategorii.
+
+  **Plik gracze.txt** zawiera informacje o graczach. W każdym wierszu zapisano:
+  - id_gracza – unikatowy numer gracza
+  - imie – imię gracza
+  - nazwisko – nazwisko gracza
+  - wiek – wiek gracza.
+
+  **Plik oceny.txt** zawiera oceny wystawione grom przez poszczególnych graczy. W każdym wierszu zapisano:
+  - id_gry – numer gry planszowej
+  - id_gracza – numer gracza
+  - stan – zawiera jedną z możliwych wartości: **posiada, chce kupic, sprzedal**, opisującą, czy użytkownik posiada daną grę, czy ją sprzedał lub czy zamierza ją zakupić
+  - ocena – zawiera ocenę gry przez gracza, wyrażoną liczbą całkowitą w zakresie od 0 do 10.
+
+  We wszystkich plikach dane w wierszach są rozdzielone znakami tabulacji, a pierwszy wiersz w każdym pliku jest wierszem nagłówkowym.
+
+  Z wykorzystaniem dostępnych narzędzi informatycznych podaj odpowiedzi do zadań 7.1.–7.4.
+
+  **Zadanie 7.1. (0–1)** Podaj tytuł gry, która otrzymała najwięcej ocen.
+
+  **Zadanie 7.2. (0–2)** Dla każdej z 7 kategorii „imprezowa" podaj średnią jej ocen z dokładnością do dwóch miejsc po przecinku. *(uwaga: w arkuszu pytanie dotyczy każdej kategorii — średnia ocen tej kategorii)*
+
+  **Zadanie 7.3. (0–2)** Podaj liczbę graczy, którzy nie posiadają żadnej z ocenianych przez siebie gier (nie mają żadnej gry ze stanem "posiada"), a wystawili co najmniej jedną ocenę.
+
+  **Zadanie 7.4. (0–3)** W ocenianiu gier planszowych uczestniczą osoby w wieku od 10 do 99 lat. Osoby oceniające gry podzielono na dwa kategorie wiekowe: juniorzy (do 19 lat), seniorzy (od 20 do 49 lat) oraz weterani (od 50 lat). Wykonaj zestawienie, w którym dla każdej kategorii wiekowej podaj największą liczbę ocen wystawionych przez jedną osobę, oraz – jeśli okazałoby się, że więcej niż jedna – podaj tytuły wszystkich.
+odpowiedz: |
+  Zakładamy że pliki zostały zaimportowane do bazy SQL (np. SQLite) jako tabele `gry`, `gracze`, `oceny`.
+
+  **7.1.** Tytuł gry z największą liczbą ocen:
+
+  ```sql
+  SELECT g.nazwa, COUNT(*) AS ile
+  FROM oceny o JOIN gry g ON g.id_gry = o.id_gry
+  GROUP BY g.id_gry, g.nazwa
+  ORDER BY ile DESC
+  LIMIT 1;
+  ```
+
+  **7.2.** Średnia ocen dla każdej kategorii (zaokrąglona do 2 miejsc):
+
+  ```sql
+  SELECT g.kategoria, ROUND(AVG(o.ocena), 2) AS srednia
+  FROM oceny o JOIN gry g ON g.id_gry = o.id_gry
+  GROUP BY g.kategoria
+  ORDER BY g.kategoria;
+  ```
+
+  **7.3.** Gracze, którzy nigdy nie mają stanu "posiada", ale wystawili co najmniej jedną ocenę:
+
+  ```sql
+  SELECT COUNT(DISTINCT o.id_gracza)
+  FROM oceny o
+  WHERE o.id_gracza NOT IN (
+      SELECT id_gracza FROM oceny WHERE stan = 'posiada'
+  );
+  ```
+
+  **7.4.** Najwięcej ocen w każdej kategorii wiekowej. Najpierw policzmy oceny per gracz z przypisaną kategorią:
+
+  ```sql
+  WITH ocen_per_gracz AS (
+    SELECT
+      o.id_gracza,
+      CASE
+        WHEN gr.wiek <= 19 THEN 'junior'
+        WHEN gr.wiek <= 49 THEN 'senior'
+        ELSE 'weteran'
+      END AS kat_wiek,
+      COUNT(*) AS ile
+    FROM oceny o
+    JOIN gracze gr ON gr.id_gracza = o.id_gracza
+    GROUP BY o.id_gracza, kat_wiek
+  ),
+  max_per_kat AS (
+    SELECT kat_wiek, MAX(ile) AS max_ile
+    FROM ocen_per_gracz
+    GROUP BY kat_wiek
+  )
+  SELECT opg.kat_wiek, gr.imie, gr.nazwisko, opg.ile
+  FROM ocen_per_gracz opg
+  JOIN max_per_kat m ON m.kat_wiek = opg.kat_wiek AND m.max_ile = opg.ile
+  JOIN gracze gr ON gr.id_gracza = opg.id_gracza;
+  ```
+
+  Wyniki wpisz do `wyniki7.txt`, każdy poprzedzony numerem zadania (7.1., 7.2., 7.3., 7.4.).
+pulapka: |
+  Zad. 7.3 — kluczowe rozróżnienie: "nie posiada żadnej gry" oznacza brak rekordu `stan='posiada'`, ale gracz musi mieć przynajmniej jedną OCENĘ (w pliku oceny.txt). Pominięcie warunku "ma jakąkolwiek ocenę" da błędną liczbę (zliczy też graczy bez ocen z pliku gracze.txt).
+  Zad. 7.4 — granica kategorii: junior do 19 (włącznie), senior 20–49 (włącznie), weteran od 50. Łatwo o off-by-one: 19 to junior, 20 to senior, 49 to senior, 50 to weteran. "Więcej niż jedna osoba z taką liczbą" → wypisz wszystkie tytuły (uwaga: arkusz pyta o "tytuły gier" — to znaczy gier ocenionych przez tych liderów; trzeba dolaczyć tabelę gier i wylistować).
+  Zad. 7.2 — średnia z DOKŁADNOŚCIĄ do 2 miejsc po przecinku (`ROUND(..., 2)`), nie do całości.
+wymaganie: |
+  Wymaganie ogólne III i V. Podstawa: bazy danych, język SQL (SELECT, JOIN, GROUP BY, HAVING, podzapytania, CASE WHEN, CTE), przetwarzanie danych tabelarycznych.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2023-maj-pr/zad-07.webp"
+  alt="Zadanie 7 - informatyka 2023 PR"
+  caption="Strona arkusza CKE 2023 PR informatyka - zadanie 7 (Gry planszowe)."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_informatyka_2023_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={18}
+/>
+
+## Rozwiązanie
+
+### 7.1. Gra z największą liczbą ocen
+
+`JOIN oceny → gry`, `GROUP BY id_gry`, `ORDER BY COUNT(*) DESC LIMIT 1`.
+
+### 7.2. Średnia ocen per kategoria
+
+`JOIN oceny → gry`, `GROUP BY kategoria`, `AVG(ocena)` zaokrąglić do 2 miejsc.
+
+### 7.3. Gracze bez "posiada", ale z oceną
+
+Antyjoin: gracze obecni w `oceny`, ale nieobecni wśród rekordów `stan = 'posiada'`.
+
+### 7.4. Lider każdej kategorii wiekowej
+
+CTE z `CASE WHEN` przypisującym kategorię wiekową, następnie `COUNT(*)` per gracz, w drugiej CTE `MAX(ile)` per kategoria, na końcu JOIN aby wyciągnąć liderów (mogą być remisy).

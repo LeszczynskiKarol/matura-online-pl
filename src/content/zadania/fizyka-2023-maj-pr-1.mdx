@@ -1,0 +1,87 @@
+---
+arkusz: fizyka-2023-maj-pr
+subject: fizyka
+nr: 1
+punkty: 4
+typ: otwarte-rozszerzone
+topic: kinematyka, ruch jednostajnie przyspieszony, ruch jednostajny, pościg, względna prędkość, maksymalna odległość
+difficulty: 4
+tresc: |
+  Samochód policyjny $\mathcal{P}$ jechał ze stałą prędkością o wartości $v_{0\mathcal{P}} = 20\ \text{m/s}$. W pewnej chwili został on wyprzedzony przez samochód osobowy $\mathcal{F}$, jadący w tym samym kierunku ze stałą prędkością o wartości $v_{\mathcal{F}} = 35\ \text{m/s}$ (zobacz rysunek 1.).
+
+  W chwili $t_0 = 0$, gdy odległość między samochodami $\mathcal{P}$ i $\mathcal{F}$ zwiększyła się do $d_0 = 40\ \text{m}$, samochód policyjny rozpoczął pościg ze stałym przyśpieszeniem o wartości $a = 6\ \text{m/s}^2$ (zobacz rysunek 2.).
+
+  Odległość $d$ między samochodami $\mathcal{P}$ i $\mathcal{F}$ jeszcze przez pewien czas rosła, w pewnej chwili osiągnęła wartość maksymalną $d_{\max}$, a następnie zaczęła maleć.
+
+  Przyjmij, że:
+  - od chwili $t_0 = 0$ samochód policyjny $\mathcal{P}$ poruszał się ruchem jednostajnie przyśpieszonym prostoliniowym
+  - samochód $\mathcal{F}$ cały czas poruszał się ruchem jednostajnym prostoliniowym
+  - odległość pomiędzy samochodami traktujemy jako odległość pomiędzy ustalonymi punktami na przednich zderzakach.
+
+  **Oblicz $d_{\max}$ – maksymalną odległość pomiędzy samochodami $\mathcal{P}$ i $\mathcal{F}$ podczas pościgu. Zapisz obliczenia.**
+odpowiedz: |
+  Odległość $d(t)$ między samochodami jest maksymalna, gdy prędkości obu pojazdów są równe (wówczas pochodna odległości względem czasu zmienia znak):
+
+  $$v_{\mathcal{P}}(t_1) = v_{\mathcal{F}}$$
+
+  Z równania ruchu jednostajnie przyspieszonego dla policji:
+
+  $$v_{0\mathcal{P}} + a \cdot t_1 = v_{\mathcal{F}}$$
+
+  $$t_1 = \frac{v_{\mathcal{F}} - v_{0\mathcal{P}}}{a} = \frac{35 - 20}{6} = 2{,}5\ \text{s}$$
+
+  Drogi przebyte przez oba samochody w czasie $t_1$:
+
+  $$s_{\mathcal{P}} = v_{0\mathcal{P}} \cdot t_1 + \tfrac{1}{2} a t_1^2 = 20 \cdot 2{,}5 + \tfrac{1}{2} \cdot 6 \cdot 2{,}5^2 = 50 + 18{,}75 = 68{,}75\ \text{m}$$
+
+  $$s_{\mathcal{F}} = v_{\mathcal{F}} \cdot t_1 = 35 \cdot 2{,}5 = 87{,}5\ \text{m}$$
+
+  Maksymalna odległość:
+
+  $$d_{\max} = d_0 + s_{\mathcal{F}} - s_{\mathcal{P}} = 40 + 87{,}5 - 68{,}75 = 58{,}75\ \text{m}$$
+
+  **Odpowiedź:** $d_{\max} \approx 58{,}75\ \text{m} \approx 58{,}8\ \text{m}$.
+pulapka: |
+  - Częsty błąd: szukanie chwili, gdy policja dogoni $\mathcal{F}$ ($s_\mathcal{P} = d_0 + s_\mathcal{F}$). To moment, gdy odległość $d = 0$, a NIE maksimum.
+  - Maksimum $d(t)$ to chwila zrównania prędkości — pochodna $d'(t) = v_\mathcal{F} - v_\mathcal{P}(t) = 0$.
+  - Trzeba pamiętać o $d_0 = 40\ \text{m}$ na starcie (pościg rusza już po wyprzedzeniu).
+  - Jednostki: $a$ w $\text{m/s}^2$, $v$ w $\text{m/s}$ — daje czas w sekundach.
+wymaganie: |
+  Podstawa programowa fizyki PR — dział I (Kinematyka): ruch jednostajny prostoliniowy i ruch jednostajnie zmienny; opis ruchu względem różnych układów odniesienia; równania kinematyczne.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2023-maj-pr/zad-01.webp"
+  alt="Zadanie 1 - fizyka 2023 PR"
+  caption="Strona arkusza CKE 2023 PR fizyka - zadanie 1."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_fizyka_2023_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={4}
+/>
+
+## Rozwiązanie
+
+### Krok 1. Warunek maksymalnej odległości
+
+Odległość $d(t) = d_0 + s_\mathcal{F}(t) - s_\mathcal{P}(t)$ rośnie dopóki $\mathcal{F}$ jest szybszy od $\mathcal{P}$, osiąga maksimum w chwili zrównania prędkości i potem maleje. Warunek:
+
+$$v_{0\mathcal{P}} + a t_1 = v_\mathcal{F}$$
+
+### Krok 2. Czas do zrównania prędkości
+
+$$t_1 = \frac{v_\mathcal{F} - v_{0\mathcal{P}}}{a} = \frac{35 - 20}{6} = 2{,}5\ \text{s}$$
+
+### Krok 3. Drogi w czasie $t_1$
+
+$$s_\mathcal{P} = v_{0\mathcal{P}} t_1 + \tfrac{1}{2} a t_1^2 = 68{,}75\ \text{m}$$
+
+$$s_\mathcal{F} = v_\mathcal{F} t_1 = 87{,}5\ \text{m}$$
+
+### Krok 4. Maksymalna odległość
+
+$$d_{\max} = d_0 + s_\mathcal{F} - s_\mathcal{P} = 40 + 87{,}5 - 68{,}75 = 58{,}75\ \text{m}$$

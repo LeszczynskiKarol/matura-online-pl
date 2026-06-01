@@ -1,0 +1,178 @@
+---
+arkusz: informatyka-2024-maj-pr
+subject: informatyka
+nr: 7
+punkty: 10
+typ: otwarte-rozszerzone
+topic: analiza danych, arkusz kalkulacyjny, SQL, agregacja, wykres, rabat
+difficulty: 4
+tresc: |
+  **Zadanie 7. Hurtownia**
+
+  Pewna hurtownia sprzedaje jabłka. W pliku `jablka.txt` znajduje się 2500 wierszy z danymi dotyczącymi sprzedaży jabłek od 3 stycznia 2022 roku do 31 grudnia 2022 roku. W każdym wierszu podane są dane opisujące jedną transakcję sprzedaży, oddzielone pojedynczymi znakami tabulacji:
+  - data sprzedaży zapisana w formacie rrrr-mm-dd
+  - nazwa odmiany jabłka
+  - kod, który określa, czy odmiana jest: L — letnia, J — jesienna czy Z — zimowa
+  - numer NIP klienta (13-znakowy tekst)
+  - liczba kilogramów sprzedanego towaru.
+
+  Fragment pliku `jablka.txt`:
+  ```
+  2022-01-03    Jonagold     Z    128-29-15-591   470
+  2022-01-03    Jonagold     Z    192-09-72-275   410
+  2022-01-03    Jonagored    Z    140-36-11-559   242
+  ```
+
+  Cena sprzedaży jednego kilograma jabłek zależy od odmiany jabłek. W pliku `cennik.txt` jest podana cena w złotych 1 kg jabłek każdej odmiany.
+
+  Fragment pliku `cennik.txt`:
+  ```
+  Alwa         2,9
+  Antonowka    3,2
+  Cortland     3,2
+  ```
+
+  **Zadanie 7.1. (0–2)** Dla każdego klienta policz, ile kupił on łącznie (we wszystkich swoich transakcjach) kilogramów jabłek odmian zimowych. Podaj numery NIP trzech klientów, którzy kupili najwięcej jabłek odmian zimowych (Z), oraz podaj dla każdego z nich liczbę kilogramów jabłek odmian zimowych przez nich kupionych.
+
+  **Zadanie 7.2. (0–2)** Przychód z pojedynczej sprzedaży to cena sprzedaży jednego kilograma jabłek pomnożona przez liczbę kilogramów. Podaj całkowity przychód hurtowni uzyskany w całym okresie. Podaj również odmiany jabłek, która dała największy przychód.
+
+  **Zadanie 7.3. (0–3)** Wykonaj zestawienie, w którym dla każdego miesiąca roku 2022 podasz nazwę najbardziej popularnej odmiany w tym miesiącu, czyli takiej, której w danym miesiącu sprzedano najwięcej. Na podstawie wykonanego zestawienia utwórz wykres kolumnowy ilustrujący wielkości sprzedaży najpopularniejszych odmian jabłek w poszczególnych miesiącach. Pamiętaj o czytelnym opisie wykresu — na osi X umieść daty kolejnych miesięcy, oś Y odpowiada wielkości sprzedaży najbardziej popularnej odmiany w tym miesiącu, dodaj opis osi Y i tytuł wykresu.
+
+  **Zadanie 7.4. (0–3)** Hurtownia ma system premiowania klientów hurtowych. Klient otrzymuje przy zakupie rabat, którego wysokość zależy od łącznej ilości jabłek zakupionych do tej pory przez tego klienta, wliczając w to jabłka zakupione w bieżącej transakcji. Wysokość rabatu za **każdy** kilogram w bieżącej transakcji wynosi:
+  - 5 gr, jeśli klient dotychczas zakupił co najwyżej 15 000 kg, ale mniej niż 20 000 kg,
+  - 10 gr, jeśli klient dotychczas zakupił co najmniej 20 000 kg.
+
+  Podaj, w tej kolejności (dla 3 klientów z najwyższymi łącznymi wartościami rabatów):
+  imię + NIP klienta, wartość rabatu.
+odpowiedz: |
+  Najwygodniej rozwiązać arkuszem kalkulacyjnym lub Pythonem z pandas.
+
+  **Załadowanie danych (Python):**
+
+  ```python
+  import pandas as pd
+  jablka = pd.read_csv("jablka.txt", sep="\t", header=None,
+                      names=["data","odmiana","kod","nip","kg"])
+  jablka["data"] = pd.to_datetime(jablka["data"])
+  cennik = pd.read_csv("cennik.txt", sep="\t", header=None,
+                       names=["odmiana","cena"])
+  cennik["cena"] = cennik["cena"].str.replace(",", ".").astype(float)
+  ```
+
+  **7.1.** Top-3 klientów wg sumy kg odmian zimowych:
+
+  ```python
+  zimowe = jablka[jablka["kod"] == "Z"]
+  top3 = zimowe.groupby("nip")["kg"].sum().sort_values(ascending=False).head(3)
+  print(top3)
+  ```
+
+  **7.2.** Przychód całkowity i odmiana z najwyższym przychodem:
+
+  ```python
+  d = jablka.merge(cennik, on="odmiana")
+  d["przychod"] = d["kg"] * d["cena"]
+  print(f"Całkowity przychód: {d['przychod'].sum():.2f} zł")
+  print(d.groupby("odmiana")["przychod"].sum().idxmax(),
+        d.groupby("odmiana")["przychod"].sum().max())
+  ```
+
+  **7.3.** Najpopularniejsza odmiana w każdym miesiącu + wykres:
+
+  ```python
+  jablka["miesiac"] = jablka["data"].dt.to_period("M")
+  pop = (jablka.groupby(["miesiac","odmiana"])["kg"].sum()
+                .reset_index()
+                .sort_values(["miesiac","kg"], ascending=[True,False])
+                .drop_duplicates("miesiac"))
+  print(pop[["miesiac","odmiana","kg"]])
+
+  import matplotlib.pyplot as plt
+  plt.bar(pop["miesiac"].astype(str), pop["kg"])
+  plt.xlabel("Miesiąc 2022")
+  plt.ylabel("Sprzedaż najpopularniejszej odmiany [kg]")
+  plt.title("Najpopularniejsze odmiany jabłek 2022")
+  plt.xticks(rotation=45)
+  plt.tight_layout()
+  plt.savefig("wykres_7_3.png", dpi=150)
+  ```
+
+  **7.4.** Rabat naliczamy iteracyjnie — dla każdej transakcji sprawdzamy stan zakupów klienta **do tej pory włącznie z tą transakcją**:
+
+  ```python
+  jablka_s = jablka.sort_values("data").reset_index(drop=True)
+  laczne = {}  # nip -> kg dotychczas
+  rabat  = {}  # nip -> łączna kwota rabatu w zł
+  for _, r in jablka_s.iterrows():
+      nip, kg = r["nip"], r["kg"]
+      nowy = laczne.get(nip, 0) + kg
+      laczne[nip] = nowy
+      if nowy >= 20000:
+          stawka = 0.10
+      elif nowy >= 15000:
+          stawka = 0.05
+      else:
+          stawka = 0.0
+      rabat[nip] = rabat.get(nip, 0) + kg * stawka
+  top3 = sorted(rabat.items(), key=lambda x: -x[1])[:3]
+  for nip, kwota in top3:
+      print(nip, round(kwota, 2))
+  ```
+
+  Wyniki konkretne (zależne od danych w pliku) zapisujemy do `wyniki7.txt`, poprzedzając każdą sekcję numerem zadania (7.1, 7.2, 7.3, 7.4).
+pulapka: |
+  Najczęstsze błędy: (1) w 7.2 — czytanie cen jako stringów z przecinkiem (PL) i zapominanie o zamianie na kropkę → string concatenation zamiast iloczynu; (2) w 7.3 — wybór odmiany "popularnej" wagowo (suma kg), nie liczbowo (liczba transakcji) — treść CKE mówi „której najwięcej sprzedano" = kg; (3) w 7.4 najczęściej myli się próg rabatu: zdanie „**wliczając** w to jabłka zakupione w bieżącej transakcji" znaczy, że stan po dodaniu bieżących kg decyduje o stawce; (4) brakuje sortowania chronologicznego transakcji przed naliczaniem rabatu.
+wymaganie: |
+  III. Posługiwanie się komputerem, urządzeniami cyfrowymi i sieciami komputerowymi — przetwarzanie danych w arkuszu kalkulacyjnym lub bazie danych; IV. Rozwiązywanie problemów z wykorzystaniem komputera — agregacje, grupowanie, wizualizacja danych.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2024-maj-pr/zad-07.webp"
+  alt="Zadanie 7 - informatyka 2024 PR"
+  caption="Strona arkusza CKE 2024 PR informatyka - zadanie 7 (Hurtownia jabłek)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_informatyka_2024_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={13}
+/>
+
+## Rozwiązanie
+
+Zadanie "hurtownia jabłek" to klasyczna analiza danych — w arkuszu (Excel/LibreOffice/Google Sheets) lub w Pythonie z pandas. SQL też się sprawdzi.
+
+**Wersja SQL** (gdy zaimportujemy oba pliki jako tabele `jablka` i `cennik`):
+
+```sql
+-- 7.1. Top-3 klientów wg kg odmian zimowych
+SELECT nip, SUM(kg) AS suma
+FROM jablka
+WHERE kod = 'Z'
+GROUP BY nip
+ORDER BY suma DESC
+LIMIT 3;
+
+-- 7.2. Całkowity przychód + odmiana z najwyższym przychodem
+SELECT SUM(j.kg * c.cena) AS przychod_calkowity
+FROM jablka j JOIN cennik c USING (odmiana);
+
+SELECT j.odmiana, SUM(j.kg * c.cena) AS przychod
+FROM jablka j JOIN cennik c USING (odmiana)
+GROUP BY j.odmiana
+ORDER BY przychod DESC
+LIMIT 1;
+
+-- 7.3. Najpopularniejsza odmiana w każdym miesiącu
+SELECT miesiac, odmiana, suma_kg
+FROM (
+  SELECT strftime('%Y-%m', data) AS miesiac, odmiana, SUM(kg) AS suma_kg,
+         RANK() OVER (PARTITION BY strftime('%Y-%m', data) ORDER BY SUM(kg) DESC) AS r
+  FROM jablka GROUP BY miesiac, odmiana
+) WHERE r = 1
+ORDER BY miesiac;
+```
+
+Zadanie 7.4 wymaga **stanu kumulowanego klienta** — w czystym SQL przez window functions z `SUM(kg) OVER (PARTITION BY nip ORDER BY data, rowid)`. W praktyce na maturze najwygodniej rozwiązać 7.4 w Pythonie lub VBA.

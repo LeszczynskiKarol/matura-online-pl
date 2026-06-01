@@ -1,0 +1,129 @@
+---
+arkusz: informatyka-2024-maj-pr
+subject: informatyka
+nr: 3
+punkty: 10
+typ: otwarte-rozszerzone
+topic: programowanie, nieparzysty skrót, cyfry parzyste/nieparzyste, plik tekstowy
+difficulty: 5
+tresc: |
+  **Zadanie 3. Nieparzysty skrót**
+
+  ***Nieparzystym skrótem*** dodatniej liczby całkowitej *n* nazwiemy dodatnią liczbę całkowitą *m*, która powstaje przez usunięcie cyfr parzystych z zapisu dziesiętnego liczby *n*.
+
+  *Nieparzysty skrót* liczby całkowitej *n* nie istnieje, gdy jej zapis dziesiętny składa się tylko z cyfr parzystych.
+
+  **Przykład:**
+  - *Nieparzystym skrótem* liczby 294762 jest liczba 97.
+  - *Nieparzystym skrótem* liczby 39101 jest liczba 3911.
+  - *Nieparzysty skrót* liczby 224 nie istnieje.
+
+  **Specyfikacja:**
+  Dane: *n* — dodatnia liczba całkowita, taka że istnieje dla niej *nieparzysty skrót*.
+  Wynik: *m* — *nieparzysty skrót* liczby *n*.
+
+  **Zadanie 3.1. (0–3)** W postaci pseudokodu lub w wybranym języku programowania napisz funkcję, która dla dodatniej liczby całkowitej *n*, takiej że istnieje dla niej *nieparzysty skrót*, wyznacza liczbę *m* — *nieparzysty skrót* liczby *n*.
+
+  **Uwaga:** Twój algorytm może używać **wyłącznie** zmiennych przechowujących liczby całkowite oraz może operować **wyłącznie** na liczbach całkowitych. Dozwolone operacje arytmetyczne: dodawanie, odejmowanie, mnożenie, dzielenie, dzielenie z resztą oraz porównywanie. Przypisania do zmiennych lub samodzielnie napisanej funkcji, wykorzystujące wyżej wymienione operacje. Zabronione jest używanie funkcji wbudowanych oraz operatorów innych niż wymienione.
+
+  **Zadanie 3.2. (0–3)** Plik `skrot.txt` zawiera 200 dodatnich liczb całkowitych, mniejszych od 30 000. Każda liczba jest zapisana w osobnym wierszu. Dla co najmniej jednej z tych liczb nie istnieje *nieparzysty skrót*. **Napisz program**, który wyznaczy liczbę wszystkich tych liczb z pliku `skrot.txt`, dla których nie istnieje *nieparzysty skrót*, oraz poda największą z nich. Odpowiedź zapisz w pliku `wyniki3_2.txt`. (Dla pliku `skrot_przyklad.txt` prawidłowa odpowiedzią jest: 2, 2428.)
+
+  **Zadanie 3.3. (0–4)** Plik `skrot2.txt` zawiera 200 dodatnich liczb całkowitych, mniejszych od 30 000. Każda liczba jest zapisana w osobnym wierszu. Dla co najmniej jednej z tych liczb istnieje *nieparzysty skrót*. **Napisz program**, który wypisze liczby z pliku `skrot2.txt`, dla których największy wspólny dzielnik liczby *j* i jej *nieparzystego skrótu* jest liczbą 7. Odpowiedź zapisz w pliku `wyniki3_3.txt`. Twój program powinien wypisać w każdym wyniku po dwie liczby. (Dla pliku `skrot2_przyklad.txt` prawidłowa odpowiedzią jest: 4872, 23527.)
+odpowiedz: |
+  **Zadanie 3.1.** Funkcja w pseudokodzie, używająca tylko mod/div i porównań:
+
+  ```
+  funkcja nieparzystyskrot(n):
+      m ← 0
+      b ← 1
+      dopóki n > 0 wykonuj:
+          a ← n mod 10
+          n ← n div 10
+          jeżeli (a mod 2 = 1):
+              m ← m + a * b
+              b ← b * 10
+      zwróć m
+  ```
+
+  Idea: przechodzimy cyfry *n* od najmłodszej, każdą nieparzystą cyfrę dopisujemy z prawej do *m* (z mnożnikiem *b* = 1, 10, 100, …). Cyfry parzyste pomijamy bez zwiększania *b*.
+
+  **Zadanie 3.2.** Program w Pythonie:
+
+  ```python
+  def nieparzysty_skrot(n):
+      m, b = 0, 1
+      while n > 0:
+          a = n % 10
+          n //= 10
+          if a % 2 == 1:
+              m += a * b
+              b *= 10
+      return m  # 0 oznacza brak skrótu
+
+  brak = 0
+  najw = 0
+  with open("skrot.txt") as f:
+      for line in f:
+          n = int(line.strip())
+          if nieparzysty_skrot(n) == 0:
+              brak += 1
+              if n > najw:
+                  najw = n
+  with open("wyniki3_2.txt", "w") as g:
+      g.write(f"{brak}\n{najw}\n")
+  ```
+
+  **Zadanie 3.3.** Program wypisujący liczby z `skrot2.txt`, dla których NWD(*j*, *nieparzysty_skrót*(*j*)) = 7:
+
+  ```python
+  from math import gcd
+
+  def nieparzysty_skrot(n):
+      m, b = 0, 1
+      while n > 0:
+          a = n % 10
+          n //= 10
+          if a % 2 == 1:
+              m += a * b
+              b *= 10
+      return m
+
+  with open("skrot2.txt") as f, open("wyniki3_3.txt", "w") as g:
+      for line in f:
+          j = int(line.strip())
+          m = nieparzysty_skrot(j)
+          if m > 0 and gcd(j, m) == 7:
+              g.write(f"{j} {m}\n")
+  ```
+
+  Wynik dla `skrot2_przyklad.txt`: 4872, 23527.
+pulapka: |
+  Najczęstsze błędy: (1) w 3.1 mnożenie *b* * 10 **przed** sprawdzeniem cyfry — wtedy parzyste też zwiększają mnożnik i wynik ma luki; (2) traktowanie *n* jako stringa wbrew zakazowi „tylko liczby całkowite"; (3) w 3.2 / 3.3 zapomnienie obsłużyć liczbę składającą się z samych cyfr parzystych (zwraca 0 = brak skrótu); (4) w 3.3 — porównanie NWD(*j*, *m*) z 7 zamiast „dzielnie przez 7" (trzeba dokładnie NWD = 7, nie „NWD podzielne przez 7").
+wymaganie: |
+  II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera — implementacja algorytmów na liczbach całkowitych, operacje mod/div, NWD, przetwarzanie plików tekstowych.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2024-maj-pr/zad-03.webp"
+  alt="Zadanie 3 - informatyka 2024 PR"
+  caption="Strona arkusza CKE 2024 PR informatyka - zadanie 3 (Nieparzysty skrót)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_informatyka_2024_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={8}
+/>
+
+## Rozwiązanie
+
+Trzy podzadania opierają się na tym samym pomyśle: **filtrowanie cyfr nieparzystych** z zapisu dziesiętnego liczby i sklejanie ich z powrotem w liczbę.
+
+**Kluczowy trick** (3.1): kiedy iterujemy *n* od najmłodszej cyfry, każdą zachowaną nieparzystą cyfrę dopisujemy "z prawej" do skrótu *m*, ale tylko wtedy zwiększamy mnożnik pozycji *b*. Cyfry parzyste są pomijane — nie zwiększają *b*, więc nie zostawiają w *m* "dziury".
+
+**Weryfikacja na przykładach z treści:**
+- 294762: cyfry od końca 2,6,7,4,9,2 → nieparzyste: 7, 9 → *m* = 97 ✓
+- 39101: cyfry od końca 1,0,1,9,3 → nieparzyste: 1,1,9,3 → *m* = 3911 ✓
+- 224: cyfry 4,2,2 → brak nieparzystych → *m* = 0 (skrót nie istnieje) ✓

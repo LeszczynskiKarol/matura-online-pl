@@ -6,6 +6,6 @@ slug: historia
 icon: lucide:scroll
 order: 8
 color: orange
-hasContent: false
+hasContent: true
 description: Zadania z matury rozszerzonej z historii — starożytność po XX wiek, źródła historyczne.
 ---

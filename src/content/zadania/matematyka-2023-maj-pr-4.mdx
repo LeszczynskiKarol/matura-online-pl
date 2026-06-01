@@ -6,7 +6,12 @@ punkty: 3
 typ: otwarte-rozszerzone
 topic: dowód, grupowanie wyrazów, nierówność z kwadratem
 difficulty: 4
-tresc: "Liczby rzeczywiste $x, y$ spełniają $x + y = 4$ i $x^3 - x^2y \\leq xy^2 - y^3$. Wykaż, że $x = 2$ i $y = 2$."
+tresc: |
+  ### Zadanie 4. (0-3)
+
+  Liczby rzeczywiste $x$ oraz $y$ spełniają jednocześnie równanie $x + y = 4$ i nierówność $x^3 - x^2 y \leq xy^2 - y^3$.
+
+  **Wykaż, że $x = 2$ oraz $y = 2$.**
 odpowiedz: |
   Przekształcamy nierówność: $x^3 - x^2y - xy^2 + y^3 \leq 0$ → $(x-y)^2 (x+y) \leq 0$. Ponieważ $x+y = 4 > 0$, musi być $(x-y)^2 \leq 0$, więc $(x-y)^2 = 0$ czyli $x = y$. Z $x+y=4$ wynika $x = y = 2$.
 pulapka: |
@@ -22,11 +27,11 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pr/ark-07.webp"
+  src="/arkusze/matematyka/2023-maj-pr/zad-04.webp"
   alt="Zadanie 4 - dowód algebraiczny"
   caption="Strona 7 arkusza CKE PR - zadanie 4."
   zrodlo="CKE 2023 PR"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-R0-100-2305-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_rozszerzony_arkusz_2023_zadania.pdf"
   pdfPage={7}
 />
 

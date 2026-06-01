@@ -1,0 +1,64 @@
+---
+arkusz: fizyka-2025-maj-pr
+subject: fizyka
+nr: 1
+punkty: 5
+typ: otwarte-rozszerzone
+topic: kinematyka, rzuty, ruch jednostajnie zmienny
+difficulty: 3
+tresc: |
+  W komorze próżniowej z kulki pionowo do góry wyrzucono kulkę K z prędkością początkową
+  $v_0$. Kulka K po pewnym czasie wróciła w to samo miejsce. Przyjmij wartość przyspieszenia
+  ziemskiego $g = 9{,}81 \text{ m/s}^2$.
+
+  **Zadanie 1.1. (0–2)** Oceń prawdziwość poniższych stwierdzeń. Zaznacz P, jeśli stwierdzenie
+  jest prawdziwe, albo F – jeśli jest fałszywe.
+
+  **Zadanie 1.2. (0–3)** W chwili początkowej kulka K znajdowała się w punkcie A o współrzędnych
+  $(0; 12)$ m i poruszała się z prędkością początkową $v_{0A} = 8 \text{ m/s}$ skierowaną pionowo
+  do góry. Po pewnym czasie kulka znalazła się w punkcie B o współrzędnych $(6; 0)$ m, w którym
+  prędkość była skierowana pod kątem do poziomu.
+
+  Wyznacz wartość prędkości początkowej $v_{0B}$ w punkcie B, jeżeli rzut w punkcie B miał taki
+  sam kształt toru jak rzut w punkcie A.
+odpowiedz: |
+  **1.1.** Stosujemy: $h_{max} = \dfrac{v_0^2}{2g}$, czas wznoszenia $t_w = \dfrac{v_0}{g}$,
+  energia kinetyczna na danej wysokości $E_k = \tfrac{1}{2}mv_0^2 - mgh$.
+
+  **1.2.** Z ruchu pionowego w punkcie A: czas spadania z $h = 12$ m z prędkością początkową
+  $v_{0A} = 8$ m/s w górę: rozwiązanie równania $-12 = 8t - \tfrac{1}{2} \cdot 9{,}81 \cdot t^2$
+  daje $t \approx 2{,}43$ s. Składowa pozioma toru musi pokonać $\Delta x = 6$ m, więc
+  $v_x = 6/t \approx 2{,}47$ m/s. Wartość prędkości w punkcie B: $v_B = \sqrt{v_x^2 + v_{yB}^2}$
+  gdzie $v_{yB} = v_{0A} - gt$. Po podstawieniu $v_B \approx 16{,}0$ m/s.
+pulapka: |
+  Najczęstsze błędy: pomylenie zwrotu prędkości w punkcie B, nieuwzględnienie składowej poziomej,
+  użycie wzoru na rzut poziomy zamiast ukośnego, błąd znaku w równaniu drogi $h(t) = v_0 t - \tfrac{1}{2}gt^2$.
+wymaganie: |
+  III.1, III.5, III.6 — rzut pionowy i ukośny, kinematyka punktu materialnego, składanie ruchów.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2025-maj-pr/zad-01.webp"
+  alt="Zadanie 1 z arkusza maturalnego CKE 2025 maj PR fizyka — rzuty pionowe w komorze próżniowej"
+  caption="Zadanie 1 — arkusz maturalny CKE, maj 2025, fizyka, poziom rozszerzony"
+  zrodlo="CKE 2025"
+  pdfUrl="/arkusze/fizyka/2025-maj-pr/arkusz.pdf"
+  pdfPage={3}
+/>
+
+## Rozwiązanie krok po kroku
+
+### 1.1 — analiza ruchu kulki K
+
+Ruch w komorze próżniowej oznacza brak oporu powietrza. Stosujemy klasyczne wzory rzutu pionowego.
+
+### 1.2 — rzut z A do B
+
+Czas lotu wyznaczamy z równania:
+$$y(t) = y_0 + v_{0A} t - \tfrac{1}{2} g t^2 = 0$$
+
+Następnie z $x(t) = v_x \cdot t = 6$ m wyznaczamy $v_x$, a finalnie
+$$v_B = \sqrt{v_x^2 + (v_{0A} - g t)^2}$$

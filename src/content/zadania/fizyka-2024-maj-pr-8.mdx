@@ -1,0 +1,130 @@
+---
+arkusz: fizyka-2024-maj-pr
+subject: fizyka
+nr: 8
+punkty: 4
+typ: otwarte-krotkie
+topic: termodynamika, I zasada termodynamiki, cykl silnika cieplnego, gaz doskonały
+difficulty: 5
+tresc: |
+  ### Zadanie 8.
+
+  Cykl pracy silnika cieplnego, którego czynnikiem roboczym jest pewna ilość gazu doskonałego jednoatomowego, przedstawiono na wykresie zależności ciśnienia $p$ od objętości $V$ (oś pozioma: $V$, w jednostkach $V_1$; oś pionowa: $p$, w jednostkach $p_1$). Cykl: $G_1 \to G_2 \to G_3 \to G_4 \to G_1$, gdzie:
+  - $G_1 = (V_1, p_1)$,
+  - $G_2 = (V_1, 3 p_1)$ — przemiana **izochoryczna** $1 \to 2$ (V = const, ciśnienie rośnie 3×),
+  - $G_3 = (3 V_1, 3 p_1)$ — przemiana **izobaryczna** $2 \to 3$ (p = const, objętość rośnie 3×),
+  - $G_4 = (3 V_1, p_1)$ — przemiana **izochoryczna** $3 \to 4$ (V = const, p maleje),
+  - $4 \to 1$ — przemiana **izobaryczna** (p = const, V maleje).
+
+  Ciepło molowe gazu w stałej objętości: $C_V = \tfrac{3}{2} R$. Sumaryczna wartość bezwzględna ciepła odprowadzonego przez gaz w cyklu wynosi $|Q_{odd}| = 9{,}5\, p_1 V_1$.
+
+  ### Zadanie 8.1. (0–1)
+
+  Dokończ zdanie. Wybierz właściwą odpowiedź spośród podanych. Sumaryczne ciepło pobrane przez gaz w jednym cyklu pracy silnika wynosi:
+
+  **A.** $5{,}5\, p_1 V_1$    **B.** $7{,}5\, p_1 V_1$    **C.** $11{,}5\, p_1 V_1$    **D.** $13{,}5\, p_1 V_1$
+
+  ### Zadanie 8.2. (0–3)
+
+  Wyprowadź wzór na wartość bezwzględną zmiany energii wewnętrznej gazu $|\Delta U_{4 \to 1}|$ w przemianie z $G_4$ do $G_1$. Wynik podaj w jednostkach $p_1 V_1$. Zapisz obliczenia.
+odpowiedz: |
+  **8.1.** Praca wykonana w cyklu = pole pod krzywą = pole prostokąta $G_2 G_3 G_4 G_1$ projektowane na oś $V$:
+
+  $$W_{cykl} = \Delta p \cdot \Delta V = (3p_1 - p_1)(3V_1 - V_1) = 2p_1 \cdot 2V_1 = 4 p_1 V_1$$
+
+  I zasada termodynamiki dla cyklu: $\Delta U = 0$ (powrót do stanu początkowego), więc $Q_{netto} = W$.
+
+  $$Q_{pob} - |Q_{odd}| = W_{cykl}$$
+  $$Q_{pob} = W_{cykl} + |Q_{odd}| = 4 + 9{,}5 = 13{,}5\, p_1 V_1$$
+
+  **Odpowiedź: D. $13{,}5\, p_1 V_1$**.
+
+  **8.2.** Przemiana $4 \to 1$ jest **izobaryczna** ($p = p_1$, $V$ maleje z $3V_1$ do $V_1$).
+
+  Z równania stanu gazu doskonałego: $pV = nRT$. Dla stanu $G_4$: $T_4 = \dfrac{p_1 \cdot 3V_1}{nR} = \dfrac{3 p_1 V_1}{nR}$. Dla $G_1$: $T_1 = \dfrac{p_1 V_1}{nR}$.
+
+  $$\Delta T_{4 \to 1} = T_1 - T_4 = \dfrac{p_1 V_1}{nR} - \dfrac{3 p_1 V_1}{nR} = -\dfrac{2 p_1 V_1}{nR}$$
+
+  Zmiana energii wewnętrznej:
+
+  $$\Delta U_{4 \to 1} = n C_V \Delta T = n \cdot \tfrac{3}{2} R \cdot \left(-\dfrac{2 p_1 V_1}{nR}\right) = -3\, p_1 V_1$$
+
+  $$\boxed{|\Delta U_{4 \to 1}| = 3\, p_1 V_1}$$
+
+  (Wartość bezwzględna, bo zmiana jest ujemna — gaz się ochładza.)
+pulapka: |
+  Pułapka 8.1 — pominięcie faktu, że pole pod cyklem jest pracą NETTO. Często liczy się tylko pracę w jednej przemianie. Cykl = pole zamkniętego konturu na wykresie $p$-$V$.
+
+  Pułapka 8.1 — pomylenie znaków $Q_{pob}$ i $|Q_{odd}|$. I zasada: $Q_{pob} = W + |Q_{odd}|$ (ciepło pobrane = praca + ciepło odprowadzone). NIE odwrotnie.
+
+  Pułapka 8.2 — założenie że $\Delta U$ zależy od ścieżki. NIE: $\Delta U = nC_V \Delta T$ ZAWSZE dla gazu doskonałego, niezależnie od typu przemiany. Klucz to różnica temperatur (lub równoważnie różnica $pV$).
+
+  Pułapka 8.2 — użycie $C_p$ zamiast $C_V$. Energia wewnętrzna gazu doskonałego = TYLKO energia kinetyczna cząsteczek = $nC_V T$ ($C_V$, nie $C_p$). $C_p$ pojawia się w izobarycznym przy obliczeniu **ciepła** ($Q = nC_p\Delta T$), ale $\Delta U$ ZAWSZE liczymy z $C_V$.
+wymaganie: |
+  IV.1 — termodynamika. I zasada, przemiany gazowe (izochoryczna, izobaryczna), cykl silnika cieplnego, energia wewnętrzna gazu doskonałego.
+podobne:
+  - fizyka-2025-maj-pr-8
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2024-maj-pr/zad-08.webp"
+  alt="Zadanie 8 - cykl silnika cieplnego na wykresie p-V"
+  caption="Strona 20-21 arkusza CKE 2024 PR fizyka - zadanie 8 (prostokątny cykl G1-G2-G3-G4, gaz doskonały)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_fizyka_2024_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={20}
+/>
+
+## Klucz — cykl silnika
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**I zasada termodynamiki**: $\Delta U = Q - W$ (Q dodatnie = pobrane, W dodatnie = wykonane przez gaz).
+
+</div>
+
+<div class="krok">
+
+**Cykl zamknięty**: $\Delta U_{cykl} = 0$, więc $W_{cykl} = Q_{netto} = Q_{pob} - |Q_{odd}|$. Praca w cyklu = **pole** zamkniętego konturu na wykresie $p$-$V$.
+
+</div>
+
+<div class="krok">
+
+**Energia wewnętrzna gazu doskonałego**: $U = nC_V T$. Zmiana $\Delta U = nC_V \Delta T$ — **niezależnie od ścieżki**. Dla jednoatomowego: $C_V = \tfrac{3}{2}R$.
+
+</div>
+
+<div class="krok">
+
+**Sprawność silnika cieplnego**: $\eta = W/Q_{pob} = 1 - |Q_{odd}|/Q_{pob}$. Tu: $\eta = 4/13{,}5 \approx 30\%$.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+<div>
+
+**8.1.** **D. $13{,}5\, p_1 V_1$**
+
+**8.2.** $|\Delta U_{4 \to 1}| = 3\, p_1 V_1$
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — $C_V$ vs $C_p$</div>
+
+$\Delta U$ ZAWSZE $= nC_V\Delta T$, dla każdej przemiany. $C_p = C_V + R$ pojawia się tylko gdy chcesz **ciepło** przemiany izobarycznej.
+</div>
+
+## Po co to umieć
+
+Cykl prostokątny p-V to model uproszczonego silnika spalinowego/cieplnego. Realne cykle: **Otto** (silnik benzynowy: 2 izochoryczne + 2 adiabatyczne), **Diesel** (1 izobaryczna + 1 izochoryczna + 2 adiabatyczne), **Carnot** (2 izoterme + 2 adiabatyczne — sprawność maksymalna). Sprawność realnych silników: Otto ~25%, Diesel ~40%, elektrownia węglowa ~38%, turbina gazowa CCGT ~60%. Limit termodynamiczny Carnot dla $T_h = 600$ K, $T_c = 300$ K: $1 - 300/600 = 50\%$.

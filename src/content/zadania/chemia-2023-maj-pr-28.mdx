@@ -1,0 +1,122 @@
+---
+arkusz: chemia-2023-maj-pr
+subject: chemia
+nr: 28
+punkty: 2
+typ: otwarte-krotkie
+topic: rownowaga chemiczna, stala rownowagi Kc, synteza fosgenu, stezenia molowe, stopien przereagowania
+difficulty: 3
+tresc: |
+  Do reaktora o pojemnosci 4,0 dm^3 wprowadzono gazowe substraty: 0,40 mol CO i 0,20 mol Cl2. Gdy w temperaturze T ustalila sie rownowaga, stwierdzono, ze przereagowalo 80 % chloru.
+
+  Oblicz stezeniowa stala rownowagi syntezy fosgenu w temperaturze T.
+odpowiedz: |
+  Rownanie reakcji syntezy fosgenu:
+  CO(g) + Cl2(g) <=> COCl2(g)
+
+  Krok 1. Liczba moli Cl2, ktora przereagowala:
+  n(Cl2, przer.) = 0,80 * 0,20 mol = 0,16 mol
+
+  Krok 2. Bilans molowy w stanie rownowagi (stechiometria 1:1:1):
+  - n(CO) = 0,40 - 0,16 = 0,24 mol
+  - n(Cl2) = 0,20 - 0,16 = 0,04 mol
+  - n(COCl2) = 0,16 mol
+
+  Krok 3. Stezenia molowe w rownowadze (V = 4,0 dm^3):
+  - [CO] = 0,24 / 4,0 = 0,060 mol/dm^3
+  - [Cl2] = 0,04 / 4,0 = 0,010 mol/dm^3
+  - [COCl2] = 0,16 / 4,0 = 0,040 mol/dm^3
+
+  Krok 4. Stezeniowa stala rownowagi:
+  Kc = [COCl2] / ([CO] * [Cl2])
+  Kc = 0,040 / (0,060 * 0,010) = 0,040 / 0,00060
+  Kc ~= 66,7 dm^3/mol (ok. 67 dm^3/mol)
+pulapka: |
+  - Liczenie 80 % od CO zamiast od Cl2 — tresc jasno mowi "przereagowalo 80 % chloru".
+  - Pomylka w stechiometrii — reakcja CO + Cl2 -> COCl2 ma stosunek 1:1:1; kazdy mol Cl2, ktory przereagowal, "zjada" 1 mol CO i daje 1 mol produktu.
+  - Liczenie Kc na molach zamiast na stezeniach molowych — wzor wymaga [X] w mol/dm^3, nie n w molach.
+  - Pominiecie jednostki — dla reakcji o Δn(gaz) = -1 stala Kc nie jest bezwymiarowa, jednostka dm^3/mol (rownowaznie (mol/dm^3)^-1) jest czescia poprawnej odpowiedzi.
+  - Bledy arytmetyczne — 0,060 * 0,010 = 6,0 * 10^-4, nie 6,0 * 10^-3.
+wymaganie: |
+  Wymaganie ogolne II (Rozumowanie i zastosowanie nabytej wiedzy chemicznej do rozwiazywania problemow). Wymaganie szczegolowe V — kinetyka i rownowaga chemiczna: obliczanie stalej rownowagi Kc reakcji odwracalnej na podstawie stezen rownowagowych reagentow oraz ustalanie stezen rownowagowych na podstawie stezen poczatkowych i stopnia przereagowania.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2023-maj-pr/zad-28.webp"
+  alt="Zadanie 28 - chemia 2023 PR"
+  caption="Strona arkusza CKE 2023 PR chemia - zadanie 28."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_chemia_2023_rozszerzony_arkusz_zadania_pytania.pdf"
+  pdfPage={24}
+/>
+
+## Rozwiazanie
+
+### Krok 1. Rownanie reakcji syntezy fosgenu
+
+Fosgen (COCl2) powstaje z tlenku wegla(II) i chloru w reakcji odwracalnej:
+
+$$
+\mathrm{CO}_{(g)} + \mathrm{Cl}_{2(g)} \;\rightleftharpoons\; \mathrm{COCl}_{2(g)}
+$$
+
+Stechiometria 1 : 1 : 1 — kazdy mol Cl2, ktory przereagowal, zuzywa 1 mol CO i tworzy 1 mol COCl2.
+
+### Krok 2. Ile moli Cl2 przereagowalo
+
+Z tresci zadania: przereagowalo 80 % chloru, czyli
+
+$$
+n_{\mathrm{Cl}_2,\,\text{przer.}} = 0{,}80 \cdot 0{,}20\;\mathrm{mol} = 0{,}16\;\mathrm{mol}
+$$
+
+### Krok 3. Bilans molowy w stanie rownowagi
+
+| Reagent | n poczatkowe [mol] | zmiana Δn [mol] | n w rownowadze [mol] |
+|---------|-------------------:|----------------:|---------------------:|
+| CO      |               0,40 |           -0,16 |                 0,24 |
+| Cl2     |               0,20 |           -0,16 |                 0,04 |
+| COCl2   |                  0 |           +0,16 |                 0,16 |
+
+### Krok 4. Stezenia molowe w rownowadze
+
+Objetosc reaktora V = 4,0 dm^3:
+
+$$
+[\mathrm{CO}] = \frac{0{,}24\;\mathrm{mol}}{4{,}0\;\mathrm{dm^3}} = 0{,}060\;\mathrm{mol/dm^3}
+$$
+
+$$
+[\mathrm{Cl}_2] = \frac{0{,}04\;\mathrm{mol}}{4{,}0\;\mathrm{dm^3}} = 0{,}010\;\mathrm{mol/dm^3}
+$$
+
+$$
+[\mathrm{COCl}_2] = \frac{0{,}16\;\mathrm{mol}}{4{,}0\;\mathrm{dm^3}} = 0{,}040\;\mathrm{mol/dm^3}
+$$
+
+### Krok 5. Obliczenie stalej rownowagi Kc
+
+Definicja stalej rownowagi dla reakcji CO + Cl2 ⇌ COCl2:
+
+$$
+K_c = \frac{[\mathrm{COCl}_2]}{[\mathrm{CO}] \cdot [\mathrm{Cl}_2]}
+$$
+
+Podstawiamy wartosci stezen rownowagowych:
+
+$$
+K_c = \frac{0{,}040}{0{,}060 \cdot 0{,}010} = \frac{0{,}040}{6{,}0 \cdot 10^{-4}} \approx 66{,}7\;\mathrm{\frac{dm^3}{mol}}
+$$
+
+### Odpowiedz
+
+$$
+\boxed{\,K_c \approx 66{,}7\;\mathrm{\frac{dm^3}{mol}} \;\;\text{(ok. }67\;\mathrm{dm^3/mol)}\,}
+$$
+
+Uwaga: dla reakcji o Δn(gaz) = -1 stala Kc ma jednostke dm^3/mol (rownowaznie (mol/dm^3)^-1). Pominiecie jednostki jest typowym bledem na maturze.

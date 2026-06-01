@@ -1,0 +1,107 @@
+---
+arkusz: fizyka-2024-maj-pr
+subject: fizyka
+nr: 6
+punkty: 3
+typ: otwarte-krotkie
+topic: elektrostatyka, pole elektryczne, superpozycja, ładunki punktowe
+difficulty: 4
+tresc: |
+  ### Zadanie 6. (0–3)
+
+  W trzech wierzchołkach kwadratu o boku $a$ umieszczono trzy nieruchome ładunki punktowe: $Q_1 = -2q$, $Q_2 = -q$, $Q_3 = -2q$ (gdzie $q > 0$). Ładunek $Q_1$ znajduje się w jednym wierzchołku, $Q_2$ w przeciwległym, a $Q_3$ w jednym z dwóch pozostałych wierzchołków (zobacz rysunek). Czwarty wierzchołek jest pusty.
+
+  Na rysunku narysuj wektor natężenia pola elektrycznego $\vec{E}_S$ w punkcie $S$ — przecięciu przekątnych kwadratu — pochodzący od wszystkich trzech ładunków. Zapisz wzór wyrażający wartość natężenia pola elektrycznego $E_S$ w punkcie $S$ w zależności od $a$, $q$ oraz stałej elektrycznej $k$.
+odpowiedz: |
+  Odległość każdego z wierzchołków od $S$ (przecięcia przekątnych): $r = \dfrac{a\sqrt{2}}{2}$.
+
+  Natężenie pola od pojedynczego ładunku $|Q|$ w odległości $r$:
+
+  $$E = \dfrac{k|Q|}{r^2} = \dfrac{k|Q|}{(a\sqrt{2}/2)^2} = \dfrac{2k|Q|}{a^2}$$
+
+  Kierunek wektorów (od ładunku ujemnego — pole skierowane **w stronę ładunku**):
+  - od $Q_1 = -2q$ (przeciwległy do pustego rogu): $\vec{E}_1$ wzdłuż przekątnej, w stronę $Q_1$. Wartość: $E_1 = \dfrac{2k \cdot 2q}{a^2} = \dfrac{4kq}{a^2}$.
+  - od $Q_2 = -q$ (drugi koniec przekątnej, przeciwległy do pierwszego): $\vec{E}_2$ wzdłuż tej samej przekątnej, ale w PRZECIWNĄ stronę. $E_2 = \dfrac{2kq}{a^2}$.
+  - od $Q_3 = -2q$ (na drugiej przekątnej, przy boku z $Q_1$): $\vec{E}_3$ wzdłuż drugiej przekątnej, w stronę $Q_3$. $E_3 = \dfrac{4kq}{a^2}$.
+
+  **Składanie wektorów**:
+  - $\vec{E}_1$ i $\vec{E}_2$ leżą na jednej przekątnej (przeciwne zwroty): wypadkowa na tej osi = $|E_1 - E_2| = \dfrac{4kq - 2kq}{a^2} = \dfrac{2kq}{a^2}$, w stronę $Q_1$ (większy ładunek).
+  - $\vec{E}_3$ na drugiej przekątnej (oś prostopadła): wartość $\dfrac{4kq}{a^2}$.
+
+  Wektor wypadkowy jest sumą dwóch prostopadłych:
+
+  $$E_S = \sqrt{\left(\dfrac{2kq}{a^2}\right)^2 + \left(\dfrac{4kq}{a^2}\right)^2} = \dfrac{kq}{a^2}\sqrt{4 + 16} = \dfrac{kq}{a^2}\sqrt{20} = \dfrac{2\sqrt{5}\, kq}{a^2}$$
+
+  $$\boxed{E_S = \dfrac{2\sqrt{5}\, k q}{a^2} \approx \dfrac{4{,}47\, k q}{a^2}}$$
+
+  Wektor $\vec{E}_S$ leży w płaszczyźnie kwadratu, ma składowe wzdłuż obu przekątnych: jest skierowany **w stronę pustego rogu od $S$ od strony $Q_3$** (czyli "do" $Q_3$ wzdłuż jednej osi i "do" $Q_1$ wzdłuż drugiej).
+pulapka: |
+  Pułapka — zła odległość od środka kwadratu. Środek kwadratu jest w $r = a\sqrt{2}/2$ od każdego wierzchołka, NIE $a/2$ (to jest połowa boku, nie połowa przekątnej).
+
+  Pułapka — pomylenie znaku/kierunku pola ładunku ujemnego. Pole od ładunku **ujemnego** wskazuje **DO** tego ładunku (linie pola wchodzą w ładunek). Pole od **dodatniego** wskazuje **OD** ładunku.
+
+  Pułapka — dodawanie wartości zamiast wektorów. $\vec{E}_1$ i $\vec{E}_2$ są na jednej osi, ale przeciwnych zwrotów → odejmujemy. $\vec{E}_3$ na drugiej osi → dodajemy wektorowo (Pitagoras).
+
+  Pułapka — nie dostrzeżenie symetrii. Gdyby $Q_1 = Q_2 = Q_3 = -q$, wypadkowa byłaby tylko od $Q_3$ (po dwóch przekątnych dwa równe się znoszą). Tu różne wartości — symetria złamana, ale logika "wektory na jednej przekątnej się częściowo znoszą" zostaje.
+wymaganie: |
+  III.4 — pole elektrostatyczne. Natężenie pola od ładunku punktowego, superpozycja pól, kierunek wektora $\vec{E}$.
+podobne:
+  - fizyka-2025-maj-pr-6
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2024-maj-pr/zad-06.webp"
+  alt="Zadanie 6 - trzy ładunki w wierzchołkach kwadratu"
+  caption="Strona 17 arkusza CKE 2024 PR fizyka - zadanie 6 (kwadrat, Q1=-2q, Q2=-q, Q3=-2q, pole w środku)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_fizyka_2024_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={17}
+/>
+
+## Klucz — superpozycja pól elektrycznych
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Natężenie pola od ładunku punktowego**: $E = k|Q|/r^2$. Kierunek: od $+$ (na zewnątrz), do $-$ (do środka ładunku).
+
+</div>
+
+<div class="krok">
+
+**Superpozycja**: pole wypadkowe w punkcie = SUMA WEKTOROWA pól od każdego ładunku. Nigdy skalarna.
+
+</div>
+
+<div class="krok">
+
+**Geometria kwadratu**: środek kwadratu jest w $a\sqrt{2}/2$ od każdego wierzchołka. Każda przekątna ma długość $a\sqrt{2}$.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+<div>
+
+$$E_S = \dfrac{2\sqrt{5}\, k q}{a^2}$$
+
+Wektor leży w płaszczyźnie kwadratu, skierowany pod kątem od osi przekątnych (składowe $\dfrac{2kq}{a^2}$ wzdłuż przekątnej $Q_1$–$Q_2$ w stronę $Q_1$, i $\dfrac{4kq}{a^2}$ wzdłuż drugiej przekątnej w stronę $Q_3$).
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — odległość do środka</div>
+
+Od wierzchołka kwadratu do **środka** odległość = $\tfrac{a\sqrt{2}}{2}$, NIE $\tfrac{a}{2}$. Stąd $r^2 = a^2/2$, więc czynnik $2/a^2$ wszędzie.
+</div>
+
+## Po co to umieć
+
+Superpozycja pól elektrycznych = baza całej elektrostatyki: budowanie modelu dipola elektrycznego (atom, cząsteczka wody — silnie polarna), pole wewnątrz przewodników (Ezewnątrz = 0, klatka Faradaya — czemu w windzie nie ma sygnału), pole w kondensatorze płaskim (jednorodne między okładkami). Pomysł "sumuj wektorowo" przenosi się 1:1 na grawitację i magnetyzm.

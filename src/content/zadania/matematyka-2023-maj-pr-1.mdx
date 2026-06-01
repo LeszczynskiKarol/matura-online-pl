@@ -6,15 +6,21 @@ punkty: 2
 typ: otwarte-rozszerzone
 topic: ciąg geometryczny, rozpad procentowy, logarytmy
 difficulty: 4
-tresc: "W chwili $t=0$ masa substancji = $4$ g. Każdej doby ubywa $19\\%$ masy z końca poprzedniej doby. Wyznacz wzór $m(t)$ i oblicz, po ilu pełnych dobach masa po raz pierwszy będzie mniejsza od $1{,}5$ g."
+tresc: |
+  ### Zadanie 1. (0-2)
+
+  W chwili początkowej ($t=0$) masa substancji jest równa $4$ gramom. Wskutek rozpadu cząsteczek tej substancji jej masa się zmniejsza. Po każdej kolejnej dobie ubywa $19\%$ masy, jaka była na koniec doby poprzedniej. Dla każdej liczby całkowitej $t \geq 0$ funkcja $m(t)$ określa masę substancji w gramach po $t$ pełnych dobach (czas liczymy od chwili początkowej).
+
+  **Wyznacz wzór funkcji $m(t)$. Oblicz, po ilu pełnych dobach masa tej substancji będzie po raz pierwszy mniejsza od $1{,}5$ grama.**
+  **Zapisz obliczenia.**
 odpowiedz: |
   **Wzór:** $m(t) = 4 \cdot 0{,}81^t$
 
-  **Po $5$ pełnych dobach** masa po raz pierwszy < $1{,}5$ g.
+  **Po $5$ pełnych dobach** masa po raz pierwszy &lt; $1{,}5$ g.
 
   Sprawdzenie: $m(4) \approx 1{,}72$, $m(5) \approx 1{,}40$.
 pulapka: |
-  Najczęstszy błąd: $m(t) = 4 \cdot 0{,}19^t$ — ubywa $19\%$, więc **zostaje $81\%$**. Drugi błąd: nierówność $0{,}81^t < 0{,}375$ rozwiązana ze złym znakiem (przy logarytmowaniu liczb < 1 znak nierówności **się odwraca**).
+  Najczęstszy błąd: $m(t) = 4 \cdot 0{,}19^t$ — ubywa $19\%$, więc **zostaje $81\%$**. Drugi błąd: nierówność $0{,}81^t &lt; 0{,}375$ rozwiązana ze złym znakiem (przy logarytmowaniu liczb &lt; 1 znak nierówności **się odwraca**).
 wymaganie: |
   IV.7 — ciąg geometryczny; III.1 — równania i nierówności z wartością bezwzględną.
 podobne:
@@ -26,17 +32,17 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pr/ark-04.webp"
+  src="/arkusze/matematyka/2023-maj-pr/zad-01.webp"
   alt="Zadanie 1 - rozpad substancji"
   caption="Strona 4 arkusza CKE PR - zadanie 1."
   zrodlo="CKE 2023 PR"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-R0-100-2305-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_rozszerzony_arkusz_2023_zadania.pdf"
   pdfPage={4}
 />
 
 ## Co zrobić?
 
-Wyznacz funkcję $m(t)$ opisującą masę substancji po $t$ dobach. Następnie znajdź najmniejsze $t \in \mathbb{N}$, dla którego $m(t) < 1{,}5$.
+Wyznacz funkcję $m(t)$ opisującą masę substancji po $t$ dobach. Następnie znajdź najmniejsze $t \in \mathbb{N}$, dla którego $m(t) &lt; 1{,}5$.
 
 <div class="kroki-lista">
 
@@ -54,11 +60,11 @@ $$m(t) = 4 \cdot 0{,}81^t$$
 
 <div class="krok">
 
-**Ułóż nierówność $m(t) < 1{,}5$:**
+**Ułóż nierówność $m(t) &lt; 1{,}5$:**
 
-$$4 \cdot 0{,}81^t < 1{,}5$$
+$$4 \cdot 0{,}81^t &lt; 1{,}5$$
 
-$$0{,}81^t < 0{,}375$$
+$$0{,}81^t &lt; 0{,}375$$
 
 </div>
 
@@ -74,7 +80,7 @@ $$0{,}81^t < 0{,}375$$
 | 4 | $0{,}430$ | $1{,}722$ |
 | 5 | $0{,}349$ | $\mathbf{1{,}395}$ ✓ |
 
-Pierwsze $t$ z $m(t) < 1{,}5$: **$t = 5$**.
+Pierwsze $t$ z $m(t) &lt; 1{,}5$: **$t = 5$**.
 
 </div>
 
@@ -82,9 +88,9 @@ Pierwsze $t$ z $m(t) < 1{,}5$: **$t = 5$**.
 
 **Alternatywnie — logarytmy:**
 
-$$t \cdot \log 0{,}81 < \log 0{,}375$$
+$$t \cdot \log 0{,}81 &lt; \log 0{,}375$$
 
-$\log 0{,}81 < 0$, więc znak nierówności **odwraca się**:
+$\log 0{,}81 &lt; 0$, więc znak nierówności **odwraca się**:
 
 $$t > \frac{\log 0{,}375}{\log 0{,}81} = \frac{-0{,}4260}{-0{,}0915} \approx 4{,}66$$
 

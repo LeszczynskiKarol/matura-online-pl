@@ -1,0 +1,162 @@
+---
+arkusz: chemia-2023-maj-pr
+subject: chemia
+nr: 27
+punkty: 3
+typ: otwarte-krotkie
+topic: stopien utlenienia, hybrydyzacja, geranial, geraniol, wiazania pi, redukcja aldehydu
+difficulty: 3
+tresc: |
+  Ponizej przedstawiono wzory polstrukturalne (grupowe) dwoch zwiazkow zapachowych: geranialu oraz geraniolu.
+
+  Geranial: (CH3)2C=CH-CH2-CH2-C(CH3)=CH-CHO (atom wegla oznaczony litera a to atom wegla grupy aldehydowej -CHO)
+  Geraniol: (CH3)2C=CH-CH2-CH2-C(CH3)=CH-CH2-OH (atom wegla oznaczony litera a to atom wegla grupy -CH2-OH)
+
+  Na podstawie: W. Mizerski, Tablice chemiczne, Warszawa 2013.
+
+  **Zadanie 27.1. (0-2)**
+  Uzupelnij tabele. Wpisz formalny stopien utlenienia oraz typ hybrydyzacji (sp, sp2, sp3) orbitali walencyjnych atomu wegla oznaczonego litera *a* w czasteczkach geranialu i geraniolu.
+
+  |          | Stopien utlenienia | Typ hybrydyzacji |
+  |----------|--------------------|------------------|
+  | Geranial |                    |                  |
+  | Geraniol |                    |                  |
+
+  **Zadanie 27.2. (0-1)**
+  Ocen prawdziwosc ponizszych zdan. Zaznacz P, jesli zdanie jest prawdziwe, albo F - jesli jest falszywe.
+
+  1. Geraniol jest produktem redukcji geranialu. — **P / F**
+  2. W czasteczce geranialu liczba wiazan π jest wieksza niz w czasteczce geraniolu. — **P / F**
+odpowiedz: |
+  **Zadanie 27.1. (0-2)**
+
+  Atom wegla oznaczony litera *a*:
+  - W geranialu jest to atom wegla grupy aldehydowej -CHO (-C(=O)H).
+  - W geraniolu jest to atom wegla grupy hydroksymetylowej -CH2-OH.
+
+  **Stopien utlenienia atomu wegla oznaczonego litera *a*:**
+
+  Ustalamy formalny stopien utlenienia z bilansu wartosciowosci wiazan (H = +1, O = -2, C-C = 0).
+
+  *Geranial* — atom C w grupie -CHO ma wiazania: C=O (oddaje 2 elektrony do O), C-H (przyjmuje 1 elektron od H), C-C (do sasiedniego atomu wegla — 0).
+  Stopien utlenienia = +2 - 1 + 0 = **+I**
+
+  *Geraniol* — atom C w grupie -CH2-OH ma wiazania: C-O-H (oddaje 1 elektron do O), 2× C-H (przyjmuje 2× 1 = 2 elektrony od H), C-C (0).
+  Stopien utlenienia = +1 - 2 + 0 = **-I**
+
+  **Typ hybrydyzacji atomu wegla oznaczonego litera *a*:**
+
+  *Geranial* — atom C grupy -CHO tworzy 3 wiazania σ (z H, z C sasiedniego, z O) oraz 1 wiazanie π (z O w C=O) → **sp²**.
+
+  *Geraniol* — atom C grupy -CH2-OH tworzy 4 wiazania σ (2× C-H, C-C, C-O) → **sp³**.
+
+  | | Stopien utlenienia | Typ hybrydyzacji |
+  |---|---|---|
+  | Geranial | **+I** | **sp²** |
+  | Geraniol | **-I** | **sp³** |
+
+  **Zadanie 27.2. (0-1)**
+
+  1. *Geraniol jest produktem redukcji geranialu.* — **P**
+     Geranial (aldehyd) → geraniol (alkohol pierwszorzedowy). Grupa -CHO zostaje zredukowana do -CH2-OH (przylacza 2 atomy H). Stopien utlenienia atomu wegla a obniza sie z +I (w geranialu) do -I (w geraniolu) — to klasyczna redukcja.
+     Rownanie: R-CHO + 2[H] → R-CH2-OH
+
+  2. *W czasteczce geranialu liczba wiazan π jest wieksza niz w czasteczce geraniolu.* — **P**
+     - Geranial: 3 wiazania π (dwa C=C w lancuchu + jedno C=O w grupie aldehydowej).
+     - Geraniol: 2 wiazania π (dwa C=C w lancuchu; grupa -CH2-OH nie zawiera wiazania π).
+
+     3 > 2, wiec zdanie jest prawdziwe.
+
+  Schemat odpowiedzi: **P, P**
+pulapka: |
+  - **Stopien utlenienia w grupie -CHO**: typowy blad to wpisanie +III (jak w grupie -COOH). W aldehydzie atom C ma tylko JEDNO wiazanie z O (podwojne), a drugie wiazanie idzie do H — daje to +I, nie +III.
+  - **Stopien utlenienia w grupie -CH2-OH**: czesto myleny ze 0 (jak w CH3-CH3) lub +I. Poprawnie: -I, bo 2 wiazania C-H "obnizaja" stopien o 2, a jedno C-O "podnosi" o 1.
+  - **Hybrydyzacja**: atom z wiazaniem podwojnym (C=O lub C=C) zawsze sp², nie sp³. W grupie aldehydowej -CHO atom C ma wiazanie π z tlenem.
+  - **Wiazania π — pulapka grupy -OH**: niektorzy licza, ze tlen w -OH "ma wolne pary" i to liczyc do π. Wolne pary nie sa wiazaniami π. -CH2-OH = same wiazania σ.
+  - **Liczenie wiazan π w lancuchu**: w obu czasteczkach trzeba wypatrzyc dwa wiazania C=C (jedno blisko grupy izopropylidenowej (CH3)2C=CH- i jedno blizej grupy funkcyjnej -C(CH3)=CH-). Latwo pominac jedno z nich.
+wymaganie: |
+  Wymaganie ogolne I (wykorzystanie i tworzenie informacji) oraz II.4 (ustalanie stopnia utlenienia pierwiastkow w zwiazkach); III (chemia organiczna — budowa i wlasciwosci aldehydow i alkoholi, reakcje redukcji grupy karbonylowej, hybrydyzacja atomu wegla sp/sp²/sp³, wiazania σ i π).
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2023-maj-pr/zad-27.webp"
+  alt="Zadanie 27 - chemia 2023 PR"
+  caption="Strona arkusza CKE 2023 PR chemia - zadanie 27."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_chemia_2023_rozszerzony_arkusz_zadania_pytania.pdf"
+  pdfPage={23}
+/>
+
+## Rozwiazanie
+
+### Krok 1. Identyfikacja atomu wegla oznaczonego litera *a*
+
+Strzalka *a* na obu wzorach wskazuje atom wegla **grupy funkcyjnej**:
+- w **geranialu** — atom C grupy aldehydowej **-CHO** (czyli -C(=O)H),
+- w **geraniolu** — atom C grupy hydroksymetylowej **-CH2-OH**.
+
+### Krok 2. Formalny stopien utlenienia atomu C
+
+Reguly: H ma stopien utlenienia +I, O ma -II, wiazanie C-C jest "neutralne" (kazdy C zabiera po jednym elektronie). Sumujemy wklady od kazdego sasiada:
+- za kazde wiazanie do bardziej elektroujemnego atomu (O) — atom C "traci" elektron (+1 za pojedyncze, +2 za podwojne),
+- za kazde wiazanie do mniej elektroujemnego atomu (H) — atom C "zyskuje" elektron (-1),
+- C-C: 0.
+
+**Geranial, atom C w grupie -CHO:**
+
+Wiazania: 1× C=O, 1× C-H, 1× C-C.
+Stopien utlenienia = (+2) + (-1) + 0 = **+I**
+
+**Geraniol, atom C w grupie -CH2-OH:**
+
+Wiazania: 1× C-O, 2× C-H, 1× C-C.
+Stopien utlenienia = (+1) + (-2) + 0 = **-I**
+
+### Krok 3. Typ hybrydyzacji atomu C
+
+Liczymy liczbe wiazan σ (i ewentualnie wolnych par elektronowych — atom C ich tu nie ma).
+
+**Geranial (-CHO):** atom C tworzy 3 wiazania σ (do C sasiedniego, do H, do O) + 1 wiazanie π (w C=O). 3 grupy ligandowe → **sp²**, plaska geometria trygonalna, kat ≈ 120°.
+
+**Geraniol (-CH2-OH):** atom C tworzy 4 wiazania σ (2× C-H, 1× C-C, 1× C-O), brak wiazan π. 4 grupy ligandowe → **sp³**, geometria tetraedryczna, kat ≈ 109,5°.
+
+### Krok 4. Wypelniona tabela (Zadanie 27.1)
+
+| | Stopien utlenienia | Typ hybrydyzacji |
+|---|---|---|
+| **Geranial** | **+I** | **sp²** |
+| **Geraniol** | **-I** | **sp³** |
+
+### Krok 5. Ocena zdan (Zadanie 27.2)
+
+**Zdanie 1:** *Geraniol jest produktem redukcji geranialu.* → **P (prawda)**
+
+Geranial to aldehyd, geraniol to alkohol pierwszorzedowy. Przejscie aldehyd → alkohol pierwszorzedowy to redukcja:
+
+R-CHO + 2[H] → R-CH₂-OH
+
+Praktycznie w laboratorium realizuje sie ja np. za pomoca NaBH₄ lub LiAlH₄. Stopien utlenienia atomu wegla a obniza sie z +I do -I — to potwierdza, ze nastapila redukcja.
+
+**Zdanie 2:** *W czasteczce geranialu liczba wiazan π jest wieksza niz w czasteczce geraniolu.* → **P (prawda)**
+
+Liczenie wiazan π:
+- **Geranial**: 2× C=C w lancuchu wegla + 1× C=O w grupie -CHO = **3 wiazania π**
+- **Geraniol**: 2× C=C w lancuchu wegla + 0 w grupie -CH2-OH (same wiazania σ) = **2 wiazania π**
+
+3 > 2, wiec zdanie jest prawdziwe. Roznica wynika z tego, ze redukcja grupy karbonylowej C=O do hydroksylowej C-OH "rozbija" jedno wiazanie π (zamienia je na dwa wiazania σ: jedno C-H i jedno O-H, plus pojedyncze wiazanie σ C-O).
+
+### Schemat odpowiedzi
+
+**27.1:**
+
+| | Stopien utlenienia | Typ hybrydyzacji |
+|---|---|---|
+| Geranial | +I | sp² |
+| Geraniol | -I | sp³ |
+
+**27.2:** P, P

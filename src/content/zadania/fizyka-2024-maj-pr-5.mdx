@@ -1,0 +1,126 @@
+---
+arkusz: fizyka-2024-maj-pr
+subject: fizyka
+nr: 5
+punkty: 5
+typ: otwarte-krotkie
+topic: grawitacja, prawo powszechnego ciążenia, punkt Lagrange'a, równowaga sił
+difficulty: 4
+tresc: |
+  ### Zadanie 5.
+
+  Masa Ziemi $M_Z$ jest 81,28 razy większa od masy Księżyca $M_K$. Średnia odległość między środkami Ziemi i Księżyca wynosi $|ZK| = 384\,400\ \mathrm{km}$.
+
+  ### Zadanie 5.1. (0–2)
+
+  Oceń prawdziwość poniższych stwierdzeń. Zaznacz P, jeśli stwierdzenie jest prawdziwe, albo F – jeśli jest fałszywe.
+
+  | | | P / F |
+  |---|---|---|
+  | 1. | Wartość siły, z jaką Ziemia działa na Księżyc, jest większa od wartości siły, z jaką Księżyc działa na Ziemię. | P / F |
+  | 2. | Średnie przyśpieszenie grawitacyjne Księżyca w polu Ziemi jest mniejsze od średniego przyśpieszenia grawitacyjnego Ziemi w polu Księżyca. | P / F |
+
+  ### Zadanie 5.2. (0–3)
+
+  Oblicz odległość $|ZP|$ punktu $P$, leżącego na odcinku $ZK$, w którym wypadkowa siła grawitacji działająca na ciało próbne pochodząca od Ziemi i Księżyca jest równa zero. Zapisz obliczenia.
+odpowiedz: |
+  **5.1.**
+
+  1. III zasada Newtona: $F_{Z \to K} = F_{K \to Z}$ (siły wzajemnego oddziaływania równe co do wartości). → twierdzenie "większa" = **F**.
+
+  2. $a = F/m$. Te same siły, ale Ziemia ma $\sim 81$ razy większą masę → $a_{Z} = F/M_Z$ JEST $\sim 81$ razy mniejsze od $a_K = F/M_K$.
+     - "$a_K$ w polu Ziemi" = $G M_Z / r^2$ (duże).
+     - "$a_Z$ w polu Księżyca" = $G M_K / r^2$ (małe).
+     - Stąd $a_K > a_Z$ → twierdzenie "$a_K &lt; a_Z$" = **F**.
+
+  Odpowiedź: **FF**.
+
+  **5.2.** W punkcie $P$ między Ziemią a Księżycem siły grawitacji od Z i K na ciało próbne są **przeciwnie skierowane** i równe co do wartości.
+
+  Oznaczmy $|ZP| = x$, $|PK| = d - x$, gdzie $d = 384\,400$ km. Warunek:
+
+  $$\dfrac{G M_Z m}{x^2} = \dfrac{G M_K m}{(d-x)^2}$$
+
+  $$\dfrac{M_Z}{M_K} = \dfrac{x^2}{(d-x)^2} = 81{,}28$$
+
+  $$\dfrac{x}{d-x} = \sqrt{81{,}28} \approx 9{,}016$$
+
+  $$x = 9{,}016 (d - x) = 9{,}016 d - 9{,}016 x$$
+
+  $$10{,}016 x = 9{,}016 d$$
+
+  $$x = \dfrac{9{,}016}{10{,}016} \cdot d \approx 0{,}9001 \cdot 384\,400 \approx 346\,000\ \mathrm{km}$$
+
+  $$\boxed{|ZP| \approx 346\,000\ \mathrm{km} \approx 3{,}46 \cdot 10^5\ \mathrm{km}}$$
+
+  (Sprawdzenie: $|PK| \approx 38\,400$ km — punkt znacznie bliżej Księżyca, mimo że Księżyc jest ~81× lżejszy. To słuszne, bo siła $\propto 1/r^2$, a stosunek odległości = $\sqrt{81} = 9$.)
+pulapka: |
+  Pułapka 5.1.1 — myślenie "Ziemia jest większa, więc działa silniej". III zasada N. mówi że siły wzajemne SĄ RÓWNE. Co innego — **skutki** (przyśpieszenia) różnią się, bo $a = F/m$.
+
+  Pułapka 5.1.2 — pomylenie "$a$ Księżyca w polu Z" vs "$a$ Ziemi w polu K". W obu przypadkach jest ta sama $F$ wzajemna, ale dzielimy przez masę DRUGIEGO ciała. Stąd ciało lżejsze ma większe $a$.
+
+  Pułapka 5.2 — wyciągnięcie pierwiastka tylko z liczby, nie z całego wyrażenia. $\dfrac{x}{d-x} = \sqrt{M_Z/M_K}$, NIE $\sqrt{x/(d-x)} = M_Z/M_K$.
+
+  Pułapka 5.2 — położenie punktu PO ZEWNĘTRZNEJ stronie Księżyca (tj. $x > d$). Tam siły byłyby SKIEROWANE W TĘ SAMĄ STRONĘ (obie do środka układu Z-K), więc nigdy się nie zrównoważą.
+wymaganie: |
+  II.7 — prawo powszechnego ciążenia. Pole grawitacyjne, równowaga sił grawitacyjnych. III zasada Newtona.
+podobne:
+  - fizyka-2023-maj-pr-5
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2024-maj-pr/zad-05.webp"
+  alt="Zadanie 5 - grawitacja Ziemia-Księżyc, punkt równowagi"
+  caption="Strona 15-16 arkusza CKE 2024 PR fizyka - zadanie 5 (Mz/Mk = 81,28, ZK = 384 400 km, punkt zerowej siły wypadkowej)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_fizyka_2024_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={15}
+/>
+
+## Klucz — grawitacja dwóch ciał
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Prawo powszechnego ciążenia**: $F = G \dfrac{M_1 M_2}{r^2}$. Siła jest **wzajemna** — III zas. N. zawsze dotrzymana.
+
+</div>
+
+<div class="krok">
+
+**Pole grawitacyjne** (przyśpieszenie w danym punkcie): $g(r) = G M / r^2$. Zależy od masy ŹRÓDŁA pola, nie od masy ciała próbnego.
+
+</div>
+
+<div class="krok">
+
+**Punkt zerowej wypadkowej** między dwiema masami: $x/(d-x) = \sqrt{M_1/M_2}$. To NIE jest klasyczny punkt Lagrange'a $L_1$ (ten dodatkowo uwzględnia siłę odśrodkową w układzie obracającym się), ale geometryczny "punkt grawitacyjnej równowagi".
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+<div>
+
+**5.1.** **FF**
+
+**5.2.** $|ZP| = \dfrac{\sqrt{M_Z/M_K}}{1 + \sqrt{M_Z/M_K}} \cdot d \approx 346\,000\ \mathrm{km}$
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — III zasada Newtona</div>
+
+Ziemia i Księżyc działają na siebie SIŁAMI O TYCH SAMYCH WARTOŚCIACH. Pomyłka "Ziemia działa silniej" = klasyczny błąd intuicji. Dopiero **przyśpieszenia** różnią się odwrotnie proporcjonalnie do mas.
+</div>
+
+## Po co to umieć
+
+Punkt równowagi grawitacyjnej między Ziemią a Księżycem jest podstawą koncepcji **punktów Lagrange'a** (L1-L5), w których ustawia się sondy kosmiczne: SOHO (L1 Słońce-Ziemia), JWST (L2 Słońce-Ziemia, 1.5 mln km od Ziemi), Planeta (L1 obserwacje słońca). Misja Apollo 11 pokonywała ten punkt po ~4 dniach lotu — od niego Księżyc "ciągnął mocniej" niż Ziemia.

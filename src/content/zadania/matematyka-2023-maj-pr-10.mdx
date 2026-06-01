@@ -6,7 +6,18 @@ punkty: 4
 typ: otwarte-rozszerzone
 topic: szereg geometryczny, geometria, twierdzenie Pitagorasa
 difficulty: 5
-tresc: "$K_1$ kwadrat o boku $a$. $K_{n}$ — kwadrat z wierzchołkami na bokach $K_{n-1}$ dzielącymi bok w stosunku $1:3$. Obwody kwadratów tworzą nieskończony ciąg geometryczny. Oblicz sumę."
+tresc: |
+  ### Zadanie 10. (0-4)
+
+  Określamy kwadraty $K_1, K_2, K_3, \ldots$ następująco:
+  - $K_1$ jest kwadratem o boku długości $a$
+  - $K_2$ jest kwadratem, którego każdy wierzchołek leży na innym boku kwadratu $K_1$ i dzieli ten bok w stosunku $1 : 3$
+  - $K_3$ jest kwadratem, którego każdy wierzchołek leży na innym boku kwadratu $K_2$ i dzieli ten bok w stosunku $1 : 3$
+  - i ogólnie, dla każdej liczby naturalnej $n \geq 2$, $K_n$ jest kwadratem, którego każdy wierzchołek leży na innym boku kwadratu $K_{n-1}$ i dzieli ten bok w stosunku $1 : 3$.
+
+  Obwody wszystkich kwadratów określonych powyżej tworzą nieskończony ciąg geometryczny. Na rysunku przedstawiono kwadraty utworzone w sposób opisany powyżej.
+
+  **Oblicz sumę wszystkich wyrazów tego nieskończonego ciągu. Zapisz obliczenia.**
 odpowiedz: |
   **Suma: $S = \frac{8a(4+\sqrt{10})}{3}$**
 
@@ -24,11 +35,11 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pr/ark-16.webp"
+  src="/arkusze/matematyka/2023-maj-pr/zad-10.webp"
   alt="Zadanie 10 - szereg geometryczny z kwadratów"
   caption="Strona 16 arkusza CKE PR - zadanie 10."
   zrodlo="CKE 2023 PR"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-R0-100-2305-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_rozszerzony_arkusz_2023_zadania.pdf"
   pdfPage={16}
 />
 
@@ -52,13 +63,13 @@ $$b_2 = \sqrt{\left(\frac{a}{4}\right)^2 + \left(\frac{3a}{4}\right)^2} = \sqrt{
 
 $$q = \frac{L_2}{L_1} = \frac{4 \cdot a\sqrt{10}/4}{4a} = \frac{\sqrt{10}}{4}$$
 
-Sprawdzenie: $\frac{\sqrt{10}}{4} \approx 0{,}79 < 1$, więc szereg jest zbieżny.
+Sprawdzenie: $\frac{\sqrt{10}}{4} \approx 0{,}79 &lt; 1$, więc szereg jest zbieżny.
 
 </div>
 
 <div class="krok">
 
-**Wzór na sumę nieskończonego ciągu geometrycznego (przy $|q| < 1$):**
+**Wzór na sumę nieskończonego ciągu geometrycznego (przy $|q| &lt; 1$):**
 
 $$S = \frac{L_1}{1 - q}$$
 
@@ -90,14 +101,14 @@ $$\boxed{S = \frac{8a(4 + \sqrt{10})}{3}}$$
 
   **Pominięcie racjonalizacji.** Wynik z $\sqrt{10}$ w mianowniku — zostaje 0 punktów za końcową formę (treść wymaga estetycznego zapisu).
 
-  **Brak sprawdzenia zbieżności.** Wzór $S = \frac{a_1}{1-q}$ działa tylko gdy $|q| < 1$. Tutaj $\frac{\sqrt{10}}{4} \approx 0{,}79 < 1$ ✓.
+  **Brak sprawdzenia zbieżności.** Wzór $S = \frac{a_1}{1-q}$ działa tylko gdy $|q| &lt; 1$. Tutaj $\frac{\sqrt{10}}{4} \approx 0{,}79 &lt; 1$ ✓.
 </div>
 
 ## Po co to umieć
 
 **Suma nieskończonego ciągu geometrycznego:**
 
-$$S = \frac{a_1}{1 - q} \quad \text{dla } |q| < 1$$
+$$S = \frac{a_1}{1 - q} \quad \text{dla } |q| &lt; 1$$
 
 **Typowy schemat** zadań o „nieskończonej spirali figur":
 1. Wyznacz parametr drugiej figury (z Pitagorasa lub trygonometrii).

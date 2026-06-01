@@ -7,7 +7,11 @@ typ: otwarte-rozszerzone
 topic: ciągi arytmetyczne i geometryczne, układ równań
 difficulty: 5
 tresc: |
-  Trzywyrazowy ciąg $(x, y, z)$ jest geometryczny i rosnący. Suma wyrazów tego ciągu jest równa $105$. Liczby $x$, $y$ oraz $z$ są — odpowiednio — pierwszym, drugim oraz szóstym wyrazem ciągu arytmetycznego $(a_n)$. Oblicz $x$, $y$ oraz $z$.
+  Trzywyrazowy ciąg $(x, y, z)$ jest geometryczny i rosnący. Suma wyrazów tego ciągu jest równa $105$. Liczby $x$, $y$ oraz $z$ są — odpowiednio — pierwszym, drugim oraz szóstym wyrazem ciągu arytmetycznego $(a_n)$, określonego dla każdej liczby naturalnej $n \geq 1$.
+
+  ### Zadanie 7. (0–4)
+
+  **Oblicz $x$, $y$ oraz $z$. Zapisz obliczenia.**
 odpowiedz: |
   x = 5, y = 20, z = 80 (iloraz q = 4, różnica r = 15)
 pulapka: |
@@ -24,11 +28,11 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z tym zadaniem
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2024-maj-pr/ark-10.webp"
+  src="/arkusze/matematyka/2024-maj-pr/zad-07.webp"
   alt="Zadanie 7 - strona 10 arkusza CKE"
   caption="Strona 10 arkusza CKE z trescia zadania 7."
   zrodlo="CKE"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/matematyka/MMAP-R0-100-2405-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_rozszerzony_arkusz_2024_zadania.pdf"
   pdfPage={10}
 />
 
@@ -97,7 +101,7 @@ Wtedy $r = 15$, $y = 5 + 15 = 20$, $z = 5 + 75 = 80$.
 
 <div class="krok">
 
-**Sprawdzenie.** Suma: $5 + 20 + 80 = 105$ ✓. Iloraz geometryczny: $\tfrac{20}{5} = 4$, $\tfrac{80}{20} = 4$ ✓. Ciąg rosnący: $5 < 20 < 80$ ✓.
+**Sprawdzenie.** Suma: $5 + 20 + 80 = 105$ ✓. Iloraz geometryczny: $\tfrac{20}{5} = 4$, $\tfrac{80}{20} = 4$ ✓. Ciąg rosnący: $5 &lt; 20 &lt; 80$ ✓.
 
 </div>
 
@@ -136,7 +140,7 @@ Bezpieczna procedura: przenieść wszystko na jedną stronę ($r^2 - 3xr = 0$) i
 
 Słowo „rosnący" w treści **eliminuje** przypadek ciągu stałego. Gdyby treść mówiła „niemalejący", to $r = 0$ byłby dopuszczalny i mielibyśmy dwa rozwiązania: $(35, 35, 35)$ oraz $(5, 20, 80)$.
 
-W matematycznym zapisie: „rosnący" = $a_n < a_{n+1}$ (ścisła nierówność).
+W matematycznym zapisie: „rosnący" = $a_n &lt; a_{n+1}$ (ścisła nierówność).
 </div>
 
 ## Punktacja CKE

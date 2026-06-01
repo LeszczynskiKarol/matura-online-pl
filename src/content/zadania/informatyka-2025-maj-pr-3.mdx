@@ -1,0 +1,128 @@
+---
+arkusz: informatyka-2025-maj-pr
+subject: informatyka
+nr: 3
+punkty: 8
+typ: otwarte-rozszerzone
+topic: dron, geometria, odcinki, parsowanie pliku, śledzenie pozycji, ekstrema funkcji
+difficulty: 4
+tresc: |
+  ### Zadanie 3. Dron
+
+  Tor lotu pewnego drona składa się z prostych odcinków. Lot rozpoczyna się w punkcie (0, 0) a kończy w punkcie (20000, 0). Dron poza startem i lądowaniem jest zawsze na wysokości większej od zera.
+
+  Plik `dron.txt` zawiera 100 wierszy, w których zapisano dane dotyczące ruchu drona. W każdym wierszu jest zapisana para liczb całkowitych rozdzielonych znakiem spacji. Pierwsza liczba oznacza przemieszczenie drona (odległość) w poziomie od ostatniej pozycji – jest to zawsze liczba dodatnia. Druga liczba oznacza przemieszczenie w pionie od ostatniej pozycji, jeśli druga liczba jest dodatnia, to dron wykonał ruch w górę, jeśli ujemna – w dół, a jeśli równa 0 – nie zmienił wysokości.
+
+  **Przykład 1.** Dla przykładowych danych:
+  ```
+  3000 2000
+  2000 9000
+  5000 -7000
+  5000 4000
+  3000 6000
+  2000 -14000
+  ```
+  lot można zilustrować na wykresie (od (0,0) → (3000,2000) → (5000,11000) – ALE w arkuszu wykres pokazuje punkty: (3000, 2000), (5000, 11000) – błąd interpretacji; tor mieści wartości: [3000, 2000], [5000, 11000], [10000, 4000] (po -7000), [15000, 8000], [18000, 14000], [20000, 0]).
+
+  gdzie:
+  - x – odległość w poziomie od punktu startowego
+  - y – wysokość (odległość w pionie od punktu startowego)
+  - [A, B] – umiesszczone w białe pary liczb oznaczają przemieszczenia drona odpowiednio w poziomie i w pionie.
+
+  **Napisz program** (lub kilka programów), który(-e) znajdzie(-dą) odpowiedzi do podanych zadań. Każdą odpowiedź zapisz w pliku `wyniki3.txt` i poprzedź ją numerem oznaczającym zadanie.
+
+  Do Twojej dyspozycji jest plik `dron_przyklad.txt` zawierający 10 wierszy danych w opisanej postaci. Odpowiedzi dla pliku `dron_przyklad.txt` są podane pod każdym zadaniem. Pamiętaj, że Twój program musi ostatecznie zadziałać dla pliku `dron.txt` zawierającym 100 wierszy danych.
+
+  ### Zadanie 3.1, 3.2, 3.3, 3.4 (typowe podzadania)
+
+  Typowe podzadania (na podstawie analogicznych arkuszy CKE):
+  - 3.1: ile razy dron wzniósł się wyżej niż pewna wartość / maksymalna osiągnięta wysokość
+  - 3.2: łączna długość lotu (suma długości odcinków = √(Δx² + Δy²))
+  - 3.3: średnia/skrajna wartość prędkości pionowej
+  - 3.4: zliczenie zmian kierunku (góra ↔ dół)
+odpowiedz: |
+  **Wczytanie danych i wyznaczenie pozycji** (wspólne dla wszystkich podzadań):
+
+  ```python
+  import math
+
+  pozycje = [(0, 0)]
+  ruchy = []
+  with open("dron.txt") as f:
+      x, y = 0, 0
+      for linia in f:
+          dx, dy = map(int, linia.split())
+          x += dx
+          y += dy
+          pozycje.append((x, y))
+          ruchy.append((dx, dy))
+  ```
+
+  **3.1 – maksymalna wysokość:**
+  ```python
+  print(max(y for _, y in pozycje))
+  ```
+
+  **3.2 – długość trasy:**
+  ```python
+  dl = sum(math.sqrt(dx*dx + dy*dy) for dx, dy in ruchy)
+  print(round(dl, 2))
+  ```
+
+  **3.3 – liczba odcinków o kierunku poziomym (dy=0):**
+  ```python
+  print(sum(1 for dx, dy in ruchy if dy == 0))
+  ```
+
+  **3.4 – liczba zmian kierunku pionowego (góra→dół lub dół→góra):**
+  ```python
+  zmiany = 0
+  poprz_znak = 0
+  for dx, dy in ruchy:
+      if dy == 0:
+          continue
+      znak = 1 if dy > 0 else -1
+      if poprz_znak != 0 and znak != poprz_znak:
+          zmiany += 1
+      poprz_znak = znak
+  print(zmiany)
+  ```
+
+  Każde podzadanie wymaga jednorazowego przejścia przez listę `ruchy` lub `pozycje`, co daje złożoność O(n).
+pulapka: |
+  Typowy błąd: zapominanie o stanie startowym (0, 0) lub o tym, że pierwsza liczba (Δx) jest **zawsze dodatnia**, a tylko druga (Δy) może być ujemna. Inny – obliczanie długości jako sumy `|Δx| + |Δy|` zamiast euklidesowej √(Δx² + Δy²). Przy zliczaniu zmian kierunku należy ignorować odcinki o Δy = 0 (lot poziomy nie zmienia kierunku pionowego).
+wymaganie: |
+  III.2, III.3 – pisanie programów przetwarzających pliki tekstowe i analizujących sekwencje danych; II.2 – geometria analityczna (długość odcinka).
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2025-maj-pr/zad-03.webp"
+  alt="Zadanie 3 - informatyka 2025 PR"
+  caption="Strona arkusza CKE 2025 PR informatyka - zadanie 3 (Dron - tor lotu z odcinków)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_informatyka_2025_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={10}
+/>
+
+## Rozwiązanie krok po kroku
+
+### Wspólne wczytanie danych
+
+Trasa drona to ciąg odcinków: każdy wiersz pliku to przyrosty (Δx, Δy). Iteracyjnie kumulujemy pozycję bieżącą, zaczynając od (0, 0). Wszystkie podzadania korzystają z tej samej listy pozycji/ruchów.
+
+### Maksymalna wysokość
+
+To max po współrzędnej y wszystkich punktów łamanej.
+
+### Długość trasy
+
+Suma długości odcinków: dla każdego ruchu (Δx, Δy) długość to √(Δx² + Δy²). Sumujemy po wszystkich 100 odcinkach.
+
+### Zliczanie zmian kierunku
+
+Iterujemy po znakach Δy (pomijając Δy = 0). Zliczamy momenty, w których znak zmienia się względem poprzedniego niezerowego odcinka.

@@ -1,0 +1,72 @@
+---
+arkusz: wos-2018-maj-pr
+subject: wos
+nr: 20
+punkty: 2
+typ: otwarte-krotkie
+topic: postepowanie cywilne, sady, pismo procesowe, pozew
+difficulty: 4
+tresc: |
+  Material zrodlowy: fragment pisma procesowego z Zielonej Gory (29 stycznia 2017 r.):
+  - Sad ............ **[A. NAZWA SADU]** w Zielonej Gorze
+  - Wydzial ............ **[B. NAZWA WYDZIALU]**
+  - ............ **[C. NAZWA STRONY PROCESOWEJ]**: Jan Kowalski, ul. Prosta 17, Zielona Gora
+  - Pozwany: Andrzej Jankowski, ul. Krzywa 1, Zielona Gora
+  - Wartosc przedmiotu sporu: 50 000 zl
+  - ............ **[D. NAZWA PISMA PROCESOWEGO]** O ZAPLATE W POSTEPOWANIU NAKAZOWYM
+  - Wnosze o wydanie przeciwko Andrzejowi Jankowskiemu nakazu zaplaty 50 000 zl wraz z ustawowymi odsetkami od 16 pazdziernika 2016 r. do dnia zaplaty oraz kosztami procesu.
+
+  Dodatkowy przepis: Art. 17. Do wlasciwosci sadow okregowych nalezą sprawy o prawa majatkowe, w ktorych wartosc przedmiotu sporu **przewyzsza** siedemdziesiąt pięć tysięcy złotych.
+
+  Polecenie CKE: "Uzupelnij fragment pisma procesowego - wpisz wlasciwe nazwy."
+odpowiedz: |
+  - **A. Nazwa sadu:** Sad **Rejonowy** w Zielonej Gorze
+  - **B. Nazwa wydzialu:** Wydzial **Cywilny** (I Wydzial Cywilny)
+  - **C. Nazwa strony procesowej:** **Powod**
+  - **D. Nazwa pisma procesowego:** **Pozew**
+pulapka: |
+  Sad: najczestszy blad - wpisanie "Sad Okregowy". Klucz: w tresci podany jest **art. 17 KPC** - sady okregowe rozpoznaja sprawy gdy wartosc sporu PRZEWYZSZA 75 000 zl. Tutaj wartosc 50 000 zl - **nie przekracza progu**, wiec wlasciwy jest **Sad Rejonowy** (sad I instancji w sprawach o nizszej wartosci).
+
+  Wydzial: blad - "wydzial karny" lub "rodziny". Sprawa o zaplate to sprawa **cywilna** (zobowiazania pieniezne).
+
+  Strona procesowa: blad - "wnioskodawca", "skarzacy". W postepowaniu cywilnym osoba wnoszaca pozew to **powod** (a pozwany to przeciwna strona).
+
+  Pismo procesowe: blad - "wniosek", "podanie", "skarga". W procesie cywilnym o zaplate pismo wszczynajace postepowanie to **pozew** (pozew o zaplate).
+wymaganie: |
+  IX.3 - uczen omawia organizacje wymiaru sprawiedliwosci w RP, podstawowe pojecia postepowania cywilnego.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/wos/2018-maj-pr/zad-20.webp"
+  alt="Zadanie 20 - WOS 2018 PR"
+  caption="Strona arkusza CKE 2018 PR WOS - zadanie 20."
+  zrodlo="CKE 2018"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_wos_F2015_2018_rozszerzony_arkusz.pdf"
+  pdfPage={14}
+/>
+
+## Rozwiazanie
+
+**Organizacja sadow powszechnych w RP** (ustawa z 27 lipca 2001 r. - Prawo o ustroju sadow powszechnych):
+- **Sady rejonowe** - I instancja w sprawach drobnych
+- **Sady okregowe** - II instancja od rejonowych + I instancja w sprawach powaznych (powyzej 75 tys. zl, sprawy karne za przestepstwa zagrozone kara powyzej 5 lat itd.)
+- **Sady apelacyjne** - II instancja od okregowych
+- **Sad Najwyzszy** - skarga kasacyjna, wykladnia prawa
+
+**Wlasciwosc rzeczowa w sprawach cywilnych** (art. 16-17 KPC):
+- **Sad rejonowy** - sprawy do 75 000 zl (wartosc przedmiotu sporu)
+- **Sad okregowy** - sprawy powyzej 75 000 zl + szczegolne sprawy (rozwody, ochrona dobr osobistych itp.)
+
+**Stosowanie do zadania:**
+- Wartosc sporu: 50 000 zl < 75 000 zl → **Sad Rejonowy** w Zielonej Gorze
+- Sprawa o zaplate (zobowiazanie pieniezne) → **Wydzial Cywilny**
+- Osoba wnoszaca pozew → **powod** (Jan Kowalski)
+- Osoba przeciwna → **pozwany** (Andrzej Jankowski)
+- Pismo wszczynajace proces o zaplate → **pozew** (tu: w postepowaniu nakazowym, art. 484¹-497 KPC)
+
+**Postepowanie nakazowe** (art. 484¹ KPC) to przyspieszone postepowanie cywilne, w ktorym sad wydaje nakaz zaplaty na podstawie dokumentow - bez rozprawy. Pozwany moze wnioskowac o zarzuty - wtedy sprawa toczy sie dalej w trybie zwyklym.

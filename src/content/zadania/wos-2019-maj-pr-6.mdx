@@ -1,0 +1,50 @@
+---
+arkusz: wos-2019-maj-pr
+subject: wos
+nr: 6
+punkty: 1
+typ: otwarte-krotkie
+topic: wspolczynnik Giniego, PKB per capita, nierownosci dochodowe
+difficulty: 4
+tresc: |
+  Material zrodlowy: tabela ze wspolczynnikiem Giniego (im wyzszy, tym wieksze nierownosci) i PKB per capita (USD) dla 5 panstw - Dania: 0,247 / 56 444; Haiti: 0,595 / 784; Japonia: 0,249 / 38 440; Nigeria: 0,429 / 1 994; Rosja: 0,375 / 27 834.
+
+  Polecenie CKE: "Rozstrzygnij, czy w przypadku panstw przedstawionych w tabeli wystepuje zaleznosc miedzy PKB per capita a rozwarstwieniem spolecznym. Swoj wybor uzasadnij, przytaczajac dane."
+odpowiedz: |
+  Rozstrzygniecie: TAK, wystepuje zaleznosc - im wyzsze PKB per capita, tym nizsze rozwarstwienie spoleczne (nizszy wspolczynnik Giniego), choc nie jest to zaleznosc idealna.
+  Uzasadnienie z danymi: Panstwa o najwyzszym PKB per capita maja najnizszy Gini - Dania (PKB 56 444 USD, Gini 0,247) i Japonia (PKB 38 440 USD, Gini 0,249). Natomiast Haiti o najnizszym PKB per capita (784 USD) ma najwyzszy wspolczynnik Giniego (0,595). Nigeria (1 994 USD, Gini 0,429) potwierdza wzorzec. Wyjatek lekko zaburzajacy: Rosja (PKB 27 834 USD, ale Gini 0,375 wyzszy niz w Japonii o nizszym PKB) - co wskazuje, ze zaleznosc jest tendencja, nie regula.
+pulapka: |
+  Pulapka: stwierdzenie braku zaleznosci poniewaz Rosja ma "wyjatek". Klucz CKE: zaleznosc ISTNIEJE jako ogolna tendencja - 4 z 5 panstw potwierdzaja wzorzec, a Rosja go nie obala. Drugi blad: nie przytoczenie konkretnych danych (sam opis bez liczb = 0 pkt).
+wymaganie: |
+  III.2 - analizuje dane ekonomiczno-spoleczne; rozumie wskazniki rozwoju.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/wos/2019-maj-pr/zad-06.webp"
+  alt="Zadanie 6 - WOS 2019 PR"
+  caption="Strona arkusza CKE 2019 PR WOS - zadanie 6 (Gini vs PKB per capita)."
+  zrodlo="CKE 2019"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_wos_F2015_2019_rozszerzony_arkusz.pdf"
+  pdfPage={4}
+/>
+
+## Rozwiazanie
+
+**Rozstrzygniecie:** zaleznosc wystepuje - **odwrotna**: wyzsze PKB per capita = nizsze nierownosci dochodowe (nizszy Gini).
+
+**Uzasadnienie z danymi:**
+
+| Panstwo | PKB per capita (USD) | Gini |
+|---|---|---|
+| Dania | 56 444 (najwyzsze) | 0,247 (najnizszy) |
+| Japonia | 38 440 | 0,249 |
+| Rosja | 27 834 | 0,375 |
+| Nigeria | 1 994 | 0,429 |
+| Haiti | 784 (najnizsze) | 0,595 (najwyzszy) |
+
+Kraje bogate (Dania, Japonia) maja silne mechanizmy redystrybucji (progresywny PIT, transfery socjalne, panstwo dobrobytu), co obniza Gini. Kraje ubogie (Haiti, Nigeria) maja slabe instytucje fiskalne i wysokie nierownosci. **Wyjatek (Rosja)** - mimo stosunkowo wysokiego PKB ma wyzszy Gini niz Japonia (efekt prywatyzacji lat 90., oligarchizacji). Zaleznosc to **tendencja, nie scisly determinizm**.

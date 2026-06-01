@@ -1,0 +1,76 @@
+---
+arkusz: fizyka-2025-maj-pr
+subject: fizyka
+nr: 11
+punkty: 4
+typ: otwarte-rozszerzone
+topic: fizyka atomowa, model Bohra atomu wodoru, poziomy energetyczne, fotony
+difficulty: 3
+tresc: |
+  Atom wodoru emituje fotony przy przejściach elektronu pomiędzy poziomami energetycznymi.
+  Energie poziomów dane są wzorem:
+  $$E_n = -\dfrac{13{,}6 \text{ eV}}{n^2}$$
+  gdzie $n = 1, 2, 3, \ldots$ to główna liczba kwantowa.
+
+  **Zadanie 11.1. (0–1)** Dokończ zdanie. Zaznacz odpowiedź A, B albo C oraz jej uzasadnienie
+  1, 2 albo 3. (Porównanie długości fali $\lambda_{53}$ z $\lambda_{43}$ oraz energii fotonu
+  $E_{53}$ z $E_{43}$ przy przejściach $5 \to 3$ i $4 \to 3$.)
+
+  **Zadanie 11.2. (0–3)** Energię fotonu emitowanego podczas przejścia $4 \to 2$ w atomie wodoru
+  oznaczymy jako $E_{42}$.
+
+  Przyjmij model zjawiska, w którym:
+  - przed emisją fotonu atom wodoru spoczywał
+  - pomijamy energię kinetyczną atomu wodoru uzyskaną podczas odrzutu przy emisji fotonu
+    (ta energia jest o kilka rzędów wielkości mniejsza od energii emitowanego fotonu).
+
+  Oblicz $E_{42}$. Zapisz obliczenia. Wynik podaj w eV.
+odpowiedz: |
+  **11.1.** Energia fotonu emitowanego przy przejściu $n_2 \to n_1$:
+  $$E_{ij} = |E_{n_1} - E_{n_2}| = 13{,}6 \cdot \left(\dfrac{1}{n_1^2} - \dfrac{1}{n_2^2}\right) \text{ eV}$$
+
+  - $E_{53} = 13{,}6 \cdot (1/9 - 1/25) \approx 0{,}967 \text{ eV}$
+  - $E_{43} = 13{,}6 \cdot (1/9 - 1/16) \approx 0{,}661 \text{ eV}$
+
+  Wnioskujemy: $E_{53} > E_{43}$, a ponieważ $\lambda = hc/E$, to $\lambda_{53} &lt; \lambda_{43}$
+  (krótsza fala = większa energia fotonu).
+
+  **11.2.** Obliczamy energie poziomów:
+  - $E_4 = -13{,}6/16 = -0{,}85 \text{ eV}$
+  - $E_2 = -13{,}6/4 = -3{,}4 \text{ eV}$
+
+  Energia fotonu:
+  $$E_{42} = E_4 - E_2 = -0{,}85 - (-3{,}4) = 2{,}55 \text{ eV}$$
+
+  Można też zapisać: $E_{42} = 13{,}6 \cdot (1/4 - 1/16) = 13{,}6 \cdot 3/16 = 2{,}55 \text{ eV}$.
+pulapka: |
+  Najczęstsze błędy: pomylenie znaku (energie poziomów są ujemne, fotonu — dodatnia), użycie
+  $1/n$ zamiast $1/n^2$, zła kolejność liczb kwantowych (zawsze odejmujemy od poziomu niższego
+  — większy $1/n^2$ — poziom wyższy), pomylenie $\lambda$ z $f$ (krótsza fala = większa
+  częstotliwość = większa energia).
+wymaganie: |
+  XI.2, XI.3 — model Bohra atomu wodoru, kwantowanie energii, emisja fotonów,
+  zasada zachowania energii w atomie.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2025-maj-pr/zad-11.webp"
+  alt="Zadanie 11 z arkusza maturalnego CKE 2025 maj PR fizyka — atom wodoru, poziomy energetyczne"
+  caption="Zadanie 11 — arkusz maturalny CKE, maj 2025, fizyka, poziom rozszerzony"
+  zrodlo="CKE 2025"
+  pdfUrl="/arkusze/fizyka/2025-maj-pr/arkusz.pdf"
+  pdfPage={24}
+/>
+
+## Rozwiązanie krok po kroku
+
+### 11.1 — relacje między przejściami
+
+Obliczamy energie obu fotonów i porównujemy.
+
+### 11.2 — energia fotonu 4→2
+
+$E_{42} = E_4 - E_2 = 13{,}6 \cdot 3/16 = 2{,}55 \text{ eV}$.

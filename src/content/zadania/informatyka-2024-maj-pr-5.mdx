@@ -1,0 +1,60 @@
+---
+arkusz: informatyka-2024-maj-pr
+subject: informatyka
+nr: 5
+punkty: 1
+typ: zamkniete-pf
+topic: protokoły sieciowe, HTTP, FTP, DHCP, DNS
+difficulty: 2
+tresc: |
+  **Zadanie 5. (0–1)**
+
+  Oceń prawdziwość podanych zdań. Zaznacz **P**, jeśli zdanie jest prawdziwe, albo **F** — jeśli jest fałszywe.
+
+  | Nr | Zdanie | P / F |
+  |---|---|---|
+  | 1. | HTTP to protokół komunikacyjny opisujący sposób przekazywania poczty elektronicznej w internecie. | P / F |
+  | 2. | FTP to protokół zamiany nazw domenowych na adresy IP. | P / F |
+  | 3. | DHCP to protokół umożliwiający hostom uzyskanie od serwera danych konfiguracyjnych, np. adresu IP, adresu bramy sieciowej, adresu serwera DNS. | P / F |
+odpowiedz: |
+  **1. F (fałsz).** HTTP (HyperText Transfer Protocol) służy do przesyłania stron WWW. Do przekazywania poczty elektronicznej służą SMTP (wysyłanie) oraz POP3/IMAP (odbieranie).
+
+  **2. F (fałsz).** FTP (File Transfer Protocol) służy do przesyłania plików. Za zamianę nazw domenowych na adresy IP odpowiada protokół DNS (Domain Name System).
+
+  **3. P (prawda).** DHCP (Dynamic Host Configuration Protocol) faktycznie dynamicznie przydziela hostom konfigurację sieciową: adres IP, maskę podsieci, adres bramy domyślnej, adres serwera DNS.
+pulapka: |
+  Typowe pomyłki: (1) HTTP i SMTP — obie zaczynają się literą H/S i są "protokołami internetowymi", ale HTTP to WWW a SMTP poczta; (2) mylenie FTP (pliki) z DNS (nazwy); (3) DHCP myli się czasem z DNS, ale DHCP to konfiguracja klienta (dostaje IP), DNS to tłumaczenie nazwa→IP.
+wymaganie: |
+  IV. Komputer i sieć komputerowa, narzędzia informatyki — protokoły warstwy aplikacji modelu TCP/IP, podstawowe usługi sieciowe.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2024-maj-pr/zad-05.webp"
+  alt="Zadanie 5 - informatyka 2024 PR"
+  caption="Strona arkusza CKE 2024 PR informatyka - zadanie 5 (Protokoły sieciowe)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_informatyka_2024_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={12}
+/>
+
+## Rozwiązanie
+
+**F, F, P**
+
+**Mini-szkoła protokołów aplikacyjnych:**
+
+| Protokół | Rola | Port (default) |
+|---|---|---|
+| HTTP / HTTPS | przesyłanie stron WWW | 80 / 443 |
+| FTP | przesyłanie plików | 21 |
+| SMTP | wysyłanie poczty | 25 / 587 |
+| POP3 / IMAP | pobieranie poczty | 110 / 143 |
+| DNS | nazwa domeny → adres IP | 53 |
+| DHCP | przydzielanie konfiguracji IP | 67/68 |
+
+Trzecie zdanie opisuje DHCP poprawnie — to jedyne PRAWDA w zestawie.

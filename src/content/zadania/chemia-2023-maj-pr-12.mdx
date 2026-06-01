@@ -1,0 +1,70 @@
+---
+arkusz: chemia-2023-maj-pr
+subject: chemia
+nr: 12
+punkty: 2
+typ: otwarte-krotkie
+topic: stechiometria, mieszaniny soli, procent masowy, węglany
+difficulty: 4
+tresc: |
+  W celu określenia zawartości węglanu wapnia w mieszaninie dwóch soli, zawierającej również węglan magnezu, próbkę tej mieszaniny o masie $2{,}84\,\text{g}$ roztworzono w kwasie. Podczas analizy przebiegły reakcje chemiczne:
+
+  $$\text{CaCO}_{3(s)} + 2\text{H}_3\text{O}^+_{(aq)} \rightarrow \text{Ca}^{2+}_{(aq)} + \text{CO}_{2(g)} + 3\text{H}_2\text{O}_{(c)}$$
+
+  $$\text{MgCO}_{3(s)} + 2\text{H}_3\text{O}^+_{(aq)} \rightarrow \text{Mg}^{2+}_{(aq)} + \text{CO}_{2(g)} + 3\text{H}_2\text{O}_{(c)}$$
+
+  W wyniku zachodzących reakcji otrzymano $672\,\text{cm}^3$ tlenku węgla(IV) w przeliczeniu na warunki normalne.
+
+  **Oblicz wyrażoną w procentach masowych zawartość $\text{CaCO}_3$ w badanej próbce mieszaniny.**
+odpowiedz: |
+  **Dane**: $m_{\text{mieszanina}} = 2{,}84\,\text{g}$; $V_{CO_2} = 672\,\text{cm}^3 = 0{,}672\,\text{dm}^3$ (warunki normalne).
+
+  **Krok 1: liczba moli CO₂**
+
+  $$n_{CO_2} = \frac{V}{V_m} = \frac{0{,}672}{22{,}4} = 0{,}03\,\text{mol}$$
+
+  **Krok 2: układ równań**
+
+  Z równań reakcji: 1 mol $\text{CaCO}_3 \to$ 1 mol CO₂; 1 mol $\text{MgCO}_3 \to$ 1 mol CO₂.
+
+  Niech $x$ = liczba moli $\text{CaCO}_3$, $y$ = liczba moli $\text{MgCO}_3$.
+
+  - Bilans CO₂: $x + y = 0{,}03$
+  - Bilans masy: $100x + 84y = 2{,}84$ (M(CaCO₃)=100, M(MgCO₃)=84)
+
+  **Krok 3: rozwiązanie**
+
+  Z (1): $y = 0{,}03 - x$. Wstawiamy do (2):
+  $$100x + 84(0{,}03 - x) = 2{,}84$$
+  $$100x + 2{,}52 - 84x = 2{,}84$$
+  $$16x = 0{,}32 \Rightarrow x = 0{,}02\,\text{mol}$$
+
+  **Krok 4: procent masowy CaCO₃**
+
+  $$m_{CaCO_3} = 0{,}02 \cdot 100 = 2{,}00\,\text{g}$$
+
+  $$\%_{CaCO_3} = \frac{2{,}00}{2{,}84} \cdot 100\% \approx 70{,}4\%$$
+
+  **Odpowiedź**: zawartość $\text{CaCO}_3$ ≈ **70,4% masowych**.
+pulapka: |
+  - Sprawdź jednostki: $V_m = 22{,}4\,\text{dm}^3/\text{mol}$ w warunkach normalnych (0°C, 1013 hPa).
+  - **Mas molowe**: M(CaCO₃) = 40+12+48 = 100; M(MgCO₃) = 24+12+48 = 84.
+  - Stosunek molowy w reakcji: 1 mol soli → 1 mol CO₂.
+  - Często mylony jest stosunek mas (% mas.) ze stosunkiem molowym.
+wymaganie: |
+  II.3 — obliczenia stechiometryczne, mieszaniny, prawo zachowania masy.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2023-maj-pr/zad-12.webp"
+  alt="Zadanie 12 - chemia 2023 PR"
+  caption="Arkusz CKE 2023 PR chemia - zadanie 12 (mieszanina CaCO3/MgCO3, procent masowy)."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_chemia_2023_rozszerzony_arkusz_zadania_pytania.pdf"
+  pdfPage={13}
+/>

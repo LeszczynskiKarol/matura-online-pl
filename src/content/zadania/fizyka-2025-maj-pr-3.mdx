@@ -1,0 +1,61 @@
+---
+arkusz: fizyka-2025-maj-pr
+subject: fizyka
+nr: 3
+punkty: 4
+typ: otwarte-rozszerzone
+topic: fale dźwiękowe, załamanie fali, długość fali, częstotliwość
+difficulty: 3
+tresc: |
+  Fala dźwiękowa rozchodzi się w powietrzu z prędkością $v_p = 340 \text{ m/s}$,
+  a w wodzie — z prędkością $v_w = 1450 \text{ m/s}$. Fala pada z powietrza na powierzchnię
+  wody i częściowo wnika do wody.
+
+  **Zadanie 3.1. (0–1)** Dokończ zdanie. Zaznacz odpowiedź A, B albo C oraz jej uzasadnienie
+  1, 2 albo 3. (Porównanie długości fali i częstotliwości po przejściu do wody.)
+
+  **Zadanie 3.2. (0–3)** Wiązka fali pada z powietrza na powierzchnię wody pod kątem
+  $\alpha_p = 45^\circ$. Narysuj dalszy bieg wiązki fali po wniknięciu do wody (kąt załamania
+  zaznacz względem normalnej).
+odpowiedz: |
+  **3.1.** Częstotliwość fali nie zmienia się przy przejściu między ośrodkami (wymusza ją źródło).
+  Ponieważ $v_w > v_p$, długość fali w wodzie jest większa: $\lambda = v/f$.
+
+  **3.2.** Prawo Snella: $\dfrac{\sin\alpha_p}{\sin\alpha_w} = \dfrac{v_p}{v_w}$.
+  Podstawiając $\sin 45^\circ = \tfrac{\sqrt{2}}{2}$:
+  $$\sin\alpha_w = \dfrac{v_w}{v_p}\sin\alpha_p = \dfrac{1450}{340} \cdot \dfrac{\sqrt{2}}{2} \approx 3{,}01$$
+
+  Wartość $\sin\alpha_w > 1$, więc występuje całkowite wewnętrzne odbicie — fala NIE wnika do wody
+  pod tym kątem. Faktycznie krytyczny kąt $\alpha_{kr} = \arcsin(v_p/v_w) \approx 13{,}6^\circ$.
+  Dla $\alpha_p = 45^\circ > \alpha_{kr}$ wiązka ulega całkowitemu odbiciu od powierzchni wody.
+pulapka: |
+  Najczęstsze błędy: pomylenie kierunku — uczniowie często sądzą, że dźwięk w wodzie zwalnia
+  (analogia ze światłem w wodzie), a w rzeczywistości przyspiesza. Pominięcie warunku
+  całkowitego odbicia — bezmyślne podstawianie do prawa Snella daje $\sin > 1$.
+wymaganie: |
+  VI.1, VI.2, VI.5 — fale mechaniczne, prawo załamania, całkowite wewnętrzne odbicie,
+  niezależność częstotliwości od ośrodka.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2025-maj-pr/zad-03.webp"
+  alt="Zadanie 3 z arkusza maturalnego CKE 2025 maj PR fizyka — fale dźwiękowe powietrze/woda"
+  caption="Zadanie 3 — arkusz maturalny CKE, maj 2025, fizyka, poziom rozszerzony"
+  zrodlo="CKE 2025"
+  pdfUrl="/arkusze/fizyka/2025-maj-pr/arkusz.pdf"
+  pdfPage={7}
+/>
+
+## Rozwiązanie krok po kroku
+
+### 3.1 — relacje między ośrodkami
+
+Częstotliwość = stała, prędkość rośnie → długość fali rośnie.
+
+### 3.2 — kąt graniczny
+
+Sprawdzamy czy kąt padania przekracza kąt graniczny dla przejścia z ośrodka wolniejszego do
+szybszego. Jeśli tak — całkowite odbicie.

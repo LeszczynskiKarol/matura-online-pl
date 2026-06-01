@@ -6,7 +6,11 @@ punkty: 1
 typ: zamkniete-pf
 topic: potęgi, podzielność, liczba cyfr
 difficulty: 3
-tresc: "Oceń P/F dwa zdania o liczbie $4^{12} \\cdot 5^{24}$: podzielność przez $20$, liczba 25-cyfrowa."
+tresc: |
+  Oceń prawdziwość poniższych stwierdzeń. Wybierz **P**, jeśli stwierdzenie jest prawdziwe, albo **F** — jeśli jest fałszywe.
+
+  - Liczba naturalna $4^{12} \cdot 5^{24}$ jest podzielna przez $20$. — **P / F**
+  - Liczba naturalna $4^{12} \cdot 5^{24}$ jest w zapisie dziesiętnym liczbą 25-cyfrową. — **P / F**
 odpowiedz: PP
 pulapka: |
   Najczęstszy błąd: nieuznanie, że $4^{12} \cdot 5^{24} = 10^{24}$. Klucz: $4^{12} = 2^{24}$, więc iloczyn to $2^{24} \cdot 5^{24} = 10^{24}$. To liczba $1\underbrace{00\ldots0}_{24}$ — łatwo sprawdzić oba stwierdzenia.
@@ -21,11 +25,11 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2026-maj-pp/ark-06.webp"
+  src="/arkusze/matematyka/2026-maj-pp/zad-05.webp"
   alt="Zadanie 5 - potęgi i podzielność"
   caption="Strona 6 arkusza CKE 2026 PP - zadanie 5."
   zrodlo="CKE 2026"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_arkusz_2026_wersja_a.pdf"
   pdfPage={6}
 />
 

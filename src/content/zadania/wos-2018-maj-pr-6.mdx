@@ -1,0 +1,59 @@
+---
+arkusz: wos-2018-maj-pr
+subject: wos
+nr: 6
+punkty: 2
+typ: otwarte-krotkie
+topic: geografia spoleczna, dochody, wojewodztwa, zroznicowanie regionalne
+difficulty: 3
+tresc: |
+  Material zrodlowy: Mapa 1 "Nominalne dochody brutto w sektorze gospodarstw domowych na 1 mieszkanca wedlug wojewodztw w 2013 roku" (Maly Rocznik Statystyczny Polski 2016). Mapa przedstawia 16 wojewodztw RP pokolorowanych wedlug skali: 20-24, 24-28, 28-32 tys. zl - im ciemniejszy kolor, tym wyzsze dochody.
+
+  Najwyzsze dochody (32 tys. zl, najciemniejsze) wystepuja w wojewodztwie mazowieckim i slaskim. Najnizsze (20-24 tys., najjasniejsze) - w wojewodztwach wschodnich (warminsko-mazurskie, podlaskie, lubelskie, podkarpackie) oraz swietokrzyskim i opolskim.
+
+  Polecenie CKE (zadanie z mapy, pelna tresc na webp): zazwyczaj zadanie typu "podaj nazwe wojewodztwa o najwyzszych dochodach" lub "wymien dwa wnioski" - student musi odczytac z legendy mapy.
+odpowiedz: |
+  **Wnioski z mapy:**
+
+  1. **Najwyzsze nominalne dochody brutto na 1 mieszkanca** (powyzej 28 tys. zl, w przedziale 28-32 tys.) wystepuja w wojewodztwach **mazowieckim** i **slaskim** - oba sa silnie zurbanizowane i uprzemyslowione, z aglomeracja warszawska i Gornoslasko-Zaglebiowska Metropolia.
+
+  2. **Najnizsze dochody** (20-24 tys. zl) charakteryzuja wojewodztwa **Polski wschodniej** (tzw. "sciana wschodnia": warminsko-mazurskie, podlaskie, lubelskie, podkarpackie) oraz **swietokrzyskie**.
+
+  3. Mapa pokazuje wyrazna **dychotomie wschod-zachod** w dochodach - tradycyjny problem zroznicowania regionalnego Polski, czesciowo uwarunkowany historycznie (zabory) i strukturalnie (uprzemyslowienie, urbanizacja, kapital zagraniczny lokuje sie glownie w Polsce zachodniej i centralnej).
+pulapka: |
+  Czesty blad: pomylenie skali kolorow - im CIEMNIEJSZY tym wyzszy dochod (a nie odwrotnie). Trzeba sprawdzic legende.
+  Drugi blad: wskazanie tylko mazowieckiego bez slaskiego (na mapie sa DWA wojewodztwa z najciemniejszym kolorem).
+wymaganie: |
+  III.4 - uczen analizuje sytuacje spoleczno-ekonomiczna wybranych regionow Polski na podstawie danych statystycznych.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/wos/2018-maj-pr/zad-06.webp"
+  alt="Zadanie 6 - WOS 2018 PR"
+  caption="Strona arkusza CKE 2018 PR WOS - zadanie 6."
+  zrodlo="CKE 2018"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_wos_F2015_2018_rozszerzony_arkusz.pdf"
+  pdfPage={4}
+/>
+
+## Rozwiazanie
+
+**Czytanie mapy choropletycznej** to klucz do zadania:
+- legenda u dolu mapy podaje 3 przedzialy dochodow: 20-24, 24-28, 28-32 tys. zl
+- najciemniejszy odcien = najwyzszy dochod (32 tys.)
+- najjasniejszy = najnizszy (20-24 tys.)
+
+**Wojewodztwa najbogatsze (najciemniejszy odcien):**
+- mazowieckie (Warszawa - sektor uslug, korporacje, administracja centralna)
+- slaskie (Katowice, GZM - przemysl ciezki, gornictwo, motoryzacja)
+
+**Wojewodztwa najbiedniejsze (najjasniejszy):**
+- "sciana wschodnia": warminsko-mazurskie, podlaskie, lubelskie, podkarpackie - dominacja rolnictwa, slabsza infrastruktura, mniej kapitalu zagranicznego
+- swietokrzyskie - polozenie peryferyjne, struktura gospodarcza
+
+Tego typu zroznicowanie Polski wschod-zachod ma wymiar **historyczny** (granica zaboru austriackiego i rosyjskiego vs pruskiego, gdzie urbanizacja byla szybsza) i **strukturalny** (lokalizacja inwestycji zagranicznych, autostrady, lotniska).

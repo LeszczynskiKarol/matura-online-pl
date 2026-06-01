@@ -1,0 +1,128 @@
+---
+arkusz: fizyka-2024-maj-pr
+subject: fizyka
+nr: 10
+punkty: 4
+typ: otwarte-krotkie
+topic: kinematyka relatywistyczna, energia całkowita, energia spoczynkowa, czynnik Lorentza
+difficulty: 5
+tresc: |
+  ### Zadanie 10.
+
+  W akceleratorze elektron został rozpędzony do prędkości $v_B = 2 \cdot 10^8\ \mathrm{m/s}$. Energia spoczynkowa elektronu wynosi $E_0 \approx 5{,}11 \cdot 10^5\ \mathrm{eV}$ (czyli $m_e c^2 \approx 0{,}511$ MeV). Prędkość światła $c = 3 \cdot 10^8\ \mathrm{m/s}$. Ładunek elementarny $e = 1{,}6 \cdot 10^{-19}\ \mathrm{C}$.
+
+  ### Zadanie 10.1. (0–1)
+
+  Oblicz iloraz energii całkowitej elektronu $E_B$ do jego energii spoczynkowej $E_0$. Wynik podaj zaokrąglony do drugiego miejsca po przecinku.
+
+  ### Zadanie 10.2. (0–3)
+
+  Aby rozpędzić elektron ze stanu spoczynku (punkt $A$) do prędkości $v_B$, między punktami $A$ i $B$ zastosowano różnicę potencjałów $U_{AB}$. Oblicz wartość tej różnicy potencjałów $U_{AB}$. Zapisz obliczenia.
+odpowiedz: |
+  **10.1.** Czynnik Lorentza:
+
+  $$\gamma = \dfrac{1}{\sqrt{1 - v^2/c^2}} = \dfrac{1}{\sqrt{1 - (2/3)^2}} = \dfrac{1}{\sqrt{1 - 4/9}} = \dfrac{1}{\sqrt{5/9}} = \dfrac{3}{\sqrt{5}} = \dfrac{3\sqrt{5}}{5}$$
+
+  $$\gamma \approx \dfrac{3 \cdot 2{,}236}{5} \approx 1{,}342$$
+
+  Energia całkowita $E = \gamma m c^2 = \gamma E_0$, więc:
+
+  $$\dfrac{E_B}{E_0} = \gamma \approx 1{,}34$$
+
+  $$\boxed{\dfrac{E_B}{E_0} \approx 1{,}34}$$
+
+  **10.2.** Praca pola elektrycznego = energia kinetyczna elektronu po przyśpieszeniu:
+
+  $$e \cdot U_{AB} = E_{kin} = E_B - E_0 = (\gamma - 1) E_0$$
+
+  $$U_{AB} = \dfrac{(\gamma - 1) E_0}{e}$$
+
+  W elektronowoltach (od razu): $U_{AB}\, [\mathrm{V}] = (\gamma - 1) \cdot E_0\, [\mathrm{eV}]$
+
+  $$U_{AB} = (1{,}342 - 1) \cdot 5{,}11 \cdot 10^5 = 0{,}342 \cdot 5{,}11 \cdot 10^5 \approx 1{,}748 \cdot 10^5\ \mathrm{V}$$
+
+  $$\boxed{U_{AB} \approx 1{,}75 \cdot 10^5\ \mathrm{V} = 175\ \mathrm{kV}}$$
+
+  **Sprawdzenie nierelatywistyczne**: gdybyśmy użyli $E_{kin} = \tfrac{1}{2}m v^2$, dostalibyśmy:
+  $$U = \dfrac{m v^2}{2e} = \dfrac{9{,}11 \cdot 10^{-31} \cdot (2 \cdot 10^8)^2}{2 \cdot 1{,}6 \cdot 10^{-19}} \approx 1{,}14 \cdot 10^5\ \mathrm{V} = 114\ \mathrm{kV}$$
+
+  Czyli błąd ~35%. To pokazuje, że dla $v = 2/3 \cdot c$ ABSOLUTNIE TRZEBA użyć wzorów relatywistycznych.
+pulapka: |
+  Pułapka 10.1 — użycie wzoru nierelatywistycznego. Dla $v = 2 \cdot 10^8$ m/s $= 0{,}667c$ błąd jest już duży — efekty relatywistyczne są istotne (czynnik Lorentza $\gamma \neq 1$).
+
+  Pułapka 10.1 — pomylenie $E_B$ i $E_{kin}$. **Energia całkowita** $E = \gamma m c^2$ (suma spoczynkowej i kinetycznej). **Energia kinetyczna** $E_{kin} = (\gamma - 1) m c^2$. Iloraz $E_B/E_0 = \gamma$, NIE $\gamma - 1$.
+
+  Pułapka 10.2 — użycie $e \cdot U = \tfrac{1}{2} m v^2$ (klasyczny wzór). To poprawne TYLKO dla $v \ll c$. Dla relatywistycznych: $e U = (\gamma - 1) m c^2$.
+
+  Pułapka — pomyłka jednostek. $E_0 = 0{,}511$ MeV $= 5{,}11 \cdot 10^5$ eV. Skoro $eU = E_{kin}$, a $E_{kin}$ wyrażone w eV daje od razu $U$ w V (definicja eV: 1 eV = energia uzyskana przez elektron pokonujący napięcie 1 V).
+wymaganie: |
+  VI.2 — fizyka relatywistyczna. Energia całkowita, kinetyczna i spoczynkowa, czynnik Lorentza, praca pola elektrycznego dla cząstki relatywistycznej.
+podobne:
+  - fizyka-2025-maj-pr-10
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2024-maj-pr/zad-10.webp"
+  alt="Zadanie 10 - elektron przyspieszony w akceleratorze, relatywistyczna kinematyka"
+  caption="Strona 24-25 arkusza CKE 2024 PR fizyka - zadanie 10 (elektron v_B = 2e8 m/s, E_0 = 0,511 MeV)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_fizyka_2024_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={24}
+/>
+
+## Klucz — kinematyka relatywistyczna
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Czynnik Lorentza**: $\gamma = \dfrac{1}{\sqrt{1 - v^2/c^2}}$. Dla $v = 2c/3$: $\gamma = 3/\sqrt{5} \approx 1{,}34$. Dla $v \to c$: $\gamma \to \infty$.
+
+</div>
+
+<div class="krok">
+
+**Energia w SRT**:
+- **Spoczynkowa**: $E_0 = m c^2$ (Einstein, 1905).
+- **Całkowita**: $E = \gamma m c^2$.
+- **Kinetyczna**: $E_{kin} = E - E_0 = (\gamma - 1) m c^2$.
+
+</div>
+
+<div class="krok">
+
+**Praca pola elektrycznego**: $W = q U$. Zamienia się na energię kinetyczną cząstki. Dla elektronu w polu $U$: $eU = (\gamma - 1) m_e c^2$.
+
+</div>
+
+<div class="krok">
+
+**Elektronowolt (eV)** to jednostka energii zdefiniowana tak, że $1\,\mathrm{eV} = 1\,\mathrm{e} \cdot 1\,\mathrm{V}$. Stąd: jeśli wyrazisz $E_{kin}$ w eV, to $U$ liczbowo = $E_{kin}/e$ w V.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+<div>
+
+**10.1.** $\dfrac{E_B}{E_0} = \gamma \approx 1{,}34$
+
+**10.2.** $U_{AB} = (\gamma - 1) \cdot 0{,}511\ \mathrm{MV} \approx 175\ \mathrm{kV}$
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — kiedy relatywistycznie</div>
+
+Reguła praktyczna: jeśli $v > 0{,}1\,c$, użyj relatywistycznie (błąd nierelatywistyczny > 0.5%). Tu $v/c = 2/3 \approx 0{,}67$ — **konieczne** wzory relatywistyczne.
+</div>
+
+## Po co to umieć
+
+LHC w CERN: protony przyśpieszone do $\gamma \approx 7000$ ($v \approx 0{,}999999990\,c$, energia 6.5 TeV). Tomografia PET: pozytrony (antyelektrony) z rozpadu izotopu (F-18, C-11) anihilują z elektronami → 2 fotony 511 keV (= $m_e c^2$, dokładnie energia spoczynkowa elektronu). Lampa rentgenowska: elektrony przyśpieszone przez $U \sim 100$ kV (rzeczywista praktyka).

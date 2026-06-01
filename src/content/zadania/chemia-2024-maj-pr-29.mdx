@@ -1,0 +1,50 @@
+---
+arkusz: chemia-2024-maj-pr
+subject: chemia
+nr: 29
+punkty: 1
+typ: otwarte-rozszerzone
+topic: chemia organiczna, cukry, degradacja Ruffa, stereochemia
+difficulty: 5
+tresc: |
+  Rozstrzygnij, czy degradacja Ruffa D-mannozy prowadzi do otrzymania tej samej aldopentozy, co degradacja Ruffa D-glukozy. Odpowiedź uzasadnij. W uzasadnieniu porównaj budowę cząsteczek obu aldoheksoz.
+
+  Wzór D-mannozy (przedstawiony w arkuszu):
+  - CHO
+  - HO—H (C2)
+  - HO—H (C3)
+  - H—OH (C4)
+  - H—OH (C5)
+  - CH₂OH (C6)
+odpowiedz: |
+  Patrz materiał źródłowy CKE — **TAK, prowadzą do tej samej aldopentozy (D-arabinozy)**.
+
+  **Uzasadnienie**: degradacja Ruffa skraca cukier o 1 atom węgla — usuwa C1 (CHO). Wynikowa aldopentoza zaczyna się od dawnego C2 jako CHO. D-mannoza i D-glukoza różnią się TYLKO konfiguracją przy C2 (są epimerami C2):
+  - D-glukoza: H—OH przy C2 (R)
+  - D-mannoza: HO—H przy C2 (S)
+  
+  Po degradacji C2 staje się CHO (znika asymetria) → konfiguracje C3, C4, C5 są identyczne w obu cukrach → ten sam produkt: **D-arabinoza**.
+pulapka: |
+  Degradacja Ruffa to NIE prosta hydroliza — skraca łańcuch o 1 C (z aldoheksozy daje aldopentozę). Klucz: gdy dwa cukry różnią się TYLKO przy C2, po usunięciu C1 i przekształceniu C2 w CHO różnica znika.
+wymaganie: |
+  X.6 — cukry proste, stereochemia, epimery, reakcje degradacji.
+podobne:
+  - chemia-2025-maj-pr-29
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2024-maj-pr/zad-29.webp"
+  alt="Zadanie 29 - chemia 2024 PR"
+  caption="Strona arkusza CKE 2024 PR chemia — zadanie 29 (degradacja Ruffa D-mannozy vs D-glukozy)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_chemia_2024_rozszerzony_arkusz_zadania_pytania.pdf"
+  pdfPage={30}
+/>
+
+## Po co to umieć
+
+Degradacja Ruffa to klasyczna metoda chemii cukrów — używana historycznie do ustalania struktury cukrów (sekwencja redukcji długości łańcucha). Wiedza o epimerach (różniących się 1 stereocentrum) jest kluczowa dla zrozumienia enzymów epimeraz i metabolizmu cukrów.

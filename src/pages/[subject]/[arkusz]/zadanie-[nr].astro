@@ -6,7 +6,7 @@ import SiteHeader from "../../../components/SiteHeader.astro";
 import SiteFooter from "../../../components/SiteFooter.astro";
 import AudioPlayer from "../../../components/AudioPlayer.astro";
 import { siteConfig } from "../../../config/site";
-import { renderInlineMath } from "../../../lib/render-math";
+import { renderInlineMath, renderRichText } from "../../../lib/render-math";
 
 export async function getStaticPaths() {
   const zadania = await getCollection("zadania");
@@ -44,7 +44,7 @@ const url = `${siteConfig.url}/${subject.data.slug}/${arkuszSlug}/zadanie-${zada
 
 const title = `Zadanie ${zadanie.data.nr} — rozwiązanie, matura ${subject.data.nameDopelniacz} ${arkusz.data.sesja} ${arkusz.data.rok}, ${arkusz.data.poziom.toUpperCase()}`;
 const description = `Rozwiązanie krok po kroku zadania ${zadanie.data.nr} z arkusza CKE matury z ${subject.data.nameDopelniacz}, ${arkusz.data.sesja} ${arkusz.data.rok}, poziom ${poziomLabel}. ${zadanie.data.tresc}`;
-const trescHtml = renderInlineMath(zadanie.data.tresc);
+const trescHtml = renderRichText(zadanie.data.tresc);
 
 // Sąsiednie zadania (poprzednie/następne w arkuszu)
 const arkuszZadania = allZadania

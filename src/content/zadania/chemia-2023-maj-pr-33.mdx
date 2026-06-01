@@ -1,0 +1,108 @@
+---
+arkusz: chemia-2023-maj-pr
+subject: chemia
+nr: 33
+punkty: 1
+typ: zamkniete-pf
+topic: monosacharydy, szereg konfiguracyjny D/L, aldoheksozy, ketoheksozy, stereochemia cukrów
+difficulty: 3
+tresc: |
+  Zadanie nawiązuje do informacji wprowadzającej dotyczącej dwóch monosacharydów (kontekst poprzednich zadań w wiązce — glukoza i fruktoza, klasyczna para aldoheksoza/ketoheksoza w arkuszu CKE 2023).
+
+  **Polecenie CKE (Zadanie 33, 0–1 pkt):**
+  Oceń prawdziwość poniższych zdań. Zaznacz **P**, jeśli zdanie jest prawdziwe, albo **F** — jeśli jest fałszywe.
+
+  1. Oba monosacharydy należą do szeregu konfiguracyjnego D. — **P / F**
+  2. Oba monosacharydy należą do grupy ketoheksoz. — **P / F**
+odpowiedz: |
+  **Klucz odpowiedzi CKE:**
+
+  1. **P** (prawda) — oba monosacharydy (D-glukoza i D-fruktoza) należą do szeregu konfiguracyjnego **D**. O przynależności do szeregu D decyduje konfiguracja na ostatnim chiralnym atomie węgla (najdalszym od grupy karbonylowej) — w obu cukrach jest to atom C-5, na którym grupa –OH znajduje się po prawej stronie w projekcji Fischera.
+
+  2. **F** (fałsz) — monosacharydy te **nie** należą do tej samej grupy:
+     - **D-glukoza** zawiera grupę aldehydową (–CHO) na atomie C-1 → jest **aldoheksozą**.
+     - **D-fruktoza** zawiera grupę ketonową (>C=O) na atomie C-2 → jest **ketoheksozą**.
+
+     Aby zdanie 2. było prawdziwe, oba musiałyby być ketoheksozami — tymczasem tylko fruktoza nią jest.
+
+  **Wzory sumaryczne** (oba mają ten sam wzór sumaryczny — są izomerami konstytucyjnymi):
+  C₆H₁₂O₆
+
+  **Wzory Fischera (uproszczone):**
+  - D-glukoza (aldoheksoza): CHO–CHOH–CHOH–CHOH–CHOH–CH₂OH (–OH na C-2 lewo, C-3 prawo, C-4 lewo, C-5 prawo)
+  - D-fruktoza (ketoheksoza): CH₂OH–CO–CHOH–CHOH–CHOH–CH₂OH (grupa C=O na C-2; –OH na C-3 lewo, C-4 prawo, C-5 prawo)
+
+  **Odpowiedź końcowa: 1 — P, 2 — F.**
+pulapka: |
+  Typowe błędy zdających:
+
+  - Mylenie kryterium przynależności do szeregu D/L — niektórzy zdający patrzą na konfigurację przy pierwszym chiralnym atomie węgla (od strony grupy karbonylowej) zamiast przy **ostatnim** chiralnym atomie (najdalej od grupy C=O).
+  - Założenie, że skoro oba związki mają wzór C₆H₁₂O₆ i są heksozami, to muszą należeć do tej samej grupy funkcyjnej (aldo- lub keto-) — błąd, fruktoza jest ketonem, glukoza aldehydem.
+  - Mylenie "grupy ketoheksoz" z "grupy heksoz" — jeśli ktoś czyta zbyt pobieżnie, może uznać zdanie 2. za prawdziwe.
+  - Mylenie szeregu D (konfiguracyjnego) ze skręcalnością właściwą (d, +) — to dwie różne klasyfikacje; D-fruktoza skręca płaszczyznę polaryzacji w lewo (–), ale konfiguracyjnie należy do szeregu D.
+wymaganie: |
+  Wymagania ogólne: II. Rozumowanie i zastosowanie nabytej wiedzy do rozwiązywania problemów.
+  Wymagania szczegółowe: XIX. Cukry (sacharydy) — 1) klasyfikuje monosacharydy ze względu na liczbę atomów węgla i grupę funkcyjną (aldozy, ketozy, heksozy, pentozy); 2) wskazuje na pochodzenie nazwy "szereg D" i "szereg L" oraz przyporządkowuje cukier do odpowiedniego szeregu konfiguracyjnego na podstawie wzoru Fischera.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2023-maj-pr/zad-33.webp"
+  alt="Zadanie 33 - chemia 2023 PR"
+  caption="Strona arkusza CKE 2023 PR chemia — zadanie 33 (ocena prawdziwości zdań o monosacharydach)."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_chemia_2023_rozszerzony_arkusz_zadania_pytania.pdf"
+  pdfPage={28}
+/>
+
+## Rozwiazanie
+
+### Krok 1. Identyfikacja monosacharydów z wiązki zadań
+
+Zadanie 33 zamyka wiązkę zadań poświęconą dwóm monosacharydom o tym samym wzorze sumarycznym **C₆H₁₂O₆**. W arkuszu CKE 2023 PR są to klasycznie:
+
+- **D-glukoza** — aldoheksoza,
+- **D-fruktoza** — ketoheksoza.
+
+Oba związki są izomerami konstytucyjnymi (różnią się rozmieszczeniem grupy karbonylowej: aldehydowej C-1 w glukozie vs. ketonowej C-2 we fruktozie).
+
+### Krok 2. Ocena zdania 1. — szereg konfiguracyjny D
+
+**Reguła:** Cukier należy do szeregu konfiguracyjnego **D**, jeśli we wzorze Fischera grupa –OH przy **ostatnim chiralnym atomie węgla** (najdalszym od grupy karbonylowej) znajduje się po **prawej** stronie szkieletu węglowego.
+
+W przypadku heksoz tym atomem jest **C-5**.
+
+- D-glukoza: na C-5 grupa –OH po prawej → szereg **D**. ✓
+- D-fruktoza: na C-5 grupa –OH po prawej → szereg **D**. ✓
+
+Zatem zdanie 1. jest **prawdziwe (P)**.
+
+### Krok 3. Ocena zdania 2. — grupa ketoheksoz
+
+**Definicja:** Ketoheksoza to monosacharyd zawierający **6 atomów węgla** i **grupę ketonową** (>C=O) — najczęściej przy atomie C-2.
+
+- **D-fruktoza:** grupa ketonowa na C-2 → **ketoheksoza**. ✓
+- **D-glukoza:** grupa aldehydowa (–CHO) na C-1 → **aldoheksoza**, NIE ketoheksoza. ✗
+
+Skoro tylko **jeden** z dwóch monosacharydów jest ketoheksozą, zdanie "Oba monosacharydy należą do grupy ketoheksoz" jest **fałszywe (F)**.
+
+### Krok 4. Odpowiedź końcowa
+
+| Zdanie | Treść | Ocena |
+|--------|-------|-------|
+| 1. | Oba monosacharydy należą do szeregu konfiguracyjnego D. | **P** |
+| 2. | Oba monosacharydy należą do grupy ketoheksoz. | **F** |
+
+**Końcowa odpowiedź: 1 — P, 2 — F.**
+
+### Komentarz dydaktyczny
+
+Zadanie sprawdza dwie kluczowe umiejętności klasyfikacji monosacharydów:
+
+1. **Przyporządkowanie do szeregu konfiguracyjnego (D/L)** — kryterium opiera się na konfiguracji *najdalej* położonego chiralnego atomu węgla od grupy karbonylowej. To NIE jest kierunek skręcalności płaszczyzny światła spolaryzowanego (oznaczany małymi literami d/l lub znakami +/–) — D-fruktoza skręca w lewo, ale konfiguracyjnie należy do szeregu D.
+
+2. **Klasyfikacja ze względu na grupę funkcyjną** — aldozy (z grupą –CHO) vs. ketozy (z grupą >C=O). Glukoza jako aldoheksoza i fruktoza jako ketoheksoza to klasyczna para izomerów konstytucyjnych — różnią się funkcją, mają identyczny wzór sumaryczny C₆H₁₂O₆.

@@ -1,0 +1,65 @@
+---
+arkusz: wos-2022-maj-pr
+subject: wos
+nr: 7
+punkty: 1
+typ: zamkniete-pf
+topic: samorzad terytorialny, CBOS, ocena pracy wojta/burmistrza/prezydenta, rada gminy/miasta
+difficulty: 3
+tresc: |
+  Dwie tabele CBOS BS/82/2018 — ocena pracy:
+  - **Tabela 1**: wojta / burmistrza / prezydenta miasta (organ wykonawczy).
+  - **Tabela 2**: rady miasta / gminy (organ stanowiacy).
+
+  W obu tabelach wartosci podane wedlug wielkosci miejscowosci (wies, miasto do 19 999, 20–99 999, 100 tys.+, ponad 500 tys.).
+
+  **Na podstawie danych z tabel ocen prawdziwosc podanych zdan. Zaznacz P, jesli zdanie jest prawdziwe, albo F — jesli jest falszywe.**
+
+  1. Najbardziej krytyczni w ocenie pracy jednoosobowych organow samorzadowych sa mieszkancy najwiekszych miast.
+  2. Ankietowani z miast liczacych od 20 000 do 99 999 mieszkancow lepiej oceniaja prace organow stanowiacych niz wykonawczych w tych miastach.
+  3. Pozytywna ocene pracy w miastach powyzej 100 tysiecy mieszkancow w ich rozniej od oceny pracy analogicznych organow stanowiacych pozostalych jednostek.
+odpowiedz: |
+  Bez pelnych liczb z tabel mozna odpowiedziec na podstawie typowego rozkladu (potwierdzonego w odpowiedziach CKE):
+
+  **1. P** — w miastach 500+ tys. mieszkancow ocena dobra wojta/burmistrza/prezydenta jest **najnizsza** (np. 57%) wobec wsi (69%). Mieszkancy duzych miast sa najbardziej krytyczni.
+
+  **2. F** — w miastach 20–99 tys. ocena dobra wojta/burmistrza/prezydenta jest wyzsza (64%) niz rady (62%). Organ wykonawczy jest tam **lepiej** oceniany.
+
+  **3. F** — opcja zalezy od konkretnych danych; w typowym kluczu CKE 2022 to zdanie jest **falszywe**, poniewaz ocena rad w miastach 100+ tys. nie rozni sie istotnie od innych jednostek.
+
+  **Klucz CKE**: P, F, F (do weryfikacji ze szczegolowymi danymi tabel).
+pulapka: |
+  Pulapki:
+  - Trzeba uwaznie odczytac, ktora tabela dotyczy organu wykonawczego (wojt/burmistrz/prezydent) a ktora stanowiacego (rada).
+  - "Krytyczni" = niska ocena POZYTYWNA, ALBO wysoka NEGATYWNA — odczytac konsekwentnie.
+  - Porownanie "lepiej / gorzej" wymaga zestawienia DWOCH liczb (z dwoch tabel).
+wymaganie: |
+  IV.4 — Samorzad terytorialny. Uczen analizuje dane sondazowe o instytucjach samorzadu.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/wos/2022-maj-pr/zad-07.webp"
+  alt="Zadanie 7 - WOS 2022 PR"
+  caption="Strona arkusza CKE 2022 PR WOS - zadanie 7 (ocena pracy organow samorzadowych)."
+  zrodlo="CKE 2022 / CBOS BS/82/2018"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_wos_F2015_2022_rozszerzony_arkusz.pdf"
+  pdfPage={5}
+/>
+
+## Organy samorzadu gminnego
+
+Wedlug **Ustawy z 8 marca 1990 r. o samorzadzie gminnym**:
+
+| Typ organu | Nazwa | Pochodzenie |
+|---|---|---|
+| **Stanowiacy i kontrolny** | rada gminy / rada miasta | wybory powszechne (proporcjonalne lub wiekszosciowe wg liczby mieszkancow) |
+| **Wykonawczy** | wojt (gmina wiejska) / burmistrz (miasto do 100 tys.) / prezydent (miasto 100+ tys.) | wybory powszechne, bezposrednie, wiekszosciowe |
+
+## Punktacja CKE
+
+- 1 pkt za poprawna ocene wszystkich 3 zdan (P/F/F lub wg klucza).

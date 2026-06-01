@@ -1,0 +1,116 @@
+---
+arkusz: fizyka-2023-maj-pr
+subject: fizyka
+nr: 5
+punkty: 4
+typ: otwarte-rozszerzone
+topic: grawitacja, ruch orbitalny, III prawo Keplera, prawo powszechnego ciążenia, orbita eliptyczna, czarna dziura supermasywna, Sagittarius A
+difficulty: 5
+tresc: |
+  Sagittarius A* (Sgr A*) to bardzo masywny obiekt znajdujący się w centrum naszej galaktyki. Gwiazda znana jako S2 obiega obiekt Sgr A* po wydłużonej orbicie eliptycznej. Parametry tego ruchu orbitalnego są następujące:
+
+  - okres obiegu S2 dookoła Sgr A* wynosi $T_{S2} = 16$ lat ziemskich
+  - najmniejsza odległość środka S2 od centrum Sgr A* jest równa $r_P = 120\ \text{au}$
+  - największa odległość środka S2 od centrum Sgr A* jest równa $r_A = 1820\ \text{au}$.
+
+  Przyjmij, że Sgr A* się nie porusza, oraz pomiń wpływ innych ciał na ruch S2. W opisanej sytuacji przedstawionej na rysunku 1. zaznaczono również wektor $\vec{v}$ prędkości środka S2 w przedstawionym położeniu na orbicie.
+
+  ### Zadanie 5.1. (0–1)
+
+  Na rysunku 2. narysuj wektor przyspieszenia $\vec{a}$ środka gwiazdy S2 w oznaczonym położeniu na orbicie. Zachowaj odpowiedni kierunek i zwrot tego wektora (długość może być dowolna).
+
+  ### Zadanie 5.2. (0–1)
+
+  Wartość prędkości środka S2 w **punkcie $P$** orbity oznaczamy jako $v_P$, a wartość prędkości środka S2 w **punkcie $A$** orbity oznaczamy jako $v_A$. Prędkość środka S2 w punkcie $P$ lub w punkcie $A$ jest prostopadła do promienia wodzącego (odcinka łączącego środki S2 i Sgr A*).
+
+  Dokończ zdanie. Zaznacz właściwą odpowiedź spośród podanych.
+
+  Iloraz $\dfrac{v_P}{v_A}$ jest równy (w zaokrągleniu do trzech cyfr znaczących):
+
+  **A.** $\dfrac{v_P}{v_A} \approx 0{,}00435$     **B.** $\dfrac{v_P}{v_A} \approx 0{,}0659$     **C.** $\dfrac{v_P}{v_A} \approx 15{,}2$     **D.** $\dfrac{v_P}{v_A} \approx 230$
+
+  ### Zadanie 5.3. (0–2)
+
+  Masę obiektu Sgr A* oznaczamy jako $M_{SA}$, a masę Słońca oznaczamy jako $M_S$. Przyjmij, że Ziemia porusza się dookoła Słońca po orbicie kołowej o promieniu $a_Z = 1{,}0\ \text{au}$ z okresem obiegu $T_Z = 1{,}0\ \text{roku}$. Długość **półosi wielkiej** orbity gwiazdy S2, poruszającej się wokół obiektu Sgr A*, zgodnie z oznaczeniami na rysunku 1. (strona 12), jest równa $\frac{|PA|}{2}$.
+
+  Oblicz iloraz $\dfrac{M_{SA}}{M_S}$. Zapisz obliczenia. Wynik podaj zaokrąglony do dwóch cyfr znaczących.
+odpowiedz: |
+  ### Zadanie 5.1.
+
+  Przyspieszenie grawitacyjne S2 zawsze skierowane jest **od środka S2 ku środkowi Sgr A*** (centrum siły). Wektor $\vec{a}$ rysujemy w środku S2, skierowany wzdłuż linii łączącej oba środki, ku Sgr A* (czyli ku ognisku elipsy, w którym leży Sgr A*).
+
+  ### Zadanie 5.2.
+
+  W punktach peryhelium ($P$) i aphelium ($A$) prędkość jest prostopadła do promienia wodzącego, więc moment pędu:
+
+  $$L = m \cdot v_P \cdot r_P = m \cdot v_A \cdot r_A$$
+
+  $$\frac{v_P}{v_A} = \frac{r_A}{r_P} = \frac{1820}{120} \approx 15{,}17 \approx 15{,}2$$
+
+  Odpowiedź: **C**.
+
+  ### Zadanie 5.3.
+
+  Półoś wielka orbity S2:
+
+  $$a_{S2} = \frac{r_P + r_A}{2} = \frac{120 + 1820}{2} = 970\ \text{au}$$
+
+  III prawo Keplera dla różnych ciał centralnych:
+
+  $$\frac{T^2}{a^3} = \frac{4\pi^2}{G M}$$
+
+  Dla Ziemi wokół Słońca i S2 wokół Sgr A*:
+
+  $$\frac{T_{S2}^2}{a_{S2}^3} \cdot M_{SA} = \frac{T_Z^2}{a_Z^3} \cdot M_S$$
+
+  $$\frac{M_{SA}}{M_S} = \frac{a_{S2}^3 / T_{S2}^2}{a_Z^3 / T_Z^2} = \left(\frac{a_{S2}}{a_Z}\right)^3 \cdot \left(\frac{T_Z}{T_{S2}}\right)^2$$
+
+  $$\frac{M_{SA}}{M_S} = \frac{970^3}{1^3} \cdot \frac{1^2}{16^2} = \frac{970^3}{256}$$
+
+  $970^3 = 9{,}13 \cdot 10^8$ (dokładniej: $970^3 = 912\,673\,000$).
+
+  $$\frac{M_{SA}}{M_S} = \frac{9{,}127 \cdot 10^8}{256} \approx 3{,}565 \cdot 10^6$$
+
+  **Odpowiedź:** $\dfrac{M_{SA}}{M_S} \approx 3{,}6 \cdot 10^6$ (Sgr A* ma masę ok. 3,6 miliona mas Słońca).
+pulapka: |
+  - III prawo Keplera w postaci $T^2 = \frac{4\pi^2}{GM} a^3$ — masa $M$ to masa ciała centralnego, NIE suma mas.
+  - Półoś wielka $a = (r_P + r_A)/2$, NIE $r_A - r_P$ ani $r_A$ same.
+  - W punktach peryhelium/aphelium $v \perp r$ — zachowanie momentu pędu daje proste $v_P r_P = v_A r_A$.
+  - 1 au = średnia odległość Ziemia–Słońce. Stosunek $a_{S2}/a_Z$ jest BEZWYMIAROWY — można zostać w au i latach.
+wymaganie: |
+  Podstawa programowa fizyki PR — dział VI (Grawitacja): prawo powszechnego ciążenia, prawa Keplera, ruch po orbicie eliptycznej, zachowanie momentu pędu.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2023-maj-pr/zad-05.webp"
+  alt="Zadanie 5 - fizyka 2023 PR"
+  caption="Strona arkusza CKE 2023 PR fizyka - zadanie 5."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_fizyka_2023_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={12}
+/>
+
+## Rozwiązanie
+
+### Zadanie 5.1.
+
+Wektor przyspieszenia $\vec{a}$ skierowany od S2 do Sgr A* (siła grawitacji = siła centralna).
+
+### Zadanie 5.2.
+
+Z zachowania momentu pędu: $v_P r_P = v_A r_A$.
+
+$$\frac{v_P}{v_A} = \frac{r_A}{r_P} = \frac{1820}{120} \approx 15{,}2 \quad \Rightarrow \quad \text{odp. C}$$
+
+### Zadanie 5.3.
+
+Półoś wielka: $a_{S2} = 970$ au.
+
+III prawo Keplera:
+
+$$\frac{M_{SA}}{M_S} = \left(\frac{970}{1}\right)^3 \cdot \left(\frac{1}{16}\right)^2 = \frac{912{,}7 \cdot 10^6}{256} \approx 3{,}6 \cdot 10^6$$

@@ -1,0 +1,146 @@
+---
+arkusz: fizyka-2024-maj-pr
+subject: fizyka
+nr: 11
+punkty: 6
+typ: otwarte-krotkie
+topic: fizyka jądrowa, rozpad beta plus, czas połowicznego rozpadu, energia wiązania, defekt masy
+difficulty: 5
+tresc: |
+  ### Zadanie 11.
+
+  Izotop fluoru ${}^{18}_{9}\mathrm{F}$ ulega rozpadowi $\beta^+$. Masy:
+  - $m_F = 17{,}99680\ \mathrm{u}$ (masa atomu ${}^{18}\mathrm{F}$),
+  - $m_X = 17{,}99477\ \mathrm{u}$ (masa atomu produktu rozpadu),
+  - $m_\beta = 0{,}00055\ \mathrm{u}$ (masa pozytonu),
+  - $m_\nu \approx 0$ (masa neutrina pomijalna).
+
+  $1\ \mathrm{u} \cdot c^2 \approx 931{,}5\ \mathrm{MeV}$.
+
+  Na wykresie podano zależność $N_F/N_0$ (stosunek liczby jąder fluoru pozostałych do początkowej) od czasu $t$.
+
+  ### Zadanie 11.1. (0–1)
+
+  Z wykresu odczytaj czas połowicznego rozpadu $T_{1/2}$ izotopu ${}^{18}\mathrm{F}$. Wynik podaj w minutach.
+
+  ### Zadanie 11.2. (0–2)
+
+  Zapisz schemat reakcji rozpadu $\beta^+$ izotopu ${}^{18}_{9}\mathrm{F}$. Podaj liczbę masową $A$, liczbę atomową $Z$ oraz symbol chemiczny jądra-produktu rozpadu (jądra $X$).
+
+  ### Zadanie 11.3. (0–3)
+
+  Oblicz energię kinetyczną unoszoną sumarycznie przez produkty rozpadu (pozyton i neutrino) wyrażoną w MeV. Załóż, że jądro fluoru przed rozpadem spoczywało, a energia odrzutu jądra-produktu jest pomijalna.
+odpowiedz: |
+  **11.1.** Z wykresu odczytujemy $t$, dla którego $N_F/N_0 = 0{,}5$. Dla ${}^{18}\mathrm{F}$: $T_{1/2} \approx 110$ min (≈ 109,77 min wg tablic).
+
+  $$\boxed{T_{1/2} \approx 110\ \mathrm{min}}$$
+
+  **11.2.** Rozpad $\beta^+$: w jądrze proton przekształca się w neutron, emitowany jest pozyton ($e^+$, czyli $\beta^+$) i neutrino elektronowe $\nu_e$:
+
+  $$p \to n + e^+ + \nu_e$$
+
+  Skutek dla jądra: $Z$ maleje o 1, $A$ bez zmian.
+
+  $${}^{18}_{9}\mathrm{F} \to {}^{18}_{8}\mathrm{O} + e^+ + \nu_e$$
+
+  Stąd: $A = 18$, $Z = 8$, jądro-produkt = **tlen** ${}^{18}\mathrm{O}$.
+
+  $$\boxed{{}^{18}_{9}\mathrm{F} \to {}^{18}_{8}\mathrm{O} + e^+ + \nu_e}$$
+
+  **11.3.** Defekt masy (uwaga: pracujemy z masami **atomowymi**, więc trzeba odjąć od masy fluoru masę produktu **plus dodatkowo** pozyton, bo masa atomu tlenu zawiera $Z=8$ elektronów, a fluoru $Z=9$ → przy przejściu jeden elektron "ucieka jako pozyton" ALE w bilansie atomowym uwzględnia to się przez dodanie 2$m_e$ do produktów):
+
+  Dla rozpadu $\beta^+$ z masami atomowymi:
+  $$\Delta m = m_F - m_X - 2 m_e$$
+
+  Gdzie $m_e = 0{,}00055\ \mathrm{u}$ (masa pozytonu = masa elektronu).
+
+  $$\Delta m = 17{,}99680 - 17{,}99477 - 2 \cdot 0{,}00055 = 17{,}99680 - 17{,}99477 - 0{,}00110$$
+
+  $$\Delta m = 0{,}00203 - 0{,}00110 = 0{,}00093\ \mathrm{u}$$
+
+  Energia wydzielona (= energia kinetyczna produktów):
+  $$Q = \Delta m \cdot c^2 = 0{,}00093 \cdot 931{,}5\ \mathrm{MeV} \approx 0{,}866\ \mathrm{MeV}$$
+
+  $$\boxed{E_{kin}^{produkty} \approx 0{,}87\ \mathrm{MeV} \approx 870\ \mathrm{keV}}$$
+
+  (Jest to maksymalna energia pozytonu w rozpadzie ${}^{18}\mathrm{F}$, znana z tablic jako $E_{max,\beta+} \approx 633\ \mathrm{keV}$ — różnica wynika z tego, że pozyton dzieli energię z neutrinem; tutaj liczymy SUMĘ obu.)
+pulapka: |
+  Pułapka 11.1 — odczyt z wykresu w niewłaściwych jednostkach (np. sekundach zamiast minutach). Sprawdź podpis osi i jednostki.
+
+  Pułapka 11.2 — pomylenie $\beta^-$ z $\beta^+$:
+  - $\beta^-$: $n \to p + e^- + \bar\nu_e$, $Z$ ROŚNIE o 1 (przykład: ${}^{14}\mathrm{C} \to {}^{14}\mathrm{N}$).
+  - $\beta^+$: $p \to n + e^+ + \nu_e$, $Z$ MALEJE o 1 (tutaj: $9 \to 8$, F → O).
+
+  Pułapka 11.3 — pominięcie czynnika $2m_e$ w defekcie masy. Przy zapisie z masami **atomowymi**: dla $\beta^+$ należy odjąć $2m_e$ (jeden elektron "zniknął" z chmury fluoru przy zmianie $Z$, drugi to wyemitowany pozyton). Dla $\beta^-$: nie odejmujemy nic (masa elektronu wyemitowanego = masa elektronu, który "doszedł" do chmury produktu).
+
+  Pułapka 11.3 — założenie, że cała energia idzie w pozyton. NIE: dzieli się między pozytonem a neutrinem (stąd CIĄGŁE widmo energii beta, w przeciwieństwie do alfa, który ma widmo dyskretne). Tu pytanie o **sumę** = znamy z bilansu masy.
+wymaganie: |
+  VII.3 — fizyka jądrowa. Rozpady promieniotwórcze ($\alpha$, $\beta^\pm$, $\gamma$), defekt masy, energia wiązania, czas połowicznego rozpadu. Bilans liczb $A$ i $Z$.
+podobne:
+  - fizyka-2023-maj-pr-11
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2024-maj-pr/zad-11.webp"
+  alt="Zadanie 11 - rozpad beta plus F-18"
+  caption="Strona 25-27 arkusza CKE 2024 PR fizyka - zadanie 11 (rozpad β+ F-18, wykres N_F/N_0(t), defekt masy)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_fizyka_2024_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={25}
+/>
+
+## Klucz — rozpady promieniotwórcze
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Rozpad $\alpha$**: ${}^A_Z X \to {}^{A-4}_{Z-2} Y + {}^4_2 \mathrm{He}$. Typowo: ciężkie jądra (uran, rad, polon).
+
+</div>
+
+<div class="krok">
+
+**Rozpad $\beta^-$**: ${}^A_Z X \to {}^A_{Z+1} Y + e^- + \bar\nu_e$. $n \to p$. Typowo: jądra z nadmiarem neutronów ($^{14}$C, $^{60}$Co, $^{137}$Cs).
+
+</div>
+
+<div class="krok">
+
+**Rozpad $\beta^+$**: ${}^A_Z X \to {}^A_{Z-1} Y + e^+ + \nu_e$. $p \to n$. Typowo: jądra z nadmiarem protonów ($^{18}$F, $^{11}$C, $^{15}$O — wszystkie używane w PET).
+
+</div>
+
+<div class="krok">
+
+**Defekt masy → energia**: $Q = \Delta m \cdot c^2$, gdzie 1 u·c² = 931,5 MeV. Energia wydziela się w postaci kinetycznej produktów + (w niektórych rozpadach) fotonu $\gamma$.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+<div>
+
+**11.1.** $T_{1/2} \approx 110$ min
+
+**11.2.** ${}^{18}_{9}\mathrm{F} \to {}^{18}_{8}\mathrm{O} + e^+ + \nu_e$ (A=18, Z=8, X = tlen)
+
+**11.3.** $E_{kin}^{produkty} \approx 0{,}87$ MeV
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — $2m_e$ dla β+</div>
+
+Gdy korzystasz z mas **atomowych** (z elektronami w chmurze), dla $\beta^+$ należy odjąć $2m_e$ od defektu masy. Dla $\beta^-$ — nie odejmujemy nic. Dla $\alpha$ — odejmujemy normalnie (cząstka $\alpha$ = jądro He, masa Helu obejmuje 2 elektrony).
+</div>
+
+## Po co to umieć
+
+${}^{18}\mathrm{F}$ to **kluczowy radiofarmaceutyk PET** (Positron Emission Tomography). Wstrzykuje się 18F-deoksyglukozę (18F-FDG), która gromadzi się w komórkach o wysokiej aktywności metabolicznej (m.in. nowotwory). Emitowane pozytony anihilują z elektronami → 2 fotony 511 keV w przeciwnych kierunkach → detekcja koincydencji → trójwymiarowy obraz aktywności metabolicznej tkanek. $T_{1/2} \approx 110$ min jest **idealny**: wystarczająco długi by zsyntetyzować, transportować i podać pacjentowi, ale wystarczająco krótki by minimalizować dawkę. F-18 produkuje się w cyklotronach przyszpitalnych: ${}^{18}\mathrm{O}(p,n){}^{18}\mathrm{F}$.

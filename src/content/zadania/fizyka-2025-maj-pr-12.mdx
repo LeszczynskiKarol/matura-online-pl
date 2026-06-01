@@ -1,0 +1,101 @@
+---
+arkusz: fizyka-2025-maj-pr
+subject: fizyka
+nr: 12
+punkty: 8
+typ: otwarte-rozszerzone
+topic: fizyka jądrowa, rozpad alfa, zasada zachowania pędu, czas połowicznego rozpadu
+difficulty: 4
+tresc: |
+  Izotop plutonu $^{238}_{94}\text{Pu}$ ulega rozpadowi promieniotwórczemu w wyniku przemiany $\alpha$.
+  Podczas rozpadu jądra tego izotopu plutonu powstają cząstka $\alpha$ oraz jądro pewnego
+  pierwiastka, który oznaczymy jako $X$.
+
+  Przyjmij, że w opisanym rozpadzie $\alpha$:
+  - iloraz masy jądra pierwiastka X i masy cząstki $\alpha$ wynosi w zaokrągleniu
+    $\dfrac{m_X}{m_\alpha} \approx 58{,}5$
+  - w chwili tuż przed opisanym rozpadem jądro plutonu $^{238}_{94}\text{Pu}$ było nieruchome
+  - wartości prędkości jądra pierwiastka X i cząstki $\alpha$ — powstałych po rozpadzie jądra
+    plutonu — są dużo mniejsze od wartości prędkości światła w próżni.
+
+  **Zadanie 12.1. (0–2)** Uzupełnij schemat rozpadu $\alpha$ jądra plutonu $^{238}_{94}\text{Pu}$
+  tak, aby powstało równanie rozpadu. Wpisz w wykropkowane miejsca w schemacie właściwe liczby:
+  atomową i masową, a pod schematem — symbol (lub nazwę) pierwiastka X, którego jądro powstaje
+  w tym rozpadzie.
+
+  **Zadanie 12.2. (0–3)** Energie kinetyczne jądra pierwiastka X i cząstki $\alpha$, tuż po
+  rozpadzie jądra $^{238}_{94}\text{Pu}$, oznaczymy — odpowiednio — jako $E_{kin\,X}$ i $E_{kin\,\alpha}$.
+
+  Oblicz iloraz $\dfrac{E_{kin\,X}}{E_{kin\,\alpha}}$. Zapisz obliczenia. Skorzystaj z zasady zachowania pędu.
+
+  **Zadanie 12.3. (0–3)** Próbka $Z$ zawierająca izotop plutonu $^{238}_{94}\text{Pu}$ wytwarza
+  energię w postaci ciepła na skutek rozpadu promieniotwórczego tego izotopu plutonu. Moc cieplną
+  generowaną przez tę próbkę oznaczymy jako $P$.
+
+  Próbka $Z$ — w pewnej chwili $t_0$ — wytwarzała moc cieplną równą $P_0 = 100 \text{ J/s}$.
+  Dokładnie po czasie $t = 5$ lat od chwili $t_0$ moc cieplna spadła do wartości $P_t = 96{,}13 \text{ J/s}$.
+
+  Przyjmij, że moc cieplna wytwarzana przez próbkę $Z$ jest wprost proporcjonalna do liczby jąder
+  izotopu plutonu $^{238}_{94}\text{Pu}$ pozostających w próbce $Z$.
+
+  Oblicz $T$ — czas połowicznego rozpadu izotopu plutonu $^{238}_{94}\text{Pu}$. Wynik podaj
+  w latach, zaokrąglony do dwóch cyfr znaczących.
+odpowiedz: |
+  **12.1.** Z zasad zachowania liczby atomowej i masowej:
+  - Liczba masowa: $238 = A_X + 4$ → $A_X = 234$
+  - Liczba atomowa: $94 = Z_X + 2$ → $Z_X = 92$
+
+  Pierwiastek o $Z = 92$ to **uran (U)**. Równanie rozpadu:
+  $$^{238}_{94}\text{Pu} \to ^{234}_{92}\text{U} + ^{4}_{2}\alpha$$
+
+  **12.2.** Z zasady zachowania pędu (układ początkowo spoczynkowy): $0 = m_X v_X + m_\alpha v_\alpha$,
+  więc $m_X v_X = m_\alpha v_\alpha$ (co do wartości bezwzględnej, kierunki przeciwne).
+
+  Stąd $v_X / v_\alpha = m_\alpha / m_X$.
+
+  Energia kinetyczna: $E_{kin} = \dfrac{p^2}{2m}$. Ponieważ wartości pędów są równe ($p_X = p_\alpha$):
+  $$\dfrac{E_{kin\,X}}{E_{kin\,\alpha}} = \dfrac{p^2/(2 m_X)}{p^2/(2 m_\alpha)} = \dfrac{m_\alpha}{m_X} = \dfrac{1}{58{,}5} \approx 0{,}0171$$
+
+  **12.3.** Moc cieplna jest proporcjonalna do liczby jąder: $P(t) = P_0 \cdot 2^{-t/T}$.
+
+  Podstawiamy: $\dfrac{P_t}{P_0} = 0{,}9613 = 2^{-5/T}$, więc:
+  $$-\dfrac{5}{T} = \log_2 0{,}9613 = \dfrac{\log_{10} 0{,}9613}{\log_{10} 2} = \dfrac{-0{,}01714}{0{,}30103} \approx -0{,}05694$$
+
+  $$T = \dfrac{5}{0{,}05694} \approx 87{,}8 \text{ lat} \approx 88 \text{ lat}$$
+
+  Wartość zgodna z literaturą: $T_{1/2}(^{238}\text{Pu}) \approx 87{,}7$ lat.
+pulapka: |
+  Najczęstsze błędy: zła pierwiastek X (mylenie uranu z neptunem, torem), pomylenie zasady
+  zachowania pędu z zachowaniem energii (do pędu wektor, do energii skalar; $E_k \neq mv$, tylko
+  $\tfrac{1}{2}mv^2$ albo $p^2/2m$), użycie wzoru $N(t) = N_0 e^{-\lambda t}$ bez przeliczenia
+  $\lambda = \ln 2 / T$, błąd jednostek czasu.
+wymaganie: |
+  XI.4, XI.5 — rozpady promieniotwórcze, zasady zachowania w rozpadach, czas połowicznego rozpadu,
+  prawo rozpadu radioaktywnego.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2025-maj-pr/zad-12.webp"
+  alt="Zadanie 12 z arkusza maturalnego CKE 2025 maj PR fizyka — rozpad alfa plutonu, czas połowicznego rozpadu"
+  caption="Zadanie 12 — arkusz maturalny CKE, maj 2025, fizyka, poziom rozszerzony"
+  zrodlo="CKE 2025"
+  pdfUrl="/arkusze/fizyka/2025-maj-pr/arkusz.pdf"
+  pdfPage={26}
+/>
+
+## Rozwiązanie krok po kroku
+
+### 12.1 — pierwiastek X
+
+Z bilansu liczb atomowej i masowej: $X = ^{234}_{92}\text{U}$ (uran-234).
+
+### 12.2 — pędy i energie
+
+Pędy są równe co do wartości; $E_k = p^2/2m$ → stosunek energii odwrotnie proporcjonalny do mas.
+
+### 12.3 — czas połowicznego rozpadu
+
+$P(t)/P_0 = 2^{-t/T}$ → $T = 5 / \log_2(P_0/P_t) \approx 88$ lat.

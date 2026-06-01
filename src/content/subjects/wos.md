@@ -6,6 +6,6 @@ slug: wos
 icon: lucide:landmark
 order: 9
 color: violet
-hasContent: false
+hasContent: true
 description: Zadania z matury rozszerzonej z WOS — prawo, polityka, społeczeństwo, gospodarka.
 ---

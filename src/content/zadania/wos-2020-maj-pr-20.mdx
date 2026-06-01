@@ -1,0 +1,116 @@
+---
+arkusz: wos-2020-maj-pr
+subject: wos
+nr: 20
+punkty: 1
+typ: zamkniete-pf
+topic: podatki, PIT, podatek progresywny, skala podatkowa
+difficulty: 3
+tresc: |
+  Skala podatkowa obowiazujaca w Rzeczypospolitej Polskiej w rozliczeniach za 2017 rok:
+
+  | Dochod (w zlotych) | Sposob obliczania podatku |
+  |---|---|
+  | do 85 528 | 18% minus kwota zmniejszajaca podatek |
+  | ponad 85 528 | 15 395 zl 04 gr plus 32% nadwyzki ponad 85 528 zl minus kwota zmniejszajaca podatek |
+
+  **Ocen, czy ponizsze informacje sa prawdziwe. Zaznacz P, jesli informacja jest prawdziwa, albo F - jesli jest falszywa.**
+
+  1. Przedstawiony typ podatku ma charakter progresywny. **P/F**
+  2. Przedstawiony sposob obliczania podatku odnosi sie do podatku CIT. **P/F**
+  3. W sytuacji dochodu w wysokosci 140 tysiecy zlotych podatek dochodowy w wysokosci 32% placony byl od calego dochodu podatnika. **P/F**
+odpowiedz: |
+  **1. P (PRAWDA)** - Skala ma DWA progi (18% i 32%), gdzie wyzsza stawka stosuje sie do dochodu powyzej pewnego prog. To definicja **podatku progresywnego** - im wyzszy dochod, tym wyzsza efektywna stopa podatkowa.
+
+  **2. F (FALSZ)** - Przedstawiona skala dotyczy **podatku PIT** (Personal Income Tax - podatek dochodowy od osob fizycznych), a NIE CIT (Corporate Income Tax - podatek od osob prawnych). Sygnaly: skala progresywna ze stawkami 18% i 32% to klasyczny polski PIT (w 2017 r.). CIT w Polsce wynosil w 2017 r. **19%** (stawka liniowa, jednolita) lub 15% dla malych podatnikow - bez progresji, bez progow.
+
+  **3. F (FALSZ)** - Zgodnie ze skala podatkowa, **podatek 32% placony jest TYLKO od NADWYZKI ponad 85 528 zl**, NIE od calego dochodu. Z tekstu: "15 395 zl 04 gr plus 32% **nadwyzki** ponad 85 528 zl". Czyli przy dochodzie 140 000 zl podatnik placi:
+  - od pierwszych 85 528 zl: 18% (= 15 395 zl 04 gr, juz przeliczone w tabeli);
+  - od nadwyzki 140 000 - 85 528 = 54 472 zl: 32% (= 17 431 zl 04 gr);
+  - lacznie: ok. 32 826 zl minus kwota zmniejszajaca.
+
+  Zatem 32% NIE jest placone od calych 140 000 zl - tylko od czesci nadwyzki.
+pulapka: |
+  Zdanie 3 jest pulapka na nieczytajacych dokladnie. Slowo "NADWYZKI" w tabeli jest kluczowe. Wielu studentow myli podatek progresywny z liniowym - mysla, ze gdy "wpadnie sie" w drugi prog, to caly dochod jest opodatkowany 32%. To NIEPRAWDA. Tylko nadwyzka. Zdanie 2: zapamietaj - PIT to skala progresywna dla osob fizycznych, CIT to liniowy 19% dla firm.
+wymaganie: |
+  Podstawa programowa WOS PR: II.11 - znajomosc systemu podatkowego RP, rodzajow podatkow (progresywny, liniowy, proporcjonalny), PIT i CIT.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/wos/2020-maj-pr/zad-20.webp"
+  alt="Zadanie 20 - WOS 2020 PR"
+  caption="Strona arkusza CKE 2020 PR WOS - zadanie 20."
+  zrodlo="CKE 2020"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_wos_F2015_2020_rozszerzony_arkusz.pdf"
+  pdfPage={13}
+/>
+
+## Rozwiazanie
+
+### Podstawowe pojecia o podatkach
+
+**Typy stop podatkowych:**
+
+1. **Podatek proporcjonalny (liniowy, flat tax)** - jednolita stawka procentowa, niezaleznie od wysokosci podstawy opodatkowania. Przyklad w Polsce: CIT (19%), liniowy PIT dla przedsiebiorcow (19%), VAT (23% stawka podstawowa).
+
+2. **Podatek progresywny** - im wyzsza podstawa, tym wyzsza efektywna stopa. Stosuje sie progi i stawki rosnace. Przyklad w Polsce: PIT na zasadach ogolnych (skala 18%/32% w 2017 r.; po reformie z 2022 r. - 12%/32%).
+
+3. **Podatek regresywny** - efektywna stopa MALEJE wraz ze wzrostem podstawy. Rzadko spotykany jako jawny system, choc niektore podatki posrednie (VAT) maja charakter regresywny w stosunku do dochodu (biedni placa wiekszy % dochodu na VAT).
+
+### Polska skala PIT (2017 r.)
+
+| Prog | Stawka |
+|---|---|
+| do 85 528 zl | 18% (minus kwota zmniejszajaca, w 2017 r. zalezna od dochodu - od ok. 1 188 zl) |
+| ponad 85 528 zl | 15 395,04 zl + 32% od nadwyzki ponad 85 528 zl (minus kwota zmniejszajaca) |
+
+Po reformie (Polski Lad 2022 + korekta lipiec 2022):
+
+| Prog | Stawka |
+|---|---|
+| do 120 000 zl | **12%** minus kwota zmniejszajaca |
+| ponad 120 000 zl | 10 800 zl + 32% od nadwyzki ponad 120 000 zl |
+
+### Analiza zdan
+
+**Zdanie 1**: "Podatek ma charakter progresywny"
+
+W tabeli sa dwie stawki: 18% (do 85 528 zl) i 32% (od nadwyzki ponad 85 528 zl). Wyzsza stawka dla wyzszych dochodow = **progresja**. Zdanie jest **PRAWDA**.
+
+Co wiecej: 18% w pierwszym progu **minus kwota zmniejszajaca** sprawia, ze efektywna stopa na samym dole skali jest jeszcze nizsza niz 18% - to wzmacnia progresywnosc systemu.
+
+**Zdanie 2**: "Sposob obliczania odnosi sie do podatku CIT"
+
+CIT (Corporate Income Tax) to podatek od osob prawnych - spolek (sp. z o.o., S.A., komandytowych itd.). W Polsce w 2017 r. CIT mial dwie stawki:
+
+- **19%** - stawka podstawowa (liniowa, jednolita);
+- **15%** - dla malych podatnikow (od 2017 r.).
+
+CIT jest **liniowy**, nie progresywny. Stawka procentowa jest taka sama niezaleznie od dochodu. Pokazana skala dotyczy **PIT** (podatku od osob fizycznych), nie CIT. Zdanie jest **FALSZ**.
+
+**Zdanie 3**: "Przy dochodzie 140 tys. zl podatek 32% placony byl od calego dochodu"
+
+Tu jest klasyczna pulapka. W skali progresywnej **kazdy prog ma swoja stawke, ktora dotyczy TYLKO dochodu w tym progu** (a nie calego dochodu).
+
+Dla dochodu 140 000 zl w 2017 r.:
+
+- pierwsze 85 528 zl: 18% = 15 395,04 zl (jest juz przeliczone w tabeli);
+- nadwyzka 140 000 - 85 528 = 54 472 zl: 32% = 17 431,04 zl;
+- razem (przed kwota zmniejszajaca): 32 826,08 zl.
+
+Gdyby caly dochod byl opodatkowany 32%: 32% × 140 000 = 44 800 zl - tyle pacilby tylko w hipotetycznym systemie. W rzeczywistosci: ok. 32 826 zl, czyli **efektywna stopa ok. 23,4%**, a nie 32%.
+
+Zdanie **FALSZ** - 32% placone jest tylko od nadwyzki ponad 85 528 zl, NIE od calego dochodu.
+
+### Tabela podsumowujaca
+
+| Zdanie | Ocena | Uzasadnienie |
+|---|---|---|
+| 1. Podatek progresywny | **P** | Dwie rosnace stawki (18% i 32%) |
+| 2. Dotyczy CIT | **F** | To PIT (CIT to 19% liniowy) |
+| 3. 32% od calego dochodu 140 tys. | **F** | Tylko od nadwyzki ponad 85 528 zl |

@@ -1,0 +1,60 @@
+---
+arkusz: chemia-2023-maj-pr
+subject: chemia
+nr: 8
+punkty: 4
+typ: otwarte-rozszerzone
+topic: pH słabego kwasu, stała dysocjacji, stopień dysocjacji, obliczenia stężeń
+difficulty: 5
+tresc: |
+  W tabeli (s. 9) umieszczono wartości pH czterech roztworów kwasu HX o wybranych stężeniach molowych, a na wykresie przedstawiono logarytmiczną zależność pH roztworu tego kwasu od jego stężenia molowego w zakresie stężeń od $0{,}002\,\text{mol/dm}^3$ do $0{,}028\,\text{mol/dm}^3$ ($T = 20\,°\text{C}$).
+
+  | $c_0$, mol/dm³ | 0,002 | 0,008 | 0,018 | 0,028 | 0,042 | 0,100 |
+  |---|---|---|---|---|---|---|
+  | pH | 3,1 | 2,7 | 2,5 | 2,4 | | |
+
+  **Uzupełnij tabelę brakującymi wartościami pH z dokładnością do jednego miejsca po przecinku** oraz **odczytaj z wykresu zależności pH roztworu kwasu HX od jego stężenia molowego. Następnie oblicz stężenie molowe jonów X⁻ i stężenie molowe niezdysocjowanych cząsteczek HX w roztworze o pH = 2,2. Odczytaj z wykresu wartość stężenia molowego cząsteczek HX i cząstek niezdysocjowanych kwasu HX podaj z dokładnością do 0,001 mol·dm⁻³.**
+odpowiedz: |
+  **Odczyt z wykresu** (logarytmiczna zależność, ekstrapolacja):
+  - Dla $c_0 = 0{,}042\,\text{mol/dm}^3$: $pH \approx 2{,}3$
+  - Dla $c_0 = 0{,}100\,\text{mol/dm}^3$: $pH \approx 2{,}1$
+
+  **Dla pH = 2,2**:
+  - $[H_3O^+] = 10^{-2{,}2} \approx 6{,}31 \cdot 10^{-3}\,\text{mol/dm}^3$
+  - W roztworze słabego kwasu HX: $[X^-] = [H_3O^+] \approx 6{,}3 \cdot 10^{-3}\,\text{mol/dm}^3$ (bilans ładunkowy, woda pomijalna)
+  - $c_0$ przy pH = 2,2 z wykresu: $c_0 \approx 0{,}060\,\text{mol/dm}^3$
+  - $[HX] = c_0 - [X^-] = 0{,}060 - 0{,}006 = 0{,}054\,\text{mol/dm}^3$
+
+  **Wnioski**:
+  - Stężenie molowe jonów $X^-$ ≈ **6,3·10⁻³ mol·dm⁻³**
+  - Stężenie molowe niezdysocjowanych cząsteczek HX ≈ **0,054 mol·dm⁻³**
+pulapka: |
+  - **pH = -log[H₃O⁺]** → $[H_3O^+] = 10^{-pH}$.
+  - W słabym kwiecie: $[H^+] \approx [A^-]$ (z dysocjacji HA), a $[HA] = c_0 - [A^-]$.
+  - Skala logarytmiczna pH — zmiana pH o 1 = zmiana stężenia 10×.
+  - $K_a = \frac{[H^+][X^-]}{[HX]}$ — można sprawdzić poprawność obliczeń.
+wymaganie: |
+  VI.3 — równowagi protolityczne, stała i stopień dysocjacji, pH słabych kwasów.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2023-maj-pr/zad-08.webp"
+  alt="Zadanie 8 - chemia 2023 PR"
+  caption="Arkusz CKE 2023 PR chemia - zadanie 8 (wykres pH słabego kwasu HX, obliczenia stężeń)."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_chemia_2023_rozszerzony_arkusz_zadania_pytania.pdf"
+  pdfPage={8}
+/>
+
+## Klucz: dysocjacja słabego kwasu
+
+$$HX + H_2O \rightleftharpoons H_3O^+ + X^-$$
+
+- $K_a = \frac{[H_3O^+][X^-]}{[HX]}$
+- $\alpha = \frac{[X^-]}{c_0}$ — stopień dysocjacji
+- Dla bardzo słabego kwasu i $\alpha \ll 1$: $[H^+] \approx \sqrt{K_a \cdot c_0}$, $pH \approx \frac{1}{2}(pK_a - \log c_0)$

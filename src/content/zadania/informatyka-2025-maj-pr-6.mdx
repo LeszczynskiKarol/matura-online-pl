@@ -1,0 +1,172 @@
+---
+arkusz: informatyka-2025-maj-pr
+subject: informatyka
+nr: 6
+punkty: 7
+typ: otwarte-rozszerzone
+topic: martianeum, plik tekstowy, transport drona, agregacja danych, ekstrema, wykresy
+difficulty: 4
+tresc: |
+  ### Zadanie 6. Martianeum
+
+  W 2033 roku na Marsie wylądowała automatyczna stacja wydobywcza wyposażona w transporter i w autonomiczny dron pobierający ładunki skał zawierających minerał niewystępujący na Ziemi – martianeum.
+
+  Stacja działa według następujących zasad:
+  - dron codziennie przywozi ładunek z pewnego obszaru Marsa
+  - stacja waży ładunek przywieziony przez drona i bada zawartość martianeum
+  - jeśli zawartość martianeum w przywiezionym ładunku wynosi co najmniej 1%, to stacja automatycznie wydobywa cały minerał z tego ładunku
+  - jeśli na koniec dnia (po wydobyciu martianeum) ilość minerału na stacji osiągnie co najmniej 100 kg, to transporter zabiera 100 kg na orbitę, skąd będzie on wysyłany na Ziemię, a transporter wraca do stacji (jeśli na stacji zgromadzone jest więcej niż 100 kg, to nadmiar pozostaje na stacji)
+  - początkowy stan magazynu na stacji – 0 kg martianeum.
+
+  W pliku tekstowym `martianeum.txt` w kolejnych wierszach zapisano dane z lat 2033–2038:
+  - `data` – data przywozu ładunku w formacie rrrr-mm-dd
+  - `nazwa_obszaru` – nazwa obszaru Marsa, z którego ładunek został pobrany
+  - `masa [kg]` – zważona przez drona w kilogramach
+  - `zawartość [%]` – zawartość martianeum w próbce w % (nieujemna liczba z jednym miejscem po przecinku, np. 0,1 oznacza 0,1%)
+
+  Dane w pliku rozdzielone są znakami tabulacji.
+
+  **Przykład.**
+  ```
+  data         nazwa_obszaru   masa [kg]   zawartosc [%]
+  2033-03-01   Cebrenia        27,8        0,2
+  2033-03-02   Amenthes        13,8        1,7
+  2033-03-05   Noachis         21,0        4,0
+  2033-03-06   Coprates        26,3        11,4
+  2033-03-07   Ismenius Lacus  28,8        0,0
+  2033-03-08   Mare Boreum     29,2        0,0
+  ```
+
+  Dane w pliku `martianeum.txt` są dostępnych narzędzi informatycznych wykonaj podane zadania. Wyniki zapisz w pliku tekstowym `wyniki6.txt`. Odpowiedzi do każdego zadania poprzedź numerem tego zadania.
+
+  ### Zadanie 6.1. (0–2)
+  Podaj łączną masę ładunków drona oraz łączną masę wydobytego przez stację martianeum.
+
+  ### Zadanie 6.2. (0–1)
+  Podaj nazwę obszaru, dla którego średnia masa przywiezionych ładunków jest najmniejsza.
+
+  ### Zadanie 6.3. (0–2)
+  Czas pracy stacji dzielimy na kolejne 7-dniowe okresy. Pierwszy okres obejmuje dni od 03.03.2033 do 09.03.2033, drugi – od 10.03.2033 do 16.03.2033 itd. Podaj największą łączną masę ładunków przywiezionych w ciągu kolejnych 7-dniowych okresów oraz podaj datę początku okresu, w którym przywieziono tę największą masę.
+
+  ### Zadanie 6.4. (0–3)
+  Wykonaj zestawienie, w którym dla każdego obszaru podasz, ile razy dron przywoził ładunek z tego obszaru w poszczególnych latach. Na podstawie wykonanego zestawienia utwórz wykres skumulowany kolumnowy. Pamiętaj o czytelnym opisie wykresu: na osi X umieść nazwy obszarów, dodaj opisy osi – "nazwy obszarów", dodaj opis i "liczba przewozów" dla osi Y, tytuł oraz legendę zawierającą kolejne lata.
+
+  ### Zadanie 6.5. (0–3)
+  Uwzględniając zasady działania stacji opisane na początku zadania i podaj:
+  - ile razy stacja wysyłała ładunek na orbitę
+  - datę pierwszego transportu ładunku na orbitę
+  - datę ostatniego transportu ładunku na orbitę.
+odpowiedz: |
+  **Wspólne wczytanie danych** (np. pandas):
+
+  ```python
+  import pandas as pd
+
+  df = pd.read_csv("martianeum.txt", sep="\t", decimal=",")
+  df["data"] = pd.to_datetime(df["data"])
+  df["rok"] = df["data"].dt.year
+  ```
+
+  **6.1 – łączna masa ładunków i wydobyte martianeum:**
+
+  ```python
+  masa_lacznie = df["masa [kg]"].sum()
+  # martianeum wydobyte tylko gdy zawartość >= 1%
+  df["wydobyte"] = df.apply(
+      lambda r: r["masa [kg]"] * r["zawartosc [%]"] / 100
+                if r["zawartosc [%]"] >= 1.0 else 0.0,
+      axis=1
+  )
+  martianeum_lacznie = df["wydobyte"].sum()
+  print(round(masa_lacznie, 2), round(martianeum_lacznie, 4))
+  ```
+
+  **6.2 – obszar o najmniejszej średniej masie:**
+
+  ```python
+  srednia = df.groupby("nazwa_obszaru")["masa [kg]"].mean()
+  print(srednia.idxmin())
+  ```
+
+  **6.3 – największa masa w 7-dniowym okresie (start 2033-03-03):**
+
+  ```python
+  from datetime import timedelta
+  start = pd.Timestamp("2033-03-03")
+  df["okres"] = ((df["data"] - start) // pd.Timedelta(days=7))
+  okres_start = df.groupby("okres")["data"].min()  # lub wyliczone z indeksu
+  suma_okres = df.groupby("okres")["masa [kg]"].sum()
+  najw = suma_okres.idxmax()
+  data_start = start + pd.Timedelta(days=int(najw)*7)
+  print(round(suma_okres[najw], 2), data_start.strftime("%Y-%m-%d"))
+  ```
+
+  **6.4 – tabela przewozów obszar × rok + wykres skumulowany kolumnowy:**
+
+  ```python
+  zestawienie = df.groupby(["nazwa_obszaru", "rok"]).size().unstack(fill_value=0)
+  zestawienie.plot(kind="bar", stacked=True, title="Liczba przewozów per obszar")
+  # dalej: opisy osi (xlabel="nazwy obszarów", ylabel="liczba przewozów"), legenda = lata
+  ```
+
+  **6.5 – symulacja zasad transportu na orbitę:**
+
+  ```python
+  df = df.sort_values("data").reset_index(drop=True)
+  magazyn = 0.0
+  liczba_transportow = 0
+  pierwsza, ostatnia = None, None
+  for _, r in df.iterrows():
+      if r["zawartosc [%]"] >= 1.0:
+          magazyn += r["masa [kg]"] * r["zawartosc [%]"] / 100
+      while magazyn >= 100:
+          magazyn -= 100
+          liczba_transportow += 1
+          if pierwsza is None:
+              pierwsza = r["data"]
+          ostatnia = r["data"]
+  print(liczba_transportow, pierwsza.strftime("%Y-%m-%d"), ostatnia.strftime("%Y-%m-%d"))
+  ```
+
+  Uwaga – pętla `while` obsługuje przypadek, gdyby pojedynczy dzień zgromadził >200 kg (mało prawdopodobne, ale matematycznie możliwe).
+pulapka: |
+  W 6.1 – wydobywamy martianeum **tylko gdy zawartość ≥ 1%**, nie zawsze. W 6.3 – okres 7-dniowy zaczyna się **3 marca** (nie 1 marca), trzeba to zaszyć w obliczeniach. W 6.5 – stacja transportuje **dokładnie 100 kg** na raz, więc nadmiar musi pozostać na stacji. Liczne arkusze maturalne karzą za przeoczenie warunku "łącznie z magazynem martianeum przekroczył 100 kg" – nie tylko dzienny ładunek. W 6.4 – wykres ma być **skumulowany** (stacked), nie zwykły kolumnowy.
+wymaganie: |
+  III.3 – analiza danych z pliku tekstowego za pomocą arkusza kalkulacyjnego lub języka programowania (filtrowanie, grupowanie, agregacja, wykresy).
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2025-maj-pr/zad-06.webp"
+  alt="Zadanie 6 - informatyka 2025 PR"
+  caption="Strona arkusza CKE 2025 PR informatyka - zadanie 6 (Martianeum - stacja wydobywcza na Marsie)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_informatyka_2025_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={13}
+/>
+
+## Rozwiązanie krok po kroku
+
+### 6.1 – sumy
+
+Łączna masa = suma kolumny `masa [kg]`. Wydobyte martianeum liczymy tylko z wierszy o `zawartosc [%] >= 1.0`, jako `masa × zawartosc / 100` (przeliczenie procentów).
+
+### 6.2 – obszar o najmniejszej średniej masie
+
+Grupowanie po `nazwa_obszaru`, średnia z `masa [kg]`, `idxmin()`.
+
+### 6.3 – największa suma 7-dniowa
+
+Liczymy numer okresu (od 2033-03-03) jako `(data - start) // 7 dni`, grupujemy po okresie, sumujemy masy, bierzemy max + datę startu odpowiedniego okresu.
+
+### 6.4 – wykres kolumnowy skumulowany
+
+Pivot tabela `obszar × rok` z liczbą przewozów, wykres `bar stacked` (osie podpisane "nazwy obszarów" / "liczba przewozów", legenda = lata, tytuł).
+
+### 6.5 – symulacja transportu
+
+Iterujemy po dniach (posortowanych), dodajemy wydobyte martianeum do magazynu, ilekroć magazyn przekroczy 100 kg – odejmujemy 100 i zwiększamy licznik transportów. Zapamiętujemy datę pierwszego i ostatniego transportu.

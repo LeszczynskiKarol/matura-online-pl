@@ -7,15 +7,22 @@ typ: otwarte-krotkie
 topic: termochemia, entalpia spalania, LPG, propan, butan, gęstość, stechiometria
 difficulty: 4
 tresc: |
-  **LPG** = mieszanina propanu (C₃H₈) + butanu (C₄H₁₀).
+  LPG (Liquefied Petroleum Gas) jest mieszaniną propanu (C₃H₈) i butanu (C₄H₁₀). W zależności od pory roku stosuje się różne mieszanki:
 
-  **Letni LPG**: n_propan : n_butan = **30 : 70**. Gęstość ciekłego = **0,56 g/cm³** (T = 273 K).
+  - **letni LPG**: stosunek molowy propan : butan = 30 : 70
+  - gęstość ciekłego letniego LPG w temperaturze 273 K wynosi ρ = 0,56 g/cm³
 
-  ΔH°_spalania:
-  - Propan: -2219 kJ/mol.
-  - Butan: -2878 kJ/mol.
+  Standardowe entalpie spalania węglowodorów:
+  - propan (C₃H₈): ΔH°_c = −2219 kJ/mol
+  - butan (C₄H₁₀): ΔH°_c = −2878 kJ/mol
 
-  Oblicz **energię** wydzieloną do otoczenia w wyniku spalenia **1,0 dm³** letniego LPG.
+  Wykonano doświadczenie. Próbkę 1,0 dm³ letniego LPG przeprowadzono w stan gazowy i spalono.
+
+  ### Zadanie 15. (0–1–2)
+
+  Oblicz energię, która wydzieli się do otoczenia w wyniku całkowitego spalenia 1,0 dm³ letniego LPG. Wynik podaj w kilodżulach. Przyjmij, że wartości entalpii spalania węglowodorów są takie same jak w warunkach standardowych. Załóż, że powyższe wartości nie ulegają zmianie wraz ze zmianą temperatury oraz że energia jest wymieniana z otoczeniem wyłącznie na sposób ciepła.
+
+  Obliczenia: ............
 odpowiedz: |
   **Krok 1**: masa całkowita LPG.
   - V = 1,0 dm³ = **1000 cm³**.
@@ -48,7 +55,7 @@ odpowiedz: |
 pulapka: |
   Pułapka — pomylenie stosunku molowego z masowym. Stosunek 30:70 to **mol** (n), nie masa. Trzeba obliczyć masy z mas molowych.
 
-  Pułapka — pomylenie znaku ΔH. ΔH_spalania < 0 (egzotermiczne). **Energia wydzielona = |ΔH|** (wartość bezwzględna, dodatnia liczba).
+  Pułapka — pomylenie znaku ΔH. ΔH_spalania &lt; 0 (egzotermiczne). **Energia wydzielona = |ΔH|** (wartość bezwzględna, dodatnia liczba).
 
   Pułapka — pomyłka w gęstości. ρ = 0,56 g/cm³, V = 1000 cm³ → m = 560 g. NIE 0,56 kg (= 560 g, tak samo, ale w innym kontekście).
 wymaganie: |
@@ -62,11 +69,11 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/chemia/2025-maj-pr/ark-20.webp"
+  src="/arkusze/chemia/2025-maj-pr/zad-15.webp"
   alt="Zadanie 15 - LPG i termochemia"
   caption="Strona 20 arkusza CKE 2025 PR chemia - zadanie 15 (energia spalania letniego LPG)."
   zrodlo="CKE 2025 / e-petrol.pl"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_chemia_2025_rozszerzony_arkusz_zadania_pytania.pdf"
   pdfPage={20}
 />
 

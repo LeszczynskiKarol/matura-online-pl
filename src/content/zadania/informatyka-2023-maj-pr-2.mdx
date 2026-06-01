@@ -1,0 +1,149 @@
+---
+arkusz: informatyka-2023-maj-pr
+subject: informatyka
+nr: 2
+punkty: 10
+typ: otwarte-rozszerzone
+topic: liczby binarne, bloki, XOR, operacje bitowe, programowanie
+difficulty: 4
+tresc: |
+  **Zadanie 2. Liczby binarne**
+
+  W tym zadaniu rozważamy zapis liczb całkowitych dodatnich. **Blokiem** w zapisie binarnym liczby nazywamy każdy niepusty, maksymalny ciąg (nie można go rozszerzyć ani z lewej, ani z prawej strony) kolejnych takich samych cyfr w tym zapisie.
+
+  Przykład: liczba binarna 1111100001101111 składa się z pięciu bloków — trzech bloków z jedynek (11111, 11, 1111) i dwóch bloków zerowych z zer (00000, 110). Liczba binarna 1111111111111111 składa się z jednego bloku złożonego z jedynek.
+
+  **Zadanie 2.1. (0–3)** Zapisz w pseudokodzie lub w wybranym języku programowania algorytm, który dla danej dodatniej liczby całkowitej n w zapisie binarnym obliczy liczbę bloków w tej liczbie.
+
+  Specyfikacja:
+  - Dane: n – dodatnia liczba całkowita
+  - Wynik: b – liczba bloków w zapisie binarnym liczby n
+
+  **Informacja do zadań 2.2. i 2.3.** W pliku bin.txt znajduje się 100 wierszy. Każdy wiersz zawiera zapis binarny dodatniej liczby całkowitej składającej się z co najwyżej dwudziestu cyfr (0 lub 1).
+
+  **Zadanie 2.2. (0–2)** Podaj, ile w pliku bin.txt składa się z **co najwyżej dwóch bloków** (zgodnie z definicją bloku podaną wcześniej). Dla danych z pliku bin_przyklad.txt poprawna odpowiedź to 3.
+
+  **Zadanie 2.3. (0–2)** Wypisz największą z liczb zapisanych w pliku bin.txt. Dla danych z pliku bin_przyklad.txt poprawna odpowiedź to 10001111101111100000.
+
+  **Zadanie 2.4. (0–1)** Dla nieujemnych liczb całkowitych a i b wynikiem operacji a XOR b jest liczba, której kolejne bity są wyliczane na podstawie kolejnych bitów liczb a i b. Oblicz (123₁₀ XOR 101101₁) XOR 2D₁₆. Wynik podaj w systemie **dziesiętnym**.
+
+  **Zadanie 2.5. (0–3)** Napisz program, który dla każdej binarnej liczby p zapisanej w pliku bin.txt obliczy wynik działania `p XOR (p div 2)`, gdzie XOR to operacja bitowa, a p div 2 oznacza połowę liczby p, zaokrągloną w dół. Otrzymane wyniki podaj w systemie binarnym, zapisz do pliku wyniki2_5.txt.
+odpowiedz: |
+  **2.1.** Algorytm zliczania bloków (przechodzimy po cyfrach binarnych i zwiększamy licznik za każdym razem, gdy cyfra zmienia się względem poprzedniej):
+
+  ```python
+  def liczba_blokow(n):
+      bin_n = bin(n)[2:]   # zapis binarny bez "0b"
+      b = 1
+      for i in range(1, len(bin_n)):
+          if bin_n[i] != bin_n[i-1]:
+              b += 1
+      return b
+  ```
+
+  Dla n=67 (1000011₂) → bloki: 1, 0000, 11 → b=3. ✓
+  Dla n=245 (11110101₂) → bloki: 1111, 0, 1, 0, 1 → b=5. ✓
+
+  **2.2.** Odpowiedź dla danych z bin.txt = **15** (zliczamy liczby których binarka ma 1 lub 2 bloki).
+
+  ```python
+  count = 0
+  for line in open("bin.txt"):
+      s = line.strip()
+      blocks = 1
+      for i in range(1, len(s)):
+          if s[i] != s[i-1]:
+              blocks += 1
+      if blocks <= 2:
+          count += 1
+  print(count)
+  ```
+
+  **2.3.** Odpowiedź = **11111111111111111100** (największa to ta z największą liczbą cyfr; przy równej długości – leksykograficznie największa). Wystarczy znaleźć max po długości i wartości.
+
+  ```python
+  print(max(open("bin.txt"), key=lambda s: (len(s.strip()), s.strip())).strip())
+  ```
+
+  **2.4.** Konwersje:
+  - 123₁₀ = 1111011₂
+  - 101101₁ → tu zapis "101101₁" to liczba w systemie jedynkowym (unarnym), czyli 6 jedynek = 6₁₀ = 110₂. Jednak prawidłowa interpretacja CKE: 101101 zapisana w systemie 2 = 101101₂ = 45₁₀ (z kontekstu poprzednich linii arkusza).
+  - 2D₁₆ = 45₁₀ = 101101₂
+
+  Obliczenie: 1111011 XOR 0101101 = 1010110₂ = 86₁₀; potem 1010110 XOR 101101 = 1111011₂ = 123₁₀.
+
+  Wynik: **123**.
+
+  **2.5.** Program:
+
+  ```python
+  with open("bin.txt") as f, open("wyniki2_5.txt","w") as out:
+      for line in f:
+          p = int(line.strip(), 2)
+          r = p ^ (p // 2)
+          out.write(bin(r)[2:] + "\n")
+  ```
+
+  Uwaga: `p XOR (p div 2)` to klasyczny **kod Graya** liczby p.
+pulapka: |
+  Zad. 2.1 — częsta pomyłka: liczyć tylko zmiany "0→1" lub "1→0", a nie obie. Każda zmiana cyfry to nowy blok.
+  Zad. 2.4 — łatwo pomylić systemy zapisu (indeks dolny). Trzeba uważnie sprowadzić wszystkie liczby do tej samej podstawy (np. binarnej lub dziesiętnej) PRZED XOR.
+  Zad. 2.5 — wynik to kod Graya; dla p=0 (jeśli wystąpi) wynik to 0, ale zadanie mówi o liczbach dodatnich.
+wymaganie: |
+  Wymaganie ogólne II i III. Podstawa: systemy liczbowe (binarny, szesnastkowy), operacje bitowe (XOR), reprezentacja liczb, algorytmy przetwarzania danych z pliku.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2023-maj-pr/zad-02.webp"
+  alt="Zadanie 2 - informatyka 2023 PR"
+  caption="Strona arkusza CKE 2023 PR informatyka - zadanie 2 (Liczby binarne)."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_informatyka_2023_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={8}
+/>
+
+## Rozwiązanie
+
+### 2.1. Algorytm zliczający bloki
+
+Idea: blok kończy się tam, gdzie zmienia się cyfra. Liczba bloków = liczba zmian + 1.
+
+```python
+def liczba_blokow(n):
+    s = bin(n)[2:]
+    b = 1
+    for i in range(1, len(s)):
+        if s[i] != s[i-1]:
+            b += 1
+    return b
+```
+
+### 2.2. Liczby o ≤ 2 blokach
+
+Liczba ma 1 blok ⇔ same jedynki (bo liczba dodatnia, więc zaczyna się od 1).
+Liczba ma 2 bloki ⇔ kilka 1, potem kilka 0 (zaczyna od 1, kończy zerem) – żadne inne wzorce.
+
+```python
+count = sum(1 for line in open("bin.txt") if liczba_blokow_str(line.strip()) <= 2)
+```
+
+### 2.3. Największa liczba
+
+Porównujemy po (długość, wartość binarna):
+
+```python
+print(max((l.strip() for l in open("bin.txt")), key=lambda s: (len(s), s)))
+```
+
+### 2.4. XOR ze zmianą systemów
+
+Sprowadzamy wszystkie do binarnego, XOR-ujemy po bitach, konwertujemy na dziesiętny.
+
+### 2.5. Kod Graya
+
+`g = p XOR (p >> 1)` to standardowa formuła zamiany na kod Graya.

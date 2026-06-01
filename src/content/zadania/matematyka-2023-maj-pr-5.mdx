@@ -6,7 +6,12 @@ punkty: 3
 typ: otwarte-rozszerzone
 topic: trójkąt prostokątny 30-60-90, geometria analityczna
 difficulty: 5
-tresc: "Trójkąt prostokątny ABC ($\\angle B = 90°$, $\\angle A = 60°$). K na AB, L na BC, $BK = BL = 1$. Wysokość BD z B na AC. AD = 2. KL przecina BD w N. Wykaż $|ND| = \\sqrt{3} + 1$."
+tresc: |
+  ### Zadanie 5. (0-3)
+
+  Dany jest trójkąt prostokątny $ABC$, w którym $|\angle ABC| = 90°$ oraz $|\angle CAB| = 60°$. Punkty $K$ i $L$ leżą na bokach — odpowiednio — $AB$ i $BC$ tak, że $|BK| = |BL| = 1$ (zobacz rysunek). Odcinek $KL$ przecina wysokość $BD$ tego trójkąta w punkcie $N$, a ponadto $|AD| = 2$.
+
+  **Wykaż, że $|ND| = \sqrt{3} + 1$.**
 odpowiedz: |
   Rozwiązanie w układzie współrzędnych: $B = (0,0)$, $A = (0,4)$, $C = (4\sqrt{3}, 0)$. Wtedy $K = (0,1)$, $L = (1,0)$, $D = (\sqrt{3}, 3)$, $N = \left(\frac{\sqrt{3}-1}{2}, \frac{3-\sqrt{3}}{2}\right)$.
 
@@ -24,11 +29,11 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pr/ark-08.webp"
+  src="/arkusze/matematyka/2023-maj-pr/zad-05.webp"
   alt="Zadanie 5 - trójkąt 30-60-90, dowód |ND|"
   caption="Strona 8 arkusza CKE PR - zadanie 5."
   zrodlo="CKE 2023 PR"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-R0-100-2305-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_rozszerzony_arkusz_2023_zadania.pdf"
   pdfPage={8}
 />
 

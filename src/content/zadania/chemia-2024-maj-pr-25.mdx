@@ -1,0 +1,50 @@
+---
+arkusz: chemia-2024-maj-pr
+subject: chemia
+nr: 25
+punkty: 4
+typ: otwarte-rozszerzone
+topic: chemia organiczna, identyfikacja związków, próby chemiczne, izomeria
+difficulty: 5
+tresc: |
+  Trzy związki organiczne X, Y i Q są izomerami o masie molowej równej 90 g·mol⁻¹. W wyniku spalenia 45 mg jednego z tych związków otrzymano 27 mg wody oraz 36,0 cm³ tlenku węgla(IV) odmierzonego w temperaturze 293 K i pod ciśnieniem 1013 hPa.
+
+  O cząsteczkach tych związków wiadomo, że:
+  - szkielet każdej z cząsteczek stanowią połączone ze sobą cztery atomy węgla,
+  - cząsteczki związków X i Y są chiralne, a związku Q — achiralne,
+  - cząsteczki związków Y i Q mają taką samą grupę funkcyjną,
+  - odczyn wodnego roztworu związku X jest obojętny, a odczyn wodnego roztworu związku Y — kwasowy.
+
+  Przeprowadzono następujące doświadczenie: do próbki związku X wprowadzono zawiesinę świeżo strąconego Cu(OH)₂, wymieszano (na zimno), a następnie ogrzano. Wyniki tego eksperymentu zilustrowano na zdjęciach (na zimno: niebieski roztwór; po ogrzaniu: pomarańczowy/ceglasty osad — typowe dla próby Trommera).
+
+  Na podstawie obliczeń ustal wzór elementarny i rzeczywisty (sumaryczny) opisanych związków. Następnie napisz:
+  - wzory półstrukturalne (grupowe) związków X i Y
+  - **w formie cząsteczkowej** równanie reakcji związku Q z wodorotlenkiem sodu.
+
+  Zastosuj wzory półstrukturalne (grupowe) związków organicznych. Uniwersalna stała gazowa R = 83,14 hPa·dm³·mol⁻¹·K⁻¹.
+odpowiedz: |
+  Patrz materiał źródłowy CKE — z analizy spalania: $n_{CO_2} = pV/RT = (1013 \cdot 0{,}036)/(83{,}14 \cdot 293) \approx 1{,}5 \cdot 10^{-3}$ mol → $m_C = 18$ mg; $n_{H_2O} = 27/18 = 1{,}5 \cdot 10^{-3}$ mol → $m_H = 3$ mg; $m_O = 45 - 18 - 3 = 24$ mg → $n_O = 1{,}5 \cdot 10^{-3}$ mol. Stosunek C:H:O = 1:2:1. Wzór elementarny: CH₂O. M(CH₂O) = 30 → wzór rzeczywisty: (CH₂O)₃ = C₃H₆O₃ ALE wymagana M = 90 → wzór: **C₃H₆O₃** (kwas mlekowy/glicerynian/itd.). UWAGA: szkielet "cztery atomy węgla" sugeruje raczej C₄ → C₄H₈O₂ (M = 88) lub C₄H₁₀O₃ (M = 106) — sprawdzić materiał źródłowy CKE. Identyfikacja: X chiralny + neutralny + reakcja Trommera (aldehyd lub alfa-hydroksy ketonu) → np. 2-hydroksy butanal; Y chiralny + kwasowy → kwas 2-hydroksybutanowy; Q achiralny + ta sama grupa co Y (kwas) → kwas 3-hydroksybutanowy lub 2-metylo-3-hydroksypropanowy.
+pulapka: |
+  Reakcja Trommera (Cu(OH)₂ + grzanie → Cu₂O ceglasty) jest charakterystyczna dla **aldehydów** (R-CHO) i alfa-hydroksy ketonów; nie reaguje z prostymi alkoholami i kwasami. Chiralność wymaga atomu C z 4 różnymi podstawnikami.
+wymaganie: |
+  X.6 — identyfikacja związków organicznych, izomeria, chiralność, próby chemiczne.
+podobne:
+  - chemia-2025-maj-pr-25
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2024-maj-pr/zad-25.webp"
+  alt="Zadanie 25 - chemia 2024 PR"
+  caption="Strona arkusza CKE 2024 PR chemia — zadanie 25 (identyfikacja izomerów X, Y, Q, próba Trommera)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_chemia_2024_rozszerzony_arkusz_zadania_pytania.pdf"
+  pdfPage={26}
+/>
+
+## Po co to umieć
+
+Identyfikacja związków organicznych na podstawie spalania, prób chemicznych i właściwości to klasyczna metoda analityki sprzed ery NMR — wciąż używana w laboratoriach edukacyjnych i jako podstawa rozumienia struktury.

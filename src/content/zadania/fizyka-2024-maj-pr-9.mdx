@@ -1,0 +1,126 @@
+---
+arkusz: fizyka-2024-maj-pr
+subject: fizyka
+nr: 9
+punkty: 5
+typ: otwarte-krotkie
+topic: optyka, soczewki, równanie soczewki, ogniskowa, układ optyczny
+difficulty: 4
+tresc: |
+  ### Zadanie 9.
+
+  W układzie optycznym ustawiono dwie cienkie soczewki skupiające ze wspólną osią optyczną: soczewka $S_1$ o ogniskowej $f_1 = 15\ \mathrm{cm}$ i soczewka $S_2$ o ogniskowej $f_2 = 20\ \mathrm{cm}$. Soczewki są ustawione tak, że ognisko $F$ leży **między** nimi i jest WSPÓLNYM ogniskiem obu soczewek (ognisko obrazowe $S_1$ pokrywa się z ogniskiem przedmiotowym $S_2$). Z lewej strony pada wiązka światła równoległa do osi optycznej, o szerokości $d_1 = 2{,}25\ \mathrm{mm}$.
+
+  ### Zadanie 9.1. (0–3)
+
+  Oblicz szerokość $d_2$ wiązki światła wychodzącej z układu (po drugiej stronie $S_2$). Zapisz obliczenia.
+
+  ### Zadanie 9.2. (0–2)
+
+  Do układu dodano kolejne dwie soczewki w tej samej osi optycznej:
+  - soczewka $R$ — rozpraszająca, ogniskowa $f_R = -15\ \mathrm{cm}$,
+  - soczewka $S$ — skupiająca, ogniskowa $f_S = 40\ \mathrm{cm}$.
+
+  Określ ustawienie soczewek $R$ i $S$ w nowym układzie tak, aby wiązka równoległa wychodząca z $S_2$ pozostała równoległa po przejściu przez dodane soczewki, a układ działał jako kolejny "teleskop" wewnątrz teleskopu.
+odpowiedz: |
+  **9.1.** Układ to klasyczny **teleskop Keplera** (lub odwrócony lornetkowy): dwie soczewki ustawione tak, że ich ogniska się pokrywają w punkcie $F$. Wiązka równoległa wchodzi → skupia się w $F$ → wychodzi znów jako równoległa, ale o innej szerokości.
+
+  Geometria — promień skrajny biegnie z $S_1$ pod kątem $\alpha_1$ do osi:
+  $$\tan \alpha_1 = \dfrac{d_1/2}{f_1} = \dfrac{1{,}125\ \mathrm{mm}}{150\ \mathrm{mm}} = 0{,}0075$$
+
+  Po przejściu przez $F$ promień rozszerza się i pada na $S_2$ w wysokości $h_2 = f_2 \tan \alpha_1$:
+  $$h_2 = 200 \cdot 0{,}0075 = 1{,}5\ \mathrm{mm}$$
+
+  Stąd szerokość wiązki za $S_2$:
+  $$d_2 = 2 h_2 = 3{,}0\ \mathrm{mm}$$
+
+  Równoważnie — z proporcji powiększenia kątowego teleskopu:
+  $$\dfrac{d_2}{d_1} = \dfrac{f_2}{f_1} = \dfrac{20}{15} = \dfrac{4}{3}$$
+  $$d_2 = 2{,}25 \cdot \dfrac{4}{3} = 3{,}0\ \mathrm{mm}$$
+
+  $$\boxed{d_2 = 3{,}0\ \mathrm{mm}}$$
+
+  **9.2.** Aby wiązka równoległa pozostała równoległa po przejściu przez kolejną parę soczewek, **ogniska soczewek $R$ i $S$ muszą się pokrywać**.
+
+  - Soczewka $R$ jest rozpraszająca ($f_R = -15$ cm). Ognisko obrazowe leży **przed** soczewką (po stronie wiązki padającej).
+  - Soczewka $S$ jest skupiająca ($f_S = 40$ cm). Ognisko przedmiotowe leży **przed** soczewką.
+
+  Aby ogniska się pokryły: $R$ i $S$ muszą być umieszczone tak, by ognisko **obrazowe** $R$ (= 15 cm PRZED $R$) pokrywało się z ogniskiem **przedmiotowym** $S$ (= 40 cm przed $S$). Stąd:
+
+  $$d_{RS} = f_S - |f_R| = 40 - 15 = 25\ \mathrm{cm}$$
+
+  Czyli $R$ należy ustawić **25 cm przed** $S$ (między $S_2$ a $S$), w takiej odległości, że soczewka $S$ leży 40 cm za ogniskiem wspólnym, a soczewka $R$ — 15 cm za tym ogniskiem (po stronie $S$).
+
+  **Powiększenie kątowe** drugiej pary: $\dfrac{d_3}{d_2} = \dfrac{|f_S|}{|f_R|} = \dfrac{40}{15} = \dfrac{8}{3}$.
+
+  Wiązka wychodząca z układu $R+S$ ma szerokość $d_3 = d_2 \cdot \tfrac{8}{3} = 3{,}0 \cdot \tfrac{8}{3} = 8\ \mathrm{mm}$.
+pulapka: |
+  Pułapka 9.1 — zastosowanie równania soczewki $1/x + 1/y = 1/f$ dla wiązki równoległej. NIE: wiązka równoległa = "przedmiot w nieskończoności" → obraz w ognisku ($y = f$). Ponieważ tu jest UKŁAD dwóch soczewek z pokrywającymi się ogniskami, wystarcza geometria.
+
+  Pułapka 9.1 — pomylenie powiększenia liniowego z kątowym. Tu liczy się **szerokość wiązki**, która zachowuje się jak rozmiar liniowy obrazu (powiększenie = $f_2/f_1$ dla teleskopu odwróconego: wiązka się POSZERZA, NIE zwęża).
+
+  Pułapka 9.2 — pomylenie znaków $f$ dla soczewki rozpraszającej. $f_R = -15$ cm: ognisko jest "pozorne", leży po stronie przedmiotu. Geometryczna odległość między soczewkami w "teleskopie" z jedną rozpraszającą i jedną skupiającą: $|f_S| - |f_R|$ (RÓŻNICA, nie suma — jak w lornetce Galileusza).
+
+  Pułapka 9.2 — założenie że soczewka rozpraszająca "psuje" wiązkę. W odpowiednim układzie ją rozszerza, ale ZACHOWUJE równoległość (tak działa lornetka Galileusza, popularne teleobiektywy).
+wymaganie: |
+  V.2 — optyka geometryczna. Cienkie soczewki, ogniskowa, układy soczewek (teleskop). Powiększenie kątowe.
+podobne:
+  - fizyka-2023-maj-pr-9
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2024-maj-pr/zad-09.webp"
+  alt="Zadanie 9 - układ dwóch soczewek (teleskop)"
+  caption="Strona 22-23 arkusza CKE 2024 PR fizyka - zadanie 9 (S1 f1=15cm, S2 f2=20cm, wiązka 2,25 mm; dodawanie R i S)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_fizyka_2024_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={22}
+/>
+
+## Klucz — teleskop dwusoczewkowy
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Teleskop Keplera** (dwie skupiające, ogniska się pokrywają): wiązka równoległa → wiązka równoległa, powiększenie kątowe $\Gamma = f_2/f_1$. Daje obraz odwrócony.
+
+</div>
+
+<div class="krok">
+
+**Teleskop Galileusza** (skupiająca + rozpraszająca, $|f_S| > |f_R|$): krótszy układ, $d = f_S - |f_R|$. Obraz prosty. Popularne w lornetkach teatralnych.
+
+</div>
+
+<div class="krok">
+
+**Zachowanie równoległości**: jeśli wiązka wchodzi równolegle do osi, wychodzi równolegle wtedy i tylko wtedy, gdy ognisko obrazowe pierwszej pokrywa się z ogniskiem przedmiotowym drugiej.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+<div>
+
+**9.1.** $d_2 = d_1 \cdot \dfrac{f_2}{f_1} = 2{,}25 \cdot \dfrac{4}{3} = 3{,}0\ \mathrm{mm}$
+
+**9.2.** Soczewki $R$ i $S$ ustawione w odległości $f_S - |f_R| = 25$ cm, tak by ich ogniska się pokryły. Wiązka wychodząca: $d_3 = 8{,}0$ mm.
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — znak f i odległość</div>
+
+Dla soczewki rozpraszającej $f &lt; 0$. Odległość soczewek w teleskopie Galileusza = $f_{skup} + f_{rozp} = f_S + f_R = 40 + (-15) = 25$ cm. Daje to samo co $|f_S| - |f_R|$.
+</div>
+
+## Po co to umieć
+
+Teleskop Keplera/Galileusza = każdy teleskop astronomiczny, lornetka, mikroskop, lunety celownicze. Zasada: pierwsza soczewka (obiektyw) tworzy obraz przedmiotu odległego, druga (okular) działa jak lupa na ten obraz. Powiększenie kątowe = $f_{obiektyw}/f_{okular}$. Hubble Space Telescope: obiektyw 2.4 m, okular wymienny, powiększenie zależne od trybu obserwacji.

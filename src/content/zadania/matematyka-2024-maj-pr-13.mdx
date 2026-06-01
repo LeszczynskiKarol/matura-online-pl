@@ -7,7 +7,23 @@ typ: otwarte-rozszerzone
 topic: stereometria, optymalizacja, pochodna
 difficulty: 5
 tresc: |
-  Rozważamy wszystkie graniastosłupy prawidłowe trójkątne o objętości $3456$, których krawędź podstawy ma długość nie większą niż $8\sqrt{3}$. Zadanie składa się z dwóch części. **13.1** (2 pkt): wykaż, że pole $P$ powierzchni całkowitej graniastosłupa w zależności od długości $a$ krawędzi podstawy jest określone wzorem $P(a) = \dfrac{a^2 \sqrt{3}}{2} + \dfrac{13824 \sqrt{3}}{a}$. **13.2** (4 pkt): oblicz długość krawędzi podstawy, dla której pole powierzchni jest najmniejsze, oraz tę najmniejszą wartość pola.
+  Rozważamy wszystkie graniastosłupy prawidłowe trójkątne o objętości $3456$, których krawędź podstawy ma długość nie większą niż $8\sqrt{3}$.
+
+  ### Zadanie 13.1. (0–2)
+
+  **Wykaż, że pole $P$ powierzchni całkowitej graniastosłupa w zależności od długości $a$ krawędzi podstawy graniastosłupa jest określone wzorem**
+
+  $$P(a) = \frac{a^2 \sqrt{3}}{2} + \frac{13824 \sqrt{3}}{a}$$
+
+  ### Zadanie 13.2. (0–4)
+
+  Pole $P$ powierzchni całkowitej graniastosłupa w zależności od długości $a$ krawędzi podstawy graniastosłupa jest określone wzorem
+
+  $$P(a) = \frac{a^2 \sqrt{3}}{2} + \frac{13824 \sqrt{3}}{a}$$
+
+  dla $a \in (0, 8\sqrt{3}\,]$.
+
+  **Wyznacz długość krawędzi podstawy tego z rozważanych graniastosłupów, którego pole powierzchni całkowitej jest najmniejsze. Oblicz to najmniejsze pole. Zapisz obliczenia.**
 odpowiedz: |
   $a = 8\sqrt{3}$, $P_{\min} = 96\sqrt{3} + 1728$
 pulapka: |
@@ -25,11 +41,11 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z tym zadaniem
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2024-maj-pr/ark-23.webp"
+  src="/arkusze/matematyka/2024-maj-pr/zad-13.webp"
   alt="Zadanie 13 - strona 23 arkusza CKE"
   caption="Strona 23 arkusza CKE z trescia zadania 13."
   zrodlo="CKE"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/matematyka/MMAP-R0-100-2405-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_rozszerzony_arkusz_2024_zadania.pdf"
   pdfPage={23}
 />
 
@@ -116,7 +132,7 @@ $$P(a) = \frac{a^2 \sqrt{3}}{2} + 3 a \cdot \frac{4608 \sqrt{3}}{a^2} = \frac{a^
 
 ## 13.2 — znajdź minimum $P(a)$ na $(0, 8\sqrt{3}\,]$  *(4 pkt)*
 
-Treść ogranicza dziedzinę: $0 < a \leq 8\sqrt{3}$.
+Treść ogranicza dziedzinę: $0 &lt; a \leq 8\sqrt{3}$.
 
 <div class="kroki-lista">
 
@@ -152,9 +168,9 @@ $8\sqrt{3} \approx 8 \cdot 1{,}732 \approx 13{,}86$. Zatem $24 > 8\sqrt{3}$ → 
 
 <div class="krok">
 
-**Zbadaj znak pochodnej w dziedzinie.** Dla $a \in (0, 8\sqrt{3}\,]$ mamy $a < 24$, czyli $a^3 < 13824$, czyli:
+**Zbadaj znak pochodnej w dziedzinie.** Dla $a \in (0, 8\sqrt{3}\,]$ mamy $a &lt; 24$, czyli $a^3 &lt; 13824$, czyli:
 
-$$a^3 - 13824 < 0 \quad\Rightarrow\quad P'(a) < 0$$
+$$a^3 - 13824 &lt; 0 \quad\Rightarrow\quad P'(a) &lt; 0$$
 
 (po pomnożeniu przez $\tfrac{\sqrt{3}}{a^2}$, co jest dodatnie). Pochodna jest **ujemna** w całej dziedzinie, więc funkcja $P$ jest **malejąca** na $(0, 8\sqrt{3}\,]$.
 

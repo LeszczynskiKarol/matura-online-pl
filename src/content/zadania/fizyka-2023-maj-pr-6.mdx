@@ -1,0 +1,115 @@
+---
+arkusz: fizyka-2023-maj-pr
+subject: fizyka
+nr: 6
+punkty: 5
+typ: otwarte-rozszerzone
+topic: termodynamika, przemiana izobaryczna, przemiana izochoryczna, gaz doskonały jednoatomowy, równanie stanu, ciepło molowe, I zasada termodynamiki
+difficulty: 4
+tresc: |
+  W cylindrze szczelnie zamkniętym ruchomym tłokiem znajduje się $n = 1$ mol jednoatomowego gazu doskonałego. Ten gaz poddano kolejno dwóm przemianom.
+
+  - W pierwszej przemianie gaz ogrzewano, utrzymując **stałą objętość**, i dostarczono do tego gazu $Q_1 = 100\ \text{J}$ ciepła.
+  - W drugiej przemianie gaz ogrzewano, utrzymując **stałe ciśnienie**, i dostarczono do tego gazu $Q_2 = 100\ \text{J}$ ciepła, czyli tę samą ilość ciepła, ile dostarczono w pierwszej przemianie.
+
+  Ciepło molowe tego gazu przy stałej objętości wynosi $C_V = \tfrac{3}{2} R$, gdzie $R$ jest stałą gazową.
+
+  ### Zadanie 6.1. (0–1)
+
+  Oceń prawdziwość poniższych stwierdzeń. Zaznacz P, jeśli stwierdzenie jest prawdziwe, albo F – jeśli jest fałszywe.
+
+  | Nr | Stwierdzenie | P/F |
+  |---|---|---|
+  | 1. | W pierwszej przemianie wartość siły parcia gazu na tłok jest wprost proporcjonalna do temperatury bezwzględnej tego gazu. | P / F |
+  | 2. | W drugiej przemianie objętość gazu w cylindrze jest wprost proporcjonalna do średniej energii kinetycznej cząsteczek tego gazu. | P / F |
+
+  ### Zadanie 6.2. (0–1)
+
+  Dokończ zdanie. Zaznacz odpowiedź A, B albo C i jej uzasadnienie 1., 2. albo 3.
+
+  Przyrost temperatury gazu w pierwszej przemianie oznaczamy jako $\Delta T_1$, a w drugiej przemianie – jako $\Delta T_2$.
+
+  Przyrosty temperatury gazu w opisanych przemianach spełniają relację
+
+  **A.** $\Delta T_1 > \Delta T_2$     **B.** $\Delta T_1 &lt; \Delta T_2$ ponieważ przyrost energii wewnętrznej gazu jest     **C.** $\Delta T_1 = \Delta T_2$
+
+  **1.** taki sam w obu przemianach.     **2.** większy w pierwszej przemianie.     **3.** większy w drugiej przemianie.
+
+  ### Zadanie 6.3. (0–3)
+
+  Oblicz pracę, którą wykonała siła parcia gazu na tłok w drugiej przemianie. Zapisz obliczenia.
+odpowiedz: |
+  ### Zadanie 6.1.
+
+  1. W izochorze: $p \cdot V = nRT$, $V = \text{const}$, więc $p = \frac{nR}{V} T$ — ciśnienie wprost proporcjonalne do $T$. Siła parcia $F = p \cdot S$ (gdzie $S$ – pole tłoka, stałe), więc $F \propto T$. **P**
+  2. W izobarze: $V = \frac{nR}{p} T$, więc $V \propto T$. Średnia energia kinetyczna cząsteczki: $\langle E_k \rangle = \tfrac{3}{2} k_B T \propto T$. Więc $V \propto \langle E_k \rangle$. **P**
+
+  ### Zadanie 6.2.
+
+  Izochora: $W = 0$, więc cała energia ciepła idzie na $\Delta U$: $Q_1 = n C_V \Delta T_1$, czyli $\Delta T_1 = Q_1 / (n C_V)$.
+
+  Izobara: $Q_2 = n C_p \Delta T_2$, gdzie $C_p = C_V + R = \tfrac{5}{2} R$. Część ciepła idzie na pracę, część na $\Delta U$: $\Delta U_2 = n C_V \Delta T_2 &lt; Q_2$.
+
+  Skoro $Q_1 = Q_2$ i $C_p > C_V$, to:
+
+  $$\Delta T_2 = \frac{Q_2}{n C_p} &lt; \frac{Q_1}{n C_V} = \Delta T_1$$
+
+  W izochorze całe ciepło idzie na wzrost energii wewnętrznej — w izobarze część zużywana jest na pracę. Zatem $\Delta U_1 > \Delta U_2$.
+
+  Odpowiedź: **A – 2**.
+
+  ### Zadanie 6.3.
+
+  W izobarze: $Q_2 = \Delta U_2 + W_2$, gdzie $W_2$ – praca gazu na tłok.
+
+  $$\Delta U_2 = n C_V \Delta T_2$$
+
+  $$Q_2 = n (C_V + R) \Delta T_2 = n C_p \Delta T_2$$
+
+  Stosunek pracy do ciepła:
+
+  $$\frac{W_2}{Q_2} = \frac{n R \Delta T_2}{n C_p \Delta T_2} = \frac{R}{C_p} = \frac{R}{\tfrac{5}{2} R} = \frac{2}{5}$$
+
+  $$W_2 = \tfrac{2}{5} Q_2 = \tfrac{2}{5} \cdot 100\ \text{J} = 40\ \text{J}$$
+
+  **Odpowiedź:** $W_2 = 40\ \text{J}$.
+pulapka: |
+  - Dla jednoatomowego gazu doskonałego: $C_V = \tfrac{3}{2}R$, $C_p = C_V + R = \tfrac{5}{2}R$.
+  - W izochorze $W = 0$, w izobarze $W = p\Delta V = nR\Delta T$.
+  - I zasada termodynamiki: $\Delta U = Q - W$ (konwencja CKE: $W$ = praca wykonana NAD gazem) lub $Q = \Delta U + W$ (W = praca wykonana PRZEZ gaz). Uważać na znak!
+  - Energia wewnętrzna gazu doskonałego zależy TYLKO od temperatury: $U = n C_V T$, niezależnie od przemiany.
+  - Częsta pomyłka: stosowanie $C_V$ zamiast $C_p$ przy obliczaniu $\Delta T$ w izobarze.
+wymaganie: |
+  Podstawa programowa fizyki PR — dział V (Termodynamika): I zasada termodynamiki, przemiany gazu doskonałego, ciepła molowe $C_V$ i $C_p$, związek Mayera.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2023-maj-pr/zad-06.webp"
+  alt="Zadanie 6 - fizyka 2023 PR"
+  caption="Strona arkusza CKE 2023 PR fizyka - zadanie 6."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_fizyka_2023_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={16}
+/>
+
+## Rozwiązanie
+
+### Zadanie 6.1.
+
+1. **P** — w izochorze $p = \frac{nR}{V} T$, więc $F = pS \propto T$.
+2. **P** — w izobarze $V \propto T$, a $\langle E_k \rangle \propto T$.
+
+### Zadanie 6.2.
+
+**A – 2**. $\Delta T_1 > \Delta T_2$, bo w izochorze całe ciepło zwiększa $\Delta U$, w izobarze część pracy jest "skradziona" tłokowi.
+
+### Zadanie 6.3.
+
+W izobarze: $\frac{W}{Q} = \frac{R}{C_p} = \frac{2}{5}$.
+
+$$W_2 = \tfrac{2}{5} \cdot 100\ \text{J} = 40\ \text{J}$$

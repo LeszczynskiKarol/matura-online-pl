@@ -1,0 +1,89 @@
+---
+arkusz: fizyka-2025-maj-pr
+subject: fizyka
+nr: 6
+punkty: 8
+typ: otwarte-rozszerzone
+topic: termodynamika, cykl gazu doskonałego, przemiany, I zasada termodynamiki
+difficulty: 4
+tresc: |
+  Na wykresie 1. przedstawiono zależność ciśnienia $p$ od temperatury $T$ w cyklu przemian
+  termodynamicznych $A \to B \to C \to A$ ustalonej masy gazu doskonałego.
+
+  Przyjmij, że:
+  - ciepło molowe tego gazu przy stałej objętości wynosi $C_V = \tfrac{3}{2}R$, gdzie $R$ jest stałą gazową
+  - temperatura, ciśnienie i objętość gazu w stanie $A$ są — odpowiednio — równe $T_1$, $p_1$ i $V_1$
+  - stany gazu $A$, $B$, $C$, $X$ znajdują się w punktach kratowych siatki wykresu
+  - liczbę moli gazu oznaczymy jako $n$.
+
+  Z wykresu odczytujemy: $A = (T_1; p_1)$, $B = (3T_1; 3p_1)$, $C = (3T_1; p_1)$,
+  $X = (3T_1; 2p_1)$ (punkt pomocniczy między B i C).
+
+  **Zadanie 6.1. (0–2)** Oceń prawdziwość poniższych stwierdzeń. Zaznacz P, jeśli stwierdzenie
+  jest prawdziwe, albo F – jeśli jest fałszywe.
+  1. W przemianie $A \to B$ energia wewnętrzna gazu wzrosła.
+  2. W przemianie $C \to A$ gaz pobrał ciepło z otoczenia.
+  3. Wartość bezwzględna pracy siły parcia gazu w przemianie $B \to C$ jest równa wartości
+     bezwzględnej ciepła pobranego w tej przemianie.
+
+  **Zadanie 6.2. (0–4)** Wyznacz objętości gazu w stanach $B$, $C$ oraz $X$ w zależności od $V_1$.
+  Narysuj wykres zależności ciśnienia $p$ od objętości $V$ dla cyklu $A \to B \to C \to A$.
+
+  **Zadanie 6.3. (0–2)** Wyznacz ciepło $Q_{odd}$ oddane przez gaz w przemianie $C \to A$.
+  Wynik zapisz w zależności od $T_1$, $n$ i $R$.
+odpowiedz: |
+  **6.1.**
+  - (1) **P** — w przemianie $A \to B$ rośnie zarówno $T$, jak i $p$ (z wykresu izochora? Sprawdzamy:
+    $A \to B$ to $p/T = \text{const}$, czyli izochora — temperatura rośnie, więc energia wewnętrzna
+    $U = nC_V T$ wzrasta).
+  - (2) **F** — w $C \to A$ temperatura maleje ($3T_1 \to T_1$), gaz oddaje ciepło.
+  - (3) **P** — $B \to C$ jest izotermą (stała $T$, malejące $p$), więc $\Delta U = 0$ i z I zasady
+    termodynamiki $Q = W$, więc $|W| = |Q|$.
+
+  **6.2.** Z równania stanu gazu $pV = nRT$ przy ustalonej $n$:
+  - W $A$: $p_1 V_1 = nRT_1$
+  - W $B$: $3p_1 \cdot V_B = nR \cdot 3T_1$, więc $V_B = V_1$ (izochora $A \to B$)
+  - W $C$: $p_1 \cdot V_C = nR \cdot 3T_1$, więc $V_C = 3V_1$ (izobara $C \to A$)
+  - W $X$: $2p_1 \cdot V_X = nR \cdot 3T_1$, więc $V_X = \tfrac{3}{2}V_1 = 1{,}5 V_1$
+
+  Wykres $p(V)$: $A(V_1; p_1) \to B(V_1; 3p_1)$ — pionowa (izochora), $B(V_1; 3p_1) \to C(3V_1; p_1)$
+  — krzywa izotermiczna (hiperbola), $C(3V_1; p_1) \to A(V_1; p_1)$ — pozioma (izobara).
+
+  **6.3.** Przemiana $C \to A$ jest izobaryczna. Ciepło oddane:
+  $$Q_{odd} = n C_p \Delta T = n \cdot \tfrac{5}{2}R \cdot (T_1 - 3T_1) = -5 n R T_1$$
+
+  Wartość bezwzględna: $|Q_{odd}| = 5 n R T_1$.
+pulapka: |
+  Najczęstsze błędy: pomylenie izochory z izobarą na wykresie $p(T)$ (izochora przechodzi przez
+  początek układu współrzędnych w $p(T)$), użycie $C_V$ zamiast $C_p$ w przemianie izobarycznej,
+  brak znaku przy $Q_{odd}$. W gazie jednoatomowym $C_p = C_V + R = \tfrac{5}{2}R$.
+wymaganie: |
+  V.1, V.2, V.3 — gaz doskonały, przemiany termodynamiczne, I zasada termodynamiki,
+  ciepło molowe przy stałej objętości i stałym ciśnieniu.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2025-maj-pr/zad-06.webp"
+  alt="Zadanie 6 z arkusza maturalnego CKE 2025 maj PR fizyka — cykl gazu doskonałego"
+  caption="Zadanie 6 — arkusz maturalny CKE, maj 2025, fizyka, poziom rozszerzony"
+  zrodlo="CKE 2025"
+  pdfUrl="/arkusze/fizyka/2025-maj-pr/arkusz.pdf"
+  pdfPage={14}
+/>
+
+## Rozwiązanie krok po kroku
+
+### 6.1 — analiza P/F
+
+Klucz: identyfikacja każdej przemiany jako izochory, izobary lub izotermy.
+
+### 6.2 — równanie stanu
+
+Z $pV = nRT$ wyznaczamy objętości po kolei, korzystając z $p_1 V_1 = nRT_1$ jako odniesienia.
+
+### 6.3 — ciepło w izobarze
+
+W $C \to A$ ciśnienie stałe — używamy $Q = nC_p\Delta T$, $C_p = \tfrac{5}{2}R$.

@@ -1,0 +1,130 @@
+---
+arkusz: fizyka-2024-maj-pr
+subject: fizyka
+nr: 1
+punkty: 8
+typ: otwarte-krotkie
+topic: dynamika, opory ruchu, prędkość graniczna, II zasada Newtona, ruch jednostajny
+difficulty: 4
+tresc: |
+  ### Zadanie 1.
+
+  Kropla wody spadała pionowo w powietrzu. Na wykresie przedstawiono zależność wartości prędkości kropli $v$ od czasu $t$ ruchu. Na wykresie zaznaczono punkty A, B, C, D, E, F odpowiadające wybranym chwilom ruchu kropli.
+
+  Przyjmij, że siła oporu powietrza działająca na kroplę jest proporcjonalna do kwadratu jej prędkości:
+  $$F_o = k \cdot \rho_p \cdot S \cdot v^2$$
+  gdzie $\rho_p$ — gęstość powietrza, $S$ — pole przekroju kropli (koło o promieniu $R$), $k$ — stała bezwymiarowa. Gęstość wody $\rho_w$. Objętość kropli $V = \tfrac{4}{3}\pi R^3$.
+
+  ### Zadanie 1.1. (0–1)
+
+  Dokończ zdanie. Wybierz właściwą odpowiedź spośród podanych. Od chwili $t_A$ do chwili $t_D$ wartość przyśpieszenia kropli:
+
+  **A.** rosła      **B.** malała      **C.** była stała
+
+  Uzasadnij wybór, wybierając poprawne dokończenie zdania spośród 1–3. Wartość siły wypadkowej działającej na kroplę w tym przedziale czasu:
+
+  **1.** rosła, ponieważ rosła siła oporu powietrza.
+
+  **2.** malała, ponieważ wraz ze wzrostem prędkości rosła siła oporu powietrza, przeciwnie skierowana do siły ciężkości.
+
+  **3.** była stała, ponieważ stała była siła ciężkości działająca na kroplę.
+
+  ### Zadanie 1.2. (0–3)
+
+  Narysuj na schematach (osobno dla chwili $t_E$ i $t_B$) wektory siły oporu powietrza $\vec{F}_{oE}$ i $\vec{F}_{oB}$ działającej na kroplę. Zachowaj proporcję długości wektorów. Wykorzystaj fakt, że $F_o \propto v^2$, oraz odczytane z wykresu wartości $v_E = v_{gr}$ (prędkość graniczna) i $v_B$.
+
+  ### Zadanie 1.3. (0–4)
+
+  Wyprowadź wzór na wartość prędkości granicznej $v_E$ spadania kropli wyrażoną przez: $R$ (promień kropli), $\rho_p$ (gęstość powietrza), $\rho_w$ (gęstość wody), $g$ (przyśpieszenie ziemskie) i $k$ (stała). Zapisz obliczenia.
+odpowiedz: |
+  **1.1.** Odpowiedź: **B – 2**.
+
+  Od $t_A$ do $t_D$ prędkość rosła, więc rosła siła oporu $F_o \propto v^2$ (przeciwnie skierowana do $\vec{F}_g$). Siła wypadkowa $F_w = F_g - F_o$ **malała** → przyśpieszenie **malało**.
+
+  **1.2.** Z wykresu: $v_E = v_{gr}$ (prędkość graniczna, od ok. $t_D$ ruch jest jednostajny), $v_B \approx \tfrac{1}{3} v_E$ (przykładowo, zależnie od odczytu).
+
+  Stosunek długości wektorów: $\dfrac{F_{oE}}{F_{oB}} = \left(\dfrac{v_E}{v_B}\right)^2 \approx 9$.
+
+  W chwili $t_E$: kropla porusza się z prędkością graniczną, więc $\vec{F}_{oE}$ jest skierowana pionowo w górę i równa co do wartości sile ciężkości $\vec{F}_g$. W chwili $t_B$: $\vec{F}_{oB}$ też w górę, ale ok. 9× krótsza.
+
+  **1.3.** Warunek prędkości granicznej: $\vec{F}_w = 0 \Rightarrow F_g = F_o$.
+
+  $$m \cdot g = k \cdot \rho_p \cdot S \cdot v_E^2$$
+
+  $$\rho_w \cdot V \cdot g = k \cdot \rho_p \cdot \pi R^2 \cdot v_E^2$$
+
+  $$\rho_w \cdot \tfrac{4}{3}\pi R^3 \cdot g = k \cdot \rho_p \cdot \pi R^2 \cdot v_E^2$$
+
+  $$v_E^2 = \dfrac{4 R \rho_w g}{3 k \rho_p}$$
+
+  $$\boxed{v_E = \sqrt{\dfrac{4 R \rho_w g}{3 k \rho_p}} = 2\sqrt{\dfrac{R \rho_w g}{3 k \rho_p}}}$$
+pulapka: |
+  Pułapka 1.1 — wybór "C – 3" ("stała siła ciężkości"). NIE: pytanie dotyczy **siły wypadkowej**, nie samej $F_g$. $F_w = F_g - F_o$, a $F_o$ rośnie, więc $F_w$ maleje.
+
+  Pułapka 1.2 — narysowanie $\vec{F}_{oE}$ i $\vec{F}_{oB}$ o tej samej długości. NIE: $F_o \propto v^2$, więc stosunek długości = stosunek kwadratów prędkości (∼9 ×).
+
+  Pułapka 1.3 — pominięcie pola przekroju $S = \pi R^2$ (koło, nie kula). Druga: zapomnienie że masa kropli $m = \rho_w V$, NIE $\rho_p V$ (gęstość WODY, nie powietrza).
+wymaganie: |
+  II. Mechanika — siły, dynamika, II zasada Newtona, ruch ciał w polu grawitacyjnym przy obecności oporów ośrodka. Analiza wykresu $v(t)$.
+podobne:
+  - fizyka-2025-maj-pr-1
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2024-maj-pr/zad-01.webp"
+  alt="Zadanie 1 - kropla wody spadająca z oporem powietrza"
+  caption="Strona 4-6 arkusza CKE 2024 PR fizyka - zadanie 1 (wykres v(t), siły oporu, prędkość graniczna)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_fizyka_2024_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={4}
+/>
+
+## Klucz fizyczny — spadanie z oporem powietrza
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Faza początkowa** ($t &lt; t_D$): $v$ mała → $F_o = k\rho_p S v^2$ mała → $F_w = F_g - F_o > 0$ → ruch przyśpieszony.
+
+</div>
+
+<div class="krok">
+
+**Faza graniczna** ($t \geq t_D$): $v = v_{gr}$ = const → $F_o = F_g$ → $F_w = 0$ → ruch jednostajny.
+
+</div>
+
+<div class="krok">
+
+Warunek prędkości granicznej: $\rho_w \cdot \tfrac{4}{3}\pi R^3 \cdot g = k \cdot \rho_p \cdot \pi R^2 \cdot v_{gr}^2$.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+<div>
+
+**1.1.** **B – 2** (przyśpieszenie maleje, bo rośnie $F_o$, więc maleje $F_w$).
+
+**1.2.** Wektory $\vec{F}_o$ pionowo w górę; $|\vec{F}_{oE}| / |\vec{F}_{oB}| = (v_E/v_B)^2$.
+
+**1.3.** $v_E = \sqrt{\dfrac{4 R \rho_w g}{3 k \rho_p}}$
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — co maleje</div>
+
+To nie $F_g$ się zmienia (ona jest stała = $mg$), tylko **wypadkowa** $F_w = F_g - F_o$, bo $F_o$ rośnie z prędkością.
+</div>
+
+## Po co to umieć
+
+Każde ciało spadające w atmosferze (skoczek spadochronowy, kropla deszczu, grad) osiąga **prędkość graniczną**. Dla człowieka w pozycji "orła" $v_{gr} \approx 200$ km/h, w pozycji "strzałki" — ok. 300 km/h. Kropla deszczu (R ≈ 1 mm) osiąga $v_{gr} \approx 9$ m/s — dlatego deszcz nie zabija, mimo że spada z chmury wysokiej na 1 km.

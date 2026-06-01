@@ -6,7 +6,8 @@ punkty: 2
 typ: otwarte-rozszerzone
 topic: dowód, podzielność, parzystość liczb sąsiednich
 difficulty: 3
-tresc: "Wykaż, że dla każdej liczby całkowitej $n$ liczba $7n^2 + 21n$ jest podzielna przez $14$."
+tresc: |
+  Wykaż, że dla każdej liczby całkowitej $n$ liczba $7n^2 + 21n$ jest podzielna przez $14$.
 odpowiedz: |
   $7n^2 + 21n = 7n(n+3)$. Wystarczy pokazać, że $n(n+3)$ jest podzielna przez $2$. Liczby $n$ i $n+3$ mają **różną parzystość** (różnią się o liczbę nieparzystą $3$), więc dokładnie jedna z nich jest parzysta. Iloczyn $n(n+3) = 2k$ dla pewnego $k$, stąd $7n(n+3) = 14k$. ∎
 pulapka: |
@@ -22,11 +23,11 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2026-maj-pp/ark-07.webp"
+  src="/arkusze/matematyka/2026-maj-pp/zad-07.webp"
   alt="Zadanie 7 - dowód podzielności przez 14"
   caption="Strona 7 arkusza CKE 2026 PP - zadanie 7."
   zrodlo="CKE 2026"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_arkusz_2026_wersja_a.pdf"
   pdfPage={7}
 />
 

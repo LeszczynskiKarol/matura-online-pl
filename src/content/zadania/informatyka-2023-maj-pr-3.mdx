@@ -1,0 +1,149 @@
+---
+arkusz: informatyka-2023-maj-pr
+subject: informatyka
+nr: 3
+punkty: 10
+typ: otwarte-rozszerzone
+topic: liczba Pi, analiza tekstu, fragmenty cyfr, ciągi rosnąco-malejące
+difficulty: 4
+tresc: |
+  **Zadanie 3. Liczba Pi**
+
+  Pewien matematyk jest zafascynowany liczbą π = 3,14159265... do tego stopnia, że zapisał jej rozwinięcie dziesiętne z dokładnością do 10 000 cyfr po przecinku. Wszystkie cyfry po przecinku zapisał w pliku tekstowym pi.txt.
+
+  Plik pi.txt zawiera 10 000 wierszy, każdy wiersz zawiera jedną cyfrę. W pierwszych 10 wierszach pliku zapisano zatem cyfry: 1, 4, 1, 5, 9, 2, 6, 5, 3, 5.
+
+  Matematyk zastanawia się, jakiego rodzaju regularności można zaobserwować w zebranych danych. Napisz program(y), który(-e) da(-dzą) odpowiedzi do poniższych zadań. Odpowiedzi do zadań zapisz w pliku wyniki3.txt, a każdą z nich poprzedź numerem odpowiedniego zadania. Plik pi_przyklad.txt zawiera 100 pierwszych wierszy pliku pi.txt. Odpowiedzi dla danych z tego pliku są podane pod treściami zadań.
+
+  **Zadanie 3.1. (0–2)** Fragmentem 2-cyfrowym nazywamy dwie następujące po sobie cyfry w pliku pi.txt. Wszystkich fragmentów 2-cyfrowych zapisanych w tym pliku jest 9999. Ostatni rozpoczyna się w wierszu nr 9999.
+
+  Znajdź liczbę wszystkich fragmentów 2-cyfrowych, które są zapisami dziesiętnymi liczb o wartościach **większych** od 13. Dla danych zapisanych w pliku pi_przyklad.txt poprawna odpowiedź to 73.
+
+  **Zadanie 3.2. (0–3)** Wszystkich możliwych różnych fragmentów 2-cyfrowych jest dokładnie 100. Są nimi fragmenty 00, 01, 02, …, 99. Można sprawdzić, że np. 2-cyfrowy fragment równy 27 występuje w pliku pi.txt 101 razy.
+
+  Znajdź fragment 2-cyfrowy, którego liczba wystąpień w pliku pi.txt jest najmniejsza, oraz fragment 2-cyfrowy, którego liczba wystąpień jest największa. W wyniku podaj znalezione fragmenty 2-cyfrowe oraz liczby ich wystąpień. W przypadku, gdy więcej niż jeden fragment występuje tyle samo razy, wypisz ten o mniejszej wartości liczbowej.
+
+  Dla danych z pliku pi_przyklad.txt poprawna odpowiedź to: 00 0 / 62 4 (minimalna liczba wystąpień: fragment 00, liczba wystąpień 0; maksymalna liczba wystąpień: fragment 62, liczba wystąpień 4).
+
+  **Informacja do zadań 3.3. i 3.4.** Skończony co najmniej 4-elementowy ciąg liczb (a₁, a₂, …, aₙ) jest *rosnąco-malejący*, jeśli można podzielić go na dwa ciągi, z których pierwszy jest rosnący, a drugi – malejący, tzn. jeśli istnieje takie k ∈ {2, 3, ..., n–2}, że aₖ &lt; aₖ₊₁ &lt; ... &lt; aₙ oraz aₖ₊₁ > aₖ₊₂ > ... > aₙ.
+
+  Przykład: Ciąg (2, 5, 7, 9, 8, 3, 1) jest rosnąco-malejący, bo można podzielić na (2, 5, 7) malejący (jest 8, 3, 1) – odpowiednio – (2, 5, 7, 9) i (8, 3, 1). Ciąg (5, 9, 9, 4, 1) także jest rosnąco-malejący. Ciągi (2, 5, 7, 9, 8, 3, 1, 1, 1) (2, 5, 7, 8, 3, 4, 3, 4) oraz (5, 5, 3, 2, 1) nie są rosnąco-malejące.
+
+  **Zadanie 3.3. (0–2)** Podaj liczbę ciągów kolejnych cyfr z pliku pi.txt, które są *rosnąco-malejące*. Dla danych zapisanych w pliku pi_przyklad.txt poprawna odpowiedź to 77.
+
+  **Zadanie 3.4. (0–3)** Znajdź najdłuższy ciąg kolejnych cyfr z pliku pi.txt, który jest *rosnąco-malejący*, oraz pozycję, na której on się rozpoczyna. W pliku pi.txt jest tylko jeden ciąg taki ciągi o największej długości.
+
+  Wynik zapisz w dwóch wierszach: w pierwszym wierszu zapisz pozycję, od której zaczyna się ciąg rosnąco-malejący, a w drugim wypisz znaleziony ciąg. Cyfry ciągu zapisz jedną po drugiej, bez znaku odstępu.
+
+  Dla danych zapisanych w pliku pi_przyklad.txt poprawna odpowiedź to: 77 / 0899862 (najdłuższy ciąg rosnąco-malejący w pliku pi_przyklad.txt to ciąg 0899862 o długości 7 rozpoczynający się w 77 wierszu pliku).
+odpowiedz: |
+  **3.1.** Fragmenty 2-cyfrowe > 13. Wczytujemy plik, iterujemy po sąsiadujących parach, składamy liczbę dwucyfrową i porównujemy.
+
+  ```python
+  cyfry = [int(l.strip()) for l in open("pi.txt")]
+  count = 0
+  for i in range(len(cyfry)-1):
+      v = cyfry[i]*10 + cyfry[i+1]
+      if v > 13:
+          count += 1
+  print(count)
+  ```
+
+  Odpowiedź dla pi.txt: liczba zależy od danych (przewidywany rząd ~8500).
+
+  **3.2.** Zliczamy 100 możliwych par i znajdujemy min/max:
+
+  ```python
+  from collections import Counter
+  cyfry = [l.strip() for l in open("pi.txt")]
+  pairs = [cyfry[i]+cyfry[i+1] for i in range(len(cyfry)-1)]
+  cnt = Counter(pairs)
+  # uzupełniamy zerami brakujące
+  for v in range(100):
+      key = f"{v:02d}"
+      cnt.setdefault(key, 0)
+  # min: najpierw najmniejsza liczność, przy remisie najmniejsza wartość
+  min_frag = min(cnt.items(), key=lambda x: (x[1], int(x[0])))
+  max_frag = max(cnt.items(), key=lambda x: (x[1], -int(x[0])))
+  print(min_frag, max_frag)
+  ```
+
+  **3.3.** Liczba ciągów rosnąco-malejących (długości ≥ 4) w pliku.
+
+  ```python
+  cyfry = [int(l.strip()) for l in open("pi.txt")]
+  count = 0
+  n = len(cyfry)
+  for i in range(n):
+      for j in range(i+3, n):  # długość >= 4
+          seq = cyfry[i:j+1]
+          # znajdź szczyt
+          peak = seq.index(max(seq))
+          if peak == 0 or peak == len(seq)-1:
+              continue
+          # sprawdź ściśle rosnący do peak i ściśle malejący po peak
+          if all(seq[k] &lt; seq[k+1] for k in range(peak)) and \
+             all(seq[k] > seq[k+1] for k in range(peak, len(seq)-1)):
+              count += 1
+  print(count)
+  ```
+
+  **3.4.** Najdłuższy ciąg rosnąco-malejący. Algorytm liniowy: liczymy dla każdej pozycji długość najdłuższego ściśle rosnącego ciągu kończącego się tu (`up[i]`) i ściśle malejącego zaczynającego się tu (`down[i]`). Wynik dla szczytu i: `up[i] + down[i] - 1` (wymagana długość ≥ 4, oba ramiona ≥ 2).
+
+  ```python
+  c = [int(l.strip()) for l in open("pi.txt")]
+  n = len(c)
+  up = [1]*n
+  for i in range(1, n):
+      if c[i] > c[i-1]: up[i] = up[i-1] + 1
+  down = [1]*n
+  for i in range(n-2, -1, -1):
+      if c[i] > c[i+1]: down[i] = down[i+1] + 1
+  best_len, best_start = 0, 0
+  for i in range(n):
+      if up[i] >= 2 and down[i] >= 2:
+          L = up[i] + down[i] - 1
+          if L > best_len:
+              best_len, best_start = L, i - up[i] + 2  # pozycja 1-indexed wiersza początku
+  print(best_start)
+  print("".join(str(c[k]) for k in range(best_start-1, best_start-1+best_len)))
+  ```
+pulapka: |
+  Zad. 3.2 — przy tie-break wymagane jest "mniejsza wartość liczbowa" zarówno dla min jak i dla max — to nieoczywiste przy max (większość intuicyjnie wzięłaby największą). Czytaj polecenie dosłownie.
+  Zad. 3.3 — definicja wymaga "co najmniej 4-elementowy" i ŚCIŚLE rosnący/malejący — żadne równości (5,9,9,4,1 NIE jest rosnąco-malejący, mimo że tak wygląda — patrz: arkusz mówi "także jest", ale to znaczy że spełnia, bo 5&lt;9 i 9>4>1, OK; z kolei 5,5,3,2,1 NIE bo 5=5 nie jest "<").
+  Zad. 3.4 — szukamy NAJDŁUŻSZEGO; "tylko jeden taki" — gwarancja unikalności. Pozycję raportujemy jako numer wiersza w pi.txt (1-indexed).
+wymaganie: |
+  Wymaganie ogólne II i III. Podstawa: algorytmy na ciągach (znajdowanie wzorca, ekstrema), iteracja po pliku, programowanie strukturalne, złożoność obliczeniowa.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2023-maj-pr/zad-03.webp"
+  alt="Zadanie 3 - informatyka 2023 PR"
+  caption="Strona arkusza CKE 2023 PR informatyka - zadanie 3 (Liczba Pi)."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_informatyka_2023_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={12}
+/>
+
+## Rozwiązanie
+
+### 3.1. Pary > 13
+
+Składamy parę `(c[i], c[i+1])` w liczbę `10·c[i] + c[i+1]`, porównujemy z 13.
+
+### 3.2. Min / max wystąpienie pary
+
+Zliczamy wszystkie 9999 par, uzupełniamy zerami brakujące spośród 00–99, sortujemy z odpowiednim kluczem (przy remisie wartość mniejsza).
+
+### 3.3. Liczba podciągów rosnąco-malejących
+
+Definicja: ciąg długości ≥ 4 z jednym wyraźnym szczytem (ściśle rosnący do, ściśle malejący po).
+
+### 3.4. Najdłuższy ciąg rosnąco-malejący
+
+Programowanie dynamiczne O(n): `up[i]` = długość ciągu rosnącego kończącego się na pozycji i; `down[i]` = długość malejącego od i. Dla każdego potencjalnego szczytu i: długość = `up[i] + down[i] - 1`.

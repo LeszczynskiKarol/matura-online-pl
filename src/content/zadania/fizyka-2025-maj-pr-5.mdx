@@ -1,0 +1,69 @@
+---
+arkusz: fizyka-2025-maj-pr
+subject: fizyka
+nr: 5
+punkty: 6
+typ: otwarte-rozszerzone
+topic: grawitacja, ruch po orbicie eliptycznej, prawa Keplera
+difficulty: 4
+tresc: |
+  Planetoida Chiron krąży wokół Słońca po orbicie eliptycznej. Odległość peryhelium (najbliższego
+  punktu od Słońca) wynosi $r_P = 8{,}5 \text{ au}$, a odległość aphelium —
+  $r_A = 18{,}9 \text{ au}$ (gdzie 1 au to średnia odległość Ziemi od Słońca).
+
+  **Zadanie 5.1. (0–2)** Oceń prawdziwość poniższych stwierdzeń. Zaznacz P, jeśli stwierdzenie
+  jest prawdziwe, albo F – jeśli jest fałszywe. (Wektor przyspieszenia Chirona, możliwe punkty
+  wspólne orbity z orbitą Ziemi, porównanie okresu obiegu Chirona z okresem ziemskim.)
+
+  **Zadanie 5.2. (0–1)** Dokończ zdanie. Zaznacz odpowiedź A, B albo C oraz jej uzasadnienie
+  1, 2 albo 3. (Porównanie wartości prędkości w peryhelium i aphelium oraz zachowanie momentu pędu
+  lub energii mechanicznej.)
+
+  **Zadanie 5.3. (0–3)** Oblicz okres obiegu planetoidy Chiron wokół Słońca. Wynik podaj w latach
+  ziemskich. Skorzystaj z III prawa Keplera.
+odpowiedz: |
+  **5.1.** Wektor przyspieszenia w każdym punkcie orbity skierowany jest do Słońca (siła grawitacji).
+  Okres obiegu Chirona jest większy od ziemskiego (większa półoś wielka).
+
+  **5.2.** Z zasady zachowania momentu pędu: $m v_P r_P = m v_A r_A$, więc
+  $\dfrac{v_P}{v_A} = \dfrac{r_A}{r_P} = \dfrac{18{,}9}{8{,}5} \approx 2{,}22$.
+
+  **5.3.** Półoś wielka orbity Chirona:
+  $$a = \dfrac{r_P + r_A}{2} = \dfrac{8{,}5 + 18{,}9}{2} = 13{,}7 \text{ au}$$
+
+  Z III prawa Keplera ($T^2 = a^3$ w jednostkach lat i au):
+  $$T = a^{3/2} = 13{,}7^{1{,}5} \approx 50{,}7 \text{ lat ziemskich}$$
+pulapka: |
+  Najczęstsze błędy: użycie odległości aphelium lub peryhelium jako półosi (zamiast średniej),
+  pomylenie zasady zachowania momentu pędu z zachowaniem energii (różne równania),
+  pomylenie jednostek w III prawie Keplera ($T$ w sekundach zamiast latach).
+wymaganie: |
+  IV.4, IV.5 — prawo powszechnego ciążenia, prawa Keplera, ruch po orbicie eliptycznej,
+  zasady zachowania w polu centralnym.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2025-maj-pr/zad-05.webp"
+  alt="Zadanie 5 z arkusza maturalnego CKE 2025 maj PR fizyka — planetoida Chiron, prawa Keplera"
+  caption="Zadanie 5 — arkusz maturalny CKE, maj 2025, fizyka, poziom rozszerzony"
+  zrodlo="CKE 2025"
+  pdfUrl="/arkusze/fizyka/2025-maj-pr/arkusz.pdf"
+  pdfPage={11}
+/>
+
+## Rozwiązanie krok po kroku
+
+### 5.1 — kierunek przyspieszenia i okres
+
+Grawitacja zawsze skierowana do Słońca; półoś większa → okres dłuższy.
+
+### 5.2 — zasada zachowania momentu pędu
+
+Stosujemy $L = mvr$ (prędkość prostopadła do promienia w peryhelium i aphelium).
+
+### 5.3 — III prawo Keplera
+
+W układzie jednostek "lata, au, masa Słońca" wzór sprowadza się do $T^2 = a^3$.

@@ -1,0 +1,143 @@
+---
+arkusz: fizyka-2024-maj-pr
+subject: fizyka
+nr: 7
+punkty: 6
+typ: otwarte-krotkie
+topic: obwody prądu stałego, prawa Kirchhoffa, moc cieplna, opory równoległe i szeregowe
+difficulty: 4
+tresc: |
+  ### Zadanie 7.
+
+  W obwodzie elektrycznym o stałym napięciu $U$ są trzy jednakowe oporniki $R_1 = R_2 = R_3 = R$ (rysunek 1: $R_1$ szeregowo z równoległym połączeniem $R_2$ i $R_3$). Po pewnym czasie obwód został przerwany w gałęzi z $R_3$ (rysunek 2: pozostają $R_1$ i $R_2$ w połączeniu szeregowym). Amperomierz A1 (rysunek 1) i A2 (rysunek 2) mierzą natężenie prądu płynącego przez $R_1$.
+
+  ### Zadanie 7.1. (0–2)
+
+  Oceń prawdziwość poniższych stwierdzeń. Zaznacz P, jeśli stwierdzenie jest prawdziwe, albo F – jeśli jest fałszywe.
+
+  | | | P / F |
+  |---|---|---|
+  | 1. | Po przerwaniu obwodu w gałęzi z $R_3$ opór zastępczy całego obwodu wzrósł. | P / F |
+  | 2. | Po przerwaniu obwodu napięcie na oporniku $R_2$ wzrosło. | P / F |
+
+  ### Zadanie 7.2. (0–1)
+
+  Dokończ zdanie. Wybierz właściwą odpowiedź spośród podanych. Moc cieplna wydzielana na oporniku $R_2$ po przerwaniu obwodu:
+
+  **A.** zmalała      **B.** nie zmieniła się      **C.** wzrosła
+
+  Uzasadnij wybór, wybierając poprawne dokończenie zdania spośród 1–3.
+
+  **1.** Napięcie na $R_2$ wzrosło, więc moc $P = U^2/R$ wzrosła.
+
+  **2.** Natężenie prądu przez $R_2$ zmalało, więc moc $P = I^2 R$ zmalała.
+
+  **3.** Moc nie zmieniła się, bo opornik pozostał ten sam.
+
+  ### Zadanie 7.3. (0–3)
+
+  Oblicz iloraz $I_{A2} / I_{A1}$ (stosunek wskazań amperomierza po przerwaniu obwodu do wskazań przed przerwaniem). Zapisz obliczenia.
+odpowiedz: |
+  **7.1.**
+
+  1. Przed: $R_z^{przed} = R + \dfrac{R \cdot R}{R + R} = R + \dfrac{R}{2} = \dfrac{3R}{2}$.
+     Po przerwaniu: $R_z^{po} = R + R = 2R$.
+     $2R > \tfrac{3R}{2}$ → opór WZRÓSŁ → **P**.
+
+  2. Napięcie na $R_2$:
+     - Przed: $I_{calk} = U / (3R/2) = 2U/(3R)$. Napięcie na $R_1$: $U_{R1} = I_{calk} R = 2U/3$. Napięcie na parze $R_2 \| R_3$: $U/3$. Tj. $U_{R2}^{przed} = U/3$.
+     - Po: $I = U/(2R)$, $U_{R2}^{po} = IR = U/2$.
+     $U/2 > U/3$ → napięcie WZROSŁO → **P**.
+
+  Odpowiedź: **PP**.
+
+  **7.2.** Odpowiedź: **C – 1**.
+
+  $P_{R2}^{przed} = U_{R2}^2 / R = (U/3)^2 / R = U^2/(9R)$.
+  $P_{R2}^{po} = (U/2)^2 / R = U^2/(4R)$.
+
+  $U^2/(4R) > U^2/(9R)$ → moc **WZROSŁA**. Uzasadnienie: napięcie na $R_2$ wzrosło z $U/3$ do $U/2$, a $P = U^2/R$ rośnie z kwadratem napięcia → **1**.
+
+  **7.3.** Amperomierz mierzy prąd przez $R_1$ (= prąd całkowity, bo $R_1$ jest w gałęzi głównej w obu schematach).
+
+  $I_{A1} = \dfrac{U}{R_z^{przed}} = \dfrac{U}{3R/2} = \dfrac{2U}{3R}$
+
+  $I_{A2} = \dfrac{U}{R_z^{po}} = \dfrac{U}{2R}$
+
+  $$\dfrac{I_{A2}}{I_{A1}} = \dfrac{U/(2R)}{2U/(3R)} = \dfrac{1}{2} \cdot \dfrac{3}{2} = \dfrac{3}{4}$$
+
+  $$\boxed{\dfrac{I_{A2}}{I_{A1}} = \dfrac{3}{4} = 0{,}75}$$
+
+  Prąd główny zmalał (bo opór wzrósł), więc amperomierz w drugim schemacie pokazuje mniej.
+pulapka: |
+  Pułapka 7.1 — "skoro opór wzrósł, to wszystkie napięcia zmieniają się tak samo". NIE: napięcie ŹRÓDŁA $U$ jest stałe (idealny zasilacz). Zmieniają się rozkłady napięć między opornikami.
+
+  Pułapka 7.2 — wybór "B – moc nie zmieniła się". To klasyczny błąd. Moc na opornik = $U^2/R$ LUB $I^2 R$ — JEŚLI zmienia się $U$ lub $I$, to zmienia się moc. Tylko $R$ jest stały.
+
+  Pułapka 7.2 — wybór "A – 2". Prąd przez $R_2$ ZMIENIA SIĘ, ale rośnie (z $I_{calk}/2$ przed = $U/(3R)$ do całkowitego = $U/(2R)$ — wzrost!). Większy prąd → większa moc.
+
+  Pułapka 7.3 — myślenie "amperomierz mierzy prąd przez $R_2$". Tu A jest umieszczone w gałęzi z $R_1$ (= gałąź główna), więc mierzy $I_{calk}$. Trzeba CZYTAĆ schemat.
+wymaganie: |
+  III.5 — obwody prądu stałego. Prawa Kirchhoffa. Połączenia szeregowe i równoległe oporników. Moc prądu, prawo Joule'a.
+podobne:
+  - fizyka-2023-maj-pr-7
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2024-maj-pr/zad-07.webp"
+  alt="Zadanie 7 - trzy oporniki, schematy 1 i 2"
+  caption="Strona 18-19 arkusza CKE 2024 PR fizyka - zadanie 7 (R1, R2, R3 = R, przerwanie obwodu w gałęzi R3)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_fizyka_2024_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={18}
+/>
+
+## Klucz — opór zastępczy
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Szeregowo**: $R_z = R_1 + R_2 + \ldots$. Prąd ten sam przez wszystkie. Napięcie się dzieli proporcjonalnie do oporów.
+
+</div>
+
+<div class="krok">
+
+**Równolegle**: $\dfrac{1}{R_z} = \dfrac{1}{R_1} + \dfrac{1}{R_2} + \ldots$. Dla dwóch równych $R$: $R_z = R/2$. Napięcie to samo, prąd się dzieli.
+
+</div>
+
+<div class="krok">
+
+**Moc**: $P = UI = I^2R = U^2/R$. Trzy równoważne wzory — wybiera się ten, dla którego znamy odpowiednie wielkości.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+<div>
+
+**7.1.** **PP**
+
+**7.2.** **C – 1** (moc wzrosła, bo wzrosło napięcie na $R_2$)
+
+**7.3.** $\dfrac{I_{A2}}{I_{A1}} = \dfrac{3}{4}$
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — co mierzy amperomierz</div>
+
+Zawsze sprawdź, w której gałęzi jest amperomierz. Tu jest w gałęzi z $R_1$ = w gałęzi głównej = mierzy $I_{calk}$. Gdyby był w gałęzi z $R_2$, mierzyłby tylko prąd przez $R_2$, a wynik byłby inny.
+</div>
+
+## Po co to umieć
+
+Obwody R równoległe + szeregowe + ich kombinacje = każde gniazdko domowe. Wszystkie urządzenia w domu są równolegle (te same 230 V, niezależny prąd przez każdy). Lampki na choince — czasem szeregowo (jedna spali → wszystkie gasną), nowoczesne równolegle (jedna spali → reszta działa). Moc bezpiecznika dobrana do oporów i napięcia: $P_{max} = U \cdot I_{bezp}$, dla 230 V i 16 A → 3680 W (= czemu czajnik + suszarka razem wywalają korki).

@@ -1,0 +1,64 @@
+---
+arkusz: chemia-2024-maj-pr
+subject: chemia
+nr: 30
+punkty: 1
+typ: otwarte-krotkie
+topic: chemia organiczna, cukry, utlenianie, mezo-związki, stereochemia
+difficulty: 5
+tresc: |
+  Degradacji Ruffa poddano jeden ze związków, których wzory przedstawiono poniżej. Powstały cukier utleniono kwasem azotowym(V) i otrzymano związek, którego cząsteczki są **achiralne** — kwas **mezo**-winowy.
+
+  Wzory podane (Fischer):
+  
+  D-arabinoza:
+  - CHO
+  - HO—H (C2)
+  - H—OH (C3)
+  - H—OH (C4)
+  - CH₂OH (C5)
+  
+  D-ksyloza:
+  - CHO
+  - H—OH (C2)
+  - HO—H (C3)
+  - H—OH (C4)
+  - CH₂OH (C5)
+
+  Wybierz cukier, którego użyto do przeprowadzenia opisanego doświadczenia, i napisz nazwę tego cukru.
+odpowiedz: |
+  Patrz materiał źródłowy CKE — kluczowy fakt: kwas mezo-winowy ma 2 stereocentra ALE jest achiralny (płaszczyzna symetrii wewnętrzna — jeden stereocentr R, drugi S).
+
+  Degradacja Ruffa pentozy → tetroza (CHO-CHOH-CHOH-CH₂OH). Utlenienie HNO₃ → kwas tetrahydroksy-dwukarboksylowy: HOOC-CHOH-CHOH-COOH (kwas winowy).
+
+  Aby kwas winowy był mezo (achiralny), C2 i C3 muszą mieć **przeciwne** konfiguracje. 
+
+  Sprawdzamy po usunięciu C1 z każdego cukru:
+  - D-arabinoza po Ruffie → CHO-CHOH(R)-CHOH(R)-CH₂OH (C2 i C3 z D-arabinozy: H-OH oraz H-OH → R, R) → kwas R,R-winowy = D-winowy (chiralny, NIE mezo)
+  - D-ksyloza po Ruffie → CHO-CHOH(S)-CHOH(R)-CH₂OH (z D-ksylozy: HO-H i H-OH → S, R) → utlenienie → kwas S,R-winowy = **mezo-winowy** ✓
+
+  **Cukier: D-ksyloza**.
+pulapka: |
+  Mezo-związek = ma stereocentra, ALE jest achiralny dzięki wewnętrznej płaszczyźnie symetrii (lustrzane odbicie samego siebie). To różni go od enancjomerów (R,R lub S,S) — chiralnych.
+wymaganie: |
+  X.6 — stereochemia cukrów, mezo-związki, reakcje cukrów.
+podobne:
+  - chemia-2025-maj-pr-29
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2024-maj-pr/zad-30.webp"
+  alt="Zadanie 30 - chemia 2024 PR"
+  caption="Strona arkusza CKE 2024 PR chemia — zadanie 30 (degradacja Ruffa pentoz, kwas mezo-winowy)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_chemia_2024_rozszerzony_arkusz_zadania_pytania.pdf"
+  pdfPage={31}
+/>
+
+## Po co to umieć
+
+Mezo-związki to fundamentalne pojęcie stereochemii — pojawiają się w farmacji (niektóre leki mają formę mezo i są nieaktywne), syntezie organicznej (kontrola stereoselektywności) i chemii cukrów (klasyfikacja stereoizomerów).

@@ -7,7 +7,29 @@ typ: otwarte-krotkie
 topic: funkcja kwadratowa, odczyt z wykresu, przekształcenia
 difficulty: 4
 tresc: |
-  Na wykresie przedstawiono parabolę funkcji kwadratowej f. Wierzchołek paraboli oraz punkty przecięcia z osiami mają współrzędne całkowite. Z wykresu odczytaj: wierzchołek (1, 9), miejsca zerowe (−2, 0) i (4, 0), punkt przecięcia z osią OY (0, 8). Zadanie składa się z czterech podpunktów (14.1 — 14.4).
+  Na rysunku w kartezjańskim układzie współrzędnych $(x, y)$ przedstawiono wykres funkcji kwadratowej $f$ oraz prostą $k$ równoległą do osi $Ox$. Wierzchołek $W$ paraboli, będącej wykresem funkcji $f$, oraz punkty przecięcia paraboli z osiami układu współrzędnych mają obie współrzędne całkowite. Z wykresu odczytaj: wierzchołek $W = (1, 9)$, miejsca zerowe $x_1 = -2$ oraz $x_2 = 4$, punkt przecięcia z osią $OY$ to $(0, 8)$.
+
+  ### Zadanie 14.1. (0-1)
+  Uzupełnij zdanie. Wybierz odpowiedź spośród oznaczonych literami A i B oraz odpowiedź spośród oznaczonych literami C i D, tak aby otrzymać zdanie prawdziwe.
+
+  Zbiór wszystkich rozwiązań nierówności $f(x) \geq 0$ jest przedziałem $\langle -2,\ 4 \rangle$.
+
+  ### Zadanie 14.2. (0-1)
+  Dokończ zdanie. Wybierz właściwą odpowiedź spośród podanych.
+
+  Funkcja $f$ jest określona wzorem
+
+  **A.** $f(x) = -(x+1)^2 - 9$     **B.** $f(x) = -(x-1)^2 + 9$     **C.** $f(x) = -(x-1)^2 - 9$     **D.** $f(x) = -(x+1)^2 + 9$
+
+  ### Zadanie 14.3. (0-1)
+  Dokończ zdanie. Wybierz właściwą odpowiedź spośród podanych.
+
+  Prawdziwa jest równość
+
+  **A.** $f(-4) = f(6)$     **B.** $f(-4) = f(5)$     **C.** $f(-4) = f(4)$     **D.** $f(-4) = f(7)$
+
+  ### Zadanie 14.4. (0-2)
+  Na rysunkach A-F przedstawiono fragmenty wykresów funkcji $g$ oraz $h$ określonych wzorami $g(x) = f(x+3)$ oraz $h(x) = f(-x)$, gdzie $f$ jest funkcją z treści zadania. Każdej z funkcji $g, h$ przyporządkuj odpowiedni rysunek (A-F).
 odpowiedz: |
   14.1: x ∈ [−2, 4]   |   14.2: B (f(x) = −(x−1)² + 9)   |   14.3: A (f(−4) = f(6))   |   14.4: g↔A, h↔E
 pulapka: |
@@ -25,11 +47,11 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z tym zadaniem
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2024-maj-pp/ark-13.webp"
+  src="/arkusze/matematyka/2024-maj-pp/zad-14.webp"
   alt="Zadanie 14 - strona 13 arkusza CKE"
   caption="Strona 13 arkusza CKE z trescia zadania 14."
   zrodlo="CKE"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/matematyka/MMAP-P0-100-2405-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_podstawowy_arkusz_2024_wersja_a.pdf"
   pdfPage={13}
 />
 
@@ -140,7 +162,7 @@ gdzie $(p, q)$ to **wierzchołek paraboli**, a $a$ to współczynnik kierunkowy.
 
 <div class="krok">
 
-**Z faktu, że parabola otwiera się w dół:** $a < 0$. Wszystkie odpowiedzi mają $a = -1$, więc to OK — weryfikujemy.
+**Z faktu, że parabola otwiera się w dół:** $a &lt; 0$. Wszystkie odpowiedzi mają $a = -1$, więc to OK — weryfikujemy.
 
 </div>
 
@@ -256,6 +278,6 @@ Warto zacząć od tej, której jesteś pewien — przynajmniej masz 1 pkt jeśli
 | $f(-x)$ | odbicie względem osi $OY$ |
 | $-f(x)$ | odbicie względem osi $OX$ |
 | $\|f(x)\|$ | część pod osią $OX$ odbija się do góry |
-| $f(\|x\|)$ | część dla $x \geq 0$ kopiuje się symetrycznie na $x < 0$ |
+| $f(\|x\|)$ | część dla $x \geq 0$ kopiuje się symetrycznie na $x &lt; 0$ |
 
 Te osiem reguł pokrywa wszystkie zadania o przekształceniach wykresów na maturze podstawowej. Warto je rozpoznawać natychmiast.

@@ -1,0 +1,63 @@
+---
+arkusz: fizyka-2025-maj-pr
+subject: fizyka
+nr: 7
+punkty: 5
+typ: otwarte-rozszerzone
+topic: optyka geometryczna, soczewki cienkie, konstrukcja obrazu
+difficulty: 3
+tresc: |
+  Cienka soczewka szklana wytwarza obraz świecącego przedmiotu na ekranie. Przedmiot i ekran
+  znajdują się po przeciwnych stronach soczewki. Na rysunku przedstawiono bieg dwóch
+  charakterystycznych promieni przechodzących przez soczewkę.
+
+  **Zadanie 7.1. (0–2)** Oceń prawdziwość poniższych stwierdzeń. Zaznacz P, jeśli stwierdzenie
+  jest prawdziwe, albo F – jeśli jest fałszywe.
+  1. Obraz powstały na ekranie jest rzeczywisty.
+  2. Soczewka jest skupiająca.
+  3. Odległość przedmiotu od soczewki jest mniejsza niż jej ogniskowa.
+
+  **Zadanie 7.2. (0–3)** Wyznacz konstrukcyjnie położenie środka optycznego soczewki $S$ oraz jej
+  ogniska $F$. Podaj wartość ogniskowej $f$ w cm (odczyt z rysunku w skali).
+odpowiedz: |
+  **7.1.**
+  - (1) **P** — obraz powstaje na ekranie, więc jest rzeczywisty (promienie się rzeczywiście
+    przecinają).
+  - (2) **P** — soczewka skupiająca, bo wytwarza obraz rzeczywisty (rozpraszająca daje wyłącznie
+    pozorny).
+  - (3) **F** — aby powstał obraz rzeczywisty, przedmiot musi być **dalej** niż ogniskowa,
+    czyli $x > f$.
+
+  **7.2.** Środek optyczny $S$ wyznaczamy jako przecięcie soczewki (osi głównej) z promieniem
+  przechodzącym bez załamania. Ognisko $F$ wyznaczamy jako punkt, w którym promień równoległy
+  do osi po przejściu przez soczewkę przecina oś. Z rysunku w skali ogniskowa $f \approx 4$ cm
+  (dokładna wartość zależy od skali oryginału w arkuszu CKE).
+pulapka: |
+  Najczęstsze błędy: pomylenie obrazu rzeczywistego z pozornym (rzeczywisty można zarzutować na
+  ekran), pomylenie warunku $x > f$ (rzeczywisty) z $x &lt; f$ (pozorny, powiększony), brak
+  uwzględnienia skali rysunku przy odczycie $f$.
+wymaganie: |
+  VII.3, VII.4 — soczewki cienkie, wzór soczewki, konstrukcja obrazów, rodzaje obrazów.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2025-maj-pr/zad-07.webp"
+  alt="Zadanie 7 z arkusza maturalnego CKE 2025 maj PR fizyka — cienka soczewka, konstrukcja obrazu"
+  caption="Zadanie 7 — arkusz maturalny CKE, maj 2025, fizyka, poziom rozszerzony"
+  zrodlo="CKE 2025"
+  pdfUrl="/arkusze/fizyka/2025-maj-pr/arkusz.pdf"
+  pdfPage={17}
+/>
+
+## Rozwiązanie krok po kroku
+
+### 7.1 — typ soczewki i obrazu
+
+Obraz na ekranie = rzeczywisty = $x > f$ + soczewka skupiająca.
+
+### 7.2 — konstrukcja
+
+Promień nieodchylony przez środek + promień równoległy do osi → ognisko.

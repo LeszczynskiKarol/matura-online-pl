@@ -1,0 +1,65 @@
+---
+arkusz: fizyka-2025-maj-pr
+subject: fizyka
+nr: 4
+punkty: 5
+typ: otwarte-rozszerzone
+topic: akustyka, natężenie dźwięku, interferencja fal
+difficulty: 3
+tresc: |
+  Punktowe źródło dźwięku (małe głośnik kulisty) emituje w sposób izotropowy energię w postaci
+  fali dźwiękowej z mocą $E = 40 \text{ mJ/s}$. Punkt X znajduje się w odległości $r_X = 10 \text{ m}$
+  od źródła.
+
+  **Zadanie 4.1. (0–2)** Oblicz natężenie fali dźwiękowej $I_X$ w punkcie X. Skorzystaj ze wzoru
+  na pole powierzchni sfery $S = 4\pi r^2$.
+
+  **Zadanie 4.2. (0–3)** Dwa identyczne, spójne głośniki G1 i G2 emitują falę o częstotliwości
+  $f = 850 \text{ Hz}$ w fazie. Odległości od głośników do punktu obserwacji wynoszą
+  $r_1 = 10{,}5 \text{ m}$ oraz $r_2 = 11{,}5 \text{ m}$. Prędkość dźwięku w powietrzu
+  $v_p = 340 \text{ m/s}$.
+
+  Ustal, czy w punkcie obserwacji wystąpi wzmocnienie czy wygaszenie fali. Uzasadnij odpowiedź
+  obliczeniami.
+odpowiedz: |
+  **4.1.** Natężenie fali:
+  $$I_X = \dfrac{E}{S} = \dfrac{E}{4\pi r_X^2} = \dfrac{0{,}040}{4\pi \cdot 100} \approx 3{,}18 \cdot 10^{-5} \text{ W/m}^2$$
+
+  **4.2.** Długość fali: $\lambda = v_p / f = 340/850 = 0{,}4 \text{ m}$.
+
+  Różnica dróg: $\Delta r = r_2 - r_1 = 1{,}0 \text{ m}$.
+
+  Iloraz $\dfrac{\Delta r}{\lambda} = \dfrac{1{,}0}{0{,}4} = 2{,}5$, czyli $\Delta r = 2{,}5\lambda = (2k+1)\dfrac{\lambda}{2}$
+  dla $k = 2$.
+
+  Różnica dróg jest **nieparzystą wielokrotnością połowy długości fali**, więc w punkcie obserwacji
+  wystąpi **wygaszenie** (interferencja destruktywna).
+pulapka: |
+  Najczęstsze błędy: pominięcie $4\pi$ w polu sfery (użycie $\pi r^2$ jak dla koła), pomylenie
+  warunków wzmocnienia ($\Delta r = k\lambda$) z wygaszeniem ($\Delta r = (k+\tfrac{1}{2})\lambda$),
+  zapomnienie o spójności fal (warunek konieczny do interferencji).
+wymaganie: |
+  VI.3, VI.6 — natężenie fali, prawo odwrotnych kwadratów, interferencja fal, spójność źródeł.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2025-maj-pr/zad-04.webp"
+  alt="Zadanie 4 z arkusza maturalnego CKE 2025 maj PR fizyka — natężenie i interferencja dźwięku"
+  caption="Zadanie 4 — arkusz maturalny CKE, maj 2025, fizyka, poziom rozszerzony"
+  zrodlo="CKE 2025"
+  pdfUrl="/arkusze/fizyka/2025-maj-pr/arkusz.pdf"
+  pdfPage={9}
+/>
+
+## Rozwiązanie krok po kroku
+
+### 4.1 — natężenie izotropowego źródła
+
+Energia rozkłada się równomiernie na powierzchni sfery.
+
+### 4.2 — warunek interferencji
+
+Liczymy $\Delta r / \lambda$ i sprawdzamy parzystość krotności.

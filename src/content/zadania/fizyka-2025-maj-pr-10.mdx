@@ -1,0 +1,55 @@
+---
+arkusz: fizyka-2025-maj-pr
+subject: fizyka
+nr: 10
+punkty: 3
+typ: otwarte-krotkie
+topic: szczególna teoria względności, energia relatywistyczna, energia kinetyczna
+difficulty: 4
+tresc: |
+  Cząstka porusza się z prędkością $v = \tfrac{1}{2} c$, gdzie $c$ to prędkość światła w próżni.
+  Jej energia kinetyczna wynosi $E_k = 79{,}05 \text{ keV}$.
+
+  **Zadanie 10. (0–3)** Oblicz energię spoczynkową $E_0$ cząstki. Wynik podaj w keV
+  z dokładnością do trzech cyfr znaczących.
+odpowiedz: |
+  Współczynnik Lorentza dla $v = c/2$:
+  $$\gamma = \dfrac{1}{\sqrt{1 - v^2/c^2}} = \dfrac{1}{\sqrt{1 - 1/4}} = \dfrac{1}{\sqrt{3/4}} = \dfrac{2}{\sqrt{3}} \approx 1{,}1547$$
+
+  Z definicji energii kinetycznej w teorii względności:
+  $$E_k = (\gamma - 1) E_0$$
+
+  Zatem:
+  $$E_0 = \dfrac{E_k}{\gamma - 1} = \dfrac{79{,}05 \text{ keV}}{1{,}1547 - 1} = \dfrac{79{,}05}{0{,}1547} \approx 511 \text{ keV}$$
+
+  Wartość $E_0 \approx 511 \text{ keV}$ odpowiada energii spoczynkowej **elektronu** ($m_e c^2 = 511 \text{ keV}$).
+pulapka: |
+  Najczęstsze błędy: użycie klasycznego wzoru $E_k = \tfrac{1}{2}mv^2$ (przy $v = c/2$ to daje
+  znaczący błąd), pomyłka znaku $\gamma - 1$ vs $1 - \gamma$, błąd w upraszczaniu pierwiastka
+  ($\sqrt{1 - 1/4} = \sqrt{3}/2$, nie $\tfrac{1}{2}$), zaokrąglanie $\gamma$ zbyt wcześnie.
+wymaganie: |
+  XII.2, XII.3 — szczególna teoria względności, energia i pęd relatywistyczny, równoważność
+  masy i energii.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2025-maj-pr/zad-10.webp"
+  alt="Zadanie 10 z arkusza maturalnego CKE 2025 maj PR fizyka — energia spoczynkowa i kinetyczna"
+  caption="Zadanie 10 — arkusz maturalny CKE, maj 2025, fizyka, poziom rozszerzony"
+  zrodlo="CKE 2025"
+  pdfUrl="/arkusze/fizyka/2025-maj-pr/arkusz.pdf"
+  pdfPage={23}
+/>
+
+## Rozwiązanie krok po kroku
+
+### Wzór
+
+$E_k = (\gamma - 1) m c^2 = (\gamma - 1) E_0$
+
+### Obliczenia
+
+$\gamma = 2/\sqrt{3}$, $\gamma - 1 \approx 0{,}1547$, $E_0 \approx 511 \text{ keV}$.

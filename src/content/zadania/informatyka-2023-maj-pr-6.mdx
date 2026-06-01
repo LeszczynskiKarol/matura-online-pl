@@ -1,0 +1,117 @@
+---
+arkusz: informatyka-2023-maj-pr
+subject: informatyka
+nr: 6
+punkty: 10
+typ: otwarte-rozszerzone
+topic: arkusz kalkulacyjny, przetwarzanie danych, wykres kolumnowy, symulacja produkcji
+difficulty: 4
+tresc: |
+  **Zadanie 6. Konfitury**
+
+  Przetwórnia produkuje konfitury malinowo-truskawkowe, malinowo-porzeczkowe oraz truskawkowo-porzeczkowe (zawsze w proporcji owoców 1:1 oraz z wykorzystaniem maksymalnie dostępnej ilości owoców). Decyzja, jaką konfiturę w danym dniu będzie produkowana, zależy od ilości owoców znajdujących się w przetwórni.
+
+  Owoce są dostarczane do przetwórni rano, codziennie. Po dostawie z poprzedniego dnia ilości owoców znajdujące się w przetwórni są przeliczane (dla każdych w dwóch z trzech owoców pomiędzy najpierw najbliżej tej samej ilości po dodaniu) – będzie produkowana konfitura z udziałem tych dwóch dwóch różnych owoców jest taka sama). Owoce niewykorzystane do produkcji są przechowywane w chłodni do następnego dnia. W następnym dniu podejmuje się decyzję o produkcji na nowo dostarczonych rano.
+
+  **Przykład:** Jeżeli 01.05.2020 dostarczono 211 kg malin, 281 kg truskawek i 88 kg porzeczek, to w tym dniu będzie produkowana konfitura malinowo-truskawkowa. Do produkcji wykorzystane zostanie 211 kg malin i 211 kg truskawek. Reszta truskawek i wszystkie porzeczki będą przechowywane w chłodni do następnego dnia. Po dostawie z 02.05.2020 (393 kg malin, 313 kg truskawek i 83 kg porzeczek) w przetwórni będzie 393 kg malin, 383 kg truskawek i 171 kg porzeczek, czyli znowu będzie produkowana konfitura malinowo-truskawkowa.
+
+  Po uwzględnieniu opisanego powyżej cyklu produkcyjnego oraz danych zapisanych w pliku owoce.txt podaj odpowiedzi do poniższych zadań.
+
+  **Zadanie 6.1. (0–3)** Dla każdego miesiąca pracy przetwórni (od maja do września) wykonaj zestawienie liczby dostarczonych kilogramów malin, liczby dostarczonych kilogramów truskawek i liczby dostarczonych kilogramów porzeczek. Na podstawie wykonanego zestawienia utwórz wykres kolumnowy. Pamiętaj o czytelnym opisie wykresu (tytuł, legenda, opisy osi: na osi X – nazwy miesięcy, na osi Y – liczba kilogramów).
+
+  **Zadanie 6.2. (0–1)** Podaj liczbę dni, w których dostarczono, spośród trzech rodzajów owoców, najwięcej porzeczek.
+
+  **Zadanie 6.3. (0–3)** Podaj, ile razy, w okresie od 01.05.2020 do 30.09.2020, produkowano konfitury poszczególnych rodzajów.
+
+  **Zadanie 6.4. (0–3)** Na wyprodukowanie 1 kg konfitur dwuowocowych potrzeba **po 1 kg** każdego owoca. Podaj, ile kilogramów konfitur każdego rodzaju wyprodukowano w okresie od 01.05.2020 do 30.09.2020.
+odpowiedz: |
+  **6.1.** Wykonanie w arkuszu (Excel/LibreOffice) lub w Pythonie/SQL:
+
+  ```python
+  import pandas as pd
+  df = pd.read_csv("owoce.txt", sep="\t", parse_dates=["data"])
+  df["miesiac"] = df["data"].dt.month_name()
+  zest = df.groupby("miesiac")[["maliny","truskawki","porzeczki"]].sum()
+  zest.plot(kind="bar", title="Dostawy owoców (V–IX 2020)",
+            xlabel="miesiąc", ylabel="kg")
+  ```
+
+  Tabela podsumowuje sumy kg dla maj, czerwiec, lipiec, sierpień, wrzesień. Wykres kolumnowy grupowany (3 słupki na miesiąc, legenda: maliny/truskawki/porzeczki).
+
+  **6.2.** Liczba dni z dominacją porzeczek (porzeczki > maliny AND porzeczki > truskawki dla wartości dostarczonych danego dnia):
+
+  ```python
+  ile = ((df["porzeczki"] > df["maliny"]) & (df["porzeczki"] > df["truskawki"])).sum()
+  ```
+
+  Typowa odpowiedź dla rzeczywistego pliku: kilkanaście dni (zależy od danych – CKE klucz: konkretna liczba).
+
+  **6.3.** Symulacja dzień po dniu z chłodnią:
+
+  ```python
+  m, t, p = 0, 0, 0
+  cnt = {"MT": 0, "MP": 0, "TP": 0}
+  for _, row in df.iterrows():
+      m += row.maliny
+      t += row.truskawki
+      p += row.porzeczki
+      # wybór pary o największych zapasach
+      pary = {"MT": m + t, "MP": m + p, "TP": t + p}
+      # reguła tie-break: bierzemy parę z największą sumą; przy remisach – patrz klucz CKE
+      wybor = max(pary, key=pary.get)
+      uzyte = min(m,t) if wybor=="MT" else min(m,p) if wybor=="MP" else min(t,p)
+      cnt[wybor] += 1
+      if wybor == "MT": m -= uzyte; t -= uzyte
+      elif wybor == "MP": m -= uzyte; p -= uzyte
+      else: t -= uzyte; p -= uzyte
+  ```
+
+  Odpowiedź ma postać "MT: X, MP: Y, TP: Z" gdzie X+Y+Z = 153 (liczba dni V–IX).
+
+  **6.4.** Suma `uzyte` per typ konfitury × 2 (bo 1 kg konfitury = 1 kg + 1 kg owoców → 2 kg owoców daje 2 kg konfitury wg dosłownego "po 1 kg każdego owocu na 1 kg konfitury" — czyli faktycznie z 1+1 kg robimy 1 kg konfitury, zatem masa konfitury = `uzyte` (każdy z dwóch składników wnosi `uzyte` kg, ale na 1 kg konfitury idzie 1+1 kg owoców, więc kg konfitury = `uzyte`).
+
+  ```python
+  prod = {"MT": 0, "MP": 0, "TP": 0}
+  # w pętli wyżej dodać: prod[wybor] += uzyte
+  ```
+
+  Odpowiedź: liczby kg dla MT, MP, TP wprost.
+pulapka: |
+  Zad. 6.3/6.4 — krytyczna pułapka: NIE bierzemy pod uwagę tylko bieżącej dostawy, ale **kumulację zapasu z chłodni**. Symulacja musi prowadzić stan magazynu pomiędzy dniami. Reguła "konfitura z dwóch owoców o największej dostępnej ilości" — z chłodnią to całkiem co innego niż "z największej dziennej dostawy".
+  Zad. 6.4 — "po 1 kg każdego owocu na 1 kg konfitury" jest niejednoznaczne; standardowa interpretacja CKE: 1 kg konfitury wymaga 1 kg owocu A + 1 kg owocu B, więc z `min(A,B)` kg każdego składnika powstaje `min(A,B)` kg konfitury (a zużycie owoców to 2·min(A,B)).
+  Zad. 6.2 — pytanie o **dostarczone**, nie o stan w chłodni. Czytamy linie pliku bez symulacji.
+wymaganie: |
+  Wymaganie ogólne II, III, IV. Podstawa: zaawansowane wykorzystanie arkusza kalkulacyjnego, agregacje, symulacje, wizualizacja danych (wykres kolumnowy z grupowaniem).
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2023-maj-pr/zad-06.webp"
+  alt="Zadanie 6 - informatyka 2023 PR"
+  caption="Strona arkusza CKE 2023 PR informatyka - zadanie 6 (Konfitury)."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_informatyka_2023_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={16}
+/>
+
+## Rozwiązanie
+
+### 6.1. Zestawienie miesięczne + wykres
+
+Grupuj `owoce.txt` po miesiącu (V–IX), sumuj kg każdego owocu, narysuj wykres kolumnowy zgrupowany.
+
+### 6.2. Dni z przewagą porzeczek (dostawy)
+
+Filtruj wiersze gdzie `porzeczki > maliny` i `porzeczki > truskawki`.
+
+### 6.3. Symulacja cyklu produkcji
+
+Stan magazynu = (m, t, p) na początek dnia. Po dostawie sumuj. Wybierz parę owoców o **największej dostępnej ilości łącznej** (z zapasem). Zużyj `min(x, y)` z pary. Reszta + niewykorzystany trzeci owoc → chłodnia.
+
+### 6.4. Kg konfitur
+
+Dla każdego dnia produkcji dodaj `min(x, y)` do licznika danej konfitury. Suma to wynik.

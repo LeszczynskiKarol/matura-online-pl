@@ -1,0 +1,105 @@
+---
+arkusz: fizyka-2023-maj-pr
+subject: fizyka
+nr: 3
+punkty: 6
+typ: otwarte-rozszerzone
+topic: dynamika bryły sztywnej, moment bezwładności walca, ruch obrotowy, zasada zachowania energii, II zasada dynamiki dla obrotu, walec na stole
+difficulty: 5
+tresc: |
+  Wzdłuż osi jednorodnego walca o masie $m$ i promieniu $R$ przechodzi cienki pręt, wokół którego walec może się obracać. Do tego pręta przymocowano cienką nierozciągliwą linkę, którą przewieszono przez bloczek. Na końcu linki zawieszono ciężarek o masie $m$ (równej masie walca). Początkowo walec był unieruchomiony i spoczywał na stole. W pewnej chwili walec — ciągnięty przez linkę — rozpoczął ruch i toczył się dalej bez poślizgu po poziomej powierzchni stołu. Opisaną sytuację ilustruje rysunek 1. i 2.
+
+  Do analizy zagadnienia przyjmij model zjawiska, w którym:
+  - moment bezwładności walca względem jego osi symetrii jest równy $I = \tfrac{1}{2} m R^2$
+  - pomijamy masę linki, masę bloczka oraz masę pręta na osi symetrii walca
+  - zakładamy, że ruch walca i ciężarka odbywa się w układzie inercjalnym
+  - siła tarcia statycznego $T$ między walcem a powierzchnią stołu nie osiągnęła wartości maksymalnej
+  - pomijamy tarcie (tzn. oprócz tarcia statycznego) opory ruchu układu.
+
+  ### Zadanie 3.1. (0–2)
+
+  Oceń prawdziwość poniższych stwierdzeń. Zaznacz P, jeśli stwierdzenie jest prawdziwe, albo F – jeśli jest fałszywe.
+
+  | Nr | Stwierdzenie | P/F |
+  |---|---|---|
+  | 1. | Gdy walec toczy się bez poślizgu, to w czasie jednego obrotu przebywa drogę o długości $2\pi R$. | P / F |
+  | 2. | Energia kinetyczna ruchu postępowego walca jest większa od energii kinetycznej ruchu obrotowego walca względem jego osi. | P / F |
+  | 3. | Energia potencjalna opadającego ciężarka zamienia się w całości na energię kinetyczną ruchu postępowego walca i ruchu obrotowego walca. | P / F |
+
+  ### Zadanie 3.2. (0–4)
+
+  Wyprowadź wzór pozwalający wyznaczyć wartość $a$ przyśpieszenia ciężarka w zależności tylko od wartości $g$ przyśpieszenia ziemskiego. Zapisz odpowiednie równania i przekształcenia oraz podaj (w ramce na dole strony) postać tego wzoru. Wskazówka: skorzystaj z zasady zachowania energii mechanicznej układu lub z drugiej zasady dynamiki dla ruchu postępowego walca, dla ruchu obrotowego walca i dla ruchu postępowego ciężarka.
+odpowiedz: |
+  ### Zadanie 3.1.
+
+  | Nr | Stwierdzenie | P/F |
+  |---|---|---|
+  | 1. | Walec toczy się bez poślizgu — w czasie jednego obrotu przebywa $2\pi R$ | **P** |
+  | 2. | Dla jednorodnego walca: $E_{k,\text{post}} = \tfrac{1}{2}mv^2$, $E_{k,\text{obr}} = \tfrac{1}{2} I \omega^2 = \tfrac{1}{2} \cdot \tfrac{1}{2}mR^2 \cdot (v/R)^2 = \tfrac{1}{4}mv^2$, więc $E_{k,\text{post}} > E_{k,\text{obr}}$ | **P** |
+  | 3. | Energia potencjalna ciężarka zamienia się także w energię kinetyczną ciężarka i wykonuje pracę przeciw tarciu statycznemu (które nie wykonuje pracy, bo punkt styku nie ślizga), ale ciężarek SAM też ma energię kinetyczną — więc NIE w całości na walec | **F** |
+
+  ### Zadanie 3.2.
+
+  Linka jest przymocowana do **osi** walca (do pręta na osi symetrii), zatem siła naciągu linki $N$ działa na walec wzdłuż osi, ale ramię względem osi walca = 0. Tarcie statyczne $T$ działa w punkcie styku z podłożem (ramię $R$).
+
+  **Dla walca (ruch postępowy):** $N - T = m a_w$, gdzie $a_w$ to przyspieszenie środka masy walca.
+
+  **Dla walca (ruch obrotowy):** $T \cdot R = I \varepsilon = \tfrac{1}{2}mR^2 \cdot \varepsilon$. Toczenie bez poślizgu: $a_w = \varepsilon R$, więc $T = \tfrac{1}{2} m a_w$.
+
+  **Dla ciężarka:** $m g - N = m a$, gdzie $a$ – przyspieszenie ciężarka.
+
+  **Więź geometryczna:** linka jest nierozciągliwa i nawinięta tak, że prędkość punktu osi walca = prędkość linki = prędkość ciężarka. Zatem $a = a_w$.
+
+  Podstawiając $T = \tfrac{1}{2} m a$ do równania walca:
+
+  $$N - \tfrac{1}{2} m a = m a \quad \Rightarrow \quad N = \tfrac{3}{2} m a$$
+
+  Z równania ciężarka:
+
+  $$m g - \tfrac{3}{2} m a = m a \quad \Rightarrow \quad m g = \tfrac{5}{2} m a$$
+
+  $$\boxed{\, a = \tfrac{2}{5} g \,}$$
+pulapka: |
+  - Linka mocowana do **osi** walca, nie do jego obwodu — siła naciągu nie tworzy momentu względem osi walca. Moment obrotowy daje TYLKO tarcie statyczne w punkcie styku.
+  - Warunek toczenia bez poślizgu: $v = \omega R$, $a = \varepsilon R$. Bez tego nie zlinkujesz ruchu obrotowego z postępowym.
+  - $a_w = a$ tylko dlatego, że linka idzie z osi walca do ciężarka — gdyby była nawinięta na walec (przy obwodzie), $a_w \neq a$.
+  - Często mylone: tarcie statyczne NIE wykonuje pracy (punkt styku ma chwilową prędkość 0) — energia jest zachowana, ale "redystrybuowana" między walec a ciężarek.
+wymaganie: |
+  Podstawa programowa fizyki PR — dział III (Dynamika bryły sztywnej): moment bezwładności, II zasada dynamiki dla ruchu obrotowego, toczenie bez poślizgu, zasada zachowania energii dla układu translacja+rotacja.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2023-maj-pr/zad-03.webp"
+  alt="Zadanie 3 - fizyka 2023 PR"
+  caption="Strona arkusza CKE 2023 PR fizyka - zadanie 3."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_fizyka_2023_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={8}
+/>
+
+## Rozwiązanie
+
+### Zadanie 3.1.
+
+1. **P** — toczenie bez poślizgu $\Rightarrow$ jeden obrót = obwód $= 2\pi R$.
+2. **P** — $E_{k,\text{obr}}/E_{k,\text{post}} = \tfrac{1}{2} I \omega^2 / \tfrac{1}{2} m v^2 = \tfrac{1}{2}$.
+3. **F** — ciężarek sam ma energię kinetyczną $\tfrac{1}{2} m a^2 t^2 / 2$, nie cała $\Delta E_p$ trafia do walca.
+
+### Zadanie 3.2.
+
+Równania:
+
+$$mg - N = ma \quad\text{(ciężarek)}$$
+
+$$N - T = ma \quad\text{(walec, ruch postępowy)}$$
+
+$$T R = \tfrac{1}{2} m R^2 \varepsilon, \quad \varepsilon = a/R \Rightarrow T = \tfrac{1}{2}ma$$
+
+Eliminacja $N$ i $T$:
+
+$$mg - \tfrac{3}{2}ma = ma \Rightarrow a = \tfrac{2}{5} g$$

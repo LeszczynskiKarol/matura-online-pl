@@ -1,0 +1,61 @@
+---
+arkusz: fizyka-2025-maj-pr
+subject: fizyka
+nr: 9
+punkty: 3
+typ: otwarte-rozszerzone
+topic: polaryzacja światła, prawo Malusa
+difficulty: 3
+tresc: |
+  Wiązka niespolaryzowanego światła o natężeniu $I$ pada prostopadle na dwa kolejne polaryzatory.
+  Po przejściu przez pierwszy polaryzator natężenie światła wynosi $I_1 = \tfrac{1}{2} I$.
+  Oś transmisji drugiego polaryzatora tworzy kąt $\alpha = 45^\circ$ z osią transmisji pierwszego.
+
+  **Zadanie 9.1. (0–1)** Na rysunku przedstawiono wektor natężenia pola elektrycznego $\vec{E_1}$
+  fali świetlnej po przejściu przez pierwszy polaryzator. Narysuj wektor natężenia pola
+  elektrycznego $\vec{E_2}$ fali świetlnej po przejściu przez drugi polaryzator. Zachowaj
+  poprawną wartość długości wektora $\vec{E_2}$ względem $\vec{E_1}$.
+
+  **Zadanie 9.2. (0–2)** Oceń prawdziwość poniższych stwierdzeń. Zaznacz P, jeśli stwierdzenie
+  jest prawdziwe, albo F – jeśli jest fałszywe.
+  1. Wartość $E_1$ jest $\sqrt{2}$ razy większa od wartości $E_2$.
+  2. Natężenie $I_1$ jest dwukrotnie większe od natężenia $I_2$.
+  3. Natężenie $I$ wiązki padającej jest czterokrotnie większe od natężenia $I_2$ wiązki za drugim polaryzatorem.
+odpowiedz: |
+  **9.1.** Składowa $\vec{E_1}$ wzdłuż osi drugiego polaryzatora to $E_2 = E_1 \cos\alpha = E_1 \cos 45^\circ = \dfrac{E_1}{\sqrt{2}}$.
+  Wektor $\vec{E_2}$ rysujemy wzdłuż osi drugiego polaryzatora, o długości $\dfrac{1}{\sqrt{2}} \cdot |\vec{E_1}|$.
+
+  **9.2.** Z prawa Malusa $I_2 = I_1 \cos^2\alpha = \tfrac{1}{2} I_1$ dla $\alpha = 45^\circ$.
+  - (1) **P** — $E_1 / E_2 = 1/\cos 45^\circ = \sqrt{2}$.
+  - (2) **P** — $I_2 = I_1 \cos^2 45^\circ = \tfrac{1}{2} I_1$, więc $I_1 = 2 I_2$.
+  - (3) **P** — $I_2 = \tfrac{1}{2} I_1 = \tfrac{1}{2} \cdot \tfrac{1}{2} I = \tfrac{1}{4} I$,
+    więc $I = 4 I_2$.
+pulapka: |
+  Najczęstsze błędy: użycie $\cos\alpha$ zamiast $\cos^2\alpha$ przy natężeniach (prawo Malusa
+  dotyczy natężeń, $I \propto E^2$), niepoprawne dodawanie składowych $\vec{E}$ (wektorowo, nie
+  arytmetycznie), zapomnienie o czynniku $\tfrac{1}{2}$ przy światle niespolaryzowanym.
+wymaganie: |
+  VII.6 — polaryzacja światła, prawo Malusa, polaryzator liniowy.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2025-maj-pr/zad-09.webp"
+  alt="Zadanie 9 z arkusza maturalnego CKE 2025 maj PR fizyka — polaryzatory i prawo Malusa"
+  caption="Zadanie 9 — arkusz maturalny CKE, maj 2025, fizyka, poziom rozszerzony"
+  zrodlo="CKE 2025"
+  pdfUrl="/arkusze/fizyka/2025-maj-pr/arkusz.pdf"
+  pdfPage={21}
+/>
+
+## Rozwiązanie krok po kroku
+
+### 9.1 — składowa wektora E
+
+Rzut $\vec{E_1}$ na oś drugiego polaryzatora.
+
+### 9.2 — prawo Malusa
+
+$I_2 = I_1 \cos^2\alpha$; dla $\alpha = 45^\circ$ to czynnik $\tfrac{1}{2}$.

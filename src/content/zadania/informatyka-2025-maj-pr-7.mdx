@@ -1,0 +1,184 @@
+---
+arkusz: informatyka-2025-maj-pr
+subject: informatyka
+nr: 7
+punkty: 10
+typ: otwarte-rozszerzone
+topic: baza danych, SQL, JOIN, łaziki Mars, agregacja, filtracja zapytań, modelowanie danych
+difficulty: 4
+tresc: |
+  ### Zadanie 7. Poszukiwanie wody na Marsie
+
+  W trzech plikach tekstowych o nazwach `laziki.txt`, `obszary.txt`, `pomiary.txt` zapisano informacje zawierające dane o pracach łazików na Marsie w latach 2050–2080. Łaziki zasilane energią słoneczną poruszają się po różnych obszarach Marsa i wykonują pomiary georadarowe, na podstawie których szacują ilość wody i głębokość, na której się ona znajduje. Pierwszy wiersz każdego z plików jest wierszem nagłówkowym, a dane w wierszach rozdzielone są znakami tabulacji.
+
+  **Plik `laziki.txt`** zawiera informacje o różnych łazikach, które wykonywały pomiary. W każdym wierszu tego pliku znajdują się:
+  - `nr_lazika` – co najwyżej trzycyfrowy, unikatowy numer łazika
+  - `nazwa_lazika` – nazwa łazika (tekst do 50 znaków)
+  - `rok_wyslania` – rok startu z Ziemi
+  - `wsp_ladowania` – współrzędne lądowania na Marsie oddzielone znakiem przecinka i spacji
+
+  **Przykład.**
+  ```
+  nr_lazika  nazwa_lazika  rok_wyslania  wsp_ladowania
+  1          Mariner 3     2049          50.51N, 70.01E
+  2          Mariner 6     2050          11.90N, 119.49E
+  3          Mariner 7     2050          44.90S, 135.80W
+  ```
+
+  **Plik `obszary.txt`** zawiera informacje o obszarach na Marsie. W każdym wierszu tego pliku znajdują się:
+  - `kod_obszaru` – pięcioznakowy, unikatowy kod obszaru
+  - `nazwa_obszaru` – nazwa obszaru (tekst do 50 znaków)
+
+  **Przykład.**
+  ```
+  kod_obszaru  nazwa_obszaru
+  MC-01        Mare Boreum
+  MC-02        Diacria
+  MC-03        Arcadia
+  ```
+
+  **Plik `pomiary.txt`** zawiera informacje o wynikach badań georadarowych wykonanych przez łaziki. W każdym wierszu tego pliku znajdują się:
+  - `nr_lazika` – co najwyżej trzycyfrowy numer łazika
+  - `data_pomiaru` – data wykonania pomiaru (w formacie rrrr-mm-dd)
+  - `kod_obszaru` – pięcioznakowy kod obszaru, na którym został wykonany pomiar
+  - `wspolrzedne` – współrzędne wykonania pomiaru, oddzielone przecinkiem i spacją
+  - `glebokosc` – szacowana głębokość, na której znajduje się woda (w metrach)
+  - `ilosc` – szacowana ilość wody (w m³)
+
+  ### Zadanie 7.1. (0–2)
+  Podaj nazwę obszaru, na którym znaleziono łącznie we wszystkich pomiarach najwięcej m³ wody na głębokości do 100 metrów włącznie. Jest jeden taki obszar.
+
+  ### Zadanie 7.2. (0–2)
+  Podaj nazwę łazika, który wykonywał pomiary w najdłuższym okresie, licząc od pierwszego (najwcześniejszego) do ostatniego (najpóźniejszego) pomiaru. Podaj datę pierwszego i ostatniego pomiaru wykonanego przez ten łazik.
+
+  ### Zadanie 7.3. (0–2)
+  Podaj nazwy obszarów na Marsie, na których żaden z łazików nie wykonał ani jednego pomiaru w tym samym roku, w którym został wysłany z Ziemi.
+
+  ### Zadanie 7.4. (0–2)
+  Podaj nazwy łazików, które wylądowały na półkuli południowej, ale wykonywały pomiary na obu półkulach: północnej (N) i południowej (S).
+
+  ### Zadanie 7.5. (0–2)
+  Do tabel utworzonych na podstawie opisanych wcześniej plików dołączamy kolejną – o nazwie `Producent`, w której zapisano informacje o producentach poszczególnych modeli łazików.
+
+  Tabela `Producent` zawiera następujące pola:
+  - `kod_producenta` – unikatowy kod producenta
+  - `nazwa` – nazwa producenta
+  - `kraj` – kraj producenta
+
+  Do tabeli `Laziki` dodano pole `kod_producenta`.
+
+  Napisz w języku SQL zapytanie, w wyniku którego otrzymasz listę nazw producentów, których łaziki badały obszar Marsa o nazwie Arcadia lub o nazwie Acidalia w roku 2060. Nazwy producentów nie mogą się powtarzać.
+odpowiedz: |
+  Zakładamy importowanie plików do bazy jako tabel `Laziki`, `Obszary`, `Pomiary` (np. SQLite/PostgreSQL).
+
+  **7.1 – obszar z największą ilością wody do głębokości 100 m:**
+
+  ```sql
+  SELECT o.nazwa_obszaru, SUM(p.ilosc) AS suma_wody
+  FROM Pomiary p
+  JOIN Obszary o ON o.kod_obszaru = p.kod_obszaru
+  WHERE p.glebokosc <= 100
+  GROUP BY o.nazwa_obszaru
+  ORDER BY suma_wody DESC
+  LIMIT 1;
+  ```
+
+  **7.2 – łazik z najdłuższym okresem pomiarów:**
+
+  ```sql
+  SELECT l.nazwa_lazika,
+         MIN(p.data_pomiaru) AS pierwszy,
+         MAX(p.data_pomiaru) AS ostatni,
+         JULIANDAY(MAX(p.data_pomiaru)) - JULIANDAY(MIN(p.data_pomiaru)) AS dni
+  FROM Laziki l
+  JOIN Pomiary p ON p.nr_lazika = l.nr_lazika
+  GROUP BY l.nr_lazika, l.nazwa_lazika
+  ORDER BY dni DESC
+  LIMIT 1;
+  ```
+
+  (W PostgreSQL: `MAX(...) - MIN(...)` zwraca interval). Wynik podaje nazwę + obie daty.
+
+  **7.3 – obszary bez pomiarów w roku wysłania łazika:**
+
+  ```sql
+  SELECT DISTINCT o.nazwa_obszaru
+  FROM Obszary o
+  WHERE o.kod_obszaru NOT IN (
+      SELECT p.kod_obszaru
+      FROM Pomiary p
+      JOIN Laziki l ON l.nr_lazika = p.nr_lazika
+      WHERE CAST(SUBSTR(p.data_pomiaru, 1, 4) AS INTEGER) = l.rok_wyslania
+  );
+  ```
+
+  **7.4 – łaziki które wylądowały na półkuli S, ale mierzyły na obu półkulach:**
+
+  Półkulę odczytujemy z `wsp_ladowania` (zawiera `N` lub `S` w pierwszej współrzędnej). Półkulę w pomiarze – analogicznie z `wspolrzedne`.
+
+  ```sql
+  SELECT l.nazwa_lazika
+  FROM Laziki l
+  WHERE l.wsp_ladowania LIKE '%S,%'
+    AND EXISTS (
+      SELECT 1 FROM Pomiary p WHERE p.nr_lazika = l.nr_lazika
+        AND p.wspolrzedne LIKE '%N,%'
+    )
+    AND EXISTS (
+      SELECT 1 FROM Pomiary p WHERE p.nr_lazika = l.nr_lazika
+        AND p.wspolrzedne LIKE '%S,%'
+    );
+  ```
+
+  **7.5 – producenci łazików mierzących Arcadia/Acidalia w 2060:**
+
+  ```sql
+  SELECT DISTINCT pr.nazwa
+  FROM Producent pr
+  JOIN Laziki l ON l.kod_producenta = pr.kod_producenta
+  JOIN Pomiary p ON p.nr_lazika = l.nr_lazika
+  JOIN Obszary o ON o.kod_obszaru = p.kod_obszaru
+  WHERE o.nazwa_obszaru IN ('Arcadia', 'Acidalia')
+    AND CAST(SUBSTR(p.data_pomiaru, 1, 4) AS INTEGER) = 2060;
+  ```
+pulapka: |
+  W 7.1 – warunek brzmi "do 100 metrów **włącznie**", więc `<=`, nie `<`. W 7.3 – "żaden łazik" wymaga `NOT IN` lub `NOT EXISTS` z podzapytaniem – częsty błąd to próba odwrócenia warunku po stronie JOIN, co nie wykluczy obszarów bez pomiarów. W 7.4 – ostrzeżenie: łazik mógł lądować na N i mierzyć tylko na S – nie liczy się; trzeba: lądowanie na S **i** pomiary zarówno na N **i** na S. W 7.5 – `DISTINCT` jest obowiązkowy (treść zadania mówi explicite "nie mogą się powtarzać").
+wymaganie: |
+  IV.1, IV.2 – tworzenie i wykonywanie zapytań w języku SQL (SELECT, JOIN, GROUP BY, podzapytania, EXISTS, agregacja, filtrowanie); IV.3 – modelowanie danych w bazie relacyjnej.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2025-maj-pr/zad-07.webp"
+  alt="Zadanie 7 - informatyka 2025 PR"
+  caption="Strona arkusza CKE 2025 PR informatyka - zadanie 7 (Poszukiwanie wody na Marsie - baza danych SQL)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_informatyka_2025_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={16}
+/>
+
+## Rozwiązanie krok po kroku
+
+### 7.1 – najwięcej wody do 100 m
+
+JOIN `Pomiary` z `Obszary`, filtr `glebokosc <= 100`, grupowanie po obszarze, suma `ilosc`, sortowanie malejąco, `LIMIT 1`.
+
+### 7.2 – najdłuższy okres pomiarów
+
+Grupowanie po łaziku, MIN/MAX dat pomiarów, różnica = długość okresu, sortowanie malejąco, top 1. Zwracamy nazwę + obie daty.
+
+### 7.3 – obszary bez pomiaru w roku wysłania
+
+Podzapytanie zwraca kody obszarów, w których jakikolwiek łazik wykonał pomiar w roku swego wysłania (`year(data_pomiaru) = rok_wyslania`). `NOT IN` daje obszary, w których to się **nie wydarzyło**.
+
+### 7.4 – łaziki z lądowaniem S i pomiarami na obu półkulach
+
+`wsp_ladowania LIKE '%S,%'` – półkula południowa. EXISTS z `'%N,%'` w `Pomiary` i drugi EXISTS z `'%S,%'`. Bez `DISTINCT` w głównym SELECT każdy łazik wystąpi raz (filtry są na poziomie wiersza tabeli `Laziki`).
+
+### 7.5 – producenci pasujący w 2060
+
+Czterokrotny JOIN: `Producent → Laziki → Pomiary → Obszary`. Filtr na `nazwa_obszaru IN (...)` i `rok = 2060`. `DISTINCT` na nazwie producenta.

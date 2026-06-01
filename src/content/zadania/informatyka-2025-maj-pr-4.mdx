@@ -1,0 +1,53 @@
+---
+arkusz: informatyka-2025-maj-pr
+subject: informatyka
+nr: 4
+punkty: 1
+typ: zamkniete-abcd
+topic: bezpieczeństwo komputerowe, keylogger, malware, ochrona danych
+difficulty: 1
+tresc: |
+  ### Zadanie 4. (0–1)
+
+  Dokończ zdanie. Zaznacz właściwą odpowiedź spośród podanych.
+
+  Program typu *keylogger* służy do
+
+  **A.** szyfrowania informacji do postaci uniemożliwiającej jej odczytanie bez zdefiniowanego klucza.
+
+  **B.** przechowywania danych logowania, w tym haseł, w bezpiecznym miejscu na dysku użytkownika.
+
+  **C.** generowania kodu, który umożliwia użytkownikowi bankowości elektronicznej wykonanie operacji.
+
+  **D.** przechwytywania i gromadzenia informacji o naciśniętych klawiszach.
+odpowiedz: |
+  **Poprawna odpowiedź: D.**
+
+  *Keylogger* (z ang. "key" – klawisz, "logger" – rejestrator) to oprogramowanie (rzadziej sprzętowe urządzenie) służące do rejestracji naciśnięć klawiszy na klawiaturze użytkownika. Najczęściej jest to złośliwe oprogramowanie (malware) wykorzystywane przez cyberprzestępców do kradzieży haseł, numerów kart kredytowych, treści wiadomości i innych danych wpisywanych z klawiatury.
+
+  - **A** – opisuje szyfrowanie (np. AES, RSA).
+  - **B** – opisuje menedżery haseł (np. KeePass, Bitwarden).
+  - **C** – opisuje token / generator kodów jednorazowych (np. token bankowy, autoryzacja TOTP).
+pulapka: |
+  Najczęstszy błąd: pomylenie keyloggera z menedżerem haseł (B). Oba dotyczą "klawiszy/haseł", ale keylogger **kradnie** dane, menedżer haseł **chroni** je. Inny błąd: skojarzenie z generatorem kodów (C) – to inna klasa narzędzi (autoryzacja, nie rejestrowanie).
+wymaganie: |
+  V.2 – bezpieczeństwo w sieci, rodzaje zagrożeń (wirusy, robaki, konie trojańskie, keyloggery, ransomware).
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2025-maj-pr/zad-04.webp"
+  alt="Zadanie 4 - informatyka 2025 PR"
+  caption="Strona arkusza CKE 2025 PR informatyka - zadanie 4 (keylogger - bezpieczeństwo)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_informatyka_2025_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={11}
+/>
+
+## Rozwiązanie
+
+Keylogger to program rejestrujący naciśnięcia klawiszy klawiatury. Z definicji – odpowiedź **D**.

@@ -7,15 +7,40 @@ typ: otwarte-krotkie
 topic: kinetyka chemiczna, równanie kinetyczne, rząd reakcji, stała szybkości, stechiometria
 difficulty: 5
 tresc: |
-  Reakcja: **X₂(g) + 2 Y₂(g) → 2 XY₂(g)**. Równanie kinetyczne: v = k · c_X₂^a · c_Y₂^b.
+  W zamkniętym reaktorze zachodzi reakcja opisana równaniem:
 
-  Wykres: v vs stężenie X₂ (przy c_Y₂=1) — **liniowa** (czerwona). v vs c_Y₂ (przy c_X₂=1) — **parabola** (zielona).
+  $$X_2(g) + 2\,Y_2(g) \rightarrow 2\,XY_2(g)$$
 
-  Z wykresu: c=1, v=1; c_X₂=2, v=2; c_Y₂=2, v=4.
+  Zależność szybkości tej reakcji od stężenia opisuje poniższe równanie kinetyczne:
 
-  **10.1.** P/F: 1) zmniejszenie V w izotermii → wzrost v? 2) wzrost T w izobarii → spadek v?
+  $$v = k \cdot c_{X_2}^a \cdot c_{Y_2}^b$$
 
-  **10.2.** Wyznacz **a, b**, oblicz **k**, oblicz szybkość gdy w reaktorze 4 dm³ łącznie **9,0 mol** gazów (start: stechiometryczna mieszanina 12,0 mol).
+  Aby wyznaczyć wykładniki a i b w równaniu kinetycznym, przeprowadzono serię pomiarów: w temperaturze T mierzono zależność szybkości reakcji od stężenia jednego z substratów przy stałym stężeniu drugiego. Na podstawie wyników pomiarów sporządzono poniższy wykres zależności szybkości reakcji od:
+
+  - stężenia substratu X₂ przy stałym stężeniu $c_{Y_2} = 1\,\text{mol} \cdot \text{dm}^{-3}$ (linia czerwona)
+  - stężenia substratu Y₂ przy stałym stężeniu $c_{X_2} = 1\,\text{mol} \cdot \text{dm}^{-3}$ (linia zielona)
+
+  Z wykresu: dla c = 1 mol·dm⁻³ szybkość v = 1 mol·dm⁻³·s⁻¹; linia czerwona (c_X₂) — liniowa (przy c_X₂ = 2 mol·dm⁻³, v = 2 mol·dm⁻³·s⁻¹); linia zielona (c_Y₂) — kwadratowa (przy c_Y₂ = 2 mol·dm⁻³, v = 4 mol·dm⁻³·s⁻¹).
+
+  ### Zadanie 10.1. (0–1)
+
+  Oceń prawdziwość zdań. Zaznacz P, jeśli zdanie jest prawdziwe, albo F — jeśli jest fałszywe.
+
+  | 1. | Zmniejszenie objętości reaktora w warunkach izotermicznych, przy niezmienionej początkowej liczbie moli substratów, skutkuje **wzrostem szybkości** opisanej reakcji. | P | F |
+  |---|---|---|---|
+  | 2. | Wzrost temperatury w reaktorze w warunkach izobarycznych, przy niezmienionej początkowej liczbie moli substratów, skutkuje **spadkiem szybkości** opisanej reakcji. | P | F |
+
+  ### Zadanie 10.2. (0–4)
+
+  W reaktorze o pojemności 4,0 dm³ umieszczono stechiometryczną mieszaninę, zawierającą łącznie 12,0 mol gazów X₂ i Y₂. Zainicjowano reakcję syntezy gazu XY₂. W układzie utrzymywano temperaturę T.
+
+  Na podstawie analizy wykresów ustal i napisz wartości wykładników a i b. Następnie oblicz wartość stałej szybkości reakcji k oraz oblicz szybkość tej reakcji w temperaturze T w chwili, gdy w reaktorze znajdowało się łącznie 9,0 mol **wszystkich** gazów.
+
+  Równanie kinetyczne:
+
+  $$v = k \cdot c_{X_2}^{\square} \cdot c_{Y_2}^{\square}$$
+
+  Obliczenia: ............
 odpowiedz: |
   **10.1.**
   - 1. Zmniejszenie V w izotermii → wzrost stężeń → wzrost v. **P**.
@@ -84,21 +109,12 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strony arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/chemia/2025-maj-pr/ark-14.webp"
+  src="/arkusze/chemia/2025-maj-pr/zad-10.webp"
   alt="Zadanie 10 - kinetyka"
   caption="Strona 14 arkusza CKE 2025 PR chemia - zadanie 10 (wykres v vs c)."
   zrodlo="CKE 2025"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_chemia_2025_rozszerzony_arkusz_zadania_pytania.pdf"
   pdfPage={14}
-/>
-
-<MaterialZrodlowy
-  src="/arkusze/chemia/2025-maj-pr/ark-15.webp"
-  alt="Zadanie 10.2"
-  caption="Strona 15 arkusza CKE 2025 PR chemia - zadanie 10.2 (obliczenia)."
-  zrodlo="CKE 2025"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Chemia/MCHP-R0-100-A-2505-arkusz.pdf"
-  pdfPage={15}
 />
 
 ## Klucz pojęciowy — kinetyka chemiczna

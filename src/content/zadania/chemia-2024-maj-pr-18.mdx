@@ -1,0 +1,40 @@
+---
+arkusz: chemia-2024-maj-pr
+subject: chemia
+nr: 18
+punkty: 1
+typ: otwarte-krotkie
+topic: chemia organiczna, polimery, PVC, spalanie
+difficulty: 3
+tresc: |
+  Podczas spalania PVC powstają tlenek węgla(IV), para wodna i bezbarwny gaz o ostrym zapachu, którego cząsteczki są zbudowane z dwóch atomów. Stosunek molowy produktów spalania jest równy $n_{CO_2} : n_{H_2O} : n_X = 2 : 1 : 1$.
+
+  Uzupełnij poniższy schemat, tak aby otrzymać równanie reakcji spalania, w której uczestniczy fragment PVC zbudowany z czterech merów:
+
+  $[CH_2-CHCl]_4 + \ldots O_2 \rightarrow \ldots$
+odpowiedz: |
+  Patrz materiał źródłowy CKE — gaz X to **HCl** (zbudowany z 2 atomów, ostry zapach). Mer PVC = C₂H₃Cl, więc 4 mery = C₈H₁₂Cl₄. Spalanie: $C_8H_{12}Cl_4 + 9 O_2 \rightarrow 8 CO_2 + 4 H_2O + 4 HCl$. Sprawdzenie stosunku: $n_{CO_2} : n_{H_2O} : n_{HCl} = 8 : 4 : 4 = 2 : 1 : 1$ ✓.
+pulapka: |
+  Łatwo pomylić bilans H — w PVC jest 12 H, z których 4 idą do HCl, a 8 do H₂O (4 cząsteczki). Bilans O: 8·2 (CO₂) + 4·1 (H₂O) = 20 O po prawej, więc 10 O₂ po lewej — sprawdzić.
+wymaganie: |
+  X.7 — polimery, halogenopochodne, spalanie.
+podobne:
+  - chemia-2025-maj-pr-18
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2024-maj-pr/zad-18.webp"
+  alt="Zadanie 18 - chemia 2024 PR"
+  caption="Strona arkusza CKE 2024 PR chemia — zadanie 18 (spalanie PVC)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_chemia_2024_rozszerzony_arkusz_zadania_pytania.pdf"
+  pdfPage={19}
+/>
+
+## Po co to umieć
+
+Spalanie PVC produkuje HCl — toksyczny i korozyjny gaz, dlatego pożary tworzyw sztucznych są tak niebezpieczne. To także powód, dla którego PVC nie nadaje się do spalania w spalarniach śmieci bez specjalnej obróbki spalin.

@@ -1,0 +1,120 @@
+---
+arkusz: fizyka-2024-maj-pr
+subject: fizyka
+nr: 4
+punkty: 6
+typ: otwarte-krotkie
+topic: efekt Dopplera, akustyka, fala dźwiękowa, prędkość źródła
+difficulty: 4
+tresc: |
+  ### Zadanie 4.
+
+  Ambulans jadący ze stałą prędkością mija nieruchomego obserwatora. Przed ambulansem stoi obserwator A, za ambulansem obserwator B. Sygnał syreny ma stałą częstotliwość. Prędkość dźwięku w powietrzu wynosi $v_d = 340\ \mathrm{m/s}$. Oznaczamy: $\lambda_A$ — długość fali dźwiękowej rejestrowana przez obserwatora A (przed ambulansem), $\lambda_B$ — przez obserwatora B (za ambulansem). Stosunek $\dfrac{\lambda_B}{\lambda_A} = 1{,}2$.
+
+  ### Zadanie 4.1. (0–2)
+
+  Oceń prawdziwość poniższych stwierdzeń. Zaznacz P, jeśli stwierdzenie jest prawdziwe, albo F – jeśli jest fałszywe.
+
+  | | | P / F |
+  |---|---|---|
+  | 1. | Częstotliwość dźwięku rejestrowana przez obserwatora A jest większa od częstotliwości dźwięku rejestrowanej przez obserwatora B. | P / F |
+  | 2. | Długość fali dźwięku za ambulansem jest większa niż przed ambulansem. | P / F |
+
+  ### Zadanie 4.2. (0–4)
+
+  Oblicz wartość prędkości $v$ ambulansu względem ziemi. Zapisz obliczenia.
+odpowiedz: |
+  **4.1.**
+
+  1. Przed ambulansem (obs. A): źródło zbliża się → $f_A > f_0$. Za ambulansem (obs. B): źródło oddala się → $f_B &lt; f_0$. Stąd $f_A > f_B$ → **P**.
+
+  2. $f = v_d / \lambda$, więc większa częstotliwość ↔ krótsza długość fali. $\lambda_A &lt; \lambda_B$ → "fala za jest większa" → **P**.
+
+  **4.2.** Efekt Dopplera dla **ruchomego źródła** i nieruchomego obserwatora:
+
+  Przed źródłem (do A): $\lambda_A = \dfrac{v_d - v}{f_0}$
+
+  Za źródłem (od B): $\lambda_B = \dfrac{v_d + v}{f_0}$
+
+  Iloraz:
+  $$\dfrac{\lambda_B}{\lambda_A} = \dfrac{v_d + v}{v_d - v} = 1{,}2$$
+
+  Rozwiązujemy:
+  $$v_d + v = 1{,}2 (v_d - v)$$
+  $$v_d + v = 1{,}2 v_d - 1{,}2 v$$
+  $$2{,}2 v = 0{,}2 v_d$$
+  $$v = \dfrac{0{,}2}{2{,}2} v_d = \dfrac{1}{11} \cdot 340 \approx 30{,}9\ \mathrm{m/s}$$
+
+  $$\boxed{v \approx 30{,}9\ \mathrm{m/s} \approx 111\ \mathrm{km/h}}$$
+pulapka: |
+  Pułapka 4.1 — pomylenie kierunków. Pamiętaj: źródło **zbliżające się** → fale **ZAGĘSZCZONE** ($\lambda$ KRÓTSZA, $f$ WYŻSZA). Źródło **oddalające się** → fale **ROZRZEDZONE** ($\lambda$ DŁUŻSZA, $f$ NIŻSZA).
+
+  Pułapka 4.2 — użycie wzoru dla ruchomego obserwatora: $f' = f_0 \cdot \frac{v_d \pm v_o}{v_d}$. NIE: tutaj rusza się ŹRÓDŁO. Dla ruchomego źródła wzór ma $v$ w **mianowniku**: $f' = f_0 \cdot \dfrac{v_d}{v_d \mp v_s}$. Skutek dla $\lambda$: $\lambda = \dfrac{v_d \mp v_s}{f_0}$ (minus przed, plus za).
+
+  Pułapka — pominięcie iloczynu z $v_d$. Często się oblicza $\lambda_B - \lambda_A = 2v/f_0$ — ale tu nie znamy $f_0$. Trzeba zostawić w postaci ilorazu, gdzie $f_0$ i $v_d$ się znoszą.
+wymaganie: |
+  III.2 — fale mechaniczne, efekt Dopplera (źródło ruchome / obserwator ruchomy), prędkość fali, długość fali.
+podobne:
+  - fizyka-2025-maj-pr-4
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2024-maj-pr/zad-04.webp"
+  alt="Zadanie 4 - efekt Dopplera, ambulans"
+  caption="Strona 13-14 arkusza CKE 2024 PR fizyka - zadanie 4 (ambulans przejeżdżający, obs. A i B, lambda_B/lambda_A = 1,2)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_fizyka_2024_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={13}
+/>
+
+## Klucz — efekt Dopplera
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Ruchome źródło, nieruchomy obserwator** — fale są fizycznie **zagęszczone z przodu** i **rozrzedzone z tyłu** poruszającego się źródła. Wzory:
+
+$$\lambda_{przod} = \dfrac{v_d - v_s}{f_0}, \qquad \lambda_{tyl} = \dfrac{v_d + v_s}{f_0}$$
+
+$$f_{przod} = f_0 \dfrac{v_d}{v_d - v_s}, \qquad f_{tyl} = f_0 \dfrac{v_d}{v_d + v_s}$$
+
+</div>
+
+<div class="krok">
+
+**Ruchomy obserwator, nieruchome źródło** — długość fali w ośrodku się NIE zmienia (zależy od źródła), ale obserwator "spotyka" więcej grzbietów na sekundę: $f' = f_0 \dfrac{v_d \pm v_o}{v_d}$.
+
+</div>
+
+<div class="krok">
+
+**Klasyczna pułapka w pracy**: wzór dla ruchomego obserwatora w sytuacji z ruchomym źródłem (lub odwrotnie). CKE celowo to testuje.
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+<div>
+
+**4.1.** **PP**
+
+**4.2.** $v = \dfrac{v_d}{11} \approx 30{,}9\ \mathrm{m/s} \approx 111\ \mathrm{km/h}$
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — wzór dla źródła vs obserwatora</div>
+
+Wzór z $v$ w **mianowniku** = ruchome źródło. Wzór z $v$ w **liczniku** = ruchomy obserwator. Pomyłka daje wynik różniący się o czynnik $\sim 1$, ale przy CKE odpowiedź jest punktowana co do liczby — łatwo stracić wszystkie punkty.
+</div>
+
+## Po co to umieć
+
+Efekt Dopplera = sygnał na karetce, radar policyjny (pomiar prędkości aut), USG dopplerowskie (prędkość krwi w żyłach), **przesunięcie ku czerwieni** galaktyk (dowód rozszerzania się Wszechświata — odkrycie Hubble'a). Detekcja egzoplanet metodą prędkości radialnych — gwiazda "drga" pod wpływem grawitacji planety, jej widmo przesuwa się dopplerowsko.

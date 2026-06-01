@@ -6,7 +6,27 @@ punkty: 2
 typ: zamkniete-dobierz
 topic: statystyka, mediana, średnia arytmetyczna
 difficulty: 2
-tresc: "Zadanie 29 CKE: Z diagramu odczytaj liczbę sklepów o danej cenie pomidorów: $5{,}05$ zł — $2$ sklepy, $5{,}60$ — $4$, $5{,}70$ — $2$, $6{,}00$ — $5$, $6{,}30$ — $3$. Wyznacz medianę i średnią."
+tresc: |
+  **Zadanie 31.**
+
+  Właściciel pewnej apteki przeanalizował dane dotyczące liczby obsługiwanych klientów z $30$ kolejnych dni. Przyjmijmy, że liczbę $L$ obsługiwanych klientów $n$-tego dnia opisuje funkcja
+
+  $$L(n) = -n^2 + 22n + 279$$
+
+  gdzie $n$ jest liczbą naturalną spełniającą warunki $n \geq 1$ i $n \leq 30$.
+
+  **Zadanie 31.1. (0-1)**
+
+  **Oceń prawdziwość poniższych stwierdzeń. Wybierz P, jeśli stwierdzenie jest prawdziwe, albo F - jeśli jest fałszywe.**
+
+  | Stwierdzenie | P/F |
+  |---|---|
+  | Łączna liczba klientów obsłużonych w czasie wszystkich analizowanych dni jest równa $L(30)$. | P / F |
+  | W trzecim dniu analizowanego okresu obsłużono $336$ klientów. | P / F |
+
+  **Zadanie 31.2. (0-2)**
+
+  **Którego dnia analizowanego okresu w aptece obsłużono największą liczbę klientów? Oblicz liczbę klientów obsłużonych tego dnia. Zapisz obliczenia.**
 odpowiedz: |
   **29.1 (mediana): C — $5{,}85$ zł**
 
@@ -24,11 +44,11 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pp/ark-25.webp"
+  src="/arkusze/matematyka/2023-maj-pp/zad-31.webp"
   alt="Zadanie 31 (29 CKE) - statystyka, mediana, średnia"
   caption="Strona 25 arkusza CKE - zadanie 29 (diagram cen)."
   zrodlo="CKE 2023"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_podstawowy_arkusz_2023_zadania.pdf"
   pdfPage={25}
 />
 

@@ -6,13 +6,34 @@ punkty: 5
 typ: otwarte-rozszerzone
 topic: logarytmy, ekstrema funkcji, pochodne
 difficulty: 5
-tresc: "$f(x) = 81^{\\log_3 x} + \\frac{2 \\log_2 \\sqrt{27} \\cdot \\log_3 2}{3} \\cdot x^2 - 6x$ dla $x > 0$. Wykaż że $f(x) = x^4 + x^2 - 6x$ (12.1) i znajdź minimum lokalne (12.2)."
+tresc: |
+  ### Zadanie 12.
+
+  Funkcja $f$ jest określona wzorem
+
+  $$f(x) = 81^{\log_3 x} + \frac{2 \cdot \log_2 \sqrt{27} \cdot \log_3 2}{3} \cdot x^2 - 6x$$
+
+  dla każdej liczby dodatniej $x$.
+
+  ### Zadanie 12.1. (0-2)
+
+  **Wykaż, że dla każdej liczby dodatniej $x$ wyrażenie**
+
+  $$81^{\log_3 x} + \frac{2 \cdot \log_2 \sqrt{27} \cdot \log_3 2}{3} \cdot x^2 - 6x$$
+
+  **można równoważnie przekształcić do postaci $x^4 + x^2 - 6x$.**
+
+  ### Zadanie 12.2. (0-4)
+
+  **Oblicz najmniejszą wartość funkcji $f$ określonej dla każdej liczby dodatniej $x$. Zapisz obliczenia.**
+
+  *Wskazówka: przyjmij, że wzór funkcji $f$ można przedstawić w postaci $f(x) = x^4 + x^2 - 6x$.*
 odpowiedz: |
   **12.1.** $81^{\log_3 x} = (3^4)^{\log_3 x} = 3^{4\log_3 x} = x^4$. $\frac{2\log_2\sqrt{27} \cdot \log_3 2}{3} = \frac{3 \log_2 3 \cdot \log_3 2}{3} = \frac{3 \cdot 1}{3} = 1$. Stąd $f(x) = x^4 + x^2 - 6x$.
 
-  **12.2.** $f'(x) = 4x^3 + 2x - 6 = 2(x-1)(2x^2+2x+3)$. Pierwiastek $x = 1$ (drugi czynnik $\Delta < 0$ — bez pierwiastków). Minimum lokalne w $x = 1$: $f(1) = 1+1-6 = -4$.
+  **12.2.** $f'(x) = 4x^3 + 2x - 6 = 2(x-1)(2x^2+2x+3)$. Pierwiastek $x = 1$ (drugi czynnik $\Delta &lt; 0$ — bez pierwiastków). Minimum lokalne w $x = 1$: $f(1) = 1+1-6 = -4$.
 pulapka: |
-  Najczęstszy błąd w 12.1: zapomnienie własności $a^{\log_a b} = b$ i $\log_a b \cdot \log_b a = 1$. W 12.2: brak sprawdzenia że $2x^2+2x+3$ nie ma pierwiastków ($\Delta = 4 - 24 = -20 < 0$).
+  Najczęstszy błąd w 12.1: zapomnienie własności $a^{\log_a b} = b$ i $\log_a b \cdot \log_b a = 1$. W 12.2: brak sprawdzenia że $2x^2+2x+3$ nie ma pierwiastków ($\Delta = 4 - 24 = -20 &lt; 0$).
 wymaganie: |
   I.6 — własności logarytmów; IV.3 — ekstrema funkcji przez pochodne.
 podobne:
@@ -24,11 +45,11 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pr/ark-20.webp"
+  src="/arkusze/matematyka/2023-maj-pr/zad-12.webp"
   alt="Zadanie 12 - logarytmy + ekstrema"
   caption="Strona 20 arkusza CKE PR - zadanie 12."
   zrodlo="CKE 2023 PR"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-R0-100-2305-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_rozszerzony_arkusz_2023_zadania.pdf"
   pdfPage={20}
 />
 
@@ -94,13 +115,13 @@ $$4x^3 + 2x - 6 = (x-1)(4x^2 + 4x + 6) = 2(x-1)(2x^2 + 2x + 3)$$
 
 <div class="krok">
 
-**Sprawdź $2x^2 + 2x + 3$.** $\Delta = 4 - 24 = -20 < 0$ — brak pierwiastków rzeczywistych. Wyraz $> 0$ dla wszystkich $x$.
+**Sprawdź $2x^2 + 2x + 3$.** $\Delta = 4 - 24 = -20 &lt; 0$ — brak pierwiastków rzeczywistych. Wyraz $> 0$ dla wszystkich $x$.
 
 </div>
 
 <div class="krok">
 
-**Znak $f'(x)$:** $2(x-1) \cdot (\text{dodatnie})$. Czyli $f'(x) > 0 \iff x > 1$, $f'(x) < 0 \iff x < 1$. To znaczy:
+**Znak $f'(x)$:** $2(x-1) \cdot (\text{dodatnie})$. Czyli $f'(x) > 0 \iff x > 1$, $f'(x) &lt; 0 \iff x &lt; 1$. To znaczy:
 
 - $f$ maleje na $(0, 1)$
 - $f$ rośnie na $(1, +\infty)$
@@ -126,7 +147,7 @@ $$4x^3 + 2x - 6 = (x-1)(4x^2 + 4x + 6) = 2(x-1)(2x^2 + 2x + 3)$$
   - $\log_a b^k = k \log_a b$
   - $\log_a b \cdot \log_b a = 1$
 
-  **12.2.** Niesprawdzenie czy $2x^2 + 2x + 3$ ma pierwiastki. Bez tego nie wiadomo, czy są dodatkowe ekstrema. Sprawdzenie $\Delta = -20 < 0$ pokazuje, że tylko $x = 1$.
+  **12.2.** Niesprawdzenie czy $2x^2 + 2x + 3$ ma pierwiastki. Bez tego nie wiadomo, czy są dodatkowe ekstrema. Sprawdzenie $\Delta = -20 &lt; 0$ pokazuje, że tylko $x = 1$.
 
   **Wzór skróconego mnożenia $a^{\log_a b} = b$** — wynika z definicji logarytmu: $\log_a b$ to wykładnik, do którego trzeba podnieść $a$, by otrzymać $b$.
 </div>

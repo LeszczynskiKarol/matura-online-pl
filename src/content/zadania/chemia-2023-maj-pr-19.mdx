@@ -1,0 +1,65 @@
+---
+arkusz: chemia-2023-maj-pr
+subject: chemia
+nr: 19
+punkty: 2
+typ: otwarte-krotkie
+topic: elektrochemia, ogniwo galwaniczne, SEM, szereg napięciowy, konwencja sztokholmska
+difficulty: 4
+tresc: |
+  Zbudowano ogniwo, którego schemat zapisany zgodnie z konwencją sztokholmską jest następujący:
+
+  $$(-)\ \text{Co}\,|\,\text{Co}^{2+}\,||\,\text{H}^+\,|\,\text{H}_2(g)\,|\,\text{Pt}\ (+)$$
+
+  ### Zadanie 19.1. (0–1)
+
+  **Oblicz siłę elektromotoryczną opisanego ogniwa w warunkach standardowych.**
+
+  ### Zadanie 19.2. (0–1)
+
+  W opisanym ogniwie półogniwo $\text{Co}\,|\,\text{Co}^{2+}$ zastąpiono innym półogniwem metalicznym. Ta zmiana nie spowodowała (w warunkach standardowych) zmiany procesu katodowego.
+
+  **Spośród wymienionych półogniw wybierz i zaznacz wszystkie te, które mogły być użyte do budowy tego ogniwa.**
+
+  Do wyboru: $\text{Ag}\,|\,\text{Ag}^+$, $\text{Cu}\,|\,\text{Cu}^{2+}$, $\text{Fe}\,|\,\text{Fe}^{2+}$, $\text{Ni}\,|\,\text{Ni}^{2+}$, $\text{Zn}\,|\,\text{Zn}^{2+}$
+odpowiedz: |
+  **19.1.** Potencjały standardowe:
+  - $E^0(\text{Co}^{2+}/\text{Co}) = -0{,}28\,\text{V}$ (anoda, utlenianie)
+  - $E^0(\text{H}^+/\text{H}_2) = 0{,}00\,\text{V}$ (katoda, redukcja)
+
+  $$\text{SEM} = E^0_{kat} - E^0_{an} = 0{,}00 - (-0{,}28) = +0{,}28\,\text{V}$$
+
+  **SEM = 0,28 V**.
+
+  **19.2.** Proces katodowy: $2\text{H}^+ + 2\text{e}^- \rightarrow \text{H}_2$. Pozostaje niezmieniony, jeśli nowe półogniwo nadal jest **anodą** (utlenianie), czyli ma potencjał **niższy od $E^0(\text{H}^+/\text{H}_2) = 0$**.
+
+  Sprawdzamy potencjały:
+  - Ag/Ag⁺: $E^0 = +0{,}80\,\text{V}$ — wyższy niż 0, byłoby katodą — **NIE**
+  - Cu/Cu²⁺: $E^0 = +0{,}34\,\text{V}$ — wyższy niż 0 — **NIE**
+  - Fe/Fe²⁺: $E^0 = -0{,}44\,\text{V}$ — niższy — **TAK**
+  - Ni/Ni²⁺: $E^0 = -0{,}25\,\text{V}$ — niższy — **TAK**
+  - Zn/Zn²⁺: $E^0 = -0{,}76\,\text{V}$ — niższy — **TAK**
+
+  **Odpowiedź**: $\text{Fe}\,|\,\text{Fe}^{2+}$, $\text{Ni}\,|\,\text{Ni}^{2+}$, $\text{Zn}\,|\,\text{Zn}^{2+}$.
+pulapka: |
+  - **Konwencja sztokholmska**: lewa strona schematu = anoda (utlenianie, biegun ujemny w ogniwie galwanicznym); prawa = katoda (redukcja, biegun dodatni).
+  - **SEM zawsze dodatnia** dla działającego ogniwa = $E^0_{katoda} - E^0_{anoda}$.
+  - Aby zachować proces katodowy (redukcja H⁺ do H₂), nowy metal musi mieć $E^0 &lt; 0$ (czyli być **bardziej aktywny** niż wodór).
+  - Ag i Cu są mniej aktywne niż H — nie wyparłyby wodoru, byłyby katodą.
+wymaganie: |
+  VIII.4 — ogniwa galwaniczne, SEM, potencjały standardowe, szereg napięciowy.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2023-maj-pr/zad-19.webp"
+  alt="Zadanie 19 - chemia 2023 PR"
+  caption="Arkusz CKE 2023 PR chemia - zadanie 19 (ogniwo Co/Co2+ || H+/H2, SEM)."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_chemia_2023_rozszerzony_arkusz_zadania_pytania.pdf"
+  pdfPage={19}
+/>

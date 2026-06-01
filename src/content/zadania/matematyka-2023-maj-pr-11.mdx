@@ -6,15 +6,22 @@ punkty: 5
 typ: otwarte-rozszerzone
 topic: równanie kwadratowe z parametrem, wzory Viete'a
 difficulty: 5
-tresc: "Wyznacz $m \\neq 2$ tak, że $x^2 + 4x - \\frac{m-3}{m-2} = 0$ ma dwa różne rozwiązania rzeczywiste $x_1, x_2$ z $x_1^3 + x_2^3 > -28$."
+tresc: |
+  ### Zadanie 11. (0-5)
+
+  **Wyznacz wszystkie wartości parametru $m \neq 2$, dla których równanie**
+
+  $$x^2 + 4x - \frac{m - 3}{m - 2} = 0$$
+
+  **ma dwa różne rozwiązania rzeczywiste $x_1, x_2$ spełniające warunek $x_1^3 + x_2^3 > -28$. Zapisz obliczenia.**
 odpowiedz: |
   **$m \in \left(\frac{11}{5},\ \frac{9}{4}\right)$**
 
   Wzory Viety: $x_1 + x_2 = -4$, $x_1 x_2 = -\frac{m-3}{m-2}$.
 
-  Warunki: (1) $\Delta > 0$ → $\frac{5m-11}{m-2} > 0$ → $m < 2$ lub $m > \frac{11}{5}$; (2) $x_1^3 + x_2^3 = (x_1+x_2)[(x_1+x_2)^2 - 3 x_1 x_2] > -28$ → $x_1 x_2 > 3$ → $\frac{4m-9}{m-2} < 0$ → $2 < m < \frac{9}{4}$. Część wspólna: $\frac{11}{5} < m < \frac{9}{4}$.
+  Warunki: (1) $\Delta > 0$ → $\frac{5m-11}{m-2} > 0$ → $m &lt; 2$ lub $m > \frac{11}{5}$; (2) $x_1^3 + x_2^3 = (x_1+x_2)[(x_1+x_2)^2 - 3 x_1 x_2] > -28$ → $x_1 x_2 > 3$ → $\frac{4m-9}{m-2} &lt; 0$ → $2 &lt; m &lt; \frac{9}{4}$. Część wspólna: $\frac{11}{5} &lt; m &lt; \frac{9}{4}$.
 pulapka: |
-  Najczęstszy błąd: pominięcie warunku $\Delta > 0$. Tylko sam warunek na $x_1^3 + x_2^3$ daje $2 < m < 9/4$, ale dla $m \in (2, 11/5)$ równanie ma rozwiązania zespolone — trzeba wykluczyć.
+  Najczęstszy błąd: pominięcie warunku $\Delta > 0$. Tylko sam warunek na $x_1^3 + x_2^3$ daje $2 &lt; m &lt; 9/4$, ale dla $m \in (2, 11/5)$ równanie ma rozwiązania zespolone — trzeba wykluczyć.
 wymaganie: |
   III.2 — równania kwadratowe z parametrem, wzory Viete'a.
 podobne:
@@ -26,11 +33,11 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pr/ark-18.webp"
+  src="/arkusze/matematyka/2023-maj-pr/zad-11.webp"
   alt="Zadanie 11 - równanie kwadratowe z parametrem"
   caption="Strona 18 arkusza CKE PR - zadanie 11."
   zrodlo="CKE 2023 PR"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-R0-100-2305-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_rozszerzony_arkusz_2023_zadania.pdf"
   pdfPage={18}
 />
 
@@ -56,7 +63,7 @@ $$\Delta = 16 - 4 \cdot \left(-\frac{m-3}{m-2}\right) = 16 + \frac{4(m-3)}{m-2}$
 
 $$= \frac{16(m-2) + 4(m-3)}{m-2} = \frac{20m - 44}{m-2} = \frac{4(5m-11)}{m-2}$$
 
-$\Delta > 0 \iff \frac{5m-11}{m-2} > 0 \iff m < 2$ lub $m > \frac{11}{5}$.
+$\Delta > 0 \iff \frac{5m-11}{m-2} > 0 \iff m &lt; 2$ lub $m > \frac{11}{5}$.
 
 </div>
 
@@ -76,9 +83,9 @@ Warunek: $-64 + 12 x_1 x_2 > -28 \iff x_1 x_2 > 3$.
 
 **Rozwiąż $-\frac{m-3}{m-2} > 3$:**
 
-$$\frac{m-3}{m-2} < -3 \iff \frac{m-3 + 3(m-2)}{m-2} < 0 \iff \frac{4m-9}{m-2} < 0$$
+$$\frac{m-3}{m-2} &lt; -3 \iff \frac{m-3 + 3(m-2)}{m-2} &lt; 0 \iff \frac{4m-9}{m-2} &lt; 0$$
 
-Zerówki: $m = \frac{9}{4}$ i $m = 2$. Iloraz $< 0$ ⟺ $2 < m < \frac{9}{4}$.
+Zerówki: $m = \frac{9}{4}$ i $m = 2$. Iloraz $&lt; 0$ ⟺ $2 &lt; m &lt; \frac{9}{4}$.
 
 </div>
 
@@ -86,10 +93,10 @@ Zerówki: $m = \frac{9}{4}$ i $m = 2$. Iloraz $< 0$ ⟺ $2 < m < \frac{9}{4}$.
 
 **Część wspólna obu warunków:**
 
-- $\Delta > 0$: $m < 2$ lub $m > \frac{11}{5}$
-- $x_1^3 + x_2^3 > -28$: $2 < m < \frac{9}{4}$
+- $\Delta > 0$: $m &lt; 2$ lub $m > \frac{11}{5}$
+- $x_1^3 + x_2^3 > -28$: $2 &lt; m &lt; \frac{9}{4}$
 
-Przecięcie: $\frac{11}{5} < m < \frac{9}{4}$.
+Przecięcie: $\frac{11}{5} &lt; m &lt; \frac{9}{4}$.
 
 </div>
 
@@ -103,7 +110,7 @@ Przecięcie: $\frac{11}{5} < m < \frac{9}{4}$.
 
 <div class="pulapka">
   <div class="pulapka-label">Typowy błąd</div>
-  **Pominięcie warunku $\Delta > 0$.** Sam warunek na $x_1^3 + x_2^3$ daje $2 < m < \frac{9}{4} = 2{,}25$. Ale dla $m$ między $2$ a $\frac{11}{5} = 2{,}2$ równanie ma rozwiązania zespolone — wzory Viety wciąż działają (formalnie), ale rozwiązania nie są rzeczywiste.
+  **Pominięcie warunku $\Delta > 0$.** Sam warunek na $x_1^3 + x_2^3$ daje $2 &lt; m &lt; \frac{9}{4} = 2{,}25$. Ale dla $m$ między $2$ a $\frac{11}{5} = 2{,}2$ równanie ma rozwiązania zespolone — wzory Viety wciąż działają (formalnie), ale rozwiązania nie są rzeczywiste.
 
   **$\frac{11}{5}$ vs $\frac{9}{4}$ — kolejność.** $\frac{11}{5} = 2{,}2$, $\frac{9}{4} = 2{,}25$. Przedział jest „cienki" — $0{,}05$ szerokości. Łatwo o pomyłkę.
 

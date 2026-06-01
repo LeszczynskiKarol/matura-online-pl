@@ -1,0 +1,44 @@
+---
+arkusz: wos-2019-maj-pr
+subject: wos
+nr: 5
+punkty: 1
+typ: zamkniete-pf
+topic: spoleczenstwo obywatelskie, badania CBOS, gotowosc do wspolpracy
+difficulty: 3
+tresc: |
+  Material zrodlowy: wykres CBOS BS/22/2016 "Gotowosc do wspolpracy" z odpowiedziami w latach 2002-2016 na pytanie "ktora opinia jest blizsza Pana(i) pogladom?": Opinia 1 (ludzie mog̨a wspolnie pomoc/rozwiazac problemy srodowiska) vs Opinia 2 (nie sa w stanie) vs "Trudno powiedziec". Dane: 2002: 50/38/12, 2004: 54/35/11, 2006: 63/26/11, 2008: 65/25/10, 2010: 66/25/9, 2012: 72/19/9, 2016: 75/18/7.
+
+  Polecenie CKE: "Na podstawie wykresu ocen, czy ponizsze informacje sa prawdziwe. Zaznacz P, jesli informacja jest prawdziwa, albo F - jesli jest falszywa.
+  1. W latach 2004-2008 spadl o 10% odsetek respondentow uznajacych, ze blizsza ich pogladom jest druga opinia.
+  2. Badania z 2016 roku wskazuja, ze co siodmy ankietowany nie wybieral zadnej z dwoch zaprezentowanych opinii.
+  3. W latach 2002-2016 odnotowano systematyczny wzrost odsetka respondentow uznajacych, ze blizsza ich pogladom jest pierwsza opinia."
+odpowiedz: |
+  1. FALSZ. 2004: 35%, 2008: 25% - spadek o 10 punktow procentowych (nie o 10%, ktore byloby 35% × 0,9 = 31,5%). Mowiac scisle: w punktach procentowych spadek to 10 p.p., a w procentach: (35-25)/35 ≈ 28,6%. Klucz CKE traktuje to jako falsz - zdanie myli p.p. z %.
+  2. FALSZ. W 2016 r. "Trudno powiedziec" wybralo 7%, co odpowiada co czternastemu (1/14), a nie co siodmemu (1/7 ≈ 14,3%).
+  3. PRAWDA. Odsetek 1. opinii: 50→54→63→65→66→72→75% - systematyczny wzrost w kolejnych badaniach.
+pulapka: |
+  Zd. 1: pulapka p.p. vs %. Zd. 2: 7% to "co czternasty" (1/14), nie "co siodmy". Zd. 3: bez pulapki - wzrost jednoznaczny.
+wymaganie: |
+  III.1 - analizuje materialy zrodlowe (wykresy, dane statystyczne) dotyczace zycia spolecznego.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/wos/2019-maj-pr/zad-05.webp"
+  alt="Zadanie 5 - WOS 2019 PR"
+  caption="Strona arkusza CKE 2019 PR WOS - zadanie 5 (wykres CBOS)."
+  zrodlo="CKE 2019"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_wos_F2015_2019_rozszerzony_arkusz.pdf"
+  pdfPage={4}
+/>
+
+## Rozwiazanie
+
+1. **F** - choc spadek to istotnie 10 p.p. (35→25), zdanie mowi "o 10%", co arytmetycznie znaczyloby 35 × (1-0,1) = 31,5%. Mylenie p.p. z % jest klasycznym bledem matematycznym w analizie wykresow.
+2. **F** - 7% respondentow wybralo "trudno powiedziec" w 2016 r. To w przyblizeniu 1/14 (co czternasty), a nie 1/7 (co siodmy ≈ 14,3%).
+3. **P** - kolejne badania: 50% (2002) → 54% → 63% → 65% → 66% → 72% → 75% (2016) - **systematyczny, monotoniczny wzrost** poparcia dla 1. opinii (wzrost poczucia sprawczosci obywatelskiej).

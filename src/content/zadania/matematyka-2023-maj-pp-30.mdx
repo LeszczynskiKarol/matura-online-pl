@@ -6,7 +6,12 @@ punkty: 1
 typ: zamkniete-abcd
 topic: kombinatoryka, reguła mnożenia, liczby cyfrowe
 difficulty: 3
-tresc: "Zadanie 28 CKE: Ile jest liczb pięciocyfrowych zbudowanych tylko z cyfr $0, 5, 7$?"
+tresc: |
+  **Zadanie 30. (0-2)**
+
+  Ze zbioru ośmiu liczb $\{2, 3, 4, 5, 6, 7, 8, 9\}$ losujemy ze zwracaniem kolejno dwa razy po jednej liczbie.
+
+  **Oblicz prawdopodobieństwo zdarzenia $A$ polegającego na tym, że iloczyn wylosowanych liczb jest podzielny przez $15$. Zapisz obliczenia.**
 odpowiedz: C
 pulapka: |
   Najczęstszy błąd: $3^5$ — pominięcie warunku, że pierwsza cyfra **nie może być $0$**. Pięciocyfrowa liczba ma pierwszą cyfrę różną od $0$.
@@ -21,11 +26,11 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pp/ark-24.webp"
+  src="/arkusze/matematyka/2023-maj-pp/zad-30.webp"
   alt="Zadanie 30 (28 CKE) - kombinatoryka liczb pięciocyfrowych"
   caption="Strona 24 arkusza CKE - zadanie 28."
   zrodlo="CKE 2023"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_podstawowy_arkusz_2023_zadania.pdf"
   pdfPage={24}
 />
 

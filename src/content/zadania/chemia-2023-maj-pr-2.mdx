@@ -1,0 +1,63 @@
+---
+arkusz: chemia-2023-maj-pr
+subject: chemia
+nr: 2
+punkty: 1
+typ: otwarte-krotkie
+topic: reakcje jądrowe, przemiany promieniotwórcze, bilans nukleonów
+difficulty: 3
+tresc: |
+  Aby otrzymać superciężkie jądra pierwiastków z końca 7. okresu, kaliforn $^{249}_{98}\text{Cf}$ bombardowano jonami izotopu wapnia $^{48}_{20}\text{Ca}$. Podczas jednego z eksperymentów zarejestrowano przemianę:
+
+  $$^{249}_{98}\text{Cf} + ^{48}_{20}\text{Ca} \longrightarrow X + 3\,^{1}_{0}n$$
+
+  Powstałe jądro **X** uległo rozpadowi, którego głównym produktem był liwermor $^{290}_{116}\text{Lv}$.
+
+  **Napisz równanie reakcji rozpadu, której uległo jądro pierwiastka X. Uzupełnij wszystkie pola w schemacie.**
+odpowiedz: |
+  **Identyfikacja X** (z pierwszej reakcji — bilans nukleonów):
+  - A: $249 + 48 = A_X + 3 \cdot 1 \Rightarrow A_X = 294$
+  - Z: $98 + 20 = Z_X + 3 \cdot 0 \Rightarrow Z_X = 118$
+  - Pierwiastek 118 = oganesson **Og** → $X = ^{294}_{118}\text{Og}$
+
+  **Rozpad X → Lv**:
+  - $^{294}_{118}\text{Og} \rightarrow ^{290}_{116}\text{Lv} + ?$
+  - Bilans A: $294 - 290 = 4$
+  - Bilans Z: $118 - 116 = 2$
+  - To **cząstka α** ($^{4}_{2}\text{He}$).
+
+  **Równanie reakcji rozpadu**:
+
+  $$^{294}_{118}\text{Og} \longrightarrow ^{290}_{116}\text{Lv} + ^{4}_{2}\text{He}$$
+pulapka: |
+  - Przy bilansowaniu reakcji jądrowych **suma A musi się zgadzać po obu stronach** i analogicznie suma Z.
+  - Neutron $^{1}_{0}n$ ma A=1, Z=0. Trzy neutrony to A=3, Z=0 (nie zwiększa ładunku).
+  - Rozpad α = emisja jądra helu $^{4}_{2}\text{He}$ (A maleje o 4, Z maleje o 2).
+  - Nie pomyl z rozpadem β⁻ (emisja elektronu, A bez zmian, Z rośnie o 1).
+wymaganie: |
+  I.6 — przemiany jądrowe, izotopy, promieniotwórczość, bilansowanie reakcji jądrowych.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2023-maj-pr/zad-02.webp"
+  alt="Zadanie 2 - chemia 2023 PR"
+  caption="Arkusz CKE 2023 PR chemia - zadanie 2 (synteza superciężkich jąder, rozpad)."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_chemia_2023_rozszerzony_arkusz_zadania_pytania.pdf"
+  pdfPage={5}
+/>
+
+## Klucz: typy rozpadów
+
+| Rozpad | Cząstka | Zmiana A | Zmiana Z |
+|---|---|---|---|
+| α | $^{4}_{2}\text{He}$ | -4 | -2 |
+| β⁻ | $^{0}_{-1}e$ | 0 | +1 |
+| β⁺ | $^{0}_{+1}e$ | 0 | -1 |
+| γ | foton | 0 | 0 |
+| n | $^{1}_{0}n$ | -1 | 0 |

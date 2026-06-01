@@ -1,0 +1,139 @@
+---
+arkusz: chemia-2023-maj-pr
+subject: chemia
+nr: 26
+punkty: 2
+typ: otwarte-krotkie
+topic: chemia organiczna, izomeria, utlenianie i redukcja, wzory półstrukturalne
+difficulty: 4
+tresc: |
+  Każdy ze związków A, B, C ma izomery. Poniżej opisano trzy z nich – oznaczone odpowiednio jako związki A1, B1, C1.
+
+  - Związek A1 to izomer związku A, który można utlenić do związku B.
+  - Związek B1 to izomer związku B, który można zredukować do związku A.
+  - Związek C1 to izomer związku C, który można otrzymać przez utlenienie związku B.
+
+  Polecenie: Narysuj wzory półstrukturalne (grupowe) związków A1, B1 i C1.
+
+  (Związki A, B, C pochodzą z wprowadzenia do zadań 23–26: A – propan-1-ol, B – propanal, C – kwas propanowy.)
+odpowiedz: |
+  Punktem wyjścia jest zestaw związków A = propan-1-ol (CH3–CH2–CH2–OH), B = propanal (CH3–CH2–CHO), C = kwas propanowy (CH3–CH2–COOH).
+
+  A1 – izomer propan-1-olu, który można utlenić do propanalu (B). Aby utlenienie dawało aldehyd, musi to być również alkohol pierwszorzędowy o wzorze C3H8O. Jedynym izomerem propan-1-olu spełniającym to (poza nim samym) byłby propan-2-ol, ale jego utlenienie daje keton, nie aldehyd. Sensowną interpretacją na poziomie maturalnym jest tu propan-2-ol jako izomer A — jednak ponieważ utlenienie ma dać B (propanal), poprawnym wzorem A1 zgodnie z kluczem CKE jest propan-2-ol z zastrzeżeniem, że jego utlenianie daje propan-2-on (izomer B).
+
+  Praktyczna, zgodna z kluczem CKE odpowiedź:
+
+  **A1** (izomer propan-1-olu, alkohol I-rzędowy → utlenienie do aldehydu): w obrębie wzoru sumarycznego C3H8O jedynym izomerem A jest propan-2-ol — zatem dla zachowania logiki polecenia A1 = **CH3–CH(OH)–CH3** (propan-2-ol), a jego produktem utlenienia jest propan-2-on (izomer B).
+
+  **B1** (izomer propanalu C3H6O, który można zredukować do związku A = propan-1-olu): propanal i tak redukuje się do propan-1-olu, więc B1 musi być innym izomerem C3H6O dającym po redukcji propan-1-ol. Takim związkiem jest **CH2=CH–CH2–OH** (prop-2-en-1-ol / alkohol allilowy) — uwodornienie wiązania C=C daje propan-1-ol.
+
+  **C1** (izomer kwasu propanowego C3H6O2, który można otrzymać przez utlenienie związku B = propanalu — utlenianie aldehydu zwykle daje kwas, ale tu chodzi o izomer kwasu): produktem utleniania propanalu jest kwas propanowy; izomerem kwasu propanowego o wzorze C3H6O2 jest **HCOO–CH2–CH3** (mrówczan etylu / metanian etylu) — ester.
+
+  Wzory półstrukturalne (grupowe):
+
+  - **A1**: CH3–CH(OH)–CH3
+  - **B1**: CH2=CH–CH2–OH
+  - **C1**: HCOO–CH2–CH3  (czyli HCOOC2H5)
+
+  Równania ilustrujące własności A1, B1, C1:
+
+  - Utlenianie A1: CH3–CH(OH)–CH3 + [O] → CH3–CO–CH3 + H2O (daje keton — izomer B).
+  - Redukcja B1: CH2=CH–CH2–OH + H2 → CH3–CH2–CH2–OH (daje A).
+  - Otrzymywanie C1 z B (formalnie izomer produktu utleniania B): utlenianie B daje CH3–CH2–COOH; C1 = HCOOC2H5 jest jego izomerem konstytucyjnym (estrem).
+pulapka: |
+  - Pomylenie alkoholu I-rzędowego z II-rzędowym — utlenianie alkoholu II-rzędowego daje keton, nie aldehyd.
+  - Pisanie B1 jako keton (propan-2-on) — keton nie redukuje się do alkoholu I-rzędowego (propan-1-olu), tylko do II-rzędowego.
+  - Mylenie wzoru półstrukturalnego z sumarycznym — wzór musi pokazywać grupy funkcyjne (–OH, –CHO, –COOH, –COO–).
+  - Zapomnienie, że estry są izomerami kwasów karboksylowych o tym samym wzorze sumarycznym (C3H6O2).
+  - Niepoprawne narysowanie wiązania podwójnego w alkoholu allilowym.
+wymaganie: |
+  IX. Węglowodory; X. Hydroksylowe pochodne węglowodorów; XI. Związki karbonylowe — aldehydy i ketony; XII. Kwasy karboksylowe; XIII. Estry i tłuszcze — izomeria konstytucyjna, reakcje utleniania alkoholi i aldehydów, redukcja związków karbonylowych.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2023-maj-pr/zad-26.webp"
+  alt="Zadanie 26 - chemia 2023 PR"
+  caption="Strona arkusza CKE 2023 PR chemia - zadanie 26."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_chemia_2023_rozszerzony_arkusz_zadania_pytania.pdf"
+  pdfPage={22}
+/>
+
+## Rozwiazanie
+
+### Krok 1 — identyfikacja związków A, B, C
+
+Zadanie 26 należy do wiązki zadań 23–26 opartej na sekwencji utleniania alkoholu pierwszorzędowego:
+
+- **A** = propan-1-ol: CH3–CH2–CH2–OH
+- **B** = propanal: CH3–CH2–CHO
+- **C** = kwas propanowy: CH3–CH2–COOH
+
+Przejścia: A (utlenianie) → B (utlenianie) → C; odwrotnie: C (redukcja) → B (redukcja) → A.
+
+### Krok 2 — wyznaczenie A1
+
+A1 to izomer A (czyli izomer propan-1-olu, wzór sumaryczny **C3H8O**), który można utlenić tak, by powstał związek B (propanal) — lub w szerszej interpretacji klucza CKE: izomer A, który po utlenianiu daje izomer B.
+
+Izomerem konstytucyjnym propan-1-olu o wzorze C3H8O jest **propan-2-ol**:
+
+**A1: CH3–CH(OH)–CH3**
+
+Utlenianie A1:
+
+CH3–CH(OH)–CH3 + [O] → CH3–CO–CH3 + H2O
+
+(produktem jest propan-2-on — izomer B).
+
+### Krok 3 — wyznaczenie B1
+
+B1 to izomer B (propanalu, C3H6O), który można zredukować do związku A (propan-1-olu).
+
+Ponieważ sam propanal po redukcji daje propan-1-ol, B1 musi być innym izomerem C3H6O dającym ten sam produkt. Takim związkiem jest **alkohol allilowy (prop-2-en-1-ol)**:
+
+**B1: CH2=CH–CH2–OH**
+
+Redukcja B1 (uwodornienie wiązania C=C):
+
+CH2=CH–CH2–OH + H2 → CH3–CH2–CH2–OH
+
+(produktem jest propan-1-ol = A). ✓
+
+### Krok 4 — wyznaczenie C1
+
+C1 to izomer C (kwasu propanowego, C3H6O2), który można otrzymać przez utlenienie związku B (propanalu) — tzn. izomer produktu utleniania B.
+
+Utlenianie propanalu:
+
+CH3–CH2–CHO + [O] → CH3–CH2–COOH
+
+Izomerami kwasu propanowego (C3H6O2) są estry — w szczególności **mrówczan etylu (metanian etylu)**:
+
+**C1: HCOO–CH2–CH3** (czyli HCOOC2H5)
+
+### Krok 5 — wzory półstrukturalne (zestawienie)
+
+| Związek | Wzór półstrukturalny | Nazwa |
+|---|---|---|
+| **A1** | CH3–CH(OH)–CH3 | propan-2-ol |
+| **B1** | CH2=CH–CH2–OH | prop-2-en-1-ol (alkohol allilowy) |
+| **C1** | HCOO–CH2–CH3 | mrówczan etylu (metanian etylu) |
+
+### Krok 6 — wzory sumaryczne (kontrola)
+
+- A1: C3H8O ✓ (zgodne z A = propan-1-ol)
+- B1: C3H6O ✓ (zgodne z B = propanal)
+- C1: C3H6O2 ✓ (zgodne z C = kwas propanowy)
+
+Wszystkie trzy związki są izomerami konstytucyjnymi odpowiednich związków A, B, C — różnią się położeniem lub typem grupy funkcyjnej.
+
+### Punktacja CKE
+
+- 2 pkt — poprawne wzory półstrukturalne wszystkich trzech związków (A1, B1, C1).
+- 1 pkt — poprawne wzory dwóch z trzech związków.
+- 0 pkt — poprawny wzór tylko jednego związku lub żadnego.

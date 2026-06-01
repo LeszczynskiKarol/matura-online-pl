@@ -1,0 +1,100 @@
+---
+arkusz: chemia-2023-maj-pr
+subject: chemia
+nr: 1
+punkty: 3
+typ: otwarte-krotkie
+topic: budowa atomu, konfiguracja elektronowa, liczby kwantowe, bloki konfiguracyjne
+difficulty: 3
+tresc: |
+  O dwóch pierwiastkach umownie oznaczonych literami **A** i **X** wiadomo, że:
+
+  - należą do tego samego bloku konfiguracyjnego
+  - liczba masowa jednego z izotopów pierwiastka **A** jest dwa razy większa od jego liczby atomowej i jest równa liczbie atomowej niklu
+  - suma elektronów, neutronów i protonów w atomie jednego z izotopów pierwiastka **X** jest równa **114**, a liczba nukleonów jest równa **79**.
+
+  ### Zadanie 1.1. (0–1)
+
+  Uzupełnij tabelę. Wpisz symbol pierwiastka **A** i symbol pierwiastka **X** oraz symbol bloku konfiguracyjnego, do którego należą te pierwiastki.
+
+  | | Symbol pierwiastka | Symbol bloku konfiguracyjnego |
+  |---|---|---|
+  | Pierwiastek A | | |
+  | Pierwiastek X | | |
+
+  ### Zadanie 1.2. (0–1)
+
+  Napisz fragment konfiguracji elektronowej atomu **A** (w stanie podstawowym) opisujący rozmieszczenie **elektronów walencyjnych** na podpowłokach. Zastosuj graficzny zapis konfiguracji elektronowej. W tym zapisie uwzględnij numer powłoki i symbole podpowłok.
+
+  ### Zadanie 1.3. (0–1)
+
+  Wpisz do tabeli wartości liczb kwantowych opisujących stan energetyczny niesparowanego elektronu walencyjnego atomu **X** (w stanie podstawowym).
+
+  | Liczby kwantowe | Główna liczba kwantowa $n$ | Poboczna liczba kwantowa $l$ |
+  |---|---|---|
+  | Wartości liczb kwantowych | | |
+odpowiedz: |
+  **Identyfikacja A**: Z(Ni) = 28. A = 2Z → liczba masowa izotopu A wynosi 28 → 2Z = 28 → Z = 14 → **krzem (Si)**. Konfiguracja: $1s^2\,2s^2\,2p^6\,3s^2\,3p^2$ — blok **p**.
+
+  **Identyfikacja X**: e + n + p = 114, A = n + p = 79. W atomie obojętnym e = p = Z. Zatem Z + 79 = 114 → **Z = 35 → brom (Br)**. Konfiguracja: $[\text{Ar}]\,3d^{10}\,4s^2\,4p^5$ — blok **p**.
+
+  **1.1.**
+
+  | | Symbol | Blok |
+  |---|---|---|
+  | A | **Si** | **p** |
+  | X | **Br** | **p** |
+
+  **1.2.** Konfiguracja walencyjna Si (3s² 3p²) — zapis klatkowy:
+
+  $$3s\ [\uparrow\downarrow]\quad 3p\ [\uparrow\,][\uparrow\,][\,\,]$$
+
+  Dwa niesparowane elektrony w 3p (reguła Hunda).
+
+  **1.3.** Niesparowany elektron walencyjny Br jest w podpowłoce **4p** (konfiguracja 4s² 4p⁵, jeden niesparowany).
+
+  | Liczby kwantowe | $n$ | $l$ |
+  |---|---|---|
+  | Wartość | **4** | **1** |
+pulapka: |
+  - **Identyfikacja A**: "liczba masowa równa liczbie atomowej niklu" → A = Z(Ni) = 28, a NIE Z(A) = 28. Stąd Z(A) = 14 (Si), nie 28 (Ni).
+  - Krzem ma 2 niesparowane elektrony w 3p (reguła Hunda — najpierw po jednym na orbital).
+  - **Liczby kwantowe Br**: $n=4$ (powłoka 4, nie 3), $l=1$ (podpowłoka p, nie d — choć Br jest w 4. okresie i ma wypełnione 3d, walencja jest w 4p).
+wymaganie: |
+  I.1 — budowa atomu, izotopy, konfiguracja elektronowa.
+  I.2 — układ okresowy, bloki s/p/d.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2023-maj-pr/zad-01.webp"
+  alt="Zadanie 1 - chemia 2023 PR"
+  caption="Strona 4 arkusza CKE 2023 PR chemia - zadanie 1 (pierwiastki A i X, konfiguracja, liczby kwantowe)."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_chemia_2023_rozszerzony_arkusz_zadania_pytania.pdf"
+  pdfPage={4}
+/>
+
+## Klucz pojęciowy
+
+**Notacja izotopowa**: $^A_Z\text{E}$, gdzie A = liczba masowa (n + p), Z = liczba atomowa (p).
+
+**Liczby kwantowe**:
+- $n$ — główna (1, 2, 3, ...) — numer powłoki
+- $l$ — poboczna (0, ..., n-1) — kształt podpowłoki: s=0, p=1, d=2, f=3
+- $m_l$ — magnetyczna (-l, ..., +l) — orientacja orbitalu
+- $m_s$ — spinowa (+½, -½)
+
+**Reguła Hunda**: w podpowłoce najpierw obsadzamy każdy orbital po jednym elektronie (równoległe spiny), potem parujemy.
+
+## Po co to umieć
+
+Konfiguracja elektronowa pozwala przewidzieć:
+- **Reaktywność** (ile elektronów walencyjnych, jak chętnie pobiera/oddaje)
+- **Stopień utlenienia** w związkach (Si: +4; Br: -1, +1, +3, +5, +7)
+- **Charakter** wiązań (kowalencyjne, jonowe)
+- **Właściwości magnetyczne** (paramagnetyk z niesparowanymi e, diamagnetyk bez)

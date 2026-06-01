@@ -1,0 +1,104 @@
+---
+arkusz: fizyka-2023-maj-pr
+subject: fizyka
+nr: 9
+punkty: 6
+typ: otwarte-rozszerzone
+topic: optyka geometryczna, prawo Snella, załamanie światła, odbicie wewnętrzne, prędkość światła w ośrodku, współczynnik załamania, krążek szklany
+difficulty: 4
+tresc: |
+  Promień światła monochromatycznego biegnie w powietrzu i pada na brzeg szklanego krążka w punkcie $A$. Kąt padania w punkcie $A$ jest równy $\alpha$, a kąt załamania tego promienia jest równy $\beta$. Część promienia, która wniknęła do szkła w punkcie $A$, pada dalej na brzeg krążka w punkcie $D$. Na rysunku 1. (poniżej) oraz na rysunku 2. (na stronie 23) przedstawiono bieg promienia tylko do punktu $D$, przy czym pominięto część promienia odbitą w punkcie $A$. Kreskami przerywanymi oznaczono odcinki pomocnicze. Punkt $O$ jest środkiem krążka.
+
+  ### Zadanie 9.1. (0–3)
+
+  Część promienia $AD$, która pada na brzeg krążka od strony szkła w punkcie $D$, odbija się z powrotem do szkła, a część tego promienia załamuje się i biegnie dalej w powietrzu. Kąty: padania, załamania i odbicia promienia $AD$ w punkcie $D$, oznaczamy – odpowiednio – jako: $\gamma_{\text{pad}}, \gamma_{\text{zał}}, \gamma_{\text{odb}}$.
+
+  **Narysuj na rysunku 1. dalszy bieg promienia załamanego i odbitego w punkcie $D$. Oznacz łukami i podpisz w odpowiednich miejscach kąty: $\gamma_{\text{pad}}, \gamma_{\text{odb}}, \gamma_{\text{zał}}$, a następnie określ relację między miarami odpowiednich kątów – wpisz w każde wykropkowane miejsce odpowiedni znak wybrany spośród:** $>, =, <$.
+
+  $\gamma_{\text{pad}}\ \ldots\ \gamma_{\text{odb}}$  
+  $\gamma_{\text{pad}}\ \ldots\ \gamma_{\text{zał}}$  
+  $\gamma_{\text{zał}}\ \ldots\ \alpha$
+
+  ### Zadanie 9.2. (0–3)
+
+  Na rysunku 2. odcinek $AC$ jest geometrycznym przedłużeniem promienia padającego na krążek. Długości odcinków oznaczonych na rysunku 2. wynoszą (w zaokrągleniu): $|AB| \approx 9{,}0\ \text{cm}$, $|AC| \approx 4{,}5\ \text{cm}$, $|AD| \approx 7{,}7\ \text{cm}$, $|BC| \approx 7{,}8\ \text{cm}$, $|BD| \approx 4{,}8\ \text{cm}$.
+
+  Przyjmij, że wartość prędkości światła w próżni jest równa wartości prędkości światła w powietrzu.
+
+  Oblicz wartość prędkości światła w szkle, z którego jest wykonany krążek. Zapisz obliczenia. Wykorzystaj niektóre z podanych długości odcinków. Wynik podaj zaokrąglony do dwóch cyfr znaczących.
+odpowiedz: |
+  ### Zadanie 9.1.
+
+  Z prawa odbicia: kąt padania = kąt odbicia, więc $\gamma_{\text{pad}} = \gamma_{\text{odb}}$.
+
+  W punkcie $A$: promień przechodzi z powietrza (mniej gęste) do szkła (gęstsze), zatem $\beta &lt; \alpha$ (załamuje się ku normalnej).
+
+  W punkcie $D$: promień przechodzi ze szkła do powietrza. Z geometrii krążka okrągłego — kąt $\gamma_{\text{pad}}$ w $D$ jest równy kątowi $\beta$ w $A$ (gdyż odcinek $AD$ jest cięciwą, a normalne w $A$ i $D$ to promienie krążka — trójkąt $AOD$ jest równoramienny). Z prawa Snella w punkcie $D$:
+
+  $$n_{\text{szkło}} \sin \gamma_{\text{pad}} = n_{\text{pow}} \sin \gamma_{\text{zał}}$$
+
+  Skoro szło z gęstszego do rzadszego, $\gamma_{\text{zał}} > \gamma_{\text{pad}}$.
+
+  Dodatkowo, z symetrii (ponieważ kąt padania w $D$ = kąt załamania w $A$ = $\beta$, a kąt załamania w $D$ wyliczany jest tym samym Snellem co kąt padania w $A$): $\gamma_{\text{zał}} = \alpha$.
+
+  **Relacje:**
+  - $\gamma_{\text{pad}}\ \mathbf{=}\ \gamma_{\text{odb}}$ (prawo odbicia)
+  - $\gamma_{\text{pad}}\ \mathbf{<}\ \gamma_{\text{zał}}$ (przejście szkło → powietrze)
+  - $\gamma_{\text{zał}}\ \mathbf{=}\ \alpha$ (symetria cięciwy)
+
+  ### Zadanie 9.2.
+
+  Z konstrukcji rysunku: w punkcie $A$ tworzymy trójkąty zawierające kąty $\alpha$ i $\beta$. Z geometrii odcinek $BC$ (rzut na linię równoległą do powierzchni krążka) odpowiada $\sin \alpha$, a odcinek $BD$ odpowiada $\sin \beta$ (oba w skali $|AB|$ jako przeciwprostokątnej).
+
+  $$\sin \alpha = \frac{BC}{AB} = \frac{7{,}8}{9{,}0} \approx 0{,}867$$
+
+  $$\sin \beta = \frac{BD}{AB} = \frac{4{,}8}{9{,}0} \approx 0{,}533$$
+
+  Współczynnik załamania szkła:
+
+  $$n = \frac{\sin \alpha}{\sin \beta} = \frac{0{,}867}{0{,}533} \approx 1{,}625$$
+
+  Prędkość światła w szkle:
+
+  $$v_{\text{szkło}} = \frac{c}{n} = \frac{3 \cdot 10^8}{1{,}625} \approx 1{,}846 \cdot 10^8\ \text{m/s}$$
+
+  **Odpowiedź:** $v_{\text{szkło}} \approx 1{,}8 \cdot 10^8\ \text{m/s}$.
+pulapka: |
+  - Prawo Snella: $n_1 \sin \theta_1 = n_2 \sin \theta_2$. NIE $n_1 \theta_1 = n_2 \theta_2$ (myli się przy małych kątach).
+  - Przejście rzadszy→gęstszy: kąt maleje. Gęstszy→rzadszy: kąt rośnie.
+  - W kole/krążku: normalna w każdym punkcie krawędzi to **promień** krążka. To używa się przy konstrukcji geometrycznej.
+  - Symetria w cięciwie: trójkąt $AOD$ jest równoramienny ($|OA| = |OD| =$ promień), więc kąty przy podstawie są równe → kąt padania w $A$ wewnątrz szkła = kąt padania w $D$ wewnątrz szkła.
+  - Prędkość światła w ośrodku: $v = c/n$, $n > 1$ dla wszystkich ośrodków innych niż próżnia.
+wymaganie: |
+  Podstawa programowa fizyki PR — dział VIII (Optyka): prawo odbicia, prawo Snella, współczynnik załamania, prędkość światła w ośrodku, całkowite wewnętrzne odbicie.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2023-maj-pr/zad-09.webp"
+  alt="Zadanie 9 - fizyka 2023 PR"
+  caption="Strona arkusza CKE 2023 PR fizyka - zadanie 9."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_fizyka_2023_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={22}
+/>
+
+## Rozwiązanie
+
+### Zadanie 9.1.
+
+- $\gamma_{\text{pad}}\ =\ \gamma_{\text{odb}}$
+- $\gamma_{\text{pad}}\ <\ \gamma_{\text{zał}}$ (ze szkła do powietrza)
+- $\gamma_{\text{zał}}\ =\ \alpha$ (symetria w okręgu)
+
+### Zadanie 9.2.
+
+$$\sin\alpha = \frac{BC}{AB} = \frac{7{,}8}{9{,}0}, \quad \sin\beta = \frac{BD}{AB} = \frac{4{,}8}{9{,}0}$$
+
+$$n = \frac{\sin\alpha}{\sin\beta} = \frac{7{,}8}{4{,}8} \approx 1{,}625$$
+
+$$v = \frac{c}{n} = \frac{3 \cdot 10^8}{1{,}625} \approx 1{,}8 \cdot 10^8\ \text{m/s}$$

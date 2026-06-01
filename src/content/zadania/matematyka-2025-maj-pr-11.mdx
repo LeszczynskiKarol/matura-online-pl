@@ -7,7 +7,19 @@ typ: otwarte-rozszerzone
 topic: funkcja kwadratowa z parametrem, wzory Viète'a
 difficulty: 5
 tresc: |
-  Funkcja $f$ jest określona wzorem $f(x) = (2 - m) x^2 - 2(2m + 1) x + m + 8$ dla każdej liczby rzeczywistej $x$, gdzie $m$ jest liczbą rzeczywistą różną od $2$. Wyznacz wszystkie wartości parametru $m$, dla których funkcja $f$ ma **dokładnie dwa miejsca zerowe** $x_1$ oraz $x_2$ **tego samego znaku**, które spełniają warunek $(x_1 - x_2)^2 \leq 180$.
+  Funkcja $f$ jest określona wzorem
+
+  $$f(x) = (2 - m) x^2 - 2(2m + 1) x + m + 8$$
+
+  dla każdej liczby rzeczywistej $x$, gdzie $m$ jest liczbą rzeczywistą różną od $2$.
+
+  ### Zadanie 11. (0–6)
+
+  **Wyznacz wszystkie wartości parametru $m$, dla których funkcja $f$ ma dokładnie dwa miejsca zerowe $x_1$ oraz $x_2$ tego samego znaku, które spełniają warunek**
+
+  $$(x_1 - x_2)^2 \leq 180$$
+
+  **Zapisz obliczenia.**
 odpowiedz: |
   $m \in (-8, -3) \cup (1, \tfrac{3}{2}\rangle$
 pulapka: |
@@ -25,11 +37,11 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z tym zadaniem
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2025-maj-pr/ark-22.webp"
+  src="/arkusze/matematyka/2025-maj-pr/zad-11.webp"
   alt="Zadanie 11 - strona 22 arkusza CKE"
   caption="Strona 22 arkusza CKE z trescia zadania 11."
   zrodlo="CKE"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Matematyka/MMAP-R0-100-2505-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_rozszerzony_arkusz_2025_zadania.pdf"
   pdfPage={22}
 />
 
@@ -105,8 +117,8 @@ $$x_1 \cdot x_2 = \frac{m + 8}{2 - m} > 0$$
 
 Iloraz dodatni gdy licznik i mianownik mają **ten sam znak**:
 
-- **Oba dodatnie**: $m + 8 > 0$ i $2 - m > 0$, czyli $m > -8$ i $m < 2$ → $m \in (-8, 2)$.
-- **Oba ujemne**: $m < -8$ i $m > 2$ — sprzeczne, brak rozwiązań.
+- **Oba dodatnie**: $m + 8 > 0$ i $2 - m > 0$, czyli $m > -8$ i $m &lt; 2$ → $m \in (-8, 2)$.
+- **Oba ujemne**: $m &lt; -8$ i $m > 2$ — sprzeczne, brak rozwiązań.
 
 Stąd: $m \in (-8, 2)$.
 
@@ -210,10 +222,10 @@ $$\left[ (-\infty, -3) \cup (1, +\infty) \right] \cap (-8, 2) = (-8, -3) \cup (1
 
 **Teraz [(1) ∩ (2)] ∩ (3):**
 
-- $(-8, -3) \cap (-\infty, \tfrac{3}{2}\rangle = (-8, -3)$ ✓ (cały lewy fragment się mieści, bo $-3 < \tfrac{3}{2}$)
-- $(-8, -3) \cap \langle\tfrac{13}{4}, +\infty) = \emptyset$ (bo $-3 < \tfrac{13}{4}$)
+- $(-8, -3) \cap (-\infty, \tfrac{3}{2}\rangle = (-8, -3)$ ✓ (cały lewy fragment się mieści, bo $-3 &lt; \tfrac{3}{2}$)
+- $(-8, -3) \cap \langle\tfrac{13}{4}, +\infty) = \emptyset$ (bo $-3 &lt; \tfrac{13}{4}$)
 - $(1, 2) \cap (-\infty, \tfrac{3}{2}\rangle = (1, \tfrac{3}{2}\rangle$
-- $(1, 2) \cap \langle\tfrac{13}{4}, +\infty) = \emptyset$ (bo $2 < \tfrac{13}{4} = 3{,}25$)
+- $(1, 2) \cap \langle\tfrac{13}{4}, +\infty) = \emptyset$ (bo $2 &lt; \tfrac{13}{4} = 3{,}25$)
 
 Suma:
 

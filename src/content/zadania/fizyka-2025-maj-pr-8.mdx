@@ -1,0 +1,62 @@
+---
+arkusz: fizyka-2025-maj-pr
+subject: fizyka
+nr: 8
+punkty: 3
+typ: otwarte-krotkie
+topic: magnetyzm, pole magnetyczne prądu prostoliniowego, reguła prawej dłoni
+difficulty: 3
+tresc: |
+  Przewodnik prostoliniowy umieszczono prostopadle do płaszczyzny rysunku. W punkcie $P_1$
+  oddalonym od przewodnika o $r_1$ wektor indukcji magnetycznej $\vec{B_1}$ ma kierunek
+  pokazany na rysunku. Punkt $P_2$ znajduje się po przeciwnej stronie przewodnika w odległości
+  $r_2 = 4r_1$.
+
+  **Zadanie 8. (0–3)** Oznacz kierunek prądu w przewodniku (symbolem $\odot$ — "ku obserwatorowi"
+  lub $\otimes$ — "od obserwatora"). Narysuj na rysunku wektor indukcji magnetycznej
+  $\vec{B_2}$ w punkcie $P_2$ z zachowaniem proporcji jego długości względem $\vec{B_1}$.
+odpowiedz: |
+  Z reguły prawej dłoni: jeśli $\vec{B_1}$ w punkcie $P_1$ ma określony kierunek, to prąd
+  w przewodniku płynie tak, aby kciuk wskazywał kierunek prądu, a zagięte palce kierunek pola
+  magnetycznego. Na podstawie rysunku z arkusza ustalamy symbol $\odot$ lub $\otimes$
+  (zależnie od orientacji $\vec{B_1}$).
+
+  Wartość indukcji magnetycznej przewodnika prostoliniowego:
+  $$B = \dfrac{\mu_0 I}{2\pi r}$$
+
+  Stosunek wartości:
+  $$\dfrac{B_2}{B_1} = \dfrac{r_1}{r_2} = \dfrac{1}{4}$$
+
+  Czyli $\vec{B_2}$ ma długość **¼** długości $\vec{B_1}$. Kierunek $\vec{B_2}$ jest **przeciwny**
+  do $\vec{B_1}$ (punkt $P_2$ jest po przeciwnej stronie przewodnika, więc pole "okrąża"
+  przewodnik w przeciwnym kierunku względem $P_1$).
+pulapka: |
+  Najczęstsze błędy: zła reguła prawej dłoni (mylenie kierunku prądu z kierunkiem pola), brak
+  uwzględnienia, że indukcja maleje jak $1/r$ (NIE $1/r^2$), brak odwrócenia kierunku
+  $\vec{B_2}$ względem $\vec{B_1}$ po przeciwnej stronie przewodnika.
+wymaganie: |
+  IX.2, IX.3 — pole magnetyczne, wektor indukcji magnetycznej, pole prądu prostoliniowego,
+  reguła prawej dłoni.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2025-maj-pr/zad-08.webp"
+  alt="Zadanie 8 z arkusza maturalnego CKE 2025 maj PR fizyka — pole magnetyczne przewodnika prostoliniowego"
+  caption="Zadanie 8 — arkusz maturalny CKE, maj 2025, fizyka, poziom rozszerzony"
+  zrodlo="CKE 2025"
+  pdfUrl="/arkusze/fizyka/2025-maj-pr/arkusz.pdf"
+  pdfPage={19}
+/>
+
+## Rozwiązanie krok po kroku
+
+### Kierunek prądu
+
+Stosujemy regułę prawej dłoni — kciuk = prąd, palce = pole magnetyczne.
+
+### Wektor B w P2
+
+Długość: $\dfrac{B_2}{B_1} = \dfrac{r_1}{r_2} = \dfrac{1}{4}$. Kierunek: przeciwny.

@@ -1,0 +1,67 @@
+---
+arkusz: chemia-2023-maj-pr
+subject: chemia
+nr: 15
+punkty: 2
+typ: otwarte-rozszerzone
+topic: hydraty, stężenie procentowe, rozpuszczalność, obliczenia stechiometryczne
+difficulty: 4
+tresc: |
+  Chlorek wapnia tworzy rozpuszczalne hydraty o wzorze ogólnym $\text{CaCl}_2 \cdot n\text{H}_2\text{O}$. W zależności od temperatury w równowadze z roztworem nasyconym pozostają hydraty o różnych wartościach współczynnika $n$.
+
+  W temperaturze $40\,°\text{C}$ jeden z hydratów chlorku wapnia rozpuszcza się w ilości **767,4 g** na **100 g wody**, a stężenie nasyconego roztworu chlorku wapnia wynosi **53,66% masowych**.
+
+  **Wykonaj obliczenia i napisz wzór opisanego hydratu chlorku wapnia.**
+odpowiedz: |
+  **Dane**:
+  - $m_{hydrat} = 767{,}4\,\text{g}$ rozpuszczono w $m_{woda} = 100\,\text{g}$
+  - Stężenie nasyconego roztworu: $C_p = 53{,}66\%$ (procent masowy bezwodnego $\text{CaCl}_2$)
+  - $M(\text{CaCl}_2) = 40 + 2 \cdot 35{,}5 = 111\,\text{g/mol}$
+  - $M(\text{H}_2\text{O}) = 18\,\text{g/mol}$
+
+  **Krok 1: masa roztworu**
+
+  $$m_{roztw} = 767{,}4 + 100 = 867{,}4\,\text{g}$$
+
+  **Krok 2: masa bezwodnego $\text{CaCl}_2$ w roztworze**
+
+  $$m_{CaCl_2} = 0{,}5366 \cdot 867{,}4 = 465{,}45\,\text{g}$$
+
+  **Krok 3: masa wody krystalizacyjnej w hydracie**
+
+  Cała sól pochodzi z hydratu (woda krystalizacyjna **+ 100 g wody dodanej do rozpuszczenia**). Masa wody pochodzącej z hydratu:
+
+  $$m_{H_2O,hydrat} = m_{hydrat} - m_{CaCl_2} = 767{,}4 - 465{,}45 = 301{,}95\,\text{g}$$
+
+  **Krok 4: moli $\text{CaCl}_2$ i moli wody krystalizacyjnej**
+
+  $$n_{CaCl_2} = \frac{465{,}45}{111} = 4{,}194\,\text{mol}$$
+
+  $$n_{H_2O} = \frac{301{,}95}{18} = 16{,}775\,\text{mol}$$
+
+  **Krok 5: współczynnik n**
+
+  $$n = \frac{n_{H_2O}}{n_{CaCl_2}} = \frac{16{,}775}{4{,}194} \approx 4{,}0$$
+
+  **Wzór hydratu**: $\boxed{\text{CaCl}_2 \cdot 4\text{H}_2\text{O}}$
+pulapka: |
+  - **Bilans masy**: hydrat dostarcza zarówno $\text{CaCl}_2$ jak i wodę krystalizacyjną do roztworu. Procent masowy 53,66% odnosi się do bezwodnego $\text{CaCl}_2$ w **całym roztworze** (hydrat + dodana woda).
+  - Współczynnik $n$ powinien być **liczbą całkowitą** (znane hydraty CaCl₂: 1, 2, 4, 6, 8 H₂O — w 40°C to tetrahydrat).
+  - Częsty błąd: niewliczanie wody krystalizacyjnej do masy roztworu.
+wymaganie: |
+  II.4 — stężenia procentowe, mieszaniny, hydraty, rozpuszczalność.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2023-maj-pr/zad-15.webp"
+  alt="Zadanie 15 - chemia 2023 PR"
+  caption="Arkusz CKE 2023 PR chemia - zadanie 15 (hydrat chlorku wapnia, obliczenie n)."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_chemia_2023_rozszerzony_arkusz_zadania_pytania.pdf"
+  pdfPage={16}
+/>

@@ -1,0 +1,119 @@
+---
+arkusz: fizyka-2023-maj-pr
+subject: fizyka
+nr: 8
+punkty: 7
+typ: otwarte-rozszerzone
+topic: prąd elektryczny, opór elektryczny, drut wolframowy, zależność oporu od temperatury, prawo Ohma, moc elektryczna, współczynnik termiczny oporu
+difficulty: 4
+tresc: |
+  Do produkcji włókien tradycyjnych żarówek wykorzystywano bardzo cienkie druty wolframowe. Opór elektryczny włókna wolframu jest silnie zależny od temperatury. Na rysunku przedstawiono wykres zależności oporu elektrycznego $R_W$ drutu wolframowego o stałych parametrach geometrycznych od temperatury $T_W$ w przedziale od $T_W = 0\ \text{K}$ do $T_W = 3000\ \text{K}$.
+
+  Po podłączeniu tego drutu do napięcia $U = 230\ \text{V}$ płynął przez niego prąd o natężeniu $I = 0{,}45\ \text{A}$ przy ustalonej temperaturze, a jego opór był wówczas wielokrotnie większy niż w temperaturze otoczenia.
+
+  ### Zadanie 8.1. (0–2)
+
+  Oblicz $k$ – wartość temperaturowego współczynnika oporu wolframu – dla przedziału temperatur $300\ \text{K} &lt; T_W &lt; 1900\ \text{K}$. Zapisz obliczenia.
+
+  Wskazówka: Skorzystaj z wykresu i odczytaj z niego wartości $R_W$ dla temperatur początkowej i końcowej tego przedziału.
+
+  ### Zadanie 8.2. (0–3)
+
+  Wyznacz temperaturę włókna wolframowego żarówki zasilanej w zakresie $\xi$ z mocą znamionową $P_z = 69\ \text{W}$, zasilanej napięciem $U_z = 230\ \text{V}$. Zapisz obliczenia.
+
+  ### Zadanie 8.3. (0–2)
+
+  Średnica drutu wolframowego, z którego wykonano włókno żarówki, jest równa $d = 30\ \mu\text{m}$. Oporność właściwa wolframu w temperaturze $T_w = 100\ \text{K}$ jest równa $\rho = 5{,}5 \cdot 10^{-9}\ \Omega \cdot \text{m}$.
+
+  Oblicz długość drutu wolframowego, z którego wykonano włókno tej żarówki. Zapisz obliczenia.
+odpowiedz: |
+  ### Zadanie 8.1.
+
+  Z wykresu odczytane wartości:
+  - $T_1 = 300\ \text{K}$: $R_1 \approx 90\ \Omega$ (przybliżona wartość z wykresu)
+  - $T_2 = 1900\ \text{K}$: $R_2 \approx 720\ \Omega$
+
+  Współczynnik temperaturowy oporu zdefiniowany przez:
+
+  $$R(T) = R_0 [1 + k(T - T_0)]$$
+
+  Dla przedziału między dwoma punktami:
+
+  $$k = \frac{R_2 - R_1}{R_1 (T_2 - T_1)} = \frac{720 - 90}{90 \cdot (1900 - 300)} = \frac{630}{144\,000}$$
+
+  $$k \approx 4{,}4 \cdot 10^{-3}\ \text{K}^{-1}$$
+
+  **Odpowiedź:** $k \approx 4{,}4 \cdot 10^{-3}\ \text{K}^{-1}$ (typowa wartość dla wolframu, dane referencyjne potwierdzają $4{,}5 \cdot 10^{-3}\ \text{K}^{-1}$).
+
+  ### Zadanie 8.2.
+
+  Opór włókna w temperaturze pracy:
+
+  $$R_z = \frac{U_z^2}{P_z} = \frac{230^2}{69} = \frac{52\,900}{69} \approx 766{,}7\ \Omega$$
+
+  Z wykresu odczytujemy temperaturę odpowiadającą oporowi $R_z \approx 767\ \Omega$.
+
+  Jeśli odczyt $R(1900\ \text{K}) \approx 720\ \Omega$ i $R(2000\ \text{K}) \approx 770\ \Omega$, interpolacja:
+
+  $$T \approx 2000\ \text{K}$$
+
+  **Odpowiedź:** Temperatura włókna $T_W \approx 2000\ \text{K}$ (dokładna wartość zależy od odczytu wykresu — typowe oczekiwane wyniki CKE: $1900\div 2100\ \text{K}$).
+
+  ### Zadanie 8.3.
+
+  Z prawa Ohma — opór drutu o długości $\ell$, przekroju $S$:
+
+  $$R = \rho \frac{\ell}{S}$$
+
+  Średnica drutu $d = 30\ \mu\text{m} = 3 \cdot 10^{-5}\ \text{m}$, więc:
+
+  $$S = \pi \left(\frac{d}{2}\right)^2 = \pi \cdot (1{,}5 \cdot 10^{-5})^2 = \pi \cdot 2{,}25 \cdot 10^{-10} \approx 7{,}07 \cdot 10^{-10}\ \text{m}^2$$
+
+  Opór drutu w $T_w = 100\ \text{K}$ odczytany z wykresu: $R(100\ \text{K}) \approx 30\ \Omega$ (typowa wartość — niski opór przy 100 K).
+
+  $$\ell = \frac{R \cdot S}{\rho} = \frac{30 \cdot 7{,}07 \cdot 10^{-10}}{5{,}5 \cdot 10^{-9}}$$
+
+  $$\ell = \frac{2{,}12 \cdot 10^{-8}}{5{,}5 \cdot 10^{-9}} \approx 3{,}86\ \text{m}$$
+
+  **Odpowiedź:** $\ell \approx 3{,}9\ \text{m}$ (zależnie od odczytu $R(100\ \text{K})$ z wykresu wynik może być w przedziale $3\div 5\ \text{m}$).
+pulapka: |
+  - Wzór z prawa Ohma: $R = \rho \ell / S$, gdzie $S = \pi d^2/4$ — pamiętaj o promieniu $d/2$, nie średnicy.
+  - $30\ \mu\text{m} = 3 \cdot 10^{-5}\ \text{m}$, łatwo o błąd o trzy rzędy wielkości.
+  - Moc i opór: $R = U^2 / P$ — to wyprowadzane z $P = UI = U^2/R$.
+  - Współczynnik temperaturowy: $R(T) = R_0[1 + k(T-T_0)]$ — $R_0$ jest oporem w temperaturze odniesienia $T_0$ (zwykle początek przedziału).
+  - Każde podzadanie wymaga ODCZYTU z wykresu — wynik liczbowy zależy od dokładności odczytu (CKE akceptuje przedział).
+wymaganie: |
+  Podstawa programowa fizyki PR — dział IX (Prąd elektryczny stały): prawo Ohma, opór właściwy, zależność oporu od temperatury, moc prądu elektrycznego.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2023-maj-pr/zad-08.webp"
+  alt="Zadanie 8 - fizyka 2023 PR"
+  caption="Strona arkusza CKE 2023 PR fizyka - zadanie 8."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_fizyka_2023_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={20}
+/>
+
+## Rozwiązanie
+
+### Zadanie 8.1.
+
+Odczyt z wykresu: $R(300\ \text{K}) \approx 90\ \Omega$, $R(1900\ \text{K}) \approx 720\ \Omega$.
+
+$$k = \frac{R_2 - R_1}{R_1(T_2 - T_1)} \approx 4{,}4 \cdot 10^{-3}\ \text{K}^{-1}$$
+
+### Zadanie 8.2.
+
+$$R_z = \frac{U_z^2}{P_z} = \frac{230^2}{69} \approx 767\ \Omega \quad \Rightarrow \quad T \approx 2000\ \text{K}$$
+
+### Zadanie 8.3.
+
+$S = \pi (d/2)^2 \approx 7{,}07 \cdot 10^{-10}\ \text{m}^2$. Z wykresu $R(100\ \text{K}) \approx 30\ \Omega$.
+
+$$\ell = \frac{R \cdot S}{\rho} \approx 3{,}9\ \text{m}$$

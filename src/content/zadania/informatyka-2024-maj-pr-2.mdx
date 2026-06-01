@@ -1,0 +1,94 @@
+---
+arkusz: informatyka-2024-maj-pr
+subject: informatyka
+nr: 2
+punkty: 1
+typ: otwarte-krotkie
+topic: analiza algorytmu, system dziesiętny, cyfry parzyste, programowanie dynamiczne
+difficulty: 3
+tresc: |
+  **Zadanie 2. Cyfry**
+
+  Przeanalizuj poniższy algorytm, który dla danej nieujemnej liczby całkowitej *n* oblicza liczbę całkowitą *c*.
+
+  ```
+  b ← 1
+  c ← 0
+  dopóki n > 0 wykonuj
+      a ← n mod 10
+      n ← n div 10
+      jeżeli (a mod 2 = 0)
+          c ← c + b * (a div 2)
+      w przeciwnym razie
+          c ← c + b
+      b ← b * 10
+  ```
+
+  **Uwaga:** *x* mod *y*, *x* div *y* oznaczają — odpowiednio — resztę i iloraz z dzielenia całkowitego *x* przez *y*.
+
+  **Zadanie 2.2. (0–1)** Podaj wartość *c* po wykonaniu algorytmu dla osiemnastocyfrowej liczby całkowitej *n*, w której pierwszych sześć cyfr to 3, następnych sześć cyfr to 6, a pozostałych sześć cyfr to 9.
+
+  *c* = …
+odpowiedz: |
+  Liczba: *n* = 333333 666666 999999 (18 cyfr; od lewej do prawej).
+
+  Algorytm przetwarza cyfry **od najmłodszej** (mod 10), pomnożone przez kolejne potęgi 10 (zmienna *b*).
+  - Cyfra parzysta *a*: dokłada do *c* wartość *b* * (a/2)
+  - Cyfra nieparzysta *a*: dokłada do *c* wartość *b* (czyli traktuje cyfrę nieparzystą tak, jakby była "1" na danej pozycji)
+
+  Analiza grupami sześciu cyfr (od najmłodszych):
+
+  **Pozycje 1–6 (cyfra 9, nieparzysta):** dla każdej z 6 cyfr *c* += *b*. Suma wkładów: 1 + 10 + 100 + 1000 + 10000 + 100000 = **111 111**.
+
+  **Pozycje 7–12 (cyfra 6, parzysta, *a* div 2 = 3):** dla każdej *c* += 3 * *b*. Suma: 3 * (10⁶ + 10⁷ + 10⁸ + 10⁹ + 10¹⁰ + 10¹¹) = 3 * 111 111 * 10⁶ = **333 333 000 000**.
+
+  **Pozycje 13–18 (cyfra 3, nieparzysta):** dla każdej *c* += *b*. Suma: 10¹² + 10¹³ + … + 10¹⁷ = 111 111 * 10¹² = **111 111 000 000 000 000**.
+
+  **Wynik:**
+  *c* = 111 111 + 333 333 000 000 + 111 111 000 000 000 000
+  *c* = **111 111 333 333 111 111**
+pulapka: |
+  Najczęstsze błędy: (1) zapomnienie, że algorytm przetwarza cyfry **od końca** (mod 10 zwraca cyfrę jedności), więc cyfra 9 trafia na pozycje najmłodsze a cyfra 3 na najstarsze; (2) interpretacja warunku — dla cyfry nieparzystej dodajemy samo *b*, nie *b* * a; (3) zła obsługa *b* — po przetworzeniu cyfry *b* jest mnożone przez 10, więc startuje od *b*=1 dla pozycji jedności.
+wymaganie: |
+  I. Rozumienie, analizowanie i rozwiązywanie problemów — śledzenie wykonania algorytmu na konkretnych danych, operacje mod i div, systemy pozycyjne.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2024-maj-pr/zad-02.webp"
+  alt="Zadanie 2 - informatyka 2024 PR"
+  caption="Strona arkusza CKE 2024 PR informatyka - zadanie 2 (Cyfry)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_informatyka_2024_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={7}
+/>
+
+## Rozwiązanie
+
+**Symulacja w Pythonie (weryfikacja):**
+
+```python
+n = int("333333" + "666666" + "999999")  # 333333666666999999
+b, c = 1, 0
+while n > 0:
+    a = n % 10
+    n = n // 10
+    if a % 2 == 0:
+        c += b * (a // 2)
+    else:
+        c += b
+    b *= 10
+print(c)  # 111111333333111111
+```
+
+**Wynik:** *c* = **111 111 333 333 111 111**
+
+Algorytm tworzy nową liczbę dziesiętną, w której:
+- każda cyfra parzysta *a* w oryginale → cyfra *a*/2 w wyniku,
+- każda cyfra nieparzysta w oryginale → cyfra 1 w wyniku.
+
+Sprawdzenie reguły: 9 → 1, 6 → 3, 3 → 1 — pasuje do wyniku 111111333333111111.

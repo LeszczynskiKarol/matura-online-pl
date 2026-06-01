@@ -1,0 +1,54 @@
+---
+arkusz: chemia-2023-maj-pr
+subject: chemia
+nr: 10
+punkty: 2
+typ: otwarte-rozszerzone
+topic: miareczkowanie alkacymetryczne, krzywa miareczkowania, mocny kwas vs słaby kwas
+difficulty: 4
+tresc: |
+  Badano reakcje mocnego kwasu HA i słabego kwasu HX z mocną zasadą. W tym celu wykonano miareczkowanie wodnych roztworów tych kwasów za pomocą wodnego roztworu wodorotlenku potasu.
+
+  Umieszczono w zlewce $20{,}0\,\text{cm}^3$ wodnego roztworu kwasu o stężeniu $0{,}10\,\text{mol} \cdot \text{dm}^{-3}$ i zmierzono pH tego roztworu. Następnie do zlewki z roztworem kwasu dodawano porcjami wodny roztwór KOH o stężeniu $0{,}10\,\text{mol} \cdot \text{dm}^{-3}$. Po dodaniu każdej porcji roztworu wodorotlenku mierzono pH mieszaniny reakcyjnej. Punkt równowagowy (PR) został osiągnięty po dodaniu takiej objętości roztworu KOH, w jakiej liczba moli zasady jest równa liczbie moli kwasu.
+
+  Na wykresie przedstawiono krzywą miareczkowania słabego kwasu HX wodnym roztworem KOH (PR ok. 20 cm³ KOH, pH skok do ~8–9).
+
+  **Rozstrzygnij, czy przedstawiony wykres ilustruje wynik miareczkowania wodnego roztworu słabego kwasu HX wodnym roztworem KOH w opisanym doświadczeniu. Odpowiedź uzasadnij — przytocz dwa różne argumenty.**
+odpowiedz: |
+  **Rozstrzygnięcie**: **Tak**, wykres przedstawia miareczkowanie słabego kwasu HX (a nie mocnego HA).
+
+  **Argument 1** — **wartość pH początkowego roztworu**: pH = ok. 2,8–3 (przed dodaniem KOH), podczas gdy mocny kwas o stężeniu 0,1 mol/dm³ miałby pH = 1 (całkowita dysocjacja). Wyższa wartość pH od oczekiwanej dla mocnego kwasu świadczy o słabej dysocjacji HX.
+
+  **Argument 2** — **pH w punkcie równoważnikowym**: PR ma pH > 7 (zasadowe, ok. 8–9). To typowe dla miareczkowania **słabego kwasu mocną zasadą** — w PR powstaje sól mocnej zasady i słabego kwasu (KX), która ulega hydrolizie zasadowej. Dla mocnego kwasu z mocną zasadą PR byłby przy pH = 7.
+
+  **Argument 3 (alternatywnie)** — **kształt krzywej**: krzywa rośnie łagodnie przed PR (efekt buforowy mieszaniny HX/X⁻), z wyraźnym, ale nie tak ostrym skokiem jak dla mocnego kwasu.
+pulapka: |
+  - **PR ≠ pH = 7**. Dla mocny kwas + mocna zasada: PR = 7. Słaby kwas + mocna zasada: PR > 7. Mocny kwas + słaba zasada: PR &lt; 7.
+  - **pH początkowe** roztworu słabego kwasu jest **wyższe** niż mocnego kwasu o tym samym stężeniu (mniej zdysocjowane).
+  - **Bufor** powstaje przed PR (HX/X⁻) — łagodzi zmiany pH przy dodawaniu KOH.
+wymaganie: |
+  VI.3, VI.6 — równowagi protolityczne, miareczkowanie, krzywe miareczkowania.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2023-maj-pr/zad-10.webp"
+  alt="Zadanie 10 - chemia 2023 PR"
+  caption="Arkusz CKE 2023 PR chemia - zadanie 10 (krzywa miareczkowania, identyfikacja kwasu)."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_chemia_2023_rozszerzony_arkusz_zadania_pytania.pdf"
+  pdfPage={11}
+/>
+
+## Klucz: krzywa miareczkowania
+
+| Typ | pH początkowe | pH w PR | Cecha |
+|---|---|---|---|
+| Mocny kwas + mocna zasada | 1 (dla 0,1 M) | **7** | Ostry skok |
+| Słaby kwas + mocna zasada | 3–4 | **>7** | Łagodny start, bufor |
+| Mocna zasada + mocny kwas | 13 | **7** | Ostry skok |
+| Słaba zasada + mocny kwas | 11 | **&lt;7** | Łagodny start, bufor |

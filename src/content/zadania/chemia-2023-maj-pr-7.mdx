@@ -1,0 +1,53 @@
+---
+arkusz: chemia-2023-maj-pr
+subject: chemia
+nr: 7
+punkty: 1
+typ: otwarte-krotkie
+topic: moc kwasów, stała dysocjacji, analiza wykresu pH
+difficulty: 3
+tresc: |
+  Zadanie odnosi się do wykresu zależności pH od stężenia molowego dwóch słabych kwasów: HX i HQ (wykres na stronie arkusza, kontekst zadania 8).
+
+  **Rozstrzygnij, na podstawie analizy danych zamieszczonych na wykresie, który kwas (HX czy HQ) jest mocniejszy. Zaznacz jego wzór. Odpowiedź uzasadnij.**
+
+  | HX | HQ |
+  |---|---|
+
+  Uzasadnienie: ...
+odpowiedz: |
+  **Rozstrzygnięcie**: mocniejszym kwasem jest ten, który przy **takim samym stężeniu molowym** ma **niższą wartość pH** (czyli wyższe stężenie jonów $\text{H}_3\text{O}^+$, większy stopień dysocjacji).
+
+  Z wykresu zad. 8 wynika, że przy tym samym stężeniu kwas **HX** ma niższe pH niż HQ (krzywa HX leży poniżej krzywej HQ).
+
+  **Wniosek**: mocniejszy jest kwas **HX**.
+
+  **Uzasadnienie**: Przy identycznym stężeniu molowym kwas HX wykazuje niższą wartość pH, co oznacza większe stężenie $\text{H}_3\text{O}^+$ w roztworze, a tym samym większy stopień dysocjacji. Większy stopień dysocjacji odpowiada większej stałej dysocjacji $K_a$, czyli mocniejszemu kwasowi.
+pulapka: |
+  - **Niższe pH = mocniejszy kwas** przy porównaniu w tym samym stężeniu.
+  - Sama wartość pH bez kontekstu stężenia nie świadczy o mocy kwasu (mocny kwas mocno rozcieńczony może mieć wyższe pH niż słaby kwas stężony).
+  - Mierzymy stopień dysocjacji $\alpha = c_{H^+}/c_0$, nie samo $c_{H^+}$.
+wymaganie: |
+  VI.3 — moc kwasów i zasad, stała dysocjacji, pH roztworów.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2023-maj-pr/zad-07.webp"
+  alt="Zadanie 7 - chemia 2023 PR"
+  caption="Arkusz CKE 2023 PR chemia - zadanie 7 (porównanie mocy kwasów HX i HQ)."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_chemia_2023_rozszerzony_arkusz_zadania_pytania.pdf"
+  pdfPage={8}
+/>
+
+## Klucz: moc kwasów
+
+- **Mocny kwas** (HCl, HNO₃, H₂SO₄): $\alpha \approx 1$, dysocjacja praktycznie całkowita.
+- **Słaby kwas** (CH₃COOH, HF): $\alpha \ll 1$, równowaga $K_a$.
+- $K_a = \frac{[H_3O^+][A^-]}{[HA]}$. Większe $K_a$ = mocniejszy kwas.
+- $pK_a = -\log K_a$. Mniejsze $pK_a$ = mocniejszy kwas.

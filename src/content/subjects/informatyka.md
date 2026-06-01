@@ -6,6 +6,6 @@ slug: informatyka
 icon: lucide:code
 order: 10
 color: slate
-hasContent: false
+hasContent: true
 description: Zadania z matury rozszerzonej z informatyki — algorytmy, programowanie, bazy danych.
 ---

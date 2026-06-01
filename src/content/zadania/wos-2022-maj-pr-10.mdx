@@ -1,0 +1,60 @@
+---
+arkusz: wos-2022-maj-pr
+subject: wos
+nr: 10
+punkty: 1
+typ: otwarte-krotkie
+typ_uzup: VAT, paragony, podatek od towarow i uslug, stawki VAT
+topic: VAT, paragony fiskalne, podatki posrednie
+difficulty: 3
+tresc: |
+  Fragmenty fotografii trzech paragonow zawieraja informacje o sprzedazy opodatkowanej oznaczonej literami (D, B, A) wraz ze stawkami procentowymi (5%, 8%, 23%).
+
+  **Uzupelnij tekst — wpisz kolejna nazwe podatku oraz numer.**
+
+  *Na paragonach zostala zawarta informacja o podatku ............., a jego podstawowa stawka zostaly objete produkty na paragonie numer ............ .*
+odpowiedz: |
+  - Nazwa podatku: **VAT (podatek od towarow i uslug)**.
+  - Numer paragonu z **podstawowa stawka**: **3** (paragon 3, ze stawka **23%**, czyli stawka podstawowa VAT w Polsce).
+
+  Stawki VAT w Polsce (stan na 2022 r.):
+  - **23%** — stawka **podstawowa** (wiekszosc towarow i uslug).
+  - **8%** — stawka obnizona (m.in. uslugi gastronomiczne, niektore artykuly spozywcze).
+  - **5%** — stawka super-obnizona (podstawowe produkty zywnosciowe, ksiazki).
+  - **0%** — eksport, wewnatrzwspolnotowa dostawa towarow.
+  - **zw.** — zwolnione.
+
+  Na paragonach VAT oznaczany literami: A = 23%, B = 8%, C = 0%, D = 5%, E/zw = zwolnione.
+pulapka: |
+  Pulapki:
+  - Nie wystarczy "podatek od sprzedazy" — CKE wymaga **VAT** lub **podatek od towarow i uslug**.
+  - Podstawowa stawka VAT w Polsce to **23%** (od 2011 r.), NIE 22% (przed 2011 r.).
+  - Litery A/B/C/D na paragonie odpowiadaja roznym stawkom — nie wszystkie kasy uzywaja tego samego oznaczenia.
+wymaganie: |
+  IV.7 — Finanse publiczne. Podatki bezposrednie i posrednie. VAT.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/wos/2022-maj-pr/zad-10.webp"
+  alt="Zadanie 10 - WOS 2022 PR"
+  caption="Strona arkusza CKE 2022 PR WOS - zadanie 10 (VAT na paragonach)."
+  zrodlo="CKE 2022"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_wos_F2015_2022_rozszerzony_arkusz.pdf"
+  pdfPage={7}
+/>
+
+## VAT — podstawy
+
+**Ustawa z 11 marca 2004 r. o podatku od towarow i uslug** (Dz.U. 2004 nr 54 poz. 535):
+- VAT to podatek **posredni** — zawarty w cenie towaru/uslugi, placi konsument, odprowadza sprzedawca.
+- Naliczany **na kazdym etapie** obrotu (od producenta do konsumenta), ale rzeczywisty ciezar ponosi tylko **konsument koncowy** (zasada neutralnosci VAT).
+- Glowne zrodlo dochodow budzetu panstwa w Polsce (~40% wplywow podatkowych).
+
+## Punktacja CKE
+
+- 1 pkt za podanie nazwy "VAT" (lub "podatek od towarow i uslug") **i** poprawnego numeru paragonu (z 23%).

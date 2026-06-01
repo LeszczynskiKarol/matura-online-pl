@@ -7,9 +7,19 @@ typ: otwarte-krotkie
 topic: funkcja kawałkami, odczyt z wykresu, zbiór wartości
 difficulty: 3
 tresc: |
-  Funkcja $f(x) = x+2$ dla $x \in [-4, 2]$ oraz $f(x) = -x+5$ dla $x \in (2, 5)$.
-  **12.1.** Rozwiąż $f(x) = 3$ i znajdź największą wartość $f$ w $[2, 3]$.
-  **12.2.** Podaj zbiór wartości $f$ i zbiór argumentów, dla których $f(x) > 1$.
+  Funkcja $f$ określona jest wzorem:
+
+  $$f(x) = \begin{cases} x+2 & \text{dla } x \in [-4, 2] \\ -x+5 & \text{dla } x \in (2, 5) \end{cases}$$
+
+  **Zadanie 12.1.** Uzupełnij zdania. Wpisz odpowiednie liczby w wykropkowanych miejscach, aby zdania były prawdziwe.
+
+  1. Rozwiązaniem równania $f(x) = 3$ jest liczba ...
+  2. Największa wartość funkcji $f$ w przedziale $[2, 3]$ jest równa ...
+
+  **Zadanie 12.2.** Uzupełnij zdania. Wpisz odpowiednie przedziały w wykropkowanych miejscach, aby zdania były prawdziwe.
+
+  1. Zbiorem wartości funkcji $f$ jest przedział ...
+  2. Zbiorem wszystkich argumentów, dla których funkcja $f$ przyjmuje wartości większe od $1$, jest przedział ...
 odpowiedz: |
   **12.1.** $x = 1$; największa wartość = $4$.
   **12.2.** Zbiór wartości: $\langle -2, 4 \rangle$. Argumenty z $f(x) > 1$: $(-1, 4)$.
@@ -26,21 +36,12 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2026-maj-pp/ark-12.webp"
+  src="/arkusze/matematyka/2026-maj-pp/zad-12.webp"
   alt="Zadanie 12.1 - funkcja kawałkami, wykres"
   caption="Strona 12 arkusza CKE 2026 PP - zadanie 12.1."
   zrodlo="CKE 2026"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_arkusz_2026_wersja_a.pdf"
   pdfPage={12}
-/>
-
-<MaterialZrodlowy
-  src="/arkusze/matematyka/2026-maj-pp/ark-13.webp"
-  alt="Zadanie 12.2 - zbiór wartości, argumenty"
-  caption="Strona 13 arkusza CKE 2026 PP - zadanie 12.2."
-  zrodlo="CKE 2026"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/matematyka/MMAP-P0-100-2605-arkusz.pdf"
-  pdfPage={13}
 />
 
 ## Co zrobić?
@@ -89,7 +90,7 @@ Suma: $\langle -2, 4 \rangle \cup (0, 3) = \langle -2, 4 \rangle$ (druga gałą�
 
 **Argumenty z $f(x) > 1$.**
 - Pierwsza gałąź: $x + 2 > 1 \implies x > -1$, w $[-4, 2]$ daje $(-1, 2\rangle$.
-- Druga gałąź: $-x + 5 > 1 \implies x < 4$, w $(2, 5)$ daje $(2, 4)$.
+- Druga gałąź: $-x + 5 > 1 \implies x &lt; 4$, w $(2, 5)$ daje $(2, 4)$.
 
 Suma: $(-1, 2\rangle \cup (2, 4) = (-1, 4)$ (w $x = 2$ wartość $4 > 1$, więc nie ma dziury).
 

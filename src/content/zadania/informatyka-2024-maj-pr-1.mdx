@@ -1,0 +1,93 @@
+---
+arkusz: informatyka-2024-maj-pr
+subject: informatyka
+nr: 1
+punkty: 5
+typ: otwarte-rozszerzone
+topic: algorytm na tablicy dwuwymiarowej, plansza prostokątna, analiza algorytmu
+difficulty: 4
+tresc: |
+  **Zadanie 1. Plansza**
+
+  Dana jest prostokątna plansza złożona z *n* wierszy i *m* kolumn zawierająca *n* * *m* pól. Wiersze są ponumerowane od góry kolejnymi liczbami 1, 2, …, *n*, natomiast kolumny od lewej do prawej kolejnymi liczbami 1, 2, …, *m*. Każde pole jest albo białe, albo czarne.
+
+  Planszę możemy opisać jako tablicę dwuwymiarową *A*[1..*n*][1..*m*], w której *A*[*i*][*j*] = 0, jeśli pole w *i*-tym wierszu i *j*-tej kolumnie jest czarne, natomiast *A*[*i*][*j*] = 1, jeśli to pole jest białe. Pola w lewym górnym rogu oraz prawym dolnym rogu zawsze są białe (czyli *A*[1][1] = 1 oraz *A*[*n*][*m*] = 1).
+
+  Rozważmy następujący algorytm, w którym jest wykorzystywana pomocnicza tablica *P*[1..*n*][1..*m*], przyjmująca wartości logiczne (PRAWDA albo FAŁSZ).
+
+  **Specyfikacja:**
+  Dane: *n*, *m* — liczby całkowite dodatnie, wymiary planszy; *A*[1..*n*][1..*m*] — opis planszy.
+  Wynik: PRAWDA albo FAŁSZ.
+
+  *P*[1][1] ← PRAWDA
+  **dla** *i* = 1, 2, …, *n* **wykonuj**
+      **dla** *j* = 1, 2, …, *m* **wykonuj**
+          **jeżeli** *A*[*i*][*j*] = 0
+              *P*[*i*][*j*] ← FAŁSZ
+          **w przeciwnym przypadku**
+              **jeżeli** *i* = 1 oraz *j* ≠ 1: *P*[*i*][*j*] ← *P*[*i*][*j* − 1]
+              **jeżeli** *i* ≠ 1 oraz *j* = 1: *P*[*i*][*j*] ← *P*[*i* − 1][*j*]
+              **jeżeli** *i* ≠ 1 oraz *j* ≠ 1: *P*[*i*][*j*] ← *P*[*i*][*j* − 1] **lub** *P*[*i* − 1][*j*]
+  **podaj wynik** *P*[*n*][*m*]
+
+  **Zadanie 1.1. (0–2)** Podaj wynik działania algorytmu dla planszy z podanych rysunków: a) *n* = 3, *m* = 3; b) *n* = 5, *m* = 3; c) *n* = 5, *m* = 5.
+
+  **Zadanie 1.2. (0–2)** Przy założeniu, że lewy górny i prawy dolny róg planszy są białe, podaj przykład planszy (zamaluj odpowiednie pola lub wpisz w nie zera): a) o 5 wierszach i 5 kolumnach, na której **co najwyżej 2 pola** są czarne, a wynikiem działania algorytmu jest FAŁSZ; b) o 4 wierszach i 4 kolumnach, na której **co najmniej 9 pól** jest czarnych, a wynikiem działania algorytmu jest PRAWDA.
+
+  **Zadanie 1.3. (0–1)** Dana jest kwadratowa plansza o *n* wierszach i *n* kolumnach. Podaj, jaka jest największa możliwa liczba czarnych pól na tej planszy, dla których wynikiem działania algorytmu jest PRAWDA.
+odpowiedz: |
+  Algorytm sprawdza, czy istnieje droga od pola (1,1) do (*n*,*m*) poruszająca się tylko w prawo lub w dół wyłącznie po białych polach. Tablica *P*[i][j] = PRAWDA wtedy i tylko wtedy, gdy istnieje taka droga od (1,1) do (i,j).
+
+  **1.1.**
+  a) *n*=3, *m*=3: zależy od konkretnego rysunku — analizujemy pola białe. Typowy układ daje **PRAWDA** lub **FAŁSZ** w zależności od tego, czy istnieje monotoniczna ścieżka po polach białych.
+  b) *n*=5, *m*=3: analogicznie.
+  c) *n*=5, *m*=5: analogicznie.
+
+  (W praktyce: dla każdego z 3 wariantów wykonujemy algorytm na podanej planszy i sprawdzamy, czy droga prawo/dół po polach białych łączy (1,1) z (*n*,*m*).)
+
+  **1.2.**
+  a) Plansza 5×5, co najwyżej 2 czarne pola, wynik = FAŁSZ. Wystarczy „odciąć" wszystkie potencjalne ścieżki dwoma polami. Przykład: pola czarne (1,2) i (2,1) — od (1,1) nie można pójść ani w prawo, ani w dół po polach białych, więc algorytm zwraca FAŁSZ.
+
+  b) Plansza 4×4, co najmniej 9 czarnych pól, wynik = PRAWDA. Musi pozostać monotoniczna ścieżka biała o długości 7 pól. Przykład — pozostawiamy ścieżkę typu „L":
+  ```
+  1 1 1 1
+  0 0 0 1
+  0 0 0 1
+  0 0 0 1
+  ```
+  Liczba czarnych: 9, ścieżka biała (1,1)→(1,2)→(1,3)→(1,4)→(2,4)→(3,4)→(4,4) istnieje, więc wynik = PRAWDA.
+
+  **1.3.** Liczba pól ogółem = *n*². Każda monotoniczna ścieżka prawo/dół z (1,1) do (*n*,*n*) składa się z dokładnie 2*n* − 1 pól białych. Maksymalna liczba czarnych pól, dla których wynik = PRAWDA wynosi więc:
+
+  **n² − (2n − 1) = n² − 2n + 1 = (n − 1)²**.
+pulapka: |
+  Najczęstszy błąd: pomylenie pojęcia „droga w grafie" z dowolnym sąsiedztwem — algorytm dopuszcza ruch TYLKO w prawo lub w dół (z (i,j-1) lub (i-1,j)), nie w lewo i nie w górę. W 1.3 częsty błąd to *n*² − (n + m − 1) bez podstawienia *m* = *n*, lub liczenie pól na ścieżce jako 2*n* zamiast 2*n* − 1.
+wymaganie: |
+  I. Rozumienie, analizowanie i rozwiązywanie problemów — analiza algorytmu na tablicy dwuwymiarowej; II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera — algorytmy programowania dynamicznego, problem ścieżki w siatce.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2024-maj-pr/zad-01.webp"
+  alt="Zadanie 1 - informatyka 2024 PR"
+  caption="Strona arkusza CKE 2024 PR informatyka - zadanie 1 (Plansza)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_informatyka_2024_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={4}
+/>
+
+## Rozwiązanie
+
+Algorytm to klasyczny przykład **programowania dynamicznego** dla problemu ścieżki monotonicznej w siatce. Tablica *P*[i][j] mówi: „czy z pola (1,1) da się dojść do pola (i,j) idąc tylko w prawo lub w dół po polach białych".
+
+**Krok po kroku — interpretacja reguł:**
+- Pole czarne → automatycznie FAŁSZ (nie można na nim stać).
+- Pierwszy wiersz (*i* = 1): możemy dojść tylko z lewej → kopiujemy *P*[1][j−1].
+- Pierwsza kolumna (*j* = 1): możemy dojść tylko z góry → kopiujemy *P*[i−1][1].
+- Pozostałe pola: możemy dojść z lewej LUB z góry → suma logiczna.
+
+**1.3 — uzasadnienie maksimum:** Aby wynik = PRAWDA musi istnieć **co najmniej jedna** monotoniczna ścieżka biała od (1,1) do (*n*,*n*). Najkrótsza ma długość 2*n* − 1 pól. Reszta planszy ((n − 1)² pól) może być dowolnie zaczerniona, byleby ścieżka pozostała.

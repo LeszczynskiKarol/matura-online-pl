@@ -7,7 +7,23 @@ typ: otwarte-krotkie
 topic: funkcja wykładnicza, model praktyczny
 difficulty: 3
 tresc: |
-  W chwili początkowej ($t = 0$) filiżanka z gorącą kawą znajduje się w pokoju, a temperatura kawy jest równa 80 °C. Temperatura otoczenia jest stała i równa 20 °C. Temperatura $T$ kawy zmienia się zgodnie z zależnością $T(t) = (T_p - T_z) \cdot k^{-t} + T_z$, gdzie $T_p = 80$, $T_z = 20$, $k$ — stała. Po 10 minutach kawa ostygła do 65 °C. Oblicz temperaturę po kolejnych 5 minutach (czyli $T(15)$).
+  W chwili początkowej ($t = 0$) filiżanka z gorącą kawą znajduje się w pokoju, a temperatura tej kawy jest równa $80\,°\mathrm{C}$. Temperatura w pokoju (temperatura otoczenia) jest stała i równa $20\,°\mathrm{C}$. Temperatura $T$ tej kawy zmienia się w czasie zgodnie z zależnością
+
+  $$T(t) = (T_p - T_z) \cdot k^{-t} + T_z \quad \text{dla} \quad t \geq 0$$
+
+  gdzie:
+
+  - $T$ — temperatura kawy wyrażona w stopniach Celsjusza,
+  - $t$ — czas wyrażony w minutach, liczony od chwili początkowej,
+  - $T_p$ — temperatura początkowa kawy wyrażona w stopniach Celsjusza,
+  - $T_z$ — temperatura otoczenia wyrażona w stopniach Celsjusza,
+  - $k$ — stała charakterystyczna dla danej cieczy.
+
+  Po $10$ minutach, licząc od chwili początkowej, kawa ostygła do temperatury $65\,°\mathrm{C}$.
+
+  ### Zadanie 1. (0–2)
+
+  **Oblicz temperaturę tej kawy po następnych pięciu minutach. Wynik podaj w stopniach Celsjusza, w zaokrągleniu do jedności. Zapisz obliczenia.**
 odpowiedz: |
   T(15) ≈ 59 °C
 pulapka: |
@@ -24,11 +40,11 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z tym zadaniem
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2024-maj-pr/ark-04.webp"
+  src="/arkusze/matematyka/2024-maj-pr/zad-01.webp"
   alt="Zadanie 1 - strona 4 arkusza CKE"
   caption="Strona 4 arkusza CKE z trescia zadania 1."
   zrodlo="CKE"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/matematyka/MMAP-R0-100-2405-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_rozszerzony_arkusz_2024_zadania.pdf"
   pdfPage={4}
 />
 

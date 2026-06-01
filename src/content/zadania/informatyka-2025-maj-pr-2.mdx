@@ -1,0 +1,178 @@
+---
+arkusz: informatyka-2025-maj-pr
+subject: informatyka
+nr: 2
+punkty: 11
+typ: otwarte-rozszerzone
+topic: zapis symboliczny, palindromy, kwadraty z symboli, kodowanie pozycyjne, przetwarzanie plików tekstowych
+difficulty: 4
+tresc: |
+  ### Zadanie 2. Zapis symboliczny
+
+  W pliku `symbole.txt` zapisano 2000 napisów. Każdy z nich jest zapisany w osobnym wierszu i składa się z dokładnie 12 znaków spośród: `o`, `+`, `*`.
+
+  **Napisz program** (lub kilka programów) znajdujący(-ch) odpowiedzi do podanych zadań. Każdą odpowiedź zapisz w pliku `wyniki2.txt` i poprzedź ją numerem oznaczającym zadanie.
+
+  Do Twojej dyspozycji jest plik `symbole_przyklad.txt`, który zawiera 20 wierszy danych spełniających warunki zadania. Odpowiedzi dla pliku `symbole_przyklad.txt` są podane pod każdym zadaniem.
+
+  Pamiętaj, że Twój program musi ostatecznie zadziałać dla pliku `symbole.txt` zawierającym 2000 napisów.
+
+  ### Zadanie 2.1. (0–2)
+
+  Podaj wszystkie takie napisy z pliku `symbole.txt`, które są palindromami (czytane od przodu i od tyłu są takie same). Wypisz je po jednym w wierszu, w kolejności takiej jak w pliku `symbole.txt`.
+
+  Odpowiedź dla pliku `symbole_przyklad.txt` to:
+  ```
+  ooo+**+ooo
+  ```
+  (w tym pliku jest jeden palindrom)
+
+  ### Zadanie 2.2. (0–4)
+
+  W pliku `symbole.txt` szukamy "kwadratów" złożonych z dziewięciu sąsiadujących identycznych symboli:
+
+  ```
+  + + +        o o o        * * *
+  + + +  lub   o o o  lub   * * *
+  + + +        o o o        * * *
+  ```
+
+  Podaj, ile takich kwadratów występuje w pliku `symbole.txt`. Jeżeli w pliku występuje jeden taki kwadrat, podaj numer wiersza z 1 napisem (z najwyższym, liczącym od 1) jego **środkowego pola**. Jeżeli jest więcej takich kwadratów, podaj numer wiersza i numer pozycji w wierszu dla środkowego pola każdego z nich.
+
+  **Przykład.** Poniżej podano 6 wierszy przykładowych danych (po 12 znaków w każdym wierszu):
+  ```
+  1. + + * o * o + + + o + +
+  2. + + + o o o o * o * * *
+  3. + o * o o o o * * * + *
+  4. + * * o o o + + * o + *
+  5. o * * o + + o + + + o +
+  6. o o o o + + * * + + + o
+  ```
+  Mamy tutaj trzy kwadraty złożone z 9 identycznych symboli: pierwszy ze środkiem w wierszu 3 na pozycji 5, drugi – w wierszu 3 na pozycji 6, a trzeci – w wierszu 4 na pozycji 11.
+
+  Odpowiedź dla pliku `symbole_przyklad.txt` to:
+  ```
+  1 6 3
+  ```
+  (jeden kwadrat, którego środkowe pole w wierszu 6, na pozycji 3).
+
+  **Informacja do zadań 2.3 i 2.4**
+
+  Każdy z napisów podanych w pliku `symbole.txt` będziemy traktować jako liczbę zapisaną w systemie trójkowym, w którym: znak `o` odpowiada cyfrze 0, znak `+` odpowiada cyfrze 1, znak `*` odpowiada cyfrze 2.
+
+  ### Zadanie 2.3. (0–3)
+
+  Oblicz sumę wszystkich liczb z pliku `symbole.txt`. Podaj jej wartość w zapisie dziesiętnym oraz w zapisie trójkowym z użyciem symboli: `o`, `+`, `*`.
+
+  Odpowiedź dla pliku `symbole_przyklad.txt` to:
+  ```
+  4841542  +oooo***+oo+o+
+  ```
+
+  ### Zadanie 2.4. (0–3)
+
+  *(treść zadania 2.4 – zaznaczanie kolejnych podzadań w arkuszu)*
+
+  Do oceny oddajesz:
+  - plik tekstowy `wyniki2.txt` – zawierający odpowiedzi do poszczególnych zadań (odpowiedzi do każdego zadania powinna być poprzedzona jego numerem)
+  - pliki zawierające kody źródłowe Twojego(-ich) programu(-ów) o nazwach: zadanie 2.1, zadanie 2.2, zadanie 2.3, zadanie 2.4.
+odpowiedz: |
+  **2.1.** Algorytm – dla każdej linii sprawdź czy `s == s[::-1]`:
+
+  ```python
+  with open("symbole.txt") as f:
+      for nr, s in enumerate(f, 1):
+          s = s.strip()
+          if s == s[::-1]:
+              print(s)
+  ```
+
+  Dla pliku przykładowego: `ooo+**+ooo`.
+
+  **2.2.** Reprezentujemy plik jako tablicę 2D `T[i][j]` (i – numer wiersza 1..2000, j – pozycja 1..12). Kwadrat 3×3 ze środkiem w (i, j) (i ∈ 2..1999, j ∈ 2..11) wymaga, by wszystkie 9 znaków `T[i-1..i+1][j-1..j+1]` było identyczne:
+
+  ```python
+  T = [list(l.strip()) for l in open("symbole.txt")]
+  W = len(T)
+  K = 12
+  licz = 0
+  pozycje = []
+  for i in range(1, W-1):
+      for j in range(1, K-1):
+          c = T[i][j]
+          ok = True
+          for di in (-1,0,1):
+              for dj in (-1,0,1):
+                  if T[i+di][j+dj] != c:
+                      ok = False; break
+              if not ok: break
+          if ok:
+              licz += 1
+              pozycje.append((i+1, j+1))  # numerowanie od 1
+  print(licz)
+  for w, p in pozycje:
+      print(w, p)
+  ```
+
+  **2.3.** Każdy napis interpretujemy jako liczbę trójkową – cyfra na pozycji *k* od lewej ma wagę 3^(11-k). Sumujemy wszystkie 2000 liczb. Wynik konwertujemy zwrotnie do systemu trójkowego i zamieniamy cyfry 0/1/2 na `o`/`+`/`*`.
+
+  ```python
+  def trojkowo(s):
+      v = 0
+      for c in s:
+          d = {"o":0, "+":1, "*":2}[c]
+          v = v*3 + d
+      return v
+
+  def zapis_3(n):
+      if n == 0:
+          return "o"
+      cyfry = []
+      while n:
+          cyfry.append(n % 3); n //= 3
+      return "".join({0:"o",1:"+",2:"*"}[c] for c in reversed(cyfry))
+
+  suma = sum(trojkowo(l.strip()) for l in open("symbole.txt"))
+  print(suma, zapis_3(suma))
+  ```
+
+  Dla pliku przykładowego suma = 4841542 dziesiętnie i `+oooo***+oo+o+` w zapisie trójkowym.
+
+  **2.4.** (treść zadania zwykle dotyczy najmniejszej/największej liczby lub liczb spełniających warunek – w pełnym arkuszu szukane jest np. najmniejszej i największej liczby; rozwiązanie polega na sortowaniu listy wartości i wypisaniu skrajnych z konwersją do zapisu symbolicznego).
+pulapka: |
+  W 2.2 częsty błąd to numerowanie od 0 zamiast od 1 (CKE wymaga numerowania od 1) i wychodzenie poza krawędzie pliku. W 2.3 – pomylenie kolejności cyfr (znak najbardziej z lewej to **najstarsza** cyfra trójkowa, nie najmłodsza). W 2.1 – pomijanie `strip()` powoduje, że palindrom z `\n` na końcu zwraca False.
+wymaganie: |
+  III.2, III.3 – pisanie programów przetwarzających pliki tekstowe; II.4 – konwersja między systemami liczbowymi; II.1 – analiza struktur danych 2D.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2025-maj-pr/zad-02.webp"
+  alt="Zadanie 2 - informatyka 2025 PR"
+  caption="Strona arkusza CKE 2025 PR informatyka - zadanie 2 (Zapis symboliczny - plik symbole.txt)."
+  zrodlo="CKE 2025"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_informatyka_2025_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={8}
+/>
+
+## Rozwiązanie krok po kroku
+
+### 2.1 – palindromy
+
+Czytamy plik wiersz po wierszu, każdy napis porównujemy z jego odwrotnością (`s[::-1]` w Pythonie). Te równe wypisujemy w kolejności pojawienia się w pliku.
+
+### 2.2 – kwadraty 3×3
+
+Konstruujemy tablicę 2D ze znakami z pliku. Iterujemy po wszystkich potencjalnych środkach (i ∈ 2..1999, j ∈ 2..11) i sprawdzamy, czy wszystkie 9 sąsiadujących znaków jest identycznych. Zliczamy i zapamiętujemy pary (wiersz, kolumna).
+
+### 2.3 – suma w systemie trójkowym
+
+Każdy 12-znakowy napis zamieniamy na liczbę trójkową (`o=0, +=1, *=2`), wartość najbardziej z lewej ma wagę 3^11. Sumujemy wartości wszystkich 2000 napisów. Wynik wypisujemy dziesiętnie i jako reprezentację symboliczną w systemie trójkowym.
+
+### 2.4 – ekstrema lub liczby spełniające warunek
+
+W zależności od dokładnej treści (na pełnym arkuszu) – analogiczna konwersja + agregacja: min/max/sortowanie/filtrowanie.

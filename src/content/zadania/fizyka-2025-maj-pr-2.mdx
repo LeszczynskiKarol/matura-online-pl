@@ -1,0 +1,62 @@
+---
+arkusz: fizyka-2025-maj-pr
+subject: fizyka
+nr: 2
+punkty: 6
+typ: otwarte-rozszerzone
+topic: dynamika bryły sztywnej, ruch po równi pochyłej, moment bezwładności
+difficulty: 4
+tresc: |
+  Dwa jednorodne walce W1 i W2 o tych samych promieniach $R_1 = R_2 = R$ i masach
+  $m_1 = m_2 = m$ staczają się bez poślizgu po równi pochyłej o kącie nachylenia $\beta$.
+  Momenty bezwładności walców względem osi obrotu wynoszą odpowiednio $I_1 = k_1 m R^2$ oraz
+  $I_2 = k_2 m R^2$, przy czym $k_2 > k_1$.
+
+  **Zadanie 2.1. (0–2)** Oceń prawdziwość poniższych stwierdzeń. Zaznacz P, jeśli stwierdzenie
+  jest prawdziwe, albo F – jeśli jest fałszywe.
+
+  **Zadanie 2.2. (0–4)** Wyznacz wartość przyspieszenia liniowego $a$ środka masy walca W2
+  staczającego się bez poślizgu po równi pochyłej. Wynik zapisz w zależności od $g$, $\beta$ i $k_2$.
+odpowiedz: |
+  **2.1.** Walec o większym współczynniku $k$ ma większy moment bezwładności, więc wolniej
+  przyspiesza i osiąga mniejszą prędkość liniową u dołu równi. Energie kinetyczne walców na dole
+  są równe (ZZE: $mgh = E_k$), ale W1 (mniejsze $k$) ma większą prędkość liniową.
+
+  **2.2.** Z II zasady dynamiki ruchu postępowego i obrotowego:
+
+  $$ma = mg\sin\beta - T,\qquad I_2 \varepsilon = TR$$
+
+  Warunek toczenia bez poślizgu: $a = \varepsilon R$, więc $T = k_2 m a$. Podstawiając:
+
+  $$a = \dfrac{g\sin\beta}{1 + k_2}$$
+pulapka: |
+  Najczęstsze błędy: pominięcie momentu bezwładności (traktowanie jako klocek), użycie wzoru
+  $I = \tfrac{1}{2}mR^2$ zamiast ogólnego $k m R^2$, zła interpretacja warunku toczenia bez
+  poślizgu ($v = \omega R$, $a = \varepsilon R$), nieprawidłowy znak siły tarcia.
+wymaganie: |
+  III.7, III.8 — dynamika ruchu obrotowego, moment bezwładności, ruch toczenia,
+  II zasada dynamiki dla ruchu obrotowego.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2025-maj-pr/zad-02.webp"
+  alt="Zadanie 2 z arkusza maturalnego CKE 2025 maj PR fizyka — walce na równi pochyłej"
+  caption="Zadanie 2 — arkusz maturalny CKE, maj 2025, fizyka, poziom rozszerzony"
+  zrodlo="CKE 2025"
+  pdfUrl="/arkusze/fizyka/2025-maj-pr/arkusz.pdf"
+  pdfPage={5}
+/>
+
+## Rozwiązanie krok po kroku
+
+### 2.1 — porównanie walców
+
+Walec o większym współczynniku $k$ ma większy ułamek energii w ruchu obrotowym, mniej w postępowym.
+
+### 2.2 — równania ruchu
+
+Stosujemy układ równań Newtona dla translacji i rotacji + warunek toczenia bez poślizgu.
+Wynik: $a = \dfrac{g\sin\beta}{1 + k_2}$.

@@ -1,0 +1,68 @@
+---
+arkusz: chemia-2023-maj-pr
+subject: chemia
+nr: 14
+punkty: 2
+typ: otwarte-krotkie
+topic: redoks, sole metali przejściowych, chlorek cyny(II), reakcje barwne
+difficulty: 4
+tresc: |
+  Przeprowadzono doświadczenie, w którym do trzech probówek (A, B, C) wprowadzono w przypadkowej kolejności świeżo sporządzone roztwory chlorków: **chromu(III), glinu i żelaza(III)**, o tych samych stężeniach molowych. Następnie do każdej probówki dodano bezbarwny, klarowny, świeżo sporządzony, wodny roztwór chlorku cyny(II) w ilości wystarczającej do stechiometrycznego przebiegu reakcji zilustrowanej schematem:
+
+  $$\text{MeCl}_3 + \text{SnCl}_2 \rightarrow \text{MeCl}_2 + \text{SnCl}_4$$
+
+  gdzie Me oznacza metal. Wszystkie użyte roztwory były zakwaszone w celu cofnięcia procesu hydrolizy.
+
+  Obserwacje:
+  - **A**: 1 zielony → 2 zielony (bez zmian)
+  - **B**: 1 żółto-pomarańczowy → 2 zielony
+  - **C**: 1 bezbarwny → 2 bezbarwny (bez zmian)
+
+  Wodne roztwory soli zawierające jony cyny(IV) są bezbarwne.
+
+  **Uzupełnij tabelę. Wpisz wzory soli, których roztwory były obecne w probówkach A i C przed wprowadzeniem roztworu chlorku cyny(II). Napisz w formie jonowej skróconej równanie reakcji zachodzącej w probówce B.**
+odpowiedz: |
+  **Identyfikacja barwy roztworów chlorków**:
+  - $\text{CrCl}_3$ — zielony (Cr³⁺)
+  - $\text{FeCl}_3$ — żółto-pomarańczowy/brunatny (Fe³⁺)
+  - $\text{AlCl}_3$ — bezbarwny (Al³⁺)
+
+  Reakcja zachodzi tylko wtedy, gdy Me³⁺ jest **silniejszym utleniaczem** niż Sn⁴⁺, czyli ulega redukcji do Me²⁺.
+  - Cr³⁺ → Cr²⁺: standardowy potencjał ujemny — **nie zachodzi**.
+  - Al³⁺ → Al²⁺: aluminium nie tworzy stabilnego Al²⁺ — **nie zachodzi**.
+  - Fe³⁺ → Fe²⁺: standardowy potencjał +0,77 V > Sn⁴⁺/Sn²⁺ (+0,15 V) — **zachodzi**, roztwór zmienia barwę na bladozielony (Fe²⁺).
+
+  **Identyfikacja probówek**:
+  - A (zielony, bez zmian) = $\text{CrCl}_3$
+  - B (żółto-pomarańczowy → zielony) = $\text{FeCl}_3$
+  - C (bezbarwny, bez zmian) = $\text{AlCl}_3$
+
+  | Probówka | A | C |
+  |---|---|---|
+  | Wzór soli | **CrCl₃** | **AlCl₃** |
+
+  **Równanie w probówce B (jonowo skrócone)**:
+
+  $$2\text{Fe}^{3+} + \text{Sn}^{2+} \rightarrow 2\text{Fe}^{2+} + \text{Sn}^{4+}$$
+pulapka: |
+  - **Barwy jonów** w roztworze wodnym: Fe³⁺ żółto-brunatny, Fe²⁺ jasnozielony, Cr³⁺ zielony lub fioletowy (zależnie od ligandów), Al³⁺/Sn²⁺/Sn⁴⁺ bezbarwne.
+  - W równaniu jonowym skróconym pomijamy Cl⁻ (jony obserwujące).
+  - Sn²⁺ jest **reduktorem** (oddaje 2e⁻, utlenia się do Sn⁴⁺), Fe³⁺ jest **utleniaczem** (przyjmuje e⁻, redukuje się do Fe²⁺).
+  - **Bilans elektronowy**: Sn²⁺ → Sn⁴⁺ + 2e⁻ (×1); Fe³⁺ + 1e⁻ → Fe²⁺ (×2). Stąd współczynniki 2 Fe³⁺ + 1 Sn²⁺.
+wymaganie: |
+  VIII.3 — reakcje redoks, bilansowanie, potencjały standardowe, barwy jonów.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2023-maj-pr/zad-14.webp"
+  alt="Zadanie 14 - chemia 2023 PR"
+  caption="Arkusz CKE 2023 PR chemia - zadanie 14 (rozróżnianie chlorków Cr/Al/Fe za pomocą SnCl2)."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_chemia_2023_rozszerzony_arkusz_zadania_pytania.pdf"
+  pdfPage={15}
+/>

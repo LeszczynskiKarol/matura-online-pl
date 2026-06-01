@@ -6,7 +6,14 @@ punkty: 1
 typ: zamkniete-abcd
 topic: logarytmy, własności logarytmu sumy
 difficulty: 2
-tresc: Oblicz wartość $\log_9 27 + \log_9 3$.
+tresc: |
+  ### Zadanie 4. (0-1)
+
+  **Dokończ zdanie. Wybierz właściwą odpowiedź spośród podanych.**
+
+  Liczba $\log_9 27 + \log_9 3$ jest równa
+
+  **A.** $81$     **B.** $9$     **C.** $4$     **D.** $2$
 odpowiedz: D
 pulapka: |
   Najczęstszy błąd: pomnożenie zamiast dodania logarytmów. $\log a + \log b = \log(ab)$, nie $\log a \cdot \log b$. Drugi błąd: $\log_9 81 = 9$ zamiast $2$ — pamiętaj, że szukamy wykładnika $x$, dla którego $9^x = 81$.
@@ -21,11 +28,11 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2023-maj-pp/ark-06.webp"
+  src="/arkusze/matematyka/2023-maj-pp/zad-04.webp"
   alt="Zadanie 4 - suma logarytmów"
   caption="Strona 6 arkusza CKE - zadanie 4 (logarytmy)."
   zrodlo="CKE 2023"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_podstawowy_arkusz_2023_zadania.pdf"
   pdfPage={6}
 />
 

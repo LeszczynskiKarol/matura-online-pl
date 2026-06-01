@@ -1,0 +1,152 @@
+---
+arkusz: informatyka-2024-maj-pr
+subject: informatyka
+nr: 4
+punkty: 8
+typ: otwarte-rozszerzone
+topic: przetwarzanie pliku tekstowego, dzielniki, kolejność, średnia arytmetyczna
+difficulty: 4
+tresc: |
+  **Zadanie 4. Liczby**
+
+  Plik `liczby.txt` składa się z dwóch wierszy:
+  - pierwszy wiersz pliku zawiera 3000 liczb pierwszych z przedziału [2, 2000]
+  - drugi wiersz pliku zawiera 20 liczb całkowitych z przedziału [2, 1 000 000 000].
+
+  Liczby w wierszach są rozdzielone znakami spacji.
+
+  Napisz program (lub kilka programów), który(-e) znajdzie(-ą) odpowiedzi do podanych zadań. Każdą odpowiedź zapisz w pliku `wyniki4.txt` poprzedź ją numerem oznaczającym zadanie. Do Twojej dyspozycji jest plik `liczby_przyklad.txt`, który zawiera 200 liczb w pierwszym wierszu (są to wyłącznie liczby 2, 3, 5, 7 i 31) oraz 20 liczb w drugim wierszu. Odpowiedzi dla danych z tego pliku są umieszczone pod każdym zadaniem.
+
+  Pamiętaj, że Twój program musi ostatecznie zadziałać na pliku `liczby.txt` z 3000 liczb w pierwszym wierszu.
+
+  **Zadanie 4.1. (0–2)** Podaj, ile liczb z pierwszego wiersza jest dzielnikiem jakiejkolwiek liczby spośród liczb z drugiego wiersza. Dla pliku `liczby_przyklad.txt` odpowiedzią jest 199 (tylko liczba 31, która występuje raz, nie jest dzielnikiem żadnej z liczb w drugim wierszu).
+
+  **Zadanie 4.2. (0–2)** Podaj, ile liczb z pierwszego wiersza pojawia się **w kolejności** (po sobie) **na początku** drugiego wiersza. Dla pliku `liczby_przyklad.txt` odpowiedzią jest 5.
+
+  **Zadanie 4.3. (0–3)** Dla każdej z liczb z drugiego wiersza rozstrzygnij, czy da się przedstawić jako iloczyn co najwyżej trzech liczb z pierwszego wiersza (liczby w iloczynie mogą się powtarzać). Znajdź wszystkie liczby, które da się tak przedstawić, i je wypisz. Dla pliku `liczby_przyklad.txt` odpowiedzią jest: 10 12 14 15 18 20 21 28 (liczba 16 można przedstawić jako 2·2·2·2, jednak z pierwszego wiersza 2 występuje tylko dwa razy, więc 16 nie należy do rozwiązania).
+
+  **Zadanie 4.4. (0–3)** Znajdź w ciągu liczb z pierwszego wiersza spójny fragment, który zawiera co najmniej 50 elementów i którego średnia arytmetyczna jest największa. Jeżeli jest więcej niż jeden taki fragment, wybierz ten, który występuje jako pierwszy w pliku `liczby.txt`. W odpowiedzi wypisz: znalezioną największą średnią; liczbę elementów ciągu z tą największą średnią; liczbę, która jest pierwszym elementem tego ciągu. (Dla pliku `liczby_przyklad.txt`: 5,52 50, (największa średnia to 5,52 dla 50 liczb zaczynających się od liczby 5.)
+odpowiedz: |
+  Wczytanie danych:
+
+  ```python
+  with open("liczby.txt") as f:
+      lines = f.readlines()
+  pierwsze = list(map(int, lines[0].split()))   # 3000 liczb pierwszych
+  drugie   = list(map(int, lines[1].split()))   # 20 liczb całkowitych
+  ```
+
+  **4.1.** Liczymy te liczby z `pierwsze`, które dzielą **co najmniej jedną** liczbę z `drugie`:
+
+  ```python
+  ile = 0
+  for p in pierwsze:
+      if any(d % p == 0 for d in drugie):
+          ile += 1
+  # zapis: "4.1. <ile>"
+  ```
+
+  **4.2.** Iterujemy oba ciągi równolegle dopóki elementy są równe:
+
+  ```python
+  i = 0
+  while i &lt; len(pierwsze) and i &lt; len(drugie) and pierwsze[i] == drugie[i]:
+      i += 1
+  # zapis: "4.2. <i>"
+  ```
+
+  **4.3.** Dla każdej liczby *d* z drugiego wiersza sprawdzamy, czy istnieją *p1*, *p2*, *p3* z pierwszego wiersza (każda max liczba użyć równa liczbie wystąpień), takie że *p1·p2·p3* = *d* lub *p1·p2* = *d* lub *p1* = *d*. **Uwaga:** zliczamy wystąpienia z pierwszego wiersza (multiset):
+
+  ```python
+  from collections import Counter
+  c = Counter(pierwsze)
+  wynik = []
+  for d in drugie:
+      ok = False
+      # 1 czynnik
+      if d in c:
+          ok = True
+      # 2 czynniki
+      if not ok:
+          for p1 in c:
+              if d % p1 == 0:
+                  q = d // p1
+                  if q in c:
+                      if p1 == q and c[p1] >= 2: ok = True; break
+                      if p1 != q and q in c: ok = True; break
+      # 3 czynniki
+      if not ok:
+          keys = list(c.keys())
+          for i, p1 in enumerate(keys):
+              if d % p1: continue
+              for j in range(i, len(keys)):
+                  p2 = keys[j]
+                  if (d // p1) % p2: continue
+                  p3 = d // p1 // p2
+                  if p3 &lt; p2: continue
+                  if p3 in c:
+                      # check multiset
+                      need = Counter([p1, p2, p3])
+                      if all(c[k] >= v for k, v in need.items()):
+                          ok = True; break
+              if ok: break
+      if ok:
+          wynik.append(d)
+  ```
+
+  **4.4.** Spójny fragment długości ≥ 50 z największą średnią. Suma okna szerokości *k* = 50 jest minimalizowana standardową techniką sliding window; w arkuszu często wystarcza sprawdzenie wszystkich okien:
+
+  ```python
+  najwsr = -1
+  najwd, najwst = 50, pierwsze[0]
+  # długość k od 50 do len(pierwsze)
+  n = len(pierwsze)
+  # sumy prefixowe
+  S = [0]*(n+1)
+  for i, v in enumerate(pierwsze):
+      S[i+1] = S[i] + v
+  for k in range(50, n+1):
+      for i in range(0, n - k + 1):
+          suma = S[i+k] - S[i]
+          sr = suma / k
+          if sr > najwsr + 1e-12:
+              najwsr = sr
+              najwd = k
+              najwst = pierwsze[i]
+  # zapis: "4.4. <najwsr> <najwd> <najwst>"
+  ```
+
+  Dla `liczby_przyklad.txt`: 5,52 50 5.
+pulapka: |
+  Najczęstsze błędy: (1) w 4.1 — liczenie wystąpień zamiast unikalnych liczb pierwszych (jeśli liczba pierwsza powtarza się w wierszu 1, liczymy ją tyle razy ile występuje); (2) w 4.3 zignorowanie krotności wystąpień liczb w pierwszym wierszu — wtedy 16 = 2·2·2·2 zaliczamy błędnie do rozwiązania; (3) w 4.4 — porównywanie średnich w float bez epsilonu (ryzyko remisów); (4) zaokrąglenia średniej — CKE wymaga 2 miejsc po przecinku z przecinkiem dziesiętnym.
+wymaganie: |
+  II. Programowanie i rozwiązywanie problemów z wykorzystaniem komputera — przetwarzanie plików tekstowych, podzielność, multiset, sliding window, średnia ruchoma.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2024-maj-pr/zad-04.webp"
+  alt="Zadanie 4 - informatyka 2024 PR"
+  caption="Strona arkusza CKE 2024 PR informatyka - zadanie 4 (Liczby)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_informatyka_2024_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={11}
+/>
+
+## Rozwiązanie
+
+Cztery podzadania bazują na tym samym pliku z dwoma wierszami liczb. Wszystkie są problemami pętli i prostych struktur danych — żadnej zaawansowanej algorytmiki.
+
+**Kluczowe spostrzeżenia:**
+
+- **4.1** — liczby pierwsze z 1. wiersza mogą się powtarzać; pytanie brzmi *"ile liczb"*, więc liczymy elementy listy (wraz z powtórzeniami), nie zbiór unikalnych. Każdą liczbę testujemy `% p == 0` dla wszystkich 20 liczb z drugiego wiersza.
+
+- **4.2** — porównujemy ciągi pozycja po pozycji od indeksu 0; przerywamy przy pierwszej różnicy. Wynik = długość wspólnego prefiksu.
+
+- **4.3** — kombinatorycznie: 1, 2 lub 3 czynniki, z poszanowaniem **krotności** wystąpień w pierwszym wierszu. Bez ograniczenia krotności rozwiązanie miałoby 16 (jako 2·2·2·2), ale CKE wyklucza tę odpowiedź — to wskazówka, że krotność liczy się.
+
+- **4.4** — średnia arytmetyczna rośnie z udziałem dużych liczb; dla 3000 liczb pierwszych z [2, 2000] szukamy fragmentu długości ≥ 50 maksymalizującego średnią. Algorytm `O(n²)` z sumami prefiksowymi mieści się w czasie.

@@ -1,0 +1,48 @@
+---
+arkusz: chemia-2024-maj-pr
+subject: chemia
+nr: 19
+punkty: 2
+typ: otwarte-rozszerzone
+topic: stechiometria, wydajność reakcji, obliczenia, karbid, acetylen
+difficulty: 3
+tresc: |
+  Reakcja acetylenku wapnia CaC₂ z wodą przebiega według równania:
+
+  $CaC_2 + 2 H_2O \rightarrow C_2H_2 + Ca(OH)_2$
+
+  Oblicz, ile gramów karbidu, zawierającego 82% CaC₂, potrzeba do otrzymania 100 g PVC. Całkowita wydajność procesu jest równa 78%.
+odpowiedz: |
+  Patrz materiał źródłowy CKE — schemat: CaC₂ → C₂H₂ → CH₂=CHCl (chlorek winylu) → [-CH₂-CHCl-]ₙ (PVC). Stosunek molowy CaC₂ : mer PVC = 1 : 1. M(mer PVC) = 62,5 g/mol. M(CaC₂) = 64 g/mol.
+
+  $n_{PVC} = 100/62{,}5 = 1{,}6$ mol merów.
+
+  $n_{CaC_2}$ teoretyczne = 1,6 mol → $m_{CaC_2} = 1{,}6 \cdot 64 = 102{,}4$ g.
+
+  Z uwzględnieniem wydajności 78%: $m_{CaC_2} = 102{,}4 / 0{,}78 \approx 131{,}3$ g.
+
+  Z uwzględnieniem czystości karbidu 82%: $m_{karbidu} = 131{,}3 / 0{,}82 \approx 160{,}1$ g.
+pulapka: |
+  Wydajność zmniejsza ilość produktu z danej ilości substratu — więc dla zadanej masy produktu potrzeba WIĘCEJ substratu (dzielenie, nie mnożenie). To samo z czystością surowca.
+wymaganie: |
+  II.4 — obliczenia stechiometryczne z uwzględnieniem wydajności i czystości.
+podobne:
+  - chemia-2025-maj-pr-19
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2024-maj-pr/zad-19.webp"
+  alt="Zadanie 19 - chemia 2024 PR"
+  caption="Strona arkusza CKE 2024 PR chemia — zadanie 19 (karbid, acetylen, PVC)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_chemia_2024_rozszerzony_arkusz_zadania_pytania.pdf"
+  pdfPage={20}
+/>
+
+## Po co to umieć
+
+Karbid (CaC₂) historycznie był surowcem do produkcji acetylenu — używanego w lampach karbidowych (górnictwo, motoryzacja XIX/XX w.) oraz spawania acetylenowo-tlenowego. Dziś acetylen produkuje się głównie z gazu ziemnego (kraking metanu).

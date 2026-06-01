@@ -7,11 +7,15 @@ typ: zamkniete-abcd
 topic: trygonometria, równanie z sin/cos
 difficulty: 3
 tresc: |
-  Kąt $\alpha$ jest ostry i spełnia warunek $\sqrt{3} \operatorname{tg} \alpha = 2 \sin \alpha$. Cosinus kąta $\alpha$ jest równy: A. $\dfrac{1}{2}$, B. $\dfrac{\sqrt{2}}{2}$, C. $\dfrac{\sqrt{3}}{2}$, D. $\dfrac{\sqrt{3}}{3}$.
+  Dokończ zdanie. Wybierz właściwą odpowiedź spośród podanych.
+
+  Kąt $\alpha$ jest ostry i spełnia warunek $\sqrt{3} \operatorname{tg} \alpha = 2 \sin \alpha$. Cosinus kąta $\alpha$ jest równy
+
+  **A.** $\dfrac{1}{2}$     **B.** $\dfrac{\sqrt{2}}{2}$     **C.** $\dfrac{\sqrt{3}}{2}$     **D.** $\dfrac{\sqrt{3}}{3}$
 odpowiedz: |
   C — $\cos \alpha = \dfrac{\sqrt{3}}{2}$
 pulapka: |
-  Najczęstszy błąd to dzielenie obu stron przez $\sin \alpha$ BEZ założenia, że $\sin \alpha \neq 0$. Owszem, dla kąta ostrego $\sin \alpha \neq 0$ (z definicji $0 < \alpha < 90°$, więc $\sin \alpha > 0$), ale formalnie założenie należy zaznaczyć.
+  Najczęstszy błąd to dzielenie obu stron przez $\sin \alpha$ BEZ założenia, że $\sin \alpha \neq 0$. Owszem, dla kąta ostrego $\sin \alpha \neq 0$ (z definicji $0 &lt; \alpha &lt; 90°$, więc $\sin \alpha > 0$), ale formalnie założenie należy zaznaczyć.
 wymaganie: |
   VII.2 — tożsamość $\tan \alpha = \dfrac{\sin \alpha}{\cos \alpha}$.
 podobne:
@@ -25,11 +29,11 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strona arkusza CKE z tym zadaniem
 
 <MaterialZrodlowy
-  src="/arkusze/matematyka/2025-maj-pp/ark-17.webp"
+  src="/arkusze/matematyka/2025-maj-pp/zad-17.webp"
   alt="Zadanie 17 - strona 17 arkusza CKE"
   caption="Strona 17 arkusza CKE z trescia zadania 17."
   zrodlo="CKE"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Matematyka/MMAP-P0-100-2505-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_podstawowy_arkusz_2025_wersja_a.pdf"
   pdfPage={17}
 />
 
@@ -85,7 +89,7 @@ $1 = 1$ ✓ — warunek spełniony.
 <div class="pulapka">
   <div class="pulapka-label">Pułapka — dzielenie przez $\sin \alpha$ bez założenia</div>
 
-W ogólnym przypadku z równania $A \sin \alpha = B \sin \alpha$ nie wolno dzielić przez $\sin \alpha$ bez zastrzeżenia. Tu treść mówi „kąt $\alpha$ jest ostry", co oznacza $0 < \alpha < 90°$, więc $\sin \alpha \neq 0$ — wolno dzielić.
+W ogólnym przypadku z równania $A \sin \alpha = B \sin \alpha$ nie wolno dzielić przez $\sin \alpha$ bez zastrzeżenia. Tu treść mówi „kąt $\alpha$ jest ostry", co oznacza $0 &lt; \alpha &lt; 90°$, więc $\sin \alpha \neq 0$ — wolno dzielić.
 
 Bezpieczna procedura ogólna: zawsze, gdy dzielisz przez wyrażenie z niewiadomą, **zaznacz** że jest niezerowe (i sprawdź dlaczego — z dziedziny / założeń treści / itd.).
 </div>

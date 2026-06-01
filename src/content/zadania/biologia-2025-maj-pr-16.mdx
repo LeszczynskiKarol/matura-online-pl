@@ -7,20 +7,49 @@ typ: otwarte-krotkie
 topic: genetyka, grupy krwi ABO, gen FUT1, fenotyp Bombay, mutacja, zmiana ramki odczytu
 difficulty: 5
 tresc: |
-  Układ ABO: 4 fenotypy (A, B, AB, 0) warunkowane przez gen ABO. Antygeny H powstają z prekursora w obecności fukozylotransferazy kodowanej przez gen **FUT1** (allel **H** dominujący — wytwarza antygen H; **h** recesywny — niefunkcjonalne białko, brak antygenu H = fenotyp **Bombay**).
+  W układzie ABO wyróżnia się cztery podstawowe fenotypy: A, B, AB i 0, które są warunkowane przez występowanie antygenów A i B. Antygen H jest strukturą prekursorową antygenów A i B, które powstają w wyniku przyłączania do antygenu H różnych reszt cukrowych: w antygenie A jest to N-acetylogalaktozamina, w antygenie B — galaktoza.
 
-  Allel **I^A** koduje transferazę przekształcającą antygen H w A; **I^B** → B; **i** koduje niefunkcjonalne białko (mutacja **I^A**).
+  Wytwarzanie antygenu H jest warunkowane przez gen *FUT1*. Allel dominujący tego genu (*H*) odpowiada za wytworzenie antygenu H w błonie komórkowej erytrocytów. Allel recesywny tego genu (*h*) zawiera mutację prowadzącą do syntezy niefunkcjonalnego enzymu, którego aktywność jest konieczna do syntezy antygenu H.
 
-  Tabela fragmentu nici kodującej DNA:
-  | Allel | Fragment DNA | Aminokwasy |
+  Gen *ABO* warunkujący przekształcanie antygenu H do antygenu A lub B ma trzy allele:
+
+  - allel \$I^A\$ koduje transferazę A, warunkującą wytwarzanie antygenu A;
+  - allel \$I^B\$ koduje transferazę B, warunkującą wytwarzanie antygenu B;
+  - recesywny allel \$i\$, kodujący niefunkcjonalne białko, powstały w wyniku mutacji allelu \$I^A\$.
+
+  Gen *FUT1* i gen *ABO* są położone na różnych chromosomach autosomalnych.
+
+  W poniższej tabeli przedstawiono fragmenty nici kodującej DNA alleli \$I^A\$ oraz odpowiadający im fragment łańcucha polipeptydowego powstałego w wyniku mutacji.
+
+  | Allel genu *ABO* | Fragment DNA nici kodującej | Fragment łańcucha polipeptydowego kodowanego przez podany fragment DNA |
   |---|---|---|
-  | **I^A** | CTC GTG GTG ACC CCT T | Leu – Val – Val – Thr – Pro |
-  | **i** | CTG GTG GT- ACC CCT T | ? |
+  | \$I^A\$ | CTC GTG GTG ACC CCT T | Leu – Val – Val – Thr – Pro |
+  | \$i\$ | CTG GTG GT- ACC CCT T | ............................. |
 
-  **16.1.** Nazwij mutację, która doprowadziła do powstania allelu **i**.
-  **16.2.** Uzupełnij sekwencję aminokwasową dla allelu **i**.
-  **16.3.** Konsekwencją mutacji jest: A. zmiana ramki / B. substytucja aa / C. odwrócenie kolejności aa / D. zwielokrotnienie aa.
-  **16.4.** Podaj **wszystkie** genotypy warunkujące grupę krwi A (uwzględnij FUT1 + ABO).
+  Na podstawie: M. Czerwiński i R. Kaczmarek, *Genetyczne podstawy syntezy cukrowych antygenów grupowych krwi*, „Acta Haematologica Polonica" 44(3), 2013; V. Kumar i in., *Robbins & Cotran Pathologic Basis of Disease*, Nowy Jork 2020.
+
+  ### Zadanie 16.1. (0-1)
+
+  Na podstawie analizy danych przedstawionych w tabeli podaj nazwę mutacji genowej, która doprowadziła do powstania allelu \$i\$.
+
+  ### Zadanie 16.2. (0-1)
+
+  Uzupełnij tabelę zamieszczoną powyżej — podaj sekwencję aminokwasową kodowaną przez fragment DNA nici kodującej zawarty w tabeli. Odpowiedź zapisz w wyznaczonym miejscu w tabeli.
+
+  ### Zadanie 16.3. (0-1)
+
+  Dokończ zdanie. Zaznacz właściwą odpowiedź spośród podanych.
+
+  Sekwencja aminokwasowa kodowana przez allel \$i\$ jest inna niż w przypadku allelu \$I^A\$, ponieważ konsekwencją mutacji genowej prowadzącej do powstania allelu \$i\$ jest
+
+  - A. zmiana ramki odczytu.
+  - B. substytucja aminokwasowa.
+  - C. odwrócenie kolejności aminokwasów.
+  - D. zwielokrotnienie liczby aminokwasów.
+
+  ### Zadanie 16.4. (0-1)
+
+  Podaj wszystkie możliwe genotypy warunkujące grupę krwi A. Uwzględnij allele genu *FUT1* oraz genu *ABO*. W zapisie genotypu zastosuj oznaczenia alleli podane we wprowadzeniu do zadania.
 odpowiedz: |
   **16.1.** **Delecja** (utrata) **jednego nukleotydu** (zasady azotowej) w sekwencji DNA allelu **I^A**.
 
@@ -66,21 +95,12 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 ## Strony arkusza CKE z trescia zadania
 
 <MaterialZrodlowy
-  src="/arkusze/biologia/2025-maj-pr/ark-24.webp"
+  src="/arkusze/biologia/2025-maj-pr/zad-16.webp"
   alt="Zadanie 16 - grupy krwi ABO, FUT1, tabela alleli IA i i"
   caption="Strona 24 arkusza CKE 2025 PR biologia - zadanie 16 (tabela DNA alleli, podpunkty 16.1-16.2)."
   zrodlo="CKE 2025"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Biologia/MBIP-R0-100-A-2505-arkusz.pdf"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_biologia_2025_rozszerzony_arkusz_pytania_zadania.pdf"
   pdfPage={24}
-/>
-
-<MaterialZrodlowy
-  src="/arkusze/biologia/2025-maj-pr/ark-25.webp"
-  alt="Zadanie 16.3-16.4"
-  caption="Strona 25 arkusza CKE 2025 PR biologia - podpunkty 16.3 (ABCD) i 16.4 (genotypy grupy A)."
-  zrodlo="CKE 2025"
-  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Biologia/MBIP-R0-100-A-2505-arkusz.pdf"
-  pdfPage={25}
 />
 
 ## Klucz pojęciowy — układ ABO + FUT1

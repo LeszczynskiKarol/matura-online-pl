@@ -1,0 +1,77 @@
+---
+arkusz: fizyka-2023-maj-pr
+subject: fizyka
+nr: 2
+punkty: 2
+typ: otwarte-krotkie
+topic: dynamika, zderzenie sprężyste, zasada zachowania pędu, zasada zachowania energii kinetycznej, krążki jednorodne, siły wzajemnego oddziaływania
+difficulty: 3
+tresc: |
+  Krążek K1 porusza się w inercjalnym układzie odniesienia $\mathcal{U}$ ze stałą prędkością $\vec{v}$, a krążek K2 spoczywa. Środek krążka K2 leży na prostej wyznaczającej kierunek ruchu krążka K1. W pewnej chwili krążek K1 uderza w krążek K2.
+
+  Na rysunku 1. w kartezjańskim układzie współrzędnych $(x, y)$ przedstawiono poruszające się krążek K1 i spoczywający krążek K2. Oznaczono prędkość $\vec{v}$ krążka K1 i składowe $\vec{v}_x, \vec{v}_y$ tej prędkości. Na rysunku 2. przedstawiono moment zderzenia się obu krążków.
+
+  Krążki są jednorodne, a ich masy są sobie równe. Pomijamy tarcie między krążkami K1 i K2 oraz między krążkami a podłożem.
+
+  ### Zadanie 2.1. (0–1)
+
+  Na rysunku 2. poprawnie narysuj parę sił wzajemnego oddziaływania pomiędzy krążkami podczas ich zderzenia. Każda z sił przyłożona — odpowiednio — w punkcie środka masy krążka K1 lub krążka K2. Zachowaj odpowiednie kierunki i zwroty tych sił oraz relację (większy, równy, mniejszy) między ich wartościami.
+
+  ### Zadanie 2.2. (0–1)
+
+  Załóżmy, że zderzenie krążków K1 i K2 było **doskonale sprężyste**.
+
+  Na którym rysunku (spośród A–D) prawidłowo narysowano i opisano wektory prędkości krążków bezpośrednio po zderzeniu w układzie odniesienia $\mathcal{U}$? Zaznacz właściwą odpowiedź spośród podanych.
+
+  **A.** $|\vec{v}_1'| = |\vec{v}_2'| = \frac{|\vec{v}|}{2}$ (krążki rozjeżdżają się symetrycznie)     **B.** $\vec{v}_1' = 0\ \ \text{i}\ \ \vec{v}_2' = \vec{v}$ (K1 zatrzymuje się, K2 odjeżdża z prędkością K1)     **C.** $\vec{v}_1' = \vec{v}_y,\ \vec{v}_2' = \vec{v}_x$ (K1 odbija się prostopadle, K2 odjeżdża wzdłuż $x$)     **D.** $\vec{v}_1' = \frac{\vec{v}_y}{2},\ \vec{v}_2' = \frac{\vec{v}_x}{2}$
+odpowiedz: |
+  ### Zadanie 2.1.
+
+  Siły wzajemnego oddziaływania (III zasada dynamiki Newtona): wektory $\vec{F}_{12}$ i $\vec{F}_{21}$ przyłożone w środkach mas krążków, leżące na prostej łączącej środki krążków, o **przeciwnych zwrotach** i **równych wartościach**: $|\vec{F}_{12}| = |\vec{F}_{21}|$. Siła działająca na K2 (od strony K1) skierowana jest na zewnątrz od K1, a siła na K1 (od strony K2) — przeciwnie.
+
+  ### Zadanie 2.2.
+
+  Poprawna odpowiedź: **C** (analog rysunku, na którym K1 odbija się ruchem o składowej $\vec{v}_y$, a K2 odjeżdża z prędkością $\vec{v}_x$).
+
+  Uzasadnienie: dla zderzenia centralnego, doskonale sprężystego dwóch krążków o **równych masach** zachowane są pęd i energia kinetyczna. W zderzeniu **niecentralnym** (oś zderzenia wzdłuż linii środków) tylko składowa prędkości wzdłuż linii środków (składowa $\vec{v}_x$ — wzdłuż osi zderzenia) zostaje przekazana K2. Składowa prostopadła $\vec{v}_y$ pozostaje przy K1:
+
+  $$\vec{v}_1' = \vec{v}_y, \qquad \vec{v}_2' = \vec{v}_x$$
+
+  Sprawdzenie zasad zachowania:
+  - pęd: $m\vec{v} = m(\vec{v}_x + \vec{v}_y) = m\vec{v}_x + m\vec{v}_y$ ✓
+  - energia: $\tfrac{1}{2} m v^2 = \tfrac{1}{2} m (v_x^2 + v_y^2)$ ✓
+pulapka: |
+  - III zasada Newtona: siły wzajemnego oddziaływania mają **zawsze** tę samą wartość, bez względu na różnicę mas — częsty błąd to rysowanie dłuższego wektora przy "uderzającym".
+  - Zderzenie centralne sprężyste z równymi masami: pełne przekazanie składowej prędkości wzdłuż linii środków. To jest klasyczny wynik bilardowy.
+  - Składowa prostopadła do osi zderzenia nie ulega zmianie — kontakt krążków nie wytwarza siły bocznej (brak tarcia).
+wymaganie: |
+  Podstawa programowa fizyki PR — dział II (Dynamika): zasady dynamiki Newtona; zasada zachowania pędu i energii w zderzeniach sprężystych i niesprężystych.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2023-maj-pr/zad-02.webp"
+  alt="Zadanie 2 - fizyka 2023 PR"
+  caption="Strona arkusza CKE 2023 PR fizyka - zadanie 2."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_fizyka_2023_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={6}
+/>
+
+## Rozwiązanie
+
+### Zadanie 2.1. — siły wzajemnego oddziaływania
+
+Z III zasady dynamiki Newtona: $\vec{F}_{1\to 2} = -\vec{F}_{2\to 1}$, $|\vec{F}_{1\to 2}| = |\vec{F}_{2\to 1}|$. Wektory leżą na linii łączącej środki krążków, w punkcie kontaktu, z przeciwnymi zwrotami.
+
+### Zadanie 2.2. — zderzenie sprężyste
+
+Dla zderzenia niecentralnego dwóch krążków o równych masach przy braku tarcia oś zderzenia jest osią $x$ (linia środków). Z zasad zachowania pędu i energii:
+
+$$\vec{v}_1' = \vec{v}_y, \qquad \vec{v}_2' = \vec{v}_x$$
+
+Odpowiedź: **C**.

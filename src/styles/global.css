@@ -308,34 +308,90 @@ html.no-js .needs-js { display: none; }
   border-radius: 0.5rem;
 }
 
-/* Odpowiedź — wyróżnik */
+.tresc-zadania p {
+  margin: 0 0 0.75rem;
+}
+
+.tresc-zadania p:last-child {
+  margin-bottom: 0;
+}
+
+/* Wiersz odpowiedzi ABCD (4 wybory CKE) — równomierna siatka 4 kolumny na desktop,
+   2x2 na mobile. Litery boldowane przez **A.** w meta. */
+.tresc-abcd {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--color-border);
+}
+
+.tresc-abcd > span {
+  display: block;
+  font-size: 1rem;
+}
+
+@media (max-width: 640px) {
+  .tresc-abcd {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+}
+
+/* Odpowiedź — wyróżnik (card z lewym paskiem) */
 .odpowiedz {
-  display: flex;
-  gap: 0.75rem;
-  align-items: flex-start;
-  padding: 1rem 1.25rem;
+  position: relative;
+  padding: 1.25rem 1.5rem 1.25rem 1.75rem;
+  margin: 1.5rem 0;
   background: var(--color-correct-soft);
-  border: 1px solid color-mix(in srgb, var(--color-correct) 30%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-correct) 25%, transparent);
+  border-left: 4px solid var(--color-correct);
   border-radius: 0.5rem;
 }
 
-.odpowiedz-icon {
-  flex-shrink: 0;
+.odpowiedz::before {
+  content: "Odpowiedź";
+  display: block;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--color-correct);
+}
+
+.odpowiedz > div {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.odpowiedz p {
+  margin: 0 0 0.5rem;
+}
+
+.odpowiedz p:last-child {
+  margin-bottom: 0;
+}
+
+.odpowiedz-icon {
+  display: none; /* legacy — ::before zastąpił */
 }
 
 /* Pułapka — uwaga / typowy błąd */
 .pulapka {
-  padding: 1rem 1.25rem;
+  position: relative;
+  padding: 1.25rem 1.5rem 1.25rem 1.75rem;
+  margin: 1.5rem 0;
   background: var(--color-warn-soft);
-  border: 1px solid color-mix(in srgb, var(--color-warn) 30%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-warn) 25%, transparent);
+  border-left: 4px solid var(--color-warn);
   border-radius: 0.5rem;
 }
 
 .pulapka-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.375rem;
+  display: block;
   margin-bottom: 0.5rem;
   font-family: var(--font-mono);
   font-size: 0.75rem;
@@ -343,6 +399,85 @@ html.no-js .needs-js { display: none; }
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--color-warn);
+}
+
+.pulapka p {
+  margin: 0 0 0.5rem;
+}
+
+.pulapka p:last-child {
+  margin-bottom: 0;
+}
+
+/* Sekcje rozwiązania (prose) — czytelne nagłówki z separatorami */
+.prose h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-border);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.prose h2:first-child {
+  margin-top: 0;
+}
+
+/* Podpunkty zadania (### Zadanie N.M.) — kolorowe + numerowane */
+.prose h3 {
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  padding-left: 1rem;
+  border-left: 3px solid var(--color-accent);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Kroki rozwiązania — pionowy "timeline" */
+.kroki-lista {
+  margin: 1.5rem 0;
+  padding-left: 0;
+  counter-reset: krok;
+}
+
+.krok {
+  position: relative;
+  padding: 1rem 1.25rem 1rem 3rem;
+  margin-bottom: 0.75rem;
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  counter-increment: krok;
+}
+
+.krok::before {
+  content: counter(krok);
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.krok p {
+  margin: 0 0 0.5rem;
+}
+
+.krok p:last-child {
+  margin-bottom: 0;
 }
 
 /* Card-grid dla przedmiotów / arkuszy / zadań */

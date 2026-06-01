@@ -1,0 +1,123 @@
+---
+arkusz: fizyka-2024-maj-pr
+subject: fizyka
+nr: 2
+punkty: 6
+typ: otwarte-krotkie
+topic: dynamika bryły sztywnej, moment bezwładności, ruch obrotowo-postępowy, energia kinetyczna
+difficulty: 5
+tresc: |
+  ### Zadanie 2.
+
+  Jednorodny walec o masie $m = 10\ \mathrm{kg}$ i promieniu $R$ był ciągnięty siłą o wartości $F = 30\ \mathrm{N}$ po płaskiej poziomej powierzchni. Siła $\vec{F}$ była przyłożona poziomo do uchwytu i prostopadle do osi obrotu walca (zobacz rysunki 1.–3.).
+
+  Do analizy zagadnienia przyjmij model zjawiska, w którym:
+  - walec toczył się bez poślizgu,
+  - w kierunku poziomym na walec działały tylko: stała siła tarcia statycznego $\vec{T}$ oraz siła $\vec{F}$,
+  - siła tarcia $\vec{T}$ między walcem a powierzchnią nie osiągała wartości maksymalnej,
+  - pomijamy inne (tzn. oprócz tarcia statycznego) opory ruchu,
+  - moment bezwładności walca względem jego osi obrotu — będącej osią symetrii walca — wyraża się wzorem $I_0 = \tfrac{1}{2} m R^2$,
+  - ruch walca rozpatrujemy w inercjalnym układzie odniesienia związanym z ziemią, w jednorodnym, ziemskim polu grawitacyjnym,
+  - pomijamy masę osi obrotu walca i masę jego uchwytu.
+
+  ### Zadanie 2.1. (0–3)
+
+  Całkowitą energię kinetyczną walca w pewnej chwili $t$ ruchu oznaczmy jako $E_{kin\ calk}$, a energię kinetyczną ruchu postępowego walca w tej samej chwili $t$ oznaczmy $E_{kin\ post}$.
+
+  Oblicz iloraz $\dfrac{E_{kin\ post}}{E_{kin\ calk}}$. Zapisz obliczenia. Wynik podaj w postaci ułamka zwykłego.
+
+  ### Zadanie 2.2. (0–3)
+
+  Oblicz wartość przyśpieszenia (liniowego) środka masy walca. Zapisz obliczenia.
+odpowiedz: |
+  **2.1.** Energia kinetyczna toczącego się bez poślizgu walca:
+
+  $$E_{kin\ calk} = \underbrace{\tfrac{1}{2} m v^2}_{E_{kin\ post}} + \underbrace{\tfrac{1}{2} I_0 \omega^2}_{E_{kin\ obr}}$$
+
+  Z warunku toczenia bez poślizgu: $v = \omega R \Rightarrow \omega = v/R$.
+
+  $$E_{kin\ obr} = \tfrac{1}{2} \cdot \tfrac{1}{2} m R^2 \cdot \dfrac{v^2}{R^2} = \tfrac{1}{4} m v^2$$
+
+  $$E_{kin\ calk} = \tfrac{1}{2} m v^2 + \tfrac{1}{4} m v^2 = \tfrac{3}{4} m v^2$$
+
+  $$\boxed{\dfrac{E_{kin\ post}}{E_{kin\ calk}} = \dfrac{\tfrac{1}{2} m v^2}{\tfrac{3}{4} m v^2} = \dfrac{2}{3}}$$
+
+  **2.2.** Układamy równania:
+  - II zasada Newtona (ruch postępowy): $F - T = m a$
+  - II zasada Newtona dla obrotu (oś walca): $T \cdot R = I_0 \cdot \varepsilon = \tfrac{1}{2} m R^2 \cdot \dfrac{a}{R}$ → $T = \tfrac{1}{2} m a$
+
+  Podstawiamy:
+
+  $$F - \tfrac{1}{2} m a = m a$$
+  $$F = \tfrac{3}{2} m a$$
+  $$a = \dfrac{2 F}{3 m} = \dfrac{2 \cdot 30}{3 \cdot 10} = 2\ \mathrm{m/s^2}$$
+
+  $$\boxed{a = 2\ \mathrm{m/s^2}}$$
+pulapka: |
+  Pułapka 2.1 — pominięcie energii obrotowej. Walec toczy się — ma DWIE składowe energii kinetycznej. $E_{kin\ post} = \tfrac{1}{2}mv^2$ to **nie całość**.
+
+  Pułapka 2.2 — założenie że $a = F/m = 3$ m/s² (bez tarcia). Siła tarcia statycznego, mimo że nie wykonuje pracy (punkt styku chwilowo spoczywa), zmniejsza wypadkową siłę napędową — bo to ona wytwarza moment obrotowy.
+
+  Pułapka — kierunek siły tarcia. Tarcie statyczne tu działa **przeciwnie do $\vec{F}$** (tj. wstecz), bo to ono zapewnia moment obrotowy potrzebny do toczenia bez poślizgu (gdyby tarcia nie było, walec by się ślizgał, a uchwyt by go ciągnął bez obrotu).
+wymaganie: |
+  II.5 — dynamika bryły sztywnej. Toczenie bez poślizgu. Moment bezwładności walca. Sprzężenie ruchu obrotowego i postępowego.
+podobne:
+  - fizyka-2023-maj-pr-2
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z trescia zadania
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2024-maj-pr/zad-02.webp"
+  alt="Zadanie 2 - walec toczący się bez poślizgu"
+  caption="Strona 7-9 arkusza CKE 2024 PR fizyka - zadanie 2 (walec ciągnięty za uchwyt, toczenie bez poślizgu)."
+  zrodlo="CKE 2024"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_fizyka_2024_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={7}
+/>
+
+## Klucz — toczenie bez poślizgu
+
+<div class="kroki-lista">
+
+<div class="krok">
+
+**Warunek toczenia bez poślizgu**: $v = \omega R$, $a = \varepsilon R$. To NIE jest siła ani prawo dynamiki — to **warunek geometryczny** (więz).
+
+</div>
+
+<div class="krok">
+
+**Energia walca toczącego się**: $E_{kin} = E_{post} + E_{obr} = \tfrac{1}{2}mv^2 + \tfrac{1}{2}I_0\omega^2$. Dla walca pełnego: $E_{kin} = \tfrac{3}{4}mv^2$. Dla kuli pełnej: $E_{kin} = \tfrac{7}{10}mv^2$. Dla obręczy: $E_{kin} = mv^2$.
+
+</div>
+
+<div class="krok">
+
+**Dynamika ruchu obrotowego**: $\sum \tau = I \varepsilon$. Tylko **tarcie** ma niezerowy moment względem osi walca (siła $F$ działa przez oś — moment = 0).
+
+</div>
+
+</div>
+
+<div class="odpowiedz">
+<div>
+
+**2.1.** $\dfrac{E_{kin\ post}}{E_{kin\ calk}} = \dfrac{2}{3}$
+
+**2.2.** $a = \dfrac{2F}{3m} = 2\ \mathrm{m/s^2}$
+
+</div>
+</div>
+
+<div class="pulapka">
+  <div class="pulapka-label">Pułapka — energia obrotowa</div>
+
+Walec toczący się ma DWIE składowe energii kinetycznej. Pominięcie $E_{obr}$ daje błąd 33%.
+</div>
+
+## Po co to umieć
+
+Toczenie bez poślizgu = klasyczna sprzęgająca dynamika. Dotyczy: koła samochodu, taczki, butelki staczającej się ze stołu, kuli bilardowej z efektem "topspin". Klucz: punkt styku z podłożem chwilowo SPOCZYWA — tarcie statyczne (nie kinetyczne), praca = 0, więc energia mechaniczna zachowana w czystym toczeniu.

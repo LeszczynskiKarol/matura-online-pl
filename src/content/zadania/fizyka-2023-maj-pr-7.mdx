@@ -1,0 +1,111 @@
+---
+arkusz: fizyka-2023-maj-pr
+subject: fizyka
+nr: 7
+punkty: 7
+typ: otwarte-rozszerzone
+topic: pole magnetyczne, siła Lorentza, ruch po okręgu, proton w polu magnetycznym, indukcja magnetyczna, zachowanie energii, dynamika ruchu krzywoliniowego
+difficulty: 5
+tresc: |
+  Proton poruszał się w próżni, w polu magnetycznym po torze, który składał się z półokręgów $AF$, $FB$, $BE$, $EC$, $CD$ (zobacz rysunek). Na każdym z tych półokręgów wektor indukcji magnetycznej był prostopadły do płaszczyzny ruchu protonu i miał stałą wartość, ale dla różnych półokręgów wartości te były różne i wynosiły – odpowiednio – $B_{AF}$, $B_{FB}$, $B_{BE}$, $B_{EC}$, $B_{CD}$.
+
+  W chwili początkowej $t_A = 0$ proton znajdował się w punkcie $A$ i miał prędkość $\vec{v}$ (prostopadłą do wektora indukcji magnetycznej). Dalej proton poruszał się po opisanym torze i po pewnym czasie uderzył w tarczę znajdującą się w punkcie $D$. Wartość wektora indukcji magnetycznej na półokręgu $B_{AF}$ wynosiła $0{,}2\ \text{T}$. Długości odcinków na poniższym rysunku spełniają równość: $|AB| = |BC| = |CS| = |SD| = |DE| = |EF|$ oraz $|AD| = 1\ \text{m}$.
+
+  W zadaniach 7.1.–7.3. pomijamy siłę grawitacji działającą na proton.
+
+  ### Zadanie 7.1. (0–2)
+
+  Oceń prawdziwość poniższych stwierdzeń. Zaznacz P, jeśli stwierdzenie jest prawdziwe, albo F – jeśli jest fałszywe.
+
+  | Nr | Stwierdzenie | P/F |
+  |---|---|---|
+  | 1. | Wektor indukcji pola magnetycznego wzdłuż całego toru ruchu protonu ma zwrot przed płaszczyznę rysunku (tzn. w stronę patrzącego). | P / F |
+  | 2. | Wartość siły magnetycznej Lorentza działającej na proton jest stała na całej długości toru od punktu $A$ do punktu $D$. | P / F |
+  | 3. | Czas ruchu protonu po każdym z półokręgów $AF$, $FB$, $BE$, $EC$, $CD$ jest taki sam. | P / F |
+
+  ### Zadanie 7.2. (0–2)
+
+  Wykaż, że wartość prędkości protonu w ruchu po każdym z półokręgów była stała. Powołaj się na:
+  - odpowiednie własności siły działającej na proton oraz
+  - zasady dynamiki albo odpowiednie twierdzenie o energii kinetycznej.
+
+  ### Zadanie 7.3. (0–3)
+
+  Oblicz wartość $B_{CD}$ wektora indukcji pola magnetycznego działającego na proton, gdy poruszał się on po półokręgu $CD$. Zapisz obliczenia. Wskazówka: Wartość prędkości protonu poruszającego się po torze $AFBECD$ była stała.
+odpowiedz: |
+  ### Zadanie 7.1.
+
+  Aby proton (ładunek dodatni) z prędkością $\vec{v}$ (w prawo, wzdłuż $AD$) skręcił w pierwszym półokręgu $AF$ (na rysunku górą, w lewo), siła Lorentza $\vec{F} = q\vec{v} \times \vec{B}$ musi działać "w górę". Z reguły prawej dłoni: $\vec{B}$ jest skierowane **za płaszczyznę rysunku** (od patrzącego), NIE przed nią.
+
+  1. Zwrot **przed płaszczyznę** — fałsz, jest **za płaszczyznę** (lub można argumentować: zwroty się zmieniają na różnych półokręgach, bo proton skręca raz w lewo, raz w prawo). **F**
+  2. Siła Lorentza $F = q v B$. Prędkość $v$ jest stała (siła zawsze prostopadła do $v$, nie wykonuje pracy), ale $B$ jest różne na różnych półokręgach, więc $F$ jest różna. **F**
+  3. Czas półobiegu: $t = \pi r / v$. Promienie półokręgów są różne ($|AB|, |AF|$ różne), więc czasy też różne. **F**
+
+  ### Zadanie 7.2.
+
+  Siła Lorentza $\vec{F}_L = q \vec{v} \times \vec{B}$ jest **zawsze prostopadła** do prędkości $\vec{v}$. Z twierdzenia o energii kinetycznej:
+
+  $$\Delta E_k = W = \int \vec{F} \cdot d\vec{s}$$
+
+  Ponieważ $d\vec{s} \parallel \vec{v}$, a $\vec{F}_L \perp \vec{v}$, mamy $\vec{F}_L \cdot d\vec{s} = 0$, czyli siła nie wykonuje pracy. Zatem $\Delta E_k = 0$, więc $v = \text{const}$. Wartość prędkości protonu jest stała na każdym półokręgu.
+
+  ### Zadanie 7.3.
+
+  $|AD| = 1\ \text{m}$ podzielone na 5 równych odcinków: $|AB| = |BC| = |CS| = |SD| = |DE| = |EF| = 0{,}2\ \text{m}$.
+
+  Promienie półokręgów (każdy = połowa średnicy = długość półokręgu między punktami):
+  - $AF$: średnica $|AF|$. Z rysunku $A$ i $F$ są symetryczne — promień $r_{AF} = \frac{|AF|}{2}$. Z geometrii: $|AF|$ ma długość 5 odcinków = 1 m, więc $r_{AF} = 0{,}5\ \text{m}$.
+  - $CD$: średnica $|CD| = |CS| + |SD| = 0{,}4\ \text{m}$, więc $r_{CD} = 0{,}2\ \text{m}$.
+
+  Z warunku ruchu po okręgu (siła Lorentza = siła dośrodkowa):
+
+  $$q v B = \frac{m v^2}{r} \quad \Rightarrow \quad B = \frac{m v}{q r}$$
+
+  Stosunek dla półokręgów $AF$ i $CD$ (przy stałych $m, v, q$):
+
+  $$\frac{B_{CD}}{B_{AF}} = \frac{r_{AF}}{r_{CD}}$$
+
+  $$B_{CD} = B_{AF} \cdot \frac{r_{AF}}{r_{CD}} = 0{,}2 \cdot \frac{0{,}5}{0{,}2} = 0{,}2 \cdot 2{,}5 = 0{,}5\ \text{T}$$
+
+  **Odpowiedź:** $B_{CD} = 0{,}5\ \text{T}$.
+pulapka: |
+  - Siła Lorentza ZAWSZE prostopadła do prędkości → praca = 0 → $v = \text{const}$.
+  - Promień okręgu: $r = mv/(qB)$. Większe $B$ → mniejszy promień.
+  - Geometria toru wymaga uważnego policzenia promieni z podziału $|AD|$ na równe odcinki.
+  - Zwrot $\vec{B}$ wynika z reguły prawej dłoni dla $\vec{F} = q\vec{v} \times \vec{B}$ (dla dodatniego $q$).
+  - Na różnych półokręgach zwrot $\vec{B}$ może się zmieniać (skręty w przeciwne strony) — sprawdź geometrię toru.
+wymaganie: |
+  Podstawa programowa fizyki PR — dział VII (Magnetyzm): pole magnetyczne, siła Lorentza, ruch naładowanej cząstki w polu magnetycznym po okręgu, promień orbity.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Strona arkusza CKE z treścią zadania
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2023-maj-pr/zad-07.webp"
+  alt="Zadanie 7 - fizyka 2023 PR"
+  caption="Strona arkusza CKE 2023 PR fizyka - zadanie 7."
+  zrodlo="CKE 2023"
+  pdfUrl="https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_fizyka_2023_rozszerzony_arkusz_pytania_zadania.pdf"
+  pdfPage={18}
+/>
+
+## Rozwiązanie
+
+### Zadanie 7.1.
+
+1. **F** — zwrot $\vec{B}$ na półokręgu $AF$ za płaszczyznę rysunku (nie przed), a na kolejnych zmienia się.
+2. **F** — $F_L = qvB$; $v$ stała, ale $B$ różne dla różnych półokręgów.
+3. **F** — czasy $t_i = \pi r_i / v$ różne dla różnych promieni.
+
+### Zadanie 7.2.
+
+$\vec{F}_L \perp \vec{v}$ zawsze ⇒ $\vec{F}_L \cdot d\vec{s} = 0$ ⇒ $W = 0$ ⇒ $\Delta E_k = 0$ ⇒ $|v| = \text{const}$.
+
+### Zadanie 7.3.
+
+Z $qvB = mv^2/r$: $B \propto 1/r$.
+
+$$B_{CD} = B_{AF} \cdot \frac{r_{AF}}{r_{CD}} = 0{,}2 \cdot \frac{0{,}5}{0{,}2} = 0{,}5\ \text{T}$$
