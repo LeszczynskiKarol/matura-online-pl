@@ -49,7 +49,7 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 Zadanie wymaga **trzech etapów**:
 
-1. **Δ > 0** — funkcja ma dokładnie dwa różne miejsca zerowe.
+1. **Δ &gt; 0** — funkcja ma dokładnie dwa różne miejsca zerowe.
 2. **$x_1 \cdot x_2 > 0$** — miejsca tego samego znaku (Viète).
 3. **$(x_1 - x_2)^2 \leq 180$** — dodatkowy warunek na różnicę miejsc.
 
@@ -65,7 +65,7 @@ $$x_1 + x_2 = \frac{2(2m + 1)}{2 - m}, \qquad x_1 \cdot x_2 = \frac{m + 8}{2 - m
 
 ---
 
-## Etap 1 — Δ > 0
+## Etap 1 — Δ &gt; 0
 
 <div class="kroki-lista">
 
@@ -117,8 +117,8 @@ $$x_1 \cdot x_2 = \frac{m + 8}{2 - m} > 0$$
 
 Iloraz dodatni gdy licznik i mianownik mają **ten sam znak**:
 
-- **Oba dodatnie**: $m + 8 > 0$ i $2 - m > 0$, czyli $m > -8$ i $m &lt; 2$ → $m \in (-8, 2)$.
-- **Oba ujemne**: $m &lt; -8$ i $m > 2$ — sprzeczne, brak rozwiązań.
+- **Oba dodatnie**: $m + 8 > 0$ i $2 - m > 0$, czyli $m > -8$ i $m < 2$ → $m \in (-8, 2)$.
+- **Oba ujemne**: $m < -8$ i $m > 2$ — sprzeczne, brak rozwiązań.
 
 Stąd: $m \in (-8, 2)$.
 
@@ -222,10 +222,10 @@ $$\left[ (-\infty, -3) \cup (1, +\infty) \right] \cap (-8, 2) = (-8, -3) \cup (1
 
 **Teraz [(1) ∩ (2)] ∩ (3):**
 
-- $(-8, -3) \cap (-\infty, \tfrac{3}{2}\rangle = (-8, -3)$ ✓ (cały lewy fragment się mieści, bo $-3 &lt; \tfrac{3}{2}$)
-- $(-8, -3) \cap \langle\tfrac{13}{4}, +\infty) = \emptyset$ (bo $-3 &lt; \tfrac{13}{4}$)
+- $(-8, -3) \cap (-\infty, \tfrac{3}{2}\rangle = (-8, -3)$ ✓ (cały lewy fragment się mieści, bo $-3 < \tfrac{3}{2}$)
+- $(-8, -3) \cap \langle\tfrac{13}{4}, +\infty) = \emptyset$ (bo $-3 < \tfrac{13}{4}$)
 - $(1, 2) \cap (-\infty, \tfrac{3}{2}\rangle = (1, \tfrac{3}{2}\rangle$
-- $(1, 2) \cap \langle\tfrac{13}{4}, +\infty) = \emptyset$ (bo $2 &lt; \tfrac{13}{4} = 3{,}25$)
+- $(1, 2) \cap \langle\tfrac{13}{4}, +\infty) = \emptyset$ (bo $2 < \tfrac{13}{4} = 3{,}25$)
 
 Suma:
 
@@ -260,7 +260,7 @@ $$m \in (-8, -3) \cup \left( 1, \tfrac{3}{2} \right\rangle$$
 Wszystko pasuje.
 
 <div class="pulapka">
-  <div class="pulapka-label">Pułapka — Δ ≥ 0 zamiast Δ > 0</div>
+  <div class="pulapka-label">Pułapka — Δ ≥ 0 zamiast Δ &gt; 0</div>
 
 Treść mówi „dokładnie **dwa** miejsca zerowe" — słowo „dwa" wymusza **różne** miejsca, czyli $\Delta > 0$ (ostry znak).
 

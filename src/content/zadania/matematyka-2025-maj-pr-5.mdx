@@ -11,13 +11,13 @@ tresc: |
 
   **Rozwiąż nierówność**
 
-  $$|x - 2| - 2 \cdot |x + 3| &lt; -2$$
+  $$|x - 2| - 2 \cdot |x + 3| < -2$$
 
   **Zapisz obliczenia.**
 odpowiedz: |
   $x \in (-\infty,\ -10) \cup \left(-\dfrac{2}{3},\ +\infty\right)$
 pulapka: |
-  Najczęstszy błąd: rozważenie tylko dwóch przypadków zamiast trzech. Z dwoma modułami |x-2| i |x+3| mamy DWA punkty zerowania: x=2 i x=-3, czyli TRZY przedziały na osi: x<-3, -3≤x&lt;2, x≥2. Każdy wymaga osobnego rozważenia znaków modułów.
+  Najczęstszy błąd: rozważenie tylko dwóch przypadków zamiast trzech. Z dwoma modułami |x-2| i |x+3| mamy DWA punkty zerowania: x=2 i x=-3, czyli TRZY przedziały na osi: x<-3, -3≤x<2, x≥2. Każdy wymaga osobnego rozważenia znaków modułów.
 wymaganie: |
   III.4 — rozwiązywanie nierówności z wartością bezwzględną.
 podobne:
@@ -43,49 +43,49 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 Moduły $|x - 2|$ i $|x + 3|$ zmieniają znak w punktach $x = 2$ i $x = -3$. Te dwa punkty dzielą oś liczbową na **trzy przedziały**:
 
-1. $x &lt; -3$
-2. $-3 \leq x &lt; 2$
+1. $x < -3$
+2. $-3 \leq x < 2$
 3. $x \geq 2$
 
 W każdym przedziale moduły **rozwijają się jednoznacznie** (z odpowiednim znakiem). Rozwiązujemy nierówność osobno w każdym przedziale i łączymy wyniki.
 
-## Przypadek 1: $x &lt; -3$
+## Przypadek 1: $x < -3$
 
-W tym przedziale $x - 2 &lt; 0$ i $x + 3 &lt; 0$, więc:
+W tym przedziale $x - 2 < 0$ i $x + 3 < 0$, więc:
 
 - $|x - 2| = -(x - 2) = 2 - x$
 - $|x + 3| = -(x + 3) = -x - 3$
 
 Podstaw do nierówności:
 
-$$(2 - x) - 2 \cdot (-x - 3) &lt; -2$$
+$$(2 - x) - 2 \cdot (-x - 3) < -2$$
 
-$$2 - x + 2x + 6 &lt; -2$$
+$$2 - x + 2x + 6 < -2$$
 
-$$x + 8 &lt; -2 \quad\Rightarrow\quad x &lt; -10$$
+$$x + 8 < -2 \quad\Rightarrow\quad x < -10$$
 
-Łącząc z warunkiem przypadku ($x &lt; -3$): rozwiązanie tutaj to $x &lt; -10$ (bo $-10 &lt; -3$, więc $x &lt; -10$ jest mocniejszym warunkiem).
+Łącząc z warunkiem przypadku ($x < -3$): rozwiązanie tutaj to $x < -10$ (bo $-10 < -3$, więc $x < -10$ jest mocniejszym warunkiem).
 
 **Wynik przypadku 1**: $x \in (-\infty, -10)$.
 
-## Przypadek 2: $-3 \leq x &lt; 2$
+## Przypadek 2: $-3 \leq x < 2$
 
-W tym przedziale $x - 2 &lt; 0$ ale $x + 3 \geq 0$, więc:
+W tym przedziale $x - 2 < 0$ ale $x + 3 \geq 0$, więc:
 
 - $|x - 2| = 2 - x$
 - $|x + 3| = x + 3$
 
 Podstaw:
 
-$$(2 - x) - 2 (x + 3) &lt; -2$$
+$$(2 - x) - 2 (x + 3) < -2$$
 
-$$2 - x - 2x - 6 &lt; -2$$
+$$2 - x - 2x - 6 < -2$$
 
-$$-3x - 4 &lt; -2 \quad\Rightarrow\quad -3x &lt; 2 \quad\Rightarrow\quad x > -\frac{2}{3}$$
+$$-3x - 4 < -2 \quad\Rightarrow\quad -3x < 2 \quad\Rightarrow\quad x > -\frac{2}{3}$$
 
 (uwaga: dzielenie przez $-3$ odwraca nierówność).
 
-Łącząc z warunkiem przypadku ($-3 \leq x &lt; 2$): rozwiązanie to przecięcie $x > -\tfrac{2}{3}$ z $\langle -3, 2)$:
+Łącząc z warunkiem przypadku ($-3 \leq x < 2$): rozwiązanie to przecięcie $x > -\tfrac{2}{3}$ z $\langle -3, 2)$:
 
 **Wynik przypadku 2**: $x \in \left(-\tfrac{2}{3},\ 2\right)$.
 
@@ -98,11 +98,11 @@ W tym przedziale oba moduły rozwijają się „bez minusa":
 
 Podstaw:
 
-$$(x - 2) - 2(x + 3) &lt; -2$$
+$$(x - 2) - 2(x + 3) < -2$$
 
-$$x - 2 - 2x - 6 &lt; -2$$
+$$x - 2 - 2x - 6 < -2$$
 
-$$-x - 8 &lt; -2 \quad\Rightarrow\quad -x &lt; 6 \quad\Rightarrow\quad x > -6$$
+$$-x - 8 < -2 \quad\Rightarrow\quad -x < 6 \quad\Rightarrow\quad x > -6$$
 
 To **zawsze prawda** dla $x \geq 2$ (bo $2 > -6$).
 
@@ -128,17 +128,17 @@ $$x \in (-\infty, -10) \cup \left(-\frac{2}{3}, +\infty\right)$$
 
 Sprawdźmy „punkty kontrolne" z różnych części rozwiązania:
 
-- $x = -11$ (z pierwszego przedziału): $|-11 - 2| - 2 |-11 + 3| = 13 - 16 = -3 &lt; -2$ ✓
-- $x = -5$ (poza rozwiązaniem): $|-5 - 2| - 2 |-5 + 3| = 7 - 4 = 3$, NIE $&lt; -2$ ✓ (nie należy)
-- $x = 0$ (z drugiego rozwiązania): $|0 - 2| - 2 |0 + 3| = 2 - 6 = -4 &lt; -2$ ✓
-- $x = -1$ (poza, $-1 &lt; -\tfrac{2}{3}$): $|-3| - 2|2| = 3 - 4 = -1$, NIE $&lt; -2$ ✓ (nie należy)
+- $x = -11$ (z pierwszego przedziału): $|-11 - 2| - 2 |-11 + 3| = 13 - 16 = -3 < -2$ ✓
+- $x = -5$ (poza rozwiązaniem): $|-5 - 2| - 2 |-5 + 3| = 7 - 4 = 3$, NIE $< -2$ ✓ (nie należy)
+- $x = 0$ (z drugiego rozwiązania): $|0 - 2| - 2 |0 + 3| = 2 - 6 = -4 < -2$ ✓
+- $x = -1$ (poza, $-1 < -\tfrac{2}{3}$): $|-3| - 2|2| = 3 - 4 = -1$, NIE $< -2$ ✓ (nie należy)
 
 Granice sprawdzone — rozwiązanie pasuje.
 
 <div class="pulapka">
   <div class="pulapka-label">Pułapka — pomijanie środkowego przedziału</div>
 
-Niektórzy rozważają tylko **dwa** przypadki ($x &lt; -3$ lub $x \geq -3$), używając jednego z modułów do wyznaczenia kierunku. To zwykle prowadzi do błędu, bo **drugi moduł** ma inny punkt zerowania.
+Niektórzy rozważają tylko **dwa** przypadki ($x < -3$ lub $x \geq -3$), używając jednego z modułów do wyznaczenia kierunku. To zwykle prowadzi do błędu, bo **drugi moduł** ma inny punkt zerowania.
 
 Reguła: z $n$ wyrazów z wartością bezwzględną → **$n + 1$** przedziałów na osi liczbowej. Tutaj $n = 2$ (dwa moduły) → 3 przedziały.
 </div>
@@ -148,7 +148,7 @@ Reguła: z $n$ wyrazów z wartością bezwzględną → **$n + 1$** przedziałó
 
 Granice przedziałów ($-3$ i $2$) trzeba sprawdzić, do którego sąsiedniego należą. Konwencja: zwykle przypisuje się punkt do **lewego** przedziału, ale można też do prawego — ważne, by **dokładnie raz** się pojawił.
 
-Tutaj $x = 2$ należy do trzeciego przedziału ($\geq 2$), więc nie do drugiego ($&lt; 2$). Wpływa to na końcowy zbiór tylko jeśli rozwiązania z obu przedziałów spotykają się w $2$ — tak jak tu, gdzie sklejają się w $(-\tfrac{2}{3}, +\infty)$.
+Tutaj $x = 2$ należy do trzeciego przedziału ($\geq 2$), więc nie do drugiego ($< 2$). Wpływa to na końcowy zbiór tylko jeśli rozwiązania z obu przedziałów spotykają się w $2$ — tak jak tu, gdzie sklejają się w $(-\tfrac{2}{3}, +\infty)$.
 </div>
 
 ## Punktacja CKE

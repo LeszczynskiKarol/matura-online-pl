@@ -15,7 +15,7 @@ tresc: |
 odpowiedz: |
   $S = 27$ (dla $q = \tfrac{1}{3}$) lub $S = \dfrac{27}{2}$ (dla $q = -\tfrac{1}{3}$).
 pulapka: |
-  Najgorszy błąd: zapomnieć warunku "zbieżny" → $|q| &lt; 1$. Bez tego przyjąłbyś też $q^2 = 9$, czyli $q = \pm 3$, ale taki ciąg jest rozbieżny (suma nieskończona nie istnieje). Drugi błąd: jedna odpowiedź zamiast obu — treść wprost mówi "rozważ wszystkie przypadki".
+  Najgorszy błąd: zapomnieć warunku "zbieżny" → $|q| < 1$. Bez tego przyjąłbyś też $q^2 = 9$, czyli $q = \pm 3$, ale taki ciąg jest rozbieżny (suma nieskończona nie istnieje). Drugi błąd: jedna odpowiedź zamiast obu — treść wprost mówi "rozważ wszystkie przypadki".
 wymaganie: |
   VI.R3 — suma szeregu geometrycznego zbieżnego $S = \dfrac{a_1}{1 - q}$.
 podobne:
@@ -39,7 +39,7 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 ## Klucz teoretyczny
 
-**Szereg geometryczny zbieżny** istnieje wtedy i tylko wtedy, gdy $|q| &lt; 1$. Suma:
+**Szereg geometryczny zbieżny** istnieje wtedy i tylko wtedy, gdy $|q| < 1$. Suma:
 
 $$S = \frac{a_1}{1 - q}$$
 
@@ -101,7 +101,7 @@ $$t_1 = \frac{162}{18} = 9, \quad t_2 = \frac{2}{18} = \frac{1}{9}$$
 
 <div class="krok">
 
-**Wybierz $t$ spełniające warunek zbieżności** $|q| &lt; 1$, czyli $t = q^2 &lt; 1$:
+**Wybierz $t$ spełniające warunek zbieżności** $|q| < 1$, czyli $t = q^2 < 1$:
 
 - $t = 9$ → $q^2 = 9$, $|q| = 3$ — **rozbieżny**, **odrzucamy**.
 - $t = \tfrac{1}{9}$ → $q^2 = \tfrac{1}{9}$, $|q| = \tfrac{1}{3}$ — **zbieżny** ✓
@@ -155,7 +155,7 @@ Oba przypadki spełniają warunki — oba muszą być w odpowiedzi.
 
 Bez warunku „zbieżny" otrzymalibyśmy też $q^2 = 9$, czyli ciągi typu $(a_1, 3a_1, 9a_1, \ldots)$ — rozbieżne. **Nie mają sumy** w sensie szeregu nieskończonego.
 
-CKE wprost: pominięcie warunku $|q| &lt; 1$ przy wyborze rozwiązań → utrata punktów (najczęściej 1 z 4).
+CKE wprost: pominięcie warunku $|q| < 1$ przy wyborze rozwiązań → utrata punktów (najczęściej 1 z 4).
 </div>
 
 <div class="pulapka">

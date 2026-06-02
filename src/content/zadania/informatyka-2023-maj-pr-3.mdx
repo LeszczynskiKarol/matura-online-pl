@@ -25,7 +25,7 @@ tresc: |
 
   Dla danych z pliku pi_przyklad.txt poprawna odpowiedź to: 00 0 / 62 4 (minimalna liczba wystąpień: fragment 00, liczba wystąpień 0; maksymalna liczba wystąpień: fragment 62, liczba wystąpień 4).
 
-  **Informacja do zadań 3.3. i 3.4.** Skończony co najmniej 4-elementowy ciąg liczb (a₁, a₂, …, aₙ) jest *rosnąco-malejący*, jeśli można podzielić go na dwa ciągi, z których pierwszy jest rosnący, a drugi – malejący, tzn. jeśli istnieje takie k ∈ {2, 3, ..., n–2}, że aₖ &lt; aₖ₊₁ &lt; ... &lt; aₙ oraz aₖ₊₁ > aₖ₊₂ > ... > aₙ.
+  **Informacja do zadań 3.3. i 3.4.** Skończony co najmniej 4-elementowy ciąg liczb (a₁, a₂, …, aₙ) jest *rosnąco-malejący*, jeśli można podzielić go na dwa ciągi, z których pierwszy jest rosnący, a drugi – malejący, tzn. jeśli istnieje takie k ∈ {2, 3, ..., n–2}, że aₖ < aₖ₊₁ < ... < aₙ oraz aₖ₊₁ > aₖ₊₂ > ... > aₙ.
 
   Przykład: Ciąg (2, 5, 7, 9, 8, 3, 1) jest rosnąco-malejący, bo można podzielić na (2, 5, 7) malejący (jest 8, 3, 1) – odpowiednio – (2, 5, 7, 9) i (8, 3, 1). Ciąg (5, 9, 9, 4, 1) także jest rosnąco-malejący. Ciągi (2, 5, 7, 9, 8, 3, 1, 1, 1) (2, 5, 7, 8, 3, 4, 3, 4) oraz (5, 5, 3, 2, 1) nie są rosnąco-malejące.
 
@@ -82,7 +82,7 @@ odpowiedz: |
           if peak == 0 or peak == len(seq)-1:
               continue
           # sprawdź ściśle rosnący do peak i ściśle malejący po peak
-          if all(seq[k] &lt; seq[k+1] for k in range(peak)) and \
+          if all(seq[k] < seq[k+1] for k in range(peak)) and \
              all(seq[k] > seq[k+1] for k in range(peak, len(seq)-1)):
               count += 1
   print(count)
@@ -110,7 +110,7 @@ odpowiedz: |
   ```
 pulapka: |
   Zad. 3.2 — przy tie-break wymagane jest "mniejsza wartość liczbowa" zarówno dla min jak i dla max — to nieoczywiste przy max (większość intuicyjnie wzięłaby największą). Czytaj polecenie dosłownie.
-  Zad. 3.3 — definicja wymaga "co najmniej 4-elementowy" i ŚCIŚLE rosnący/malejący — żadne równości (5,9,9,4,1 NIE jest rosnąco-malejący, mimo że tak wygląda — patrz: arkusz mówi "także jest", ale to znaczy że spełnia, bo 5&lt;9 i 9>4>1, OK; z kolei 5,5,3,2,1 NIE bo 5=5 nie jest "<").
+  Zad. 3.3 — definicja wymaga "co najmniej 4-elementowy" i ŚCIŚLE rosnący/malejący — żadne równości (5,9,9,4,1 NIE jest rosnąco-malejący, mimo że tak wygląda — patrz: arkusz mówi "także jest", ale to znaczy że spełnia, bo 5<9 i 9>4>1, OK; z kolei 5,5,3,2,1 NIE bo 5=5 nie jest "<").
   Zad. 3.4 — szukamy NAJDŁUŻSZEGO; "tylko jeden taki" — gwarancja unikalności. Pozycję raportujemy jako numer wiersza w pi.txt (1-indexed).
 wymaganie: |
   Wymaganie ogólne II i III. Podstawa: algorytmy na ciągach (znajdowanie wzorca, ekstrema), iteracja po pliku, programowanie strukturalne, złożoność obliczeniowa.
@@ -132,7 +132,7 @@ import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
 
 ## Rozwiązanie
 
-### 3.1. Pary > 13
+### 3.1. Pary &gt; 13
 
 Składamy parę `(c[i], c[i+1])` w liczbę `10·c[i] + c[i+1]`, porównujemy z 13.
 

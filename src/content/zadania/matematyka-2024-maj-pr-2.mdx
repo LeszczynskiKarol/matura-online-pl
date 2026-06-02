@@ -11,7 +11,7 @@ tresc: |
 odpowiedz: |
   Granica jest równa −∞.
 pulapka: |
-  Najczęstszy błąd to próba obliczenia granicy w punkcie x = 2 (czyli policzenie 0/0 i napisanie "nieoznaczoność"). To granica JEDNOSTRONNA — z lewej strony, więc x &lt; 2. Druga pułapka: zapomnienie znaku — (x − 2)² jest zawsze ≥ 0, ale ze znakiem 0⁺, nie 0⁻ (kwadrat dowolnej liczby ≠ 0 jest dodatni).
+  Najczęstszy błąd to próba obliczenia granicy w punkcie x = 2 (czyli policzenie 0/0 i napisanie "nieoznaczoność"). To granica JEDNOSTRONNA — z lewej strony, więc x < 2. Druga pułapka: zapomnienie znaku — (x − 2)² jest zawsze ≥ 0, ale ze znakiem 0⁺, nie 0⁻ (kwadrat dowolnej liczby ≠ 0 jest dodatni).
 wymaganie: |
   XIII.R1 — obliczanie granic funkcji, w tym jednostronnych.
 podobne:
@@ -64,11 +64,11 @@ $$\frac{x^3 - 8}{(x - 2)^2} = \frac{(x - 2)(x^2 + 2x + 4)}{(x - 2)^2} = \frac{x^
 
 <div class="krok">
 
-**Zbadaj zachowanie licznika i mianownika osobno, gdy $x \to 2^-$** (czyli $x \to 2$ z lewej strony, więc $x &lt; 2$).
+**Zbadaj zachowanie licznika i mianownika osobno, gdy $x \to 2^-$** (czyli $x \to 2$ z lewej strony, więc $x < 2$).
 
 Licznik: $x^2 + 2x + 4 \to 4 + 4 + 4 = 12$ (skończona, dodatnia).
 
-Mianownik: $x - 2 \to 0$, ale od strony **ujemnej** (bo $x &lt; 2$ → $x - 2 &lt; 0$). Symbolicznie: $0^-$.
+Mianownik: $x - 2 \to 0$, ale od strony **ujemnej** (bo $x < 2$ → $x - 2 < 0$). Symbolicznie: $0^-$.
 
 </div>
 
@@ -93,7 +93,7 @@ $$\lim_{x \to 2^-} \frac{x^2 + 2x + 4}{x - 2} = \frac{12}{0^-} = -\infty$$
 
 Częsty błąd to pisanie „$\dfrac{12}{0} = +\infty$" bez analizy znaku mianownika. **Granica zwykła w punkcie, gdzie mianownik = 0 i licznik ≠ 0, nie istnieje** — trzeba osobno sprawdzić granice z lewej i prawej strony.
 
-Dla $x \to 2^-$: $x &lt; 2$ → $x - 2 &lt; 0$ → mianownik **ujemny** → wynik **minus** nieskończoność.
+Dla $x \to 2^-$: $x < 2$ → $x - 2 < 0$ → mianownik **ujemny** → wynik **minus** nieskończoność.
 
 Dla $x \to 2^+$: $x > 2$ → $x - 2 > 0$ → mianownik **dodatni** → granica jednostronna z prawej to $+\infty$.
 

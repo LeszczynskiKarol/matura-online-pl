@@ -50,7 +50,7 @@ odpowiedz: |
 
   ```python
   i = 0
-  while i &lt; len(pierwsze) and i &lt; len(drugie) and pierwsze[i] == drugie[i]:
+  while i < len(pierwsze) and i < len(drugie) and pierwsze[i] == drugie[i]:
       i += 1
   # zapis: "4.2. <i>"
   ```
@@ -83,7 +83,7 @@ odpowiedz: |
                   p2 = keys[j]
                   if (d // p1) % p2: continue
                   p3 = d // p1 // p2
-                  if p3 &lt; p2: continue
+                  if p3 < p2: continue
                   if p3 in c:
                       # check multiset
                       need = Counter([p1, p2, p3])

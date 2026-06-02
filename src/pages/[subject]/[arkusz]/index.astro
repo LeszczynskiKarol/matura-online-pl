@@ -211,10 +211,10 @@ const allNrs = Array.from({ length: arkusz.data.liczbaZadan }, (_, i) => i + 1);
                           {zadanie.data.topic} • {zadanie.data.punkty} pkt
                         </span>
                       </div>
-                      <p
-                        class="mt-1 text-sm text-[var(--color-text-muted)] line-clamp-2 [&_strong]:font-semibold [&_strong]:text-[var(--color-text)]"
-                        set:html={renderRichText(zadanie.data.tresc)}
-                      />
+                      <p class="mt-1 text-sm text-[var(--color-text-muted)] capitalize-first">
+                        {zadanie.data.typ.replace(/-/g, " ").replace(/zamkniete/, "zamknięte").replace(/otwarte rozszerzone/, "otwarte rozszerzone").replace(/otwarte krotkie/, "otwarte krótkie")}{" "}
+                        — kliknij, aby zobaczyć treść i rozwiązanie.
+                      </p>
                     </div>
                     <Icon
                       name="lucide:arrow-right"

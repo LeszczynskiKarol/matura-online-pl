@@ -31,9 +31,9 @@ tresc: |
 odpowiedz: |
   **12.1.** $81^{\log_3 x} = (3^4)^{\log_3 x} = 3^{4\log_3 x} = x^4$. $\frac{2\log_2\sqrt{27} \cdot \log_3 2}{3} = \frac{3 \log_2 3 \cdot \log_3 2}{3} = \frac{3 \cdot 1}{3} = 1$. Stąd $f(x) = x^4 + x^2 - 6x$.
 
-  **12.2.** $f'(x) = 4x^3 + 2x - 6 = 2(x-1)(2x^2+2x+3)$. Pierwiastek $x = 1$ (drugi czynnik $\Delta &lt; 0$ — bez pierwiastków). Minimum lokalne w $x = 1$: $f(1) = 1+1-6 = -4$.
+  **12.2.** $f'(x) = 4x^3 + 2x - 6 = 2(x-1)(2x^2+2x+3)$. Pierwiastek $x = 1$ (drugi czynnik $\Delta < 0$ — bez pierwiastków). Minimum lokalne w $x = 1$: $f(1) = 1+1-6 = -4$.
 pulapka: |
-  Najczęstszy błąd w 12.1: zapomnienie własności $a^{\log_a b} = b$ i $\log_a b \cdot \log_b a = 1$. W 12.2: brak sprawdzenia że $2x^2+2x+3$ nie ma pierwiastków ($\Delta = 4 - 24 = -20 &lt; 0$).
+  Najczęstszy błąd w 12.1: zapomnienie własności $a^{\log_a b} = b$ i $\log_a b \cdot \log_b a = 1$. W 12.2: brak sprawdzenia że $2x^2+2x+3$ nie ma pierwiastków ($\Delta = 4 - 24 = -20 < 0$).
 wymaganie: |
   I.6 — własności logarytmów; IV.3 — ekstrema funkcji przez pochodne.
 podobne:
@@ -115,13 +115,13 @@ $$4x^3 + 2x - 6 = (x-1)(4x^2 + 4x + 6) = 2(x-1)(2x^2 + 2x + 3)$$
 
 <div class="krok">
 
-**Sprawdź $2x^2 + 2x + 3$.** $\Delta = 4 - 24 = -20 &lt; 0$ — brak pierwiastków rzeczywistych. Wyraz $> 0$ dla wszystkich $x$.
+**Sprawdź $2x^2 + 2x + 3$.** $\Delta = 4 - 24 = -20 < 0$ — brak pierwiastków rzeczywistych. Wyraz $> 0$ dla wszystkich $x$.
 
 </div>
 
 <div class="krok">
 
-**Znak $f'(x)$:** $2(x-1) \cdot (\text{dodatnie})$. Czyli $f'(x) > 0 \iff x > 1$, $f'(x) &lt; 0 \iff x &lt; 1$. To znaczy:
+**Znak $f'(x)$:** $2(x-1) \cdot (\text{dodatnie})$. Czyli $f'(x) > 0 \iff x > 1$, $f'(x) < 0 \iff x < 1$. To znaczy:
 
 - $f$ maleje na $(0, 1)$
 - $f$ rośnie na $(1, +\infty)$
@@ -147,7 +147,7 @@ $$4x^3 + 2x - 6 = (x-1)(4x^2 + 4x + 6) = 2(x-1)(2x^2 + 2x + 3)$$
   - $\log_a b^k = k \log_a b$
   - $\log_a b \cdot \log_b a = 1$
 
-  **12.2.** Niesprawdzenie czy $2x^2 + 2x + 3$ ma pierwiastki. Bez tego nie wiadomo, czy są dodatkowe ekstrema. Sprawdzenie $\Delta = -20 &lt; 0$ pokazuje, że tylko $x = 1$.
+  **12.2.** Niesprawdzenie czy $2x^2 + 2x + 3$ ma pierwiastki. Bez tego nie wiadomo, czy są dodatkowe ekstrema. Sprawdzenie $\Delta = -20 < 0$ pokazuje, że tylko $x = 1$.
 
   **Wzór skróconego mnożenia $a^{\log_a b} = b$** — wynika z definicji logarytmu: $\log_a b$ to wykładnik, do którego trzeba podnieść $a$, by otrzymać $b$.
 </div>

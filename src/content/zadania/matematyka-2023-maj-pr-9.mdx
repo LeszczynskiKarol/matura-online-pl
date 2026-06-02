@@ -11,7 +11,7 @@ tresc: |
 
   **Rozwiąż nierówność**
 
-  $$\sqrt{x^2 + 4x + 4} &lt; \frac{25}{3} - \sqrt{x^2 - 6x + 9}$$
+  $$\sqrt{x^2 + 4x + 4} < \frac{25}{3} - \sqrt{x^2 - 6x + 9}$$
 
   **Zapisz obliczenia.**
 
@@ -19,7 +19,7 @@ tresc: |
 odpowiedz: |
   $x \in \left(-\frac{11}{3},\ \frac{14}{3}\right)$.
 
-  Zauważ: $\sqrt{x^2+4x+4} = |x+2|$, $\sqrt{x^2-6x+9} = |x-3|$. Nierówność: $|x+2| + |x-3| &lt; \frac{25}{3}$. Rozpatruje 3 przypadki znaków modułów.
+  Zauważ: $\sqrt{x^2+4x+4} = |x+2|$, $\sqrt{x^2-6x+9} = |x-3|$. Nierówność: $|x+2| + |x-3| < \frac{25}{3}$. Rozpatruje 3 przypadki znaków modułów.
 pulapka: |
   Najczęstszy błąd: $\sqrt{x^2} = x$ zamiast $|x|$. Pamiętaj — pierwiastek kwadratowy z liczby jest **zawsze nieujemny**, więc $\sqrt{a^2} = |a|$, nie $a$.
 wymaganie: |
@@ -55,7 +55,7 @@ $$x^2 - 6x + 9 = (x-3)^2 \implies \sqrt{(x-3)^2} = |x-3|$$
 
 Nierówność przyjmuje postać:
 
-$$|x+2| + |x-3| &lt; \frac{25}{3}$$
+$$|x+2| + |x-3| < \frac{25}{3}$$
 
 </div>
 
@@ -63,24 +63,24 @@ $$|x+2| + |x-3| &lt; \frac{25}{3}$$
 
 **Rozpatrz 3 przypadki znaków modułów** (krytyczne punkty: $x = -2$ i $x = 3$).
 
-**Przypadek 1: $x &lt; -2$.** Wtedy $|x+2| = -(x+2)$, $|x-3| = 3-x$:
+**Przypadek 1: $x < -2$.** Wtedy $|x+2| = -(x+2)$, $|x-3| = 3-x$:
 
-$$-(x+2) + (3-x) = -2x + 1 &lt; \frac{25}{3}$$
-$$-2x &lt; \frac{22}{3} \implies x > -\frac{11}{3}$$
+$$-(x+2) + (3-x) = -2x + 1 < \frac{25}{3}$$
+$$-2x < \frac{22}{3} \implies x > -\frac{11}{3}$$
 
-Razem z $x &lt; -2$: $-\frac{11}{3} &lt; x &lt; -2$.
+Razem z $x < -2$: $-\frac{11}{3} < x < -2$.
 
 </div>
 
 <div class="krok">
 
-**Przypadek 2: $-2 \leq x &lt; 3$.** Wtedy $|x+2| = x+2$, $|x-3| = 3-x$:
+**Przypadek 2: $-2 \leq x < 3$.** Wtedy $|x+2| = x+2$, $|x-3| = 3-x$:
 
 $$(x+2) + (3-x) = 5$$
 
-$5 &lt; \frac{25}{3}$? $5 = \frac{15}{3} &lt; \frac{25}{3}$ ✓
+$5 < \frac{25}{3}$? $5 = \frac{15}{3} < \frac{25}{3}$ ✓
 
-**Cały przedział $-2 \leq x &lt; 3$ jest rozwiązaniem.**
+**Cały przedział $-2 \leq x < 3$ jest rozwiązaniem.**
 
 </div>
 
@@ -88,10 +88,10 @@ $5 &lt; \frac{25}{3}$? $5 = \frac{15}{3} &lt; \frac{25}{3}$ ✓
 
 **Przypadek 3: $x \geq 3$.** Wtedy $|x+2| = x+2$, $|x-3| = x-3$:
 
-$$(x+2) + (x-3) = 2x - 1 &lt; \frac{25}{3}$$
-$$2x &lt; \frac{28}{3} \implies x &lt; \frac{14}{3}$$
+$$(x+2) + (x-3) = 2x - 1 < \frac{25}{3}$$
+$$2x < \frac{28}{3} \implies x < \frac{14}{3}$$
 
-Razem z $x \geq 3$: $3 \leq x &lt; \frac{14}{3}$.
+Razem z $x \geq 3$: $3 \leq x < \frac{14}{3}$.
 
 </div>
 
@@ -115,9 +115,9 @@ $$\left(-\frac{11}{3}, -2\right) \cup [-2, 3) \cup \left[3, \frac{14}{3}\right) 
   <div class="pulapka-label">Typowy błąd</div>
   **$\sqrt{a^2} = a$.** To prawda **tylko gdy $a \geq 0$**. W ogólności $\sqrt{a^2} = |a|$. Wskazówka CKE eksplicytnie o tym wspomina.
 
-  **Pominięcie 2. przypadku.** Czasem zdający rozpatruje tylko 2 przypadki ($x &lt; $ minimum punktów krytycznych, $x > $ maksimum). To **3 przypadki** — pośrodku też.
+  **Pominięcie 2. przypadku.** Czasem zdający rozpatruje tylko 2 przypadki ($x < $ minimum punktów krytycznych, $x > $ maksimum). To **3 przypadki** — pośrodku też.
 
-  **Niezauważenie, że w przypadku 2. nierówność redukuje się do $5 &lt; \frac{25}{3}$ niezależnie od $x$.** To geometryczna interpretacja: dla $x \in [-2, 3]$ suma odległości od $-2$ i od $3$ jest **stała** = 5 (długość odcinka).
+  **Niezauważenie, że w przypadku 2. nierówność redukuje się do $5 < \frac{25}{3}$ niezależnie od $x$.** To geometryczna interpretacja: dla $x \in [-2, 3]$ suma odległości od $-2$ i od $3$ jest **stała** = 5 (długość odcinka).
 </div>
 
 ## Po co to umieć
