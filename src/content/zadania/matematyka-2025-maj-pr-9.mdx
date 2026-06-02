@@ -109,13 +109,6 @@ Cztery rozwiązania.
 
 </div>
 
-<div class="odpowiedz">
-  <div>
-    <strong>Odpowiedź:</strong>
-    $$x \in \left\{ -\frac{2\pi}{3},\ -\frac{\pi}{6},\ \frac{\pi}{3},\ \frac{5\pi}{6} \right\}$$
-  </div>
-</div>
-
 ## Sprawdzenie liczbowe
 
 Dla $x = \tfrac{\pi}{3}$: $2x = \tfrac{2\pi}{3}$, $\cos(2x) = -\tfrac{1}{2}$, $\sin(2x) = \tfrac{\sqrt{3}}{2}$.
@@ -125,29 +118,6 @@ $$3 \cos(2x) + \sqrt{3} \sin(2x) = 3 \cdot (-\tfrac{1}{2}) + \sqrt{3} \cdot \tfr
 Dla $x = -\tfrac{\pi}{6}$: $2x = -\tfrac{\pi}{3}$, $\cos(2x) = \tfrac{1}{2}$, $\sin(2x) = -\tfrac{\sqrt{3}}{2}$.
 
 $$3 \cdot \tfrac{1}{2} + \sqrt{3} \cdot (-\tfrac{\sqrt{3}}{2}) = \tfrac{3}{2} - \tfrac{3}{2} = 0 \quad✓$$
-
-<div class="pulapka">
-  <div class="pulapka-label">Pułapka — dzielenie przez wyrażenie z niewiadomą</div>
-
-W kroku 3 podzieliliśmy przez $\cos(2x)$ — potencjalnie niebezpieczne. CKE zaakceptuje, gdy:
-
-- **explicit** napiszesz założenie $\cos(2x) \neq 0$
-- **sprawdzisz**, że ten przypadek wykluczony przez oryginalne równanie (jak zrobiliśmy w kroku 4).
-
-Pomijanie tego sprawdzenia → utrata 1 pkt (CKE wprost).
-</div>
-
-<div class="pulapka">
-  <div class="pulapka-label">Sposób alternatywny — bez dzielenia</div>
-
-Można uniknąć dzielenia, używając przekształcenia $A \sin \theta + B \cos \theta = R \sin(\theta + \varphi)$, gdzie $R = \sqrt{A^2 + B^2}$.
-
-Tu: $\sqrt{3} \sin(2x) + 3 \cos(2x) = 2\sqrt{3} \sin(2x + \tfrac{\pi}{3})$.
-
-Stąd $\sin(2x + \tfrac{\pi}{3}) = 0$, czyli $2x + \tfrac{\pi}{3} = k\pi$, $x = -\tfrac{\pi}{6} + \tfrac{k\pi}{2}$. Identyczny wynik.
-
-Ten sposób bardziej elegancki, ale wymaga znajomości wzoru z $R$.
-</div>
 
 ## Punktacja CKE
 

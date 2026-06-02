@@ -107,12 +107,6 @@ Wtedy $r = 15$, $y = 5 + 15 = 20$, $z = 5 + 75 = 80$.
 
 </div>
 
-<div class="odpowiedz">
-  <div>
-    <strong>Odpowiedź:</strong> $x = 5$, $y = 20$, $z = 80$.
-  </div>
-</div>
-
 ## Sposób II — przez iloraz $q$ ciągu geometrycznego
 
 Niech $q$ — iloraz $(x, y, z)$. Wtedy $y = xq$, $z = xq^2$.
@@ -126,22 +120,6 @@ Ponieważ ciąg jest rosnący, $x \neq 0$ i $q \neq 1$ (gdyby $q = 1$, mielibyś
 $$q = 4$$
 
 Z $x + y + z = 105$: $x + 4x + 16x = 105 \Rightarrow 21x = 105 \Rightarrow x = 5$. Wtedy $y = 20$, $z = 80$. Ten sam wynik, ale o połowę krótsze rachunki.
-
-<div class="pulapka">
-  <div class="pulapka-label">Pułapka dzielenia bez założenia (uwaga 1 z klucza CKE)</div>
-
-Klasyczny błąd: ze wzoru $r^2 = 3xr$ od razu napisać $r = 3x$ (dzielenie obu stron przez $r$), **pomijając przypadek $r = 0$**. CKE traktuje to jako dzielenie przez wyrażenie z niewiadomą bez zastrzeżenia — **maksimum 3 pkt zamiast 4**.
-
-Bezpieczna procedura: przenieść wszystko na jedną stronę ($r^2 - 3xr = 0$) i **wyłączyć przed nawias** ($r(r - 3x) = 0$). Wtedy dwa przypadki są widoczne, i odrzucenie $r = 0$ jako sprzecznego z „rosnący" jest jawne.
-</div>
-
-<div class="pulapka">
-  <div class="pulapka-label">Pułapka "rosnący" vs "ściśle monotoniczny"</div>
-
-Słowo „rosnący" w treści **eliminuje** przypadek ciągu stałego. Gdyby treść mówiła „niemalejący", to $r = 0$ byłby dopuszczalny i mielibyśmy dwa rozwiązania: $(35, 35, 35)$ oraz $(5, 20, 80)$.
-
-W matematycznym zapisie: „rosnący" = $a_n < a_{n+1}$ (ścisła nierówność).
-</div>
 
 ## Punktacja CKE
 

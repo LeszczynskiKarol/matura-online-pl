@@ -124,12 +124,6 @@ Skróć $\frac{54}{150}$: NWD$(54, 150) = 6$, więc:
 
 $$P(A | B) = \frac{9}{25}$$
 
-<div class="odpowiedz">
-  <div>
-    <strong>Odpowiedź:</strong> $P(A | B) = \dfrac{9}{25} = 0{,}36$.
-  </div>
-</div>
-
 ## Sprawdzenie przez wzór
 
 Można też policzyć inaczej:
@@ -137,32 +131,6 @@ Można też policzyć inaczej:
 $$P(A | B) = \frac{P(A \cap B)}{P(B)} = \frac{54/1296}{150/1296} = \frac{54}{150} = \frac{9}{25}$$
 
 (skala $1296 = 6^4$ skraca się — co potwierdza, że w modelu klasycznym dzielenie mocami jest równoważne dzieleniu prawdopodobieństw).
-
-<div class="pulapka">
-  <div class="pulapka-label">Pułapka — P(A) zamiast P(A|B)</div>
-
-**Bezwarunkowe** prawdopodobieństwo „co najmniej raz 6 w 4 rzutach" liczy się przez dopełnienie:
-
-$$P(A) = 1 - \left(\frac{5}{6}\right)^4 = 1 - \frac{625}{1296} = \frac{671}{1296} \approx 0{,}518$$
-
-To **inna** liczba niż $\tfrac{9}{25} = 0{,}36$. Warunek $B$ **zmienia** prawdopodobieństwo — i to jest sens warunkowej.
-
-Intuicja: gdy wiemy, że dwa rzuty to piątki, mamy tylko dwa „wolne" rzuty na osiągnięcie szóstki — szansa spada.
-</div>
-
-<div class="pulapka">
-  <div class="pulapka-label">Pułapka — co najmniej / dokładnie / co najwyżej</div>
-
-Trzy bliskie warianty:
-
-- „**co najmniej** raz 6" — przynajmniej jedna szóstka (1, 2, 3, lub 4 szóstki)
-- „**dokładnie** raz 6" — jedna i tylko jedna szóstka
-- „**co najwyżej** raz 6" — zero lub jedna
-
-Tutaj treść mówi „**co najmniej**" — uwzględniamy też przypadek dwóch szóstek wśród pozostałych dwóch rzutów.
-
-Sprawdzenie: gdyby treść mówiła „dokładnie raz 6", liczylibyśmy: pozycje piątek $\binom{4}{2} = 6$, pozycja szóstki spośród pozostałych $2 \cdot 1$, ostatnia pozycja z $\{1,2,3,4\}$ czyli $4$ — razem $6 \cdot 2 \cdot 4 = 48$, więc $P = 48/150 = 8/25$. Inna odpowiedź.
-</div>
 
 ## Punktacja CKE
 

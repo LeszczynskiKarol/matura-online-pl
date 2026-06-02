@@ -220,7 +220,25 @@ const typLabels: Record<string, string> = {
         </div>
       </section>
 
-      {/* Rozwiązanie */}
+      {/* Rozwiązanie z frontmatter (zawsze obecne — pelne rozwiazanie CKE) */}
+      {zadanie.data.odpowiedz && (
+        <section class="border-b border-[var(--color-border)]">
+          <div class="mx-auto max-w-3xl px-4 py-10 sm:px-6 lg:px-8">
+            <h2 class="font-mono text-xs font-semibold uppercase tracking-[0.1em] text-[var(--color-text-muted)]">
+              Rozwiązanie
+            </h2>
+            <div class="odpowiedz mt-3" set:html={renderRichText(zadanie.data.odpowiedz)} />
+            {zadanie.data.pulapka && (
+              <div class="pulapka mt-4">
+                <div class="pulapka-label">Typowy błąd / pułapka</div>
+                <div set:html={renderRichText(zadanie.data.pulapka)} />
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* Rozszerzone rozwiązanie z body MDX (kroki, dodatkowe wyjaśnienia) */}
       <section data-prose>
         <div class="prose mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
           <Content />

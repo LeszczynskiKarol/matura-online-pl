@@ -121,36 +121,7 @@ W przedziale $[0, 2\pi]$:
 
 ## Wszystkie rozwiązania razem
 
-<div class="odpowiedz">
-  <div>
-    <strong>Odpowiedź:</strong>
-    $$x \in \left\{ \frac{\pi}{6},\ \frac{\pi}{4},\ \frac{5\pi}{6},\ \frac{7\pi}{6},\ \frac{5\pi}{4},\ \frac{11\pi}{6} \right\}$$
-  </div>
-</div>
-
 Sześć rozwiązań — uporządkowane rosnąco.
-
-<div class="pulapka">
-  <div class="pulapka-label">Pułapka rozkładu sin(4x)</div>
-
-Najczęstszy błąd to **dwukrotne** użycie wzoru $\sin 2\alpha = 2 \sin \alpha \cos \alpha$, rozwijając $\sin(4x)$ aż do $\sin x \cos x \cos(2x) \cdot 4$. Owszem, to też prawda, ale zwiększa stopień trudności i nie pasuje do redukcji prawej strony.
-
-Klucz: zachowaj **argument $2x$** wszędzie jak długo się da — równanie ma piękną symetrię, w której sprowadza się do iloczynu z czynnikiem $2\cos(2x) - 1$.
-</div>
-
-<div class="pulapka">
-  <div class="pulapka-label">Pułapka dzielenia przez czynnik z niewiadomą</div>
-
-Z równania $\sin(2x) \cdot [2\cos(2x) - 1] = 2\cos(2x) - 1$ kuszące jest **podzielić obie strony przez $2\cos(2x) - 1$** i otrzymać $\sin(2x) = 1$.
-
-**Niewłaściwe!** Tracisz rozwiązania, dla których $2\cos(2x) - 1 = 0$. Bezpieczne: przenieś wszystko na jedną stronę i **wyłącz wspólny czynnik** — wtedy oba przypadki ujawniają się jako składniki iloczynu.
-</div>
-
-<div class="pulapka">
-  <div class="pulapka-label">Pułapka — pomylenie znaku przy "minus pi/6"</div>
-
-Pisząc $x = \pm \tfrac{\pi}{6} + k\pi$, łatwo zgubić rozwiązanie. Bezpieczna ścieżka: rozpisać **osobno** dwa szeregi $\tfrac{\pi}{6} + k\pi$ i $-\tfrac{\pi}{6} + k\pi$, podstawiać $k = 0, 1, 2, \ldots$, sprawdzać czy wynik mieści się w $[0, 2\pi]$. Powtarzaj aż wyjdzie poza zakres.
-</div>
 
 ## Punktacja CKE
 
