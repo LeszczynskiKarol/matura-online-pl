@@ -28,6 +28,8 @@ FILES = [
     ("2024-maj-pr", SOURCE_DIR / "2024" / "matura_2024_rozszerzony_angielski_nagrania_mp3.mp3"),
     ("2025-maj-pp", SOURCE_DIR / "2025" / "matura_2025_podstawowy_angielski_nagrania_mp3.mp3"),
     ("2025-maj-pr", SOURCE_DIR / "2025" / "matura_2025_rozszerzony_angielski_nagrania_mp3.mp3"),
+    ("2026-maj-pp", SOURCE_DIR / "2026" / "matura_2026_angielski_podstawowy_nagrania_mp3.mp3"),
+    ("2026-maj-pr", SOURCE_DIR / "2026" / "matura_2026_angielski_rozszerzony_nagrania_mp3.mp3"),
 ]
 
 # Polskie "zadanie pierwsze" wymaga modelu ktory rozumie kontekst.
