@@ -20,6 +20,9 @@ _tmp-*.mjs
 .idea/
 *.swp
 
+# Claude Code local config
+.claude/
+
 # OS
 .DS_Store
 Thumbs.db
