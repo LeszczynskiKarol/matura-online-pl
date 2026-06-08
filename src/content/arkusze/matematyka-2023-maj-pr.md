@@ -9,8 +9,8 @@ dataPubl: 11 maja 2023 r.
 liczbaZadan: 13
 liczbaPunktow: 50
 czasMinut: 180
-pdfArkuszUrl: https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-R0-100-2305-arkusz.pdf
-pdfKluczUrl: https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-R0-100-2305-zasady.pdf
+pdfArkuszUrl: https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_rozszerzony_arkusz_2023_zadania.pdf
+pdfKluczUrl: https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_rozszerzony_arkusz_2023_zasady_rozwiazywania_zadan_odpowiedzi.pdf
 opis: |
   Pierwszy egzamin maturalny z matematyki w Formule 2023, poziom rozszerzony, termin główny — 11 maja 2023 r.
   13 zadań, łącznie 50 punktów, 180 minut.

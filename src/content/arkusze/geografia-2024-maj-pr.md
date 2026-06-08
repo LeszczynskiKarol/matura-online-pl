@@ -9,8 +9,8 @@ dataPubl: 17 maja 2024 r.
 liczbaZadan: 31
 liczbaPunktow: 60
 czasMinut: 180
-pdfArkuszUrl: https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/geografia/MGEP-R0-100-2405-arkusz.pdf
-pdfKluczUrl: https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/geografia/zasady_oceniania/MGEP-R0-100-2405-zasady.pdf
+pdfArkuszUrl: https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_geografia_rozszerzony_2024_arkusz_pytania_zadania.pdf
+pdfKluczUrl: https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_geografia_rozszerzony_2024_zasady_oceniania_odpowiedzi.pdf
 opis: |
   Egzamin maturalny z geografii, **poziom rozszerzony**, termin główny — 17 maja 2024 r.
   Arkusz w Formule 2023: 31 zadań, 60 punktów, 180 minut. Zadania oparte o **mapę topograficzną Sudetów** (rejon Bystrzyca Kłodzka / Jezioro Bystrzyckie) i materiały źródłowe (przekroje geologiczne, klimagramy, profile glebowe, mapy synoptyczne, tabele statystyczne).

@@ -9,8 +9,8 @@ dataPubl: 9 maja 2023 r.
 liczbaZadan: 31
 liczbaPunktow: 46
 czasMinut: 180
-pdfArkuszUrl: https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/MMAP-P0-100-2305-arkusz.pdf
-pdfKluczUrl: https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/matematyka/zasady_oceniania/MMAP-P0-100-2305-zasady.pdf
+pdfArkuszUrl: https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_podstawowy_arkusz_2023_zadania.pdf
+pdfKluczUrl: https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_podstawowy_arkusz_2023_zasady_rozwiazywania_zadan_odpowiedzi.pdf
 opis: |
   Pierwszy egzamin maturalny z matematyki w Formule 2023, poziom podstawowy, termin główny — 9 maja 2023 r.
   31 zadań, łącznie 46 punktów, 180 minut.

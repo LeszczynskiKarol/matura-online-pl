@@ -10,7 +10,7 @@ liczbaZadan: 12
 liczbaPunktow: 60
 czasMinut: 120
 pdfArkuszUrl: https://static2.cke.gov.pl/EGZAMIN_MATURALNY/2025/Jezyk_angielski/poziom_podstawowy/MJAP-P0-100-A-2505-arkusz.pdf
-pdfKluczUrl: https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/zasady_oceniania/MJAP-P0-100-2505-zasady.pdf
+pdfKluczUrl: https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_2025_angielski_podstawowy_zasady_oceniania_odpowiedzi.pdf
 audioUrl: https://www.matura-online.pl/audio/jezyk-angielski/2025-maj-pp.mp3
 audioTranscriptUrl: https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_2025_angielski_podstawowy_transkrypcja_nagran.pdf
 opis: |

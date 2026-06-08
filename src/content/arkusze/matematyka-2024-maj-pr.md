@@ -9,8 +9,8 @@ dataPubl: 14 maja 2024 r.
 liczbaZadan: 15
 liczbaPunktow: 50
 czasMinut: 180
-pdfArkuszUrl: https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/matematyka/MMAR-R0-100-2405.pdf
-pdfKluczUrl: https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/matematyka/MMAR-R0-100-2405_zasady.pdf
+pdfArkuszUrl: https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_rozszerzony_arkusz_2024_zadania.pdf
+pdfKluczUrl: https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_rozszerzony_arkusz_2024_zasady_rozwiazywania_zadan_odpowiedzi.pdf
 opis: |
   Egzamin maturalny z matematyki, poziom rozszerzony, termin główny — 14 maja 2024 r.
   Arkusz w Formule 2023, 15 zadań, łącznie 50 punktów, 180 minut.

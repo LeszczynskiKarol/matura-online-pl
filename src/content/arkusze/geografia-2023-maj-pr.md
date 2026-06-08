@@ -9,8 +9,8 @@ dataPubl: 19 maja 2023 r.
 liczbaZadan: 27
 liczbaPunktow: 60
 czasMinut: 180
-pdfArkuszUrl: https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/geografia/MGEP-R0-100-2305-arkusz.pdf
-pdfKluczUrl: https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2023/geografia/zasady_oceniania/MGEP-R0-100-2305-zasady.pdf
+pdfArkuszUrl: https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_geografia_rozszerzony_2023_arkusz_pytania_zadania.pdf
+pdfKluczUrl: https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_geografia_rozszerzony_2023_zasady_oceniania_odpowiedzi.pdf
 opis: |
   Egzamin maturalny z geografii, **poziom rozszerzony**, termin główny — 19 maja 2023 r. (pierwsza matura w Formule 2023).
   Arkusz w Formule 2023: 27 zadań (wiele wielo-częściowych), 60 punktów, 180 minut. Zadania oparte o **mapę topograficzną wybrzeża Bałtyku** (rejon Sarbsko / Łebsko / Łeba) i materiały źródłowe (klimagramy, profile glebowe, mapy synoptyczne, fotografie odkrywki, dane statystyczne).

@@ -9,7 +9,7 @@ dataPubl: 15 maja 2025 r.
 liczbaZadan: 31
 liczbaPunktow: 60
 czasMinut: 180
-pdfArkuszUrl: https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/Geografia/MGEP-R0-100-2505-arkusz.pdf
+pdfArkuszUrl: https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_geografia_rozszerzony_2025_arkusz_pytania_zadania.pdf
 pdfKluczUrl: https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/zasady_oceniania/MGEP-R0-100-2505-zasady.pdf
 opis: |
   Egzamin maturalny z geografii, **poziom rozszerzony**, termin główny — 15 maja 2025 r.

@@ -9,8 +9,8 @@ dataPubl: 6 maja 2025 r.
 liczbaZadan: 31
 liczbaPunktow: 50
 czasMinut: 180
-pdfArkuszUrl: https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/matematyka/MMAP-P0-100-2505.pdf
-pdfKluczUrl: https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2025/matematyka/MMAP-P0-100-2505_zasady.pdf
+pdfArkuszUrl: https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_podstawowy_arkusz_2025_wersja_a.pdf
+pdfKluczUrl: https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_matematyka_podstawowy_arkusz_2025_zasady_rozwiazywania_zadan_odpowiedzi.pdf
 opis: |
   Egzamin maturalny z matematyki, poziom podstawowy, termin główny — 7 maja 2025 r.
   Arkusz w Formule 2023, 30 zadań, łącznie 46 punktów, 180 minut.

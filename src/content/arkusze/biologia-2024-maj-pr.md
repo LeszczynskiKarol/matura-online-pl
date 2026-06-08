@@ -9,7 +9,7 @@ liczbaZadan: 21
 liczbaPunktow: 60
 czasMinut: 180
 pdfArkuszUrl: https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/Biologia/MBIP-R0-100-A-2405-arkusz.pdf
-pdfKluczUrl: https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2024/zasady_oceniania/MBIP-R0-100-2405-zasady.pdf
+pdfKluczUrl: https://s3.eu-north-1.amazonaws.com/piszemy.com.pl/arkusze-maturalne/matura_biologia_2024_rozszerzony_zasady_oceniania_odpowiedzi.pdf
 opis: Arkusz CKE z biologii — poziom rozszerzony, sesja majowa 2024. 21 zadań, 60 pkt, 180 minut. Pełna pula tematów rozszerzonych.
 ---
 
