@@ -120,6 +120,21 @@ aws s3 sync dist/ "s3://${S3_BUCKET}/" \
   --include "sitemap*.xml" \
   --include "_commit.txt"
 
+# Pas bezpieczeństwa: audio (MP3 nagrań angielskiego) jest wykluczone z sync
+# wyżej, więc deploy NIGDY nie powinien go ruszać — ale na wypadek gdyby
+# --delete kiedykolwiek zmiótł prefiks audio/ (zdarzyło się raz), dosyncowujemy
+# go z public/audio/ bez --delete. --size-only → uploaduje tylko brakujące/zmienione,
+# więc przy nienaruszonym audio to ~0 transferu. public/audio jest w .gitignore,
+# na CI bez tych plików ten krok jest no-op (nic nie skasuje).
+if [ -d public/audio ]; then
+  echo ""
+  echo ">>> [3b/4] Audio safeguard: sync public/audio/ → s3://${S3_BUCKET}/audio/ (bez --delete)"
+  aws s3 sync public/audio/ "s3://${S3_BUCKET}/audio/" \
+    --size-only \
+    --content-type "audio/mpeg" \
+    --cache-control "public, max-age=31536000, immutable"
+fi
+
 # ── 4. CloudFront invalidation ─────────────────────────────
 echo ""
 echo ">>> [4/4] CloudFront invalidation..."
