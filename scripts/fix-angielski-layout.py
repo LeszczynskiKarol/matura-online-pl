@@ -61,12 +61,14 @@ def convert(text):
         add.append(f"zrodloPdfPage: {page}")
     add_block = "\n".join(add)
 
-    if re.search(r'^audioUrl:.*$', fm, re.MULTILINE):
-        fm = re.sub(r'^(audioUrl:.*)$', r'\1\n' + add_block.replace('\\', r'\\'),
-                    fm, count=1, flags=re.MULTILINE)
-    else:
-        fm = re.sub(r'^(hasAudio:.*)$', r'\1\n' + add_block.replace('\\', r'\\'),
-                    fm, count=1, flags=re.MULTILINE)
+    # Anchor: subject: jest ZAWSZE obecne (audioUrl/hasAudio tylko w słuchaniu).
+    # Wstawiamy po subject: — wcześniejsza wersja używała tylko hasAudio: i przy
+    # zadaniach nie-słuchaniowych gubiła pola (usuwała obraz z body, nie dodając go).
+    fm2 = re.sub(r'^(subject:.*)$', lambda m: m.group(1) + "\n" + add_block,
+                 fm, count=1, flags=re.MULTILINE)
+    if fm2 == fm:
+        return None, "nie znaleziono linii subject: (anchor)"
+    fm = fm2
 
     # 2) body: usuń bloki i nagłówki
     body = re.sub(r'<MaterialZrodlowy\b.*?/>\s*', '', body, flags=re.DOTALL)
