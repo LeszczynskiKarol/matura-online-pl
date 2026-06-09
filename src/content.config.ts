@@ -76,6 +76,12 @@ const zadania = defineCollection({
     podobne: z.array(z.string()).default([]), // slugi innych zadań
     hasAudio: z.boolean().default(false),     // zadanie ze słuchaniem (renderuje player)
     audioUrl: z.string().url().optional(),    // MP3 per zadanie (gdy mamy pocięte na pojedyncze pliki — dla angielskiego)
+    // Obraz strony arkusza CKE — renderowany przez szablon TUŻ POD linią "Źródło",
+    // przed sekcją Rozwiązanie (żeby odpowiedzi były pod arkuszem, nie nad nim).
+    zrodloImg: z.string().optional(),
+    zrodloImgAlt: z.string().optional(),
+    zrodloImgCaption: z.string().optional(),
+    zrodloPdfPage: z.number().optional(),
   }),
 });
 

@@ -144,7 +144,7 @@ function restoreKatex(html: string, map: Map<string, string>): string {
   return out;
 }
 
-export function renderRichText(text: string): string {
+export function renderRichText(text: string, opts?: { breaks?: boolean }): string {
   // Krok 1: wyciągnij wszystkie KaTeX-y do placeholderów.
   const { text: protectedText, map: katexMap } = extractKatex(text);
 
@@ -160,7 +160,8 @@ export function renderRichText(text: string): string {
   });
 
   // Krok 3: marked.parse() — pełny markdown (tabele, listy, nagłówki, paragrafy).
-  let html = marked.parse(withAbcd, { async: false }) as string;
+  // breaks=true → pojedynczy \n staje się <br> (np. lista odpowiedzi 1.1.—B w osobnych wierszach).
+  let html = marked.parse(withAbcd, { async: false, breaks: opts?.breaks ?? false }) as string;
 
   // Krok 4: wstaw z powrotem KaTeX-y.
   html = restoreKatex(html, katexMap);
