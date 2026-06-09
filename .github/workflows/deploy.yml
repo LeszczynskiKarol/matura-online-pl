@@ -41,13 +41,19 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Sync assets (long cache)
+        # WAŻNE: --exclude "audio/*" MUSI tu być. public/audio/ jest w .gitignore,
+        # więc na czystym klonie CI dist/audio jest puste — bez tego wykluczenia
+        # `--delete` kasuje cały prefiks audio/ na S3 (nagrania angielskiego).
+        # Audio wgrywa się osobno (scripts/upload-audio.sh / cut-and-upload.py),
+        # ten deploy NIGDY nie może go ruszać.
         run: |
           aws s3 sync dist/ s3://${{ secrets.S3_BUCKET }}/ \
             --delete \
             --cache-control "public, max-age=31536000, immutable" \
             --exclude "*.html" \
             --exclude "robots.txt" \
-            --exclude "sitemap*.xml"
+            --exclude "sitemap*.xml" \
+            --exclude "audio/*"
 
       - name: Sync HTML (no cache)
         run: |
