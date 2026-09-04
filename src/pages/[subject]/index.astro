@@ -7,6 +7,7 @@ import SiteFooter from "../../components/SiteFooter.astro";
 import IconBadge from "../../components/IconBadge.astro";
 import { siteConfig } from "../../config/site";
 import { renderRichText } from "../../lib/render-math";
+import { odmienArkusze, odmienZadania, sortujArkusze } from "../../lib/lata";
 
 export async function getStaticPaths() {
   const subjects = await getCollection("subjects");
@@ -22,11 +23,16 @@ const arkusze = (await getCollection("arkusze")).filter(
 );
 
 // Sortowanie arkuszy: nowsze rok i poziom PR przed PP
-const sortedArkusze = arkusze.sort((a, b) => {
-  if (a.data.rok !== b.data.rok) return b.data.rok - a.data.rok;
-  if (a.data.poziom !== b.data.poziom) return a.data.poziom === "pr" ? -1 : 1;
-  return 0;
-});
+const sortedArkusze = sortujArkusze(arkusze);
+
+// Podział na roczniki — arkusze grupujemy rokiem egzaminu, od najnowszego.
+const lata = [...new Set(sortedArkusze.map((a) => a.data.rok))].sort(
+  (a, b) => b - a
+);
+const rocznikiPrzedmiotu = lata.map((rok) => ({
+  rok,
+  arkusze: sortedArkusze.filter((a) => a.data.rok === rok),
+}));
 
 const allZadania = await getCollection("zadania");
 
@@ -113,8 +119,24 @@ const jsonLd = [
       <div class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
         <IconBadge icon="lucide:file-text" label="Arkusze CKE" tone="accent" />
         <h2 class="mt-4 font-serif text-[length:var(--text-fs-h2)] font-medium leading-tight tracking-tight">
-          Wybierz arkusz
+          Wybierz rocznik i arkusz
         </h2>
+
+        {lata.length > 1 && (
+          <div class="mt-6 flex flex-wrap items-center gap-2">
+            <span class="text-xs font-mono uppercase tracking-wide text-[var(--color-text-faint)]">
+              Skocz do roku
+            </span>
+            {lata.map((rok) => (
+              <a
+                href={`#rok-${rok}`}
+                class="rounded-full border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-3 py-1 font-mono text-sm text-[var(--color-text-muted)] no-underline transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-text)]"
+              >
+                {rok}
+              </a>
+            ))}
+          </div>
+        )}
 
         {sortedArkusze.length === 0 ? (
           <div class="mt-12 rounded-xl border border-dashed border-[var(--color-border)] bg-[var(--color-bg-subtle)] p-8 text-center">
@@ -124,46 +146,70 @@ const jsonLd = [
             </p>
           </div>
         ) : (
-          <div class="mt-10 grid gap-4 sm:grid-cols-2">
-            {sortedArkusze.map((a) => {
-              const arkuszSlug = a.id.replace(`${subject.data.slug}-`, "");
-              const zadaniaArkusza = allZadania.filter(
-                (z) => z.data.arkusz.id === a.id
-              );
-              const poziomLabel = a.data.poziom === "pp" ? "Poziom podstawowy" : "Poziom rozszerzony";
-              return (
-                <a
-                  href={`/${subject.data.slug}/${arkuszSlug}/`}
-                  class="card group flex flex-col gap-3 no-underline"
-                >
-                  <div class="flex items-center justify-between">
-                    <span class="text-xs font-mono uppercase tracking-wide text-[var(--color-text-muted)]">
-                      {a.data.symbol}
+          <div class="mt-10 space-y-12">
+            {rocznikiPrzedmiotu.map((r) => (
+              <div id={`rok-${r.rok}`} class="scroll-mt-24">
+                <div class="flex items-center justify-between gap-4 border-b border-[var(--color-border)] pb-3">
+                  <h3 class="flex items-baseline gap-3">
+                    <span class="font-mono text-2xl font-bold leading-none text-[var(--color-accent)]">
+                      {r.rok}
                     </span>
-                    <span class="text-xs font-mono uppercase tracking-wide text-[var(--color-accent)]">
-                      {poziomLabel}
+                    <span class="font-sans text-sm text-[var(--color-text-muted)]">
+                      {r.arkusze.length} {odmienArkusze(r.arkusze.length)}
                     </span>
-                  </div>
-                  <h3 class="font-serif text-xl font-medium leading-snug text-[var(--color-text)]">
-                    Matura {subject.data.nameDopelniacz}, {a.data.sesja} {a.data.rok}
                   </h3>
-                  <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[var(--color-text-muted)]">
-                    <span class="inline-flex items-center gap-1.5">
-                      <Icon name="lucide:list" class="h-3.5 w-3.5" />
-                      {a.data.liczbaZadan} zadań ({zadaniaArkusza.length} z rozwiązaniem)
-                    </span>
-                    <span class="inline-flex items-center gap-1.5">
-                      <Icon name="lucide:target" class="h-3.5 w-3.5" />
-                      {a.data.liczbaPunktow} pkt
-                    </span>
-                    <span class="inline-flex items-center gap-1.5">
-                      <Icon name="lucide:clock" class="h-3.5 w-3.5" />
-                      {a.data.czasMinut} min
-                    </span>
-                  </div>
-                </a>
-              );
-            })}
+                  <a
+                    href={`/matura/${r.rok}/`}
+                    class="flex-shrink-0 text-sm text-[var(--color-text-muted)] no-underline hover:text-[var(--color-text)]"
+                  >
+                    Cała matura {r.rok}
+                    <Icon name="lucide:arrow-right" class="ml-1 inline h-3.5 w-3.5" />
+                  </a>
+                </div>
+
+                <div class="mt-4 grid gap-4 sm:grid-cols-2">
+                  {r.arkusze.map((a) => {
+                    const arkuszSlug = a.id.replace(`${subject.data.slug}-`, "");
+                    const zadaniaArkusza = allZadania.filter(
+                      (z) => z.data.arkusz.id === a.id
+                    );
+                    const poziomLabel = a.data.poziom === "pp" ? "Poziom podstawowy" : "Poziom rozszerzony";
+                    return (
+                      <a
+                        href={`/${subject.data.slug}/${arkuszSlug}/`}
+                        class="card group flex flex-col gap-3 no-underline"
+                      >
+                        <div class="flex items-center justify-between gap-2">
+                          <span class="text-xs font-mono uppercase tracking-wide text-[var(--color-text-muted)]">
+                            {a.data.symbol}
+                          </span>
+                          <span class="flex-shrink-0 text-xs font-mono uppercase tracking-wide text-[var(--color-accent)]">
+                            {poziomLabel}
+                          </span>
+                        </div>
+                        <h4 class="font-serif text-xl font-medium leading-snug text-[var(--color-text)]">
+                          Matura {subject.data.nameDopelniacz}, {a.data.sesja} {a.data.rok}
+                        </h4>
+                        <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[var(--color-text-muted)]">
+                          <span class="inline-flex items-center gap-1.5">
+                            <Icon name="lucide:list" class="h-3.5 w-3.5" />
+                            {a.data.liczbaZadan} {odmienZadania(a.data.liczbaZadan)} ({zadaniaArkusza.length} z rozwiązaniem)
+                          </span>
+                          <span class="inline-flex items-center gap-1.5">
+                            <Icon name="lucide:target" class="h-3.5 w-3.5" />
+                            {a.data.liczbaPunktow} pkt
+                          </span>
+                          <span class="inline-flex items-center gap-1.5">
+                            <Icon name="lucide:clock" class="h-3.5 w-3.5" />
+                            {a.data.czasMinut} min
+                          </span>
+                        </div>
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
           </div>
         )}
       </div>

@@ -1,0 +1,254 @@
+---
+import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import IconBadge from "../../components/IconBadge.astro";
+import { siteConfig } from "../../config/site";
+import {
+  arkuszSlug,
+  lataZArkuszy,
+  odmienArkusze,
+  odmienZadania,
+  poziomLabel,
+  sortujArkusze,
+} from "../../lib/lata";
+
+export async function getStaticPaths() {
+  const arkusze = await getCollection("arkusze");
+  const lata = lataZArkuszy(arkusze);
+
+  return lata.map((rok, i) => ({
+    params: { rok: String(rok) },
+    props: {
+      rok,
+      // lata są posortowane malejąco → poprzedni rocznik jest DALEJ w tablicy
+      nowszy: lata[i - 1] ?? null,
+      starszy: lata[i + 1] ?? null,
+    },
+  }));
+}
+
+const { rok, nowszy, starszy } = Astro.props;
+
+const subjects = (await getCollection("subjects")).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const arkuszeRoku = (await getCollection("arkusze")).filter(
+  (a) => a.data.rok === rok
+);
+const idsArkuszy = new Set(arkuszeRoku.map((a) => a.id));
+const zadaniaRoku = (await getCollection("zadania")).filter((z) =>
+  idsArkuszy.has(z.data.arkusz.id)
+);
+
+// Grupowanie po przedmiocie, w kolejności `order` z content collection.
+const grupy = subjects
+  .map((subject) => ({
+    subject,
+    arkusze: sortujArkusze(
+      arkuszeRoku.filter((a) => a.data.subject.id === subject.id)
+    ),
+  }))
+  .filter((g) => g.arkusze.length > 0);
+
+const liczbaZadanArkusza = (arkuszId: string) =>
+  zadaniaRoku.filter((z) => z.data.arkusz.id === arkuszId).length;
+
+const formuly = [...new Set(arkuszeRoku.map((a) => a.data.formula))];
+const nazwyPrzedmiotow = grupy.map((g) => g.subject.data.name);
+
+const title = `Matura ${rok} — arkusze CKE i rozwiązania zadań`;
+const description = `Arkusze maturalne CKE z ${rok} roku: ${nazwyPrzedmiotow.join(", ")}. ${arkuszeRoku.length} ${odmienArkusze(arkuszeRoku.length)}, ${zadaniaRoku.length} ${odmienZadania(zadaniaRoku.length)} z pełnym rozwiązaniem krok po kroku.`;
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Strona główna", item: siteConfig.url },
+      { "@type": "ListItem", position: 2, name: "Roczniki", item: `${siteConfig.url}/matura/` },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: `Matura ${rok}`,
+        item: `${siteConfig.url}/matura/${rok}/`,
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: title,
+    description: description,
+    inLanguage: "pl-PL",
+    hasPart: grupy.flatMap((g) =>
+      g.arkusze.map((a) => ({
+        "@type": "LearningResource",
+        name: `Matura ${g.subject.data.nameDopelniacz}, ${a.data.sesja} ${a.data.rok}, ${poziomLabel(a.data.poziom).toLowerCase()}`,
+        url: `${siteConfig.url}/${g.subject.data.slug}/${arkuszSlug(a, g.subject.data.slug)}/`,
+      }))
+    ),
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <SiteHeader />
+
+  <main id="main">
+    <nav aria-label="Breadcrumb" class="border-b border-[var(--color-border)]">
+      <div class="mx-auto max-w-4xl px-4 py-3 text-sm sm:px-6 lg:px-8">
+        <ol class="flex flex-wrap items-center gap-2 text-[var(--color-text-muted)]">
+          <li><a href="/" class="no-underline hover:text-[var(--color-text)]">Strona główna</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href="/matura/" class="no-underline hover:text-[var(--color-text)]">Roczniki</a></li>
+          <li aria-hidden="true">/</li>
+          <li class="text-[var(--color-text)]" aria-current="page">Matura {rok}</li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="border-b border-[var(--color-border)]">
+      <div class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="flex items-start gap-4">
+          <span class="inline-flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
+            <Icon name="lucide:calendar-days" class="h-7 w-7" />
+          </span>
+          <div>
+            <p class="text-sm font-mono uppercase tracking-wide text-[var(--color-text-muted)]">
+              Rocznik · {formuly.join(" · ")}
+            </p>
+            <h1 class="mt-1 font-serif text-[length:var(--text-fs-h1)] font-medium leading-tight tracking-tight">
+              Matura {rok}
+            </h1>
+          </div>
+        </div>
+
+        <p class="mt-6 max-w-[65ch] text-lg leading-relaxed text-[var(--color-text-muted)]">
+          Wszystkie arkusze CKE z matury {rok}, które mamy rozwiązane — {arkuszeRoku.length}{" "}
+          {odmienArkusze(arkuszeRoku.length)} z {grupy.length}{" "}
+          {grupy.length === 1 ? "przedmiotu" : "przedmiotów"} i {zadaniaRoku.length}{" "}
+          {odmienZadania(zadaniaRoku.length)} z rozwiązaniem krok po kroku.
+        </p>
+
+        <div class="mt-8 flex flex-wrap gap-2">
+          {grupy.map((g) => (
+            <a
+              href={`#${g.subject.data.slug}`}
+              class="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-border)] bg-[var(--color-bg-elevated)] px-3 py-1.5 text-sm text-[var(--color-text-muted)] no-underline transition-colors hover:border-[var(--color-accent)] hover:text-[var(--color-text)]"
+            >
+              <Icon name={g.subject.data.icon} class="h-3.5 w-3.5" />
+              {g.subject.data.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="border-b border-[var(--color-border)]">
+      <div class="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+        <IconBadge icon="lucide:file-text" label="Arkusze CKE" tone="accent" />
+        <h2 class="mt-4 font-serif text-[length:var(--text-fs-h2)] font-medium leading-tight tracking-tight">
+          Arkusze z matury {rok}
+        </h2>
+
+        <div class="mt-10 space-y-12">
+          {grupy.map((g) => (
+            <div id={g.subject.data.slug} class="scroll-mt-24">
+              <div class="flex items-center justify-between gap-4 border-b border-[var(--color-border)] pb-3">
+                <h3 class="flex items-center gap-2.5 font-serif text-xl font-medium leading-tight">
+                  <span class="inline-flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-[var(--color-accent-soft)] text-[var(--color-accent)]">
+                    <Icon name={g.subject.data.icon} class="h-4 w-4" />
+                  </span>
+                  {g.subject.data.name}
+                </h3>
+                <a
+                  href={`/${g.subject.data.slug}/`}
+                  class="flex-shrink-0 text-sm text-[var(--color-text-muted)] no-underline hover:text-[var(--color-text)]"
+                >
+                  Wszystkie lata
+                  <Icon name="lucide:arrow-right" class="ml-1 inline h-3.5 w-3.5" />
+                </a>
+              </div>
+
+              <div class="mt-4 grid gap-4 sm:grid-cols-2">
+                {g.arkusze.map((a) => {
+                  const zRozwiazaniem = liczbaZadanArkusza(a.id);
+                  return (
+                    <a
+                      href={`/${g.subject.data.slug}/${arkuszSlug(a, g.subject.data.slug)}/`}
+                      class="card group flex flex-col gap-3 no-underline"
+                    >
+                      <div class="flex items-center justify-between gap-2">
+                        <span class="text-xs font-mono uppercase tracking-wide text-[var(--color-text-muted)]">
+                          {a.data.symbol}
+                        </span>
+                        <span class="flex-shrink-0 text-xs font-mono uppercase tracking-wide text-[var(--color-accent)]">
+                          {poziomLabel(a.data.poziom)}
+                        </span>
+                      </div>
+                      <h4 class="font-serif text-lg font-medium leading-snug text-[var(--color-text)]">
+                        Matura {g.subject.data.nameDopelniacz}, {a.data.sesja} {a.data.rok}
+                      </h4>
+                      <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-[var(--color-text-muted)]">
+                        <span class="inline-flex items-center gap-1.5">
+                          <Icon name="lucide:list" class="h-3.5 w-3.5" />
+                          {a.data.liczbaZadan} {odmienZadania(a.data.liczbaZadan)} ({zRozwiazaniem} z rozwiązaniem)
+                        </span>
+                        <span class="inline-flex items-center gap-1.5">
+                          <Icon name="lucide:target" class="h-3.5 w-3.5" />
+                          {a.data.liczbaPunktow} pkt
+                        </span>
+                      </div>
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          {starszy ? (
+            <a
+              href={`/matura/${starszy}/`}
+              class="inline-flex items-center gap-2 text-sm text-[var(--color-text-muted)] no-underline hover:text-[var(--color-text)]"
+            >
+              <Icon name="lucide:arrow-left" class="h-4 w-4" />
+              Matura {starszy}
+            </a>
+          ) : (
+            <span></span>
+          )}
+
+          <a
+            href="/matura/"
+            class="text-sm text-[var(--color-text-muted)] no-underline hover:text-[var(--color-text)]"
+          >
+            Wszystkie roczniki
+          </a>
+
+          {nowszy ? (
+            <a
+              href={`/matura/${nowszy}/`}
+              class="inline-flex items-center gap-2 text-sm text-[var(--color-text-muted)] no-underline hover:text-[var(--color-text)]"
+            >
+              Matura {nowszy}
+              <Icon name="lucide:arrow-right" class="h-4 w-4" />
+            </a>
+          ) : (
+            <span></span>
+          )}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>

@@ -8,6 +8,7 @@ import IconBadge from "../components/IconBadge.astro";
 import StatBlock from "../components/StatBlock.astro";
 import BackgroundDecor from "../components/BackgroundDecor.astro";
 import { siteConfig } from "../config/site";
+import { odmienArkusze, odmienZadania } from "../lib/lata";
 
 const subjects = (await getCollection("subjects")).sort(
   (a, b) => a.data.order - b.data.order
@@ -18,7 +19,20 @@ const zadania = await getCollection("zadania");
 const liczbaArkuszy = arkusze.length;
 const liczbaZadanZRozwiazaniem = zadania.length;
 const liczbaPrzedmiotow = subjects.length;
-const liczbaLatCKE = 4; // 2023-2026
+
+// Roczniki — liczone z arkuszy, nie wpisane na sztywno (dochodzą kolejne lata).
+const lata = [...new Set(arkusze.map((a) => a.data.rok))].sort((a, b) => b - a);
+const liczbaLatCKE = lata.length;
+const zakresLat = `${lata[lata.length - 1]}–${lata[0]}`;
+const rocznikiHome = lata.map((rok) => {
+  const arkuszeRoku = arkusze.filter((a) => a.data.rok === rok);
+  const idsArkuszy = new Set(arkuszeRoku.map((a) => a.id));
+  return {
+    rok,
+    liczbaArkuszy: arkuszeRoku.length,
+    liczbaZadan: zadania.filter((z) => idsArkuszy.has(z.data.arkusz.id)).length,
+  };
+});
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -83,7 +97,7 @@ const jsonLd = {
     <section class="border-b border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
       <div class="mx-auto grid max-w-6xl grid-cols-2 gap-x-6 gap-y-8 px-4 py-12 sm:grid-cols-4 sm:px-6 lg:px-8">
         <StatBlock value={liczbaPrzedmiotow.toString()} label="przedmiotów maturalnych" accent />
-        <StatBlock value={liczbaLatCKE.toString()} label="lat arkuszy CKE (2023–2026)" />
+        <StatBlock value={liczbaLatCKE.toString()} label={`lat arkuszy CKE (${zakresLat})`} />
         <StatBlock value={liczbaArkuszy.toString()} label="arkuszy w bazie" />
         <StatBlock value={liczbaZadanZRozwiazaniem.toString()} label="zadań z pełnym rozwiązaniem" />
       </div>
@@ -98,7 +112,7 @@ const jsonLd = {
             Wybierz przedmiot
           </h2>
           <p class="mt-4 text-lg text-[var(--color-text-muted)]">
-            Każdy przedmiot zawiera arkusze CKE z lat 2023–2026, podzielone na poziomy podstawowy i rozszerzony. Najpierw — matematyka.
+            Każdy przedmiot zawiera arkusze CKE z lat {zakresLat}, podzielone na roczniki oraz poziomy podstawowy i rozszerzony. Najpierw — matematyka.
           </p>
         </div>
 
@@ -134,6 +148,49 @@ const jsonLd = {
             </a>
           ))}
         </div>
+      </div>
+    </section>
+
+    {/* ════════ ROCZNIKI ════════ */}
+    <section id="roczniki" class="border-b border-[var(--color-border)] bg-[var(--color-bg-elevated)]">
+      <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+        <div class="max-w-2xl">
+          <IconBadge icon="lucide:calendar-days" label="Roczniki" tone="muted" />
+          <h2 class="mt-4 font-serif text-[length:var(--text-fs-h2)] font-medium leading-tight tracking-tight">
+            Albo według roku matury
+          </h2>
+          <p class="mt-4 text-lg text-[var(--color-text-muted)]">
+            Te same arkusze ułożone rokiem egzaminu — gdy chcesz przerobić całą sesję
+            majową danego rocznika albo sprawdzić, jak ten sam temat wracał w kolejnych latach.
+          </p>
+        </div>
+
+        <div class="mt-12 grid gap-3 sm:grid-cols-3 lg:grid-cols-5">
+          {rocznikiHome.map((r) => (
+            <a
+              href={`/matura/${r.rok}/`}
+              class="group flex flex-col gap-1 rounded-xl border border-[var(--color-border)] bg-[var(--color-bg)] p-5 no-underline transition-colors hover:border-[var(--color-accent)]"
+            >
+              <span class="font-mono text-2xl font-bold leading-none text-[var(--color-accent)]">
+                {r.rok}
+              </span>
+              <span class="mt-1 text-sm text-[var(--color-text-muted)]">
+                {r.liczbaArkuszy} {odmienArkusze(r.liczbaArkuszy)}
+              </span>
+              <span class="text-xs text-[var(--color-text-faint)]">
+                {r.liczbaZadan} {odmienZadania(r.liczbaZadan)} z rozwiązaniem
+              </span>
+            </a>
+          ))}
+        </div>
+
+        <a
+          href="/matura/"
+          class="mt-8 inline-flex items-center gap-2 text-[0.9375rem] text-[var(--color-accent)] no-underline hover:underline"
+        >
+          Zobacz wszystkie roczniki
+          <Icon name="lucide:arrow-right" class="h-4 w-4" />
+        </a>
       </div>
     </section>
 

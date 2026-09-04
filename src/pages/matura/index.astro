@@ -1,0 +1,150 @@
+---
+import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import IconBadge from "../../components/IconBadge.astro";
+import BackgroundDecor from "../../components/BackgroundDecor.astro";
+import { siteConfig } from "../../config/site";
+import { lataZArkuszy, odmienArkusze, odmienZadania } from "../../lib/lata";
+
+const subjects = (await getCollection("subjects")).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const arkusze = await getCollection("arkusze");
+const zadania = await getCollection("zadania");
+
+const lata = lataZArkuszy(arkusze);
+
+const roczniki = lata.map((rok) => {
+  const arkuszeRoku = arkusze.filter((a) => a.data.rok === rok);
+  const idsArkuszy = new Set(arkuszeRoku.map((a) => a.id));
+  const zadaniaRoku = zadania.filter((z) => idsArkuszy.has(z.data.arkusz.id));
+  const subjectIds = new Set(arkuszeRoku.map((a) => a.data.subject.id));
+  const formuly = [...new Set(arkuszeRoku.map((a) => a.data.formula))];
+  return {
+    rok,
+    liczbaArkuszy: arkuszeRoku.length,
+    liczbaZadan: zadaniaRoku.length,
+    przedmioty: subjects.filter((s) => subjectIds.has(s.id)),
+    formuly,
+  };
+});
+
+const najstarszy = lata[lata.length - 1];
+const najnowszy = lata[0];
+
+const title = "Matury rocznikami — arkusze CKE z lat " + najstarszy + "–" + najnowszy;
+const description = `Arkusze maturalne CKE uporządkowane rocznikami: od matury ${najstarszy} do ${najnowszy}. Każdy rocznik z listą przedmiotów, poziomów i pełnymi rozwiązaniami zadań krok po kroku.`;
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Strona główna", item: siteConfig.url },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Roczniki",
+        item: `${siteConfig.url}/matura/`,
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: title,
+    description: description,
+    inLanguage: "pl-PL",
+    hasPart: roczniki.map((r) => ({
+      "@type": "LearningResource",
+      name: `Matura ${r.rok} — arkusze CKE i rozwiązania zadań`,
+      url: `${siteConfig.url}/matura/${r.rok}/`,
+    })),
+  },
+];
+---
+
+<BaseLayout title={title} description={description} jsonLd={jsonLd}>
+  <SiteHeader />
+
+  <main id="main">
+    <nav aria-label="Breadcrumb" class="border-b border-[var(--color-border)]">
+      <div class="mx-auto max-w-6xl px-4 py-3 text-sm sm:px-6 lg:px-8">
+        <ol class="flex flex-wrap items-center gap-2 text-[var(--color-text-muted)]">
+          <li><a href="/" class="no-underline hover:text-[var(--color-text)]">Strona główna</a></li>
+          <li aria-hidden="true">/</li>
+          <li class="text-[var(--color-text)]" aria-current="page">Roczniki</li>
+        </ol>
+      </div>
+    </nav>
+
+    <section class="relative overflow-hidden border-b border-[var(--color-border)]">
+      <BackgroundDecor variant="mesh" intensity="subtle" />
+      <div class="relative mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <IconBadge icon="lucide:calendar-days" label="Roczniki matur" tone="accent" />
+        <h1 class="mt-4 font-serif text-[length:var(--text-fs-h1)] font-medium leading-tight tracking-tight">
+          Wybierz rocznik matury
+        </h1>
+        <p class="mt-4 max-w-[60ch] text-lg leading-relaxed text-[var(--color-text-muted)]">
+          Te same arkusze co w podziale na przedmioty, tylko ułożone rokiem egzaminu.
+          Przydaje się, gdy chcesz przerobić całą sesję majową danego roku — albo
+          porównać, jak ten sam temat wracał w kolejnych latach.
+        </p>
+        <p class="mt-4 max-w-[60ch] text-sm leading-relaxed text-[var(--color-text-faint)]">
+          Rocznik = rok egzaminu (arkusz z maja 2025 to matura 2025). Arkusze z lat
+          2023–2026 są w Formule 2023, wcześniejsze — w Formule 2015.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {roczniki.map((r) => (
+            <a
+              href={`/matura/${r.rok}/`}
+              class="card group flex flex-col gap-3 no-underline"
+            >
+              <div class="flex items-start justify-between">
+                <span class="font-mono text-3xl font-bold leading-none text-[var(--color-accent)]">
+                  {r.rok}
+                </span>
+                <span class="text-xs font-mono uppercase tracking-wide text-[var(--color-text-faint)]">
+                  {r.formuly.join(" · ")}
+                </span>
+              </div>
+              <h2 class="font-serif text-xl font-medium leading-tight text-[var(--color-text)]">
+                Matura {r.rok}
+              </h2>
+              <p class="text-sm leading-relaxed text-[var(--color-text-muted)]">
+                {r.przedmioty.map((s) => s.data.name).join(", ")}
+              </p>
+              <div class="mt-1 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-mono uppercase tracking-wide text-[var(--color-text-muted)]">
+                <span class="inline-flex items-center gap-1.5">
+                  <Icon name="lucide:file-text" class="h-3.5 w-3.5" />
+                  {r.liczbaArkuszy} {odmienArkusze(r.liczbaArkuszy)}
+                </span>
+                <span class="inline-flex items-center gap-1.5">
+                  <Icon name="lucide:list-checks" class="h-3.5 w-3.5" />
+                  {r.liczbaZadan} {odmienZadania(r.liczbaZadan)}
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+
+        <p class="mt-10 text-sm text-[var(--color-text-muted)]">
+          Wolisz szukać po przedmiocie?{" "}
+          <a href="/przedmioty/" class="text-[var(--color-accent)]">
+            Zobacz wszystkie przedmioty maturalne
+          </a>.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</BaseLayout>

@@ -7,6 +7,7 @@ import SiteFooter from "../../components/SiteFooter.astro";
 import IconBadge from "../../components/IconBadge.astro";
 import BackgroundDecor from "../../components/BackgroundDecor.astro";
 import { siteConfig } from "../../config/site";
+import { odmienArkusze } from "../../lib/lata";
 
 const subjects = (await getCollection("subjects")).sort(
   (a, b) => a.data.order - b.data.order
@@ -18,7 +19,7 @@ const liczbaArkuszyDla = (subjectId: string) =>
 
 const title = "Przedmioty maturalne — rozwiązania zadań CKE";
 const description =
-  "Wszystkie przedmioty maturalne z rozwiązaniami zadań CKE: matematyka, język polski, angielski, biologia, chemia, fizyka i inne. Arkusze z lat 2023–2026, krok po kroku.";
+  "Wszystkie przedmioty maturalne z rozwiązaniami zadań CKE: matematyka, język polski, angielski, biologia, chemia, fizyka i inne. Arkusze pogrupowane rocznikami, krok po kroku.";
 
 const jsonLd = [
   {
@@ -71,8 +72,12 @@ const jsonLd = [
           Wybierz przedmiot
         </h1>
         <p class="mt-4 max-w-[60ch] text-lg leading-relaxed text-[var(--color-text-muted)]">
-          Każdy przedmiot zawiera arkusze CKE z lat 2023–2026, podzielone na poziom podstawowy
-          i rozszerzony. Rozwiązania krok po kroku — z omówieniem pułapek i punktacji.
+          Każdy przedmiot zawiera arkusze CKE pogrupowane rocznikami, w podziale na poziom
+          podstawowy i rozszerzony. Rozwiązania krok po kroku — z omówieniem pułapek i punktacji.
+        </p>
+        <p class="mt-4 text-[0.9375rem] text-[var(--color-text-muted)]">
+          Szukasz konkretnego roku?{" "}
+          <a href="/matura/" class="text-[var(--color-accent)]">Przeglądaj matury rocznikami</a>.
         </p>
       </div>
     </section>
@@ -113,7 +118,7 @@ const jsonLd = [
                 {liczba > 0 && (
                   <span class="mt-1 inline-flex items-center gap-1.5 text-xs font-mono uppercase tracking-wide text-[var(--color-text-muted)]">
                     <Icon name="lucide:file-text" class="h-3.5 w-3.5" />
-                    {liczba} {liczba === 1 ? "arkusz" : "arkuszy"}
+                    {liczba} {odmienArkusze(liczba)}
                   </span>
                 )}
               </a>
