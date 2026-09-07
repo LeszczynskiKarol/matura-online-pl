@@ -1,0 +1,149 @@
+---
+arkusz: fizyka-2026-maj-pr
+subject: fizyka
+nr: 11
+punkty: 7
+typ: otwarte-rozszerzone
+topic: fizyka jadrowa, rozpad beta minus, deficyt masy, czas polowicznego rozpadu, wykres logarytmiczny
+difficulty: 4
+tresc: |
+  Izotop neonu $^{23}\text{Ne}$ ulega rozpadowi promieniotwórczemu w wyniku przemiany $\beta^-$. Powstają: cząstka $\beta^-$ (elektron), jądro pewnego pierwiastka $X$ oraz antyneutrino elektronowe $\tilde{\nu}$ (ładunek zerowy, masa pomijalna).
+
+  **11.1.** (0–2) Uzupełnij schemat rozpadu, wpisując liczby atomową i masową oraz symbol (lub nazwę) pierwiastka $X$:
+
+  $$^{23}_{10}\text{Ne} \rightarrow\ ^{\ldots}_{\ldots}X + \beta^- + ^{0}_{0}\tilde{\nu}$$
+
+  **11.2.** (0–1) Tuż przed rozpadem jądro neonu było nieruchome. Oceń prawdziwość stwierdzeń (P/F):
+  1. Masa jądra neonu $^{23}\text{Ne}$ jest większa od łącznej sumy mas produktów rozpadu $\beta^-$ tego jądra.
+  2. Produkty rozpadu $\beta^-$ jądra neonu $^{23}\text{Ne}$ uzyskują energię kinetyczną.
+
+  **11.3.** (0–4) Badano próbkę promieniotwórczą zawierającą jądra $^{23}\text{Ne}$. Łączną masę jąder pozostających w próbce po czasie $t$ oznaczono jako $m$. Na wykresie przedstawiono zależność $\log_{10} m$ od czasu $t$ (linia prosta od punktu $(0;\ 1{,}4)$, przecinająca oś czasu przy $t \approx 2{,}9$ min). Na podstawie wykresu oblicz $T$ — czas połowicznego rozpadu.
+odpowiedz: |
+  **11.1.**
+
+  W rozpadzie $\beta^-$ neutron w jądrze zamienia się w proton, elektron i antyneutrino. Liczba masowa **się nie zmienia**, liczba atomowa **rośnie o 1**:
+
+  $$^{23}_{10}\text{Ne} \rightarrow\ ^{23}_{11}\text{Na} + \beta^- + ^{0}_{0}\tilde{\nu}$$
+
+  $$\boxed{X = ^{23}_{11}\text{Na} \text{ — sód}}$$
+
+  **11.2. PP**
+
+  **Stwierdzenie 1 — prawda.** Rozpad zachodzi samorzutnie, więc musi być energetycznie korzystny: masa jądra macierzystego jest **większa** od sumy mas produktów. Ta różnica (deficyt masy) zamienia się w energię zgodnie z $E = \Delta m c^2$.
+
+  **Stwierdzenie 2 — prawda.** Jądro przed rozpadem spoczywało, a energia z deficytu masy musi się gdzieś podziać — zamienia się w **energię kinetyczną produktów**. Dodatkowo z zasady zachowania pędu: skoro pęd początkowy był zerowy, produkty muszą się rozbiegać w przeciwne strony, a więc mają niezerowe prędkości.
+
+  **11.3.**
+
+  **Krok 1. Odczyt wartości początkowej.** Z wykresu dla $t = 0$: $\log_{10} m_0 = 1{,}4$.
+
+  **Krok 2. Wartość logarytmu dla połowy masy.** Szukamy chwili, w której zostanie $m_0/2$:
+
+  $$\log_{10}\!\left(\frac{m_0}{2}\right) = \log_{10} m_0 - \log_{10} 2 = 1{,}4 - 0{,}30 \approx 1{,}1$$
+
+  **Krok 3. Odczyt czasu z wykresu.** Wartość $\log_{10} m = 1{,}1$ prosta osiąga dla
+
+  $$\boxed{T \approx 0{,}6\ \text{min}}$$
+
+  (CKE uznaje wyniki z przedziału $0{,}60$–$0{,}65$ min.)
+
+  **Sposób alternatywny — przez współczynnik kierunkowy.** Prosta przecina oś $t$ (czyli $\log_{10} m = 0$) przy $t \approx 2{,}9$ min, więc jej nachylenie wynosi
+
+  $$k = \frac{1{,}4 - 0}{2{,}9\ \text{min}} \approx 0{,}48\ \frac{1}{\text{min}}, \qquad \log_{10} m = 1{,}4 - kt$$
+
+  Warunek połowicznego rozpadu $\log_{10} 2 = kT$ daje
+
+  $$T = \frac{\log_{10} 2}{k} = \frac{0{,}301}{0{,}48\ \text{min}^{-1}} \approx 0{,}63\ \text{min}$$
+pulapka: |
+  **W 11.1 najczęstszy błąd to zmniejszenie liczby atomowej.** W rozpadzie $\beta^-$ emitowany jest **elektron o ładunku $-1$**, więc żeby ładunek się bilansował, jądro musi zyskać $+1$: $Z = 10 \to 11$. Sód, nie fluor. Reguła: $\beta^-$ przesuwa pierwiastek **w prawo** w układzie okresowym, $\beta^+$ i rozpad $\alpha$ — w lewo.
+
+  **Liczba masowa w rozpadzie beta się nie zmienia.** Elektron ma $A = 0$, antyneutrino też. Zapis $^{22}_{11}$ albo $^{24}_{11}$ to automatyczne zero.
+
+  **W 11.2 pierwsze stwierdzenie bywa uznawane za fałszywe „bo masa się zachowuje".** Nie zachowuje się — zachowuje się **energia całkowita**, a masa spoczynkowa może się częściowo zamienić w energię kinetyczną. Bez deficytu masy rozpad w ogóle by nie zachodził.
+
+  **W 11.3 największa pułapka to potraktowanie wykresu jak zwykłej krzywej zaniku.** Na osi pionowej jest **logarytm** masy, a nie masa. Odczytanie „połowy wysokości wykresu" (czyli $\log_{10} m = 0{,}7$) daje $t \approx 1{,}45$ min — wynik ponad dwukrotnie za duży. Połowę masy odpowiada odjęcie od logarytmu wartości $\log_{10} 2 \approx 0{,}30$, a nie podzielenie logarytmu przez 2.
+
+  **Warto zapamiętać $\log_{10} 2 \approx 0{,}301$** — to jedna z niewielu wartości logarytmu, których na fizyce po prostu trzeba znać na pamięć (albo umieć odczytać z tablic).
+
+  **Sprawdź jednostkę.** Oś czasu jest w minutach, więc odpowiedź to ok. 0,6 min ≈ 37 s. Podanie „0,6 s" albo „0,6 h" kosztuje punkt za wynik.
+wymaganie: |
+  II. Rozwiązywanie problemów z wykorzystaniem praw i zależności fizycznych. Fizyka jądrowa: rozpady promieniotwórcze, prawo rozpadu, czas połowicznego rozpadu, deficyt masy i równoważność masy i energii. Analiza wykresu w skali logarytmicznej.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2026-maj-pr/zad-11.webp"
+  alt="Zadanie 11 — fizyka 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MFAP-R0-100-A-2605 — zadanie 11."
+  zrodlo="CKE, matura maj 2026, fizyka PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Fizyka/MFAP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Trzy rozpady — jak zmieniają się $A$ i $Z$
+
+| Rozpad | Emitowana cząstka | $A$ | $Z$ | Kierunek w układzie okresowym |
+|---|---|---|---|---|
+| $\alpha$ | $^{4}_{2}\text{He}$ | $-4$ | $-2$ | dwa pola w lewo |
+| $\beta^-$ | elektron $^{0}_{-1}e$ + $\tilde{\nu}$ | bez zmian | $+1$ | jedno pole **w prawo** |
+| $\beta^+$ | pozyton $^{0}_{+1}e$ + $\nu$ | bez zmian | $-1$ | jedno pole w lewo |
+
+Mechanizm rozpadu $\beta^-$ na poziomie nukleonu:
+
+$$n \rightarrow p + e^- + \tilde{\nu}_e$$
+
+Jądro neonu ma 10 protonów i 13 neutronów. Po rozpadzie: 11 protonów i 12 neutronów — nadal 23 nukleony, ale to już sód.
+
+## Dlaczego rozpad wymaga deficytu masy
+
+$$m_{\text{Ne}} > m_{\text{Na}} + m_e \quad\Rightarrow\quad E_k = \left(m_{\text{Ne}} - m_{\text{Na}} - m_e\right)c^2 > 0$$
+
+Gdyby ta różnica była ujemna, rozpad byłby energetycznie zabroniony — jądro musiałoby skądś pobrać energię, a spoczywające, izolowane jądro nie ma skąd. To ogólna reguła: **każdy samorzutny rozpad idzie w stronę mniejszej masy spoczynkowej.**
+
+Energia kinetyczna rozdziela się między trzy produkty, przy czym antyneutrino zabiera zmienną część — dlatego widmo energetyczne elektronów w rozpadzie beta jest **ciągłe**, a nie liniowe jak w rozpadzie $\alpha$.
+
+## Wykres logarytmiczny — dlaczego z niego prosta
+
+Prawo rozpadu ma postać wykładniczą:
+
+$$m(t) = m_0 \cdot 2^{-t/T}$$
+
+Po zlogarytmowaniu obu stron:
+
+$$\log_{10} m = \log_{10} m_0 - \frac{t}{T}\log_{10} 2$$
+
+To **równanie prostej** $y = b - kt$ o współczynniku kierunkowym $k = \dfrac{\log_{10} 2}{T}$. Stąd dwie równoważne drogi do wyniku:
+
+| Metoda | Co odczytać z wykresu | Rachunek |
+|---|---|---|
+| **odczyt punktowy** | $t$ dla $\log_{10} m = 1{,}4 - 0{,}30 = 1{,}1$ | bezpośrednio $T$ |
+| **nachylenie** | dwa punkty prostej, np. $(0;\ 1{,}4)$ i $(2{,}9;\ 0)$ | $T = \log_{10} 2 / k$ |
+
+Obie dają ten sam wynik, ok. 0,6 min. Metoda przez nachylenie jest dokładniejsza, bo korzysta z dwóch odległych punktów zamiast jednego odczytu.
+
+## Kolejne czasy połowicznego rozpadu
+
+Ponieważ na osi jest logarytm, kolejne połowienia masy odkładają się na wykresie w **równych odstępach pionowych** po 0,30:
+
+| $t$ | pozostała część $m_0$ | $\log_{10} m$ |
+|---|---|---|
+| 0 | 1 | 1,40 |
+| $T \approx 0{,}62$ min | $1/2$ | 1,10 |
+| $2T \approx 1{,}25$ min | $1/4$ | 0,80 |
+| $3T \approx 1{,}87$ min | $1/8$ | 0,50 |
+| $4T \approx 2{,}5$ min | $1/16$ | 0,20 |
+
+Ten rytm to najprostsze sprawdzenie poprawności odczytu: jeśli odstępy między kolejnymi połowieniami nie wychodzą równe, gdzieś jest błąd.
+
+## Punktacja CKE
+
+- **11.1.** 2 pkt — poprawne liczby $^{23}_{11}$ **oraz** symbol/nazwa (Na, sód);
+  1 pkt — same poprawne liczby **albo** sam poprawny symbol.
+- **11.2.** 1 pkt — **PP** (odpowiedź niepełna = 0 pkt).
+- **11.3.** 4 pkt — poprawna metoda **i** wynik z przedziału $0{,}60$–$0{,}65$ min z jednostką;
+  3 pkt — poprawne obliczenie $\log_{10}(m_0/2) \approx 1{,}1$ (albo błędna wartość, ale konsekwentny odczyt czasu);
+  niższe progi — częściowe wykorzystanie prawa rozpadu i własności logarytmu.
+- **Razem: 7 pkt.**

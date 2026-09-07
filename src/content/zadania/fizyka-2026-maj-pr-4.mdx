@@ -1,0 +1,135 @@
+---
+arkusz: fizyka-2026-maj-pr
+subject: fizyka
+nr: 4
+punkty: 7
+typ: otwarte-rozszerzone
+topic: fale ultradzwiekowe, powierzchnie falowe, czestotliwosc, natezenie fali, dyfrakcja, zalamanie fali
+difficulty: 4
+tresc: |
+  W ośrodku $M_1$ rozchodzi się ultradźwiękowa fala płaska $\mathcal{F}$ o **ustalonej amplitudzie**. W zadaniach 4.1–4.4 pomijamy pochłanianie fali w ośrodku.
+
+  **Informacja do 4.1–4.2.** Na rysunku 1. przedstawiono obraz fali $\mathcal{F}$ w chwili $t_0$. Pionowe odcinki odpowiadają powierzchniom falowym odległym od siebie o długość fali $\lambda_1$. Wyróżniono odcinki $K$ i $L$ pokrywające się z dwiema powierzchniami falowymi. Czas przejścia fali od $K$ do $L$ wynosi $\Delta t_{KL} = 0{,}07\ \text{ms}$.
+
+  **4.1.** (0–2) Oblicz $f$ — częstotliwość opisanej fali ultradźwiękowej.
+
+  **4.2.** (0–1) Natężenie fali $\mathcal{F}$ w połowie odległości między odcinkami $K$ i $L$ w porównaniu z natężeniem tej fali na odcinku $K$ jest: **A.** 4 razy większe · **B.** 2 razy większe · **C.** $\sqrt{2}$ razy większe · **D.** takie samo.
+
+  **4.3.** (0–1) Fala płaska $\mathcal{F}$ dociera do przeszkody z wąską szczeliną (ten sam ośrodek $M_1$ po obu stronach). Na którym rysunku (A–D) prawidłowo przedstawiono kolejne powierzchnie falowe po przejściu przez szczelinę?
+
+  **4.4.** (0–3) Fala pada z ośrodka $M_1$ na granicę z ośrodkiem $M_2$ pod kątem $\alpha_1$, przy czym $v_1 = 2v_2$. Dorysuj kierunek biegu fali w $M_2$ oraz kontynuacje powierzchni falowych. Wpisz wartość ilorazu $\dfrac{\lambda_1}{\lambda_2}$.
+odpowiedz: |
+  **4.1.**
+
+  Z rysunku odczytujemy, że odległość między odcinkami $K$ i $L$ mieści dokładnie **dziewięć** długości fali:
+
+  $$\Delta t_{KL} = 9T \quad\Rightarrow\quad T = \frac{\Delta t_{KL}}{9} = \frac{0{,}07\ \text{ms}}{9} = 7{,}\overline{7}\cdot 10^{-6}\ \text{s}$$
+
+  $$f = \frac{1}{T} = \frac{9}{7\cdot 10^{-5}\ \text{s}} \approx 1{,}29\cdot 10^5\ \text{Hz}$$
+
+  $$\boxed{f \approx 1{,}3\cdot 10^5\ \text{Hz} = 129\ \text{kHz}}$$
+
+  **4.2. D** — takie samo.
+
+  Natężenie fali jest proporcjonalne do **kwadratu amplitudy**: $I \propto A^2$. We wstępie zapisano, że fala ma ustaloną amplitudę i że pomijamy pochłanianie — więc każdy punkt ośrodka drga z tą samą amplitudą, a natężenie jest wszędzie takie samo.
+
+  **4.3. A**
+
+  Za wąską szczeliną (o szerokości porównywalnej z $\lambda$) zachodzi **dyfrakcja**: szczelina staje się nowym źródłem punktowym, a powierzchnie falowe są **koliste**, rozchodzące się promieniście od szczeliny. Nie pozostają płaskie i nie zwężają się do wiązki.
+
+  **4.4.**
+
+  Częstotliwość fali **nie zmienia się** przy przejściu do drugiego ośrodka — zmienia się prędkość, a z nią długość fali:
+
+  $$\lambda_1 = \frac{v_1}{f}, \qquad \lambda_2 = \frac{v_2}{f} \quad\Rightarrow\quad \frac{\lambda_1}{\lambda_2} = \frac{v_1}{v_2}$$
+
+  $$\boxed{\frac{\lambda_1}{\lambda_2} = 2}$$
+
+  **Rysunek.** Ponieważ $v_2 < v_1$, fala przechodzi do ośrodka **wolniejszego**, więc:
+
+  - kąt załamania jest **mniejszy** od kąta padania — kierunek biegu fali w $M_2$ załamuje się **w stronę normalnej**,
+  - powierzchnie falowe w $M_2$ pozostają prostopadłe do nowego kierunku biegu, czyli są **odchylone w lewo** względem linii $b, c, d, e, f$ w $M_1$,
+  - odstęp między nimi jest **dwa razy mniejszy** niż w $M_1$.
+pulapka: |
+  **W 4.1 najczęstszy błąd to policzenie powierzchni falowych zamiast odstępów.** Jeżeli między $K$ a $L$ narysowano 10 linii, to odstępów jest 9 — i to one odpowiadają długościom fali. Klasyczny „błąd płotu": liczba przęseł jest o jeden mniejsza niż liczba słupków.
+
+  **Druga pułapka w 4.1: 0,07 ms to nie 0,07 s.** $1\ \text{ms} = 10^{-3}\ \text{s}$, więc $\Delta t_{KL} = 7\cdot 10^{-5}\ \text{s}$. Pominięcie tego przeliczenia daje wynik 1000 razy za mały — i częstotliwość 129 Hz, która wcale nie jest ultradźwiękowa.
+
+  **W 4.2 kusi myślenie „im dalej od źródła, tym słabiej".** To prawda dla fali kulistej, gdzie energia rozkłada się na coraz większą powierzchnię. Tu mamy falę **płaską** o ustalonej amplitudzie i bez pochłaniania — natężenie się nie zmienia. Zadanie sprawdza, czy czytasz założenia z treści.
+
+  **W 4.3 kusi rysunek z falą płaską przechodzącą przez szczelinę bez zmian.** Wąska szczelina to podręcznikowy przypadek dyfrakcji — za nią fala rozchodzi się we wszystkich kierunkach, koliście, zgodnie z zasadą Huygensa.
+
+  **W 4.4 uwaga na kierunek załamania.** Fala wchodzi do ośrodka wolniejszego, więc załamuje się **do normalnej** (kąt maleje). Odwrotny błąd — odchylenie od normalnej — kosztuje warunek K, a często i warunek PF, bo powierzchnie falowe rysuje się wtedy w złą stronę.
+
+  **I jeszcze jedno: powierzchnie falowe są zawsze prostopadłe do kierunku biegu fali.** Jeśli dorysujesz kierunek pod jednym kątem, a powierzchnie pod innym, rysunek jest wewnętrznie sprzeczny.
+wymaganie: |
+  II. Rozwiązywanie problemów z wykorzystaniem praw i zależności fizycznych. Ruch drgający i fale: długość fali, częstotliwość, prędkość fali, natężenie, dyfrakcja, załamanie fali na granicy ośrodków.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2026-maj-pr/zad-04.webp"
+  alt="Zadanie 4 — fizyka 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MFAP-R0-100-A-2605 — zadanie 4."
+  zrodlo="CKE, matura maj 2026, fizyka PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Fizyka/MFAP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Co się zmienia, a co zostaje przy przejściu fali do innego ośrodka
+
+To jedna z najczęściej sprawdzanych tabelek w całym dziale fal:
+
+| Wielkość | Przy przejściu do innego ośrodka |
+|---|---|
+| **częstotliwość $f$** | **nie zmienia się** — narzuca ją źródło |
+| prędkość $v$ | zmienia się (własność ośrodka) |
+| długość fali $\lambda = v/f$ | zmienia się **proporcjonalnie do $v$** |
+| kierunek biegu | zmienia się (załamanie) |
+
+Stąd bierze się cała odpowiedź w 4.4: skoro $f$ jest wspólne dla obu ośrodków, to $\lambda_1/\lambda_2 = v_1/v_2 = 2$.
+
+## Ośrodek wolniejszy = kąt mniejszy
+
+Prawo załamania w postaci „falowej":
+
+$$\frac{\sin\alpha_1}{\sin\alpha_2} = \frac{v_1}{v_2} = \frac{\lambda_1}{\lambda_2}$$
+
+Tu $v_1 = 2v_2$, więc $\sin\alpha_1 = 2\sin\alpha_2$, czyli $\alpha_2 < \alpha_1$. Reguła do zapamiętania:
+
+> **Wolniej → bliżej normalnej.** Szybciej → dalej od normalnej.
+
+Ta sama reguła rządzi światłem przechodzącym z powietrza do szkła — tam też ośrodek jest „wolniejszy" i promień zbliża się do normalnej.
+
+## Natężenie fali a amplituda
+
+$$I \propto A^2$$
+
+Ta proporcjonalność wyjaśnia oba warianty:
+
+| Sytuacja | Co się dzieje z $A$ | Co z $I$ |
+|---|---|---|
+| fala **płaska**, brak pochłaniania | stała | stałe |
+| fala **kulista** | $A \propto 1/r$ | $I \propto 1/r^2$ |
+| fala pochłaniana | maleje wykładniczo | maleje wykładniczo |
+
+Zadanie 4.2 celowo opisuje pierwszy przypadek — i cała trudność polega na tym, żeby to zauważyć, a nie odruchowo sięgnąć po drugi.
+
+## Dyfrakcja na wąskiej szczelinie
+
+Zasada Huygensa: każdy punkt ośrodka, do którego dotarła fala, staje się źródłem elementarnej fali kulistej. Gdy w przeszkodzie jest szczelina o szerokości rzędu $\lambda$, przepuszcza ona zasadniczo **jeden taki punkt** — i za przeszkodą obserwujemy fale koliste rozchodzące się we wszystkich kierunkach.
+
+Im szersza szczelina w porównaniu z $\lambda$, tym mniej wyraźna dyfrakcja i tym bardziej za przeszkodą fala przypomina wąską wiązkę. Dla szczeliny znacznie węższej od $\lambda$ ugięcie jest maksymalne.
+
+## Punktacja CKE
+
+- **4.1.** 2 pkt — poprawna metoda **i** wynik $f \approx 1{,}3\cdot 10^5$ Hz z jednostką;
+  1 pkt — zauważenie zależności $\Delta t_{KL} = 9T$ **oraz** zastosowanie wzoru na prędkość/okres fali.
+- **4.2.** 1 pkt — odpowiedź **D**.
+- **4.3.** 1 pkt — odpowiedź **A**.
+- **4.4.** 3 pkt — trzy warunki: **K** (kierunek biegu fali w $M_2$), **IDF** ($\lambda_1/\lambda_2 = 2$), **PF** (co najmniej trzy powierzchnie falowe odchylone w lewo);
+  2 pkt — dwa z tych warunków; 1 pkt — jeden.
+- **Razem: 7 pkt.**

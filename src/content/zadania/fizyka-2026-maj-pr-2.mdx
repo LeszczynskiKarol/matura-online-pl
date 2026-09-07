@@ -1,0 +1,118 @@
+---
+arkusz: fizyka-2026-maj-pr
+subject: fizyka
+nr: 2
+punkty: 7
+typ: otwarte-rozszerzone
+topic: ruch po okregu w plaszczyznie pionowej, sila dosrodkowa, zasada zachowania energii, konstrukcja geometryczna
+difficulty: 4
+tresc: |
+  Do jednego z końców nierozciągliwej nici o długości $l$ zamocowano niewielkie ciało $\mathcal{B}$ o masie $m$. Drugi koniec nici jest unieruchomiony w punkcie $S$. Ciało $\mathcal{B}$ wprawiono w ruch po okręgu o środku $S$ **w płaszczyźnie pionowej**.
+
+  Model zjawiska: na ciało działają tylko siła grawitacji $\vec{F}_g$ i siła reakcji nici $\vec{F}_N$; opory ruchu i masę nici pomijamy; $\mathcal{B}$ traktujemy jak punkt materialny w inercjalnym układzie odniesienia, w jednorodnym polu grawitacyjnym.
+
+  **2.1.** (0–2) Na rysunku przedstawiono wektory prędkości ciała $\mathcal{B}$ w dwóch różnych chwilach. Długość boku kratki odpowiada umownej jednostce odległości. Wyznacz **konstrukcyjnie** środek okręgu i podpisz go $S$. Zapisz długość $R$ promienia tego okręgu w umownych jednostkach. *(Uwaga: środek $S$ leży w punkcie kratowym.)*
+
+  **2.2.** (0–1) Na którym rysunku (A–D) prawidłowo przedstawiono siły $\vec{F}_g$ oraz $\vec{F}_N$ działające na ciało $\mathcal{B}$, gdy przechodzi ono przez **najniższe** położenie?
+
+  **2.3.** (0–4) Dany jest iloraz największej i najmniejszej wartości prędkości ciała podczas ruchu po okręgu: $\dfrac{v_\text{max}}{v_\text{min}} = \sqrt{3}$. Oblicz iloraz $\dfrac{F_{N\,\text{max}}}{F_{N\,\text{min}}}$.
+odpowiedz: |
+  **2.1.** Konstrukcja opiera się na tym, że prędkość w ruchu po okręgu jest zawsze **styczna do toru**, a promień jest do stycznej **prostopadły**. Wystarczy więc z punktu zaczepienia każdego wektora poprowadzić prostą prostopadłą do tego wektora — obie proste przecinają się w środku okręgu.
+
+  Punkt przecięcia zaznaczamy jako $S$ i odmierzamy jego odległość od początku dowolnego z wektorów:
+
+  $$\boxed{R = 10 \text{ długości boku kratki}}$$
+
+  **2.2. B**
+
+  W najniższym położeniu siła grawitacji jest skierowana **w dół**, a nić ciągnie ciało **w górę, do środka okręgu**. Wypadkowa musi być dośrodkowa, czyli skierowana w górę — a więc $F_N > F_g$.
+
+  **2.3.**
+
+  **Krok 1. Dynamika w skrajnych położeniach.** Siła reakcji nici jest zawsze skierowana wzdłuż nici, do środka. Wypadkowa pełni rolę siły dośrodkowej:
+
+  - najniższe położenie (tam $v = v_\text{max}$): $\quad \dfrac{mv_\text{max}^2}{l} = F_{N\,\text{max}} - mg$
+  - najwyższe położenie (tam $v = v_\text{min}$): $\quad \dfrac{mv_\text{min}^2}{l} = F_{N\,\text{min}} + mg$
+
+  **Krok 2. Zasada zachowania energii** między najniższym a najwyższym punktem (różnica wysokości $= 2l$):
+
+  $$\frac{mv_\text{max}^2}{2} = \frac{mv_\text{min}^2}{2} + mg\cdot 2l \quad\Rightarrow\quad v_\text{max}^2 = v_\text{min}^2 + 4gl$$
+
+  **Krok 3. Wykorzystanie danego ilorazu.** Z $v_\text{max} = \sqrt{3}\,v_\text{min}$ mamy $v_\text{max}^2 = 3v_\text{min}^2$:
+
+  $$3v_\text{min}^2 = v_\text{min}^2 + 4gl \quad\Rightarrow\quad v_\text{min}^2 = 2gl, \qquad v_\text{max}^2 = 6gl$$
+
+  **Krok 4. Podstawienie.**
+
+  $$F_{N\,\text{max}} = \frac{m\cdot 6gl}{l} + mg = 7mg, \qquad F_{N\,\text{min}} = \frac{m\cdot 2gl}{l} - mg = mg$$
+
+  $$\boxed{\frac{F_{N\,\text{max}}}{F_{N\,\text{min}}} = \frac{7mg}{mg} = 7}$$
+pulapka: |
+  **W 2.1 najczęstszy błąd to rysowanie prostopadłych do wektorów „gdziekolwiek".** Prostopadła musi przechodzić przez **punkt zaczepienia** wektora — bo to właśnie tam ciało w danej chwili się znajduje i tam promień jest prostopadły do prędkości. Alternatywna, równie punktowana konstrukcja: symetralna odcinka łączącego początki obu wektorów plus jedna prostopadła.
+
+  **W 2.2 kusi odpowiedź, że siły się równoważą** ($F_N = F_g$, warianty C i D). Równoważyłyby się, gdyby ciało poruszało się ruchem jednostajnym prostoliniowym. Tu tor jest okręgiem, więc **wypadkowa nigdy nie jest zerowa** — zawsze jest dośrodkowa. W najniższym punkcie „do środka" znaczy „w górę", więc $F_N$ musi przeważać.
+
+  **W 2.3 uwaga na znaki.** W najniższym położeniu grawitacja działa **przeciwnie** do siły dośrodkowej (odejmujemy ją), w najwyższym — **zgodnie** z nią (dodajemy). Zamiana tych znaków miejscami to najkosztowniejsza pomyłka w tym zadaniu.
+
+  **Różnica wysokości między skrajnymi punktami to $2l$, nie $l$.** Ciało przechodzi przez całą średnicę okręgu.
+
+  **Kontrola sensowności wyniku:** $F_{N\,\text{min}} = mg > 0$, czyli nić na górze jest jeszcze napięta. Gdyby wyszło $F_{N\,\text{min}} \le 0$, oznaczałoby to, że ciało nie pokonałoby górnego punktu, poruszając się po okręgu.
+wymaganie: |
+  II. Rozwiązywanie problemów z wykorzystaniem praw i zależności fizycznych. Ruch po okręgu: siła dośrodkowa, prędkość styczna do toru. Zasada zachowania energii mechanicznej.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2026-maj-pr/zad-02.webp"
+  alt="Zadanie 2 — fizyka 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MFAP-R0-100-A-2605 — zadanie 2."
+  zrodlo="CKE, matura maj 2026, fizyka PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Fizyka/MFAP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Konstrukcja środka okręgu — jedna zasada, dwie linie
+
+Cała geometria w 2.1 opiera się na jednym fakcie:
+
+> W ruchu po okręgu wektor prędkości jest **styczny do toru**, a promień poprowadzony do punktu styczności jest **prostopadły** do stycznej.
+
+Stąd przepis:
+
+1. Zaznacz punkt zaczepienia wektora $\vec{v}_1$ i poprowadź przez niego prostą **prostopadłą do $\vec{v}_1$**.
+2. To samo dla $\vec{v}_2$.
+3. Przecięcie obu prostych to środek $S$.
+4. Odległość $S$ od punktu zaczepienia dowolnego wektora to promień $R$ — tutaj **10 boków kratki**.
+
+Metoda alternatywna (CKE punktuje ją tak samo): oba punkty zaczepienia leżą na okręgu, więc środek leży na **symetralnej** odcinka je łączącego. Symetralna plus jedna prostopadła do wektora dają ten sam punkt.
+
+## Skrajne wartości siły reakcji nici
+
+| Położenie | Prędkość | Zwrot $\vec{F}_g$ względem środka | Równanie | Wynik |
+|---|---|---|---|---|
+| **najniższe** | $v_\text{max}$ | od środka (w dół) | $\dfrac{mv_\text{max}^2}{l} = F_N - mg$ | $F_{N\,\text{max}} = 7mg$ |
+| **najwyższe** | $v_\text{min}$ | do środka (w dół) | $\dfrac{mv_\text{min}^2}{l} = F_N + mg$ | $F_{N\,\text{min}} = mg$ |
+
+W obu przypadkach siła dośrodkowa jest **wypadkową**, a nie osobną siłą. To nie jest trzecia siła w układzie — to nazwa roli, jaką pełni suma $\vec{F}_g + \vec{F}_N$.
+
+## Warunek przejścia przez górny punkt
+
+Zadanie nie pyta o to wprost, ale warto znać tę granicę. Nić pozostaje napięta, dopóki $F_{N\,\text{min}} \ge 0$:
+
+$$\frac{mv_\text{min}^2}{l} \ge mg \quad\Rightarrow\quad v_\text{min}^2 \ge gl \quad\Rightarrow\quad v_\text{min} \ge \sqrt{gl}$$
+
+W tym zadaniu $v_\text{min}^2 = 2gl$, czyli dwukrotnie powyżej minimum — ciało pewnie pokonuje górny punkt. W przypadku granicznym $v_\text{min}^2 = gl$ zasada zachowania energii dałaby $v_\text{max}^2 = 5gl$, a więc $v_\text{max}/v_\text{min} = \sqrt{5}$ oraz $F_{N\,\text{max}}/F_{N\,\text{min}} \to \infty$, bo mianownik dąży do zera.
+
+## Punktacja CKE
+
+- **2.1.** 2 pkt — poprawna konstrukcja **i** wartość $R = 10$;
+  1 pkt — poprawna co do zasady metoda konstrukcji (prostopadłe do wektorów prędkości albo symetralna + prostopadła) **albo** poprawne oznaczenie $S$ bez konstrukcji wraz z prawidłowym $R$.
+- **2.2.** 1 pkt — odpowiedź **B**.
+- **2.3.** 4 pkt — poprawna metoda i wynik $= 7$;
+  3 pkt — związki dynamiczne w obu skrajnych położeniach ze wzorami na siłę dośrodkową **oraz** ZZE z wyprowadzeniem $v_\text{min} = \sqrt{2gl}$ albo $v_\text{max} = \sqrt{6gl}$;
+  2 pkt — oba równania dynamiki ze wzorami **albo** samo ZZE z wykorzystaniem związku $\sqrt{3}$;
+  1 pkt — jeden ze związków (dolne położenie, górne położenie albo ZZE).
+- **Razem: 7 pkt.**

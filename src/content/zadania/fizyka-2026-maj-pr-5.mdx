@@ -1,0 +1,157 @@
+---
+arkusz: fizyka-2026-maj-pr
+subject: fizyka
+nr: 5
+punkty: 7
+typ: otwarte-rozszerzone
+topic: grawitacja, orbita eliptyczna, III prawo Keplera, zasada zachowania momentu pedu, peryhelium i aphelium
+difficulty: 4
+tresc: |
+  Planetoida $\mathcal{R}$ krąży wokół Słońca po orbicie eliptycznej, jedynie pod wpływem siły grawitacji Słońca. Orbita planetoidy leży w tej samej płaszczyźnie co orbita Ziemi i przecina się z nią w dwóch punktach.
+
+  Dane i założenia:
+  - największa odległość planetoidy od środka $S$ Słońca: $r_A = |SA|$ (aphelium)
+  - najmniejsza odległość: $r_P = |SP| = 0{,}81\ \text{au}$ (peryhelium)
+  - długość **osi wielkiej** orbity: $|PA| = 5{,}62\ \text{au}$
+  - wartość prędkości w punkcie $A$: $v_A$; w punkcie $P$: $v_P = 43{,}29\ \text{km/s}$
+  - środek orbity planetoidy oznaczono jako $O$
+  - orbitę Ziemi traktujemy jako kołową, $r_Z = 1{,}0\ \text{au}$, $T_Z = 1{,}00$ rok ziemski
+  - pomijamy wpływ innych ciał niż Słońce.
+
+  **5.1.** (0–1) Narysuj wektor siły $\vec{F}$, z jaką Słońce działa na planetoidę w zaznaczonym położeniu na orbicie. Zachowaj kierunek, zwrot i punkt zaczepienia.
+
+  **5.2.** (0–2) Oblicz $T_\mathcal{R}$ — okres obiegu planetoidy wokół Słońca, w latach ziemskich.
+
+  **5.3.** (0–1) Wartości przyśpieszenia planetoidy w punktach $P$ i $A$ oznaczono jako $a_P$ i $a_A$. Iloraz $\dfrac{a_P}{a_A}$ jest równy: **A.** $\dfrac{|SA|}{|SP|}$ · **B.** $\dfrac{|SP|}{|SA|}$ · **C.** $\left(\dfrac{|SA|}{|SP|}\right)^2$ · **D.** $\left(\dfrac{|SP|}{|SA|}\right)^2$
+
+  **5.4.** (0–3) Oblicz $v_A$ — wartość prędkości planetoidy w punkcie $A$ orbity.
+odpowiedz: |
+  **5.1.** Wektor $\vec{F}$ zaczepiamy **w punkcie $\mathcal{R}$** (tam, gdzie jest planetoida) i kierujemy **wzdłuż odcinka $\mathcal{R}S$, zwrotem do $S$** — czyli do środka Słońca. Grawitacja jest siłą centralną: zawsze wzdłuż linii łączącej oba ciała, zawsze przyciągająca. Nie jest ani styczna do orbity, ani skierowana do środka $O$ elipsy.
+
+  **5.2.**
+
+  Półoś wielka orbity planetoidy:
+
+  $$a_\mathcal{R} = \frac{|PA|}{2} = \frac{5{,}62\ \text{au}}{2} = 2{,}81\ \text{au}$$
+
+  III prawo Keplera dla planetoidy i Ziemi (wspólne centrum: Słońce):
+
+  $$\frac{T_\mathcal{R}^2}{a_\mathcal{R}^3} = \frac{T_Z^2}{r_Z^3} \quad\Rightarrow\quad T_\mathcal{R} = \sqrt{\left(\frac{a_\mathcal{R}}{r_Z}\right)^3}\cdot T_Z$$
+
+  $$T_\mathcal{R} = \sqrt{\left(\frac{2{,}81\ \text{au}}{1\ \text{au}}\right)^3}\cdot 1\ \text{rok} = \sqrt{22{,}188}\ \text{roku}$$
+
+  $$\boxed{T_\mathcal{R} \approx 4{,}7 \text{ roku ziemskiego}}$$
+
+  **5.3. C**
+
+  Przyśpieszenie planetoidy pochodzi wyłącznie od grawitacji Słońca: $a = \dfrac{GM_S}{r^2}$. Zatem
+
+  $$\frac{a_P}{a_A} = \frac{r_A^2}{r_P^2} = \left(\frac{|SA|}{|SP|}\right)^2$$
+
+  **5.4.**
+
+  **Krok 1. Odległość aphelium.** Oś wielka to suma obu skrajnych odległości od ogniska:
+
+  $$|PA| = r_P + r_A \quad\Rightarrow\quad r_A = 5{,}62\ \text{au} - 0{,}81\ \text{au} = 4{,}81\ \text{au}$$
+
+  **Krok 2. Zasada zachowania momentu pędu** względem środka Słońca. W peryhelium i aphelium prędkość jest **prostopadła** do promienia wodzącego, więc moment pędu upraszcza się do $L = m v r$:
+
+  $$m v_P r_P = m v_A r_A \quad\Rightarrow\quad v_A = v_P \cdot \frac{r_P}{r_A}$$
+
+  **Krok 3. Podstawienie.**
+
+  $$v_A = 43{,}29\ \frac{\text{km}}{\text{s}} \cdot \frac{0{,}81\ \text{au}}{4{,}81\ \text{au}} = 43{,}29 \cdot 0{,}16840\ \frac{\text{km}}{\text{s}}$$
+
+  $$\boxed{v_A \approx 7{,}3\ \frac{\text{km}}{\text{s}}}$$
+
+  Jednostki „au" skracają się — nie trzeba niczego przeliczać na metry.
+pulapka: |
+  **W 5.1 najczęstszy błąd to zaczepienie wektora w Słońcu.** Pytanie brzmi: jaka siła działa **na planetoidę** — więc wektor zaczepiamy w planetoidzie. Drugi częsty błąd: skierowanie siły do środka $O$ elipsy. Ognisko elipsy (Słońce, punkt $S$) i środek elipsy (punkt $O$) to **dwa różne punkty**, i siła zawsze celuje w ognisko.
+
+  **W 5.2 pułapka jest jedna, ale kosztowna: $|PA| = 5{,}62$ au to oś wielka, nie półoś.** W III prawie Keplera występuje **półoś wielka** $a = |PA|/2 = 2{,}81$ au. Podstawienie 5,62 daje $T \approx 13{,}3$ roku — wynik prawie trzykrotnie za duży.
+
+  **Nie licz $r_A + r_P$ jako „średnicy okręgu" i nie uśredniaj prędkości.** Orbita jest elipsą; jedyna wielkość, która wchodzi do III prawa Keplera, to półoś wielka.
+
+  **W 5.3 kusi odpowiedź bez kwadratu (A).** Grawitacja maleje z kwadratem odległości, więc iloraz przyśpieszeń jest ilorazem **kwadratów** odległości. Uwaga też na kolejność: $a_P$ dotyczy punktu **bliższego**, więc jest **większe** — iloraz $a_P/a_A > 1$, czyli w liczniku musi być większa odległość $|SA|$.
+
+  **W 5.4 nie można użyć zasady zachowania energii „na skróty" bez wzoru na energię potencjalną grawitacji.** Najprostsza droga to moment pędu: $v_P r_P = v_A r_A$. Ta zależność działa **wyłącznie w peryhelium i aphelium**, bo tylko tam prędkość jest prostopadła do promienia wodzącego.
+
+  **Kontrola sensowności:** planetoida w aphelium jest ok. 6 razy dalej i porusza się ok. 6 razy wolniej. To zgadza się z II prawem Keplera — daleko od Słońca ciało „ledwie się wlecze".
+wymaganie: |
+  II. Rozwiązywanie problemów z wykorzystaniem praw i zależności fizycznych. Grawitacja i elementy astronomii: prawa Keplera, siła grawitacji jako siła centralna, zasada zachowania momentu pędu.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2026-maj-pr/zad-05.webp"
+  alt="Zadanie 5 — fizyka 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MFAP-R0-100-A-2605 — zadanie 5."
+  zrodlo="CKE, matura maj 2026, fizyka PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Fizyka/MFAP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Geometria elipsy — co jest czym
+
+| Oznaczenie w zadaniu | Nazwa | Wartość |
+|---|---|---|
+| $S$ | **ognisko** elipsy — tu jest Słońce | — |
+| $O$ | **środek** elipsy | — |
+| $P$ | peryhelium (najbliżej Słońca) | $r_P = 0{,}81$ au |
+| $A$ | aphelium (najdalej od Słońca) | $r_A = 4{,}81$ au |
+| $\|PA\|$ | **oś wielka** $= 2a$ | 5,62 au |
+| $a$ | **półoś wielka** | 2,81 au |
+
+Dwie zależności, z których wynikają wszystkie obliczenia w tym zadaniu:
+
+$$r_P + r_A = 2a, \qquad a = \frac{r_P + r_A}{2}$$
+
+Półoś wielka jest więc **średnią arytmetyczną** odległości peryhelium i aphelium — sprawdzenie: $(0{,}81 + 4{,}81)/2 = 2{,}81$ ✓.
+
+## III prawo Keplera w jednostkach astronomicznych
+
+W układzie, gdzie odległości mierzymy w **au**, a okresy w **latach ziemskich**, prawo Keplera przybiera najprostszą możliwą postać:
+
+$$T^2 = a^3$$
+
+Bo dla Ziemi $T_Z = 1$ i $r_Z = 1$, więc stała jest równa 1. Stąd natychmiast:
+
+$$T_\mathcal{R} = a_\mathcal{R}^{3/2} = 2{,}81^{1{,}5} \approx 4{,}71$$
+
+To najszybszy sposób na to zadanie — bez $G$, bez masy Słońca, bez przeliczania sekund.
+
+## Trzy prawa Keplera — do czego służą
+
+| Prawo | Treść | Do czego przydaje się na maturze |
+|---|---|---|
+| **I** | orbita jest elipsą, Słońce w jednym z **ognisk** | 5.1 — kierunek siły; geometria orbity |
+| **II** | promień wodzący zakreśla równe pola w równych czasach | równoważne zachowaniu momentu pędu → 5.4 |
+| **III** | $T^2/a^3 = \text{const}$ dla wszystkich ciał obiegających to samo centrum | 5.2 — okres obiegu |
+
+II prawo Keplera i zasada zachowania momentu pędu to **to samo prawo w dwóch przebraniach**. Formalnie moment pędu $L = mvr$ jest zachowany, bo siła grawitacji jest centralna — jej moment względem Słońca jest zerowy.
+
+## Prędkość w peryhelium i aphelium — wzór ogólny
+
+Z połączenia zachowania momentu pędu i energii mechanicznej można wyprowadzić bezpośredni wzór (CKE punktuje też tę drogę):
+
+$$v_A = \sqrt{\frac{2GM_S}{r_A + r_P}\cdot\frac{r_P}{r_A}}$$
+
+Ale w tym zadaniu jest on niepotrzebnie długi — mamy podane $v_P$, więc wystarczy jedno równanie:
+
+$$v_P r_P = v_A r_A$$
+
+Zasada ogólna: **jeśli dana jest jedna z prędkości skrajnych, użyj momentu pędu; jeśli żadna, sięgnij po energię.**
+
+## Punktacja CKE
+
+- **5.1.** 1 pkt — wektor zaczepiony w $\mathcal{R}$, skierowany wzdłuż $\mathcal{R}S$ w stronę $S$.
+- **5.2.** 2 pkt — poprawna metoda **i** wynik $T_\mathcal{R} \approx 4{,}7$ roku;
+  1 pkt — zapis III prawa Keplera z uwzględnieniem obu okresów i obu półosi **oraz** poprawne wyznaczenie $a_\mathcal{R} = |PA|/2$.
+- **5.3.** 1 pkt — odpowiedź **C**.
+- **5.4.** 3 pkt — poprawna metoda **i** wynik $v_A \approx 7{,}3$ km/s z jednostką;
+  2 pkt — równość momentów pędu w $P$ i $A$ **oraz** poprawne wyznaczenie $r_A = |PA| - r_P$;
+  1 pkt — sama równość momentów pędu **albo** samo poprawne wyznaczenie $r_A = 4{,}81$ au.
+- **Razem: 7 pkt.**

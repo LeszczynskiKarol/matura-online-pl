@@ -1,0 +1,105 @@
+---
+arkusz: fizyka-2026-maj-pr
+subject: fizyka
+nr: 7
+punkty: 5
+typ: otwarte-rozszerzone
+topic: pole elektryczne, superpozycja, natezenie pola, uklad ladunkow
+difficulty: 5
+tresc: |
+  Trzy ładunki punktowe umieszczono w wierzchołkach kwadratu o boku $a$, w próżni:
+
+  - $q_1 = +q$ — lewy dolny wierzchołek
+  - $q_2 = -q$ — lewy górny wierzchołek
+  - $q_3 = +q$ — prawy górny wierzchołek
+  - $P$ — prawy dolny wierzchołek, **bez ładunku**
+
+  **7.1.** (0–1) Na którym rysunku (A–D) prawidłowo zaznaczono kierunek i zwrot wypadkowej siły elektrycznej działającej na ładunek $q_3$?
+
+  **7.2.** (0–4) Wyznacz $E_P$ — wartość wektora wypadkowego natężenia pola elektrycznego w punkcie $P$ — w zależności tylko od $q$, od $a$ oraz od odpowiedniej stałej fizycznej.
+odpowiedz: |
+  **7.1. A**
+
+  **7.2.**
+
+  Odległości od punktu $P$: $q_1$ i $q_3$ leżą w odległości $a$ (boki kwadratu), $q_2$ w odległości $a\sqrt{2}$ (przekątna).
+
+  **Natężenia od poszczególnych ładunków:**
+
+  $$E_1 = E_3 = \frac{kq}{a^2}, \qquad E_2 = \frac{kq}{\left(a\sqrt{2}\right)^2} = \frac{kq}{2a^2} = \tfrac{1}{2}\cdot\frac{kq}{a^2}$$
+
+  **Składanie wektorów.** $\vec{E}_1$ (od $+q_1$, skierowany od ładunku) leży poziomo, $\vec{E}_3$ (od $+q_3$) pionowo — są **prostopadłe**:
+
+  $$E_{13} = \sqrt{E_1^2 + E_3^2} = \sqrt{2}\cdot\frac{kq}{a^2}$$
+
+  Wektor $\vec{E}_{13}$ leży wzdłuż przekątnej, skierowany **od** $q_2$. Wektor $\vec{E}_2$ (od ładunku ujemnego, skierowany **do** ładunku) leży na tej samej przekątnej, ale **przeciwnie**. Zatem odejmujemy:
+
+  $$E_P = E_{13} - E_2 = \sqrt{2}\cdot\frac{kq}{a^2} - \tfrac{1}{2}\cdot\frac{kq}{a^2}$$
+
+  $$\boxed{E_P = \frac{kq}{a^2}\left(\sqrt{2} - \tfrac{1}{2}\right) = \frac{kq}{2a^2}\left(2\sqrt{2} - 1\right) \approx 0{,}91\,\frac{kq}{a^2}}$$
+pulapka: |
+  **Kluczowa obserwacja: $\vec{E}_2$ jest antyrównoległy do $\vec{E}_{13}$, więc natężenia się odejmują.** Ładunek $q_2$ jest **ujemny**, więc jego pole w punkcie $P$ jest skierowane **ku niemu** — czyli dokładnie przeciwnie do sumy pól od dwóch dodatnich ładunków. Dodanie zamiast odjęcia daje $\left(\sqrt{2} + \tfrac{1}{2}\right)$ i jest najczęstszym błędem.
+
+  **Odległość do $q_2$ to przekątna, nie bok.** W mianowniku pojawia się $\left(a\sqrt{2}\right)^2 = 2a^2$, więc $E_2$ jest **dwa razy mniejsze** od $E_1$, a nie $\sqrt{2}$ razy mniejsze. Pominięcie kwadratu to typowa pomyłka.
+
+  **$\vec{E}_1 \perp \vec{E}_3$, więc składamy je twierdzeniem Pitagorasa**, a nie zwykłym dodawaniem. $E_{13} = \sqrt{2}\,E_1$, nie $2E_1$.
+
+  **Kontrola rzędu wielkości:** wynik $\approx 0{,}91\,kq/a^2$ jest nieco mniejszy od $E_1$ — sensowne, bo dwa pola się wzmacniają, a trzecie je częściowo znosi.
+wymaganie: |
+  I. Wykorzystanie pojęć i wielkości fizycznych do opisu zjawisk. Pole elektrostatyczne, zasada superpozycji, natężenie pola od układu ładunków punktowych.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2026-maj-pr/zad-07.webp"
+  alt="Zadanie 7 — fizyka 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MFAP-R0-100-A-2605 — zadanie 7."
+  zrodlo="CKE, matura maj 2026, fizyka PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Fizyka/MFAP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Zasada superpozycji
+
+Natężenie pola od układu ładunków to **wektorowa** suma natężeń od każdego z osobna:
+
+$$\vec{E}_P = \vec{E}_1 + \vec{E}_2 + \vec{E}_3$$
+
+Zwrot pola od pojedynczego ładunku:
+
+- ładunek **dodatni** → pole skierowane **od** ładunku,
+- ładunek **ujemny** → pole skierowane **do** ładunku.
+
+## Rachunek składowych — kontrola wyniku
+
+Przyjmijmy $P = (a, 0)$, $q_1 = (0,0)$, $q_2 = (0,a)$, $q_3 = (a,a)$, w jednostkach $kq/a^2$:
+
+| Źródło | $r$ | $E$ | $E_x$ | $E_y$ |
+|---|---|---|---|---|
+| $q_1 = +q$ | $a$ | 1 | $+1$ | $0$ |
+| $q_2 = -q$ | $a\sqrt{2}$ | $\tfrac{1}{2}$ | $-0{,}354$ | $+0{,}354$ |
+| $q_3 = +q$ | $a$ | 1 | $0$ | $-1$ |
+| **suma** | | | $\mathbf{+0{,}646}$ | $\mathbf{-0{,}646}$ |
+
+$$E_P = \sqrt{0{,}646^2 + 0{,}646^2} = 0{,}914 = \sqrt{2} - \tfrac{1}{2} \;\checkmark$$
+
+Rozkład na składowe jest dłuższy niż rozumowanie geometryczne, ale nie wymaga zauważenia, że wektory leżą na jednej prostej — warto go znać jako metodę awaryjną.
+
+## Dlaczego $\vec{E}_2$ leży na tej samej prostej co $\vec{E}_{13}$
+
+$\vec{E}_1$ i $\vec{E}_3$ mają **równe wartości** i są prostopadłe, więc ich suma leży na dwusiecznej kąta prostego — czyli wzdłuż przekątnej $q_2P$. Ta sama przekątna wyznacza kierunek $\vec{E}_2$. Bez równości $E_1 = E_3$ ta zgodność by nie zachodziła i trzeba by liczyć składowymi.
+
+## Stała w prawie Coulomba
+
+$$k = \frac{1}{4\pi\varepsilon_0} \approx 8{,}99\cdot 10^9\ \mathrm{\frac{N\cdot m^2}{C^2}}$$
+
+CKE akceptuje zapis zarówno przez $k$, jak i przez $\tfrac{1}{4\pi\varepsilon_0}$.
+
+## Punktacja CKE
+
+- **7.1.** 1 pkt — odpowiedź A.
+- **7.2.** 4 pkt — punktowane składnikowo: poprawne wyznaczenie $E_1$, $E_2$, $E_3$, zauważenie równości $E_1 = E_3$, złożenie $E_{13} = \sqrt{2}E_1$ oraz odjęcie $E_2$.
+- **Razem: 5 pkt.**

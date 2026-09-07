@@ -1,0 +1,109 @@
+---
+arkusz: fizyka-2026-maj-pr
+subject: fizyka
+nr: 3
+punkty: 5
+typ: otwarte-rozszerzone
+topic: bryla sztywna, moment bezwladnosci, bloczek, II zasada dynamiki ruchu obrotowego
+difficulty: 5
+tresc: |
+  Bloczek $B$ (jednorodny walec o masie $m_w$ i promieniu $r$) podwieszono do sufitu. Przez bloczek przerzucono nierozciągliwą linę o pomijalnej masie: do jednego końca przymocowano ciężarek o masie $m_c$, do drugiego przyłożono siłę $\vec{F}$ pod kątem $\beta$ do poziomu.
+
+  Moment bezwładności walca: $I_0 = \tfrac{1}{2}m_w r^2$. Lina nie ślizga się po bloczku, bloczek obraca się bez tarcia.
+
+  **3.1.** (0–1) W **sytuacji 1.** ciężarek i bloczek się nie poruszają. Wartość $F$ wyraża się wzorem:
+  **A.** $F = m_c g$ · **B.** $F = (m_c + m_w)g$ · **C.** $F = m_c g\cos\beta$ · **D.** $F = m_c g\sin\beta$
+
+  **3.2.** (0–4) W **sytuacji 2.** bloczek się obraca, a ciężarek porusza się pionowo w dół z przyśpieszeniem $a = \tfrac{1}{2}g$. Wyznacz $F$ w zależności tylko od $g$, $m_c$ i $m_w$.
+odpowiedz: |
+  **3.1. A** — $F = m_c g$.
+
+  W równowadze naprężenie liny po obu stronach jest takie samo (bloczek bez tarcia, lina nieważka), a po stronie ciężarka równa się jego ciężarowi. Kąt $\beta$ nie ma znaczenia, bo siła działa **wzdłuż liny**.
+
+  **3.2.**
+
+  **Ruch postępowy ciężarka** (w dół, dodatni zwrot w dół), gdzie $N$ to naprężenie liny po stronie ciężarka:
+
+  $$m_c a = m_c g - N \quad\Rightarrow\quad N = m_c(g - a) = m_c\left(g - \tfrac{1}{2}g\right) = \tfrac{1}{2}m_c g$$
+
+  **Ruch obrotowy bloczka.** Momenty sił $N$ i $F$ działają na ramieniu $r$ i mają przeciwne zwroty:
+
+  $$I_0\varepsilon = Nr - Fr$$
+
+  Lina nie ślizga się, więc $\varepsilon = \dfrac{a}{r}$, a $I_0 = \tfrac{1}{2}m_w r^2$:
+
+  $$\tfrac{1}{2}m_w r^2 \cdot \frac{a}{r} = (N - F)\,r \quad\Rightarrow\quad \tfrac{1}{2}m_w a = N - F$$
+
+  $$F = N - \tfrac{1}{2}m_w a = \tfrac{1}{2}m_c g - \tfrac{1}{2}m_w \cdot \tfrac{1}{2}g$$
+
+  $$\boxed{F = \tfrac{1}{2}g\left(m_c - \tfrac{1}{2}m_w\right)}$$
+pulapka: |
+  **W 3.1 kąt $\beta$ jest dystraktorem.** Siła $\vec{F}$ działa wzdłuż liny, a lina przenosi naprężenie niezależnie od tego, pod jakim kątem zwisa. Odpowiedzi C i D z cosinusem i sinusem są tam właśnie po to, żeby skusić do rozkładania siły na składowe — a nie ma czego rozkładać.
+
+  **Największy błąd w 3.2 to założenie, że naprężenie po obu stronach liny jest takie samo.** Byłoby, gdyby bloczek był nieważki. Ale bloczek ma masę, więc żeby go rozpędzić, potrzebny jest **niezerowy wypadkowy moment siły** — czyli $N \neq F$. Cała różnica $N - F$ idzie na rozkręcenie walca.
+
+  **Uwaga na masę bloczka w 3.1.** Odpowiedź B ($m_c + m_w$) kusi, ale bloczek wisi na suficie — jego ciężar przenosi zaczep, nie lina.
+
+  **Sprawdź granicę:** dla $m_w \to 0$ wzór daje $F = \tfrac{1}{2}m_c g = N$, czyli naprężenia po obu stronach się wyrównują. Zgadza się z intuicją dla nieważkiego bloczka — dobra kontrola poprawności wyniku.
+wymaganie: |
+  II. Rozwiązywanie problemów z wykorzystaniem praw i zależności fizycznych. Bryła sztywna: moment bezwładności, moment siły, II zasada dynamiki ruchu obrotowego.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2026-maj-pr/zad-03.webp"
+  alt="Zadanie 3 — fizyka 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MFAP-R0-100-A-2605 — zadanie 3."
+  zrodlo="CKE, matura maj 2026, fizyka PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Fizyka/MFAP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Dwa równania, dwa ruchy
+
+To zadanie wymaga zapisania II zasady dynamiki **osobno** dla ruchu postępowego i obrotowego, a potem połączenia ich warunkiem toczenia bez poślizgu.
+
+| Element | Równanie | Uwagi |
+|---|---|---|
+| ciężarek (ruch postępowy) | $m_c a = m_c g - N$ | dodatni zwrot w dół |
+| bloczek (ruch obrotowy) | $I_0 \varepsilon = Nr - Fr$ | momenty przeciwnych zwrotów |
+| więz (lina bez poślizgu) | $\varepsilon = a/r$ | łączy oba ruchy |
+
+## Dlaczego naprężenia po obu stronach są różne
+
+Dla bloczka o masie $m_w$:
+
+$$N - F = \frac{I_0\varepsilon}{r} = \frac{\tfrac{1}{2}m_w r^2 \cdot (a/r)}{r} = \tfrac{1}{2}m_w a$$
+
+Różnica naprężeń jest **wprost proporcjonalna do masy bloczka i przyśpieszenia**. Znika w dwóch przypadkach: gdy bloczek jest nieważki ($m_w = 0$) albo gdy układ się nie porusza ($a = 0$) — czyli dokładnie w sytuacji z podpunktu 3.1.
+
+## Sprawdzenie wzoru w przypadkach granicznych
+
+| Przypadek | Wzór daje | Sens fizyczny |
+|---|---|---|
+| $m_w = 0$ | $F = \tfrac{1}{2}m_c g$ | $= N$, naprężenia równe ✓ |
+| $m_w = 2m_c$ | $F = 0$ | bloczek jest tak ciężki, że sam hamuje układ do $a = g/2$ |
+| $m_w > 2m_c$ | $F < 0$ | trzeba **ciągnąć w dół**, żeby uzyskać takie przyśpieszenie |
+
+Ostatni wiersz nie jest błędem rachunku — to poprawna informacja, że przy bardzo ciężkim bloczku sam ciężarek nie rozpędziłby układu tak szybko.
+
+## Momenty bezwładności warte zapamiętania
+
+| Bryła | $I$ względem osi symetrii |
+|---|---|
+| **walec pełny** (bloczek) | $\tfrac{1}{2}mr^2$ |
+| obręcz, cienka rura | $mr^2$ |
+| kula pełna | $\tfrac{2}{5}mr^2$ |
+| pręt (oś przez środek) | $\tfrac{1}{12}ml^2$ |
+
+## Punktacja CKE
+
+- **3.1.** 1 pkt — odpowiedź A.
+- **3.2.** 4 pkt — poprawna metoda **i** wzór $F = \tfrac{1}{2}g(m_c - \tfrac{1}{2}m_w)$;
+  3 pkt — dwa równania dynamiki plus związek $\varepsilon = a/r$ i wzór na $I_0$;
+  2 pkt — dwa poprawne równania dynamiki z właściwymi siłami i momentami;
+  1 pkt — same równania bez rozpisania sił.
+- **Razem: 5 pkt.**
