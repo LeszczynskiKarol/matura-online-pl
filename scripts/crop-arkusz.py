@@ -23,7 +23,10 @@ from PIL import Image
 import numpy as np
 
 PURPLE_R = (180, 240)
-PURPLE_G = (170, 220)
+PURPLE_G = (170, 232)  # gorny prog podniesiony z 220 na 232 (2026-09-07): naglowki
+                       # w arkuszu WOS 2026 maja RGB ok. (218, 226, 244) — zielona
+                       # skladowa wychodzila poza zakres i detekcja zwracala 0 zadan.
+                       # Arkusze wczesniejsze maja G 211-218, wiec mieszcza sie dalej.
 PURPLE_B = (210, 250)
 MIN_HEADER_HEIGHT = 20  # px
 MIN_PURPLE_PCT = 0.6  # naglowki "Zadanie N." rozciagaja sie na pelna szerokosc (>60% wiersza fioletowe). Slupki wykresow zajmuja ~30% - filtr je odrzuca.
