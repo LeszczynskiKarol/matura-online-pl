@@ -35,9 +35,14 @@ const { Content } = await render(zadanie);
 const allZadania = await getCollection("zadania");
 const allArkusze = await getCollection("arkusze");
 const allSubjects = await getCollection("subjects");
+// Sekcja "Podobne zadania" pokazuje wylacznie zadania z INNYCH arkuszy.
+// Pomiar z 2026-09-07: z 814 powiazan az 535 (66%) wskazywalo zadanie z tego
+// samego arkusza — a te sa juz osiagalne paskiem zadan i nawigacja prev/next,
+// wiec karta bez etykiety rocznika wygladala jak przypadkowy duplikat.
 const podobne = (zadanie.data.podobne || [])
   .map((slug) => allZadania.find((z) => z.id === slug))
-  .filter((z): z is NonNullable<typeof z> => Boolean(z));
+  .filter((z): z is NonNullable<typeof z> => Boolean(z))
+  .filter((z) => z.data.arkusz.id !== arkusz.id);
 
 const poziomLabel = arkusz.data.poziom === "pp" ? "podstawowy" : "rozszerzony";
 const arkuszSlug = arkusz.id.replace(`${subject.data.slug}-`, "");
@@ -267,8 +272,41 @@ const typLabels: Record<string, string> = {
         </div>
       </section>
 
+      {/* Pasek wszystkich zadan w arkuszu */}
+      <nav aria-label="Wszystkie zadania w arkuszu" class="border-t border-[var(--color-border)] bg-[var(--color-bg-subtle)]">
+        <div class="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
+          <h2 class="font-mono text-xs font-semibold uppercase tracking-[0.1em] text-[var(--color-text-muted)]">
+            Zadania w tym arkuszu
+          </h2>
+          <ol class="mt-3 flex flex-wrap gap-1.5">
+            {arkuszZadania.map((z) => {
+              const aktualne = z.id === zadanie.id;
+              return (
+                <li>
+                  <a
+                    href={`/${subject.data.slug}/${arkuszSlug}/zadanie-${z.data.nr}/`}
+                    aria-current={aktualne ? "page" : undefined}
+                    title={`Zadanie ${z.data.nr} — ${z.data.topic} (${z.data.punkty} pkt)`}
+                    class={`flex h-9 w-9 items-center justify-center rounded-md border text-sm font-medium tabular-nums no-underline transition-colors ${
+                      aktualne
+                        ? "border-[var(--color-accent)] bg-[var(--color-accent)] text-white"
+                        : "border-[var(--color-border)] bg-[var(--color-bg-elevated)] text-[var(--color-text-muted)] hover:border-[var(--color-accent)] hover:text-[var(--color-accent)]"
+                    }`}
+                  >
+                    {z.data.nr}
+                  </a>
+                </li>
+              );
+            })}
+          </ol>
+          <p class="mt-3 text-xs text-[var(--color-text-faint)]">
+            {arkuszZadania.length} z {arkusz.data.liczbaZadan} zadań arkusza ma rozwiązanie.
+          </p>
+        </div>
+      </nav>
+
       {/* Nawigacja prev/next */}
-      <nav aria-label="Inne zadania w arkuszu" class="border-t border-[var(--color-border)]">
+      <nav aria-label="Sąsiednie zadania" class="border-t border-[var(--color-border)]">
         <div class="mx-auto grid max-w-3xl gap-4 px-4 py-10 sm:grid-cols-2 sm:px-6 lg:px-8">
           {prevZadanie ? (
             <a
