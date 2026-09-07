@@ -1,0 +1,123 @@
+---
+arkusz: informatyka-2026-maj-pr
+subject: informatyka
+nr: 2
+punkty: 5
+typ: otwarte-rozszerzone
+topic: algorytm, dodawanie pisemne, przeniesienia, pseudokod
+difficulty: 4
+tresc: |
+  **Zadanie 2. Dodawanie.** Rozważamy dodawanie pisemne dwóch liczb w systemie dziesiętnym. W przykładzie `27732 + 72619 = 100351` występują **4 przeniesienia**.
+
+  **2.1.** (0–1) Podaj liczbę przeniesień dla par: `88765 + 11111` oraz `456789 + 222222` (dla `37932 + 12528` podano 3).
+
+  **2.2.** (0–4) Zapisz w pseudokodzie lub wybranym języku algorytm, który dla dwóch liczb całkowitych dodatnich `a` i `b` **o tej samej liczbie cyfr** obliczy liczbę przeniesień przy dodawaniu pisemnym.
+
+  **Ograniczenia:** wolno używać wyłącznie liczb całkowitych i zmiennych na pojedyncze liczby; tylko operatory arytmetyczne (`+`, `−`, `·`, `/`, `div`, `mod`), logiczne, porównania, instrukcje sterujące i przypisania oraz własne funkcje. **Zabronione** są tablice/listy i konwersje na typ znakowy.
+odpowiedz: |
+  **2.1.**
+
+  | Liczba a | Liczba b | Liczba przeniesień |
+  |---|---|---|
+  | 37932 | 12528 | 3 |
+  | 88765 | 11111 | **0** |
+  | 456789 | 222222 | **3** |
+
+  **2.2.** Przykładowe rozwiązanie z klucza CKE:
+
+  ```
+  wpamieci ← 0
+  p ← 0
+  dopóki a > 0 wykonuj
+      cyfraa ← a mod 10
+      cyfrab ← b mod 10
+      suma ← cyfraa + cyfrab + wpamieci
+      jeżeli suma ≥ 10
+          wpamieci ← 1
+          p ← p + 1
+      w przeciwnym wypadku
+          wpamieci ← 0
+      a ← a div 10
+      b ← b div 10
+  ```
+
+  Wynikiem jest `p`. CKE przyznaje maksimum punktów za **każde inne całkowicie poprawne** rozwiązanie spełniające warunki zadania.
+pulapka: |
+  **W 2.1 pułapka jest w drugim wierszu.** 88765 + 11111: kolejne sumy cyfr to 5+1=6, 6+1=7, 7+1=8, 8+1=9, 8+1=9 — żadna nie osiąga 10, więc przeniesień jest **0**. Sam fakt, że liczby są duże, niczego nie przesądza.
+
+  **W 2.2 najczęściej gubi się przeniesienie kaskadowe.** Trzeba dodawać `wpamieci` do sumy cyfr, bo przeniesienie z niższej pozycji może samo wywołać kolejne (np. 9+0+1 = 10). Algorytm, który sprawdza tylko `cyfraa + cyfrab ≥ 10`, przepuszcza te przypadki.
+
+  **Warunek `suma ≥ 10`, nie `> 10`.** Suma równa dokładnie 10 też daje przeniesienie.
+
+  **Ograniczenia zadania są istotne.** Zakaz tablic i konwersji na tekst wymusza operowanie na `mod 10` i `div 10`. Rozwiązanie w stylu „zamień na string i iteruj po znakach" to 0 punktów, choćby działało.
+wymaganie: |
+  I.4) dobiera odpowiednią metodę lub technikę algorytmiczną i struktury danych. P.I.3) sprawdza poprawność działania algorytmów. P.II.1) projektuje i programuje rozwiązania problemów z różnych dziedzin.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2026-maj-pr/zad-02.webp"
+  alt="Zadanie 2 — informatyka 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MINP-R0-100-A-2605 — zadanie 2."
+  zrodlo="CKE, matura maj 2026, informatyka PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Informatyka/MINP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Jak liczyć przeniesienia ręcznie
+
+Idziemy **od prawej**, sumujemy cyfry razem z przeniesieniem z poprzedniej pozycji:
+
+```
+  456789
++ 222222
+--------
+9+2 = 11  → przeniesienie (1), zapisujemy 1
+8+2+1 = 11 → przeniesienie (2), zapisujemy 1
+7+2+1 = 10 → przeniesienie (3), zapisujemy 0
+6+2+1 = 9  → bez przeniesienia
+5+2 = 7    → bez
+4+2 = 6    → bez
+```
+
+Razem **3 przeniesienia**.
+
+## Rozbicie punktacji 2.2 — cztery niezależne punkty
+
+CKE punktuje algorytm składnikowo, więc warto zadbać o każdy element osobno:
+
+1. **pętla po liczbie cyfr** `a` (i `b`) — `dopóki a > 0`
+2. **pobieranie cyfr** — `a mod 10`, `b mod 10`
+3. **liczenie sumy z przeniesieniem** i wyznaczenie nowego przeniesienia
+4. **poprawny wynik**, w tym inicjalizacja `wpamieci ← 0` i `p ← 0`
+
+Nawet niedokończony algorytm może zebrać 2–3 punkty, jeśli te części są poprawne — dlatego opłaca się pisać go czytelnie i po kolei.
+
+## To samo w Pythonie
+
+```python
+def przeniesienia(a, b):
+    wpamieci = 0
+    p = 0
+    while a > 0:
+        suma = a % 10 + b % 10 + wpamieci
+        if suma >= 10:
+            wpamieci = 1
+            p += 1
+        else:
+            wpamieci = 0
+        a //= 10
+        b //= 10
+    return p
+```
+
+Zgodne z ograniczeniami: żadnych tablic, żadnej konwersji na tekst, tylko `%`, `//` i porównania.
+
+## Punktacja CKE
+
+- **2.1.** 1 pkt — oba brakujące wiersze poprawne.
+- **2.2.** 4 pkt — po jednym za pętlę, pobieranie cyfr, obsługę przeniesienia i poprawny wynik.
+- **Razem: 5 pkt.**

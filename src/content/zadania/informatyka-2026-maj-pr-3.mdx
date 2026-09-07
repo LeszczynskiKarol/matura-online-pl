@@ -1,0 +1,117 @@
+---
+arkusz: informatyka-2026-maj-pr
+subject: informatyka
+nr: 3
+punkty: 9
+typ: otwarte-rozszerzone
+topic: przetwarzanie plikow, kody ASCII, prefiksosufiks, algorytmy na slowach
+difficulty: 5
+tresc: |
+  **Zadanie 3. Pary słów.** W pliku `pary.txt` jest 500 par słów z liter a–z, każda para w osobnym wierszu, słowa oddzielone spacją, długość każdego do 50 znaków.
+
+  **3.1.** (0–2) Niech `f(s)` = suma kodów ASCII znaków słowa `s`. Podaj parę z jednego wiersza, dla której `|f(s1) − f(s2)|` jest **największa**, oraz tę wartość.
+
+  **3.2.** (0–3) Niech `W(x, s1, s2) = min(d(x, s1), d(x, s2))`, gdzie `d(x, s)` to liczba wystąpień litery `x` w słowie `s`. Podaj parę, dla której **suma wspólnych wystąpień wszystkich liter** jest największa, oraz tę sumę.
+
+  **3.3.** (0–4) **Prefiksosufiksem** pary `s1, s2` nazywamy słowo będące początkiem `s1` i końcem `s2` **lub** początkiem `s2` i końcem `s1`. Podaj wszystkie pary, dla których najdłuższy prefiksosufiks ma **co najmniej 5 liter**, wraz z jego długością.
+odpowiedz: |
+  **3.1.** `gpeeazeugmvsbzwsrxfplqdbakoxxe lhpbmoirdm` — wartość **2206**
+
+  **3.2.** `aacbcccaacacbcabac cccccaaaacaccbabcba` — suma **18**
+
+  **3.3.** Siedem par:
+
+  ```
+  bbbbaabbababbaaaa    baaaaabaaabbbabab    5
+  aababbbababbbbbbaab  bbbbaabbababababa    7
+  aaaababaaaabbbb      aabbbbbabbbaaaa      6
+  bbbbabaaabbbabb      aaababaabbbbbbba     5
+  ccccabacbba          acbbabcbcbcbaa       5
+  caabbccabccc         cabccccabbaac        6
+  abaacabcccccabbbc    abbbcbbbbbcabaca     5
+  ```
+pulapka: |
+  **3.2 — najczęstszy błąd to zliczanie sumy zamiast minimum.** Definicja mówi `min(d(x,s1), d(x,s2))`, czyli ile razy litera występuje **w obu** słowach jednocześnie. Dla `adabbcdde` i `aadabbbccdc` litera `b` występuje 2 i 3 razy → wkład **2**, nie 5.
+
+  **3.3 — prefiksosufiks działa w dwie strony.** To nie jest tylko „początek s1 = koniec s2". Trzeba sprawdzić **oba kierunki** i wziąć dłuższy z nich. W przykładzie z arkusza `abbaabaa` / `baabaabba` najdłuższy (`baabaa`, długość 6) pochodzi z kierunku „początek s2 = koniec s1" — kto sprawdza tylko jeden kierunek, znajdzie `abba` o długości 4 i odrzuci parę.
+
+  **Uwaga na warunek „co najmniej 5".** Para z prefiksosufiksem długości dokładnie 5 **spełnia** warunek.
+
+  **Bez pliku źródłowego nie da się odtworzyć wyników.** Plik `pary.txt` uczeń dostaje na egzaminie; powyższe odpowiedzi pochodzą z oficjalnych zasad oceniania CKE. Sens tego zadania to ćwiczenie **algorytmu**, nie zapamiętanie liczb.
+wymaganie: |
+  I.4) dobiera odpowiednią metodę lub technikę algorytmiczną i struktury danych. P.II.1) projektuje i programuje rozwiązania problemów z różnych dziedzin. Przetwarzanie danych z pliku tekstowego.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2026-maj-pr/zad-03.webp"
+  alt="Zadanie 3 — informatyka 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MINP-R0-100-A-2605 — zadanie 3."
+  zrodlo="CKE, matura maj 2026, informatyka PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Informatyka/MINP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## 3.1 — suma kodów ASCII
+
+```python
+najw = 0
+para = None
+for wiersz in open('pary.txt'):
+    s1, s2 = wiersz.split()
+    r = abs(sum(map(ord, s1)) - sum(map(ord, s2)))
+    if r > najw:
+        najw, para = r, (s1, s2)
+print(*para, najw)
+```
+
+## 3.2 — wspólne wystąpienia liter
+
+Dla każdej litery bierzemy **minimum** z liczby wystąpień w obu słowach:
+
+```python
+from collections import Counter
+
+najw = 0
+para = None
+for wiersz in open('pary.txt'):
+    s1, s2 = wiersz.split()
+    c1, c2 = Counter(s1), Counter(s2)
+    suma = sum(min(c1[x], c2[x]) for x in set(c1) & set(c2))
+    if suma > najw:
+        najw, para = suma, (s1, s2)
+print(*para, najw)
+```
+
+Bez `Counter` wystarczy tablica 26 liczników na słowo — zgodnie z duchem zadania.
+
+## 3.3 — prefiksosufiks w obu kierunkach
+
+```python
+def najdluzszy(s1, s2):
+    best = 0
+    for k in range(1, min(len(s1), len(s2)) + 1):
+        if s1[:k] == s2[-k:]:      # początek s1 = koniec s2
+            best = max(best, k)
+        if s2[:k] == s1[-k:]:      # początek s2 = koniec s1
+            best = max(best, k)
+    return best
+
+for wiersz in open('pary.txt'):
+    s1, s2 = wiersz.split()
+    d = najdluzszy(s1, s2)
+    if d >= 5:
+        print(s1, s2, d)
+```
+
+Złożoność O(n·L²) przy 500 parach i słowach do 50 znaków jest w zupełności wystarczająca — nie trzeba tu KMP ani haszowania.
+
+## Punktacja CKE
+
+- **3.1.** 2 pkt — para **i** wartość; 1 pkt — tylko jedno z nich.
+- **3.2.** 3 pkt, w tym 2 pkt za parę słów i 1 pkt za liczbę.
+- **3.3.** 4 pkt.
+- **Razem: 9 pkt.**

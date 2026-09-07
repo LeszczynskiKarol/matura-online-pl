@@ -1,0 +1,111 @@
+---
+arkusz: informatyka-2026-maj-pr
+subject: informatyka
+nr: 1
+punkty: 7
+typ: otwarte-rozszerzone
+topic: rekurencja, analiza algorytmu, zlozonosc logarytmiczna
+difficulty: 5
+tresc: |
+  **Zadanie 1. Rekurencja.** Dana jest funkcja `A(m, n)` dla dodatnich liczb całkowitych:
+
+  ```
+  A(m, n) = m                          gdy n = 1
+          = A(2·m, n/2)                gdy n > 1 i n parzyste
+          = 2·A(m, (n−1)/2) + m        gdy n > 1 i n nieparzyste
+  ```
+
+  Przykład podany w arkuszu: `A(3, 9) = 2·A(3, 4) + 3 = 2·A(6, 2) + 3 = 2·A(12, 1) + 3 = 2·12 + 3 = 27` — trzy wywołania rekurencyjne.
+
+  **1.1.** (0–3) Uzupełnij tabelę: podaj liczbę wywołań rekurencyjnych i wypisz je dla par `(25, 25)`, `(10, 15)` oraz `(1, 2¹⁰⁰ + 1)` (w ostatnim wierszu tylko liczbę).
+
+  **1.2.** (0–1) Podaj wartości `A(1, 777)` oraz `A(2·10⁶, 256·10⁶)`.
+
+  **1.3.** (0–3) Podaj liczbę wywołań rekurencyjnych dla `n = 8`, `n = 2ᵏ` i `n = 2ᵏ − 1` oraz wyrażenie na wartość drugiego argumentu w i-tym wywołaniu.
+odpowiedz: |
+  **1.1.**
+
+  | m | n | liczba wywołań | wywołania rekurencyjne |
+  |---|---|---|---|
+  | 3 | 9 | 3 | A(3,4), A(6,2), A(12,1) |
+  | 2⁵ | 2⁵ | **5** | **A(2⁶,2⁴), A(2⁷,2³), A(2⁸,2²), A(2⁹,2¹), A(2¹⁰,2⁰)** |
+  | 10 | 15 | **3** | **A(10,7), A(10,3), A(10,1)** |
+  | 1 | 2¹⁰⁰+1 | **100** | — |
+
+  **1.2.**
+
+  - `A(1, 777)` = **777**
+  - `A(2·10⁶, 256·10⁶)` = **512·10¹²** = 512 000 000 000 000
+
+  **1.3.**
+
+  | n | liczba wywołań | drugi argument w i-tym wywołaniu |
+  |---|---|---|
+  | 8 | 3 | 8/2ⁱ (lub 2³⁻ⁱ) |
+  | 2ᵏ | **k** | **2ᵏ⁻ⁱ** |
+  | 2ᵏ − 1 | **k − 1** | **2ᵏ⁻ⁱ − 1** |
+pulapka: |
+  **Najważniejsza obserwacja, która skraca całe zadanie: `A(m, n) = m · n`.**
+
+  Sprawdź na przykładzie z arkusza: A(3,9) = 27 = 3·9. Stąd 1.2 robi się w pamięci — A(1,777)=777, a A(2·10⁶, 256·10⁶) = 2·256·10¹² = 512·10¹². Bez tej obserwacji trzeba rozwijać rekurencję ręcznie i łatwo się pomylić przy dużych liczbach.
+
+  Uzasadnienie własności jest krótkie: dla n parzystego m·n = (2m)·(n/2), a dla nieparzystego 2·(m·(n−1)/2) + m = m·(n−1) + m = m·n. Wartość się nie zmienia na żadnym kroku, a na końcu (n=1) wynosi m.
+
+  **Druga pułapka — liczenie wywołań.** Rekurencja zmniejsza n mniej więcej o połowę, więc liczba wywołań jest rzędu log₂n:
+
+  - `n = 2ᵏ` → dokładnie **k** wywołań (schodzimy 2ᵏ → 2ᵏ⁻¹ → … → 2⁰ = 1);
+  - `n = 2ᵏ − 1` → **k − 1**, bo dla nieparzystych (n−1)/2 zjada jeden krok więcej na starcie;
+  - `n = 2¹⁰⁰ + 1` → jedno wywołanie na zejście do 2⁹⁹, potem 99 halvingów, razem **100**.
+
+  Częsty błąd to policzenie o jeden za dużo — wywołanie *początkowe* A(m,n) **nie jest** wywołaniem rekurencyjnym. W przykładzie z arkusza są trzy, nie cztery.
+wymaganie: |
+  I.4) dobiera odpowiednią metodę lub technikę algorytmiczną. I+II.3) objaśnia i porównuje podstawowe metody i techniki algorytmiczne. P.I.3) sprawdza poprawność działania algorytmów dla przykładowych danych.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2026-maj-pr/zad-01.webp"
+  alt="Zadanie 1 — informatyka 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MINP-R0-100-A-2605 — zadanie 1."
+  zrodlo="CKE, matura maj 2026, informatyka PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Informatyka/MINP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Dlaczego A(m, n) = m · n
+
+Dowód przez indukcję po n — wystarczy pokazać, że iloczyn `m · n` jest **niezmiennikiem** rekurencji:
+
+| Przypadek | Wywołanie | Iloczyn przed | Iloczyn po |
+|---|---|---|---|
+| n = 1 | zwraca m | m · 1 = m | — |
+| n parzyste | A(2m, n/2) | m · n | (2m) · (n/2) = **m · n** |
+| n nieparzyste | 2·A(m, (n−1)/2) + m | m · n | 2·(m·(n−1)/2) + m = m·n − m + m = **m · n** |
+
+Iloczyn nie zmienia się przy żadnym przejściu, a na dnie rekurencji równa się m. Algorytm to więc **mnożenie przez podwajanie** — ta sama idea, co w mnożeniu chłopskim (rosyjskim).
+
+## Ile jest wywołań
+
+Każdy krok dzieli n przez 2 (dla nieparzystych po odjęciu jedynki), więc głębokość to **⌊log₂ n⌋**:
+
+```
+n = 8  = 2³        → 8 → 4 → 2 → 1        : 3 wywołania
+n = 2ᵏ             → 2ᵏ → 2ᵏ⁻¹ → … → 2⁰   : k wywołań
+n = 2ᵏ − 1         → same nieparzyste     : k − 1 wywołań
+n = 2¹⁰⁰ + 1       → 1 + 99               : 100 wywołań
+```
+
+Drugi argument w i-tym wywołaniu:
+
+- dla n = 2ᵏ: **2ᵏ⁻ⁱ**
+- dla n = 2ᵏ − 1: **2ᵏ⁻ⁱ − 1**
+
+## Punktacja CKE
+
+- **1.1.** 3 pkt za 5 poprawnych pól tabeli, 2 pkt za 4, 1 pkt za co najmniej 2.
+- **1.2.** 1 pkt — oba wiersze poprawne.
+- **1.3.** 3 pkt za 4 poprawne pola, 2 pkt za 3, 1 pkt za 2.
+- **Razem: 7 pkt.**

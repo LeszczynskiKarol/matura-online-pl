@@ -1,0 +1,63 @@
+---
+arkusz: informatyka-2026-maj-pr
+subject: informatyka
+nr: 6
+punkty: 1
+typ: otwarte-krotkie
+topic: adresacja IP, IPv4, IPv6, sieci komputerowe
+difficulty: 1
+tresc: |
+  Uzupełnij zdania. Wpisz właściwe liczby bitów.
+
+  - Adres IP w wersji 4 ma długość ………… bity.
+  - Adres IP w wersji 6 ma długość ………… bitów.
+odpowiedz: |
+  - Adres IP w wersji 4 ma długość **32** bity.
+  - Adres IP w wersji 6 ma długość **128** bitów.
+pulapka: |
+  Najczęstsza pomyłka to podanie **4 i 6** (numery wersji) albo **4 i 16 bajtów** zamiast bitów. Polecenie pyta wprost o **bity**.
+
+  Drugi błąd to zapamiętanie IPv6 jako 64 bitów — bo adres zapisuje się w ośmiu grupach po cztery cyfry szesnastkowe, a 8·4 = 32 znaki. Ale każda cyfra szesnastkowa to 4 bity, więc 32·4 = **128 bitów**.
+
+  To jedyne zadanie w arkuszu za 1 punkt, na czystą wiedzę — nie ma tu nic do wyliczenia.
+wymaganie: |
+  Zakres podstawy programowej — sieci komputerowe, protokoły i adresacja.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2026-maj-pr/zad-06.webp"
+  alt="Zadanie 6 — informatyka 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MINP-R0-100-A-2605 — zadanie 6."
+  zrodlo="CKE, matura maj 2026, informatyka PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Informatyka/MINP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## IPv4 a IPv6
+
+| | IPv4 | IPv6 |
+|---|---|---|
+| Długość | **32 bity** (4 bajty) | **128 bitów** (16 bajtów) |
+| Zapis | dziesiętny z kropkami: `192.168.1.1` | szesnastkowy z dwukropkami: `2001:0db8::1` |
+| Liczba adresów | 2³² ≈ 4,3 mld | 2¹²⁸ ≈ 3,4·10³⁸ |
+| Powód powstania | — | **wyczerpanie puli IPv4** |
+
+## Skąd się biorą te liczby
+
+**IPv4** — cztery oktety po 8 bitów: 4 · 8 = **32**. Każdy oktet przyjmuje wartości 0–255, stąd zapis `192.168.1.1`.
+
+**IPv6** — osiem grup po cztery cyfry szesnastkowe. Jedna cyfra szesnastkowa koduje 4 bity, więc grupa to 16 bitów, a całość 8 · 16 = **128**.
+
+## Warto też pamiętać
+
+- adres MAC — **48 bitów**,
+- maska podsieci w IPv4 — również 32 bity (np. `/24` = 24 jedynki),
+- adres pętli zwrotnej: `127.0.0.1` (IPv4) i `::1` (IPv6).
+
+## Punktacja CKE
+
+- **1 pkt** — obie liczby poprawne.

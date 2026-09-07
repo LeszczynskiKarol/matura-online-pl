@@ -1,0 +1,120 @@
+---
+arkusz: informatyka-2026-maj-pr
+subject: informatyka
+nr: 7
+punkty: 9
+typ: otwarte-rozszerzone
+topic: arkusz kalkulacyjny, analiza danych, wykres kolumnowy, symulacja wzrostu
+difficulty: 5
+tresc: |
+  **Zadanie 7. Staw.** Plik `staw.txt` zawiera dane z całego 2022 roku, rozdzielone tabulatorami: `Data`, `Temp` (temperatura w °C, do jednego miejsca po przecinku), `Opady` (mm, liczba całkowita).
+
+  **7.1.** (0–3) Utwórz zestawienie **średnich miesięcznych temperatur** (do jednego miejsca po przecinku) i na jego podstawie **wykres kolumnowy** z czytelnym opisem (tytuł, opisy osi, oznaczenie miesięcy).
+
+  **7.2.** (0–2) Dla każdego miesiąca wyznacz długość **najdłuższego ciągu kolejnych dni bez opadów**.
+
+  **Informacja do 7.3–7.4:** przez 184 dni (1 marca – 31 sierpnia 2023) rzęsa rośnie **1,75% dziennie**; przyrost następuje w nocy, pomiar rano. 1 marca rano staw zarośnięty w **20%** (2000 m² z 10 000 m²). Właściciel wpuścił **80 amurów**, każdy zjada **0,25 m²** dziennie, a **co piątek** odławia dodatkowo **60 m²**. Kontrola: 30 kwietnia rano zarośnięcie wynosi **25,79%**.
+
+  **7.3.** (0–2) W którym dniu (licząc od 1 marca 2023) rzęsa po raz pierwszy zajęła **więcej niż 75%** powierzchni?
+
+  **7.4.** (0–2) Jaka jest **najmniejsza liczba amurów**, przy której rzęsa w całym okresie zajmuje maksymalnie **50%** powierzchni?
+odpowiedz: |
+  **7.1.** Średnie miesięczne temperatury:
+
+  | Miesiąc | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+  |---|---|---|---|---|---|---|---|---|---|---|---|---|
+  | Śr. temp. (°C) | 1,1 | 4,1 | 4,1 | 7,4 | 15,9 | 20,5 | 20,4 | 21,1 | 13,7 | 12,5 | 5,2 | 1,6 |
+
+  **7.2.** Najdłuższy ciąg dni bez opadów w miesiącu:
+
+  | Miesiąc | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 |
+  |---|---|---|---|---|---|---|---|---|---|---|---|---|
+  | Długość | 11 | 7 | 20 | 8 | 20 | 11 | 10 | 8 | 14 | 15 | 10 | 10 |
+
+  **7.3.** **167**, czyli **14 sierpnia 2023**.
+
+  **7.4.** **94** amury.
+pulapka: |
+  **Kolejność operacji w symulacji jest krytyczna.** Treść mówi wyraźnie: przyrost następuje **w nocy**, a pomiar **rano**; amury jedzą **w ciągu dnia**, odławianie też jest **w ciągu dnia**. Dla każdego dnia trzeba więc: pomnożyć przez 1,0175 → odjąć jedzenie amurów → w piątek odjąć 60. Zamiana kolejności daje inny wynik i traci punkty.
+
+  **Kontrola 25,79% na 30 kwietnia jest po to, żeby sprawdzić model.** Jeśli po zbudowaniu arkusza ta wartość się nie zgadza, błąd jest w kolejności operacji albo w liczeniu piątków — nie ma sensu iść dalej.
+
+  **7.4 wymaga wyszukiwania, nie wzoru.** Trzeba przetestować kolejne liczby amurów i sprawdzić maksimum zarośnięcia w całym okresie. Wynik 94 to **najmniejsza** taka liczba — odpowiedź „100" (bezpieczna z zapasem) nie punktuje.
+
+  **W 7.1 punkty za wykres są dwa i osobne od zestawienia.** 1 pkt za dobór danych i typ wykresu, 1 pkt za czytelny opis. Wykres bez tytułu i opisów osi traci połowę punktów za tę część.
+wymaganie: |
+  I.4) dobiera odpowiednią metodę lub technikę algorytmiczną. P.II.1) projektuje i programuje rozwiązania problemów. Wykorzystanie arkusza kalkulacyjnego do analizy danych i tworzenia wykresów.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2026-maj-pr/zad-07.webp"
+  alt="Zadanie 7 — informatyka 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MINP-R0-100-A-2605 — zadanie 7."
+  zrodlo="CKE, matura maj 2026, informatyka PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Informatyka/MINP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## 7.2 — najdłuższy ciąg zer w miesiącu
+
+Klasyczne liczenie serii: przechodzimy dni po kolei, zwiększamy licznik przy opadach = 0, zerujemy go przy opadach > 0, po drodze zapamiętujemy maksimum. Licznik resetujemy **na granicy miesiąca**, bo pytanie dotyczy ciągu *w tym miesiącu*.
+
+```python
+from collections import defaultdict
+
+najd = defaultdict(int)
+biez = defaultdict(int)
+for wiersz in open('staw.txt', encoding='utf-8').readlines()[1:]:
+    data, temp, opady = wiersz.split('\t')
+    m = int(data.split('-')[1])
+    if int(opady) == 0:
+        biez[m] += 1
+        najd[m] = max(najd[m], biez[m])
+    else:
+        biez[m] = 0
+```
+
+## 7.3 i 7.4 — model symulacji
+
+Dla każdego dnia, w tej kolejności:
+
+1. **noc** — powierzchnia rośnie: `p = p * 1.0175`
+2. **dzień** — amury zjadają: `p = p − liczba_amurow * 0.25`
+3. **piątek** — odławianie: `p = p − 60`
+4. **rano następnego dnia** — pomiar
+
+```python
+from datetime import date, timedelta
+
+def symuluj(amury):
+    p = 2000.0
+    d = date(2023, 3, 1)
+    maks = p
+    for dzien in range(1, 185):
+        p *= 1.0175
+        p -= amury * 0.25
+        if d.weekday() == 4:          # piątek
+            p -= 60
+        d += timedelta(days=1)
+        maks = max(maks, p)
+        if amury == 80 and p > 7500 and 'pierwszy' not in dir():
+            pass
+    return maks
+
+# 7.4 — najmniejsza liczba amurów, przy której maksimum ≤ 5000 m²
+print(min(a for a in range(1, 200) if symuluj(a) <= 5000))
+```
+
+## Dlaczego kontrola z 30 kwietnia jest cenna
+
+30 kwietnia to **61. dzień** symulacji. Jeśli po tylu krokach model daje 2579 m² (25,79%), to znaczy, że i tempo wzrostu, i jedzenie amurów, i liczba piątków są policzone poprawnie. To najtańszy sposób na wyłapanie błędu przed liczeniem 7.3 i 7.4.
+
+## Punktacja CKE
+
+- **7.1.** 3 pkt — zestawienie 1 pkt, wykres 2 pkt (dobór danych i typ + czytelny opis).
+- **7.2.** 2 pkt · **7.3.** 2 pkt · **7.4.** 2 pkt.
+- **Razem: 9 pkt.**

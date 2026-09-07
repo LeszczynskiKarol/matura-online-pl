@@ -1,0 +1,114 @@
+---
+arkusz: informatyka-2026-maj-pr
+subject: informatyka
+nr: 4
+punkty: 8
+typ: otwarte-rozszerzone
+topic: drzewo, hierarchia, przetwarzanie pliku, zliczanie podwladnych
+difficulty: 5
+tresc: |
+  **Zadanie 4. Korporacja.** W korporacji pracuje `n` osób o numerach 1…n. Pracownik 1 to prezes, każdy inny ma **dokładnie jednego** bezpośredniego przełożonego, którego numer jest **zawsze mniejszy** od jego własnego. Przełożonym pracownika jest jego bezpośredni przełożony i wszyscy przełożeni tego przełożonego.
+
+  **4.1.** (0–1) Dla przykładowej hierarchii z Rysunku 1. określ, ilu każdy pracownik ma bezpośrednich podwładnych i ilu wszystkich.
+
+  Plik `korpo.txt` zawiera `n = 50 000` liczb: w pierwszym wierszu `0` (prezes), w i-tym wierszu numer bezpośredniego przełożonego pracownika `i`.
+
+  **4.2.** (0–2) Podaj, ilu pracowników **nie jest przełożonym żadnego** pracownika.
+
+  **4.3.** (0–2) Podaj, który pracownik ma **najwięcej bezpośrednich podwładnych** — numer i liczbę.
+
+  **4.4.** (0–3) Policz, ilu **najwięcej przełożonych** ma jeden pracownik. Podaj tę liczbę oraz ilu pracowników ma taką liczbę przełożonych.
+odpowiedz: |
+  **4.1.** Dla hierarchii z Rysunku 1.:
+
+  | Pracownik | Bezpośredni podwładni | Wszyscy podwładni |
+  |---|---|---|
+  | 1 | **2** | **7** |
+  | 2 | **3** | **4** |
+  | 3 | **1** | **1** |
+  | 4 | **1** | **1** |
+  | 5 | 0 | 0 |
+  | 6 | 0 | 0 |
+  | 7 | 0 | 0 |
+  | 8 | 0 | 0 |
+
+  **4.2.** **25 113**
+
+  **4.3.** **2 19** — pracownik numer 2 ma 19 bezpośrednich podwładnych.
+
+  **4.4.** **22 2** — największa liczba przełożonych to 22, a takich pracowników jest 2.
+pulapka: |
+  **Warunek „numer przełożonego jest zawsze mniejszy" to nie ozdobnik — to klucz do wydajności.** Dzięki niemu można policzyć liczbę przełożonych **jednym przebiegiem od 1 do n**, bo przetwarzając pracownika `i`, jego przełożony jest już policzony:
+
+  ```
+  przelozonych[i] = przelozonych[przel[i]] + 1
+  ```
+
+  Bez tej obserwacji naturalne jest wspinanie się po drzewie dla każdego pracownika osobno — to działa, ale przy 50 000 pracowników i głębokim drzewie robi się kwadratowo wolne.
+
+  **4.2 — „nie jest przełożonym żadnego pracownika" to liście drzewa**, czyli pracownicy o zerowej liczbie bezpośrednich podwładnych. Nie mylić z „nie ma przełożonego" — taki jest tylko jeden, prezes.
+
+  **4.4 — pytanie jest o przełożonych, nie podwładnych**, i o **wszystkich**, nie bezpośrednich. To po prostu **głębokość** pracownika w drzewie. Odpowiedź ma dwie liczby: maksymalną głębokość i liczbę pracowników na tej głębokości.
+
+  **W 4.1 kolumny łatwo pomylić.** „Wszyscy podwładni" liczy całe poddrzewo, nie tylko dzieci — pracownik 2 ma 3 bezpośrednich (3, 5, 6), ale 4 wszystkich (dochodzi 7).
+wymaganie: |
+  I.4) dobiera odpowiednią metodę lub technikę algorytmiczną i struktury danych. P.I.3) sprawdza poprawność działania algorytmów. P.II.1) projektuje i programuje rozwiązania problemów z różnych dziedzin.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2026-maj-pr/zad-04.webp"
+  alt="Zadanie 4 — informatyka 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MINP-R0-100-A-2605 — zadanie 4."
+  zrodlo="CKE, matura maj 2026, informatyka PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Informatyka/MINP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Struktura danych — to jest drzewo
+
+Hierarchia korporacji to **drzewo ukorzenione** w prezesie:
+
+- każdy wierzchołek poza korzeniem ma dokładnie jednego rodzica (przełożonego),
+- „wszyscy podwładni" = rozmiar poddrzewa minus sam wierzchołek,
+- „wszyscy przełożeni" = **głębokość** wierzchołka.
+
+Plik `korpo.txt` to zapis tablicy rodziców: `przel[i]` w i-tym wierszu.
+
+## Rozwiązania wszystkich podpunktów
+
+```python
+przel = [int(x) for x in open('korpo.txt')]
+n = len(przel)                       # przel[0] dotyczy pracownika 1
+
+# 4.2 — liczba liści
+bezposredni = [0] * (n + 1)
+for i in range(2, n + 1):
+    bezposredni[przel[i - 1]] += 1
+print('4.2', sum(1 for i in range(1, n + 1) if bezposredni[i] == 0))
+
+# 4.3 — najwięcej bezpośrednich podwładnych
+naj = max(range(1, n + 1), key=lambda i: bezposredni[i])
+print('4.3', naj, bezposredni[naj])
+
+# 4.4 — największa liczba przełożonych (głębokość)
+glebokosc = [0] * (n + 1)
+for i in range(2, n + 1):            # numer przełożonego < i, więc jest już policzony
+    glebokosc[i] = glebokosc[przel[i - 1]] + 1
+m = max(glebokosc[1:])
+print('4.4', m, glebokosc.count(m))
+```
+
+Wszystko w **jednym przebiegu** po tablicy — złożoność O(n).
+
+## Dlaczego kolejność numerów ma znaczenie
+
+Gdyby przełożony mógł mieć numer większy od podwładnego, tablicy głębokości nie dałoby się wypełnić prostą pętlą rosnącą — trzeba by przejść drzewo w porządku BFS/DFS od korzenia. Zadanie celowo daje tę gwarancję, żeby rozwiązanie mieściło się w jednej pętli.
+
+## Punktacja CKE
+
+- **4.1.** 1 pkt · **4.2.** 2 pkt · **4.3.** 2 pkt · **4.4.** 3 pkt.
+- **Razem: 8 pkt.**

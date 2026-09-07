@@ -1,0 +1,92 @@
+---
+arkusz: informatyka-2026-maj-pr
+subject: informatyka
+nr: 5
+punkty: 2
+typ: otwarte-krotkie
+topic: systemy liczbowe, system piatkowy, system trojkowy, konwersja
+difficulty: 3
+tresc: |
+  Wyrażenie zawierające liczby w systemach: **piątkowym**, **dziesiętnym** i **trójkowym**. W miejsce kropek wpisz odpowiednie liczby, tak aby obie równości były prawdziwe:
+
+  ```
+  (1440)₅ + (………)₅ = (427)₁₀ = (………)₃ − (110002)₃
+  ```
+odpowiedz: |
+  ```
+  (1440)₅ + (1212)₅ = (427)₁₀ = (1000220)₃ − (110002)₃
+  ```
+
+  **Pierwsza luka: (1212)₅**
+
+  (1440)₅ = 1·125 + 4·25 + 4·5 + 0 = 125 + 100 + 20 = **245**
+  427 − 245 = **182**
+  182 = 1·125 + 2·25 + 1·5 + 2 → **(1212)₅**
+
+  **Druga luka: (1000220)₃**
+
+  (110002)₃ = 1·243 + 1·81 + 2 = **326**
+  427 + 326 = **753**
+  753 = 1·729 + 2·9 + 2·3 → **(1000220)₃**
+pulapka: |
+  **Kierunek działania w drugiej równości jest odwrotny, niż podpowiada odruch.** Skoro `427 = X − (110002)₃`, to `X = 427 + 326`, a nie `427 − 326`. Odjęcie zamiast dodania daje (101)₁₀ i zły wynik — to najczęstszy błąd w tym zadaniu.
+
+  **Nie licz w obcym systemie.** Najbezpieczniej przejść przez dziesiętny: zamień wszystko na dziesiętny, wykonaj działanie, zamień wynik z powrotem. Dodawanie pisemne w systemie piątkowym działa, ale przy przeniesieniach łatwo się pomylić.
+
+  **Sprawdź wynik przez podstawienie.** Zamiana z powrotem zajmuje kilkanaście sekund i wyłapuje pomyłkę w potędze — a punkty są dwa, po jednym za każdą liczbę.
+wymaganie: |
+  I.1) planuje kolejne kroki rozwiązywania problemu. Reprezentacja liczb w różnych systemach pozycyjnych.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/informatyka/2026-maj-pr/zad-05.webp"
+  alt="Zadanie 5 — informatyka 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MINP-R0-100-A-2605 — zadanie 5."
+  zrodlo="CKE, matura maj 2026, informatyka PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Informatyka/MINP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Zamiana na system dziesiętny
+
+Mnożymy cyfry przez kolejne potęgi podstawy, licząc od prawej (pozycja 0):
+
+```
+(1440)₅   = 1·5³ + 4·5² + 4·5¹ + 0·5⁰ = 125 + 100 + 20 + 0 = 245
+(110002)₃ = 1·3⁵ + 1·3⁴ + 0 + 0 + 0 + 2·3⁰ = 243 + 81 + 2 = 326
+```
+
+## Zamiana z systemu dziesiętnego
+
+Dzielimy z resztą przez podstawę, reszty czytamy **od końca**:
+
+```
+182 : 5 = 36  r. 2
+ 36 : 5 =  7  r. 1
+  7 : 5 =  1  r. 2
+  1 : 5 =  0  r. 1     →  (1212)₅
+```
+
+Alternatywnie przez potęgi: 182 = 125 + 57 = 125 + 50 + 7 = 125 + 50 + 5 + 2 → 1·125, 2·25, 1·5, 2·1.
+
+```
+753 = 729 + 24 = 3⁶ + 2·3² + 2·3¹  →  1 0 0 0 2 2 0  =  (1000220)₃
+```
+
+## Potęgi warte zapamiętania
+
+| | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
+|---|---|---|---|---|---|---|---|
+| **3ⁿ** | 1 | 3 | 9 | 27 | 81 | 243 | 729 |
+| **5ⁿ** | 1 | 5 | 25 | 125 | 625 | 3125 | — |
+| **2ⁿ** | 1 | 2 | 4 | 8 | 16 | 32 | 64 |
+
+## Punktacja CKE
+
+- **2 pkt** — obie liczby poprawne.
+- **1 pkt** — jedna liczba poprawna.
+- **Razem: 2 pkt.**
