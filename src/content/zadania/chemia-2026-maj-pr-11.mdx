@@ -1,0 +1,136 @@
+---
+arkusz: chemia-2026-maj-pr
+subject: chemia
+nr: 11
+punkty: 3
+typ: otwarte-krotkie
+topic: analiza wagowa, stezenie molowe, stechiometria, tlenek zelaza III, sposoby rozdzielania mieszanin
+difficulty: 3
+tresc: |
+  **Informacja wstępna.** W celu oznaczenia stężenia określonych jonów w roztworze należy **strącić je całkowicie** w postaci trudno rozpuszczalnego osadu, który po odsączeniu **suszy się i praży** do uzyskania stałej masy. Metodę tę stosuje się m.in. w oznaczaniu zawartości jonów żelaza(III).
+
+  W wyniku strącania jonów $\text{Fe}^{3+}$ nadmiarem jonów wodorotlenkowych wydziela się uwodniony tlenek żelaza(III):
+
+  $$2\,\text{Fe}^{3+} + 6\,\text{OH}^- \rightarrow \text{Fe}_2\text{O}_3\cdot 3\text{H}_2\text{O}\!\downarrow$$
+
+  Osad praży się w temperaturze ok. 1000 °C do uzyskania **bezwodnego $\text{Fe}_2\text{O}_3$**.
+
+  **11.1.** (0–2) Z próbki roztworu o objętości **100 cm³** całkowicie strącono uwodniony tlenek żelaza(III). Osad wyprażono do stałej masy **0,040 g**. Oblicz **stężenie molowe jonów żelaza(III)** w badanym roztworze.
+
+  **11.2.** (0–1) Aby ilościowo wyodrębnić uwodniony tlenek żelaza(III) z roztworu, należy wykonać: **A.** dekantację · **B.** destylację · **C.** sączenie · **D.** odparowanie pod wyciągiem
+odpowiedz: |
+  **11.1.**
+
+  **Krok 1. Masa molowa tlenku żelaza(III).**
+
+  $$M_{\text{Fe}_2\text{O}_3} = 2\cdot 55{,}85 + 3\cdot 16{,}00 = 111{,}70 + 48{,}00 = 159{,}70\ \text{g/mol}$$
+
+  **Krok 2. Liczba moli $\text{Fe}_2\text{O}_3$.**
+
+  $$n_{\text{Fe}_2\text{O}_3} = \frac{m}{M} = \frac{0{,}040\ \text{g}}{159{,}70\ \text{g/mol}} = 2{,}5\cdot 10^{-4}\ \text{mol}$$
+
+  **Krok 3. Liczba moli jonów $\text{Fe}^{3+}$.**
+
+  W jednym molu $\text{Fe}_2\text{O}_3$ są **dwa** atomy żelaza, a całe żelazo z roztworu przeszło do osadu:
+
+  $$n_{\text{Fe}^{3+}} = 2 \cdot n_{\text{Fe}_2\text{O}_3} = 2 \cdot 2{,}5\cdot 10^{-4} = 5{,}0\cdot 10^{-4}\ \text{mol}$$
+
+  **Krok 4. Stężenie molowe.**
+
+  $$V = 100\ \text{cm}^3 = 0{,}100\ \text{dm}^3$$
+
+  $$c_{\text{Fe}^{3+}} = \frac{n}{V} = \frac{5{,}0\cdot 10^{-4}\ \text{mol}}{0{,}100\ \text{dm}^3}$$
+
+  $$\boxed{c_{\text{Fe}^{3+}} = 5{,}0\cdot 10^{-3}\ \text{mol}\cdot\text{dm}^{-3} = 0{,}0050\ \text{mol}\cdot\text{dm}^{-3}}$$
+
+  **11.2. C** — **sączenie**.
+
+  Osad jest ciałem stałym zawieszonym w cieczy. Aby oddzielić go **ilościowo** (bez strat), przesącza się mieszaninę przez sączek: osad zostaje na sączku, przesącz przechodzi do naczynia.
+pulapka: |
+  **Najczęstszy błąd: pominięcie współczynnika 2.** Wzór $\text{Fe}_2\text{O}_3$ zawiera **dwa** atomy żelaza, więc liczba moli jonów $\text{Fe}^{3+}$ jest **dwukrotnie większa** niż liczba moli tlenku. Bez tego kroku wynik jest dwa razy za mały.
+
+  **Drugi błąd: użycie masy uwodnionego tlenku.** Ważymy osad **po wyprażeniu**, czyli **bezwodny $\text{Fe}_2\text{O}_3$** o masie molowej 159,70 g/mol — a nie $\text{Fe}_2\text{O}_3\cdot 3\text{H}_2\text{O}$. Właśnie po to praży się osad „do stałej masy".
+
+  **Trzeci: przeliczenie objętości.** $100\ \text{cm}^3 = \mathbf{0{,}100\ \text{dm}^3}$. Podstawienie 100 zamiast 0,1 daje wynik zaniżony tysiąckrotnie.
+
+  **Nie zapomnij o jednostce wyniku.** Klucz CKE wymaga wartości liczbowej **z poprawną jednostką** — mol·dm⁻³. Sam wynik liczbowy oznacza utratę punktu.
+
+  **W 11.2 kusi odpowiedź A (dekantacja).** Dekantacja to zlanie cieczy znad osadu — **nie jest metodą ilościową**, bo część osadu zawsze pozostaje w zawiesinie. Zadanie wymaga wyodrębnienia **ilościowego**, czyli sączenia.
+
+  **Destylacja i odparowanie służą do czego innego.** Destylacja rozdziela ciecze o różnych temperaturach wrzenia; odparowanie usuwa rozpuszczalnik, ale wtedy na dnie zostałyby **wszystkie** substancje rozpuszczone, nie tylko osad.
+wymaganie: |
+  I. Atomy, cząsteczki i stechiometria chemiczna — obliczenia stechiometryczne, stężenie molowe. XIII. Elementy ochrony środowiska i metody badawcze — analiza wagowa, sposoby rozdzielania mieszanin (sączenie, dekantacja, destylacja, krystalizacja).
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2026-maj-pr/zad-11.webp"
+  alt="Zadanie 11 — chemia 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MCHP-R0-100-A-2605 — zadanie 11."
+  zrodlo="CKE, matura maj 2026, chemia PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Chemia/MCHP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Schemat obliczeń w analizie wagowej
+
+| Krok | Wzór | W tym zadaniu |
+|---|---|---|
+| **1.** masa osadu → mole osadu | $n = \dfrac{m}{M}$ | $\dfrac{0{,}040}{159{,}70} = 2{,}5\cdot 10^{-4}$ mol |
+| **2.** mole osadu → mole jonów | przelicznik ze wzoru | $\times 2 \Rightarrow 5{,}0\cdot 10^{-4}$ mol |
+| **3.** mole → stężenie | $c = \dfrac{n}{V}$ | $\dfrac{5{,}0\cdot 10^{-4}}{0{,}100} = 5{,}0\cdot 10^{-3}$ mol·dm⁻³ |
+
+Ogólny wzór dla tego typu zadań:
+
+$$c = \frac{k\cdot m_{\text{osadu}}}{M_{\text{osadu}}\cdot V}$$
+
+gdzie $k$ to liczba atomów oznaczanego pierwiastka w cząsteczce osadu (tu $k = 2$).
+
+## Analiza wagowa — na czym polega
+
+| Etap | Cel |
+|---|---|
+| **strącanie** | przeprowadzenie oznaczanego jonu w trudno rozpuszczalny osad |
+| **nadmiar odczynnika** | zapewnienie **całkowitego** strącenia |
+| **sączenie** | ilościowe oddzielenie osadu od roztworu |
+| **przemywanie** | usunięcie zaadsorbowanych jonów obcych |
+| **suszenie i prażenie** | doprowadzenie do **postaci o znanym, stałym składzie** |
+| **ważenie do stałej masy** | pewność, że cała woda została usunięta |
+
+Prażenie w ~1000 °C usuwa wodę hydratacyjną:
+
+$$\text{Fe}_2\text{O}_3\cdot 3\text{H}_2\text{O} \xrightarrow{\ \Delta\ } \text{Fe}_2\text{O}_3 + 3\,\text{H}_2\text{O}\!\uparrow$$
+
+## Metody rozdzielania mieszanin
+
+| Metoda | Co rozdziela | Kiedy stosować |
+|---|---|---|
+| **sączenie (filtracja)** | **ciało stałe od cieczy** | osad w roztworze; metoda **ilościowa** |
+| **dekantacja** | ciecz znad osadu | osad dobrze opada; metoda **przybliżona** |
+| **odparowanie** | rozpuszczalnik od substancji rozpuszczonej | odzyskanie soli z roztworu |
+| **krystalizacja** | substancję z roztworu, oczyszczanie | różna rozpuszczalność w temperaturze |
+| **destylacja** | ciecze o różnych $T_w$ | mieszanina cieczy |
+| **ekstrakcja** | substancję rozpuszczalną w drugim rozpuszczalniku | rozdział faz |
+| **rozdzielacz** | ciecze niemieszające się | woda i olej |
+| **chromatografia** | składniki o różnym powinowactwie | mieszaniny barwników |
+
+## Masy molowe przydatne w chemii analitycznej
+
+| Osad | $M$, g/mol |
+|---|---|
+| **$\text{Fe}_2\text{O}_3$** | **159,70** |
+| $\text{BaSO}_4$ | 233,39 |
+| $\text{AgCl}$ | 143,32 |
+| $\text{CaCO}_3$ | 100,09 |
+| $\text{Al}_2\text{O}_3$ | 101,96 |
+| $\text{Mg}_2\text{P}_2\text{O}_7$ | 222,55 |
+
+## Punktacja CKE
+
+- **11.1.** 2 pkt — poprawna metoda, poprawne obliczenia i wynik **z jednostką** ($5\cdot 10^{-3}$ mol·dm⁻³);
+  1 pkt — poprawna metoda z błędem rachunkowym **albo** wynik z niewłaściwą jednostką **albo** poprawne obliczenie liczby moli $\text{Fe}^{3+}$ bez podania stężenia.
+- **11.2.** 1 pkt — odpowiedź **C**.
+- **Razem: 3 pkt.**

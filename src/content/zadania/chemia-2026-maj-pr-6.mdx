@@ -1,0 +1,118 @@
+---
+arkusz: chemia-2026-maj-pr
+subject: chemia
+nr: 6
+punkty: 1
+typ: otwarte-krotkie
+topic: typy krysztalow, krysztaly molekularne i kowalencyjne, temperatura topnienia, przewodnictwo elektryczne
+difficulty: 3
+tresc: |
+  Dwie krystaliczne substancje — **A** i **B** — tworzą różnego typu kryształy. W tabeli podano wybrane właściwości tych substancji:
+
+  | Substancja | Temperatura topnienia, °C | Rozpuszczalność w wodzie | Przewodnictwo w stanie stałym | Przewodnictwo po stopieniu |
+  |---|---|---|---|---|
+  | **A** | **185** | bardzo dobrze rozpuszczalna | **nie wykazuje** | **nie wykazuje** |
+  | **B** | **1710** | nierozpuszczalna | **nie wykazuje** | **nie wykazuje** |
+
+  **Polecenie (0–1).** Napisz, jakiego typu kryształy — **kowalencyjne, molekularne, metaliczne albo jonowe** — są tworzone przez każdą z substancji.
+odpowiedz: |
+  **Substancja A: kryształy molekularne.**
+
+  **Substancja B: kryształy kowalencyjne.**
+
+  **Rozumowanie — eliminacja krok po kroku:**
+
+  1. **Odrzucamy kryształy metaliczne.** Metale przewodzą prąd **w stanie stałym** (swobodne elektrony). Żadna z substancji nie przewodzi w stanie stałym.
+
+  2. **Odrzucamy kryształy jonowe.** Substancje jonowe **nie przewodzą w stanie stałym, ale przewodzą po stopieniu** (uwolnione jony stają się ruchliwe). Tu żadna z substancji nie przewodzi po stopieniu — to wyklucza budowę jonową.
+
+  3. **Substancja A → molekularne.** Świadczy o tym **niska temperatura topnienia (185 °C)**: w węzłach sieci są cząsteczki, a wiążą je jedynie **słabe oddziaływania międzycząsteczkowe**, łatwe do pokonania. Bardzo dobra rozpuszczalność w wodzie wskazuje na cząsteczki polarne albo zdolne do tworzenia wiązań wodorowych.
+
+  4. **Substancja B → kowalencyjne.** Świadczy o tym **bardzo wysoka temperatura topnienia (1710 °C)** i **nierozpuszczalność w wodzie**: cały kryształ jest jedną wielką siecią połączoną **mocnymi wiązaniami kowalencyjnymi**, których stopienie wymaga rozerwania wiązań chemicznych. Przykłady: diament, $\text{SiO}_2$ (kwarc), SiC, grafit.
+pulapka: |
+  **Najczęstszy błąd: uznanie substancji A za jonową, bo dobrze rozpuszcza się w wodzie.** Rozpuszczalność sama w sobie nie rozstrzyga — cukier (kryształ molekularny) rozpuszcza się równie dobrze jak sól. Kryterium **rozstrzygającym jest przewodnictwo po stopieniu**: substancja jonowa **musi** przewodzić w stanie ciekłym.
+
+  **Drugi błąd: uznanie substancji B za jonową ze względu na wysoką temperaturę topnienia.** Kryształy jonowe też topnieją wysoko (NaCl — 801 °C), ale **ciekła sól przewodzi prąd**. Substancja B nie przewodzi, więc jest kowalencyjna.
+
+  **Nie myl przewodnictwa w stanie stałym z przewodnictwem po stopieniu.** To dwie różne kolumny tabeli i dopiero razem dają jednoznaczną odpowiedź:
+
+  - przewodzi na stałe → **metaliczny**,
+  - nie przewodzi na stałe, przewodzi po stopieniu → **jonowy**,
+  - nie przewodzi nigdy + wysoka $T_t$ → **kowalencyjny**,
+  - nie przewodzi nigdy + niska $T_t$ → **molekularny**.
+
+  **Grafit to wyjątek wśród kryształów kowalencyjnych** — przewodzi prąd dzięki zdelokalizowanym elektronom π między warstwami. Na maturze pojawia się jako pułapka przy zadaniach o przewodnictwie.
+
+  **Punkt przyznawany jest łącznie za obie substancje.** Jedna trafna i jedna chybiona odpowiedź to zero punktów.
+wymaganie: |
+  II. Wiązania chemiczne — typy kryształów (jonowe, kowalencyjne, molekularne, metaliczne), zależność właściwości substancji od rodzaju wiązania i budowy sieci krystalicznej.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2026-maj-pr/zad-06.webp"
+  alt="Zadanie 6 — chemia 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MCHP-R0-100-A-2605 — zadanie 6."
+  zrodlo="CKE, matura maj 2026, chemia PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Chemia/MCHP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Cztery typy kryształów — tabela rozstrzygająca
+
+| Cecha | **Jonowe** | **Kowalencyjne** | **Molekularne** | **Metaliczne** |
+|---|---|---|---|---|
+| w węzłach sieci | **jony** | **atomy** | **cząsteczki** | **kationy + gaz elektronowy** |
+| siły wiążące | elektrostatyczne | **wiązania kowalencyjne** | **oddziaływania międzycząsteczkowe** | wiązanie metaliczne |
+| temperatura topnienia | wysoka (600–2800 °C) | **bardzo wysoka** (>1500 °C) | **niska** (<300 °C) | zróżnicowana |
+| twardość | duża, ale kruche | **bardzo duża** | mała | kowalne, ciągliwe |
+| przewodnictwo — **ciało stałe** | **nie** | **nie** (wyj. grafit) | **nie** | **tak** |
+| przewodnictwo — **stop / roztwór** | **tak** | **nie** | **nie** | tak |
+| rozpuszczalność w wodzie | często dobra | **zwykle brak** | zależy od polarności | brak (reagują) |
+| przykłady | NaCl, $\text{CaF}_2$, $\text{K}_2\text{SO}_4$ | **diament, $\text{SiO}_2$, SiC, BN** | **lód, jod, cukier, $\text{CO}_2$ (suchy lód)** | Fe, Cu, Al, Na |
+
+## Algorytm rozpoznawania typu kryształu
+
+1. **Czy przewodzi prąd w stanie stałym?**
+   - tak → **metaliczny** (albo grafit)
+   - nie → idź dalej
+2. **Czy przewodzi po stopieniu lub w roztworze?**
+   - tak → **jonowy**
+   - nie → idź dalej
+3. **Jaka jest temperatura topnienia?**
+   - bardzo wysoka → **kowalencyjny**
+   - niska → **molekularny**
+
+W tym zadaniu obie substancje odpadają w krokach 1 i 2, więc rozstrzyga wyłącznie **temperatura topnienia**.
+
+## Oddziaływania międzycząsteczkowe — dlaczego kryształy molekularne topnieją nisko
+
+| Rodzaj oddziaływania | Siła | Występowanie |
+|---|---|---|
+| **siły dyspersyjne (Londona)** | najsłabsze | wszystkie cząsteczki |
+| **oddziaływania dipol–dipol** | średnie | cząsteczki polarne |
+| **wiązania wodorowe** | najsilniejsze z międzycząsteczkowych | O–H, N–H, F–H |
+| wiązanie kowalencyjne (dla porównania) | **~100× silniejsze** | wewnątrz cząsteczki |
+
+Topienie kryształu molekularnego wymaga pokonania **tylko oddziaływań międzycząsteczkowych** — same cząsteczki pozostają nienaruszone. Topienie kryształu kowalencyjnego oznacza **zrywanie wiązań chemicznych**, stąd ogromna różnica temperatur.
+
+## Przykłady wartości $T_t$
+
+| Substancja | Typ kryształu | $T_t$ |
+|---|---|---|
+| lód ($\text{H}_2\text{O}$) | molekularny | 0 °C |
+| jod ($\text{I}_2$) | molekularny | 114 °C |
+| sacharoza | **molekularny** | **~186 °C** |
+| NaCl | jonowy | 801 °C |
+| $\text{SiO}_2$ (kwarc) | **kowalencyjny** | **~1710 °C** |
+| diament | kowalencyjny | ~3550 °C |
+
+Wartości z tabeli zadania odpowiadają niemal dokładnie **sacharozie** (A) i **kwarcowi** (B).
+
+## Punktacja CKE
+
+- **1 pkt** — poprawne wskazanie **obu** typów kryształów: A — **molekularne**, B — **kowalencyjne**.
+- **0 pkt** — odpowiedź niepełna albo błędna.

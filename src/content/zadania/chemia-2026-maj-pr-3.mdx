@@ -1,0 +1,111 @@
+---
+arkusz: chemia-2026-maj-pr
+subject: chemia
+nr: 3
+punkty: 1
+typ: zamkniete
+topic: wiazania sigma i pi, wolne pary elektronowe, wiazanie potrojne, czasteczka azotu
+difficulty: 2
+tresc: |
+  **Informacja do zadań 1.–3.** Pierwiastek **Q** jest niemetalem, który występuje w postaci **dwuatomowych cząsteczek** i jest **głównym składnikiem powietrza**. **(Q = N.)**
+
+  **Polecenie (0–1).** Uzupełnij tabelę. Dla cząsteczki $\text{Q}_2$ określ i napisz liczbę:
+  - wiązań $\sigma$,
+  - wiązań $\pi$,
+  - wolnych par elektronowych.
+odpowiedz: |
+  Cząsteczka $\text{Q}_2$ to **cząsteczka azotu $\text{N}_2$**.
+
+  Każdy atom azotu ma **5 elektronów walencyjnych** ($2s^2 2p^3$), czyli trzy elektrony niesparowane. Atomy łączą się **wiązaniem potrójnym**, a każdemu zostaje jedna wolna para elektronowa:
+
+  $$:\text{N} \equiv \text{N}:$$
+
+  | Liczba wiązań $\sigma$ | Liczba wiązań $\pi$ | Liczba wolnych par elektronowych |
+  |---|---|---|
+  | **1** | **2** | **2** |
+
+  **Uzasadnienie:**
+  - **wiązanie potrójne = 1 wiązanie σ + 2 wiązania π** — pierwsze wiązanie w każdej parze atomów jest zawsze typu σ (nakładanie czołowe), każde kolejne jest typu π (nakładanie boczne),
+  - **2 wolne pary elektronowe** — po jednej na każdym atomie azotu, pochodzące z pary $2s^2$.
+
+  **Sprawdzenie bilansu elektronowego:** cząsteczka ma $2 \times 5 = 10$ elektronów walencyjnych. Trzy wiązania to $3 \times 2 = 6$ elektronów, dwie wolne pary to $2 \times 2 = 4$ elektrony. Razem **10** ✓. Każdy atom osiąga oktet.
+pulapka: |
+  **Najczęstszy błąd: podanie „3" jako liczby wiązań σ.** W wiązaniu wielokrotnym **tylko jedno** wiązanie jest typu σ — pozostałe są typu π. Reguła: **wiązanie pojedyncze = 1σ; podwójne = 1σ + 1π; potrójne = 1σ + 2π.**
+
+  **Drugi błąd: policzenie wolnych par jako „6".** Nie każda para elektronów jest wolna — sześć elektronów tworzy wiązania. Wolne pary to tylko te **nieuczestniczące w wiązaniu**: po jednej na każdym atomie, razem **2**.
+
+  **Nie myl wolnej pary z parą wiążącą.** Wolna para należy do jednego atomu; para wiążąca jest współdzielona przez dwa.
+
+  **Kontrola przez bilans elektronowy jest szybka i pewna.** Zsumuj elektrony walencyjne obu atomów (10), odejmij te w wiązaniach (6) i podziel resztę przez 2 — otrzymasz liczbę wolnych par (2).
+
+  **Uwaga na inne cząsteczki dwuatomowe.** W $\text{O}_2$ jest 1σ + 1π i **4** wolne pary; w $\text{F}_2$ — 1σ, 0π i **6** wolnych par; w $\text{CO}$ — 1σ + 2π i **2** wolne pary. Schemat rozumowania jest za każdym razem ten sam.
+wymaganie: |
+  II. Wiązania chemiczne — rodzaje wiązań, wiązania σ i π, wiązania wielokrotne, wolne pary elektronowe, wzory elektronowe cząsteczek.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2026-maj-pr/zad-03.webp"
+  alt="Zadanie 3 — chemia 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MCHP-R0-100-A-2605 — zadanie 3."
+  zrodlo="CKE, matura maj 2026, chemia PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Chemia/MCHP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Wiązania σ i π — reguła, która rozwiązuje takie zadania
+
+| Krotność wiązania | Wiązania σ | Wiązania π |
+|---|---|---|
+| **pojedyncze** | 1 | 0 |
+| **podwójne** | 1 | **1** |
+| **potrójne** | **1** | **2** |
+
+| Cecha | **Wiązanie σ** | **Wiązanie π** |
+|---|---|---|
+| nakładanie orbitali | **czołowe** (wzdłuż osi) | **boczne** (nad i pod osią) |
+| gęstość elektronowa | maksimum **na osi** wiązania | poza osią |
+| trwałość | **większa** | mniejsza |
+| swobodna rotacja | **możliwa** | **zablokowana** |
+| pierwsze w kolejności | zawsze | nigdy |
+
+Zablokowana rotacja wokół wiązania π wyjaśnia istnienie **izomerii geometrycznej (cis–trans)** w alkenach.
+
+## Cząsteczki dwuatomowe — zestawienie
+
+| Cząsteczka | Elektrony walencyjne | Wiązanie | σ | π | Wolne pary |
+|---|---|---|---|---|---|
+| $\text{H}_2$ | 2 | pojedyncze | 1 | 0 | **0** |
+| $\text{F}_2$ | 14 | pojedyncze | 1 | 0 | **6** |
+| $\text{O}_2$ | 12 | podwójne | 1 | 1 | **4** |
+| **$\text{N}_2$** | **10** | **potrójne** | **1** | **2** | **2** |
+| $\text{CO}$ | 10 | potrójne | 1 | 2 | **2** |
+| $\text{HCl}$ | 8 | pojedyncze | 1 | 0 | **3** |
+
+## Bilans elektronowy — metoda sprawdzania
+
+$$n_{\text{wal}} = 2 \cdot n_{\text{wiązań}} + 2 \cdot n_{\text{wolnych par}}$$
+
+Dla $\text{N}_2$:
+
+$$10 = 2\cdot 3 + 2\cdot 2 = 6 + 4 \ \checkmark$$
+
+Ta zależność pozwala szybko wyliczyć liczbę wolnych par, gdy zna się krotność wiązania — i odwrotnie.
+
+## Dlaczego azot jest tak mało reaktywny
+
+| Wielkość | Wartość |
+|---|---|
+| energia wiązania $\text{N} \equiv \text{N}$ | **945 kJ/mol** |
+| energia wiązania $\text{O} = \text{O}$ | 498 kJ/mol |
+| energia wiązania $\text{F} - \text{F}$ | 159 kJ/mol |
+
+Potrójne wiązanie w $\text{N}_2$ należy do najsilniejszych znanych wiązań chemicznych — dlatego azot atmosferyczny jest praktycznie bierny, a przemysłowe wiązanie azotu (**proces Habera i Boscha**) wymaga wysokiej temperatury, ciśnienia i katalizatora.
+
+## Punktacja CKE
+
+- **1 pkt** — poprawne uzupełnienie **całej** tabeli dla cząsteczki $\text{N}_2$: **1 wiązanie σ, 2 wiązania π, 2 wolne pary elektronowe**.
+- **0 pkt** — odpowiedź niepełna albo błędna.

@@ -1,0 +1,156 @@
+---
+arkusz: chemia-2026-maj-pr
+subject: chemia
+nr: 13
+punkty: 2
+typ: otwarte-krotkie
+topic: hydroliza soli, stala dysocjacji zasadowej, iloczyn jonowy wody, obliczanie pH, weglany
+difficulty: 5
+tresc: |
+  **Informacja wstępna.** Jon $\text{CO}_3^{2-}$ reaguje z cząsteczką wody zgodnie z równaniem:
+
+  $$\text{CO}_3^{2-} + \text{H}_2\text{O} \rightleftharpoons \text{HCO}_3^- + \text{OH}^-$$
+
+  Równowagę tej reakcji opisuje **stała dysocjacji zasadowej** $K_b$:
+
+  $$K_b = \frac{[\text{HCO}_3^-]\cdot[\text{OH}^-]}{[\text{CO}_3^{2-}]}$$
+
+  Iloczyn stałej dysocjacji kwasowej jonu $\text{HCO}_3^-$ i stałej dysocjacji zasadowej sprzężonej z nim zasady $\text{CO}_3^{2-}$ jest równy iloczynowi jonowemu wody:
+
+  $$K_a \cdot K_b = K_w$$
+
+  W temperaturze 25 °C: $K_w = 1{,}00\cdot 10^{-14}$.
+
+  **Polecenie (0–2).** Oblicz **pH — w temperaturze 25 °C — roztworu $\text{K}_2\text{CO}_3$ o stężeniu molowym 0,10 mol·dm⁻³**. W obliczeniach pomiń drugi etap dysocjacji zasadowej.
+odpowiedz: |
+  **Krok 1. Wybór właściwej stałej dysocjacji kwasowej.**
+
+  Reakcja dotyczy jonu $\text{CO}_3^{2-}$, sprzężonego z kwasem $\text{HCO}_3^-$. Odpowiada mu **druga** stała dysocjacji kwasu węglowego (z tablic):
+
+  $$K_{a2} = 4{,}68\cdot 10^{-11}$$
+
+  **Krok 2. Obliczenie stałej dysocjacji zasadowej.**
+
+  $$K_{b} = \frac{K_w}{K_{a2}} = \frac{1{,}00\cdot 10^{-14}}{4{,}68\cdot 10^{-11}} = 2{,}14\cdot 10^{-4}$$
+
+  **Krok 3. Stężenie jonów wodorotlenkowych.**
+
+  Oznaczmy $x = [\text{OH}^-] = [\text{HCO}_3^-]$. Ponieważ hydroliza jest niewielka, przyjmujemy $[\text{CO}_3^{2-}] \approx c_0 = 0{,}10$ mol·dm⁻³:
+
+  $$K_b = \frac{x^2}{c_0} \quad\Rightarrow\quad x = \sqrt{K_b\cdot c_0} = \sqrt{2{,}14\cdot 10^{-4} \cdot 0{,}10}$$
+
+  $$x = \sqrt{2{,}14\cdot 10^{-5}} = 4{,}63\cdot 10^{-3}\ \text{mol}\cdot\text{dm}^{-3}$$
+
+  **Krok 4. Obliczenie pH.**
+
+  $$\text{pOH} = -\log(4{,}63\cdot 10^{-3}) = 2{,}33$$
+
+  $$\text{pH} = 14 - \text{pOH} = 14 - 2{,}33$$
+
+  $$\boxed{\text{pH} \approx 11{,}7}$$
+
+  **Wariant dokładniejszy** (bez upraszczania mianownika):
+
+  $$\frac{x^2}{0{,}10 - x} = 2{,}14\cdot 10^{-4} \quad\Rightarrow\quad x = 4{,}52\cdot 10^{-3}$$
+
+  $$\text{pOH} = 2{,}34 \quad\Rightarrow\quad \text{pH} = 11{,}66 \approx 11{,}7$$
+
+  Obie drogi dają ten sam wynik po zaokrągleniu — CKE uznaje każdą poprawną metodę.
+pulapka: |
+  **Największa pułapka: wybór $K_{a1}$ zamiast $K_{a2}$.** Kwas węglowy dysocjuje dwustopniowo:
+
+  - $\text{H}_2\text{CO}_3 \rightleftharpoons \text{H}^+ + \text{HCO}_3^-$ — to $K_{a1} = 4{,}45\cdot 10^{-7}$,
+  - $\text{HCO}_3^- \rightleftharpoons \text{H}^+ + \text{CO}_3^{2-}$ — to $K_{a2} = 4{,}68\cdot 10^{-11}$.
+
+  Jon $\text{CO}_3^{2-}$ jest zasadą sprzężoną z **$\text{HCO}_3^-$**, więc odpowiada mu **$K_{a2}$**. Użycie $K_{a1}$ zmienia wynik o kilka rzędów wielkości.
+
+  **Nie zapomnij, że wynikiem pośrednim jest pOH, a nie pH.** Reakcja generuje jony $\text{OH}^-$, więc najpierw liczymy $\text{pOH} = -\log[\text{OH}^-]$, a dopiero potem $\text{pH} = 14 - \text{pOH}$. Podanie 2,33 jako pH to najczęstszy błąd końcowy.
+
+  **Klucz CKE przyznaje 1 punkt za samo poprawne stężenie $[\text{OH}^-]$** — warto więc doprowadzić obliczenia przynajmniej do tego etapu, nawet gdy zabraknie czasu.
+
+  **$\text{K}_2\text{CO}_3$ dostarcza jony $\text{CO}_3^{2-}$ w stężeniu równym stężeniu soli.** Wzór zawiera **jeden** jon węglanowy, więc $[\text{CO}_3^{2-}]_0 = 0{,}10$ mol·dm⁻³ — nie 0,2 (mimo dwóch atomów potasu).
+
+  **Polecenie mówi: pominąć drugi etap dysocjacji zasadowej.** Chodzi o dalszą reakcję $\text{HCO}_3^- + \text{H}_2\text{O} \rightleftharpoons \text{H}_2\text{CO}_3 + \text{OH}^-$, która daje pomijalny wkład. Klucz zaznacza też, że **sprawdzanie stosowalności wzoru uproszczonego nie jest wymagane**.
+
+  **Uważaj na zaokrąglenia.** Przy pierwiastkowaniu drobne różnice w $K_b$ przekładają się na trzecie miejsce znaczące — klucz uznaje każdy wynik będący konsekwencją poprawnej metody.
+wymaganie: |
+  VI. Reakcje w roztworach wodnych — dysocjacja elektrolityczna, stałe dysocjacji kwasowej i zasadowej, hydroliza soli, iloczyn jonowy wody, obliczanie pH roztworów soli.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2026-maj-pr/zad-13.webp"
+  alt="Zadanie 13 — chemia 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MCHP-R0-100-A-2605 — zadanie 13."
+  zrodlo="CKE, matura maj 2026, chemia PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Chemia/MCHP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Algorytm obliczania pH roztworu soli hydrolizującej
+
+| Krok | Wzór |
+|---|---|
+| **1.** wybierz **właściwą** stałą $K_a$ sprzężonego kwasu | dla $\text{CO}_3^{2-}$ → $K_{a2}$ |
+| **2.** oblicz $K_b$ | $K_b = \dfrac{K_w}{K_a}$ |
+| **3.** oblicz $[\text{OH}^-]$ | $[\text{OH}^-] = \sqrt{K_b\cdot c_0}$ |
+| **4.** oblicz pOH | $\text{pOH} = -\log[\text{OH}^-]$ |
+| **5.** oblicz pH | $\text{pH} = 14 - \text{pOH}$ |
+
+Wzór skrócony (metoda logarytmiczna, użyta w jednym ze sposobów CKE):
+
+$$\text{pOH} = \tfrac{1}{2}\big(\text{p}K_b - \log c_0\big)$$
+
+## Sprzężone pary kwas–zasada
+
+| Kwas | Zasada sprzężona | Stała opisująca przejście |
+|---|---|---|
+| $\text{H}_2\text{CO}_3$ | $\text{HCO}_3^-$ | **$K_{a1} = 4{,}45\cdot 10^{-7}$** |
+| **$\text{HCO}_3^-$** | **$\text{CO}_3^{2-}$** | **$K_{a2} = 4{,}68\cdot 10^{-11}$** |
+| $\text{CH}_3\text{COOH}$ | $\text{CH}_3\text{COO}^-$ | $K_a = 1{,}75\cdot 10^{-5}$ |
+| $\text{NH}_4^+$ | $\text{NH}_3$ | $K_a = 5{,}6\cdot 10^{-10}$ |
+| $\text{H}_3\text{PO}_4$ | $\text{H}_2\text{PO}_4^-$ | $K_{a1} = 7{,}5\cdot 10^{-3}$ |
+
+Reguła: **do jonu o większym ładunku ujemnym odnosi się stała o wyższym numerze.**
+
+$$K_a \cdot K_b = K_w = 1{,}00\cdot 10^{-14} \quad (25\,^\circ\text{C})$$
+
+$$\text{p}K_a + \text{p}K_b = 14$$
+
+## Dlaczego roztwór węglanu potasu jest zasadowy
+
+$\text{K}_2\text{CO}_3$ to sól **mocnej zasady (KOH) i słabego kwasu ($\text{H}_2\text{CO}_3$)**. Hydrolizie ulega **anion**:
+
+$$\text{CO}_3^{2-} + \text{H}_2\text{O} \rightleftharpoons \text{HCO}_3^- + \text{OH}^-$$
+
+Nadmiar jonów $\text{OH}^-$ daje odczyn **zasadowy** — obliczone pH ≈ 11,7 to wartość zbliżona do rozcieńczonego roztworu amoniaku.
+
+## Cztery typy soli a odczyn
+
+| Sól z | Hydrolizuje | Odczyn | Przykład |
+|---|---|---|---|
+| mocny kwas + mocna zasada | nie | **obojętny** | NaCl, KNO₃ |
+| **słaby kwas + mocna zasada** | **anion** | **zasadowy** | **$\text{K}_2\text{CO}_3$**, CH₃COONa |
+| mocny kwas + słaba zasada | kation | kwasowy | NH₄Cl, $\text{AlCl}_3$ |
+| słaby kwas + słaba zasada | oba jony | zależy od $K_a$ i $K_b$ | CH₃COONH₄ |
+
+## Skala pH w temperaturze 25 °C
+
+$$\text{pH} + \text{pOH} = 14$$
+
+| pH | Odczyn | Przykład |
+|---|---|---|
+| 0–2 | silnie kwasowy | HCl 0,1 M (pH = 1) |
+| 3–6 | kwasowy | ocet, sok cytrynowy |
+| **7** | **obojętny** | woda destylowana, NaCl |
+| 8–11 | zasadowy | soda oczyszczona, **$\text{K}_2\text{CO}_3$ (11,7)** |
+| 12–14 | silnie zasadowy | NaOH 0,1 M (pH = 13) |
+
+## Punktacja CKE
+
+- **2 pkt** — poprawna metoda, poprawne obliczenia **oraz** podanie wartości **pH ≈ 11,7**.
+- **1 pkt** — poprawna metoda z błędem rachunkowym **albo** poprawne obliczenia zakończone na wartości $[\text{OH}^-]$ bez przeliczenia na pH.
+- **Razem: 2 pkt.**

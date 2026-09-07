@@ -1,0 +1,135 @@
+---
+arkusz: chemia-2026-maj-pr
+subject: chemia
+nr: 5
+punkty: 2
+typ: otwarte-krotkie
+topic: reakcje jadrowe, rozszczepienie jadra, bilans liczby masowej i atomowej, stala Avogadra, liczba neutronow
+difficulty: 3
+tresc: |
+  Przebieg reakcji jądrowych można przedstawić w **zapisie skróconym**: na pierwszym miejscu podaje się symbol **jądra bombardowanego**, następnie w nawiasie — kolejno — symbole **cząstki bombardującej** i **lekkiej cząstki emitowanej**, a na końcu — symbole **jąder produktów**.
+
+  Jądro izotopu plutonu $^{239}\text{Pu}$ po pochłonięciu neutronu **rozszczepia się** na mniejsze fragmenty, czemu towarzyszy emisja neutronów. Jeden z możliwych przebiegów przedstawiono na schemacie:
+
+  $$^{239}\text{Pu}\ \big(\,^{1}_{0}\text{n},\ 2\,^{1}_{0}\text{n}\,\big)\ ^{144}\text{Ba},\ ^{A}_{Z}\text{X}$$
+
+  **Polecenie (0–2).** Uzupełnij schemat tak, aby otrzymać **równanie** opisanej reakcji:
+
+  $$\ldots + \ldots\,^{1}_{0}\text{n} \rightarrow 2\,^{1}_{0}\text{n} + \ldots\text{Ba} + \ldots$$
+
+  Napisz, **ile neutronów jest w jednym molu izotopu $^{A}_{Z}\text{X}$**. Uwzględnij wartość stałej Avogadra.
+odpowiedz: |
+  **Krok 1. Uzupełnienie równania.**
+
+  $$^{239}_{\ 94}\text{Pu} + ^{1}_{0}\text{n} \rightarrow 2\,^{1}_{0}\text{n} + ^{144}_{\ 56}\text{Ba} + ^{94}_{38}\text{Sr}$$
+
+  **Bilans liczby masowej (A):**
+
+  $$239 + 1 = 2\cdot 1 + 144 + A \quad\Rightarrow\quad 240 = 146 + A \quad\Rightarrow\quad \boxed{A = 94}$$
+
+  **Bilans liczby atomowej (Z):**
+
+  $$94 + 0 = 2\cdot 0 + 56 + Z \quad\Rightarrow\quad \boxed{Z = 38}$$
+
+  Pierwiastek o $Z = 38$ to **stront (Sr)**, więc $^{A}_{Z}\text{X} = ^{94}_{38}\text{Sr}$.
+
+  **Krok 2. Liczba neutronów w jednym molu.**
+
+  Liczba neutronów w jednym jądrze:
+
+  $$N = A - Z = 94 - 38 = 56$$
+
+  Jeden mol zawiera $N_A = 6{,}02\cdot 10^{23}$ jąder, więc:
+
+  $$N_{\text{mol}} = 56 \cdot 6{,}02\cdot 10^{23} = 337{,}12\cdot 10^{23}$$
+
+  $$\boxed{N_{\text{mol}} \approx 3{,}37\cdot 10^{25}\ \text{neutronów}}$$
+pulapka: |
+  **Trzeba samodzielnie ustalić liczbę atomową plutonu.** Schemat podaje tylko $^{239}\text{Pu}$ — wartość $Z = 94$ trzeba odczytać z układu okresowego. Bez niej bilans ładunku jest niewykonalny.
+
+  **Pamiętaj o dwóch emitowanych neutronach.** Zapis „$2\,^{1}_{0}\text{n}$" oznacza **dwa** neutrony, a nie jeden — łatwo je pominąć w bilansie liczby masowej.
+
+  **Liczba neutronów to $A - Z$, nie $A$ ani $Z$.** W jądrze $^{94}_{38}\text{Sr}$ jest 38 protonów i **56** neutronów.
+
+  **Sam zapis działania nie wystarczy.** Klucz CKE wprost zaznacza: „zapis $56 \cdot 6{,}02\cdot 10^{23}$ bez wyniku jest niewystarczający". Trzeba doprowadzić rachunek do końca.
+
+  **Uwaga na zapis wyniku w notacji naukowej.** $337 \cdot 10^{23}$ to poprawna liczba, ale nie jest to notacja naukowa — należy zapisać $\mathbf{3{,}37 \cdot 10^{25}}$.
+
+  **Rozszczepienie to nie przemiana promieniotwórcza.** Nie stosuj tu schematów rozpadu α ani β — jądro **rozpada się na dwa duże fragmenty**, a bilans przeprowadza się dokładnie tak samo: sumy A i sumy Z muszą się zgadzać po obu stronach.
+wymaganie: |
+  I. Atomy, cząsteczki i stechiometria chemiczna — izotopy, przemiany jądrowe, reakcje rozszczepienia, bilansowanie równań jądrowych, mol i stała Avogadra.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2026-maj-pr/zad-05.webp"
+  alt="Zadanie 5 — chemia 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MCHP-R0-100-A-2605 — zadanie 5."
+  zrodlo="CKE, matura maj 2026, chemia PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Chemia/MCHP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Dwie zasady bilansowania równań jądrowych
+
+$$\sum A_{\text{substraty}} = \sum A_{\text{produkty}} \qquad \sum Z_{\text{substraty}} = \sum Z_{\text{produkty}}$$
+
+| Krok | W tym zadaniu |
+|---|---|
+| odczytaj $Z$ z układu okresowego | Pu → $Z = 94$; Ba → $Z = 56$ |
+| zbilansuj **A** | $239 + 1 = 2 + 144 + A \Rightarrow A = 94$ |
+| zbilansuj **Z** | $94 + 0 = 0 + 56 + Z \Rightarrow Z = 38$ |
+| odczytaj symbol z układu | $Z = 38$ → **Sr** (stront) |
+
+## Zapis skrócony reakcji jądrowej
+
+$$\text{jądro bombardowane}\ (\text{pocisk},\ \text{cząstka emitowana})\ \text{produkty}$$
+
+| Zapis skrócony | Równanie pełne |
+|---|---|
+| $^{14}\text{N}(\alpha, p)^{17}\text{O}$ | $^{14}_{7}\text{N} + ^{4}_{2}\text{He} \rightarrow ^{1}_{1}\text{p} + ^{17}_{8}\text{O}$ |
+| $^{9}\text{Be}(\alpha, n)^{12}\text{C}$ | $^{9}_{4}\text{Be} + ^{4}_{2}\text{He} \rightarrow ^{1}_{0}\text{n} + ^{12}_{6}\text{C}$ |
+| $^{239}\text{Pu}(n, 2n)^{144}\text{Ba}, ^{94}\text{Sr}$ | jak w zadaniu |
+
+## Cząstki występujące w reakcjach jądrowych
+
+| Cząstka | Symbol | A | Z |
+|---|---|---|---|
+| proton | $^{1}_{1}\text{p}$ | 1 | +1 |
+| **neutron** | $^{1}_{0}\text{n}$ | **1** | **0** |
+| cząstka α | $^{4}_{2}\text{He}$ | 4 | +2 |
+| cząstka β⁻ (elektron) | $^{0}_{-1}\text{e}$ | 0 | −1 |
+| cząstka β⁺ (pozyton) | $^{0}_{+1}\text{e}$ | 0 | +1 |
+| promieniowanie γ | $^{0}_{0}\gamma$ | 0 | 0 |
+
+## Skład jądra a mol
+
+| Wielkość | Wzór | Dla $^{94}_{38}\text{Sr}$ |
+|---|---|---|
+| liczba protonów | $Z$ | **38** |
+| liczba elektronów (atom obojętny) | $Z$ | 38 |
+| **liczba neutronów** | $A - Z$ | **56** |
+| liczba nukleonów | $A$ | 94 |
+| liczba neutronów w **1 molu** | $(A - Z)\cdot N_A$ | $56 \cdot 6{,}02\cdot 10^{23} = 3{,}37\cdot 10^{25}$ |
+
+Stała Avogadra: $N_A = 6{,}02\cdot 10^{23}\ \text{mol}^{-1}$ — znajduje się w Karcie wybranych wzorów i stałych.
+
+## Rozszczepienie jądra a reakcja łańcuchowa
+
+Kluczowa cecha opisanego procesu: pochłonięcie **jednego** neutronu prowadzi do emisji **dwóch** neutronów. Każdy z nich może wywołać kolejne rozszczepienie — tak powstaje **reakcja łańcuchowa**.
+
+| Pojęcie | Znaczenie |
+|---|---|
+| **masa krytyczna** | najmniejsza masa materiału rozszczepialnego podtrzymująca reakcję łańcuchową |
+| **moderator** | spowalnia neutrony (woda, grafit), by zwiększyć prawdopodobieństwo rozszczepienia |
+| **pręty kontrolne** | pochłaniają nadmiar neutronów (bor, kadm), utrzymując reakcję pod kontrolą |
+| paliwo | $^{235}\text{U}$, $^{239}\text{Pu}$ |
+
+## Punktacja CKE
+
+- **2 pkt** — poprawne uzupełnienie równania (**$^{239}_{\ 94}\text{Pu}$, $^{144}_{\ 56}\text{Ba}$, $^{94}_{38}\text{Sr}$**) **oraz** poprawna liczba neutronów w molu (**3,37·10²⁵**).
+- **1 pkt** — poprawne równanie przy błędnej lub brakującej liczbie neutronów **albo** błędne równanie przy poprawnej liczbie neutronów.
+- **Razem: 2 pkt.**

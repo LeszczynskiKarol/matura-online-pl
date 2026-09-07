@@ -1,0 +1,134 @@
+---
+arkusz: chemia-2026-maj-pr
+subject: chemia
+nr: 4
+punkty: 2
+typ: otwarte-krotkie
+topic: wzor empiryczny, sklad procentowy, stosunek molowy, wzor elektronowy anionu, cyjanamid wapnia
+difficulty: 4
+tresc: |
+  Pewien **jonowy związek X** składa się z **wapnia, węgla i azotu**. Masa wapnia stanowi **50%** masy całego związku, a masa węgla — **15%** jego masy. Wzór empiryczny związku X jest też **wzorem rzeczywistym**. **Anion** związku X ma **taką samą strukturę elektronową jak tlenek węgla(IV)**.
+
+  **Polecenie (0–2).** Na podstawie obliczeń ustal i napisz **wzór sumaryczny** związku X. Narysuj **wzór elektronowy anionu** tego związku. Zaznacz kreskami wiązania chemiczne i wolne pary elektronowe.
+odpowiedz: |
+  **Krok 1. Skład procentowy.**
+
+  Skoro wapń stanowi 50%, a węgiel 15%, to na azot przypada:
+
+  $$100\% - 50\% - 15\% = 35\%$$
+
+  **Krok 2. Stosunek masowy → stosunek molowy.**
+
+  Przyjmujemy 100 g związku, więc $m_{\text{Ca}} = 50$ g, $m_{\text{C}} = 15$ g, $m_{\text{N}} = 35$ g:
+
+  $$n_{\text{Ca}} : n_{\text{C}} : n_{\text{N}} = \frac{50}{40} : \frac{15}{12} : \frac{35}{14} = 1{,}25 : 1{,}25 : 2{,}5$$
+
+  Dzielimy przez najmniejszą wartość (1,25):
+
+  $$n_{\text{Ca}} : n_{\text{C}} : n_{\text{N}} = 1 : 1 : 2$$
+
+  **Krok 3. Wzór sumaryczny.**
+
+  $$\boxed{\text{CaCN}_2}$$
+
+  (Sprawdzenie: $M = 40 + 12 + 2\cdot 14 = 80\ \text{g/mol}$; udział Ca $= 40/80 = 50\%$ ✓, węgla $= 12/80 = 15\%$ ✓.)
+
+  To **cyjanamid wapnia** — związek jonowy zbudowany z kationów $\text{Ca}^{2+}$ i anionów cyjanamidkowych $\text{CN}_2^{2-}$.
+
+  **Krok 4. Wzór elektronowy anionu.**
+
+  Anion $\text{CN}_2^{2-}$ jest **izoelektronowy z $\text{CO}_2$** — ma tę samą liczbę elektronów walencyjnych i tę samą strukturę: atom centralny z **dwoma wiązaniami podwójnymi** i po dwie wolne pary na atomach skrajnych.
+
+  Sprawdzenie liczby elektronów walencyjnych: $4 (\text{C}) + 2\cdot 5 (\text{N}) + 2 (\text{ładunek}) = 16$ elektronów, czyli **8 par** — dokładnie tyle co w $\text{CO}_2$ ($4 + 2\cdot 6 = 16$).
+
+  Wzór elektronowy (kreski oznaczają wiązania i wolne pary):
+
+  $$\big[\ \overline{\underline{\text{N}}} = \text{C} = \overline{\underline{\text{N}}}\ \big]^{2-}$$
+
+  czyli: **dwa wiązania podwójne C=N** oraz **po dwie wolne pary elektronowe na każdym atomie azotu**; na atomie węgla **brak wolnych par**.
+
+  **Bilans:** 4 pary wiążące + 4 pary wolne = 8 par = 16 elektronów ✓
+pulapka: |
+  **Najczęstszy błąd: pominięcie azotu przy liczeniu procentów.** Treść podaje udziały tylko dwóch pierwiastków — trzeci trzeba **dopełnić do 100%**. Bez tego kroku zadania nie da się rozwiązać.
+
+  **Drugi błąd: dzielenie mas przez liczby atomowe zamiast przez masy molowe.** Do stosunku molowego dzielimy masę przez **masę molową**: Ca — 40 g/mol, C — 12 g/mol, N — 14 g/mol.
+
+  **Trzeci: pozostawienie stosunku w postaci ułamkowej.** $1{,}25 : 1{,}25 : 2{,}5$ trzeba **sprowadzić do najmniejszych liczb całkowitych**, dzieląc przez najmniejszą wartość.
+
+  **Wskazówka o $\text{CO}_2$ jest kluczem do drugiej części zadania.** „Taka sama struktura elektronowa" oznacza **izoelektronowość** — anion ma tyle samo elektronów walencyjnych i taki sam układ wiązań: liniowy, dwa wiązania podwójne, cztery wolne pary.
+
+  **Nie zapomnij o ładunku 2− przy wzorze elektronowym.** Klucz CKE wymaga uwzględnienia zarówno **wolnych par**, jak i **ładunku** anionu. Wzór bez nawiasu kwadratowego i ładunku traci punkt.
+
+  **Nie rysuj wiązań pojedynczych z potrójnym.** Struktura $\text{N}\equiv\text{C}-\text{N}$ ma inną liczbę wolnych par i nie jest izoelektronowa z $\text{CO}_2$ w sensie wymaganym przez zadanie — choć jest jedną z formalnych struktur granicznych, klucz oczekuje wzoru analogicznego do dwutlenku węgla.
+
+  **Geometria jonu nie podlega ocenie** — klucz CKE wprost to zaznacza. Liczy się poprawny układ wiązań i wolnych par, nie kąty.
+wymaganie: |
+  I. Atomy, cząsteczki i stechiometria chemiczna — obliczenia na podstawie składu procentowego, wzór empiryczny i rzeczywisty. II. Wiązania chemiczne — wzory elektronowe, cząsteczki i jony izoelektronowe.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2026-maj-pr/zad-04.webp"
+  alt="Zadanie 4 — chemia 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MCHP-R0-100-A-2605 — zadanie 4."
+  zrodlo="CKE, matura maj 2026, chemia PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Chemia/MCHP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Od składu procentowego do wzoru — cztery kroki
+
+| Krok | Działanie | W tym zadaniu |
+|---|---|---|
+| **1.** | dopełnij procenty do 100% | N: $100 - 50 - 15 = 35\%$ |
+| **2.** | przyjmij 100 g próbki → procenty stają się gramami | 50 g Ca, 15 g C, 35 g N |
+| **3.** | podziel masy przez **masy molowe** | $\frac{50}{40} : \frac{15}{12} : \frac{35}{14}$ |
+| **4.** | sprowadź do najmniejszych liczb całkowitych | $1{,}25 : 1{,}25 : 2{,}5 = 1 : 1 : 2$ |
+
+$$\text{wzór empiryczny} = \text{CaCN}_2$$
+
+Wzór **empiryczny** podaje najprostszy stosunek atomów; wzór **rzeczywisty (sumaryczny)** — faktyczną liczbę atomów w cząsteczce. Treść zadania zastrzega, że tu oba są tożsame, więc drugiego kroku (przez masę molową) nie trzeba wykonywać.
+
+## Cząsteczki i jony izoelektronowe
+
+Izoelektronowe = mają **taką samą liczbę elektronów walencyjnych** i taką samą liczbę atomów, więc przyjmują **tę samą strukturę**.
+
+| Wzorzec | Izoelektronowe z nim | Elektrony walencyjne | Budowa |
+|---|---|---|---|
+| **$\text{CO}_2$** | $\text{CN}_2^{2-}$, $\text{N}_2\text{O}$, $\text{OCN}^-$, $\text{SCN}^-$, $\text{N}_3^-$ | **16** | liniowa, 2 wiązania podwójne |
+| $\text{N}_2$ | CO, $\text{CN}^-$, $\text{NO}^+$ | 10 | potrójne |
+| $\text{NO}_3^-$ | $\text{CO}_3^{2-}$, $\text{BO}_3^{3-}$ | 24 | płaska trójkątna |
+| $\text{SO}_4^{2-}$ | $\text{PO}_4^{3-}$, $\text{ClO}_4^-$ | 32 | tetraedryczna |
+
+Rozpoznanie izoelektronowości to najszybsza droga do wzoru elektronowego nieznanego jonu.
+
+## Cyjanamid wapnia — kontekst
+
+| Cecha | Szczegóły |
+|---|---|
+| wzór | $\text{CaCN}_2$ |
+| masa molowa | **80 g/mol** |
+| budowa | jonowa: $\text{Ca}^{2+}$ + $\text{CN}_2^{2-}$ |
+| nazwa handlowa | **azotniak** |
+| zastosowanie | **nawóz azotowy**, herbicyd, defoliant |
+| otrzymywanie | $\text{CaC}_2 + \text{N}_2 \xrightarrow{1000\,^\circ\text{C}} \text{CaCN}_2 + \text{C}$ |
+| w glebie | hydrolizuje do amoniaku i węglanu wapnia |
+
+## Jak rysować wzór elektronowy jonu
+
+1. Policz **wszystkie elektrony walencyjne**, dodając ładunek ujemny (albo odejmując dodatni).
+2. Ustal **atom centralny** — zwykle ten o najmniejszej elektroujemności (tu: węgiel).
+3. Rozmieść wiązania tak, by każdy atom miał **oktet**.
+4. Pozostałe elektrony rozdziel jako **wolne pary**.
+5. Całość ujmij w **nawias kwadratowy** i zapisz **ładunek** w prawym górnym rogu.
+
+Dla $\text{CN}_2^{2-}$: 16 elektronów = 8 par → 4 pary wiążące (2 wiązania podwójne) + 4 pary wolne (po 2 na każdym azocie).
+
+## Punktacja CKE
+
+- **2 pkt** — poprawne obliczenia i wzór **$\text{CaCN}_2$** **oraz** poprawny wzór elektronowy anionu z wolnymi parami i ładunkiem.
+- **1 pkt** — poprawny wzór sumaryczny, ale błędny lub brak wzoru elektronowego **albo** poprawny stosunek molowy (bez wzoru sumarycznego) i poprawny wzór elektronowy **albo** błąd rachunkowy niezmieniający stosunku 1:1:2 przy poprawnym wzorze elektronowym.
+- **Razem: 2 pkt.**

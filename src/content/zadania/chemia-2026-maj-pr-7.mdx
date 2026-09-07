@@ -1,0 +1,117 @@
+---
+arkusz: chemia-2026-maj-pr
+subject: chemia
+nr: 7
+punkty: 1
+typ: otwarte-krotkie
+topic: kinetyka chemiczna, hydroliza, odczyt z wykresu, stechiometria reakcji, stezenie molowe
+difficulty: 3
+tresc: |
+  Hydroliza substancji **A** w środowisku kwasowym przebiega zgodnie ze schematem:
+
+  $$\text{A} \ \xrightarrow{\ \text{H}^+ /\ \text{H}_2\text{O}\ } \ \text{B} + \text{C}$$
+
+  Wykonano doświadczenie, podczas którego badano szybkość tej reakcji. Przygotowano wodny roztwór substancji A o stężeniu **0,10 mol·dm⁻³**, zakwaszono go kwasem solnym i utrzymywano temperaturę **25 °C**. Co 30 minut mierzono stężenie substancji A. Wyniki przedstawiono na wykresie (oś pionowa: stężenie A od 0,01 do 0,10 mol·dm⁻³; oś pozioma: czas od 0 do 510 min).
+
+  Z wykresu odczytujemy, że w **255. minucie** stężenie substancji A wynosi **0,04 mol·dm⁻³**.
+
+  **Polecenie (0–1).** Oblicz **łączne stężenie molowe substancji B i substancji C** w chwili $t = 255$ min opisanego doświadczenia.
+odpowiedz: |
+  **Krok 1. Ile substancji A przereagowało.**
+
+  Odczytujemy z wykresu stężenie A w 255. minucie i porównujemy ze stężeniem początkowym:
+
+  $$\Delta c_{\text{A}} = c_0 - c_{255} = 0{,}10\ \frac{\text{mol}}{\text{dm}^3} - 0{,}04\ \frac{\text{mol}}{\text{dm}^3} = 0{,}06\ \frac{\text{mol}}{\text{dm}^3}$$
+
+  **Krok 2. Stechiometria.**
+
+  Z równania $\text{A} \rightarrow \text{B} + \text{C}$ wynika, że z **1 mola A** powstaje **1 mol B i 1 mol C**, czyli **łącznie 2 mole produktów**:
+
+  $$c_{\text{B}} = c_{\text{C}} = 0{,}06\ \frac{\text{mol}}{\text{dm}^3}$$
+
+  **Krok 3. Łączne stężenie produktów.**
+
+  $$c_{\text{B}} + c_{\text{C}} = 2 \cdot 0{,}06\ \frac{\text{mol}}{\text{dm}^3}$$
+
+  $$\boxed{c_{\text{B}} + c_{\text{C}} = 0{,}12\ \text{mol}\cdot\text{dm}^{-3}}$$
+pulapka: |
+  **Najczęstszy błąd: podanie 0,06 mol·dm⁻³ zamiast 0,12.** Polecenie pyta o **łączne** stężenie **dwóch** produktów. Każdy z nich powstaje w ilości 0,06 mol·dm⁻³, więc suma wynosi dwa razy tyle.
+
+  **Drugi błąd: użycie stężenia końcowego zamiast różnicy.** Ilość produktów odpowiada ilości A, która **przereagowała**, czyli $c_0 - c_t$, a nie temu, co zostało w roztworze.
+
+  **Nie zapomnij o jednostce.** Klucz CKE wymaga wyniku **z poprawną jednostką** — mol·dm⁻³. Sama liczba nie wystarcza.
+
+  **Uważaj na odczyt z wykresu.** Punkty pomiarowe są co 30 minut, a pytanie dotyczy **255. minuty** — czyli wartości leżącej między pomiarami z 240. i 270. minuty. Trzeba odczytać wartość z krzywej, nie z najbliższego węzła siatki.
+
+  **Woda nie wchodzi do bilansu stężeń.** Choć hydroliza formalnie zużywa wodę, jest ona **rozpuszczalnikiem w ogromnym nadmiarze** — jej stężenie traktuje się jako stałe. Podobnie jony $\text{H}^+$ pełnią rolę **katalizatora** i nie ulegają zużyciu.
+
+  **Zwróć uwagę, że reakcja nie jest zerowego rzędu.** Wykres nie jest linią prostą — szybkość maleje w miarę ubywania substratu. To typowy przebieg reakcji **pierwszego rzędu**, ale zadanie nie wymaga tej wiedzy: wystarczy odczyt i stechiometria.
+wymaganie: |
+  V. Kinetyka i statyka chemiczna — szybkość reakcji, wpływ stężenia na szybkość, wykorzystanie danych doświadczalnych. I. Stechiometria — obliczenia stężeń na podstawie równania reakcji.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2026-maj-pr/zad-07.webp"
+  alt="Zadanie 7 — chemia 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MCHP-R0-100-A-2605 — zadanie 7."
+  zrodlo="CKE, matura maj 2026, chemia PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Chemia/MCHP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Schemat rozwiązania — trzy kroki
+
+| Krok | Działanie | Wynik |
+|---|---|---|
+| **1.** | odczytaj z wykresu $c_t$ i oblicz **ubytek** $\Delta c = c_0 - c_t$ | $0{,}10 - 0{,}04 = 0{,}06$ |
+| **2.** | zastosuj **stechiometrię** równania | z 1 mola A → 1 mol B **i** 1 mol C |
+| **3.** | zsumuj stężenia produktów | $0{,}06 + 0{,}06 = \mathbf{0{,}12}$ mol·dm⁻³ |
+
+Ogólnie, dla reakcji $\text{A} \rightarrow n_\text{B}\text{B} + n_\text{C}\text{C}$:
+
+$$c_{\text{B}} + c_{\text{C}} = (n_\text{B} + n_\text{C})\cdot \Delta c_{\text{A}}$$
+
+## Bilans stężeń w czasie
+
+| Czas | $c_{\text{A}}$ | $c_{\text{B}}$ | $c_{\text{C}}$ | $c_{\text{B}}+c_{\text{C}}$ |
+|---|---|---|---|---|
+| 0 min | 0,10 | 0 | 0 | 0 |
+| **255 min** | **0,04** | **0,06** | **0,06** | **0,12** |
+| $\infty$ (koniec) | ~0 | 0,10 | 0,10 | 0,20 |
+
+W każdej chwili zachodzi zależność $c_{\text{A}} + c_{\text{B}} = c_0$ — bo z każdego zużytego mola A powstaje dokładnie jeden mol B.
+
+## Szybkość reakcji chemicznej
+
+$$v = -\frac{\Delta c_{\text{substratu}}}{\Delta t} = +\frac{\Delta c_{\text{produktu}}}{\Delta t}$$
+
+| Czynnik | Wpływ na szybkość | Dlaczego |
+|---|---|---|
+| **stężenie substratów** ↑ | szybkość ↑ | więcej zderzeń w jednostce czasu |
+| **temperatura** ↑ | szybkość ↑↑ | więcej cząsteczek o energii > $E_a$ |
+| **katalizator** | szybkość ↑ | obniża energię aktywacji $E_a$ |
+| **rozdrobnienie** (reakcje heterogeniczne) ↑ | szybkość ↑ | większa powierzchnia kontaktu |
+| ciśnienie (gazy) ↑ | szybkość ↑ | wzrost stężenia |
+
+W tym doświadczeniu temperaturę utrzymywano stałą (25 °C), a kwas solny pełnił funkcję **katalizatora** — dlatego jedyną zmienną wpływającą na szybkość było malejące stężenie substancji A.
+
+## Hydroliza katalizowana kwasem — typowe przykłady
+
+| Substrat A | Produkty B + C |
+|---|---|
+| **ester** | kwas karboksylowy + alkohol |
+| **sacharoza** | glukoza + fruktoza (**inwersja**) |
+| **skrobia** (etapami) | ostatecznie glukoza |
+| **peptyd / białko** | aminokwasy |
+| **amid** | kwas karboksylowy + amina (lub jej sól) |
+
+We wszystkich tych przypadkach z jednej cząsteczki substratu powstają **dwie** cząsteczki produktów — dokładnie tak jak w schemacie z zadania.
+
+## Punktacja CKE
+
+- **1 pkt** — poprawne obliczenie łącznego stężenia molowego B i C w 255. minucie **oraz** podanie wyniku **z jednostką**: $0{,}12\ \text{mol}\cdot\text{dm}^{-3}$.
+- **0 pkt** — odpowiedź niespełniająca tego wymagania.

@@ -1,0 +1,132 @@
+---
+arkusz: chemia-2026-maj-pr
+subject: chemia
+nr: 1
+punkty: 3
+typ: otwarte-krotkie
+topic: konfiguracja elektronowa, bloki konfiguracyjne, maksymalny stopien utlenienia, chrom, schemat klatkowy
+difficulty: 3
+tresc: |
+  **Informacja do zadań 1.–3.**
+
+  O dwóch pierwiastkach oznaczonych literami **A** i **Q** wiadomo, że:
+  - pierwiastek **A** jest **metalem o liczbie atomowej mniejszej od 36**,
+  - pierwiastek **Q** jest **niemetalem**, który występuje w postaci **dwuatomowych cząsteczek** i jest **głównym składnikiem powietrza**.
+
+  W atomie pierwiastka A w stanie podstawowym **wszystkie elektrony biorące udział w tworzeniu wiązań są niesparowane**, a ich liczba jest **o jeden większa** od liczby elektronów walencyjnych w atomie pierwiastka Q.
+
+  **1.1.** (0–2) Uzupełnij tabelę. Wpisz dla każdego z pierwiastków A i Q: **symbol chemiczny**, **symbol bloku konfiguracyjnego** oraz **maksymalny stopień utlenienia**.
+
+  **1.2.** (0–1) Napisz konfigurację tych elektronów atomu **A** w stanie podstawowym, które mogą uczestniczyć w tworzeniu wiązań. Zastosuj **schemat klatkowy (graficzny)**. Uwzględnij numery powłok i symbole podpowłok.
+odpowiedz: |
+  **Identyfikacja pierwiastków**
+
+  **Pierwiastek Q** — niemetal tworzący cząsteczki dwuatomowe i będący głównym składnikiem powietrza (ok. 78%) to **azot, N**. Ma **5 elektronów walencyjnych** ($2s^2 2p^3$).
+
+  **Pierwiastek A** — metal o $Z < 36$, w którego atomie liczba niesparowanych elektronów wiążących wynosi $5 + 1 = \mathbf{6}$. Konfiguracja z sześcioma niesparowanymi elektronami to $[\text{Ar}]\,3d^5 4s^1$ — czyli **chrom, Cr** ($Z = 24$), z tzw. **promocją elektronową** dającą półzapełnioną podpowłokę $3d$.
+
+  **1.1.**
+
+  | | Symbol chemiczny | Symbol bloku konfiguracyjnego | Maksymalny stopień utlenienia |
+  |---|---|---|---|
+  | **Pierwiastek A** | **Cr** (chrom) | **d** | **VI** (+VI, 6) |
+  | **Pierwiastek Q** | **N** (azot) | **p** | **V** (+V, 5) |
+
+  **1.2.**
+
+  Elektrony mogące uczestniczyć w tworzeniu wiązań to elektrony podpowłok **3d** i **4s**:
+
+  $$\text{Cr}: \ [\text{Ar}]\,3d^5\,4s^1$$
+
+  Zapis klatkowy (wszystkie sześć elektronów niesparowanych, o **zgodnym spinie**):
+
+  ```
+        3d                          4s
+   ┌──┬──┬──┬──┬──┐              ┌──┐
+   │ ↑│ ↑│ ↑│ ↑│ ↑│              │ ↑│
+   └──┴──┴──┴──┴──┘              └──┘
+  ```
+
+  (Równoważny jest zapis z odwróconą kolejnością: najpierw $4s$, potem $3d$.)
+pulapka: |
+  **Największa pułapka: konfiguracja chromu jest wyjątkiem od reguły zapełniania.** Zgodnie ze schematem powinno być $3d^4 4s^2$, ale rzeczywista konfiguracja to **$3d^5 4s^1$** — półzapełniona podpowłoka $d$ jest energetycznie korzystniejsza. Bez tego wyjątku warunek „sześć niesparowanych elektronów" nie zostałby spełniony.
+
+  **Drugi wyjątek tej samej rodziny to miedź:** $[\text{Ar}]\,3d^{10}4s^1$ zamiast $3d^9 4s^2$. Oba warto znać na pamięć.
+
+  **W 1.1 przy pierwiastku Q nie wolno pisać „N₂".** Klucz CKE wprost zastrzega, że zapis cząsteczki zamiast symbolu pierwiastka **unieważnia cały wiersz**. Pytanie dotyczy pierwiastka, nie substancji.
+
+  **Maksymalny stopień utlenienia azotu to V, nie III.** Wynika z liczby elektronów walencyjnych (5), a nie z typowej wartościowości. Przykład związku: HNO₃ i N₂O₅.
+
+  **Blok konfiguracyjny to nie grupa ani okres.** Blok wyznacza **podpowłoka, na którą wchodzi ostatni elektron**: s, p, d albo f. Chrom to blok **d**, azot — blok **p**.
+
+  **W 1.2 elektrony niesparowane muszą mieć zgodny spin** — wszystkie strzałki w tę samą stronę (reguła Hunda). Klucz CKE zwraca na to uwagę osobno.
+
+  **Nie zapisuj pełnej konfiguracji zamiast fragmentu.** Polecenie prosi o elektrony **mogące uczestniczyć w tworzeniu wiązań** — czyli $3d$ i $4s$, a nie cały rdzeń argonowy.
+wymaganie: |
+  I. Atomy, cząsteczki i stechiometria chemiczna — budowa atomu, konfiguracja elektronowa atomów pierwiastków bloków s, p i d, reguła Hunda i zakaz Pauliego, bloki konfiguracyjne, stopnie utlenienia.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2026-maj-pr/zad-01.webp"
+  alt="Zadanie 1 — chemia 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MCHP-R0-100-A-2605 — zadanie 1."
+  zrodlo="CKE, matura maj 2026, chemia PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Chemia/MCHP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Jak rozszyfrować pierwiastek z opisu
+
+| Wskazówka z treści | Wniosek |
+|---|---|
+| niemetal, cząsteczki dwuatomowe, główny składnik powietrza | **azot N** (78% objętości powietrza) |
+| azot ma **5** elektronów walencyjnych | liczba szukana dla A: $5+1 = 6$ |
+| metal, $Z < 36$, **6 niesparowanych** elektronów wiążących | tylko $3d^5 4s^1$ → **chrom Cr**, $Z = 24$ |
+
+## Dwa wyjątki konfiguracyjne, które trzeba znać
+
+| Pierwiastek | Konfiguracja „ze schematu" | **Rzeczywista** | Powód |
+|---|---|---|---|
+| **chrom** (Z = 24) | $3d^4 4s^2$ | **$3d^5 4s^1$** | półzapełniona podpowłoka $d$ |
+| **miedź** (Z = 29) | $3d^9 4s^2$ | **$3d^{10}4s^1$** | całkowicie zapełniona podpowłoka $d$ |
+
+Podobne odstępstwa występują też u molibdenu, srebra i złota — na maturze pytają jednak niemal wyłącznie o chrom i miedź.
+
+## Bloki konfiguracyjne
+
+| Blok | Ostatni elektron | Grupy układu okresowego | Przykłady |
+|---|---|---|---|
+| **s** | podpowłoka $s$ | 1–2 | H, Na, Ca |
+| **p** | podpowłoka $p$ | 13–18 | **N**, O, Cl |
+| **d** | podpowłoka $d$ | 3–12 | **Cr**, Fe, Cu |
+| **f** | podpowłoka $f$ | lantanowce, aktynowce | Ce, U |
+
+## Maksymalny stopień utlenienia
+
+| Blok | Reguła | Przykład |
+|---|---|---|
+| **s i p** | = liczba elektronów walencyjnych = numer grupy (dla 1–2) lub numer grupy − 10 | **N: 5 elektronów → V** (HNO₃) |
+| **d** | = suma elektronów $(n-1)d + ns$ | **Cr: 5 + 1 = 6 → VI** (K₂CrO₄, K₂Cr₂O₇) |
+
+Uwaga na wyjątki w bloku d: żelazo ma 8 elektronów $3d^6 4s^2$, ale maksymalny stopień utlenienia to zwykle podawany **III** (choć znane są związki na +VI). Chrom natomiast realizuje pełne **+VI** w powszechnie znanych chromianach.
+
+## Trzy reguły zapełniania orbitali
+
+| Reguła | Treść |
+|---|---|
+| **zakaz Pauliego** | w jednym orbitalu najwyżej **2 elektrony**, o przeciwnych spinach |
+| **reguła Hunda** | w podpowłoce najpierw po **jednym** elektronie na każdy orbital, o **zgodnym spinie** |
+| **reguła Aufbau** (n+l) | kolejność zapełniania: 1s 2s 2p 3s 3p **4s 3d** 4p 5s 4d 5p 6s 4f 5d… |
+
+Chrom łamie regułę Aufbau właśnie po to, by zmaksymalizować liczbę elektronów o zgodnym spinie zgodnie z regułą Hunda.
+
+## Punktacja CKE
+
+- **1.1.** 2 pkt — poprawne uzupełnienie **obu wierszy** (symbol, blok, maksymalny stopień utlenienia);
+  1 pkt — poprawny **jeden wiersz** w całości **albo** dwie poprawne kolumny (symbole + bloki lub symbole + stopnie utlenienia).
+- **1.2.** 1 pkt — poprawny zapis klatkowy elektronów $3d$ i $4s$ chromu, z numerami powłok, symbolami podpowłok i **zgodnymi spinami**.
+- **Razem: 3 pkt.**
