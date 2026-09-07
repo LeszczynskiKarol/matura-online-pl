@@ -1,0 +1,84 @@
+---
+arkusz: fizyka-2026-maj-pr
+subject: fizyka
+nr: 10
+punkty: 3
+typ: otwarte-rozszerzone
+topic: relatywistyka, energia spoczynkowa, czynnik Lorentza, rozpad beta
+difficulty: 4
+tresc: |
+  Cząstka $\beta^-$ emitowana podczas rozpadu jądra ma energię kinetyczną $E_{kin} = 1{,}311\ \mathrm{MeV}$. Energia spoczynkowa cząstki $\beta^-$ wynosi $E_0 = 0{,}511\ \mathrm{MeV}$.
+
+  **Polecenie:** oblicz $\dfrac{v}{c}$. Zapisz obliczenia. Wynik podaj zaokrąglony do **dwóch cyfr znaczących**.
+odpowiedz: |
+  Energia całkowita cząstki relatywistycznej to suma energii spoczynkowej i kinetycznej:
+
+  $$E = E_0 + E_{kin} = 0{,}511 + 1{,}311 = 1{,}822\ \mathrm{MeV}$$
+
+  Z definicji czynnika Lorentza $E = \gamma E_0$:
+
+  $$\gamma = \frac{E}{E_0} = \frac{1{,}822}{0{,}511} = 3{,}566$$
+
+  Z definicji $\gamma = \dfrac{1}{\sqrt{1 - v^2/c^2}}$ wyznaczamy $v/c$:
+
+  $$\frac{v}{c} = \sqrt{1 - \frac{1}{\gamma^2}} = \sqrt{1 - \frac{1}{3{,}566^2}} = \sqrt{1 - 0{,}0786} = \sqrt{0{,}9214}$$
+
+  $$\boxed{\frac{v}{c} \approx 0{,}96}$$
+pulapka: |
+  **Nie wolno użyć wzoru klasycznego $E_{kin} = \tfrac{1}{2}mv^2$.** Dałby on $v/c > 1$, co jest fizycznie niemożliwe — a to najczęstszy błąd w tym zadaniu. Sygnałem, że trzeba liczyć relatywistycznie, jest to, że **energia kinetyczna przewyższa energię spoczynkową** ($1{,}311 > 0{,}511$), czyli $\gamma > 2$.
+
+  **Energia całkowita to suma, nie różnica.** $E = E_0 + E_{kin}$, a nie $E_{kin} - E_0$. Odejmowanie daje $\gamma < 2$ i błędny wynik.
+
+  **Jednostki się skracają.** Zarówno $E$, jak i $E_0$ są w MeV, a $\gamma$ jest bezwymiarowe — nie trzeba niczego przeliczać na dżule. To celowe uproszczenie: energie cząstek podaje się w elektronowoltach właśnie dlatego.
+
+  **Dwie cyfry znaczące** to warunek z polecenia. Wynik 0,9599 zaokrąglamy do **0,96**, nie do 0,960 ani 1,0.
+wymaganie: |
+  I. Wykorzystanie pojęć i wielkości fizycznych do opisu zjawisk. Szczególna teoria względności: energia spoczynkowa i całkowita, czynnik Lorentza.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2026-maj-pr/zad-10.webp"
+  alt="Zadanie 10 — fizyka 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MFAP-R0-100-A-2605 — zadanie 10."
+  zrodlo="CKE, matura maj 2026, fizyka PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Fizyka/MFAP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Trzy energie w relatywistyce
+
+| Wielkość | Wzór | Tutaj |
+|---|---|---|
+| spoczynkowa | $E_0 = m_0c^2$ | 0,511 MeV |
+| kinetyczna | $E_{kin} = (\gamma - 1)E_0$ | 1,311 MeV |
+| **całkowita** | $E = \gamma E_0 = E_0 + E_{kin}$ | **1,822 MeV** |
+
+Energia spoczynkowa elektronu **0,511 MeV** to jedna z liczb, które warto znać na pamięć — pojawia się w zadaniach o rozpadzie $\beta$, anihilacji i produkcji par.
+
+## Od $\gamma$ do prędkości
+
+$$\gamma = \frac{1}{\sqrt{1 - \beta^2}}, \qquad \beta = \frac{v}{c}$$
+
+Przekształcamy:
+
+$$\gamma^2\left(1 - \beta^2\right) = 1 \;\Rightarrow\; \beta^2 = 1 - \frac{1}{\gamma^2} \;\Rightarrow\; \beta = \sqrt{1 - \gamma^{-2}}$$
+
+## Dlaczego klasyczny wzór zawodzi
+
+Gdyby użyć $E_{kin} = \tfrac{1}{2}m_0v^2$:
+
+$$v = \sqrt{\frac{2E_{kin}}{m_0}} = c\sqrt{\frac{2E_{kin}}{E_0}} = c\sqrt{\frac{2\cdot 1{,}311}{0{,}511}} = 2{,}27\,c$$
+
+Wynik przekracza prędkość światła — natychmiastowy sygnał, że model jest zły. Warto go sobie policzyć raz, żeby zapamiętać skalę błędu.
+
+## Kiedy trzeba liczyć relatywistycznie
+
+Praktyczna reguła: gdy $E_{kin}$ jest porównywalna z $E_0$ lub większa, klasyka nie wystarcza. Tutaj stosunek wynosi 2,6 — jesteśmy głęboko w reżimie relatywistycznym, $\gamma = 3{,}57$.
+
+## Punktacja CKE
+
+- **3 pkt** — poprawna metoda **i** wynik ($\approx 0{,}96$) z zachowaniem dwóch cyfr znaczących.

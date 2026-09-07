@@ -1,0 +1,87 @@
+---
+arkusz: fizyka-2026-maj-pr
+subject: fizyka
+nr: 9
+punkty: 3
+typ: otwarte-rozszerzone
+topic: sila Lorentza, ruch po okregu, okres obiegu, pole magnetyczne
+difficulty: 3
+tresc: |
+  Elektron porusza się po okręgu w zewnętrznym jednorodnym polu magnetycznym o indukcji $B = 1{,}70\ \mathrm{mT}$. Wektor prędkości $\vec{v}$ jest **prostopadły** do wektora indukcji $\vec{B}$. Wartość prędkości jest dużo mniejsza od prędkości światła.
+
+  **Polecenie:** oblicz $T$ — okres obiegu elektronu po okręgu. Zapisz obliczenia.
+odpowiedz: |
+  Na elektron działa **siła Lorentza**, która pełni funkcję **siły dośrodkowej**. Ponieważ $\vec{v} \perp \vec{B}$:
+
+  $$qvB = \frac{mv^2}{r}$$
+
+  Skracamy $v$:
+
+  $$qB = \frac{mv}{r} \quad\Rightarrow\quad r = \frac{mv}{qB}$$
+
+  Ze związku między okresem a prędkością w ruchu jednostajnym po okręgu $v = \dfrac{2\pi r}{T}$:
+
+  $$qB = \frac{m}{r}\cdot\frac{2\pi r}{T} \quad\Rightarrow\quad \boxed{T = \frac{2\pi m}{qB}}$$
+
+  Podstawiamy dane:
+
+  $$T = \frac{2 \cdot 3{,}142 \cdot 9{,}109\cdot 10^{-31}\ \mathrm{kg}}{1{,}602\cdot 10^{-19}\ \mathrm{C} \cdot 1{,}70\cdot 10^{-3}\ \mathrm{T}}$$
+
+  $$\boxed{T \approx 2{,}10 \cdot 10^{-8}\ \mathrm{s}}$$
+pulapka: |
+  **Najważniejsza obserwacja: okres nie zależy od prędkości ani od promienia.** Prędkość skraca się w rachunku, więc $T = \frac{2\pi m}{qB}$ zależy tylko od masy, ładunku i indukcji. Uczniowie często zatrzymują się na $r = \frac{mv}{qB}$ i twierdzą, że bez $v$ nie da się policzyć okresu — a właśnie da się i to jest sedno zadania.
+
+  **Nie trzeba szukać wartości prędkości w treści** — jej tam nie ma i nie jest potrzebna.
+
+  **Uwaga na jednostki:** $B$ podano w **milisteslach**, więc $1{,}70\ \mathrm{mT} = 1{,}70\cdot 10^{-3}\ \mathrm{T}$. Podstawienie 1,70 zamiast $1{,}70\cdot 10^{-3}$ zmienia wynik o trzy rzędy wielkości.
+
+  Masę i ładunek elektronu bierzemy z karty wzorów — zadanie wprost do niej odsyła.
+wymaganie: |
+  II. Rozwiązywanie problemów z wykorzystaniem praw i zależności fizycznych. Siła Lorentza, ruch naładowanej cząstki w polu magnetycznym.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2026-maj-pr/zad-09.webp"
+  alt="Zadanie 9 — fizyka 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MFAP-R0-100-A-2605 — zadanie 9."
+  zrodlo="CKE, matura maj 2026, fizyka PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Fizyka/MFAP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Skąd znika prędkość
+
+$$\underbrace{qvB}_{\text{siła Lorentza}} = \underbrace{\frac{mv^2}{r}}_{\text{siła dośrodkowa}}$$
+
+Po skróceniu $v$ zostaje $r = \frac{mv}{qB}$ — promień **rośnie** z prędkością. Ale okres to droga podzielona przez prędkość:
+
+$$T = \frac{2\pi r}{v} = \frac{2\pi}{v}\cdot\frac{mv}{qB} = \frac{2\pi m}{qB}$$
+
+Szybsza cząstka zatacza proporcjonalnie większy okrąg i obiega go w **tym samym czasie**.
+
+## Częstość cyklotronowa
+
+Odwrotność okresu to **częstość cyklotronowa**:
+
+$$f_c = \frac{qB}{2\pi m}$$
+
+Na tej niezależności od prędkości opiera się działanie **cyklotronu**: napięcie przyspieszające może mieć stałą częstotliwość, bo cząstka wraca do szczeliny zawsze po tym samym czasie, mimo że jej orbita rośnie.
+
+Zastrzeżenie w treści — „prędkość dużo mniejsza od prędkości światła" — jest istotne właśnie dlatego, że przy prędkościach relatywistycznych masa efektywna rośnie i ta niezależność przestaje obowiązywać. Stąd potrzeba synchrocyklotronów.
+
+## Dane z karty wzorów
+
+| Wielkość | Wartość |
+|---|---|
+| masa elektronu $m_e$ | $9{,}109\cdot 10^{-31}\ \mathrm{kg}$ |
+| ładunek elementarny $e$ | $1{,}602\cdot 10^{-19}\ \mathrm{C}$ |
+
+## Punktacja CKE
+
+- **3 pkt** — poprawna metoda **i** wynik z jednostką ($\approx 2{,}10\cdot 10^{-8}\ \mathrm{s}$).
+- **2 pkt** — równanie identyfikujące siłę Lorentza jako dośrodkową **oraz** związek prędkości z okresem.
+- **1 pkt** — samo równanie $qvB = ma_d$.

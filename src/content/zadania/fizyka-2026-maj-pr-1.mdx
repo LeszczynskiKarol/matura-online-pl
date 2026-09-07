@@ -1,0 +1,96 @@
+---
+arkusz: fizyka-2026-maj-pr
+subject: fizyka
+nr: 1
+punkty: 6
+typ: otwarte-rozszerzone
+topic: rzut pionowy w gore, wykres h(t), spadek swobodny
+difficulty: 4
+tresc: |
+  W chwili $t_0 = 0$ z wysokości $h_0$ nad podłożem wyrzucono **pionowo w górę** ciało o prędkości początkowej $v_0$. Ciało wzniosło się na wysokość maksymalną $h_{max}$, po czym opadło na podłoże. Ruch w komorze próżniowej, bez oporów, $g = 9{,}81\ \mathrm{m/s^2}$.
+
+  Z wykresu $h(t)$ odczytujemy punkty: $A = (0;\ h_0)$, $W = (0{,}8;\ h_{max})$, $B = (1{,}8;\ 0)$.
+
+  **1.1.** (0–1) Oceń prawdziwość stwierdzeń (P/F):
+  1. Przyśpieszenie ciała zależy od jego masy.
+  2. Czas trwania ruchu ciała zależy od $v_0$.
+
+  **1.2.** (0–2) Oblicz $v_0$.
+
+  **1.3.** (0–3) Oblicz $h_0$.
+odpowiedz: |
+  **1.1. FP**
+
+  1. **F** — w polu grawitacyjnym bez oporów przyśpieszenie każdego ciała wynosi $g$, niezależnie od masy.
+  2. **P** — im większe $v_0$, tym wyżej ciało się wzniesie i tym dłużej trwa cały ruch.
+
+  **1.2.** W fazie wznoszenia ruch jest jednostajnie opóźniony, a w punkcie $W$ prędkość spada do zera:
+
+  $$0 = v_0 - g\,t_W \quad\Rightarrow\quad v_0 = g\,t_W = 9{,}81 \cdot 0{,}8 = 7{,}848\ \mathrm{m/s}$$
+
+  $$\boxed{v_0 \approx 7{,}85\ \mathrm{m/s}}$$
+
+  **1.3.** Od $W$ do $B$ ciało spada swobodnie przez $t_{sp} = 1{,}8 - 0{,}8 = 1{,}0\ \mathrm{s}$:
+
+  $$h_{max} = \tfrac{1}{2}g\,t_{sp}^2 = \tfrac{1}{2}\cdot 9{,}81 \cdot 1{,}0^2 = 4{,}905\ \mathrm{m}$$
+
+  Wysokość wzniesienia ponad punkt startu:
+
+  $$\Delta h = \frac{v_0^2}{2g} = \frac{7{,}848^2}{2 \cdot 9{,}81} = 3{,}1392\ \mathrm{m}$$
+
+  $$h_0 = h_{max} - \Delta h = 4{,}905 - 3{,}1392 = 1{,}7658\ \mathrm{m}$$
+
+  $$\boxed{h_0 \approx 1{,}77\ \mathrm{m}}$$
+pulapka: |
+  **Ruch nie jest symetryczny w czasie, bo start i lądowanie są na różnych wysokościach.** Wznoszenie trwa 0,8 s, a spadanie 1,0 s — ciało spada z $h_{max}$ aż do podłoża, czyli niżej niż punkt startu. Założenie „skoro całość trwa 1,8 s, to wznoszenie zajmuje 0,9 s" jest błędne i psuje oba podpunkty.
+
+  **W 1.1 stwierdzenie 2. kusi odpowiedzią F**, bo w spadku swobodnym czas nie zależy od masy. Ale pytanie dotyczy zależności od $v_0$, a nie od masy — większa prędkość początkowa to dłuższy lot.
+
+  **Kontrola wyniku zajmuje kilkanaście sekund.** Podstaw $h_0$ do równania ruchu i sprawdź, czy przy $t = 1{,}8$ wychodzi zero:
+
+  $$h_0 + v_0 t - \tfrac{1}{2}g t^2 = 1{,}7658 + 7{,}848 \cdot 1{,}8 - \tfrac{1}{2}\cdot 9{,}81 \cdot 1{,}8^2 = 0$$
+wymaganie: |
+  II.16) (SP) opisuje spadek swobodny. I.7) wyodrębnia z tekstu i wykresów informacje kluczowe dla opisywanego zjawiska.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/fizyka/2026-maj-pr/zad-01.webp"
+  alt="Zadanie 1 — fizyka 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MFAP-R0-100-A-2605 — zadanie 1."
+  zrodlo="CKE, matura maj 2026, fizyka PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Fizyka/MFAP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Trzy odcinki tego samego ruchu
+
+| Faza | Czas | Opis |
+|---|---|---|
+| wznoszenie $A \to W$ | 0,8 s | jednostajnie opóźniony, $v$ maleje od $v_0$ do 0 |
+| spadanie $W \to$ poziom startu | 0,8 s | symetria względem wznoszenia |
+| spadanie do podłoża | 0,2 s | dodatkowy odcinek $h_0$ w dół |
+
+Razem 1,8 s. **Symetria dotyczy tylko odcinka nad punktem startu** — pozostały czas to spadek poniżej.
+
+## Trzy drogi do $h_0$
+
+**Sposób 1 — przez $h_{max}$** (użyty wyżej): policz $h_{max}$ ze swobodnego spadku od $W$ do $B$, odejmij $v_0^2/2g$.
+
+**Sposób 2 — wprost z równania ruchu:** podstaw $t = 1{,}8\ \mathrm{s}$ i $h = 0$:
+
+$$0 = h_0 + v_0 \cdot 1{,}8 - \tfrac{1}{2}g \cdot 1{,}8^2 \quad\Rightarrow\quad h_0 = \tfrac{1}{2}\cdot 9{,}81 \cdot 3{,}24 - 7{,}848 \cdot 1{,}8 = 1{,}766\ \mathrm{m}$$
+
+**Sposób 3 — z zasady zachowania energii:** $\tfrac{1}{2}mv_0^2 + mgh_0 = mgh_{max}$, po skróceniu masy wychodzi to samo.
+
+CKE akceptuje każdy z nich — punktowana jest metoda i wynik, nie konkretna droga.
+
+## Punktacja CKE
+
+- **1.1.** 1 pkt — obie oceny poprawne (FP).
+- **1.2.** 2 pkt — poprawna metoda **i** wynik z jednostką ($\approx 7{,}85\ \mathrm{m/s}$); 1 pkt za samo równanie $0 = v_0 - gt$.
+- **1.3.** 3 pkt — metoda i wynik ($\approx 1{,}77\ \mathrm{m}$).
+- **Razem: 6 pkt.**
