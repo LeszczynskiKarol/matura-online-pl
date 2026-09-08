@@ -1,0 +1,165 @@
+---
+arkusz: geografia-2026-maj-pr
+subject: geografia
+nr: 7
+punkty: 3
+typ: otwarte-krotkie
+topic: wysokosc gorowania Slonca, rownonoc, deklinacja Sloneczna, skala mapy, kierunki geograficzne
+difficulty: 4
+tresc: |
+  Na fotografii wykonanej znad obszaru położonego na mapie szczegółowej w polu **C3** oznaczono literą **X** stację wyciągów narciarskich. Na fotografii podpisano też szczyty **Skrzyczne** i **Małe Skrzyczne**.
+
+  **7.1.** (0–1) Oceń prawdziwość stwierdzeń (P/F):
+  1. Narciarz podczas wjazdu wyciągiem ze stacji oznaczonej literą **X** na **Małe Skrzyczne** (pole D3) przemieszcza się w kierunku **zachodnim**.
+  2. Odległość w linii prostej w terenie między szczytami, których nazwy podano na fotografii, jest **większa niż 1,25 km**.
+
+  **7.2.** (0–2) Oblicz **wysokość Słońca w dniu równonocy w momencie górowania** w miejscu wskazanym na fotografii literą **X**. Przyjmij **szerokość geograficzną odczytaną z mapy z dokładnością do jednej minuty**. Zapisz obliczenia i wynik.
+odpowiedz: |
+  **7.1. FP**
+
+  1. **F** — pole **C3** leży **na zachód** od pola **D3**, więc narciarz wjeżdżający ze stacji X (pole C3) na Małe Skrzyczne (pole D3) przemieszcza się **na wschód**, a nie na zachód.
+
+  2. **P** — odległość między Skrzycznem a Małym Skrzycznem zmierzona na mapie i przeliczona przez skalę **przekracza 1,25 km**.
+
+  **7.2.**
+
+  **Krok 1. Odczyt szerokości geograficznej.**
+
+  Z mapy szczegółowej, z dokładnością do jednej minuty, odczytujemy dla punktu X:
+
+  $$\varphi = 49°41'\text{N}$$
+
+  **Krok 2. Deklinacja Słońca w dniu równonocy.**
+
+  W dniu równonocy (21 marca albo 23 września) Słońce góruje w zenicie nad **równikiem**:
+
+  $$\delta = 0°$$
+
+  **Krok 3. Wzór na wysokość górowania Słońca.**
+
+  Dla obserwatora na półkuli północnej, gdy Słońce góruje po **południowej** stronie nieba:
+
+  $$h_{gS} = 90° - \varphi + \delta$$
+
+  **Krok 4. Obliczenie.**
+
+  $$h_{gS} = 90° - 49°41' + 0° = 89°60' - 49°41'$$
+
+  $$\boxed{h_{gS} = 40°19'}$$
+
+  **Wysokość Słońca w momencie górowania: 40°19′.**
+pulapka: |
+  **Klucz CKE zeruje zadanie 7.2 przy dwóch błędach:** użyciu **długości** geograficznej zamiast szerokości oraz przyjęciu wartości szerokości **spoza mapy**. Trzeba odczytać $\varphi$ z podanej mapy szczegółowej.
+
+  **Dokładność do jednej minuty jest wymagana.** Odczyt „ok. 49°40′" albo „49,7°" obniża punktację do 1 punktu — polecenie mówi wprost o dokładności **1′**.
+
+  **Uważaj na odejmowanie w mierze kątowej.** $90° - 49°41'$ liczymy jako $89°60' - 49°41' = 40°19'$. Zapisanie $90° - 49°41' = 41°41'$ albo $40°41'$ to typowy błąd rachunkowy.
+
+  **W dniu równonocy deklinacja wynosi dokładnie 0°.** To upraszcza wzór do $h_{gS} = 90° - \varphi$. Warto to zapamiętać: **w równonoc wysokość górowania jest dopełnieniem szerokości geograficznej do 90°**.
+
+  **W 7.1 stwierdzenie 1. sprawdza czytanie siatki mapy.** Litery kolumn (A, B, C, D) rosną **na wschód**, cyfry wierszy — **na południe**. Przejście z C3 do D3 to ruch **na wschód**.
+
+  **W stwierdzeniu 2. trzeba użyć skali mapy.** Odległość na mapie przelicza się przez mianownik skali:
+
+  $$d_{\text{teren}} = d_{\text{mapa}} \times M$$
+
+  Dla skali 1:50 000 odcinek 2,5 cm na mapie to 1,25 km w terenie.
+
+  **Fotografia sama w sobie nie służy do pomiaru odległości.** Trzeba wrócić do **mapy szczegółowej** — na zdjęciu perspektywa zniekształca proporcje.
+wymaganie: |
+  II. Ziemia we Wszechświecie — ruch obiegowy Ziemi, oświetlenie Ziemi w ciągu roku, obliczanie wysokości górowania Słońca, deklinacja Słońca. I. Źródła informacji geograficznej — skala mapy, kierunki geograficzne, obliczanie odległości.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/geografia/2026/zad-07.webp"
+  alt="Zadanie 7 — geografia 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MGEP-R0-100-A-2605 — zadanie 7."
+  zrodlo="CKE, matura maj 2026, geografia PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Geografia/MGEP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Wysokość górowania Słońca — wzory
+
+| Sytuacja | Wzór |
+|---|---|
+| **Słońce góruje po stronie południowej** (półkula N, $\varphi > \delta$) | $h_{gS} = 90° - \varphi + \delta$ |
+| **Słońce góruje po stronie północnej** (półkula S, albo $\varphi < \delta$) | $h_{gS} = 90° + \varphi - \delta$ |
+| ogólnie | $h_{gS} = 90° - \|\varphi - \delta\|$ |
+
+Wzór ogólny działa zawsze — wystarczy pamiętać o **wartości bezwzględnej** różnicy.
+
+## Deklinacja Słońca w wybranych dniach
+
+| Data | Nazwa | Deklinacja $\delta$ | Zenit nad |
+|---|---|---|---|
+| **21 III** | **równonoc wiosenna** | **0°** | równikiem |
+| **22 VI** | przesilenie letnie | **+23°26′** | zwrotnikiem Raka |
+| **23 IX** | **równonoc jesienna** | **0°** | równikiem |
+| **22 XII** | przesilenie zimowe | **−23°26′** | zwrotnikiem Koziorożca |
+
+W **równonoc** wzór upraszcza się do:
+
+$$h_{gS} = 90° - \varphi$$
+
+## Rachunek dla punktu X
+
+$$\varphi = 49°41'\text{N}, \qquad \delta = 0°$$
+
+$$h_{gS} = 90° - 49°41' + 0°$$
+
+$$= 89°60' - 49°41' = \mathbf{40°19'}$$
+
+**Technika:** przed odejmowaniem zamień $90°$ na $89°60'$ — wtedy odejmujesz minuty od minut bez pożyczania.
+
+## Wysokość górowania w Szczyrku przez rok
+
+| Data | $\delta$ | $h_{gS}$ |
+|---|---|---|
+| 22 VI | +23°26′ | **63°45′** |
+| **21 III / 23 IX** | **0°** | **40°19′** |
+| 22 XII | −23°26′ | **16°53′** |
+
+Amplituda roczna wynosi $2 \times 23°26' = \mathbf{46°52'}$ — tyle samo na każdej szerokości geograficznej poza obszarami okołobiegunowymi.
+
+## Skala mapy — przeliczanie odległości
+
+$$d_{\text{teren}} = d_{\text{mapa}} \times M$$
+
+| Skala | 1 cm na mapie | 1 km w terenie |
+|---|---|---|
+| 1:10 000 | 100 m | 10 cm |
+| 1:25 000 | 250 m | 4 cm |
+| **1:50 000** | **500 m** | **2 cm** |
+| 1:100 000 | 1 km | 1 cm |
+
+Skala **większa** = mianownik **mniejszy** = mapa **dokładniejsza**, obejmująca mniejszy obszar.
+
+## Kierunki na mapie i w siatce pól
+
+| Element | Zasada |
+|---|---|
+| **góra mapy** | **północ** (o ile nie zaznaczono inaczej) |
+| **litery kolumn** (A, B, C, D…) | rosną **na wschód** |
+| **cyfry wierszy** (1, 2, 3…) | rosną **na południe** |
+| przejście C3 → D3 | ruch **na wschód** |
+| przejście D2 → D3 | ruch **na południe** |
+
+## Szczyty z zadania
+
+| Szczyt | Wysokość | Uwagi |
+|---|---|---|
+| **Skrzyczne** | **1257 m n.p.m.** | najwyższy szczyt Beskidu Śląskiego, wieża telewizyjna, schronisko |
+| **Małe Skrzyczne** | 1211 m n.p.m. | sąsiedni wierzchołek na grzbiecie, stacja wyciągu |
+
+## Punktacja CKE
+
+- **7.1.** 1 pkt — **FP**.
+- **7.2.** 2 pkt — poprawny **odczyt szerokości geograficznej** (z dokładnością do 1′), poprawny **sposób obliczenia** i poprawny **wynik** (**40°19′**);
+  1 pkt — poprawny sposób obliczenia bez poprawnego wyniku (mniejsza dokładność odczytu albo błąd rachunkowy).
+  **0 pkt** — użycie **długości** geograficznej albo szerokości **spoza mapy**.
+- **Razem: 3 pkt.**
