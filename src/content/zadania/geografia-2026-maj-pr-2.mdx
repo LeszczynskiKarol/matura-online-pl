@@ -1,0 +1,120 @@
+---
+arkusz: geografia-2026-maj-pr
+subject: geografia
+nr: 2
+punkty: 1
+typ: otwarte-krotkie
+topic: mapa topograficzna, odczyt cech srodowiska przyrodniczego, deniwelacje, szlak turystyczny, Beskid Slaski
+difficulty: 3
+tresc: |
+  Na obszarze przedstawionym w polu **D2** mapy szczegółowej **zielony szlak pieszy przecina drogę wojewódzką**.
+
+  **Polecenie (0–1).** Przedstaw **dwie cechy środowiska przyrodniczego** — możliwe do odczytania z mapy szczegółowej — które turysta może obserwować podczas wycieczki **zielonym szlakiem pieszym** z powyższego miejsca do **schroniska PTTK na Klimczoku**.
+odpowiedz: |
+  **Dwie cechy środowiska przyrodniczego** — dowolne dwie z poniższych:
+
+  1. **Szlak przebiega pod górę** — prowadzi ze Szczyrku (ok. 500 m n.p.m.) na Klimczok (1117 m n.p.m.), więc pokonuje **ponad 600 m różnicy wysokości**. Na mapie widać to po **rosnących wartościach poziomic**.
+
+  2. **Szlak przebiega przez obszar o dużych deniwelacjach** — poziomice są **gęsto ułożone**, co świadczy o stromych stokach i znacznych różnicach wysokości względnej.
+
+  3. **Fragmenty szlaku poprowadzono doliną rzeczną** — poziomice wyginają się w kształt litery „V" skierowanej **w górę stoku**, a wzdłuż nich biegnie ciek wodny.
+
+  4. **Fragmenty szlaku przebiegają po stokach wzniesień** — trasa prowadzi trawersem, w poprzek warstwic.
+
+  5. **Fragmenty szlaku przebiegają przez tereny leśne** — na mapie oznaczone **zielonym tłem** z sygnaturą lasu.
+
+  6. **Trasa przecina potoki** — na mapie widoczne są **niebieskie linie cieków** krzyżujące się ze szlakiem.
+pulapka: |
+  **Polecenie pyta o cechy ŚRODOWISKA PRZYRODNICZEGO.** Elementy **antropogeniczne** — schronisko, wyciąg krzesełkowy, droga wojewódzka, zabudowa, oznakowanie szlaku — **nie punktują**, choć też są na mapie.
+
+  **Cechy muszą być odczytywalne z mapy.** Odpowiedzi typu „turysta zobaczy jelenie" albo „poczuje zapach lasu" nie mają oparcia w źródle. Mapa pokazuje **rzeźbę terenu, wody, pokrycie roślinnością**.
+
+  **Trzeba podać dwie różne cechy.** „Szlak idzie pod górę" i „szlak pokonuje różnicę wysokości" to **ta sama cecha** zapisana dwa razy — CKE policzy ją raz.
+
+  **Punkt przyznaje się łącznie za obie cechy.** Jedna trafna i jedna chybiona to zero punktów.
+
+  **Nie myl wysokości bezwzględnej z względną.** **Bezwzględna** — nad poziomem morza (odczytywana z poziomic i punktów wysokościowych). **Względna (deniwelacja)** — różnica między dwoma punktami w terenie.
+
+  **Kierunek „pod górę" trzeba sprawdzić na mapie.** Odczyt wartości poziomic wzdłuż szlaku pokazuje, czy wysokość rośnie, czy maleje — to nie jest oczywiste bez sprawdzenia.
+wymaganie: |
+  I. Źródła informacji geograficznej — odczytywanie i interpretacja mapy topograficznej: rzeźba terenu, poziomice, sieć hydrograficzna, pokrycie terenu, znaki umowne. Opis środowiska przyrodniczego na podstawie mapy.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/geografia/2026/zad-02.webp"
+  alt="Zadanie 2 — geografia 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MGEP-R0-100-A-2605 — zadanie 2."
+  zrodlo="CKE, matura maj 2026, geografia PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Geografia/MGEP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Co da się odczytać z mapy topograficznej
+
+| Kategoria | Elementy | Jak oznaczone |
+|---|---|---|
+| **rzeźba terenu** | wzniesienia, doliny, przełęcze, stoki, deniwelacje | **poziomice**, punkty wysokościowe, cieniowanie |
+| **wody** | rzeki, potoki, jeziora, źródła, mokradła | **kolor niebieski** |
+| **roślinność** | lasy, łąki, sady, uprawy | **kolor zielony**, sygnatury |
+| **antropogeniczne** | drogi, zabudowa, schroniska, wyciągi, szlaki | linie, sygnatury, kolory |
+
+W zadaniach o „środowisku przyrodniczym" korzystamy **wyłącznie z trzech pierwszych** kategorii.
+
+## Odczyt rzeźby terenu z poziomic
+
+| Obserwacja | Wniosek |
+|---|---|
+| poziomice **gęsto** ułożone | **stok stromy**, duże deniwelacje |
+| poziomice **rzadko** ułożone | teren płaski lub łagodnie nachylony |
+| **rosnące** wartości wzdłuż trasy | szlak prowadzi **pod górę** |
+| poziomice w kształcie **V skierowanego w górę stoku** | **dolina** (często z ciekiem) |
+| poziomice w kształcie **V skierowanego w dół stoku** | **grzbiet** |
+| poziomice **zamknięte** | wzniesienie lub zagłębienie |
+
+$$\text{deniwelacja} = H_{\max} - H_{\min}$$
+
+Dla trasy Szczyrk → Klimczok: $1117 - 500 \approx \mathbf{620\ \text{m}}$.
+
+## Nachylenie stoku
+
+$$i = \frac{\Delta h}{d}\cdot 100\%$$
+
+gdzie $\Delta h$ — różnica wysokości, $d$ — odległość w poziomie (odczytana z mapy przez skalę).
+
+| Nachylenie | Ocena |
+|---|---|
+| < 5% | teren płaski |
+| 5–15% | łagodny |
+| 15–30% | stromy |
+| > 30% | bardzo stromy |
+
+## Znaki umowne na mapach turystycznych
+
+| Znak | Znaczenie |
+|---|---|
+| kolorowa linia (czerwona, zielona, niebieska, żółta, czarna) | **szlak turystyczny** |
+| domek z chorągiewką | **schronisko** |
+| trójkąt / krzyżyk z opisem | punkt wysokościowy, szczyt |
+| linia z poprzeczkami | wyciąg krzesełkowy, kolej linowa |
+| lornetka lub „⌂" na wzniesieniu | **punkt widokowy** |
+| niebieska linia | ciek wodny |
+| zielone tło z drzewkami | **las** |
+
+## Cechy szlaku w Beskidzie Śląskim — kontekst
+
+| Cecha | Skutek dla turysty |
+|---|---|
+| **duże deniwelacje** | wymagająca trasa, długi podejście |
+| **lesistość** (ponad 60% Beskidu Śląskiego) | ograniczone widoki poza polanami |
+| **gęsta sieć potoków** | liczne przejścia przez wodę, mostki |
+| **piętrowość** roślinności | zmiana lasu z mieszanego na świerkowy z wysokością |
+| skały osadowe (**flisz karpacki**) | wychodnie piaskowców i zlepieńców na grzbietach |
+
+## Punktacja CKE
+
+- **1 pkt** — przedstawienie **dwóch** poprawnych, różnych cech środowiska **przyrodniczego** możliwych do odczytania z mapy.
+- **0 pkt** — jedna cecha, cechy powtórzone albo cechy antropogeniczne.

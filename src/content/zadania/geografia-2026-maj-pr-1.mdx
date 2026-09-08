@@ -1,0 +1,133 @@
+---
+arkusz: geografia-2026-maj-pr
+subject: geografia
+nr: 1
+punkty: 1
+typ: zamkniete-dobierz
+topic: azymut, mapa szczegolowa, orientacja w terenie, Beskid Slaski, praca z mapa topograficzna
+difficulty: 4
+tresc: |
+  Fotografię wykonano na obszarze przedstawionym na **mapie szczegółowej**, na **północ od równoleżnika 49°44′N**. Na mapie ze skrzyżowania szlaków przedstawionego na fotografii zmierzono **azymuty** wybranych obiektów.
+
+  **Polecenie (0–1).** Dokończ zdanie. Wybierz odpowiedź **A** albo **B** oraz odpowiedź **1.**, **2.** albo **3.**
+
+  > Skrzyżowanie szlaków, z którego na mapie zmierzono azymuty, jest położone
+  > **A.** na szczycie **Błatnia** w polu **B1** / **B.** na **przełęczy Kowiorek** w polu **D1**,
+  > a obiekt, którego azymut jest zawarty **w przedziale od 0° do 10°**, to
+  > **1.** placówka GOPR w Szczyrku (pole D2) · **2.** punkt widokowy na Klimczoku (pole C1) · **3.** schronisko PTTK na Szyndzielni (pole D1)
+odpowiedz: |
+  **Odpowiedź: B3**
+
+  - **B — przełęcz Kowiorek w polu D1.** Warunek z treści zadania — punkt leży **na północ od równoleżnika 49°44′N** — spełnia przełęcz Kowiorek. Szczyt Błatnia w polu B1 znajduje się poza wskazanym obszarem.
+
+  - **3 — schronisko PTTK na Szyndzielni (pole D1).** Azymut z przedziału **0°–10°** oznacza kierunek **niemal dokładnie na północ** (z minimalnym odchyleniem na wschód). Spośród trzech wskazanych obiektów tylko schronisko na Szyndzielni leży **niemal dokładnie na północ** od przełęczy Kowiorek.
+
+  **Jak sprawdzić azymuty pozostałych obiektów:**
+
+  | Obiekt | Położenie względem przełęczy Kowiorek | Przybliżony azymut |
+  |---|---|---|
+  | **schronisko PTTK na Szyndzielni** (D1) | **na północ** | **0°–10°** ✔ |
+  | punkt widokowy na Klimczoku (C1) | na północny zachód | ok. 300°–330° |
+  | placówka GOPR w Szczyrku (D2) | na południowy wschód | ok. 130°–160° |
+pulapka: |
+  **Warunek „na północ od 49°44′N" jest kluczem do pierwszej części.** To on rozstrzyga między szczytem Błatnia a przełęczą Kowiorek — bez sprawdzenia szerokości geograficznej obu punktów na mapie odpowiedź jest zgadywaniem.
+
+  **Azymut mierzy się zawsze od kierunku północnego, zgodnie z ruchem wskazówek zegara.** Przedział 0°–10° to praktycznie **kierunek północny**. Nie myl tego z odległością — azymut mówi wyłącznie o **kierunku**.
+
+  **Azymut mierzymy OD punktu obserwacji DO obiektu.** Odwrócenie kierunku daje **azymut wsteczny**, różniący się o 180°. Gdyby ktoś zmierzył azymut ze Szyndzielni na Kowiorek, wyszłoby ok. 180°–190°, a nie 0°–10°.
+
+  **Numer pola na mapie to podpowiedź, nie odpowiedź.** Pola D1, D2, C1 mówią o położeniu obiektu w siatce mapy, ale **kierunek** trzeba wyznaczyć samodzielnie — porównując położenie obu punktów.
+
+  **Punkt przyznaje się za obie części łącznie.** Trafienie „B" przy błędnym numerze obiektu daje zero.
+
+  **Uwaga na deklinację magnetyczną.** W zadaniach maturalnych mierzy się **azymut geograficzny** (od północy geograficznej na mapie), a nie magnetyczny — kompas nie ma tu znaczenia.
+wymaganie: |
+  I. Źródła informacji geograficznej — czytanie mapy topograficznej: skala, poziomice, azymut, współrzędne geograficzne, orientacja w terenie i posługiwanie się siatką kilometrową.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/geografia/2026/zad-01.webp"
+  alt="Zadanie 1 — geografia 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MGEP-R0-100-A-2605 — zadanie 1."
+  zrodlo="CKE, matura maj 2026, geografia PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Geografia/MGEP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Azymut — jak go wyznaczać
+
+$$\text{azymut} = \text{kąt mierzony od kierunku } \textbf{północnego} \text{ zgodnie z ruchem wskazówek zegara}$$
+
+| Kierunek | Azymut |
+|---|---|
+| **północ (N)** | **0° (360°)** |
+| północny wschód (NE) | 45° |
+| **wschód (E)** | **90°** |
+| południowy wschód (SE) | 135° |
+| **południe (S)** | **180°** |
+| południowy zachód (SW) | 225° |
+| **zachód (W)** | **270°** |
+| północny zachód (NW) | 315° |
+
+Procedura pomiaru na mapie:
+
+1. połącz **punkt obserwacji** z **obiektem** linią prostą,
+2. w punkcie obserwacji poprowadź linię **równoległą do południka** (kierunek N–S),
+3. zmierz kąt **od północy, w prawo**, do wyznaczonej linii.
+
+$$A_{\text{wsteczny}} = A \pm 180°$$
+
+## Rodzaje azymutów
+
+| Rodzaj | Punkt odniesienia | Gdzie stosowany |
+|---|---|---|
+| **geograficzny (topograficzny)** | północ geograficzna (południk) | **mapa** |
+| magnetyczny | północ magnetyczna | **kompas** |
+| topograficzny (siatkowy) | linia siatki kilometrowej | mapy wojskowe |
+
+$$A_{\text{geogr}} = A_{\text{magn}} + \text{deklinacja magnetyczna}$$
+
+W Polsce deklinacja wynosi obecnie ok. **+5° do +7°** (wschodnia).
+
+## Elementy mapy topograficznej
+
+| Element | Do czego służy |
+|---|---|
+| **poziomice** | odczyt wysokości, spadków, form terenu |
+| **cięcie poziomicowe** | różnica wysokości między sąsiednimi poziomicami |
+| **skala** | przeliczanie odległości |
+| **siatka kilometrowa** | określanie położenia (pola A1, B2, D1…) |
+| **współrzędne geograficzne** | precyzyjna lokalizacja |
+| **znaki umowne** | obiekty: szlaki, schroniska, wyciągi, punkty widokowe |
+
+## Rozpoznawanie form terenu z poziomic
+
+| Układ poziomic | Forma |
+|---|---|
+| **poziomice gęste** | **stok stromy** |
+| poziomice rzadkie | stok łagodny |
+| **poziomice zamknięte, wartości rosną do środka** | **wzniesienie** |
+| poziomice zamknięte, wartości maleją do środka | zagłębienie (kotlina) |
+| **poziomice wygięte w stronę doliny** | **grzbiet** |
+| poziomice wygięte w stronę wzniesienia | **dolina** |
+| dwa wzniesienia rozdzielone obniżeniem | **przełęcz** |
+
+## Beskid Śląski — obiekty z zadania
+
+| Obiekt | Wysokość | Charakterystyka |
+|---|---|---|
+| **Skrzyczne** | **1257 m n.p.m.** | najwyższy szczyt Beskidu Śląskiego, wyciąg krzesełkowy |
+| **Klimczok** | 1117 m n.p.m. | schronisko PTTK, punkt widokowy |
+| **Szyndzielnia** | 1028 m n.p.m. | schronisko PTTK, kolej gondolowa z Bielska-Białej |
+| **Błatnia** | 917 m n.p.m. | schronisko, polany widokowe |
+| **przełęcz Kowiorek** | ok. 750 m n.p.m. | węzeł szlaków między Klimczokiem a Kotarzem |
+| Szczyrk | ok. 500 m n.p.m. | ośrodek narciarski, placówka GOPR |
+
+## Punktacja CKE
+
+- **1 pkt** — poprawna **para** odpowiedzi: **B3**.
+- **0 pkt** — jedna z części błędna albo brak odpowiedzi.
