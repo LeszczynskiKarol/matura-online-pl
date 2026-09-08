@@ -1,0 +1,123 @@
+---
+arkusz: biologia-2026-maj-pr
+subject: biologia
+nr: 11
+punkty: 2
+typ: otwarte-krotkie
+topic: potencjal czynnosciowy, depolaryzacja, kanaly sodowe i potasowe, neuron, hiperpolaryzacja
+difficulty: 4
+tresc: |
+  Powstawanie **potencjału czynnościowego** jest regulowane przez zmianę **przepuszczalności błony neuronu dla jonów $\text{Na}^+$ i $\text{K}^+$**. Na wykresie przedstawiono przebieg potencjału błonowego (od −70 mV do +30 mV) oraz zmiany przepuszczalności błony dla obu jonów w czasie (0–8 ms).
+
+  Z wykresu wynika, że **wzrost przepuszczalności dla $\text{Na}^+$ jest gwałtowny i krótkotrwały**, a **wzrost przepuszczalności dla $\text{K}^+$ następuje później i utrzymuje się dłużej**.
+
+  **11.1.** (0–1) Uzupełnij zdanie. Wybierz odpowiedź spośród **A / B** oraz spośród **C / D**.
+
+  > Stymulacja neuronu jest przyczyną **A. wzrostu / B. spadku** przepuszczalności błony komórkowej dla $\text{Na}^+$, co prowadzi do **C. hiperpolaryzacji / D. depolaryzacji** błony komórkowej.
+
+  **11.2.** (0–1) Oceń prawdziwość stwierdzeń dotyczących powstawania potencjału czynnościowego (P/F):
+  1. Kanały potasowe otwierają się **po** kanałach sodowych, dzięki czemu jony $\text{K}^+$ **wypływają** z komórki.
+  2. Podczas czynności neuronu kanały potasowe pozostają otwarte **dłużej** niż kanały sodowe.
+odpowiedz: |
+  **11.1. AD**
+
+  - **A — wzrostu.** Bodziec przekraczający wartość progową powoduje otwarcie **bramkowanych napięciem kanałów sodowych**, co gwałtownie zwiększa przepuszczalność błony dla $\text{Na}^+$.
+  - **D — depolaryzacji.** Jony $\text{Na}^+$ napływają **do wnętrza** komórki (zgodnie z gradientem stężeń i ładunku), więc wnętrze staje się **mniej ujemne**, a potencjał rośnie z −70 mV do ok. **+30 mV**. To właśnie **depolaryzacja**.
+
+  **11.2. PP**
+
+  1. **P** — kanały potasowe otwierają się **z opóźnieniem** względem sodowych. Wnętrze komórki jest wtedy naładowane dodatnio, a stężenie $\text{K}^+$ jest wewnątrz wysokie — jony potasu **wypływają** więc na zewnątrz, przywracając ujemny potencjał (**repolaryzacja**).
+  2. **P** — z wykresu wynika, że krzywa przepuszczalności dla $\text{K}^+$ opada **wolniej** i utrzymuje się **dłużej** niż krzywa dla $\text{Na}^+$. Kanały sodowe zamykają się (inaktywują) szybko, potasowe pozostają otwarte także po osiągnięciu potencjału spoczynkowego — dlatego pojawia się przejściowa **hiperpolaryzacja**.
+pulapka: |
+  **Nie myl depolaryzacji z hiperpolaryzacją.**
+  - **depolaryzacja** — potencjał **rośnie** (wnętrze mniej ujemne, a potem dodatnie); powoduje ją napływ $\text{Na}^+$,
+  - **repolaryzacja** — powrót do wartości spoczynkowej; powoduje ją wypływ $\text{K}^+$,
+  - **hiperpolaryzacja** — potencjał **spada poniżej** spoczynkowego (bardziej ujemny) z powodu przedłużonego wypływu $\text{K}^+$.
+
+  **Kierunek ruchu jonów wynika z gradientu, nie z ładunku.** $\text{Na}^+$ ma wysokie stężenie **na zewnątrz** → wpływa do środka. $\text{K}^+$ ma wysokie stężenie **wewnątrz** → wypływa na zewnątrz. Oba ruchy są bierne, przez kanały jonowe.
+
+  **Pompa sodowo-potasowa nie tworzy potencjału czynnościowego.** Odbudowuje ona gradienty jonowe **kosztem ATP**, ale samo powstawanie impulsu opiera się na **biernym** ruchu jonów przez kanały bramkowane napięciem.
+
+  **Kanały sodowe mają dwie bramki.** Bramka aktywacyjna otwiera się szybko, **bramka inaktywacyjna** zamyka kanał po ok. 1 ms — to ona odpowiada za **okres refrakcji** i za to, że impuls biegnie tylko w jedną stronę.
+
+  **Uważaj na odczyt wykresu.** Wysokość krzywej mówi o **przepuszczalności**, nie o stężeniu jonów. Szczyt przepuszczalności dla $\text{Na}^+$ przypada wcześniej niż szczyt dla $\text{K}^+$ — to podstawa odpowiedzi w 11.2.
+wymaganie: |
+  VIII. Funkcjonowanie zwierząt — układ nerwowy: budowa neuronu, potencjał spoczynkowy i czynnościowy, kanały jonowe bramkowane napięciem, przewodzenie impulsu nerwowego.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2026-maj-pr/zad-11.webp"
+  alt="Zadanie 11 — biologia 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MBIP-R0-100-A-2605 — zadanie 11."
+  zrodlo="CKE, matura maj 2026, biologia PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Biologia/MBIP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Etapy potencjału czynnościowego
+
+| Etap | Co się dzieje | Kanały | Potencjał |
+|---|---|---|---|
+| **spoczynek** | pompa $\text{Na}^+/\text{K}^+$ utrzymuje gradienty | zamknięte | **−70 mV** |
+| **bodziec progowy** | częściowa depolaryzacja | otwierają się pierwsze kanały $\text{Na}^+$ | ok. −55 mV |
+| **depolaryzacja** | **napływ $\text{Na}^+$ do komórki** | **$\text{Na}^+$ otwarte** | rośnie do **+30 mV** |
+| **repolaryzacja** | **wypływ $\text{K}^+$ z komórki** | $\text{Na}^+$ inaktywowane, **$\text{K}^+$ otwarte** | spada |
+| **hiperpolaryzacja** | nadmierny wypływ $\text{K}^+$ | $\text{K}^+$ nadal otwarte | poniżej −70 mV |
+| **powrót** | pompa odbudowuje gradienty | wszystkie zamknięte | −70 mV |
+
+## Rozmieszczenie jonów po obu stronach błony
+
+| Jon | Wewnątrz komórki | Na zewnątrz | Kierunek przepływu przez otwarty kanał |
+|---|---|---|---|
+| **$\text{Na}^+$** | niskie | **wysokie** | **do wnętrza** |
+| **$\text{K}^+$** | **wysokie** | niskie | **na zewnątrz** |
+| $\text{Cl}^-$ | niskie | wysokie | do wnętrza |
+| aniony organiczne | **wysokie** | niskie | nie przechodzą |
+
+Gradienty utrzymuje **pompa sodowo-potasowa**: na każde zużyte ATP wypompowuje **3 $\text{Na}^+$** na zewnątrz i wpompowuje **2 $\text{K}^+$** do środka — co dodatkowo pogłębia ujemny ładunek wnętrza.
+
+## Trzy rodzaje zmian potencjału
+
+| Zjawisko | Kierunek zmiany | Jon | Efekt |
+|---|---|---|---|
+| **depolaryzacja** | **wzrost** potencjału | napływ $\text{Na}^+$ (lub $\text{Ca}^{2+}$) | pobudzenie |
+| **repolaryzacja** | powrót do −70 mV | wypływ $\text{K}^+$ | koniec impulsu |
+| **hiperpolaryzacja** | **spadek** poniżej −70 mV | wypływ $\text{K}^+$ lub napływ $\text{Cl}^-$ | **zahamowanie** |
+
+## Prawo „wszystko albo nic"
+
+| Bodziec | Reakcja |
+|---|---|
+| **podprogowy** | brak potencjału czynnościowego |
+| **progowy** | pełny potencjał czynnościowy |
+| **nadprogowy** | **taki sam** potencjał czynnościowy |
+
+Siła bodźca nie wpływa na **amplitudę** impulsu, tylko na jego **częstotliwość** — mocniejszy bodziec wywołuje więcej impulsów na sekundę.
+
+## Okres refrakcji
+
+| Rodzaj | Co się dzieje | Znaczenie |
+|---|---|---|
+| **bezwzględna** | kanały $\text{Na}^+$ **inaktywowane** — żaden bodziec nie wywoła impulsu | zapewnia **jednokierunkowość** przewodzenia |
+| **względna** | trwa hiperpolaryzacja — potrzebny **silniejszy** bodziec | ogranicza maksymalną częstotliwość impulsów |
+
+## Szybkość przewodzenia
+
+| Czynnik | Wpływ |
+|---|---|
+| **osłonka mielinowa** | **przewodzenie skokowe** (saltatoryczne) między przewężeniami Ranviera — nawet 120 m/s |
+| brak mieliny | przewodzenie ciągłe — ok. 0,5–2 m/s |
+| **średnica aksonu** | im grubszy, tym szybciej |
+| temperatura | wyższa przyśpiesza |
+
+Demielinizacja (np. w **stwardnieniu rozsianym**) drastycznie spowalnia przewodzenie — stąd objawy neurologiczne tej choroby.
+
+## Punktacja CKE
+
+- **11.1.** 1 pkt — **AD**.
+- **11.2.** 1 pkt — **PP**.
+- **Razem: 2 pkt.**
