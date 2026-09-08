@@ -1,0 +1,139 @@
+---
+arkusz: geografia-2026-maj-pr
+subject: geografia
+nr: 12
+punkty: 1
+typ: otwarte-krotkie
+topic: przekroj hydrogeologiczny, wody gruntowe, warstwa wodonosna, glina zwalowa, infiltracja, eutrofizacja
+difficulty: 4
+tresc: |
+  Przedstawiono **przekrój hydrogeologiczny** wybranego terenu (kierunek **W–E**, wysokości 100–130 m n.p.m.). W środkowej części przekroju znajduje się **jezioro** o lustrze wody na wysokości ok. **110 m n.p.m.**
+
+  W profilu występują naprzemiennie (plejstocen):
+  - **piaski wodnolodowcowe** — przepuszczalne,
+  - **glina zwałowa** — nieprzepuszczalna.
+
+  **Obszar A** (zachodnia część przekroju): pod powierzchnią zalega **cienka warstwa piasków** z płytkim zwierciadłem wód gruntowych, pod nią **warstwa gliny zwałowej**, która **nachyla się w kierunku przeciwnym do jeziora**.
+
+  **Obszar B** (wschodnia część przekroju): od powierzchni terenu zalega **miąższa warstwa piasków wodnolodowcowych**, sięgająca do zwierciadła wód gruntowych **na poziomie lustra jeziora** — bez warstwy gliny pośrodku.
+
+  W obszarach **A** i **B** prowadzona jest uprawa roślin z **intensywnym nawożeniem**, które może przyczyniać się do **eutrofizacji** wód powierzchniowych.
+
+  **Polecenie (0–1).** Rozstrzygnij, który obszar rolniczy — **A** czy **B** — ma **większy wpływ na jakość wody w jeziorze**. Uzasadnij wybór.
+odpowiedz: |
+  **Obszar: B**
+
+  **Uzasadnienie:**
+
+  W obszarze **B** od powierzchni terenu aż do zwierciadła wód gruntowych zalegają **wyłącznie przepuszczalne piaski wodnolodowcowe**. **Substancje biogenne** z nawozów (**azotany** i **fosforany**) rozpuszczone w wodzie opadowej **swobodnie infiltrują** w głąb, docierają do **warstwy wodonośnej**, a ta — leżąca na poziomie lustra jeziora — **bezpośrednio zasila jezioro**. Zanieczyszczenia trafiają więc do jeziora najkrótszą drogą.
+
+  W obszarze **A** pod cienką warstwą piasków zalega **nieprzepuszczalna glina zwałowa**, która:
+  - **blokuje pionową infiltrację** zanieczyszczeń w głąb profilu,
+  - jest **nachylona w kierunku przeciwnym do jeziora**, więc płytkie wody gruntowe wraz z zanieczyszczeniami spływają po jej powierzchni **od jeziora**, a nie ku niemu.
+
+  **Wniosek:** to obszar **B** ma **większy wpływ** na jakość wody w jeziorze.
+pulapka: |
+  **Odległość od jeziora nie decyduje.** Oba obszary sąsiadują z jeziorem — rozstrzyga **budowa geologiczna**, nie bliskość. Uzasadnienie w stylu „bo B leży bliżej jeziora" **nie punktuje** (a na przekroju nie jest nawet prawdziwe).
+
+  **Klucz wymaga rozstrzygnięcia I uzasadnienia łącznie za 1 punkt.** Samo „obszar B" bez uzasadnienia = **0 pkt**. Zadanie nie ma punktacji częściowej.
+
+  **Nachylenie warstwy nieprzepuszczalnej wyznacza kierunek spływu.** Wody gruntowe płyną **po stropie warstwy nieprzepuszczalnej**, zgodnie z jej nachyleniem — jak po zjeżdżalni. To najczęstszy błąd w zadaniach z przekroju hydrogeologicznego.
+
+  **Glina zwałowa ≠ „nic nie przepuszcza nigdy".** Przepuszcza, ale **bardzo wolno** ($k$ rzędu $10^{-8}\ \text{m/s}$ wobec $10^{-4}\ \text{m/s}$ dla piasków) — w skali zadania traktujemy ją jako **barierę**.
+
+  **Eutrofizacja to skutek biogenów, nie „zanieczyszczeń" ogólnie.** Warto nazwać sprawcę: **azotany ($\text{NO}_3^-$)** i **fosforany ($\text{PO}_4^{3-}$)** z nawozów mineralnych i obornika.
+
+  **Czytaj legendę przekroju.** Barwa i sygnatura rozstrzygają, która warstwa jest przepuszczalna. Kropki = **piaski** (przepuszczalne), symbole otoczaków = **glina zwałowa** (nieprzepuszczalna).
+wymaganie: |
+  VI. Hydrosfera — wody podziemne: warstwa wodonośna, zwierciadło wód gruntowych, infiltracja, przepuszczalność skał; zanieczyszczenie wód, eutrofizacja. I. Źródła informacji geograficznej — interpretacja przekroju hydrogeologicznego.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/geografia/2026/zad-12.webp"
+  alt="Zadanie 12 — geografia 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MGEP-R0-100-A-2605 — zadanie 12."
+  zrodlo="CKE, matura maj 2026, geografia PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Geografia/MGEP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Porównanie obszarów A i B
+
+| Cecha | **Obszar A** | **Obszar B** |
+|---|---|---|
+| warstwa przypowierzchniowa | cienkie piaski | **miąższe piaski** |
+| warstwa pod nią | **glina zwałowa** (nieprzepuszczalna) | **brak bariery** — piaski do zwierciadła wód |
+| pionowa infiltracja do warstwy wodonośnej | **zablokowana** | **swobodna** |
+| nachylenie stropu gliny | **przeciwne do jeziora** | — |
+| kierunek spływu wód gruntowych | **od jeziora** | **do jeziora** |
+| wpływ na jakość wody w jeziorze | **mniejszy** | **większy** ✔ |
+
+## Przepuszczalność skał
+
+| Skała | Współczynnik filtracji $k$, m/s | Ocena |
+|---|---|---|
+| żwir | $10^{-1}$–$10^{-3}$ | **bardzo przepuszczalna** |
+| **piasek** | $10^{-3}$–$10^{-5}$ | **przepuszczalna** |
+| piasek gliniasty | $10^{-5}$–$10^{-7}$ | słabo przepuszczalna |
+| **glina zwałowa** | $10^{-7}$–$10^{-9}$ | **praktycznie nieprzepuszczalna** |
+| ił | poniżej $10^{-9}$ | nieprzepuszczalna |
+
+## Strefy wód podziemnych
+
+| Strefa | Opis |
+|---|---|
+| **strefa aeracji (napowietrzania)** | pory wypełnione **powietrzem i wodą**, nad zwierciadłem |
+| **zwierciadło wód gruntowych** | górna granica strefy nasycenia |
+| **strefa saturacji (nasycenia)** | pory wypełnione **całkowicie wodą** |
+| **warstwa wodonośna** | przepuszczalna warstwa nasycona wodą |
+| **warstwa nieprzepuszczalna** | podłoże warstwy wodonośnej — glina, ił |
+
+## Rodzaje wód podziemnych
+
+| Typ | Położenie | Podatność na zanieczyszczenie |
+|---|---|---|
+| **wody zaskórne (przypowierzchniowe)** | tuż pod powierzchnią | **bardzo duża** |
+| **wody gruntowe** | pierwsza warstwa wodonośna, **swobodne zwierciadło** | **duża** |
+| **wody wgłębne** | pod warstwą nieprzepuszczalną, **napięte zwierciadło** | **mała** |
+| wody artezyjskie | w **niecce**, wypływają samoczynnie | bardzo mała |
+| wody głębinowe | bardzo głęboko, często zmineralizowane | znikoma |
+
+Warstwa **nieprzepuszczalna nad** warstwą wodonośną to naturalna **ochrona przed zanieczyszczeniem** — dokładnie ta sytuacja występuje w obszarze A.
+
+## Eutrofizacja — mechanizm
+
+1. **Dopływ biogenów** — azotanów ($\text{NO}_3^-$) i fosforanów ($\text{PO}_4^{3-}$) z nawozów, ścieków, hodowli.
+2. **Zakwit glonów i sinic** — gwałtowny rozwój fitoplanktonu.
+3. **Zmniejszenie przezroczystości wody** — roślinność denna obumiera z braku światła.
+4. **Rozkład martwej materii** przez bakterie **zużywa tlen**.
+5. **Deficyt tlenu (przyducha)** — śnięcie ryb, warunki beztlenowe przy dnie.
+6. **Wypłycanie i zarastanie** jeziora — degradacja zbiornika.
+
+| Wskaźnik | Jezioro **oligotroficzne** | Jezioro **eutroficzne** |
+|---|---|---|
+| zawartość biogenów | **niska** | **wysoka** |
+| przezroczystość | duża (kilkanaście m) | **mała** (poniżej 1 m) |
+| natlenienie przy dnie | dobre | **złe** |
+| produkcja pierwotna | niska | **bardzo wysoka** |
+| przykład | Hańcza, jeziora tatrzańskie | wiele jezior wielkopolskich |
+
+## Ochrona wód przed zanieczyszczeniami rolniczymi
+
+| Metoda | Działanie |
+|---|---|
+| **strefy buforowe** (pasy zieleni nad wodą) | zatrzymują spływ biogenów |
+| **racjonalne nawożenie** (dawki, terminy) | mniej biogenów w glebie |
+| zakaz nawożenia zimą i na zmarzniętą glebę | nawóz nie spływa z roztopami |
+| **międzyplony** | wiążą azot, ograniczają wymywanie |
+| bezpieczne zbiorniki na gnojowicę | brak wycieków |
+| **program azotanowy** (dyrektywa azotanowa UE) | obowiązkowe limity nawożenia |
+
+## Punktacja CKE
+
+- **1 pkt** — **poprawne rozstrzygnięcie** (**obszar B**) **i poprawne uzasadnienie** (przenikanie biogenów przez przepuszczalne piaski do warstwy wodonośnej zasilającej jezioro **albo** odwrotny — od jeziora — kierunek spływu wód w obszarze A ze względu na układ gliny zwałowej).
+- **0 pkt** — samo rozstrzygnięcie bez uzasadnienia.
+- **Razem: 1 pkt.**
