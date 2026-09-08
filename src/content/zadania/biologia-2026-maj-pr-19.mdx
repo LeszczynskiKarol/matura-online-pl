@@ -1,0 +1,159 @@
+---
+arkusz: biologia-2026-maj-pr
+subject: biologia
+nr: 19
+punkty: 3
+typ: otwarte-krotkie
+topic: sprzezenie genow, crossing-over, mapa genetyczna, centymorgan, krzyzowka testowa, Drosophila
+difficulty: 5
+tresc: |
+  U **muszki owocowej** (*Drosophila melanogaster*):
+  - allel **B** warunkuje **brązową barwę ciała** i wykazuje **pełną dominację** nad allelem **b** (czarna barwa ciała),
+  - allel **D** warunkuje **odnóża normalnej długości** i wykazuje pełną dominację nad allelem **d** (krótkie odnóża).
+
+  Geny **B** i **D** są położone na **chromosomie drugim**, w odległości **17,5 cM** od siebie.
+
+  Skrzyżowano **podwójnie heterozygotycznego samca o genotypie $\frac{BD}{bd}$** z **czarną samicą mającą krótkie odnóża**.
+
+  **Polecenie (0–3).**
+  1. Zapisz **genotyp opisanej samicy**. W zapisie zastosuj podane oznaczenia alleli i **uwzględnij położenie loci na chromosomach**.
+  2. Uzupełnij tabelę: zapisz **cztery możliwe genotypy gamet** wytwarzanych przez opisanego samca oraz podaj **prawdopodobieństwo** wystąpienia każdego genotypu gamety.
+  3. Podaj **prawdopodobieństwo**, że muszka losowo wybrana spośród potomstwa będzie miała **brązową barwę ciała i normalnie wykształcone odnóża**.
+odpowiedz: |
+  **1. Genotyp samicy**
+
+  Samica jest **czarna** (recesywne $bb$) i ma **krótkie odnóża** (recesywne $dd$), więc jest **podwójną homozygotą recesywną**. Zapis z uwzględnieniem położenia loci na chromosomach homologicznych:
+
+  $$\boxed{\frac{bd}{bd}}$$
+
+  **2. Gamety samca i ich prawdopodobieństwa**
+
+  Odległość 17,5 cM oznacza, że **17,5% gamet to rekombinanty**, a pozostałe **82,5% to gamety rodzicielskie**. Każda z dwóch klas dzieli się na pół:
+
+  | Lp. | Genotyp gamety | Typ | Prawdopodobieństwo |
+  |---|---|---|---|
+  | **1.** | **BD** | **rodzicielska** | $\frac{82{,}5\%}{2} = \mathbf{41{,}25\%}$ (0,4125) |
+  | **2.** | **bd** | **rodzicielska** | $\mathbf{41{,}25\%}$ (0,4125) |
+  | **3.** | **Bd** | **rekombinacyjna** | $\frac{17{,}5\%}{2} = \mathbf{8{,}75\%}$ (0,0875) |
+  | **4.** | **bD** | **rekombinacyjna** | $\mathbf{8{,}75\%}$ (0,0875) |
+
+  Suma kontrolna: $41{,}25 + 41{,}25 + 8{,}75 + 8{,}75 = 100\%$ ✓
+
+  **3. Prawdopodobieństwo potomstwa brązowego o normalnych odnóżach**
+
+  To **krzyżówka testowa** — samica wytwarza wyłącznie gamety **bd**, więc fenotyp potomstwa zależy **wyłącznie od gamety ojca**.
+
+  Muszka brązowa o normalnych odnóżach ma genotyp $\frac{BD}{bd}$ — powstaje tylko z połączenia gamety ojca **BD** z gametą matki **bd**:
+
+  $$P = P(\text{gameta BD}) = \boxed{41{,}25\% \ (0{,}4125)}$$
+pulapka: |
+  **Uwaga klucza: zapis $bbdd$ bez podziału na chromosomy obniża punktację.** Polecenie wymaga wprost „uwzględnienia położenia loci na chromosomach". Zapis $\frac{bd}{bd}$ pokazuje, że oba geny leżą **na tym samym chromosomie** — to istota sprzężenia. Za sam zapis $bbdd$ CKE przyznaje **maksymalnie 2 punkty za całe zadanie**.
+
+  **Klucz karze też zaokrąglanie.** Wartości 41,25% i 8,75% należy podać dokładnie. Zaokrąglenie do 41% albo 9% obniża punktację do **2 punktów** za całe zadanie.
+
+  **Nie dziel 17,5% na cztery.** Częstość rekombinacji dzieli się **na dwie klasy rekombinacyjne** (po 8,75%), a reszta (82,5%) — na **dwie klasy rodzicielskie** (po 41,25%).
+
+  **Rozpoznaj, które gamety są rodzicielskie.** Samiec ma genotyp $\frac{BD}{bd}$, czyli **układ cis (sprzężenie)**: allele dominujące leżą na jednym chromosomie. Gamety rodzicielskie to **BD** i **bd**; rekombinacyjne — **Bd** i **bD**. Gdyby samiec miał układ **trans** $\frac{Bd}{bD}$, było by odwrotnie.
+
+  **Krzyżówka testowa upraszcza rachunek.** Skoro matka daje wyłącznie **bd**, rozkład fenotypów potomstwa jest **identyczny** z rozkładem gamet ojca. Nie trzeba rysować szachownicy Punnetta.
+
+  **Ciekawostka biologiczna, o której warto wiedzieć:** u **samców** *Drosophila melanogaster* crossing-over **w rzeczywistości nie zachodzi** — rekombinacja występuje wyłącznie u samic. Klucz CKE **dopuszcza** odpowiedzi uwzględniające ten fakt, ale rozwiązanie wzorcowe zakłada zachodzenie rekombinacji zgodnie z podaną odległością 17,5 cM.
+wymaganie: |
+  VI. Genetyka — dziedziczenie sprzężone, crossing-over, mapy genetyczne i jednostka centymorgan, krzyżówka testowa, obliczanie prawdopodobieństwa wystąpienia genotypów i fenotypów.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2026-maj-pr/zad-19.webp"
+  alt="Zadanie 19 — biologia 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MBIP-R0-100-A-2605 — zadanie 19."
+  zrodlo="CKE, matura maj 2026, biologia PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Biologia/MBIP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Od centymorganów do prawdopodobieństw
+
+$$1\ \text{cM} = 1\%\ \text{gamet rekombinacyjnych}$$
+
+| Klasa gamet | Wzór | W tym zadaniu |
+|---|---|---|
+| **rekombinacyjne razem** | $r$ | 17,5% |
+| **każda rekombinacyjna** | $\dfrac{r}{2}$ | **8,75%** |
+| **rodzicielskie razem** | $100\% - r$ | 82,5% |
+| **każda rodzicielska** | $\dfrac{100\% - r}{2}$ | **41,25%** |
+
+Zawsze zachodzi: gamety **rodzicielskie są liczniejsze** od rekombinacyjnych (dla $r < 50\%$).
+
+## Układ cis a trans
+
+| Układ | Zapis | Gamety rodzicielskie | Gamety rekombinacyjne |
+|---|---|---|---|
+| **cis (sprzężenie)** | $\dfrac{BD}{bd}$ | **BD, bd** | Bd, bD |
+| **trans (odpychanie)** | $\dfrac{Bd}{bD}$ | Bd, bD | **BD, bd** |
+
+Ten sam zestaw alleli daje **różne wyniki krzyżówki** w zależności od tego, jak są rozmieszczone na chromosomach — dlatego zapis z kreską ułamkową jest niezbędny.
+
+## Krzyżówka testowa
+
+$$\text{osobnik badany} \times \text{homozygota recesywna}$$
+
+| Zaleta | Opis |
+|---|---|
+| gamety partnera | **jednego typu** (wyłącznie recesywne) |
+| fenotyp potomstwa | **odzwierciedla wprost genotyp gamet** badanego osobnika |
+| zastosowanie | wyznaczanie **odległości genetycznej**, sprawdzanie genotypu |
+
+Rozkład fenotypów potomstwa w tym zadaniu:
+
+| Fenotyp potomstwa | Genotyp | Prawdopodobieństwo |
+|---|---|---|
+| **brązowe, normalne odnóża** | $\frac{BD}{bd}$ | **41,25%** |
+| **czarne, krótkie odnóża** | $\frac{bd}{bd}$ | **41,25%** |
+| brązowe, krótkie odnóża | $\frac{Bd}{bd}$ | 8,75% |
+| czarne, normalne odnóża | $\frac{bD}{bd}$ | 8,75% |
+
+## Geny sprzężone a niezależne
+
+| Cecha | **Sprzężone** | **Niezależne** |
+|---|---|---|
+| położenie | **ten sam chromosom** | różne chromosomy |
+| dziedziczenie | **razem**, poza crossing-over | **niezależnie** (III prawo Mendla) |
+| gamety w krzyżówce testowej | **nierówne proporcje** (tu 41,25 : 41,25 : 8,75 : 8,75) | **równe** (25 : 25 : 25 : 25) |
+| częstość rekombinacji $r$ | **< 50%** | = 50% |
+
+Gdyby geny B i D leżały na różnych chromosomach, wszystkie cztery typy gamet miałyby po **25%**, a prawdopodobieństwo w punkcie 3. wynosiłoby 25%.
+
+## Mapy genetyczne
+
+$$\text{odległość [cM]} = \frac{\text{liczba rekombinantów}}{\text{liczba potomstwa}} \cdot 100\%$$
+
+| Zasada | Opis |
+|---|---|
+| **addytywność** | odległości sumują się: jeśli A–B = 10 cM, B–C = 5 cM, to A–C ≈ 15 cM |
+| **granica 50 cM** | powyżej tej wartości geny dziedziczą się jak niezależne |
+| **im dalej, tym częściej** | prawdopodobieństwo crossing-over rośnie z odległością |
+| podwójne crossing-over | przy dużych odległościach zaniża zmierzoną wartość |
+
+Mapy genetyczne stworzone przez **Alfreda Sturtevanta** (1913) dla *Drosophila* były pierwszym dowodem liniowego ułożenia genów na chromosomie.
+
+## Crossing-over
+
+| Cecha | Opis |
+|---|---|
+| **kiedy** | **profaza I mejozy** (stadium pachytenu) |
+| **gdzie** | między **chromatydami niesiostrzanymi** chromosomów homologicznych |
+| struktura | **chiazma** — miejsce wymiany odcinków |
+| znaczenie | główne źródło **zmienności rekombinacyjnej** |
+| u samców *Drosophila* | **nie zachodzi** — ewenement wśród zwierząt |
+
+## Punktacja CKE
+
+- **3 pkt** — poprawny **genotyp samicy** (z uwzględnieniem loci) **oraz** genotypy gamet z prawdopodobieństwami **oraz** prawdopodobieństwo w punkcie 3.
+- **2 pkt** — genotyp samicy **oraz** genotypy gamet z prawdopodobieństwami.
+- **1 pkt** — poprawny genotyp samicy.
+- **Uwagi klucza:** zapis $bbdd$ bez położenia loci → maksymalnie **2 pkt** za całe zadanie; stosowanie zaokrągleń → maksymalnie **2 pkt**.
+- **Razem: 3 pkt.**

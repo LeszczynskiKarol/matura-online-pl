@@ -1,0 +1,141 @@
+---
+arkusz: biologia-2026-maj-pr
+subject: biologia
+nr: 18
+punkty: 2
+typ: otwarte-krotkie
+topic: analiza rodowodu, dziedziczenie autosomalne dominujace, dziedziczenie sprzezone z plcia, genom mitochondrialny
+difficulty: 4
+tresc: |
+  Przedstawiono **rodowód rodziny** opisujący dziedziczenie pewnej choroby, u której podłoża leży **mutacja w jednym genie**.
+
+  Kluczowe obserwacje z rodowodu:
+  - **chory mężczyzna** z pokolenia I (po lewej) w małżeństwie ze zdrową kobietą ma **wyłącznie zdrowe potomstwo**,
+  - **chora kobieta** z pokolenia I (po prawej) w małżeństwie ze zdrowym mężczyzną ma **chore potomstwo obojga płci** — chorego syna i chore córki,
+  - chore córki z pokolenia II przekazują chorobę **wszystkim swoim dzieciom**, także córkom,
+  - chory mężczyzna z pokolenia II ma **wyłącznie zdrowe dzieci**.
+
+  **18.1.** (0–1) Oceń, które ze sposobów dziedziczenia **można wykluczyć** na podstawie analizy rodowodu (T — można wykluczyć / N — nie można):
+  1. Dziedziczenie **autosomalne dominujące**.
+  2. Dziedziczenie **recesywne sprzężone z płcią**.
+
+  **18.2.** (0–1) Genom mitochondrialny u ludzi z reguły dziedziczy się:
+  **A.** wyłącznie od matki · **B.** wyłącznie od ojca · **C.** w równych częściach od matki i od ojca · **D.** w mniejszej części od matki, a w większej od ojca
+odpowiedz: |
+  **18.1. NT**
+
+  **1. Dziedziczenie autosomalne dominujące — N (nie można wykluczyć).**
+
+  Chory ojciec, będący **heterozygotą (Aa)**, ma z każdym dzieckiem **50% szans** na przekazanie allelu chorobowego. Urodzenie się dwojga zdrowych dzieci jest więc **statystycznie możliwe** — nie stanowi sprzeczności z tym modelem dziedziczenia. Rodowód nie dostarcza dowodu wykluczającego.
+
+  **2. Dziedziczenie recesywne sprzężone z płcią — T (można wykluczyć).**
+
+  Gdyby chorobę warunkował **recesywny allel na chromosomie X**, chora kobieta musiałaby być **homozygotą $X^aX^a$**. W małżeństwie ze zdrowym mężczyzną ($X^AY$) jej potomstwo wyglądałoby tak:
+
+  | Potomstwo | Genotyp | Fenotyp |
+  |---|---|---|
+  | **córki** | $X^AX^a$ | **wszystkie zdrowe** (nosicielki) |
+  | **synowie** | $X^aY$ | **wszyscy chorzy** |
+
+  Tymczasem w rodowodzie **córki chorej kobiety są chore** — a to jest **niemożliwe** przy dziedziczeniu recesywnym sprzężonym z X. Ten model można więc wykluczyć.
+
+  **18.2. A** — **wyłącznie od matki**.
+
+  Genom mitochondrialny dziedziczy się **matczynie**. Zygota otrzymuje mitochondria niemal wyłącznie z **komórki jajowej** — plemnik wnosi ich znikomą liczbę, a te nieliczne, które trafiają do zygoty, ulegają **selektywnej degradacji**.
+
+  Warto zauważyć, że rodowód w tym zadaniu odpowiada właśnie **dziedziczeniu mitochondrialnemu**: chore kobiety przekazują chorobę **całemu potomstwu obojga płci**, a chorzy mężczyźni **nikomu**.
+pulapka: |
+  **Polecenie pyta o wykluczenie, nie o potwierdzenie.** T oznacza „ten model **da się wykluczyć**". Odwrócenie logiki to najczęstszy błąd w tego typu zadaniach — warto podkreślić sobie słowo „wykluczyć" w treści.
+
+  **Autosomalnego dominującego nie da się wykluczyć na podstawie zdrowych dzieci.** Heterozygota przekazuje allel z prawdopodobieństwem 50% — dwoje zdrowych dzieci to zwykły przypadek, nie sprzeczność. Do wykluczenia potrzeba **twardej niemożliwości**, a nie mało prawdopodobnego układu.
+
+  **Dziedziczenie recesywne sprzężone z X wyklucza chora córka chorej matki.** Przy tym modelu **każda** córka chorej matki otrzymuje od zdrowego ojca prawidłowy allel $X^A$ — jest więc zdrową nosicielką. Choroba u córki jest **wykluczona logicznie**, a nie tylko mało prawdopodobna.
+
+  **Rozpoznaj wzorzec dziedziczenia mitochondrialnego.** Trzy sygnały: (1) **chora matka → całe potomstwo chore**, (2) **chory ojciec → potomstwo zdrowe**, (3) choroba dotyczy **obu płci jednakowo**. Ten rodowód spełnia wszystkie trzy.
+
+  **W 18.2 kusi odpowiedź C.** Genom **jądrowy** dziedziczymy po połowie od obojga rodziców, ale **mitochondrialny** — wyłącznie od matki. To dwa niezależne zestawy DNA w tej samej komórce.
+
+  **Nie myl dziedziczenia mitochondrialnego ze sprzężonym z X.** Oba „przechodzą przez matkę", ale przy sprzężeniu z X **ojciec przekazuje chromosom X córkom**, a przy dziedziczeniu mitochondrialnym **ojciec nie przekazuje niczego**.
+wymaganie: |
+  VI. Genetyka — dziedziczenie jednogenowe: autosomalne dominujące i recesywne, sprzężone z płcią, mitochondrialne. Analiza rodowodów. Genom mitochondrialny i jego dziedziczenie.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/biologia/2026-maj-pr/zad-18.webp"
+  alt="Zadanie 18 — biologia 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MBIP-R0-100-A-2605 — zadanie 18."
+  zrodlo="CKE, matura maj 2026, biologia PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Biologia/MBIP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Pięć typów dziedziczenia — sygnały rozpoznawcze
+
+| Typ | Charakterystyczne cechy rodowodu |
+|---|---|
+| **autosomalne dominujące** | choroba w **każdym pokoleniu**; chory rodzic → ok. 50% chorych dzieci; **obie płcie równie często** |
+| **autosomalne recesywne** | **przeskakuje pokolenia**; zdrowi rodzice → chore dziecko; obie płcie równie często; częstsze przy pokrewieństwie rodziców |
+| **dominujące sprzężone z X** | chory **ojciec → wszystkie córki chore**, żaden syn; częstsze u kobiet |
+| **recesywne sprzężone z X** | **głównie mężczyźni**; chora matka → **wszyscy synowie chorzy**, córki zdrowe nosicielki; „przeskakuje" przez matki |
+| **mitochondrialne** | **chora matka → całe potomstwo chore**; **chory ojciec → potomstwo zdrowe**; obie płcie |
+
+## Jak działa wykluczanie modelu
+
+| Sytuacja w rodowodzie | Co wyklucza |
+|---|---|
+| zdrowi rodzice mają chore dziecko | **dominujące** (dowolne) |
+| chory ojciec ma zdrową córkę | **dominujące sprzężone z X** |
+| **chora matka ma chorą córkę** | **recesywne sprzężone z X** |
+| chora matka ma zdrowe dziecko | **mitochondrialne** |
+| chory ojciec ma chore dziecko | **mitochondrialne** |
+
+**Zasada:** model wykluczamy tylko wtedy, gdy obserwowany układ jest **logicznie niemożliwy** — nie wtedy, gdy jest po prostu mało prawdopodobny.
+
+## Analiza tego rodowodu
+
+| Obserwacja | Zgodne z |
+|---|---|
+| chory ojciec → wszystkie dzieci zdrowe | **mitochondrialne** ✔; AD (przypadkowo możliwe) |
+| chora matka → wszystkie dzieci chore, obie płcie | **mitochondrialne** ✔ |
+| **chora matka → chore córki** | **wyklucza XR** ✘ |
+| choroba w każdym pokoleniu, obie płcie | wyklucza autosomalne recesywne |
+
+Wzorzec wskazuje jednoznacznie na **dziedziczenie mitochondrialne** — i to właśnie dlatego zadanie 18.2 pyta o genom mitochondrialny.
+
+## Dziedziczenie mitochondrialne
+
+| Cecha | Opis |
+|---|---|
+| źródło mitochondriów w zygocie | **komórka jajowa** |
+| los mitochondriów plemnika | **degradacja** (ubikwitynacja i rozkład) |
+| kto przekazuje chorobę | **wyłącznie matka** |
+| kto choruje | **obie płcie** |
+| liczba kopii mtDNA w komórce | setki–tysiące |
+| **heteroplazmia** | współistnienie zdrowych i zmutowanych mtDNA — stąd **zmienna ciężkość objawów** |
+
+**Przykłady chorób mitochondrialnych:** zespół MELAS, dziedziczna neuropatia nerwu wzrokowego Lebera (LHON), zespół MERRF, zespół Kearnsa i Sayre'a. Najczęściej dotykają tkanek o **wysokim zapotrzebowaniu energetycznym**: mięśni, mózgu, siatkówki, serca.
+
+## Dwa genomy w jednej komórce
+
+| Cecha | **Genom jądrowy** | **Genom mitochondrialny** |
+|---|---|---|
+| wielkość | ok. 3,2 mld pz | ok. **16,6 tys. pz** |
+| liczba genów | ~20 000 kodujących białka | **37** |
+| kształt | **liniowy**, 46 chromosomów | **kolisty** |
+| histony | **tak** | nie |
+| introny | tak | **brak** |
+| liczba kopii w komórce | **2** | setki–tysiące |
+| dziedziczenie | **od obojga rodziców** | **wyłącznie od matki** |
+| rekombinacja | **tak** (crossing-over) | praktycznie brak |
+
+Brak rekombinacji i wyłącznie matczyne dziedziczenie czynią mtDNA doskonałym narzędziem w **badaniach filogenetycznych** — na nim opiera się m.in. koncepcja „mitochondrialnej Ewy".
+
+## Punktacja CKE
+
+- **18.1.** 1 pkt — **NT**.
+- **18.2.** 1 pkt — odpowiedź **A**.
+- **Razem: 2 pkt.**
