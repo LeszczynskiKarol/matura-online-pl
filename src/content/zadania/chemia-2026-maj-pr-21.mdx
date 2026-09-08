@@ -1,0 +1,137 @@
+---
+arkusz: chemia-2026-maj-pr
+subject: chemia
+nr: 21
+punkty: 1
+typ: zamkniete-pf
+topic: chiralnosc, asymetryczny atom wegla, izomeria geometryczna cis-trans, kwas cynamonowy, kwas kawowy
+difficulty: 3
+tresc: |
+  **Informacja do zadań 21.–22.** **Kwas cynamonowy** i **kwas kawowy** są naturalnymi antyoksydantami występującymi w roślinach.
+
+  - **kwas cynamonowy:** $\text{C}_6\text{H}_5\!-\!\text{CH}\!=\!\text{CH}\!-\!\text{COOH}$
+  - **kwas kawowy:** ten sam szkielet z **dwiema grupami $-\text{OH}$** przy pierścieniu benzenowym (pochodna 3,4-dihydroksy)
+
+  **Polecenie (0–1).** Oceń prawdziwość zdań (P/F):
+  1. Cząsteczki kwasu cynamonowego i kwasu kawowego są **chiralne**.
+  2. Istnieje **izomer geometryczny** zarówno kwasu cynamonowego, jak i kwasu kawowego.
+odpowiedz: |
+  **Odpowiedź: FP**
+
+  **Zdanie 1. — F (fałsz).**
+
+  Cząsteczka jest **chiralna**, gdy nie pokrywa się ze swoim odbiciem lustrzanym — najczęściej dlatego, że zawiera **asymetryczny atom węgla** (związany z **czterema różnymi** podstawnikami).
+
+  W żadnym z tych kwasów takiego atomu nie ma:
+
+  | Atom węgla | Otoczenie | Asymetryczny? |
+  |---|---|---|
+  | węgle pierścienia | $sp^2$, trzy podstawniki | **nie** |
+  | $-\text{CH}\!=$ i $=\text{CH}-$ | $sp^2$, trzy podstawniki | **nie** |
+  | $-\text{COOH}$ | $sp^2$, trzy podstawniki | **nie** |
+
+  Wszystkie atomy węgla w obu cząsteczkach mają hybrydyzację **$sp^2$**, a atom asymetryczny musi być **$sp^3$**. Obie cząsteczki są **płaskie i achiralne**.
+
+  **Zdanie 2. — P (prawda).**
+
+  Oba kwasy zawierają **wiązanie podwójne C=C**, przy którym każdy z atomów węgla ma **dwa różne podstawniki**:
+
+  $$\text{Ar}\!-\!\underset{(\text{Ar},\ \text{H})}{\text{CH}}\!=\!\underset{(\text{COOH},\ \text{H})}{\text{CH}}\!-\!\text{COOH}$$
+
+  - pierwszy atom węgla: **grupa arylowa** i **wodór** — różne,
+  - drugi atom węgla: **grupa $-\text{COOH}$** i **wodór** — różne.
+
+  Warunek izomerii geometrycznej jest spełniony, więc istnieją dwa izomery:
+
+  | Izomer | Układ podstawników | Występowanie |
+  |---|---|---|
+  | ***trans*** (E) | pierścień i $-\text{COOH}$ po **przeciwnych** stronach | forma naturalna, trwalsza |
+  | ***cis*** (Z) | pierścień i $-\text{COOH}$ po **tej samej** stronie | rzadsza, mniej trwała |
+
+  Dodatkowe grupy $-\text{OH}$ w kwasie kawowym nie zmieniają tego wniosku — leżą w pierścieniu, z dala od wiązania podwójnego.
+pulapka: |
+  **Najczęstszy błąd: uznanie chiralności za obecną, bo cząsteczka jest „skomplikowana".** Chiralność wymaga **konkretnego warunku strukturalnego** — najczęściej atomu węgla $sp^3$ z czterema **różnymi** podstawnikami. W obu kwasach wszystkie atomy węgla są $sp^2$.
+
+  **Atom asymetryczny musi mieć hybrydyzację $sp^3$.** Węgiel $sp^2$ tworzy tylko trzy wiązania i leży w płaszczyźnie — nie może być centrum stereogenicznym.
+
+  **Nie myl chiralności z izomerią geometryczną.** To dwa różne rodzaje stereoizomerii:
+  - **optyczna (chiralność)** — wymaga centrum asymetrii, izomery to **enancjomery**,
+  - **geometryczna (cis–trans)** — wymaga wiązania podwójnego (lub pierścienia) z różnymi podstawnikami po obu stronach.
+
+  **Warunek izomerii cis–trans sprawdzamy osobno dla każdego atomu wiązania podwójnego.** Jeśli **choć jeden** z nich ma dwa **takie same** podstawniki, izomeria nie występuje. Przykład: $\text{CH}_2\!=\!\text{CH}\!-\!\text{COOH}$ (kwas propenowy) **nie ma** izomerów geometrycznych, bo pierwszy atom ma dwa wodory.
+
+  **Grupy $-\text{OH}$ w kwasie kawowym to dystraktor.** Wpływają na właściwości chemiczne (o tym jest zadanie 22.), ale **nie** na stereoizomerię — nie tworzą ani centrum asymetrii, ani nowego wiązania podwójnego.
+
+  **Zdanie o chiralności dotyczy obu kwasów naraz.** Wystarczyłoby, żeby jeden z nich był achiralny, by całe zdanie było fałszywe.
+wymaganie: |
+  XI. Węglowodory oraz XVI. Kwasy karboksylowe — izomeria optyczna i geometryczna, asymetryczny atom węgla, warunki występowania izomerii cis–trans, budowa związków naturalnych.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2026-maj-pr/zad-21.webp"
+  alt="Zadanie 21 — chemia 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MCHP-R0-100-A-2605 — zadanie 21."
+  zrodlo="CKE, matura maj 2026, chemia PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Chemia/MCHP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Rodzaje izomerii
+
+| Typ | Podtyp | Warunek | Przykład |
+|---|---|---|---|
+| **konstytucyjna** | szkieletowa | inny szkielet węglowy | butan / izobutan |
+| | położenia | inne położenie grupy | propan-1-ol / propan-2-ol |
+| | grup funkcyjnych | inna grupa | etanol / eter dimetylowy |
+| **stereoizomeria** | **geometryczna (cis–trans)** | **wiązanie podwójne** lub pierścień + różne podstawniki | but-2-en |
+| | **optyczna** | **asymetryczny atom węgla** ($sp^3$, 4 różne podstawniki) | kwas mlekowy |
+
+## Warunek izomerii geometrycznej
+
+$$\underset{a\ \neq\ b}{\overset{a}{\underset{b}{\text{C}}}}\!=\!\underset{c\ \neq\ d}{\overset{c}{\underset{d}{\text{C}}}}$$
+
+Oba atomy węgla wiązania podwójnego muszą mieć **dwa różne** podstawniki.
+
+| Związek | Izomeria cis–trans? |
+|---|---|
+| $\text{CH}_2\!=\!\text{CH}_2$ (eten) | **nie** |
+| $\text{CH}_2\!=\!\text{CH}\!-\!\text{CH}_3$ (propen) | **nie** — pierwszy atom ma 2 H |
+| $\text{CH}_3\!-\!\text{CH}\!=\!\text{CH}\!-\!\text{CH}_3$ (but-2-en) | **tak** |
+| $\text{CH}_2\!=\!\text{CH}\!-\!\text{COOH}$ (kwas propenowy) | **nie** |
+| **$\text{C}_6\text{H}_5\!-\!\text{CH}\!=\!\text{CH}\!-\!\text{COOH}$** | **tak** |
+
+## Asymetryczny atom węgla — jak go szukać
+
+Cztery warunki, które muszą być spełnione **łącznie**:
+
+1. atom węgla ma hybrydyzację **$sp^3$** (cztery wiązania pojedyncze),
+2. wszystkie **cztery podstawniki są różne**,
+3. cząsteczka nie ma płaszczyzny symetrii,
+4. w rezultacie nie pokrywa się ze swoim odbiciem lustrzanym.
+
+Przykłady związków chiralnych na maturze: **kwas mlekowy**, **aminokwasy** (poza glicyną), **cukry proste**, **naproksen**.
+
+## Kwas cynamonowy i kwas kawowy — porównanie
+
+| Cecha | **Kwas cynamonowy** | **Kwas kawowy** |
+|---|---|---|
+| wzór | $\text{C}_6\text{H}_5\text{CH}\!=\!\text{CH COOH}$ | $(\text{HO})_2\text{C}_6\text{H}_3\text{CH}\!=\!\text{CH COOH}$ |
+| grupy $-\text{OH}$ przy pierścieniu | **brak** | **dwie** |
+| chiralność | **nie** | **nie** |
+| izomeria geometryczna | **tak** | **tak** |
+| reakcja z $\text{FeCl}_3$ | **nie** | **tak** (barwny kompleks) |
+| właściwości | antyoksydant | **silniejszy antyoksydant** |
+| występowanie | cynamon, miód | kawa, jabłka, oliwa |
+
+## Dlaczego forma *trans* dominuje w przyrodzie
+
+Izomer *trans* ma podstawniki po przeciwnych stronach wiązania podwójnego, co **minimalizuje odpychanie steryczne** — jest energetycznie korzystniejszy i trwalszy. Formy *cis* powstają zwykle pod wpływem światła (fotoizomeryzacja) i łatwo wracają do formy *trans*.
+
+## Punktacja CKE
+
+- **1 pkt** — poprawna ocena **obu** zdań: **FP**.
+- **0 pkt** — odpowiedź niepełna albo błędna.

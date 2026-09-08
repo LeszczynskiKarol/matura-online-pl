@@ -1,0 +1,150 @@
+---
+arkusz: chemia-2026-maj-pr
+subject: chemia
+nr: 28
+punkty: 1
+typ: otwarte-krotkie
+topic: projekcja Hawortha, formy furanozowe cukrow, D-arabinoza, anomery alfa i beta, cyklizacja monosacharydow
+difficulty: 5
+tresc: |
+  Poniżej przedstawiono wzór **D-arabinozy** w **projekcji Fischera** (od góry):
+
+  ```
+        CHO
+        |
+  HO —— C —— H
+        |
+   H —— C —— OH
+        |
+   H —— C —— OH
+        |
+        CH2OH
+  ```
+
+  **Polecenie (0–1).** Na podstawie analizy wzoru D-arabinozy uzupełnij wszystkie pola schematu tak, aby przedstawiał on wzór **$\alpha$-D-arabinofuranozy** w **projekcji Hawortha** (wzór taflowy) — pierścień pięcioczłonowy z atomem tlenu u góry i grupą $\text{CH}_2\text{OH}$ przy atomie C4.
+odpowiedz: |
+  **Krok 1. Które atomy tworzą pierścień furanozowy.**
+
+  Forma **furanozowa** to pierścień **pięcioczłonowy**: cztery atomy węgla i jeden atom tlenu. Powstaje przez atak grupy $-\text{OH}$ przy **atomie C4** na grupę aldehydową przy **C1**:
+
+  $$\text{C1} - \text{C2} - \text{C3} - \text{C4} - \text{O} \ (\text{mostek do C1})$$
+
+  Grupa $\text{CH}_2\text{OH}$ (atom C5) pozostaje **poza pierścieniem**, jako podstawnik przy C4.
+
+  **Krok 2. Reguła przejścia Fischer → Haworth.**
+
+  $$\text{grupa } -\text{OH} \text{ po } \textbf{prawej} \text{ w projekcji Fischera} \ \Longrightarrow\ \textbf{pod} \text{ pierścieniem w projekcji Hawortha}$$
+
+  $$\text{grupa } -\text{OH} \text{ po } \textbf{lewej} \ \Longrightarrow\ \textbf{nad} \text{ pierścieniem}$$
+
+  **Krok 3. Zastosowanie reguły do D-arabinozy.**
+
+  | Atom węgla | Położenie $-\text{OH}$ w Fischerze | Położenie w Hawortze |
+  |---|---|---|
+  | **C2** | **lewa** | **nad** pierścieniem |
+  | **C3** | **prawa** | **pod** pierścieniem |
+  | **C4** | prawa (tworzy mostek tlenowy) | grupa $\text{CH}_2\text{OH}$ **nad** pierścieniem (szereg D) |
+
+  **Krok 4. Anomer $\alpha$.**
+
+  Przy **C1** (węglu anomerycznym) grupa $-\text{OH}$ w anomerze **$\alpha$** znajduje się **po przeciwnej stronie** pierścienia niż grupa $\text{CH}_2\text{OH}$ — czyli **pod** pierścieniem.
+
+  **Rozwiązanie — $\alpha$-D-arabinofuranoza:**
+
+  | Atom | Podstawnik nad pierścieniem | Podstawnik pod pierścieniem |
+  |---|---|---|
+  | **C1** (anomeryczny) | $-\text{H}$ | **$-\text{OH}$** ($\alpha$) |
+  | **C2** | **$-\text{OH}$** | $-\text{H}$ |
+  | **C3** | $-\text{H}$ | **$-\text{OH}$** |
+  | **C4** | **$-\text{CH}_2\text{OH}$** | $-\text{H}$ |
+pulapka: |
+  **Najważniejsza reguła: prawo → pod, lewo → nad.** To jedyny sposób bezbłędnego przejścia z projekcji Fischera do Hawortha. Odwrócenie tej zasady zamienia cukier na jego diastereoizomer.
+
+  **Furanoza to pierścień pięcioczłonowy, piranoza — sześcioczłonowy.** Nazwy pochodzą od furanu i piranu. W furanozie mostek tworzy grupa $-\text{OH}$ przy **C4**, w piranozie — przy **C5**.
+
+  **Grupa $\text{CH}_2\text{OH}$ nie należy do pierścienia.** W arabinofuranozie atom C5 zostaje **na zewnątrz**, jako podstawnik przy C4. To częsty błąd: wciąganie go do pierścienia dałoby formę piranozową.
+
+  **Anomer $\alpha$ czy $\beta$ — jak zapamiętać.** W szeregu **D**:
+  - **$\alpha$** — grupa $-\text{OH}$ przy C1 **pod** pierścieniem (po przeciwnej stronie niż $\text{CH}_2\text{OH}$),
+  - **$\beta$** — grupa $-\text{OH}$ przy C1 **nad** pierścieniem (po tej samej stronie co $\text{CH}_2\text{OH}$).
+
+  **Węgiel anomeryczny to ten, który był grupą aldehydową.** Po cyklizacji staje się **centrum stereogenicznym** — stąd istnienie dwóch anomerów.
+
+  **Uważaj na D-arabinozę — jej C2 jest „nietypowy".** W większości popularnych cukrów (glukoza, ryboza) grupa $-\text{OH}$ przy C2 jest po prawej. W arabinozie jest **po lewej** — i to właśnie odróżnia ją od rybozy.
+
+  **Polecenie mówi „uzupełnij wszystkie pola".** Punkt przyznaje się za **kompletny** schemat — pominięcie choćby jednego atomu wodoru oznacza brak punktu.
+wymaganie: |
+  XVII. Cukry — budowa monosacharydów, formy łańcuchowe i cykliczne, projekcja Fischera i Hawortha, anomery α i β, cyklizacja aldoz.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2026-maj-pr/zad-28.webp"
+  alt="Zadanie 28 — chemia 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MCHP-R0-100-A-2605 — zadanie 28."
+  zrodlo="CKE, matura maj 2026, chemia PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Chemia/MCHP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Fischer → Haworth: dwie reguły i gotowe
+
+| W projekcji Fischera | W projekcji Hawortha |
+|---|---|
+| grupa $-\text{OH}$ po **prawej** | **pod** pierścieniem |
+| grupa $-\text{OH}$ po **lewej** | **nad** pierścieniem |
+| szereg **D** | grupa $\text{CH}_2\text{OH}$ **nad** pierścieniem |
+| szereg L | grupa $\text{CH}_2\text{OH}$ pod pierścieniem |
+
+Pamięciowo: **„prawo w dół, lewo w górę"**.
+
+## Furanoza a piranoza
+
+| Cecha | **Furanoza** | **Piranoza** |
+|---|---|---|
+| liczba atomów w pierścieniu | **5** (4 C + 1 O) | **6** (5 C + 1 O) |
+| która grupa $-\text{OH}$ atakuje | przy **C4** | przy **C5** |
+| wzorzec | furan | piran |
+| typowe przykłady | **fruktoza**, ryboza, arabinoza | **glukoza**, galaktoza |
+| trwałość | mniejsza | **większa** |
+
+W roztworze wodnym glukoza występuje niemal wyłącznie w formie **piranozowej** (ok. 99%), fruktoza — głównie **furanozowej**.
+
+## Anomery α i β
+
+Po cyklizacji atom C1 (dawna grupa aldehydowa) staje się **węglem anomerycznym** — nowym centrum stereogenicznym:
+
+| Anomer | Położenie $-\text{OH}$ przy C1 (szereg D) | Względem $\text{CH}_2\text{OH}$ |
+|---|---|---|
+| **$\alpha$** | **pod** pierścieniem | **przeciwna** strona |
+| **$\beta$** | **nad** pierścieniem | **ta sama** strona |
+
+W roztworze wodnym oba anomery przechodzą jeden w drugi przez formę łańcuchową — to zjawisko **mutarotacji**. Dla D-glukozy równowaga ustala się przy ok. 36% formy $\alpha$ i 64% formy $\beta$.
+
+## Aldopentozy — cztery diastereoizomery szeregu D
+
+| Cukier | C2 | C3 | C4 |
+|---|---|---|---|
+| **D-ryboza** | prawa | prawa | prawa |
+| **D-arabinoza** | **lewa** | **prawa** | **prawa** |
+| D-ksyloza | prawa | lewa | prawa |
+| D-liksoza | lewa | lewa | prawa |
+
+Wszystkie mają wzór $\text{C}_5\text{H}_{10}\text{O}_5$ i różnią się wyłącznie konfiguracją przy C2 i C3. D-arabinoza to **epimer D-rybozy przy C2**.
+
+## Gdzie występuje D-arabinoza
+
+| Kontekst | Szczegóły |
+|---|---|
+| ściany komórkowe | **arabinogalaktany** roślin i prątków gruźlicy |
+| guma arabska | polisacharyd z akacji |
+| forma L | częstsza w przyrodzie niż D — wyjątek wśród cukrów |
+| zastosowanie | badania biochemiczne, synteza nukleozydów (arabinozydy — leki przeciwwirusowe) |
+
+## Punktacja CKE
+
+- **1 pkt** — poprawne uzupełnienie **wszystkich** pól schematu: położenia grup $-\text{OH}$ i atomów $\text{H}$ przy C1, C2 i C3 zgodne z konfiguracją $\alpha$-D-arabinofuranozy.
+- **0 pkt** — schemat niepełny albo błędny.

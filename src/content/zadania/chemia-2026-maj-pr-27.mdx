@@ -1,0 +1,151 @@
+---
+arkusz: chemia-2026-maj-pr
+subject: chemia
+nr: 27
+punkty: 2
+typ: otwarte-krotkie
+topic: projekcja Fischera, diastereoizomery, zwiazki mezo, erytrol, treitol, chiralnosc
+difficulty: 5
+tresc: |
+  **Alkohole tetrahydroksylowe** o wzorze sumarycznym $\text{C}_4\text{H}_{10}\text{O}_4$ występują w postaci **diastereoizomerów**. Jeden z nich, stosowany jako **słodzik**, nosi nazwę **erytrol (erytrytol)**. Jego cząsteczki są **achiralne**, natomiast cząsteczki jego diastereoizomeru — **treitolu** — są **chiralne**.
+
+  **Polecenie (0–2).** Przedstaw w **projekcji Fischera** wzór **erytrolu** oraz wzór jednego z jego diastereoizomerów — **L-treitolu**.
+
+  Szkielet obu związków (pionowo, od góry): $\text{CH}_2\text{OH}$ — $\text{CH(OH)}$ — $\text{CH(OH)}$ — $\text{CH}_2\text{OH}$. Do uzupełnienia pozostaje położenie grup $-\text{OH}$ i atomów $\text{H}$ przy dwóch środkowych atomach węgla.
+odpowiedz: |
+  ### Erytrol — cząsteczka achiralna (związek mezo)
+
+  Obie grupy $-\text{OH}$ przy atomach C2 i C3 leżą **po tej samej stronie** łańcucha:
+
+  ```
+        CH2OH
+        |
+   H —— C —— OH
+        |
+   H —— C —— OH
+        |
+        CH2OH
+  ```
+
+  Cząsteczka ma **wewnętrzną płaszczyznę symetrii** (przechodzącą między C2 i C3), więc mimo dwóch centrów stereogenicznych jest **achiralna** — to **związek mezo**.
+
+  ### L-treitol — cząsteczka chiralna
+
+  Grupy $-\text{OH}$ przy C2 i C3 leżą **po przeciwnych stronach** łańcucha:
+
+  ```
+        CH2OH
+        |
+  HO —— C —— H
+        |
+   H —— C —— OH
+        |
+        CH2OH
+  ```
+
+  Brak płaszczyzny symetrii → cząsteczka **chiralna**, istnieją dwa enancjomery: **D-treitol** i **L-treitol**.
+
+  ### Skąd wiadomo, który jest który
+
+  | Cecha | **Erytrol** | **Treitol** |
+  |---|---|---|
+  | grupy $-\text{OH}$ przy C2 i C3 | **po tej samej stronie** | **po przeciwnych stronach** |
+  | płaszczyzna symetrii | **jest** | **brak** |
+  | chiralność | **achiralny (mezo)** | **chiralny** |
+  | liczba stereoizomerów | **1** (mezo) | **2** (D i L) |
+  | aktywność optyczna | **brak** | **jest** |
+
+  Łącznie alkohole $\text{C}_4\text{H}_{10}\text{O}_4$ o tym szkielecie tworzą **trzy** stereoizomery: erytrol (mezo), D-treitol i L-treitol.
+
+  **Przypisanie L:** w konfiguracji **L** grupa $-\text{OH}$ przy **najniższym** centrum stereogenicznym (tu C3, licząc od góry) leży po **lewej** stronie; w konfiguracji **D** — po prawej.
+pulapka: |
+  **Najczęstszy błąd: uznanie erytrolu za chiralny, bo ma dwa asymetryczne atomy węgla.** Obecność centrów stereogenicznych **nie wystarcza** — decyduje brak płaszczyzny symetrii. Erytrol jest podręcznikowym **związkiem mezo**: ma centra chiralne, ale jako całość jest achiralny.
+
+  **Płaszczyzna symetrii przechodzi między C2 a C3.** Górna połowa cząsteczki jest lustrzanym odbiciem dolnej — dlatego skręcalności obu centrów znoszą się wzajemnie.
+
+  **W projekcji Fischera obowiązują sztywne reguły:**
+  - **pionowe** wiązania biegną **do tyłu** (od obserwatora),
+  - **poziome** wiązania biegną **do przodu** (ku obserwatorowi),
+  - przecięcie linii oznacza **atom węgla**,
+  - łańcuch główny rysuje się **pionowo**, najbardziej utleniony atom **u góry**.
+
+  **Nie wolno obracać wzoru Fischera o 90°.** Taki obrót zamienia enancjomer na jego odbicie. Dozwolony jest tylko obrót o **180°** w płaszczyźnie kartki.
+
+  **Nie myl diastereoizomerów z enancjomerami.** **Enancjomery** to odbicia lustrzane (D- i L-treitol); **diastereoizomery** to stereoizomery, które **nie** są odbiciami lustrzanymi (erytrol wobec każdego z treitoli). Diastereoizomery różnią się właściwościami fizycznymi, enancjomery — nie (poza skręcalnością).
+
+  **Punktacja jest po wzorze.** Można zdobyć 1 punkt za poprawny wzór **jednego** związku — warto narysować oba, nawet jeśli co do jednego jest się mniej pewnym.
+wymaganie: |
+  XVII. Izomeria optyczna — projekcja Fischera, enancjomery i diastereoizomery, związki mezo, konfiguracja D i L, warunki chiralności cząsteczki.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2026-maj-pr/zad-27.webp"
+  alt="Zadanie 27 — chemia 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MCHP-R0-100-A-2605 — zadanie 27."
+  zrodlo="CKE, matura maj 2026, chemia PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Chemia/MCHP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Projekcja Fischera — reguły
+
+| Element | Znaczenie |
+|---|---|
+| **linia pionowa** | wiązania skierowane **do tyłu** (od obserwatora) |
+| **linia pozioma** | wiązania skierowane **do przodu** (do obserwatora) |
+| **przecięcie linii** | atom **węgla** |
+| ustawienie łańcucha | **pionowo**, atom najbardziej utleniony **u góry** |
+| dozwolone przekształcenie | obrót o **180°** w płaszczyźnie kartki |
+| **zabronione** | obrót o **90°**, wyjęcie z płaszczyzny |
+
+## Enancjomery, diastereoizomery, związki mezo
+
+| Pojęcie | Definicja | Właściwości |
+|---|---|---|
+| **enancjomery** | stereoizomery będące **odbiciami lustrzanymi** | identyczne fizyczne, **przeciwna skręcalność** |
+| **diastereoizomery** | stereoizomery **niebędące** odbiciami lustrzanymi | **różne** temperatury topnienia, rozpuszczalność, smak |
+| **związek mezo** | ma centra stereogeniczne, ale **płaszczyznę symetrii** | **achiralny**, optycznie **nieczynny** |
+| mieszanina racemiczna | 1:1 obu enancjomerów | optycznie nieczynna, ale **rozdzielalna** |
+
+Liczba stereoizomerów dla $n$ centrów stereogenicznych wynosi maksymalnie $2^n$ — ale **maleje**, gdy występuje forma mezo. Tutaj: $2^2 = 4$, a rzeczywiście istnieją **3** (erytrol, D-treitol, L-treitol).
+
+## Jak rozpoznać związek mezo
+
+1. Policz centra stereogeniczne — muszą być **co najmniej dwa**.
+2. Poszukaj **płaszczyzny symetrii** dzielącej cząsteczkę na dwie lustrzane połowy.
+3. Jeśli taka płaszczyzna istnieje — związek jest **mezo**, czyli achiralny.
+
+Klasyczne przykłady mezo na maturze: **erytrol**, **kwas mezo-winowy**, kwas mezo-2,3-dibromobursztynowy.
+
+## Konfiguracja D i L
+
+$$\text{patrz na } \textbf{najniższe} \text{ centrum stereogeniczne w projekcji Fischera}$$
+
+| Grupa $-\text{OH}$ (lub $-\text{NH}_2$) | Konfiguracja |
+|---|---|
+| po **prawej** stronie | **D** |
+| po **lewej** stronie | **L** |
+
+W przyrodzie: **cukry** występują niemal wyłącznie w formie **D**, **aminokwasy białkowe** — w formie **L**.
+
+## Erytrol jako słodzik
+
+| Cecha | Wartość |
+|---|---|
+| grupa związków | **poliole (alkohole cukrowe)** |
+| słodkość | ok. **70%** słodkości sacharozy |
+| wartość energetyczna | **ok. 0 kcal/g** — prawie nie jest metabolizowany |
+| indeks glikemiczny | **0** |
+| oznaczenie w UE | **E968** |
+| zalety | nie powoduje próchnicy, bezpieczny dla diabetyków |
+| inne poliole | ksylitol (E967), sorbitol (E420), maltitol (E965) |
+
+## Punktacja CKE
+
+- **2 pkt** — poprawne wzory **obu** związków w projekcji Fischera.
+- **1 pkt** — poprawny wzór **jednego** związku.
+- **0 pkt** — oba wzory błędne albo brak odpowiedzi.

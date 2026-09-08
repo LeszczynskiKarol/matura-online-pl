@@ -1,0 +1,114 @@
+---
+arkusz: chemia-2026-maj-pr
+subject: chemia
+nr: 24
+punkty: 1
+typ: otwarte-krotkie
+topic: substytucja elektrofilowa, efekt kierujacy podstawnikow, nitrowanie, chlorowanie, planowanie syntezy
+difficulty: 5
+tresc: |
+  Nauczyciel polecił uczniom zaprojektowanie ciągu przemian, które umożliwią przekształcenie **benzenu** w związek o wzorze **3-chloroaniliny** — pierścień benzenowy z grupą $-\text{NH}_2$ i atomem $-\text{Cl}$ w położeniu **meta** (1,3).
+
+  Uczniowie przedstawili dwa projekty, każdy z trzech etapów:
+
+  **Projekt 1.**
+
+  $$\text{benzen} \xrightarrow{\ \text{Cl}_2,\ \text{FeCl}_3\ } \text{A}_1 \xrightarrow{\ \text{HNO}_3,\ \text{H}_2\text{SO}_4\ } \text{B}_1 \xrightarrow{\ \text{H}_2,\ \text{Ni}\ } \text{produkt}$$
+
+  **Projekt 2.**
+
+  $$\text{benzen} \xrightarrow{\ \text{HNO}_3,\ \text{H}_2\text{SO}_4\ } \text{A}_2 \xrightarrow{\ \text{Cl}_2,\ \text{FeCl}_3\ } \text{B}_2 \xrightarrow{\ \text{H}_2,\ \text{Ni}\ } \text{produkt}$$
+
+  **Polecenie (0–1).** Rozstrzygnij, **który projekt** należy wybrać do realizacji, aby otrzymać opisany związek z **możliwie największą wydajnością**. Uzasadnij odpowiedź, odwołując się do **wpływu kierującego podstawników** w pierścieniu aromatycznym.
+odpowiedz: |
+  **Rozstrzygnięcie: projekt 2.**
+
+  **Uzasadnienie:** produktem pierwszego etapu w projekcie 2. jest **nitrobenzen**. Grupa nitrowa $-\text{NO}_2$ jest podstawnikiem **kierującym w położenie 3- (meta)**, więc atom chloru wprowadzony w drugim etapie trafi dokładnie tam, gdzie jest potrzebny. Po redukcji grupy nitrowej wodorem otrzymujemy **3-chloroanilinę**.
+
+  W projekcie 1. produktem pierwszego etapu jest **chlorobenzen**. Atom chloru $-\text{Cl}$ kieruje kolejne podstawniki w położenie **2- (orto) lub 4- (para)** — a **nie** w oczekiwane położenie 3-. Nitrowanie dałoby więc głównie 2-nitrochlorobenzen i 4-nitrochlorobenzen, a po redukcji — 2-chloroanilinę i 4-chloroanilinę zamiast pożądanego izomeru *meta*.
+
+  **Przebieg projektu 2. krok po kroku:**
+
+  $$\text{C}_6\text{H}_6 \xrightarrow{\ \text{HNO}_3/\text{H}_2\text{SO}_4\ } \underset{\text{nitrobenzen}}{\text{C}_6\text{H}_5\text{NO}_2} \xrightarrow{\ \text{Cl}_2/\text{FeCl}_3\ } \underset{\text{1-chloro-3-nitrobenzen}}{\text{3-Cl}\!-\!\text{C}_6\text{H}_4\!-\!\text{NO}_2} \xrightarrow{\ \text{H}_2/\text{Ni}\ } \underset{\text{3-chloroanilina}}{\text{3-Cl}\!-\!\text{C}_6\text{H}_4\!-\!\text{NH}_2}$$
+
+  **Dlaczego kolejność ma znaczenie:** grupa $-\text{NH}_2$ (obecna w produkcie końcowym) jest silnym podstawnikiem **orto-/para**-kierującym. Gdyby wprowadzić ją jako pierwszą, chlorowanie poszłoby w położenia 2- i 4-. Dlatego azot wprowadza się w postaci grupy $-\text{NO}_2$ — **meta**-kierującej — i redukuje **dopiero na końcu**.
+pulapka: |
+  **Klucz CKE wymaga jednoznacznego nazwania podstawników.** W uzasadnieniu trzeba wprost napisać: „podstawnik $-\text{Cl}$ (atom chloru)" oraz „grupa nitrowa $-\text{NO}_2$". Ogólniki typu „pierwszy podstawnik" nie punktują.
+
+  **Uzasadnienie musi odwoływać się do efektu kierującego, a nie do reaktywności.** Nie chodzi o to, że nitrobenzen reaguje wolniej — chodzi o **położenie**, w które kieruje kolejny podstawnik.
+
+  **Chlor to wyjątek wśród podstawników.** **Dezaktywuje** pierścień (efekt indukcyjny), ale kieruje **orto/para** (efekt mezomeryczny wolnych par elektronowych). To jedyna grupa łącząca te dwie cechy — i najczęstsze źródło błędu w zadaniach o kolejności podstawień.
+
+  **Grupa $-\text{NH}_2$ kieruje orto/para — dlatego nie może być wprowadzona jako pierwsza.** Cała logika projektu 2. polega na tym, by azot „ukrywał się" w postaci grupy nitrowej do ostatniego etapu.
+
+  **Redukcja $-\text{NO}_2$ do $-\text{NH}_2$ nie zmienia położenia podstawników.** Zmienia tylko charakter grupy — z meta-kierującej dezaktywującej na orto/para-kierującą aktywującą.
+
+  **Nie wystarczy napisać „projekt 2".** Punkt przyznaje się **łącznie** za rozstrzygnięcie i uzasadnienie.
+wymaganie: |
+  XIV. Węglowodory aromatyczne — substytucja elektrofilowa (nitrowanie, chlorowanie), wpływ kierujący podstawników już obecnych w pierścieniu. XVIII. Aminy — otrzymywanie przez redukcję nitrozwiązków, planowanie ciągów przemian.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2026-maj-pr/zad-24.webp"
+  alt="Zadanie 24 — chemia 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MCHP-R0-100-A-2605 — zadanie 24."
+  zrodlo="CKE, matura maj 2026, chemia PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Chemia/MCHP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Wpływ kierujący podstawników — tabela, którą trzeba znać
+
+| Podstawnik | Wpływ na reaktywność | **Kieruje w położenie** |
+|---|---|---|
+| $-\text{NH}_2$, $-\text{NHR}$, $-\text{NR}_2$ | **silnie aktywujący** | **orto / para** |
+| $-\text{OH}$, $-\text{O}^-$ | silnie aktywujący | orto / para |
+| $-\text{OCH}_3$, $-\text{OR}$ | aktywujący | orto / para |
+| $-\text{NHCOR}$ (amid) | aktywujący | orto / para |
+| $-\text{CH}_3$, $-\text{R}$ (alkil) | słabo aktywujący | orto / para |
+| $-\text{C}_6\text{H}_5$ (fenyl) | słabo aktywujący | orto / para |
+| **$-\text{F}$, $-\text{Cl}$, $-\text{Br}$, $-\text{I}$** | **dezaktywujący** | **orto / para** ← wyjątek |
+| $-\text{CHO}$, $-\text{COR}$, $-\text{COOH}$, $-\text{COOR}$ | dezaktywujący | **meta** |
+| $-\text{SO}_3\text{H}$, $-\text{CN}$ | dezaktywujący | **meta** |
+| **$-\text{NO}_2$** | **silnie dezaktywujący** | **meta** |
+| $-\text{NR}_3^+$ | silnie dezaktywujący | meta |
+
+Prosta reguła pamięciowa: **grupy z wolną parą elektronową na atomie przy pierścieniu** kierują orto/para; **grupy z ładunkiem dodatnim albo wiązaniem podwójnym do elektroujemnego atomu** kierują meta. Halogeny to **jedyny wyjątek** — mają wolne pary, więc kierują orto/para, ale ich efekt indukcyjny przeważa i pierścień dezaktywują.
+
+## Dlaczego kolejność etapów decyduje o produkcie
+
+| Kolejność | Pierwszy podstawnik | Kieruje | Produkt końcowy |
+|---|---|---|---|
+| **projekt 1.** | $-\text{Cl}$ | **orto / para** | 2-chloroanilina, 4-chloroanilina ✘ |
+| **projekt 2.** | $-\text{NO}_2$ | **meta** | **3-chloroanilina** ✔ |
+
+To modelowy przykład planowania syntezy wieloetapowej: **o produkcie decyduje nie zestaw reakcji, lecz ich kolejność.**
+
+## Trzy reakcje z zadania
+
+| Etap | Reakcja | Typ | Warunki |
+|---|---|---|---|
+| **nitrowanie** | $\text{C}_6\text{H}_6 + \text{HNO}_3 \rightarrow \text{C}_6\text{H}_5\text{NO}_2 + \text{H}_2\text{O}$ | substytucja **elektrofilowa** | $\text{H}_2\text{SO}_4$ (stęż.), ok. 50 °C |
+| **chlorowanie** | $\text{C}_6\text{H}_6 + \text{Cl}_2 \rightarrow \text{C}_6\text{H}_5\text{Cl} + \text{HCl}$ | substytucja **elektrofilowa** | katalizator $\text{FeCl}_3$ |
+| **redukcja** | $\text{C}_6\text{H}_5\text{NO}_2 + 3\,\text{H}_2 \rightarrow \text{C}_6\text{H}_5\text{NH}_2 + 2\,\text{H}_2\text{O}$ | redukcja | $\text{H}_2$, katalizator Ni |
+
+Uwaga na warunki chlorowania: **z katalizatorem $\text{FeCl}_3$** zachodzi **substytucja w pierścieniu**; **w świetle, bez katalizatora** — substytucja **rodnikowa w łańcuchu bocznym** (o ile jest).
+
+## Strategia „grupy maskującej"
+
+Aby wprowadzić podstawnik w położenie sprzeczne z efektem kierującym grupy docelowej, stosuje się **grupę przejściową o przeciwnym wpływie**:
+
+| Cel | Problem | Rozwiązanie |
+|---|---|---|
+| $-\text{NH}_2$ w położeniu meta względem $-\text{Cl}$ | $-\text{NH}_2$ kieruje orto/para | wprowadź **$-\text{NO}_2$** (meta), zredukuj **na końcu** |
+| podstawienie tylko w orto (bez para) | oba położenia dostępne | zablokuj para grupą $-\text{SO}_3\text{H}$, usuń później |
+| alkilowanie aniliny | $-\text{NH}_2$ reaguje z $\text{AlCl}_3$ | zabezpiecz jako **acetanilid**, potem zhydrolizuj |
+
+## Punktacja CKE
+
+- **1 pkt** — rozstrzygnięcie (**projekt 2.**) **wraz z** uzasadnieniem odwołującym się do wpływu kierującego: grupa $-\text{NO}_2$ kieruje w położenie **meta**, a atom $-\text{Cl}$ — w położenia **orto/para**.
+- **0 pkt** — brak rozstrzygnięcia albo uzasadnienie bez wskazania konkretnych podstawników.

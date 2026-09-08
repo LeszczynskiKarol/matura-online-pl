@@ -1,0 +1,142 @@
+---
+arkusz: chemia-2026-maj-pr
+subject: chemia
+nr: 26
+punkty: 1
+typ: otwarte-krotkie
+topic: peptydy, sekwencja aminokwasow, masa molowa tripeptydu, cysteina, glicyna, kody trzyliterowe
+difficulty: 5
+tresc: |
+  Pewien **tripeptyd** zbudowany z aminokwasów białkowych ma masę molową **249 g·mol⁻¹**, a w jego cząsteczce znajdują się:
+  - **jedna grupa $-\text{SH}$**,
+  - **jedna reszta aminokwasu, którego cząsteczki są achiralne**.
+
+  Wiadomo też, że **wolną grupę aminową** ma reszta aminokwasu o **najmniejszej masie cząsteczkowej**, a reszta aminokwasu o **największej masie cząsteczkowej** ma **wolną grupę karboksylową**.
+
+  **Polecenie (0–1).** Napisz **sekwencję** opisanego tripeptydu za pomocą **trzyliterowych kodów** aminokwasów.
+odpowiedz: |
+  **Krok 1. Aminokwas z grupą $-\text{SH}$.**
+
+  Jedynym aminokwasem białkowym z grupą tiolową jest **cysteina (Cys)**:
+
+  $$M_{\text{Cys}} = 121\ \text{g/mol}$$
+
+  **Krok 2. Aminokwas achiralny.**
+
+  Jedynym aminokwasem białkowym bez asymetrycznego atomu węgla jest **glicyna (Gly)** — jej węgiel $\alpha$ ma **dwa atomy wodoru**, więc nie ma czterech różnych podstawników:
+
+  $$M_{\text{Gly}} = 75\ \text{g/mol}$$
+
+  **Krok 3. Trzeci aminokwas z bilansu mas.**
+
+  Przy tworzeniu tripeptydu powstają **dwa wiązania peptydowe**, więc odłączają się **dwie cząsteczki wody**:
+
+  $$M_{\text{tripeptydu}} = \sum M_{\text{aminokwasów}} - 2\cdot 18$$
+
+  $$\sum M_{\text{aminokwasów}} = 249 + 36 = 285\ \text{g/mol}$$
+
+  $$M_{\text{trzeciego}} = 285 - 121 - 75 = \boxed{89\ \text{g/mol}}$$
+
+  To masa molowa **alaniny (Ala)**.
+
+  **Krok 4. Ustalenie kolejności.**
+
+  | Aminokwas | $M$, g/mol | Pozycja |
+  |---|---|---|
+  | **Gly** | **75** — najmniejsza | **wolna grupa $-\text{NH}_2$** → **N-koniec** |
+  | Ala | 89 | środek |
+  | **Cys** | **121** — największa | **wolna grupa $-\text{COOH}$** → **C-koniec** |
+
+  $$\boxed{\text{Gly}\!-\!\text{Ala}\!-\!\text{Cys}}$$
+
+  **Sprawdzenie:** $75 + 89 + 121 - 2\cdot 18 = 285 - 36 = 249$ ✓
+pulapka: |
+  **Najczęstszy błąd: pominięcie odejmowania wody.** Przy tworzeniu **tripeptydu** powstają **dwa** wiązania peptydowe, więc odchodzą **dwie** cząsteczki wody. Ogólnie dla peptydu z $n$ reszt odejmujemy $(n-1)\cdot 18$ g/mol.
+
+  **Glicyna to jedyny achiralny aminokwas białkowy.** Jej wzór to $\text{H}_2\text{N}\!-\!\text{CH}_2\!-\!\text{COOH}$ — węgiel $\alpha$ ma dwa atomy wodoru, czyli nie cztery różne podstawniki. Wszystkie pozostałe 19 aminokwasów białkowych są chiralne (w białkach występują w konfiguracji **L**).
+
+  **Cysteina to jedyny aminokwas białkowy z grupą $-\text{SH}$.** Metionina zawiera siarkę, ale w postaci **tioeteru** $-\text{S}\!-\!\text{CH}_3$, a nie tiolu.
+
+  **Kolejność zapisu sekwencji jest ustalona: od N-końca do C-końca.** Zapis „Cys-Ala-Gly" opisuje **inny** peptyd. Warunki zadania jednoznacznie ustalają, że Gly ma wolną grupę aminową (N-koniec), a Cys — wolną karboksylową (C-koniec).
+
+  **Nie pomyl masy cząsteczkowej z resztą aminokwasową.** W obliczeniach używamy mas **wolnych aminokwasów** (Gly 75, Ala 89, Cys 121), a wodę odejmujemy dopiero na końcu.
+
+  **Sprawdź, czy wynik odpowiada realnemu aminokwasowi.** Masa 89 g/mol to alanina. Gdyby wyszło np. 87, oznaczałoby to błąd rachunkowy — nie ma aminokwasu o takiej masie.
+wymaganie: |
+  XVIII. Aminokwasy i białka — budowa aminokwasów białkowych, wiązanie peptydowe, obliczanie mas molowych peptydów, zapis sekwencji, chiralność aminokwasów.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2026-maj-pr/zad-26.webp"
+  alt="Zadanie 26 — chemia 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MCHP-R0-100-A-2605 — zadanie 26."
+  zrodlo="CKE, matura maj 2026, chemia PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Chemia/MCHP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Masa peptydu — wzór podstawowy
+
+$$M_{\text{peptydu}} = \sum_{i=1}^{n} M_{\text{aminokwasu } i} - (n-1)\cdot 18$$
+
+| Peptyd | Liczba reszt | Liczba wiązań peptydowych | Odjęta woda |
+|---|---|---|---|
+| dipeptyd | 2 | 1 | 18 g/mol |
+| **tripeptyd** | **3** | **2** | **36 g/mol** |
+| tetrapeptyd | 4 | 3 | 54 g/mol |
+
+## Aminokwasy białkowe — te, o które pyta matura
+
+| Nazwa | Kod | $M$, g/mol | Cecha wyróżniająca |
+|---|---|---|---|
+| **glicyna** | **Gly** | **75** | **jedyny achiralny** |
+| **alanina** | **Ala** | **89** | najprostszy łańcuch boczny $-\text{CH}_3$ |
+| seryna | Ser | 105 | grupa $-\text{OH}$ |
+| **cysteina** | **Cys** | **121** | **jedyna z grupą $-\text{SH}$** |
+| walina | Val | 117 | rozgałęziony |
+| treonina | Thr | 119 | $-\text{OH}$, dwa centra chiralne |
+| leucyna | Leu | 131 | — |
+| kwas asparaginowy | Asp | 133 | druga grupa $-\text{COOH}$ |
+| lizyna | Lys | 146 | druga grupa $-\text{NH}_2$ |
+| kwas glutaminowy | Glu | 147 | druga grupa $-\text{COOH}$ |
+| fenyloalanina | Phe | 165 | pierścień aromatyczny |
+| tyrozyna | Tyr | 181 | pierścień + $-\text{OH}$ |
+| **metionina** | **Met** | 149 | siarka jako **tioeter**, nie tiol |
+
+## Kierunek zapisu sekwencji
+
+$$\underset{\text{N-koniec}}{\text{H}_2\text{N}}\!-\!\text{AA}_1\!-\!\text{AA}_2\!-\!\text{AA}_3\!-\!\underset{\text{C-koniec}}{\text{COOH}}$$
+
+| Koniec | Wolna grupa | Umieszczenie w zapisie |
+|---|---|---|
+| **N-koniec** | $-\text{NH}_2$ | **na początku** (po lewej) |
+| **C-koniec** | $-\text{COOH}$ | **na końcu** (po prawej) |
+
+Sekwencje zapisuje się **zawsze** w tym kierunku — dlatego Gly-Ala-Cys i Cys-Ala-Gly to dwa różne związki.
+
+## Wiązanie peptydowe
+
+$$\text{R}_1\!-\!\text{CO}\!-\!\text{NH}\!-\!\text{R}_2$$
+
+| Cecha | Opis |
+|---|---|
+| powstaje z | grupy $-\text{COOH}$ jednego aminokwasu i $-\text{NH}_2$ drugiego |
+| typ reakcji | **kondensacja** — odłącza się $\text{H}_2\text{O}$ |
+| geometria | **płaska**, z częściowo podwójnym charakterem wiązania C–N |
+| wykrywanie | **próba biuretowa** — fioletowe zabarwienie z $\text{Cu(OH)}_2$ (od tripeptydu wzwyż) |
+| rozkład | hydroliza kwasowa, zasadowa lub enzymatyczna |
+
+## Rola cysteiny — mostki disiarczkowe
+
+$$2\ \text{Cys}\!-\!\text{SH} \ \xrightarrow{\ \text{utlenianie}\ } \ \text{Cys}\!-\!\text{S}\!-\!\text{S}\!-\!\text{Cys} + 2\,\text{H}^+ + 2\,e^-$$
+
+Mostki $-\text{S}\!-\!\text{S}-$ stabilizują **strukturę III- i IV-rzędową** białek. To dzięki nim keratyna włosa jest sprężysta, a insulina zachowuje aktywny kształt. Trwała ondulacja polega właśnie na rozerwaniu i ponownym utworzeniu tych mostków.
+
+## Punktacja CKE
+
+- **1 pkt** — poprawna sekwencja: **Gly-Ala-Cys**.
+- **0 pkt** — sekwencja błędna, w odwrotnym kierunku albo brak odpowiedzi.

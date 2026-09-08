@@ -1,0 +1,139 @@
+---
+arkusz: chemia-2026-maj-pr
+subject: chemia
+nr: 20
+punkty: 3
+typ: otwarte-krotkie
+topic: wydajnosc reakcji, reagent limitujacy, obliczenia stechiometryczne, kwas cynamonowy, reakcja Hecka
+difficulty: 4
+tresc: |
+  Do reakcji Hecka użyto **0,1570 g bromobenzenu** i **0,1081 g kwasu propenowego**. W wyniku przemiany otrzymano **0,1245 g kwasu cynamonowego**:
+
+  $$\underset{\text{bromobenzen}}{\text{C}_6\text{H}_5\text{Br}} + \underset{\text{kwas propenowy}}{\text{C}_3\text{H}_4\text{O}_2} \rightarrow \underset{\text{kwas cynamonowy}}{\text{C}_9\text{H}_8\text{O}_2} + \text{HBr}$$
+
+  **Polecenie (0–3).** Oblicz **wydajność** opisanej przemiany. Wynik podaj w procentach. Napisz **nazwę lub wzór substancji użytej w nadmiarze**.
+odpowiedz: |
+  **Krok 1. Masy molowe.**
+
+  $$M_{\text{C}_6\text{H}_5\text{Br}} = 6\cdot 12{,}01 + 5\cdot 1{,}008 + 79{,}90 = 157{,}0\ \text{g/mol}$$
+
+  $$M_{\text{C}_3\text{H}_4\text{O}_2} = 3\cdot 12{,}01 + 4\cdot 1{,}008 + 2\cdot 16{,}00 = 72{,}0\ \text{g/mol}$$
+
+  $$M_{\text{C}_9\text{H}_8\text{O}_2} = 9\cdot 12{,}01 + 8\cdot 1{,}008 + 2\cdot 16{,}00 = 148{,}0\ \text{g/mol}$$
+
+  **Krok 2. Liczby moli substratów — który jest w nadmiarze.**
+
+  $$n_{\text{C}_6\text{H}_5\text{Br}} = \frac{0{,}1570}{157{,}0} = 1{,}00\cdot 10^{-3}\ \text{mol}$$
+
+  $$n_{\text{C}_3\text{H}_4\text{O}_2} = \frac{0{,}1081}{72{,}0} = 1{,}50\cdot 10^{-3}\ \text{mol}$$
+
+  Stosunek stechiometryczny wynosi **1 : 1**, a moli kwasu propenowego jest więcej — zatem:
+
+  $$\boxed{\text{W nadmiarze użyto kwasu propenowego } (\text{C}_3\text{H}_4\text{O}_2)}$$
+
+  **Reagentem limitującym jest bromobenzen** i to on wyznacza wydajność teoretyczną.
+
+  **Krok 3. Masa teoretyczna produktu.**
+
+  Z 1 mola bromobenzenu powstaje 1 mol kwasu cynamonowego:
+
+  $$n_{\text{teor}} = 1{,}00\cdot 10^{-3}\ \text{mol} \quad\Rightarrow\quad m_{\text{teor}} = 1{,}00\cdot 10^{-3}\cdot 148{,}0 = 0{,}148\ \text{g}$$
+
+  **Krok 4. Wydajność.**
+
+  $$W = \frac{m_{\text{praktyczna}}}{m_{\text{teoretyczna}}}\cdot 100\% = \frac{0{,}1245\ \text{g}}{0{,}148\ \text{g}}\cdot 100\%$$
+
+  $$\boxed{W \approx 84{,}1\%}$$
+
+  *(Metoda równoważna — przez mole: $n_{\text{prakt}} = \frac{0{,}1245}{148} = 8{,}41\cdot 10^{-4}$ mol, więc $W = \frac{8{,}41\cdot 10^{-4}}{1{,}00\cdot 10^{-3}}\cdot 100\% = 84{,}1\%$.)*
+pulapka: |
+  **Największa pułapka: liczenie wydajności względem złego substratu.** Wydajność zawsze odnosi się do **reagentu limitującego** — tego, którego jest **mniej w stosunku stechiometrycznym**. Tu bromobenzenu jest 1,00 mmol, a kwasu propenowego 1,50 mmol; przy stosunku 1:1 limituje **bromobenzen**.
+
+  **Klucz CKE nagradza sprawdzenie nadmiaru rachunkiem, nie na oko.** Pełne 3 punkty wymagają **obliczeniowego ustalenia**, który substrat jest w nadmiarze. Podanie samej odpowiedzi bez obliczeń obniża punktację do 2.
+
+  **Nie sugeruj się masami substratów.** 0,1570 g i 0,1081 g — pierwsza liczba jest większa, ale to nie ona decyduje. Liczą się **mole**, a masy molowe różnią się ponad dwukrotnie.
+
+  **Uwaga na wymóg wskazania substancji.** Klucz zaznacza: przy poprawnych obliczeniach, ale braku wskazania (albo błędnym wskazaniu) substancji użytej w nadmiarze, maksimum to **2 punkty**. Warto więc zawsze wpisać odpowiedź w obu polach.
+
+  **Sprawdź, czy stosunek molowy naprawdę wynosi 1:1.** Gdyby równanie miało inne współczynniki, trzeba by porównywać **ilorazy** $\frac{n}{\text{współczynnik}}$, a nie same mole.
+
+  **Wydajność nie może przekroczyć 100%.** Wynik powyżej setki oznacza błąd — najczęściej pomylenie masy teoretycznej z praktyczną albo użycie złej masy molowej.
+wymaganie: |
+  I. Atomy, cząsteczki i stechiometria chemiczna — obliczenia stechiometryczne, reagent limitujący i użyty w nadmiarze, wydajność reakcji chemicznej.
+podobne: []
+---
+
+import MaterialZrodlowy from "../../components/MaterialZrodlowy.astro";
+
+## Treść zadania (CKE)
+
+<MaterialZrodlowy
+  src="/arkusze/chemia/2026-maj-pr/zad-20.webp"
+  alt="Zadanie 20 — chemia 2026, poziom rozszerzony, arkusz CKE"
+  caption="Fragment arkusza CKE MCHP-R0-100-A-2605 — zadanie 20."
+  zrodlo="CKE, matura maj 2026, chemia PR"
+  pdfUrl="https://cke.gov.pl/images/_EGZAMIN_MATURALNY_OD_2023/Arkusze_egzaminacyjne/2026/Chemia/MCHP-R0-100-A-2605-arkusz.pdf"
+/>
+
+## Algorytm zadania na wydajność z dwoma substratami
+
+| Krok | Działanie |
+|---|---|
+| **1.** | oblicz **masy molowe** wszystkich reagentów |
+| **2.** | przelicz masy substratów na **mole** |
+| **3.** | podziel mole przez **współczynniki stechiometryczne** i porównaj — mniejszy iloraz wskazuje **reagent limitujący** |
+| **4.** | oblicz **masę teoretyczną** produktu z reagentu limitującego |
+| **5.** | $W = \dfrac{m_{\text{prakt}}}{m_{\text{teor}}}\cdot 100\%$ |
+
+$$W = \frac{n_{\text{prakt}}}{n_{\text{teor}}}\cdot 100\% = \frac{m_{\text{prakt}}}{m_{\text{teor}}}\cdot 100\%$$
+
+Obie formy są równoważne, bo masa molowa produktu skraca się.
+
+## Rachunek w tym zadaniu
+
+| Reagent | Masa, g | $M$, g/mol | $n$, mol | Rola |
+|---|---|---|---|---|
+| bromobenzen $\text{C}_6\text{H}_5\text{Br}$ | 0,1570 | **157,0** | $1{,}00\cdot 10^{-3}$ | **limitujący** |
+| kwas propenowy $\text{C}_3\text{H}_4\text{O}_2$ | 0,1081 | **72,0** | $1{,}50\cdot 10^{-3}$ | **nadmiar** |
+| kwas cynamonowy $\text{C}_9\text{H}_8\text{O}_2$ | 0,1245 (otrzymano) | **148,0** | $8{,}41\cdot 10^{-4}$ | produkt |
+
+$$m_{\text{teor}} = 1{,}00\cdot 10^{-3}\ \text{mol}\cdot 148{,}0\ \frac{\text{g}}{\text{mol}} = 0{,}148\ \text{g}$$
+
+$$W = \frac{0{,}1245}{0{,}148}\cdot 100\% = 84{,}1\%$$
+
+## Reagent limitujący a użyty w nadmiarze
+
+| Pojęcie | Definicja | Skutek |
+|---|---|---|
+| **limitujący (ograniczający)** | zużywa się **całkowicie** jako pierwszy | wyznacza **maksymalną** ilość produktu |
+| **w nadmiarze** | pozostaje po zakończeniu reakcji | nie wpływa na wydajność |
+
+Praktyka laboratoryjna: substrat **tańszy lub łatwiej usuwalny** stosuje się w nadmiarze, by w pełni przereagował ten **droższy** — tu kwas propenowy jest tani, a bromobenzen kosztowniejszy.
+
+## Dlaczego wydajność bywa mniejsza od 100%
+
+| Przyczyna | Opis |
+|---|---|
+| **reakcje odwracalne** | równowaga ustala się przed pełnym przereagowaniem |
+| **reakcje uboczne** | część substratu tworzy inne produkty |
+| **straty przy wyodrębnianiu** | sączenie, przemywanie, krystalizacja |
+| niecałkowite przereagowanie | zbyt krótki czas, za niska temperatura |
+| zanieczyszczenia substratów | mniej reagenta niż wynika z masy |
+
+## Kwas cynamonowy — kontekst
+
+| Cecha | Szczegóły |
+|---|---|
+| wzór | $\text{C}_6\text{H}_5\!-\!\text{CH}\!=\!\text{CH}\!-\!\text{COOH}$ |
+| masa molowa | **148 g/mol** |
+| występowanie | cynamonowiec, balsam peruwiański, miód |
+| właściwości | **antyoksydant**, prekursor aromatów |
+| izomeria | **geometryczna cis–trans** (w naturze dominuje *trans*) |
+| pochodne | kwas kawowy, kwas ferulowy, kwas p-kumarowy |
+
+## Punktacja CKE
+
+- **3 pkt** — poprawna metoda **z obliczeniowym sprawdzeniem**, który substrat jest w nadmiarze, poprawne obliczenia, wynik **84,1%** oraz wskazanie **kwasu propenowego** jako użytego w nadmiarze.
+- **2 pkt** — m.in.: poprawny wynik i wskazanie nadmiaru, ale **bez** obliczeniowego sprawdzenia; albo poprawna metoda z błędem rachunkowym i konsekwentnym wskazaniem; albo obliczenie masy/moli produktu przy poprawnym wskazaniu nadmiaru.
+- **1 pkt** — poprawne obliczenia i wskazanie na ich podstawie substancji użytej w nadmiarze.
+- **Razem: 3 pkt.**
